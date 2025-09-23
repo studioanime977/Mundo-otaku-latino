@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mundo Otaku Latino - Catálogo de Anime</title>
+  <style>
+    :root {
+      --primary-color: #ff5cad;
+      --secondary-color: #ff8a80;
+      --background-start: #0f0f23;
+      --background-end: #2d1b69;
+      --card-background: rgba(255, 255, 255, 0.05);
+      --card-border: rgba(255, 92, 173, 0.2);
+      --text-color: #fff;
+      --text-muted: #ccc;
+    }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 50%, var(--background-start) 100%); color: var(--text-color); margin: 0; }
+    .header { background: rgba(0, 0, 0, 0.85); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 2px solid var(--primary-color); display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.8rem; font-weight: bold; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .main-content { padding: 2rem; max-width: 1400px; margin: 0 auto; }
+    .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 25px; text-decoration: none; font-weight: 500; margin-bottom: 2rem; transition: all 0.3s ease; }
+    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 92, 173, 0.4); }
+    .season-header { text-align: center; margin-bottom: 2rem; }
+    .season-title { font-size: 2.5rem; margin-bottom: 1rem; }
+    .season-description { font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.6; }
+    .contenedor-video { background: var(--card-background); border-radius: 15px; padding: 2rem; border: 1px solid var(--card-border); margin-bottom: 2rem; }
+    .player-options { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .player-btn { background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; font-weight: 500; }
+    .player-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 92, 173, 0.4); }
+    .player-btn.active { background: linear-gradient(45deg, #4CAF50, #45a049); }
+    .reproductor-video { height: 500px; border-radius: 10px; overflow: hidden; position: relative; background: #000; }
+    .player-container { display: none; width: 100%; height: 100%; }
+    .player-container.active { display: block; }
+    .player-container iframe { width: 100%; height: 100%; border: none; border-radius: 10px; }
+    .episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    .episode-card { background: var(--card-background); border-radius: 12px; padding: 1.5rem; border: 1px solid var(--card-border); transition: all 0.3s ease; }
+    .episode-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(255, 92, 173, 0.2); border-color: var(--primary-color); }
+    .episode-title { font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--text-color); }
+    .download-btn { display: block; width: 100%; text-align: center; margin-top: 1rem; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); color: white; text-decoration: none; padding: 0.75rem; border-radius: 25px; font-weight: bold; transition: all 0.3s ease; }
+    .download-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(255, 92, 173, 0.3); }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">🧧Mundo Otaku Latino</div>
+    <a href="../../html/catalogo.html" class="back-btn" style="margin:0;">🏠 Inicio</a>
+  </header>
+
+  <main class="main-content">
+    <a href="temporadas.html" class="back-btn">← Volver a Temporadas</a>
+    
+    <div class="season-header">
+      <h1 class="season-title">Boku no Hero Academia - Temporada 5</h1>
+      <p class="season-description">La rivalidad entre la Clase 1-A y la Clase 1-B alcanza su punto álgido en el arco del Entrenamiento por Equipos. Más tarde, los estudiantes se enfrentan a nuevos desafíos en el arco de la Agencia de Endeavor y se revela el oscuro pasado de la Liga de Villanos.</p>
+    </div>
+
+    <div class="contenedor-video">
+      <div class="player-options">
+        <button class="player-btn active" onclick="switchPlayer('option1')" id="option1-btn">OPCIÓN 1</button>
+        <button class="player-btn" onclick="switchPlayer('option2')" id="option2-btn">OPCIÓN 2</button>
+      </div>
+      <div class="reproductor-video">
+        <div id="option1-player" class="player-container active">
+          <iframe src="https://www.yourupload.com/embed/1o7g2G7IqU3e" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div id="option2-player" class="player-container">
+          <iframe src="https://uqload.to/embed-example" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="episodes-grid">
+      <!-- Episodios 1-25 -->
+      <div class="episode-card"><h3 class="episode-title">Episodio 1</h3><a href="https://exe.io/BNHAS5E1" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 2</h3><a href="https://exe.io/BNHAS5E2" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 3</h3><a href="https://exe.io/BNHAS5E3" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 4</h3><a href="https://exe.io/BNHAS5E4" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 5</h3><a href="https://exe.io/BNHAS5E5" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 6</h3><a href="https://exe.io/BNHAS5E6" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 7</h3><a href="https://exe.io/BNHAS5E7" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 8</h3><a href="https://exe.io/BNHAS5E8" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 9</h3><a href="https://exe.io/BNHAS5E9" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 10</h3><a href="https://exe.io/BNHAS5E10" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 11</h3><a href="https://exe.io/BNHAS5E11" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 12</h3><a href="https://exe.io/BNHAS5E12" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 13</h3><a href="https://exe.io/BNHAS5E13" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 14</h3><a href="https://exe.io/BNHAS5E14" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 15</h3><a href="https://exe.io/BNHAS5E15" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 16</h3><a href="https://exe.io/BNHAS5E16" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 17</h3><a href="https://exe.io/BNHAS5E17" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 18</h3><a href="https://exe.io/BNHAS5E18" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 19</h3><a href="https://exe.io/BNHAS5E19" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 20</h3><a href="https://exe.io/BNHAS5E20" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 21</h3><a href="https://exe.io/BNHAS5E21" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 22</h3><a href="https://exe.io/BNHAS5E22" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 23</h3><a href="https://exe.io/BNHAS5E23" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 24</h3><a href="https://exe.io/BNHAS5E24" class="download-btn" target="_blank">Descargar</a></div>
+      <div class="episode-card"><h3 class="episode-title">Episodio 25</h3><a href="https://exe.io/BNHAS5E25" class="download-btn" target="_blank">Descargar</a></div>
+    </div>
+  </main>
+
+  <script>
+    function switchPlayer(option) {
+      const playerButtons = document.querySelectorAll('.player-btn');
+      const playerContainers = document.querySelectorAll('.player-container');
+      
+      playerButtons.forEach(btn => btn.classList.remove('active'));
+      playerContainers.forEach(container => container.classList.remove('active'));
+      
+      document.getElementById(option + '-btn').classList.add('active');
+      document.getElementById(option + '-player').classList.add('active');
+    }
+  </script>
+</body>
+</html>
+
+

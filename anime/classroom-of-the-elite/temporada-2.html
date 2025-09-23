@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mundo Otaku Latino - Catálogo de Anime</title>
+  <style>
+    :root {
+      --primary-color: #ff5cad;
+      --secondary-color: #ff8a80;
+      --background-start: #0f0f23;
+      --background-end: #2d1b69;
+      --text-color: #fff;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --border-color: rgba(255, 92, 173, 0.2);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 50%, var(--background-start) 100%);
+      color: var(--text-color);
+      min-height: 100vh;
+    }
+
+    .header {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--primary-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .main-content {
+      padding: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      border: none;
+      border-radius: 25px;
+      color: var(--text-color);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 92, 173, 0.4);
+    }
+
+    .title-container {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .season-title {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .episode-title {
+        font-size: 1.5rem;
+        color: var(--secondary-color);
+    }
+
+    .contenedor-video {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 2rem;
+      border: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .player-options {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .player-btn {
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .player-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 92, 173, 0.4);
+    }
+
+    .player-btn.active {
+      background: linear-gradient(45deg, #4CAF50, #45a049);
+      box-shadow: 0 0 15px #4CAF50;
+    }
+
+    .reproductor-video {
+      height: 500px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      background: #000;
+    }
+
+    .player-container {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .player-container.active {
+      display: block;
+    }
+
+    .player-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .episodes-container {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 2rem;
+        border: 1px solid var(--border-color);
+    }
+
+    .episodes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .episode-item {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-color);
+        padding: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .episode-item:hover, .episode-item.active {
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        transform: translateY(-3px);
+        border-color: var(--primary-color);
+    }
+
+    .episode-number {
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    .episode-title-text {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .episodes-grid {
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        }
+        .reproductor-video {
+            height: 300px;
+        }
+    }
+
+    /* Video Protection Styles */
+    .player-container {
+      position: relative;
+    }
+
+    .player-container iframe {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .reproductor-video {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .video-overlay.active {
+      pointer-events: auto;
+    }
+  </style>
+  <link rel="stylesheet" href="../../css/responsive-style.css">
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">🧧Mundo Otaku Latino</div>
+    <a href="../../html/catalogo.html" class="back-btn">🏠 Inicio</a>
+  </div>
+
+  <div class="main-content">
+    <a href="temporadas.html" class="back-btn" id="back-button">← Volver a Classroom of the Elite</a>
+
+    <div class="title-container">
+        <h1 class="season-title">Classroom of the Elite - Temporada 2</h1>
+        <h2 class="episode-title" id="current-episode-title">Cargando...</h2>
+    </div>
+
+    <div class="contenedor-video">
+      <div class="player-options">
+        <button id="opcion1-btn" class="player-btn" onclick="switchPlayer('opcion1')">OPCIÓN 1</button>
+        <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÓN 2</button>
+        <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÓN 3</button>
+        <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÓN 4</button>
+      </div>
+      <div class="reproductor-video">
+        <div class="player-container" id="opcion1-player">
+          <iframe src="https://sendvid.com/embed/2cjx6qd5" frameborder="0" allowfullscreen oncontextmenu="return false;"></iframe>
+          <div class="video-overlay" oncontextmenu="return false;" onmousedown="if(event.button==2) return false;"></div>
+        </div>
+        <div class="player-container" id="opcion2-player" style="display: none;">
+          <iframe src="https://sendvid.com/embed/2cjx6qd5" frameborder="0" allowfullscreen oncontextmenu="return false;"></iframe>
+          <div class="video-overlay" oncontextmenu="return false;" onmousedown="if(event.button==2) return false;"></div>
+        </div>
+        <div class="player-container" id="opcion3-player" style="display: none;">
+          <iframe src="https://sendvid.com/embed/2cjx6qd5" frameborder="0" allowfullscreen oncontextmenu="return false;"></iframe>
+          <div class="video-overlay" oncontextmenu="return false;" onmousedown="if(event.button==2) return false;"></div>
+        </div>
+        <div class="player-container" id="opcion4-player" style="display: none;">
+          <iframe src="https://sendvid.com/embed/2cjx6qd5" frameborder="0" allowfullscreen oncontextmenu="return false;"></iframe>
+          <div class="video-overlay" oncontextmenu="return false;" onmousedown="if(event.button==2) return false;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="episodes-container">
+        <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
+        <div class="episodes-grid" id="episodes-grid">
+            <!-- Los episodios se generarán con JavaScript -->
+        </div>
+    </div>
+
+  </div>
+
+  <script>
+    window.episodes2 = [
+        { num: 1, title: "Un nuevo reto", op1: "https://sendvid.com/embed/2cjx6qd5", op2: "", op3: "", op4: "" },
+        { num: 2, title: "El poder de la alianza", op1: "https://sendvid.com/embed/m4gwsrbq", op2: "", op3: "", op4: "" },
+        { num: 3, title: "La verdad oculta", op1: "https://sendvid.com/embed/uawkjn4i", op2: "", op3: "", op4: "" },
+        { num: 4, title: "La estrategia perfecta", op1: "https://sendvid.com/embed/7o6u6pnx", op2: "", op3: "", op4: "" },
+        { num: 5, title: "El precio de la victoria", op1: "https://sendvid.com/embed/ifgu7fkr", op2: "", op3: "", op4: "" },
+        { num: 6, title: "El juego del destino", op1: "https://sendvid.com/embed/loj5ac85", op2: "", op3: "", op4: "" },
+        { num: 7, title: "La decisión final", op1: "https://sendvid.com/embed/fuvtc8ge", op2: "", op3: "", op4: "" },
+        { num: 8, title: "El último movimiento", op1: "https://sendvid.com/embed/hc7ryiqw", op2: "", op3: "", op4: "" },
+        { num: 9, title: "La verdadera prueba", op1: "https://sendvid.com/embed/kh6lw72w", op2: "", op3: "", op4: "" },
+        { num: 10, title: "El momento decisivo", op1: "https://sendvid.com/embed/vqiy7u3c", op2: "", op3: "", op4: "" },
+        { num: 11, title: "La revelación", op1: "https://sendvid.com/embed/zc68jfsh", op2: "", op3: "", op4: "" },
+        { num: 12, title: "El poder del conocimiento", op1: "https://sendvid.com/embed/6v5m3k2j", op2: "", op3: "", op4: "" },
+        { num: 13, title: "La conclusión", op1: "https://sendvid.com/embed/o5obe22n", op2: "", op3: "", op4: "" }
+    ];
+
+    window.episodesGrid2 = document.getElementById('episodes-grid');
+    window.currentEpisodeTitle2 = document.getElementById('current-episode-title');
+    window.playerIframesMain2 = {
+        opcion1: document.querySelector('#opcion1-player iframe'),
+        opcion2: document.querySelector('#opcion2-player iframe'),
+        opcion3: document.querySelector('#opcion3-player iframe'),
+        opcion4: document.querySelector('#opcion4-player iframe')
+    };
+
+    function switchPlayer(option) {
+      document.querySelectorAll('.player-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.player-container').forEach(container => container.classList.remove('active'));
+      
+      document.getElementById(option + '-btn').classList.add('active');
+      document.getElementById(option + '-player').classList.add('active');
+    }
+
+    function loadEpisode(episode) {
+        window.currentEpisodeTitle2.textContent = `Episodio ${episode.num}: ${episode.title}`;
+
+        window.playerIframesMain2.opcion1.src = episode.op1;
+        window.playerIframesMain2.opcion2.src = episode.op2;
+        window.playerIframesMain2.opcion3.src = episode.op3;
+        window.playerIframesMain2.opcion4.src = episode.op4;
+
+        document.querySelectorAll('.episode-item').forEach(item => item.classList.remove('active'));
+        document.getElementById(`ep-${episode.num}`).classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        window.episodes2.forEach(ep => {
+            const epItem = document.createElement('div');
+            epItem.className = 'episode-item';
+            epItem.id = `ep-${ep.num}`;
+            epItem.innerHTML = `
+                <span class="episode-number">EP ${ep.num}</span>
+                <span class="episode-title-text">${ep.title}</span>
+            `;
+            epItem.onclick = () => loadEpisode(ep);
+            window.episodesGrid2.appendChild(epItem);
+        });
+
+        // Cargar el primer episodio por defecto
+        if (window.episodes2.length > 0) {
+            loadEpisode(window.episodes2[0]);
+        }
+
+        // Activar el primer reproductor por defecto
+        switchPlayer('opcion1');
+    });
+  </script>
+
+  <script>
+    // Protección total de la página
+    document.addEventListener('DOMContentLoaded', function() {
+      // Bloquear todos los menús contextuales
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      });
+
+      // Bloquear selección y arrastre en toda la página
+      document.body.onselectstart = function() { return false; };
+      document.body.ondragstart = function() { return false; };
+
+      // Bloquear atajos de teclado para abrir nueva ventana/pestaña, descargar, inspeccionar, imprimir, ver código fuente
+      document.addEventListener('keydown', function(e) {
+        // Ctrl+N, Ctrl+T, Ctrl+P, Ctrl+S, Ctrl+U, Ctrl+Shift+I, F12, Alt+F4
+        if (
+          (e.ctrlKey && (e.key === 'n' || e.key === 't' || e.key === 'p' || e.key === 's' || e.key === 'u')) ||
+          (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) ||
+          (e.key === 'F12') ||
+          (e.altKey && e.key === 'F4')
+        ) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      });
+
+      // Bloquear PrintScreen
+      document.addEventListener('keyup', function(e) {
+        if (e.key === 'PrintScreen') {
+          navigator.clipboard.writeText('');
+        }
+      });
+
+      // Bloquear todos los enlaces para que no abran nueva pestaña/ventana ni descarguen
+      document.querySelectorAll('a').forEach(function(link) {
+        link.setAttribute('target', '_self');
+        link.setAttribute('download', '');
+        link.addEventListener('click', function(e) {
+          if (link.hasAttribute('download')) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+        });
+      });
+
+      // Protección de los iframes (solo permitir pantalla completa y reproducción)
+      document.querySelectorAll('iframe').forEach(function(iframe) {
+        // Bloquear menú contextual
+        iframe.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+        // Intentar bloquear descargas y navegación en el iframe
+        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-fullscreen');
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Bloquear menú contextual en los iframes
+    const iframes = document.querySelectorAll('iframe');
+    iframes.forEach(function(iframe) {
+      iframe.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      });
+
+      // Permitir reproducción y pantalla completa
+      iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-fullscreen');
+
+      // Bloquear interacción con el contenido del iframe solo para copiar dirección
+      iframe.addEventListener('mousedown', function(e) {
+        if (e.button === 2) { // Clic derecho
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      });
+    });
+
+    // Bloquear teclas específicas para evitar acciones como guardar o copiar
+    document.addEventListener('keydown', function(e) {
+      if (
+        e.key === 'F12' || 
+        (e.ctrlKey && e.key === 's') || 
+        (e.ctrlKey && e.key === 'u') || 
+        (e.ctrlKey && e.key === 'p') || 
+        (e.ctrlKey && e.shiftKey && e.key === 'I')
+      ) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    });
+  });
+  </script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const playerIframes = {
+      opcion1: document.querySelector('#opcion1-player iframe'),
+      opcion2: document.querySelector('#opcion2-player iframe'),
+      opcion3: document.querySelector('#opcion3-player iframe'),
+      opcion4: document.querySelector('#opcion4-player iframe')
+    };
+
+    Object.keys(playerIframes).forEach(option => {
+      const iframe = playerIframes[option];
+
+      // Configurar sandbox para cada iframe
+      iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-fullscreen');
+
+      // Bloquear menú contextual
+      iframe.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      });
+
+      // Bloquear interacción con el contenido del iframe
+      iframe.addEventListener('mousedown', function(e) {
+        if (e.button === 2) { // Clic derecho
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      });
+    });
+
+    // Función para cambiar entre reproductores
+    function switchPlayer(option) {
+      document.querySelectorAll('.player-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.player-container').forEach(container => container.classList.remove('active'));
+
+      document.getElementById(option + '-btn').classList.add('active');
+      document.getElementById(option + '-player').classList.add('active');
+    }
+
+    // Activar el primer reproductor por defecto
+    switchPlayer('opcion1');
+  });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Manejador para el botón de inicio
+      const homeButton = document.querySelector('.back-btn[href="../../html/catalogo.html"]');
+      homeButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = '../../html/index.html';
+      });
+
+      // Manejador para el botón de volver
+      const backButton = document.getElementById('back-button');
+      backButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'temporadas.html';
+      });
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,188 @@
+/* === RESPONSIVE DESIGN === */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .container {
+    padding: 1.5rem;
+  }
+  
+  .anime-title {
+    font-size: 2.5rem;
+  }
+  
+  .episodes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    padding: 1rem;
+    backdrop-filter: blur(20px);
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  .anime-info {
+    padding: 1.5rem;
+  }
+  
+  .anime-title {
+    font-size: 2rem;
+  }
+  
+  .episode-title {
+    font-size: 1.2rem;
+  }
+  
+  .contenedor-video {
+    padding: 1rem;
+  }
+  
+  .player-options {
+    gap: 0.5rem;
+  }
+  
+  .player-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.8rem;
+  }
+  
+  .reproductor-video {
+    aspect-ratio: 16/9;
+  }
+  
+  .episodes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.8rem;
+  }
+  
+  .episode-item {
+    padding: 1rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .ad-banner {
+    padding: 2rem 1rem;
+  }
+  
+  .ad-banner h3 {
+    font-size: 1.4rem;
+  }
+  
+  .ad-timer {
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .skip-ad-btn {
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+  
+  .ad-info {
+    bottom: 10px;
+    left: 10px;
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.4rem;
+  }
+  
+  .anime-title {
+    font-size: 1.8rem;
+  }
+  
+  .player-options {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .player-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .episodes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  
+  .episode-item {
+    padding: 0.8rem 0.3rem;
+    font-size: 0.8rem;
+  }
+  
+  .ad-content {
+    padding: 1rem;
+  }
+}
+
+/* Pantallas ultra anchas */
+@media (min-width: 1400px) {
+  .episodes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+/* Modo oscuro mejorado para OLED */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-start: #000000;
+    --background-mid: #0a0a0a;
+    --background-end: #1a1a1a;
+  }
+}
+
+/* Animaciones reducidas para usuarios sensibles */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Soporte para pantallas táctiles */
+@media (hover: none) and (pointer: coarse) {
+  .episode-item:hover,
+  .player-btn:hover,
+  .nav-link:hover {
+    transform: none;
+  }
+  
+  .episode-item:active,
+  .player-btn:active {
+    transform: scale(0.95);
+  }
+}
