@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mundo Otaku Latino - Cat√°logo de Anime</title>
-  <link rel="stylesheet" href="../../css/responsive-style.css">
+  <title>Chainsaw Man - Temporada 1 | Mundo Otaku Latino</title>
+  <link rel="icon" type="image/x-icon" href="../../img/demon-slayer.ico">
   <style>
     :root {
       --primary-color: #ff5cad;
       --secondary-color: #ff8a80;
       --background-start: #0f0f23;
       --background-end: #2d1b69;
+      --card-bg: rgba(0, 0, 0, 0.6);
+      --border-color: rgba(255, 92, 173, 0.3);
       --text-color: #fff;
-      --card-bg: rgba(255, 255, 255, 0.05);
-      --border-color: rgba(255, 92, 173, 0.2);
     }
 
     * {
@@ -24,70 +24,75 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 50%, var(--background-start) 100%);
+      background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
       color: var(--text-color);
       min-height: 100vh;
+      line-height: 1.6;
     }
 
     .header {
       background: rgba(0, 0, 0, 0.9);
       padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       backdrop-filter: blur(10px);
       border-bottom: 2px solid var(--primary-color);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
 
     .logo {
       font-size: 1.8rem;
       font-weight: bold;
       background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-      background-clip: text;
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .main-content {
-      padding: 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
     .back-btn {
-      display: inline-block;
-      padding: 0.75rem 2rem;
-      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-      border: none;
-      border-radius: 25px;
-      color: var(--text-color);
+      background: rgba(255, 92, 173, 0.2);
+      color: #fff;
+      border: 1px solid var(--primary-color);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
       text-decoration: none;
-      margin-bottom: 2rem;
+      display: inline-flex;
+      align-items: center;
       transition: all 0.3s ease;
-      font-weight: 500;
+      font-size: 0.9rem;
     }
 
     .back-btn:hover {
+      background: var(--primary-color);
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 92, 173, 0.4);
+      box-shadow: 0 4px 12px rgba(255, 92, 173, 0.3);
+    }
+
+    .main-content {
+      padding: 6rem 2rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .title-container {
-        text-align: center;
-        margin-bottom: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
     }
 
     .season-title {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
     }
 
     .episode-title {
-        font-size: 1.5rem;
-        color: var(--secondary-color);
+      font-size: 1.5rem;
+      color: var(--secondary-color);
     }
 
     .contenedor-video {
@@ -152,66 +157,65 @@
     }
 
     .episodes-container {
-        background: var(--card-bg);
-        border-radius: 15px;
-        padding: 2rem;
-        border: 1px solid var(--border-color);
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 2rem;
+      border: 1px solid var(--border-color);
     }
 
     .episodes-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
     }
 
     .episode-item {
-        background: rgba(255, 255, 255, 0.1);
-        color: var(--text-color);
-        padding: 1rem;
-        border-radius: 10px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: 1px solid transparent;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-color);
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
     }
 
     .episode-item:hover, .episode-item.active {
-        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-        transform: translateY(-3px);
-        border-color: var(--primary-color);
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      transform: translateY(-3px);
+      border-color: var(--primary-color);
     }
 
     @media (max-width: 768px) {
-        .episodes-grid {
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        }
-        .reproductor-video {
-            height: 300px;
-        }
+      .episodes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      }
+      .reproductor-video {
+        height: 300px;
+      }
     }
   </style>
 </head>
 <body>
+  <header class="header">
+    <div class="logo">üßß Mundo Otaku Latino</div>
+    <a href="../../html/catalogo.html" class="back-btn">üè† Inicio</a>
+  </header>
 
-  <div class="header">
-    <div class="logo">üßßMundo Otaku Latino</div>
-    <a href="../../html/catalogo.html" class="back-btn">?? Inicio</a>
-  </div>
-
-  <div class="main-content">
-    <a href="temporadas.html" class="back-btn">? Volver a Chainsaw Man</a>
+  <main class="main-content">
+    <a href="chainsaw-man.html" class="back-btn">‚Üê ‚Üê Volver a Chainsaw Man</a>
 
     <div class="title-container">
-        <h1 class="season-title">Chainsaw Man - Temporada 1</h1>
-        <h2 class="episode-title" id="current-episode-title">Cargando...</h2>
+      <h1 class="season-title">Chainsaw Man - Temporada 1</h1>
+      <h2 class="episode-title" id="current-episode-title">Cargando...</h2>
     </div>
 
     <div class="contenedor-video">
       <div class="player-options">
-        <button id="opcion1-btn" class="player-btn" onclick="switchPlayer('opcion1')">OPCI”N 1</button>
-        <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCI”N 2</button>
-        <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCI”N 3</button>
-        <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCI”N 4</button>
+        <button id="opcion1-btn" class="player-btn" onclick="switchPlayer('opcion1')">OPCI√ìN 1</button>
+        <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCI√ìN 2</button>
+        <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCI√ìN 3</button>
+        <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCI√ìN 4</button>
       </div>
       <div class="reproductor-video">
         <div id="opcion1-player" class="player-container">
@@ -230,37 +234,36 @@
     </div>
 
     <div class="episodes-container">
-        <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
-        <div class="episodes-grid" id="episodes-grid">
-            <!-- Los episodios se generar·n con JavaScript -->
-        </div>
+      <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
+      <div class="episodes-grid" id="episodes-grid">
+        <!-- Los episodios se generar√°n con JavaScript -->
+      </div>
     </div>
-
-  </div>
+  </main>
 
   <script>
     const episodes = [
-        { num: 1, title: "Perro & Motosierra", op1: "https://sendvid.com/embed/h23imitj", op2: "URL_OP2_E1", op3: "URL_OP3_E1", op4: "URL_OP4_E1" },
-        { num: 2, title: "LlegÛ el Inicio", op1: "https://sendvid.com/embed/ztyf2nda", op2: "URL_OP2_E2", op3: "URL_OP3_E2", op4: "URL_OP4_E2" },
-        { num: 3, title: "Servir al Mejor", op1: "https://sendvid.com/embed/fyx4mb85", op2: "URL_OP2_E3", op3: "URL_OP3_E3", op4: "URL_OP4_E3" },
-        { num: 4, title: "Rescate", op1: "https://sendvid.com/embed/12wuailh", op2: "URL_OP2_E4", op3: "URL_OP3_E4", op4: "URL_OP4_E4" },
-        { num: 5, title: "La Pistola es el Demonio", op1: "https://sendvid.com/embed/ui0h089a", op2: "URL_OP2_E5", op3: "URL_OP3_E5", op4: "URL_OP4_E5" },
-        { num: 6, title: "Matar Demonios", op1: "https://sendvid.com/embed/6msi1juq", op2: "URL_OP2_E6", op3: "URL_OP3_E6", op4: "URL_OP4_E6" },
-        { num: 7, title: "El Sabor de un Beso", op1: "https://sendvid.com/embed/xmt7pfb4", op2: "URL_OP2_E7", op3: "URL_OP3_E7", op4: "URL_OP4_E7" },
-        { num: 8, title: "El Sonido de una ExplosiÛn", op1: "https://sendvid.com/embed/jcqgsf3d", op2: "URL_OP2_E8", op3: "URL_OP3_E8", op4: "URL_OP4_E8" },
-        { num: 9, title: "Desde el Catfish", op1: "https://sendvid.com/embed/n3o17q4y", op2: "URL_OP2_E9", op3: "URL_OP3_E9", op4: "URL_OP4_E9" },
-        { num: 10, title: "El Lazo con el Hermano Mayor", op1: "https://sendvid.com/embed/yhpj1eqr", op2: "URL_OP2_E10", op3: "URL_OP3_E10", op4: "URL_OP4_E10" },
-        { num: 11, title: "Inicio del Segundo Periodo", op1: "https://sendvid.com/embed/2b4jwo7h", op2: "URL_OP2_E11", op3: "URL_OP3_E11", op4: "URL_OP4_E11" },
-        { num: 12, title: "La Katana vs el Demonio Motocicleta", op1: "https://sendvid.com/embed/8g7dbdnc", op2: "URL_OP2_E12", op3: "URL_OP3_E12", op4: "URL_OP4_E12" }
+      { num: 1, title: "Perro & Motosierra", op1: "https://sendvid.com/embed/h23imitj", op2: "URL_OP2_E1", op3: "URL_OP3_E1", op4: "URL_OP4_E1" },
+      { num: 2, title: "Lleg√≥ el Inicio", op1: "https://sendvid.com/embed/ztyf2nda", op2: "URL_OP2_E2", op3: "URL_OP3_E2", op4: "URL_OP4_E2" },
+      { num: 3, title: "Servir al Mejor", op1: "https://sendvid.com/embed/fyx4mb85", op2: "URL_OP2_E3", op3: "URL_OP3_E3", op4: "URL_OP4_E3" },
+      { num: 4, title: "Rescate", op1: "https://sendvid.com/embed/12wuailh", op2: "URL_OP2_E4", op3: "URL_OP3_E4", op4: "URL_OP4_E4" },
+      { num: 5, title: "La Pistola es el Demonio", op1: "https://sendvid.com/embed/ui0h089a", op2: "URL_OP2_E5", op3: "URL_OP3_E5", op4: "URL_OP4_E5" },
+      { num: 6, title: "Matar Demonios", op1: "https://sendvid.com/embed/6msi1juq", op2: "URL_OP2_E6", op3: "URL_OP3_E6", op4: "URL_OP4_E6" },
+      { num: 7, title: "El Sabor de un Beso", op1: "https://sendvid.com/embed/xmt7pfb4", op2: "URL_OP2_E7", op3: "URL_OP3_E7", op4: "URL_OP4_E7" },
+      { num: 8, title: "El Sonido de una Explosi√≥n", op1: "https://sendvid.com/embed/jcqgsf3d", op2: "URL_OP2_E8", op3: "URL_OP3_E8", op4: "URL_OP4_E8" },
+      { num: 9, title: "Desde el Catfish", op1: "https://sendvid.com/embed/n3o17q4y", op2: "URL_OP2_E9", op3: "URL_OP3_E9", op4: "URL_OP4_E9" },
+      { num: 10, title: "El Lazo con el Hermano Mayor", op1: "https://sendvid.com/embed/yhpj1eqr", op2: "URL_OP2_E10", op3: "URL_OP3_E10", op4: "URL_OP4_E10" },
+      { num: 11, title: "Inicio del Segundo Periodo", op1: "https://sendvid.com/embed/2b4jwo7h", op2: "URL_OP2_E11", op3: "URL_OP3_E11", op4: "URL_OP4_E11" },
+      { num: 12, title: "La Katana vs el Demonio Motocicleta", op1: "https://sendvid.com/embed/8g7dbdnc", op2: "URL_OP2_E12", op3: "URL_OP3_E12", op4: "URL_OP4_E12" }
     ];
 
     const episodesGrid = document.getElementById('episodes-grid');
     const currentEpisodeTitle = document.getElementById('current-episode-title');
     const playerIframes = {
-        opcion1: document.querySelector('#opcion1-player iframe'),
-        opcion2: document.querySelector('#opcion2-player iframe'),
-        opcion3: document.querySelector('#opcion3-player iframe'),
-        opcion4: document.querySelector('#opcion4-player iframe')
+      opcion1: document.querySelector('#opcion1-player iframe'),
+      opcion2: document.querySelector('#opcion2-player iframe'),
+      opcion3: document.querySelector('#opcion3-player iframe'),
+      opcion4: document.querySelector('#opcion4-player iframe')
     };
 
     function switchPlayer(option) {
@@ -272,38 +275,35 @@
     }
 
     function loadEpisode(episode) {
-        currentEpisodeTitle.textContent = `Episodio ${episode.num}: ${episode.title}`;
+      currentEpisodeTitle.textContent = `Episodio ${episode.num}: ${episode.title}`;
 
-        playerIframes.opcion1.src = episode.op1;
-        playerIframes.opcion2.src = episode.op2;
-        playerIframes.opcion3.src = episode.op3;
-        playerIframes.opcion4.src = episode.op4;
+      playerIframes.opcion1.src = episode.op1;
+      playerIframes.opcion2.src = episode.op2;
+      playerIframes.opcion3.src = episode.op3;
+      playerIframes.opcion4.src = episode.op4;
 
-        document.querySelectorAll('.episode-item').forEach(item => item.classList.remove('active'));
-        document.getElementById(`ep-${episode.num}`).classList.add('active');
+      document.querySelectorAll('.episode-item').forEach(item => item.classList.remove('active'));
+      document.getElementById(`ep-${episode.num}`).classList.add('active');
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-        episodes.forEach(ep => {
-            const epItem = document.createElement('div');
-            epItem.className = 'episode-item';
-            epItem.id = `ep-${ep.num}`;
-            epItem.textContent = `Episodio ${ep.num}`;
-            epItem.onclick = () => loadEpisode(ep);
-            episodesGrid.appendChild(epItem);
-        });
+      episodes.forEach(ep => {
+        const epItem = document.createElement('div');
+        epItem.className = 'episode-item';
+        epItem.id = `ep-${ep.num}`;
+        epItem.textContent = `Episodio ${ep.num}`;
+        epItem.onclick = () => loadEpisode(ep);
+        episodesGrid.appendChild(epItem);
+      });
 
-        // Cargar el primer episodio por defecto
-        if (episodes.length > 0) {
-            loadEpisode(episodes[0]);
-        }
+      // Cargar el primer episodio por defecto
+      if (episodes.length > 0) {
+        loadEpisode(episodes[0]);
+      }
 
-        // Activar el primer reproductor por defecto
-        switchPlayer('opcion1');
+      // Activar el primer reproductor por defecto
+      switchPlayer('opcion1');
     });
   </script>
 </body>
 </html>
-
-
-

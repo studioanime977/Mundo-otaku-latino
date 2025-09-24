@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+const fs = require('fs');
+
+let catalogoContent = `<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -331,151 +333,41 @@
     <!-- Contenido principal -->
     <div class="main-content">
       <h2 class="section-title">🎌 Catálogo de Anime</h2>
-      <div class="anime-grid">
+      <div class="anime-grid">`;
+
+// Agregar todas las cards de anime con rutas corregidas
+const animeCards = [
+  { name: 'attack-on-titan', title: 'Attack on Titan', img: 'Attack on Titan S1.jpg', desc: 'La humanidad lucha por sobrevivir contra los titanes gigantes.', status: 'Completo', rating: '9.0' },
+  { name: 'demon-slayer', title: 'Kimetsu no Yaiba', img: 'Kimetsu No Yaiba temporada 1.png', desc: 'Tanjiro se convierte en cazador de demonios para salvar a su hermana.', status: 'Completo', rating: '8.7' },
+  { name: 'jujutsu-kaisen', title: 'Jujutsu Kaisen', img: 'Jujutsu Kaisen S1.jpg', desc: 'Yuji Itadori se une al mundo de la hechicería para combatir maldiciones.', status: 'En emisión', rating: '8.6' },
+  { name: 'my-hero-academia', title: 'My Hero Academia', img: 'BokunoHeroAcademia S1.png', desc: 'Izuku Midoriya sueña con convertirse en el héroe número uno.', status: 'En emisión', rating: '8.5' },
+  { name: 'one-piece', title: 'One Piece', img: 'One Piece East Blue.png', desc: 'Monkey D. Luffy busca el tesoro más grande del mundo.', status: 'En emisión', rating: '9.1' },
+  { name: 'naruto', title: 'Naruto', img: 'Naruto Classic.jpg', desc: 'Un ninja adolescente busca reconocimiento y sueña con ser Hokage.', status: 'Completo', rating: '8.4' },
+  { name: 'dragon-ball', title: 'Dragon Ball', img: 'Dragon Ball Z.jpg', desc: 'Goku y sus amigos protegen la Tierra de poderosos enemigos.', status: 'Completo', rating: '8.8' },
+  { name: 'tokyo-ghoul', title: 'Tokyo Ghoul', img: 'Tokyo Ghoul S1.jpg', desc: 'Ken Kaneki se convierte en un ghoul y lucha por su humanidad.', status: 'Completo', rating: '7.8' },
+  { name: 'one-punch-man', title: 'One Punch Man', img: 'One Punch Man S1.jpg', desc: 'Saitama es un héroe que puede vencer a cualquier enemigo de un golpe.', status: 'En emisión', rating: '8.9' },
+  { name: 'mob-psycho-100', title: 'Mob Psycho 100', img: 'Mob Psycho 100 S1.jpg', desc: 'Un estudiante con poderes psíquicos intenta vivir una vida normal.', status: 'Completo', rating: '8.8' },
+  { name: 'solo-leveling', title: 'Solo Leveling', img: 'Solo Leveling season 1.jpg', desc: 'Sung Jin-Woo evoluciona de ser el cazador más débil al más fuerte.', status: 'En emisión', rating: '8.9' },
+  { name: 'chainsaw-man', title: 'Chainsaw Man', img: 'Chainsaw Man S1.jpg', desc: 'Denji se fusiona con su demonio mascota para convertirse en Chainsaw Man.', status: 'En emisión', rating: '8.4' }
+];
+
+animeCards.forEach(anime => {
+  catalogoContent += `
         <div class="anime-card">
-          <img src="../img/Attack on Titan S1.jpg" alt="Attack on Titan">
+          <img src="../img/${anime.img}" alt="${anime.title}">
           <div class="anime-info">
-            <h3>Attack on Titan</h3>
-            <p>La humanidad lucha por sobrevivir contra los titanes gigantes.</p>
+            <h3>${anime.title}</h3>
+            <p>${anime.desc}</p>
             <div class="anime-status">
-              <span class="status-badge">Completo</span>
-              <span class="anime-rating">⭐ 9.0</span>
+              <span class="status-badge">${anime.status}</span>
+              <span class="anime-rating">⭐ ${anime.rating}</span>
             </div>
           </div>
-          <a href="../public/anime/attack-on-titan/attack-on-titan.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Kimetsu No Yaiba temporada 1.png" alt="Kimetsu no Yaiba">
-          <div class="anime-info">
-            <h3>Kimetsu no Yaiba</h3>
-            <p>Tanjiro se convierte en cazador de demonios para salvar a su hermana.</p>
-            <div class="anime-status">
-              <span class="status-badge">Completo</span>
-              <span class="anime-rating">⭐ 8.7</span>
-            </div>
-          </div>
-          <a href="../public/anime/demon-slayer/demon-slayer.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Jujutsu Kaisen S1.jpg" alt="Jujutsu Kaisen">
-          <div class="anime-info">
-            <h3>Jujutsu Kaisen</h3>
-            <p>Yuji Itadori se une al mundo de la hechicería para combatir maldiciones.</p>
-            <div class="anime-status">
-              <span class="status-badge">En emisión</span>
-              <span class="anime-rating">⭐ 8.6</span>
-            </div>
-          </div>
-          <a href="../public/anime/jujutsu-kaisen/jujutsu-kaisen.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/BokunoHeroAcademia S1.png" alt="My Hero Academia">
-          <div class="anime-info">
-            <h3>My Hero Academia</h3>
-            <p>Izuku Midoriya sueña con convertirse en el héroe número uno.</p>
-            <div class="anime-status">
-              <span class="status-badge">En emisión</span>
-              <span class="anime-rating">⭐ 8.5</span>
-            </div>
-          </div>
-          <a href="../public/anime/my-hero-academia/my-hero-academia.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/One Piece East Blue.png" alt="One Piece">
-          <div class="anime-info">
-            <h3>One Piece</h3>
-            <p>Monkey D. Luffy busca el tesoro más grande del mundo.</p>
-            <div class="anime-status">
-              <span class="status-badge">En emisión</span>
-              <span class="anime-rating">⭐ 9.1</span>
-            </div>
-          </div>
-          <a href="../public/anime/one-piece/one-piece.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Naruto Classic.jpg" alt="Naruto">
-          <div class="anime-info">
-            <h3>Naruto</h3>
-            <p>Un ninja adolescente busca reconocimiento y sueña con ser Hokage.</p>
-            <div class="anime-status">
-              <span class="status-badge">Completo</span>
-              <span class="anime-rating">⭐ 8.4</span>
-            </div>
-          </div>
-          <a href="../public/anime/naruto/naruto.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Dragon Ball Z.jpg" alt="Dragon Ball">
-          <div class="anime-info">
-            <h3>Dragon Ball</h3>
-            <p>Goku y sus amigos protegen la Tierra de poderosos enemigos.</p>
-            <div class="anime-status">
-              <span class="status-badge">Completo</span>
-              <span class="anime-rating">⭐ 8.8</span>
-            </div>
-          </div>
-          <a href="../public/anime/dragon-ball/dragon-ball.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Tokyo Ghoul S1.jpg" alt="Tokyo Ghoul">
-          <div class="anime-info">
-            <h3>Tokyo Ghoul</h3>
-            <p>Ken Kaneki se convierte en un ghoul y lucha por su humanidad.</p>
-            <div class="anime-status">
-              <span class="status-badge">Completo</span>
-              <span class="anime-rating">⭐ 7.8</span>
-            </div>
-          </div>
-          <a href="../public/anime/tokyo-ghoul/tokyo-ghoul.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/One Punch Man S1.jpg" alt="One Punch Man">
-          <div class="anime-info">
-            <h3>One Punch Man</h3>
-            <p>Saitama es un héroe que puede vencer a cualquier enemigo de un golpe.</p>
-            <div class="anime-status">
-              <span class="status-badge">En emisión</span>
-              <span class="anime-rating">⭐ 8.9</span>
-            </div>
-          </div>
-          <a href="../public/anime/one-punch-man/one-punch-man.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Mob Psycho 100 S1.jpg" alt="Mob Psycho 100">
-          <div class="anime-info">
-            <h3>Mob Psycho 100</h3>
-            <p>Un estudiante con poderes psíquicos intenta vivir una vida normal.</p>
-            <div class="anime-status">
-              <span class="status-badge">Completo</span>
-              <span class="anime-rating">⭐ 8.8</span>
-            </div>
-          </div>
-          <a href="../public/anime/mob-psycho-100/mob-psycho-100.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Solo Leveling season 1.jpg" alt="Solo Leveling">
-          <div class="anime-info">
-            <h3>Solo Leveling</h3>
-            <p>Sung Jin-Woo evoluciona de ser el cazador más débil al más fuerte.</p>
-            <div class="anime-status">
-              <span class="status-badge">En emisión</span>
-              <span class="anime-rating">⭐ 8.9</span>
-            </div>
-          </div>
-          <a href="../public/anime/solo-leveling/solo-leveling.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Chainsaw Man S1.jpg" alt="Chainsaw Man">
-          <div class="anime-info">
-            <h3>Chainsaw Man</h3>
-            <p>Denji se fusiona con su demonio mascota para convertirse en Chainsaw Man.</p>
-            <div class="anime-status">
-              <span class="status-badge">En emisión</span>
-              <span class="anime-rating">⭐ 8.4</span>
-            </div>
-          </div>
-          <a href="../public/anime/chainsaw-man/chainsaw-man.html" class="anime-link"></a>
-        </div>
+          <a href="../public/anime/${anime.name}/${anime.name}.html" class="anime-link"></a>
+        </div>`;
+});
+
+catalogoContent += `
       </div>
     </div>
   </div>
@@ -522,4 +414,7 @@
     });
   </script>
 </body>
-</html>
+</html>`;
+
+fs.writeFileSync('C:\\Users\\Admin\\Desktop\\Mundo-otaku-latino\\html\\catalogo.html', catalogoContent, 'utf8');
+console.log('✅ Catálogo restaurado con estructura original y rutas corregidas!');

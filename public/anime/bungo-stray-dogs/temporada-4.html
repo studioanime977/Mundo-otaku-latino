@@ -208,15 +208,15 @@
   </header>
 
   <main class="main-content">
-    <a href="temporadas.html" class="back-btn">? Volver a Temporadas</a>
+    <a href="bungo-stray-dogs.html" class="back-btn">‚Üê ‚Üê Volver a Bungo Stray Dogs</a>
 
     <div class="video-and-episodes">
       <div class="video-player-section">
         <div class="video-player-container">
           <div class="player-options">
-            <button class="player-btn active" id="opcion1-btn" onclick="switchPlayer('opcion1')">OpciÛn 1</button>
-            <button class="player-btn" id="opcion2-btn" onclick="switchPlayer('opcion2')">OpciÛn 2</button>
-            <button class="player-btn" id="opcion3-btn" onclick="switchPlayer('opcion3')">OpciÛn 3</button>
+            <button class="player-btn active" id="opcion1-btn" onclick="switchPlayer('opcion1')">OpciÔøΩn 1</button>
+            <button class="player-btn" id="opcion2-btn" onclick="switchPlayer('opcion2')">OpciÔøΩn 2</button>
+            <button class="player-btn" id="opcion3-btn" onclick="switchPlayer('opcion3')">OpciÔøΩn 3</button>
           </div>
           <div class="video-player">
             <iframe id="video-iframe" src="" allowfullscreen></iframe>
@@ -228,24 +228,24 @@
       </div>
 
       <div class="episodes-list-section" id="episodes-list">
-        <!-- La lista de episodios se generar· aquÌ -->
+        <!-- La lista de episodios se generarÔøΩ aquÔøΩ -->
       </div>
     </div>
   </main>
 
   <script>
     const episodes = [
-        { num: 1, title: 'El espadachÌn solitario y el detective famoso', op1: 'URL_OP1_EP1', op2: 'URL_OP2_EP1', op3: 'URL_OP3_EP1' },
-        { num: 2, title: 'El dÌa es un sueÒo, la noche es real', op1: 'URL_OP1_EP2', op2: 'URL_OP2_EP2', op3: 'URL_OP3_EP2' },
-        { num: 3, title: 'El secreto de la fundaciÛn de la agencia de detectives', op1: 'URL_OP1_EP3', op2: 'URL_OP2_EP3', op3: 'URL_OP3_EP3' },
+        { num: 1, title: 'El espadachÔøΩn solitario y el detective famoso', op1: 'URL_OP1_EP1', op2: 'URL_OP2_EP1', op3: 'URL_OP3_EP1' },
+        { num: 2, title: 'El dÔøΩa es un sueÔøΩo, la noche es real', op1: 'URL_OP1_EP2', op2: 'URL_OP2_EP2', op3: 'URL_OP3_EP2' },
+        { num: 3, title: 'El secreto de la fundaciÔøΩn de la agencia de detectives', op1: 'URL_OP1_EP3', op2: 'URL_OP2_EP3', op3: 'URL_OP3_EP3' },
         { num: 4, title: 'Un asesinato perfecto y un asesino (Parte 1)', op1: 'URL_OP1_EP4', op2: 'URL_OP2_EP4', op3: 'URL_OP3_EP4' },
         { num: 5, title: 'Un asesinato perfecto y un asesino (Parte 2)', op1: 'URL_OP1_EP5', op2: 'URL_OP2_EP5', op3: 'URL_OP3_EP5' },
-        { num: 6, title: 'Domingo tr·gico', op1: 'URL_OP1_EP6', op2: 'URL_OP2_EP6', op3: 'URL_OP3_EP6' },
+        { num: 6, title: 'Domingo trÔøΩgico', op1: 'URL_OP1_EP6', op2: 'URL_OP2_EP6', op3: 'URL_OP3_EP6' },
         { num: 7, title: 'Perros cazando perros', op1: 'URL_OP1_EP7', op2: 'URL_OP2_EP7', op3: 'URL_OP3_EP7' },
-        { num: 8, title: 'T˙, gusano insignificante', op1: 'URL_OP1_EP8', op2: 'URL_OP2_EP8', op3: 'URL_OP3_EP8' },
-        { num: 9, title: 'Un sueÒo de mariposas', op1: 'URL_OP1_EP9', op2: 'URL_OP2_EP9', op3: 'URL_OP3_EP9' },
-        { num: 10, title: 'En la prisiÛn', op1: 'URL_OP1_EP10', op2: 'URL_OP2_EP10', op3: 'URL_OP3_EP10' },
-        { num: 11, title: 'El escape de la prisiÛn', op1: 'URL_OP1_EP11', op2: 'URL_OP2_EP11', op3: 'URL_OP3_EP11' },
+        { num: 8, title: 'TÔøΩ, gusano insignificante', op1: 'URL_OP1_EP8', op2: 'URL_OP2_EP8', op3: 'URL_OP3_EP8' },
+        { num: 9, title: 'Un sueÔøΩo de mariposas', op1: 'URL_OP1_EP9', op2: 'URL_OP2_EP9', op3: 'URL_OP3_EP9' },
+        { num: 10, title: 'En la prisiÔøΩn', op1: 'URL_OP1_EP10', op2: 'URL_OP2_EP10', op3: 'URL_OP3_EP10' },
+        { num: 11, title: 'El escape de la prisiÔøΩn', op1: 'URL_OP1_EP11', op2: 'URL_OP2_EP11', op3: 'URL_OP3_EP11' },
         { num: 12, title: 'El mayordomo y el genio', op1: 'URL_OP1_EP12', op2: 'URL_OP2_EP12', op3: 'URL_OP3_EP12' },
         { num: 13, title: 'El genio del desastre', op1: 'URL_OP1_EP13', op2: 'URL_OP2_EP13', op3: 'URL_OP3_EP13' }
     ];
