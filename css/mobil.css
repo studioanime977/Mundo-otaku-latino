@@ -1,0 +1,110 @@
+/* === 📱 OPTIMIZACIÓN PARA MÓVIL === */
+@media (max-width: 768px) {
+  /* 🔝 Header en columna */
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .search-bar {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-bar input {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .user-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .auth-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* 🎴 Season Cards en una sola columna */
+  .seasons-container, 
+  .seasons-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .season-thumbnail {
+    height: 200px;
+  }
+
+  .season-title {
+    font-size: 1.2rem;
+  }
+
+  .season-description {
+    font-size: 0.85rem;
+  }
+
+  .watch-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  /* 📥 Botones de descarga */
+  .servers-grid-compact {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .download-link {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 🔝 Header más compacto */
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .search-bar input {
+    max-width: 220px;
+    font-size: 0.85rem;
+  }
+
+  .auth-btn {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  /* 🎴 Season Cards más pequeñas */
+  .season-thumbnail {
+    height: 160px;
+  }
+
+  .season-title {
+    font-size: 1rem;
+  }
+
+  .season-description {
+    font-size: 0.75rem;
+  }
+
+  /* 📥 Botones de descarga en 1 columna */
+  .servers-grid-compact {
+    grid-template-columns: 1fr;
+  }
+
+  .download-link {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+}

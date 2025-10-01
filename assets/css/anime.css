@@ -1,0 +1,491 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f23 0%, #2d1b69 50%, #0f0f23 100%);
+    color: #fff;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  
+  /* HEADER */
+  .header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #ff5cad;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff5cad;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-icon {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-color: #ff5cad;
+    margin-right: 12px;
+  }
+  
+  /* MAIN CONTENT */
+  .main-content {
+    padding-top: 6rem; /* Espacio para el header fijo */
+  }
+
+  .back-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(90deg, #ff5cad, #ff8a80);
+    position: relative;
+    z-index: 100;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 92, 173, 0.3);
+  }
+
+  .header .back-btn {
+      margin-bottom: 0;
+  }
+  
+  .back-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 92, 173, 0.4);
+  }
+  
+  /* ANIME HEADER */
+  .anime-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .anime-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #ff5cad, #ff8a80);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(255, 92, 173, 0.5);
+  }
+  
+  .anime-description {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* SEASON CARDS */
+  .seasons-container, .seasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .season-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 92, 173, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .season-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 92, 173, 0.3);
+    border-color: #ff5cad;
+  }
+  
+  .season-thumbnail {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+  }
+  
+  .season-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .season-card:hover .season-thumbnail img {
+    transform: scale(1.1);
+  }
+  
+  .season-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(45deg, #ff5cad, #ff8a80);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .season-play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 92, 173, 0.9);
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .season-card:hover .season-play-overlay {
+    opacity: 1;
+  }
+  
+  .season-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ff8a80;
+  }
+  
+  .season-description {
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .season-info {
+    padding: 1.5rem;
+  }
+  
+  .season-btn, .watch-btn {
+    background: linear-gradient(45deg, #ff5cad, #ff8a80);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .season-btn:hover, .watch-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 92, 173, 0.4);
+  }
+
+  /* DOWNLOAD BUTTON */
+  .download-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    font-size: 0.9rem;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(45deg, #c0392b, #a93226);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+  }
+
+  .download-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
+  }
+
+  /* 🎬 Botones de descarga con servidores múltiples */
+  .download-servers-section {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 92, 173, 0.2);
+  }
+
+  .servers-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    font-weight: bold;
+    color: #ff5cad;
+  }
+
+  .servers-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.7rem;
+  }
+
+  .download-link {
+    display: block;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: #fff;
+  }
+
+  /* 🎨 Colores por servidor */
+  .download-link.terabox {
+    background: linear-gradient(45deg, #0078ff, #00b7ff);
+  }
+
+  .download-link.mega {
+    background: linear-gradient(45deg, #ff2d55, #ff6f61);
+  }
+
+  .download-link.mediafire {
+    background: linear-gradient(45deg, #1e90ff, #00bfff);
+  }
+
+  .download-link.dropbox {
+    background: linear-gradient(45deg, #0061ff, #00a2ff);
+  }
+
+  .download-link.fichier {
+    background: linear-gradient(45deg, #ff9800, #ffc107);
+  }
+
+  .download-link.stape {
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+  }
+
+  /* 🔒 Estado no disponible */
+  .unavailable-server {
+    opacity: 0.6;
+    cursor: not-allowed;
+    position: relative;
+  }
+
+  .unavailable-server:hover {
+    opacity: 0.8;
+  }
+
+  /* ✨ Hover general */
+  .download-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 92, 173, 0.4);
+  }
+  
+  /* DOWNLOAD SERVERS */
+  .download-servers-section {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+  }
+  
+  .servers-title {
+    font-size: 0.9rem;
+    color: #ff5cad;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .servers-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 0.5rem;
+  }
+  
+  .download-link {
+    padding: 0.5rem 0.8rem;
+    background: rgba(255, 92, 173, 0.1);
+    border: 1px solid #ff5cad;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: block;
+    font-weight: 500;
+  }
+  
+  .download-link:hover {
+    background: rgba(255, 92, 173, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .download-link.terabox {
+    border-color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+  }
+  .download-link.terabox:hover {
+    background: rgba(76, 175, 80, 0.3);
+  }
+  
+  .download-link.mediafire {
+    border-color: #FF9800;
+    background: rgba(255, 152, 0, 0.1);
+    color: #FF9800;
+  }
+  .download-link.mediafire:hover {
+    background: rgba(255, 152, 0, 0.3);
+  }
+  
+  .download-link.mega {
+    border-color: #ff3c3c;
+    background: rgba(255, 60, 60, 0.1);
+    color: #ff3c3c;
+  }
+  .download-link.mega:hover {
+    background: rgba(255, 60, 60, 0.3);
+  }
+  
+  .download-link.unavailable-server {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: rgba(128, 128, 128, 0.1);
+    border-color: #666;
+    color: #888;
+  }
+  
+  .download-link.unavailable-server:hover {
+    transform: none;
+    background: rgba(128, 128, 128, 0.1);
+  }
+  
+  /* VIDEO PLAYER */
+  .contenedor-video {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 92, 173, 0.2);
+    margin-bottom: 2rem;
+  }
+  
+  .player-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .player-btn {
+    background: linear-gradient(45deg, #ff5cad, #ff8a80);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .player-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 92, 173, 0.4);
+  }
+  
+  .player-btn.active {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+  }
+  
+  .reproductor-video {
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .player-container {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .player-container.active {
+    display: block;
+  }
+  
+  .player-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  /* BANNERS */
+  .banner-ad {
+    text-align: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+  }
+  
+  .banner-ad img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .seasons-container, .seasons-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .anime-title {
+      font-size: 2rem;
+    }
+    
+    .header {
+      padding: 1rem;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .main-content {
+      padding: 8rem 1rem 2rem;
+    }
+  }

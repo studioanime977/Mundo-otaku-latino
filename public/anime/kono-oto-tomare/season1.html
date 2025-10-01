@@ -1,411 +1,445 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0f0f23 0%, #2d1b69 50%, #0f0f23 100%);
-      color: #fff;
-      min-height: 100vh;
-      line-height: 1.6;
-    }
-
-    .header {
-      background: rgba(0, 0, 0, 0.9);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      backdrop-filter: blur(10px);
-      border-bottom: 2px solid #ff5cad;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      background: linear-gradient(45deg, #ff5cad, #ff8a80);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .main-content {
-      padding: 6rem 2rem 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .back-btn {
-      display: inline-block;
-      padding: 0.75rem 2rem;
-      background: linear-gradient(45deg, #ff5cad, #ff8a80);
-      border: none;
-      border-radius: 25px;
-      color: #fff;
-      text-decoration: none;
-      margin-bottom: 2rem;
-      transition: all 0.3s ease;
-      font-weight: 500;
-    }
-
-    .back-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 92, 173, 0.4);
-    }
-
-    .anime-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .anime-title {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(45deg, #ff5cad, #ff8a80);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 30px rgba(255, 92, 173, 0.5);
-    }
-
-    .anime-description {
-      font-size: 1.2rem;
-      color: #ccc;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .seasons-container, .seasons-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .season-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 92, 173, 0.2);
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .season-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(255, 92, 173, 0.3);
-      border-color: #ff5cad;
-    }
-
-    .season-title {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #ff8a80;
-    }
-
-    .season-description, .season-info {
-      color: #ccc;
-      margin-bottom: 1.5rem;
-    }
-
-    .season-btn, .watch-btn {
-      background: linear-gradient(45deg, #ff5cad, #ff8a80);
-      color: white;
-      padding: 0.75rem 2rem;
-      border: none;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 500;
-      display: inline-block;
-      transition: all 0.3s ease;
-      width: 100%;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .season-btn:hover, .watch-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 92, 173, 0.4);
-    }
-
-    .contenedor-video {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 92, 173, 0.2);
-      margin-bottom: 2rem;
-    }
-
-    .player-options {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .player-btn {
-      background: linear-gradient(45deg, #ff5cad, #ff8a80);
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-weight: 500;
-    }
-
-    .player-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 92, 173, 0.4);
-    }
-
-    .player-btn.active {
-      background: linear-gradient(45deg, #4CAF50, #45a049);
-    }
-
-    .reproductor-video {
-      height: 500px;
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .player-container {
-      display: none;
-      width: 100%;
-      height: 100%;
-    }
-
-    .player-container.active {
-      display: block;
-    }
-
-    .player-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 10px;
-    }
-
-    @media (max-width: 768px) {
-      .seasons-container, .seasons-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .anime-title {
-        font-size: 2rem;
-      }
-      
-      .header {
-        padding: 1rem;
-        flex-direction: column;
-        gap: 1rem;
-      }
-      
-      .main-content {
-        padding: 8rem 1rem 2rem;
-      }
-    }
-  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mundo Otaku Latino - Catálogo de Anime</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%); color: #fff; min-height: 100vh; }
-    .header { background: rgba(0, 0, 0, 0.9); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(10px); border-bottom: 2px solid #ff5cad; }
-    .logo { font-size: 1.8rem; font-weight: bold; background: linear-gradient(45deg, #ff5cad, #ff8a80); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .back-btn { display: inline-block; padding: 0.8rem 1.5rem; background: linear-gradient(45deg, #ff5cad, #ff8a80); color: white; text-decoration: none; border-radius: 25px; font-weight: bold; margin-bottom: 2rem; transition: all 0.3s ease; }
-    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255, 92, 173, 0.4); }
-    .main-content { padding: 2rem; max-width: 1200px; margin: 0 auto; }
-    .season-header { text-align: center; margin-bottom: 3rem; }
-    .season-title { font-size: 2.5rem; margin-bottom: 1rem; background: linear-gradient(45deg, #ff5cad, #ff8a80); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .season-description { font-size: 1.1rem; color: #ccc; max-width: 800px; margin: 0 auto; line-height: 1.6; }
-    .episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-    .episode-card { background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 1.5rem; border: 1px solid rgba(255, 92, 173, 0.2); transition: all 0.3s ease; }
-    .episode-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255, 92, 173, 0.3); border-color: #ff5cad; }
-    .episode-number { font-size: 1.2rem; font-weight: bold; color: #ff5cad; margin-bottom: 0.5rem; }
-    .episode-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 0.8rem; color: #fff; }
-    .episode-description { font-size: 0.9rem; color: #ccc; line-height: 1.5; margin-bottom: 1rem; }
-    .download-section { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255, 92, 173, 0.2); }
-    .download-title { font-size: 0.9rem; color: #ff5cad; margin-bottom: 0.5rem; font-weight: bold; }
-    .download-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
-    .download-link { padding: 0.4rem 0.6rem; background: rgba(255, 92, 173, 0.1); border: 1px solid #ff5cad; border-radius: 10px; color: #fff; text-decoration: none; font-size: 0.8rem; text-align: center; transition: all 0.3s ease; display: block; }
-    .download-link:hover { background: rgba(255, 92, 173, 0.3); transform: translateY(-1px); }
-    .download-link.terabox { background: linear-gradient(45deg, #ff9800, #ffb74d); }
-    .unavailable-server { opacity: 0.6; cursor: not-allowed; background: rgba(128, 128, 128, 0.3) !important; }
-    .progress-section { background: rgba(255, 92, 173, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 2rem; text-align: center; }
-    .progress-bar { width: 100%; height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden; margin: 1rem 0; }
-    .progress-fill { height: 100%; background: linear-gradient(45deg, #ff5cad, #ff8a80); transition: width 0.3s ease; }
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
+  <title>Kono Oto Tomare - Temporada 1 - StudioOtaku</title>
   
-    .contenedor-video {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 92, 173, 0.2);
-      margin-bottom: 2rem;
+  <link rel="stylesheet" href="../../../css/temporadas.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    * {
+      font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', Tahoma, Geneva, Verdana, sans-serif !important;
     }
-
+    .main-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 20px;
+    }
+    .left-content {
+      flex: 3;
+      margin-right: 20px;
+    }
+    .right-content {
+      flex: 1;
+      background-color: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+    }
+    .contenedor-video {
+      margin: 20px 0;
+    }
     .player-options {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
+      gap: 10px;
     }
-
     .player-btn {
-      background: linear-gradient(45deg, #ff5cad, #ff8a80);
+      padding: 10px 20px;
+      background-color: #6c63ff;
       color: white;
       border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 25px;
-      font-weight: bold;
+      border-radius: 5px;
       cursor: pointer;
-      transition: all 0.3s ease;
     }
-
-    .player-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255, 92, 173, 0.3);
-    }
-
     .player-btn.active {
-      background: linear-gradient(45deg, #4CAF50, #45a049);
+      background-color: #4a47a3;
     }
-
-    .reproductor-video {
-      position: relative;
-      width: 100%;
-      height: 500px;
+    .episodes-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .episodes-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .episode-btn {
+      padding: 10px;
+      background-color: #6c63ff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .episode-btn.active {
+      background-color: #4a47a3;
+    }
+    .popular-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .popular-item img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      border-radius: 5px;
+    }
+    .popular-item .title {
+      font-size: 14px;
+    }
+    .description {
+      margin-top: 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #2c2c2c;
+      padding: 15px;
       border-radius: 10px;
-      overflow: hidden;
+    }
+    .video-functions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
     }
 
-    .player-container {
-      display: none;
-      width: 100%;
-      height: 100%;
-    }
-
-    .player-container.active {
-      display: block;
-    }
-
-    .player-container iframe {
-      width: 100%;
-      height: 100%;
+    .function-btn {
+      padding: 10px 15px;
+      background-color: #6c63ff;
+      color: white;
       border: none;
-      border-radius: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .function-btn:hover {
+      background-color: #4a47a3;
+    }
+
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .nav-btn {
+      padding: 10px 15px;
+      background-color: #6c63ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .nav-btn:hover {
+      background-color: #4a47a3;
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="logo">🧧Mundo Otaku Latino</div>
-    <div class="user-actions"><a href="../../html/catalogo.html" class="auth-btn">?? Inicio</a></div>
-  </div>
 
-  <div class="main-content">
-    <a href="kono-oto-tomare.html" class="back-btn">← ← Volver a Kono Oto Tomare</a>
+  <header class="header">
+    <a href="../../../index.html" class="logo">StudioOtaku</a>
+    <a href="../../../public/html/catalogo.html" class="back-btn">🏠 Inicio</a>
+  </header>
+
+  <main class="main-content">
+    <div class="left-content">
+      <a href="kono-oto-tomare.html" class="back-btn">← Volver a Kono Oto Tomare</a>
+
+      <div class="title-container">
+          <h1 class="season-title">Kono Oto Tomare - Temporada 1</h1>
+          <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
+      </div>
+
+      <div class="description">
+        <p>En esta primera temporada, Chika Kudou intenta revivir el club de koto de su escuela secundaria. Con la ayuda de Takezo Kurata y otros estudiantes, descubren la belleza y el poder emocional de este instrumento tradicional japonés.</p>
+      </div>
+
+      <div class="contenedor-video">
+        <div class="player-options">
+          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÓN 1</button>
+          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÓN 2</button>
+          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÓN 3</button>
+          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÓN 4</button>
+        </div>
+        <div class="reproductor-video">
+          <div id="opcion1-player" class="player-container active">
+            <iframe src="" allowfullscreen></iframe>
+          </div>
+          <div id="opcion2-player" class="player-container">
+            <iframe src="" allowfullscreen></iframe>
+          </div>
+          <div id="opcion3-player" class="player-container">
+            <iframe src="" allowfullscreen></iframe>
+          </div>
+          <div id="opcion4-player" class="player-container">
+            <iframe src="" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="video-functions">
+          <button class="function-btn" onclick="expandPlayer()">Expandir</button>
+          <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
+        </div>
+      </div>
+
+      <div class="description">
+        <p>Kono Oto Tomare es una emotiva historia sobre música, amistad y superación personal. Los personajes encuentran en el koto no solo un instrumento, sino una forma de expresar sus sentimientos más profundos y conectar con otros.</p>
+      </div>
+
+      <div class="episodes-container">
+          <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
+          <div class="episodes-grid" id="episodes-grid">
+              <!-- Los episodios se generarán con JavaScript -->
+          </div>
+      </div>
+    </div>
+
+    <div class="right-content">
+      <h3>Popular</h3>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/spy-x-family/spy-x-family.html'">
+        <img src="../../../img/Spy x Family S1.jpg" alt="Spy x Family">
+        <div class="title">Spy x Family - Temporada 1</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/chainsaw-man/chainsaw-man.html'">
+        <img src="../../../img/Chainsaw Man S1.jpg" alt="Chainsaw Man">
+        <div class="title">Chainsaw Man - Temporada 1</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/attack-on-titan/attack-on-titan.html'">
+        <img src="../../../img/Attack on Titan S4.jpg" alt="Attack on Titan">
+        <div class="title">Attack on Titan - Temporada 4</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/jujutsu-kaisen/jujutsu-kaisen.html'">
+        <img src="../../../img/Jujutsu Kaisen S1.jpg" alt="Jujutsu Kaisen">
+        <div class="title">Jujutsu Kaisen - Temporada 1</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/demon-slayer/demon-slayer.html'">
+        <img src="../../../img/Kimetsu No Yaiba temporada 1.png" alt="Kimetsu No Yaiba">
+        <div class="title">Kimetsu No Yaiba - Temporada 1</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/naruto/naruto.html'">
+        <img src="../../../img/Naruto Classic.jpg" alt="Naruto">
+        <div class="title">Naruto - Clásico</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/one-piece/one-piece.html'">
+        <img src="../../../img/One Piece Wano.jpg" alt="One Piece">
+        <div class="title">One Piece - Wano</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/dragon-ball/dragon-ball.html'">
+        <img src="../../../img/Dragon Ball Z.jpg" alt="Dragon Ball Z">
+        <div class="title">Dragon Ball Z</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/bleach/bleach.html'">
+        <img src="../../../img/Bleach TYBW.jpg" alt="Bleach">
+        <div class="title">Bleach - TYBW</div>
+      </div>
     
-    <div class="season-header">
-      <h1 class="season-title">?? Kono Oto Tomare - Temporada 1</h1>
-      <div class="season-description">
-        Takezo Kurata intenta salvar el club de koto de su escuela secundaria. 
-        Cuando Chika Kudo, un delincuente con un pasado musical, se une al club, todo cambia.
+      <div class="social-buttons" style="margin-top: 20px; text-align: center;">
+        <button class="social-btn" id="youtube-btn">YouTube</button>
+        <button class="social-btn" id="whatsapp-btn">WhatsApp</button>
+        <button class="social-btn" id="facebook-btn">Facebook</button>
+        <button class="social-btn" id="facebook-group-btn">Grupo de Facebook</button>
+        <button class="social-btn" id="telegram-channel-btn">Canal de Telegram</button>
+        <button class="social-btn" id="telegram-group-btn">Grupo de Telegram</button>
+        <button class="social-btn" id="download-app-btn">Descargar App Mundo Otaku Latino</button>
       </div>
     </div>
+  </main>
 
-    <div class="progress-section">
-      <h3>Progreso de la Temporada</h3>
-      <div class="progress-bar">
-        <div class="progress-fill" id="season-progress" style="width: 0%"></div>
-      </div>
-      <div id="progress-text">0/13 episodios vistos</div>
-    </div>
-
-    <div class="episodes-grid">
-      <div class="episode-card">
-        <div class="episode-number">Episodio 1</div>
-        <div class="episode-title">Freshman</div>
-        <div class="episode-description">Takezo lucha por mantener vivo el club de koto cuando Chika, un delincuente, aparece queriendo unirse al club.</div>
-        <div class="download-section">
-          <div class="download-title">?? Descargar Episodio</div>
-          <div class="download-links">
-            <a href="https://exe.io/KonoOtoTomareS1ep1" target="_blank" class="download-link terabox">?? TeraBox</a>
-            <span class="download-link unavailable-server">?? MEGA</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="episode-card">
-        <div class="episode-number">Episodios 2-13</div>
-        <div class="episode-title">Temporada Completa</div>
-        <div class="episode-description">Temporada completa de Kono Oto Tomare con 13 episodios. Sigue el crecimiento del club de koto y sus miembros.</div>
-        <div class="download-section">
-          <div class="download-title">?? Descargar Temporada Completa</div>
-          <div class="download-links">
-            <a href="https://exe.io/KonoOtoTomareS1" target="_blank" class="download-link terabox">?? TeraBox Completa</a>
-            <span class="download-link unavailable-server">?? MEGA</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
-  <script>
-    function switchPlayer(option) {
-      const playerButtons = document.querySelectorAll('.player-btn');
-      const playerContainers = document.querySelectorAll('.player-container');
-      
-      playerButtons.forEach(btn => btn.classList.remove('active'));
-      playerContainers.forEach(container => container.classList.remove('active'));
-      
-      document.getElementById(${option}-btn).classList.add('active');
-      document.getElementById(${option}-player).classList.add('active');
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      const firstPlayerBtn = document.querySelector('.player-btn');
-      if (firstPlayerBtn) {
-        firstPlayerBtn.click();
+  <style>
+    /* Ajustes para dispositivos móviles */
+    @media (max-width: 768px) {
+      .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
       }
-    });
-  </script>
+  
+      .logo {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+  
+      .back-btn {
+        font-size: 1rem;
+        padding: 10px;
+        border-radius: 5px;
+      }
+  
+      .main-content {
+        flex-direction: column;
+        margin: 10px;
+      }
+  
+      .left-content {
+        margin-right: 0;
+      }
+  
+      .right-content {
+        margin-top: 20px;
+        padding: 10px;
+      }
+  
+      .contenedor-video {
+        margin: 10px 0;
+      }
+  
+      .player-options {
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+  
+      .player-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+      }
+  
+      .episodes-grid {
+        flex-direction: column;
+        gap: 5px;
+      }
+  
+      .episode-btn {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+  
+      .popular-item {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .popular-item img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+      }
+  
+      .description {
+        font-size: 0.9rem;
+        padding: 10px;
+      }
+  
+      .navigation-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+  
+      .nav-btn {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+    }
+  </style>
+
+    <style>
+      .social-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+    
+      .social-btn {
+        padding: 10px 15px;
+        background-color: #6c63ff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        text-align: center;
+      }
+    
+      .social-btn:hover {
+        background-color: #4a47a3;
+      }
+    </style>
+
+    <script>
+      // Función para expandir el reproductor
+      function expandPlayer() {
+        const videoContainer = document.querySelector('.contenedor-video');
+        videoContainer.classList.toggle('expanded');
+      }
+    
+      // Función para apagar/encender las luces
+      function toggleLights() {
+        document.body.classList.toggle('lights-off');
+      }
+    
+      // Bloquear clic derecho
+      window.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+      });
+    
+      // Bloquear teclas F12 y Ctrl+Shift+I
+      window.addEventListener('keydown', function (e) {
+        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+          e.preventDefault();
+        }
+      });
+    
+      // Episodios de Kono Oto Tomare Temporada 1 (13 episodios)
+      const episodes = [
+        { num: 1, title: "Episodio 1", op1: "", op2: "", op3: "", op4: "" },
+        { num: 2, title: "Episodio 2", op1: "", op2: "", op3: "", op4: "" },
+        { num: 3, title: "Episodio 3", op1: "", op2: "", op3: "", op4: "" },
+        { num: 4, title: "Episodio 4", op1: "", op2: "", op3: "", op4: "" },
+        { num: 5, title: "Episodio 5", op1: "", op2: "", op3: "", op4: "" },
+        { num: 6, title: "Episodio 6", op1: "", op2: "", op3: "", op4: "" },
+        { num: 7, title: "Episodio 7", op1: "", op2: "", op3: "", op4: "" },
+        { num: 8, title: "Episodio 8", op1: "", op2: "", op3: "", op4: "" },
+        { num: 9, title: "Episodio 9", op1: "", op2: "", op3: "", op4: "" },
+        { num: 10, title: "Episodio 10", op1: "", op2: "", op3: "", op4: "" },
+        { num: 11, title: "Episodio 11", op1: "", op2: "", op3: "", op4: "" },
+        { num: 12, title: "Episodio 12", op1: "", op2: "", op3: "", op4: "" },
+        { num: 13, title: "Episodio 13", op1: "", op2: "", op3: "", op4: "" }
+      ];
+    
+      // Generar botones de episodios
+      const episodesGrid = document.getElementById('episodes-grid');
+      episodes.forEach(episode => {
+        const episodeBtn = document.createElement('button');
+        episodeBtn.className = 'episode-btn';
+        episodeBtn.textContent = `Ep ${episode.num}`;
+        episodeBtn.onclick = () => loadEpisode(episode);
+        episodesGrid.appendChild(episodeBtn);
+      });
+    
+      // Cargar episodio
+      function loadEpisode(episode) {
+        document.querySelectorAll('.episode-btn').forEach((btn, index) => {
+          btn.classList.toggle('active', index + 1 === episode.num);
+        });
+        document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
+        document.querySelector('#opcion1-player iframe').src = episode.op1 || '';
+        document.querySelector('#opcion2-player iframe').src = episode.op2 || '';
+        document.querySelector('#opcion3-player iframe').src = episode.op3 || '';
+        document.querySelector('#opcion4-player iframe').src = episode.op4 || '';
+        switchPlayer('opcion1');
+        setupAutoPlay();
+      }
+    
+      // Cambiar reproductor
+      function switchPlayer(option) {
+        document.querySelectorAll('.player-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        document.getElementById(`${option}-btn`).classList.add('active');
+        document.querySelectorAll('.player-container').forEach(container => {
+          container.classList.remove('active');
+        });
+        document.getElementById(`${option}-player`).classList.add('active');
+      }
+    
+      // Cargar el primer episodio por defecto
+      if (episodes.length > 0) {
+        loadEpisode(episodes[0]);
+      }
+    
+      // Mover botones de servidor al reproductor
+      const playerOptions = document.querySelector('.player-options');
+      const videoContainer = document.querySelector('.contenedor-video');
+      videoContainer.insertBefore(playerOptions, videoContainer.firstChild);
+    </script>
 </body>
 </html>
-
-
-
 

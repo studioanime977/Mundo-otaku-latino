@@ -3,243 +3,313 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mundo Otaku Latino - Catálogo de Anime</title>
+  <title>Attack On Titan - Temporada 4 - StudioOtaku</title>
+  
+  <link rel="stylesheet" href="../../../css/temporadas.css">
+  <link rel="stylesheet" href="../../../css/style.css">
   <style>
-    :root {
-      --primary-color: #ff5cad;
-      --secondary-color: #ff8a80;
-      --background-start: #0f0f23;
-      --background-end: #2d1b69;
-      --text-color: #fff;
-      --card-bg: rgba(255, 255, 255, 0.05);
-      --border-color: rgba(255, 92, 173, 0.2);
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 50%, var(--background-start) 100%);
-      color: var(--text-color);
-      min-height: 100vh;
-    }
-    .header {
-      background: rgba(0, 0, 0, 0.9);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      backdrop-filter: blur(10px);
-      border-bottom: 2px solid var(--primary-color);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    * {
+      font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', Tahoma, Geneva, Verdana, sans-serif !important;
     }
     .main-content {
-      padding: 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 20px;
     }
-    .back-btn {
-      display: inline-block;
-      padding: 0.75rem 2rem;
-      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-      border: none;
-      border-radius: 25px;
-      color: var(--text-color);
-      text-decoration: none;
-      margin-bottom: 2rem;
-      transition: all 0.3s ease;
-      font-weight: 500;
+    .left-content {
+      flex: 3;
+      margin-right: 20px;
     }
-    .back-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 92, 173, 0.4);
+    .right-content {
+      flex: 1;
+      background-color: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
     }
-    .title-container { text-align: center; margin-bottom: 2rem; }
-    .season-title { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .episode-title { font-size: 1.5rem; color: var(--secondary-color); }
     .contenedor-video {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 2rem;
-      border: 1px solid var(--border-color);
-      margin-bottom: 2rem;
+      margin: 20px 0;
     }
     .player-options {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
+      gap: 10px;
     }
     .player-btn {
-      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      padding: 10px 20px;
+      background-color: #6c63ff;
       color: white;
       border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 25px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      font-weight: 500;
-    }
-    .player-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 92, 173, 0.4);
     }
     .player-btn.active {
-      background: linear-gradient(45deg, #4CAF50, #45a049);
-      box-shadow: 0 0 15px #4CAF50;
-    }
-    .reproductor-video {
-      height: 500px;
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-      background: #000;
-    }
-    .player-container {
-      display: none;
-      width: 100%;
-      height: 100%;
-    }
-    .player-container.active { display: block; }
-    .player-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+      background-color: #4a47a3;
     }
     .episodes-container {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 2rem;
-      border: 1px solid var(--border-color);
+      margin-top: 20px;
+      text-align: center;
     }
     .episodes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
-    .episode-item {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--text-color);
-      padding: 1rem;
-      border-radius: 10px;
-      text-align: center;
+    .episode-btn {
+      padding: 10px;
+      background-color: #6c63ff;
+      color: white;
+      border-radius: 5px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      border: 1px solid transparent;
     }
-    .episode-item:hover, .episode-item.active {
-      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-      transform: translateY(-3px);
-      border-color: var(--primary-color);
+    .episode-btn.active {
+      background-color: #4a47a3;
     }
-    @media (max-width: 768px) {
-      .episodes-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
-      .reproductor-video { height: 300px; }
+    .popular-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .popular-item img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      border-radius: 5px;
+    }
+    .popular-item .title {
+      font-size: 14px;
+    }
+    .description {
+      margin-top: 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #2c2c2c;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .video-functions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .function-btn {
+      padding: 10px 15px;
+      background-color: #6c63ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .function-btn:hover {
+      background-color: #4a47a3;
+    }
+
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .nav-btn {
+      padding: 10px 15px;
+      background-color: #6c63ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .nav-btn:hover {
+      background-color: #4a47a3;
     }
   </style>
-  <link rel="stylesheet" href="../../css/responsive-style.css">
 </head>
 <body>
-  <div class="header">
-    <div class="logo">🧧Mundo Otaku Latino</div>
-    <a href="../../html/catalogo.html" class="back-btn">🏠 Inicio</a>
-  </div>
-  <div class="main-content">
-    <a href="attack-on-titan.html" class="back-btn">← ← Volver a Attack On Titan</a>
-    <div class="title-container">
-        <h1 class="season-title">Attack on Titan - Temporada 4</h1>
-        <h2 class="episode-title" id="current-episode-title">Cargando...</h2>
-    </div>
-    <div class="contenedor-video">
-      <div class="player-options">
-        <button id="opcion1-btn" class="player-btn" onclick="switchPlayer('opcion1')">OPCIÓN 1</button>
-        <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÓN 2</button>
-        <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÓN 3</button>
-        <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÓN 4</button>
+
+  <header class="header">
+    <a href="../../../index.html" class="logo">StudioOtaku</a>
+    <a href="../../../public/html/catalogo.html" class="back-btn">🏠 Inicio</a>
+  </header>
+
+  <main class="main-content">
+    <div class="left-content">
+      <a href="attack-on-titan.html" class="back-btn">← Volver a Attack On Titan</a>
+
+      <div class="title-container">
+          <h1 class="season-title">Attack On Titan - Temporada 4</h1>
+          <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
       </div>
-      <div class="reproductor-video">
-        <div id="opcion1-player" class="player-container">
-          <iframe src="" allowfullscreen></iframe>
+
+      <div class="description">
+        <p>En esta temporada final, la batalla entre Marley y Eldia alcanza su clímax, revelando el destino de los personajes y el mundo.</p>
+      </div>
+
+      <div class="contenedor-video">
+        <div class="player-options">
+          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÓN 1</button>
+          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÓN 2</button>
+          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÓN 3</button>
+          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÓN 4</button>
         </div>
-        <div id="opcion2-player" class="player-container">
-          <iframe src="" allowfullscreen></iframe>
+        <div class="reproductor-video">
+          <div id="opcion1-player" class="player-container active">
+            <iframe src="" allowfullscreen></iframe>
+          </div>
+          <div id="opcion2-player" class="player-container">
+            <iframe src="" allowfullscreen></iframe>
+          </div>
+          <div id="opcion3-player" class="player-container">
+            <iframe src="" allowfullscreen></iframe>
+          </div>
+          <div id="opcion4-player" class="player-container">
+            <iframe src="" allowfullscreen></iframe>
+          </div>
         </div>
-        <div id="opcion3-player" class="player-container">
-          <iframe src="" allowfullscreen></iframe>
-        </div>
-        <div id="opcion4-player" class="player-container">
-          <iframe src="" allowfullscreen></iframe>
+        <div class="video-functions">
+          <button class="function-btn" onclick="expandPlayer()">Expandir</button>
+          <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
         </div>
       </div>
+
+      <div class="description">
+        <p>Attack On Titan continúa cautivando con su mezcla de acción, drama y misterio, llevando a los espectadores a un mundo lleno de peligros y revelaciones impactantes.</p>
+      </div>
+
+      <div class="episodes-container">
+          <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
+          <div class="episodes-grid" id="episodes-grid">
+              <!-- Los episodios se generarán con JavaScript -->
+          </div>
+      </div>
     </div>
-    <div class="episodes-container">
-        <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
-        <div class="episodes-grid" id="episodes-grid">
-            <!-- Los episodios se generarán con JavaScript -->
-        </div>
+
+    <div class="right-content">
+      <h3>Popular</h3>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/spy-x-family/spy-x-family.html'">
+        <img src="../../../img/Spy x Family S1.jpg" alt="Spy x Family">
+        <div class="title">Spy x Family - Temporada 1</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/chainsaw-man/chainsaw-man.html'">
+        <img src="../../../img/Chainsaw Man S1.jpg" alt="Chainsaw Man">
+        <div class="title">Chainsaw Man - Temporada 1</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/attack-on-titan/attack-on-titan.html'">
+        <img src="../../../img/Attack on Titan S4.jpg" alt="Attack on Titan">
+        <div class="title">Attack on Titan - Temporada 4</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/jujutsu-kaisen/jujutsu-kaisen.html'">
+        <img src="../../../img/Jujutsu Kaisen S1.jpg" alt="Jujutsu Kaisen">
+        <div class="title">Jujutsu Kaisen - Temporada 1</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/demon-slayer/demon-slayer.html'">
+        <img src="../../../img/Kimetsu No Yaiba temporada 1.png" alt="Kimetsu No Yaiba">
+        <div class="title">Kimetsu No Yaiba - Temporada 1</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/naruto/naruto.html'">
+        <img src="../../../img/Naruto Classic.jpg" alt="Naruto">
+        <div class="title">Naruto - Clásico</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/one-piece/one-piece.html'">
+        <img src="../../../img/One Piece Wano.jpg" alt="One Piece">
+        <div class="title">One Piece - Wano</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/dragon-ball/dragon-ball.html'">
+        <img src="../../../img/Dragon Ball Z.jpg" alt="Dragon Ball Z">
+        <div class="title">Dragon Ball Z</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/bleach/bleach.html'">
+        <img src="../../../img/Bleach TYBW.jpg" alt="Bleach">
+        <div class="title">Bleach - TYBW</div>
+      </div>
     </div>
-  </div>
+  </main>
+
   <script>
-    const episodes = [
-        { num: 1, title: "Episodio 1", op1: "", op2: "", op3: "", op4: "" },
-        { num: 2, title: "Episodio 2", op1: "", op2: "", op3: "", op4: "" },
-        { num: 3, title: "Episodio 3", op1: "", op2: "", op3: "", op4: "" },
-        { num: 4, title: "Episodio 4", op1: "", op2: "", op3: "", op4: "" },
-        { num: 5, title: "Episodio 5", op1: "", op2: "", op3: "", op4: "" },
-        { num: 6, title: "Episodio 6", op1: "", op2: "", op3: "", op4: "" },
-        { num: 7, title: "Episodio 7", op1: "", op2: "", op3: "", op4: "" },
-        { num: 8, title: "Episodio 8", op1: "", op2: "", op3: "", op4: "" },
-        { num: 9, title: "Episodio 9", op1: "", op2: "", op3: "", op4: "" },
-        { num: 10, title: "Episodio 10", op1: "", op2: "", op3: "", op4: "" },
-        { num: 11, title: "Episodio 11", op1: "", op2: "", op3: "", op4: "" },
-        { num: 12, title: "Episodio 12", op1: "", op2: "", op3: "", op4: "" }
-    ];
-    const episodesGrid = document.getElementById('episodes-grid');
-    const currentEpisodeTitle = document.getElementById('current-episode-title');
-    const playerIframes = {
-        opcion1: document.querySelector('#opcion1-player iframe'),
-        opcion2: document.querySelector('#opcion2-player iframe'),
-        opcion3: document.querySelector('#opcion3-player iframe'),
-        opcion4: document.querySelector('#opcion4-player iframe')
-    };
-    function switchPlayer(option) {
-      document.querySelectorAll('.player-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.player-container').forEach(container => container.classList.remove('active'));
-      document.getElementById(option + '-btn').classList.add('active');
-      document.getElementById(option + '-player').classList.add('active');
+    // Función para expandir el reproductor
+    function expandPlayer() {
+      const videoContainer = document.querySelector('.contenedor-video');
+      videoContainer.classList.toggle('expanded');
     }
-    function loadEpisode(episode) {
-        currentEpisodeTitle.textContent = `Episodio ${episode.num}: ${episode.title}`;
-        playerIframes.opcion1.src = episode.op1;
-        playerIframes.opcion2.src = episode.op2;
-        playerIframes.opcion3.src = episode.op3;
-        playerIframes.opcion4.src = episode.op4;
-        document.querySelectorAll('.episode-item').forEach(item => item.classList.remove('active'));
-        document.getElementById(`ep-${episode.num}`).classList.add('active');
+
+    // Función para apagar/encender las luces
+    function toggleLights() {
+      document.body.classList.toggle('lights-off');
     }
-    document.addEventListener('DOMContentLoaded', function() {
-        episodes.forEach(ep => {
-            const epItem = document.createElement('div');
-            epItem.className = 'episode-item';
-            epItem.id = `ep-${ep.num}`;
-            epItem.textContent = `Episodio ${ep.num}`;
-            epItem.onclick = () => loadEpisode(ep);
-            episodesGrid.appendChild(epItem);
-        });
-        if (episodes.length > 0) {
-            loadEpisode(episodes[0]);
-        }
-        switchPlayer('opcion1');
+
+    // Bloquear clic derecho
+    window.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
     });
+
+    // Bloquear teclas F12 y Ctrl+Shift+I
+    window.addEventListener('keydown', function (e) {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+        e.preventDefault();
+      }
+    });
+
+    // Preservar los datos de episodios existentes o crear una estructura básica
+    const episodes = [
+      { num: 1, title: "Episodio 1", op1: "", op2: "", op3: "", op4: "" },
+      { num: 2, title: "Episodio 2", op1: "", op2: "", op3: "", op4: "" },
+      { num: 3, title: "Episodio 3", op1: "", op2: "", op3: "", op4: "" },
+      { num: 4, title: "Episodio 4", op1: "", op2: "", op3: "", op4: "" },
+      { num: 5, title: "Episodio 5", op1: "", op2: "", op3: "", op4: "" },
+      { num: 6, title: "Episodio 6", op1: "", op2: "", op3: "", op4: "" },
+      { num: 7, title: "Episodio 7", op1: "", op2: "", op3: "", op4: "" },
+      { num: 8, title: "Episodio 8", op1: "", op2: "", op3: "", op4: "" },
+      { num: 9, title: "Episodio 9", op1: "", op2: "", op3: "", op4: "" },
+      { num: 10, title: "Episodio 10", op1: "", op2: "", op3: "", op4: "" },
+      { num: 11, title: "Episodio 11", op1: "", op2: "", op3: "", op4: "" },
+      { num: 12, title: "Episodio 12", op1: "", op2: "", op3: "", op4: "" }
+    ];
+
+    // Generar botones de episodios
+    const episodesGrid = document.getElementById('episodes-grid');
+    episodes.forEach(episode => {
+      const episodeBtn = document.createElement('button');
+      episodeBtn.className = 'episode-btn';
+      episodeBtn.textContent = `Ep ${episode.num}`;
+      episodeBtn.onclick = () => loadEpisode(episode);
+      episodesGrid.appendChild(episodeBtn);
+    });
+
+    // Cargar episodio
+    function loadEpisode(episode) {
+      document.querySelectorAll('.episode-btn').forEach((btn, index) => {
+        btn.classList.toggle('active', index + 1 === episode.num);
+      });
+      document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
+      document.querySelector('#opcion1-player iframe').src = episode.op1 || '';
+      document.querySelector('#opcion2-player iframe').src = episode.op2 || '';
+      document.querySelector('#opcion3-player iframe').src = episode.op3 || '';
+      document.querySelector('#opcion4-player iframe').src = episode.op4 || '';
+      switchPlayer('opcion1');
+    }
+
+    // Cambiar reproductor
+    function switchPlayer(option) {
+      document.querySelectorAll('.player-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.getElementById(`${option}-btn`).classList.add('active');
+      document.querySelectorAll('.player-container').forEach(container => {
+        container.classList.remove('active');
+      });
+      document.getElementById(`${option}-player`).classList.add('active');
+    }
+
+    // Cargar el primer episodio por defecto
+    if (episodes.length > 0) {
+      loadEpisode(episodes[0]);
+    }
   </script>
 </body>
 </html>

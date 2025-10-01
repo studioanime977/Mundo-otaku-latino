@@ -264,12 +264,12 @@
       <ul class="sidebar-nav">
         <li><a href="#" class="active">?? Inicio</a></li>
         <li><a href="#anime">?? Anime</a></li>
-        <li><a href="#peliculas">?? Películas</a></li>
-        <li><a href="#generos">?? Géneros</a></li>
+        <li><a href="#peliculas">?? Pelï¿½culas</a></li>
+        <li><a href="#generos">?? Gï¿½neros</a></li>
         <li><a href="#estrenos">? Estrenos</a></li>
         <li><a href="#top">?? Top Anime</a></li>
         <li><a href="#live-action">?? Live Action</a></li>
-        <li><a href="#programacion">?? Programación</a></li>
+        <li><a href="#programacion">?? Programaciï¿½n</a></li>
         <li><a href="https://exe.io/ANIMETV" target="_blank">?? APK</a></li>
       </ul>
     </div>
@@ -339,7 +339,7 @@
     <div class="right-sidebar">
       <!-- Redes sociales -->
       <div class="sidebar-section">
-        <h3>¡SÍGUENOS!</h3>
+        <h3>ï¿½Sï¿½GUENOS!</h3>
         <div class="social-links">
           <a href="https://www.facebook.com/STUDIOOTAKU1" target="_blank" style="background: #1877f2; color: #fff;">
             ?? Facebook
@@ -399,32 +399,32 @@
     </div>
   </div>
 
-  <script>
-    // Función de búsqueda
-    function searchAnime() {
-      const searchTerm = document.getElementById('search-input').value.toLowerCase();
-      const animeCards = document.querySelectorAll('.anime-card');
-      
-      animeCards.forEach(card => {
-        const title = card.querySelector('h3').textContent.toLowerCase();
-        card.style.display = title.includes(searchTerm) ? 'block' : 'none';
-      });
-    }
+  <script src="../../assets/js/main.js"></script>
+  
+  // Funciï¿½n de bï¿½squeda
+  function searchAnime() {
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    const animeCards = document.querySelectorAll('.anime-card');
     
-    // Búsqueda en tiempo real
-    document.getElementById('search-input').addEventListener('input', searchAnime);
-    
-    // Navegación del sidebar
-    document.querySelectorAll('.sidebar-nav a').forEach(link => {
-      link.addEventListener('click', function(e) {
-        if (!this.href.includes('http')) {
-          e.preventDefault();
-          document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
-          this.classList.add('active');
-        }
-      });
+    animeCards.forEach(card => {
+      const title = card.querySelector('h3').textContent.toLowerCase();
+      card.style.display = title.includes(searchTerm) ? 'block' : 'none';
     });
-  </script>
+  }
+  
+  // Bï¿½squeda en tiempo real
+  document.getElementById('search-input').addEventListener('input', searchAnime);
+  
+  // Navegaciï¿½n del sidebar
+  document.querySelectorAll('.sidebar-nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      if (!this.href.includes('http')) {
+        e.preventDefault();
+        document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
 </body>
 </html>
 

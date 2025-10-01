@@ -161,5 +161,5 @@ if (totalIssues === 0) {
     console.log('\n⚠️ Se encontraron algunos problemas que necesitan atención.');
 }
 
-console.log(`\n📊 Archivos verificados: ${seasonFilesChecked + animeFilesChecked + 2}`);
+console.log(`\n📊 Archivos verificados: ${seasonFilesChecked + seasonFilesCorrect + 2}`);
 console.log(`✅ Responsivo: PC y móviles configurados`);

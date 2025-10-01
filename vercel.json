@@ -1,7 +1,15 @@
 {
   "rewrites": [
     {
-      "source": "/((?!api|_next|_static|favicon.ico|.*\\.txt|.*\\.css|.*\\.js|.*\\.jpg|.*\\.png|.*\\.gif|.*\\.ico|.*\\.xml|.*\\.json|robots.txt|sitemap.xml|ads.txt).*)$",
+      "source": "/catalogo",
+      "destination": "/public/html/catalogo.html"
+    },
+    {
+      "source": "/anime/:path*",
+      "destination": "/public/anime/:path*"
+    },
+    {
+      "source": "/((?!api|_next|_static|favicon.ico|.*\\.txt|.*\\.css|.*\\.js|.*\\.jpg|.*\\.png|.*\\.gif|.*\\.ico|.*\\.xml|.*\\.json|robots.txt|sitemap.xml|ads.txt|public).*)$",
       "destination": "/index.html"
     }
   ],

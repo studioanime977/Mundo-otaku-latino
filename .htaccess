@@ -1,16 +1,32 @@
 # Configuración para el hosting estático
 
+# Forzar codificación UTF-8
+AddDefaultCharset UTF-8
+
 # Establecer index.html como página principal
 DirectoryIndex index.html
 
-# Configuración de tipos MIME
-AddType text/html .html
-AddType text/css .css
-AddType text/javascript .js
+# Configuración de tipos MIME con UTF-8
+AddType "text/html; charset=UTF-8" .html
+AddType "text/css; charset=UTF-8" .css
+AddType "text/javascript; charset=UTF-8" .js
 AddType image/jpeg .jpg .jpeg
 AddType image/png .png
 AddType image/gif .gif
 AddType image/x-icon .ico
+
+# Headers para forzar UTF-8
+<FilesMatch "\.(html|htm)$">
+    Header set Content-Type "text/html; charset=UTF-8"
+</FilesMatch>
+
+<FilesMatch "\.css$">
+    Header set Content-Type "text/css; charset=UTF-8"
+</FilesMatch>
+
+<FilesMatch "\.js$">
+    Header set Content-Type "application/javascript; charset=UTF-8"
+</FilesMatch>
 
 # Habilitar compresión
 <IfModule mod_deflate.c>

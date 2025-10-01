@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo de Anime - StudioOtaku</title>
+  <title>Mundo Otaku Latino - Catálogo de Anime</title>
   <link rel="icon" type="image/x-icon" href="../img/demon-slayer.ico">
   <script>
     window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script src="../../assets/js/main.js"></script>
   <style>
     * {
       margin: 0;
@@ -23,7 +24,6 @@
       min-height: 100vh;
     }
 
-    /* Header */
     .header {
       background: rgba(0, 0, 0, 0.9);
       padding: 1rem 2rem;
@@ -102,7 +102,6 @@
       font-weight: 500;
       cursor: pointer;
       transition: all 0.3s ease;
-      display: inline-block;
     }
 
     .auth-btn:hover {
@@ -110,14 +109,12 @@
       box-shadow: 0 4px 12px rgba(255, 92, 173, 0.3);
     }
 
-    /* Main Container */
     .main-container {
       display: flex;
       margin-top: 80px;
       min-height: calc(100vh - 80px);
     }
 
-    /* Left Sidebar */
     .left-sidebar {
       width: 250px;
       background: rgba(0, 0, 0, 0.3);
@@ -149,11 +146,18 @@
       transform: translateX(5px);
     }
 
-    /* Main Content */
     .main-content {
       flex: 1;
       padding: 2rem;
       background: rgba(0, 0, 0, 0.1);
+    }
+
+    .content-section {
+      display: none;
+    }
+
+    .content-section.active {
+      display: block;
     }
 
     .section-title {
@@ -166,7 +170,6 @@
       text-align: center;
     }
 
-    /* Anime Grid */
     .anime-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -234,17 +237,6 @@
       font-weight: bold;
     }
 
-    .anime-link {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 10;
-      text-decoration: none;
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
       .main-container {
         flex-direction: column;
@@ -296,11 +288,11 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="css/responsive-style.css">
 </head>
 <body>
-  <!-- Encabezado -->
   <div class="header">
-    <div class="logo">🧧StudioOtaku</div>
+    <div class="logo">🧧Mundo Otaku Latino</div>
     <div class="search-bar">
       <input type="text" placeholder="Buscar anime..." id="search-input">
       <button onclick="buscarAnime()">🔍</button>
@@ -313,11 +305,10 @@
   </div>
 
   <div class="main-container">
-    <!-- Barra lateral izquierda -->
     <div class="left-sidebar">
       <ul class="sidebar-nav">
         <li><a href="../index.html">🏠 Inicio</a></li>
-        <li><a href="#" class="active">🎌 Anime</a></li>
+        <li><a href="#anime" class="active">🎌 Anime</a></li>
         <li><a href="#peliculas">🎬 Películas</a></li>
         <li><a href="#generos">📚 Géneros</a></li>
         <li><a href="#estrenos">⭐ Estrenos</a></li>
@@ -328,153 +319,47 @@
       </ul>
     </div>
 
-    <!-- Contenido principal -->
     <div class="main-content">
-      <h2 class="section-title">🎌 Catálogo de Anime</h2>
-      <div class="anime-grid">
-        <div class="anime-card">
-          <img src="../img/Attack on Titan S1.jpg" alt="Attack on Titan">
-          <div class="anime-info">
-            <h3>Attack on Titan</h3>
-            <p>La humanidad lucha por sobrevivir contra los titanes gigantes.</p>
-            <div class="anime-status">
-              <span class="status-badge">Completo</span>
-              <span class="anime-rating">⭐ 9.0</span>
+      <!-- Sección de Películas -->
+      <div id="peliculas-section" class="content-section">
+        <h2 class="section-title">🎌 Catálogo de Mundo Otaku Latino</h2>
+        <div class="anime-grid">
+          <!-- Superman 2025 -->
+          <div class="anime-card">
+            <img src="../img/superman2025.jpg" alt="Superman 2025">
+            <div class="anime-info">
+              <h3>Superman 2025</h3>
+              <p>La nueva aventura del héroe más icónico de DC Comics.</p>
+              <div class="anime-status">
+                <span class="status-badge">Estreno</span>
+                <span class="anime-rating">⭐ 8.5</span>
+              </div>
             </div>
+            <a href="../ANIME TEMPORADAS CON EPISODIOS/superman2025/temporadas.html" class="anime-link"></a>
           </div>
-          <a href="../public/anime/attack-on-titan/attack-on-titan.html" class="anime-link"></a>
         </div>
-        <div class="anime-card">
-          <img src="../img/Kimetsu No Yaiba temporada 1.png" alt="Kimetsu no Yaiba">
-          <div class="anime-info">
-            <h3>Kimetsu no Yaiba</h3>
-            <p>Tanjiro se convierte en cazador de demonios para salvar a su hermana.</p>
-            <div class="anime-status">
-              <span class="status-badge">Completo</span>
-              <span class="anime-rating">⭐ 8.7</span>
+      </div>
+
+      <!-- Sección de Anime -->
+      <div id="anime-section" class="content-section active">
+        <h2 class="section-title">🎌 Catálogo de Mundo Otaku Latino</h2>
+        <div class="anime-grid">
+          <!-- Attack on Titan -->
+          <div class="anime-card">
+            <img src="../img/Attack on Titan S1.jpg" alt="Attack on Titan">
+            <div class="anime-info">
+              <h3>Attack on Titan</h3>
+              <p>La humanidad lucha por sobrevivir contra gigantes devoradores de humanos.</p>
+              <div class="anime-status">
+                <span class="status-badge">Completo</span>
+                <span class="anime-rating">⭐ 9.0</span>
+              </div>
             </div>
+            <a href="../ANIME TEMPORADAS CON EPISODIOS/attack-on-titan/temporadas.html" class="anime-link"></a>
           </div>
-          <a href="../public/anime/demon-slayer/demon-slayer.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Jujutsu Kaisen S1.jpg" alt="Jujutsu Kaisen">
-          <div class="anime-info">
-            <h3>Jujutsu Kaisen</h3>
-            <p>Yuji Itadori se une al mundo de la hechicería para combatir maldiciones.</p>
-            <div class="anime-status">
-              <span class="status-badge">En emisión</span>
-              <span class="anime-rating">⭐ 8.6</span>
-            </div>
-          </div>
-          <a href="../public/anime/jujutsu-kaisen/jujutsu-kaisen.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/BokunoHeroAcademia S1.png" alt="My Hero Academia">
-          <div class="anime-info">
-            <h3>My Hero Academia</h3>
-            <p>Izuku Midoriya sueña con convertirse en el héroe número uno.</p>
-            <div class="anime-status">
-              <span class="status-badge">En emisión</span>
-              <span class="anime-rating">⭐ 8.5</span>
-            </div>
-          </div>
-          <a href="../public/anime/my-hero-academia/my-hero-academia.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/One Piece East Blue.png" alt="One Piece">
-          <div class="anime-info">
-            <h3>One Piece</h3>
-            <p>Monkey D. Luffy busca el tesoro más grande del mundo.</p>
-            <div class="anime-status">
-              <span class="status-badge">En emisión</span>
-              <span class="anime-rating">⭐ 9.1</span>
-            </div>
-          </div>
-          <a href="../public/anime/one-piece/one-piece.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Naruto Classic.jpg" alt="Naruto">
-          <div class="anime-info">
-            <h3>Naruto</h3>
-            <p>Un ninja adolescente busca reconocimiento y sueña con ser Hokage.</p>
-            <div class="anime-status">
-              <span class="status-badge">Completo</span>
-              <span class="anime-rating">⭐ 8.4</span>
-            </div>
-          </div>
-          <a href="../public/anime/naruto/naruto.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Dragon Ball Z.jpg" alt="Dragon Ball">
-          <div class="anime-info">
-            <h3>Dragon Ball</h3>
-            <p>Goku y sus amigos protegen la Tierra de poderosos enemigos.</p>
-            <div class="anime-status">
-              <span class="status-badge">Completo</span>
-              <span class="anime-rating">⭐ 8.8</span>
-            </div>
-          </div>
-          <a href="../public/anime/dragon-ball/dragon-ball.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Tokyo Ghoul S1.jpg" alt="Tokyo Ghoul">
-          <div class="anime-info">
-            <h3>Tokyo Ghoul</h3>
-            <p>Ken Kaneki se convierte en un ghoul y lucha por su humanidad.</p>
-            <div class="anime-status">
-              <span class="status-badge">Completo</span>
-              <span class="anime-rating">⭐ 7.8</span>
-            </div>
-          </div>
-          <a href="../public/anime/tokyo-ghoul/tokyo-ghoul.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/One Punch Man S1.jpg" alt="One Punch Man">
-          <div class="anime-info">
-            <h3>One Punch Man</h3>
-            <p>Saitama es un héroe que puede vencer a cualquier enemigo de un golpe.</p>
-            <div class="anime-status">
-              <span class="status-badge">En emisión</span>
-              <span class="anime-rating">⭐ 8.9</span>
-            </div>
-          </div>
-          <a href="../public/anime/one-punch-man/one-punch-man.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Mob Psycho 100 S1.jpg" alt="Mob Psycho 100">
-          <div class="anime-info">
-            <h3>Mob Psycho 100</h3>
-            <p>Un estudiante con poderes psíquicos intenta vivir una vida normal.</p>
-            <div class="anime-status">
-              <span class="status-badge">Completo</span>
-              <span class="anime-rating">⭐ 8.8</span>
-            </div>
-          </div>
-          <a href="../public/anime/mob-psycho-100/mob-psycho-100.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Solo Leveling season 1.jpg" alt="Solo Leveling">
-          <div class="anime-info">
-            <h3>Solo Leveling</h3>
-            <p>Sung Jin-Woo evoluciona de ser el cazador más débil al más fuerte.</p>
-            <div class="anime-status">
-              <span class="status-badge">En emisión</span>
-              <span class="anime-rating">⭐ 8.9</span>
-            </div>
-          </div>
-          <a href="../public/anime/solo-leveling/solo-leveling.html" class="anime-link"></a>
-        </div>
-        <div class="anime-card">
-          <img src="../img/Chainsaw Man S1.jpg" alt="Chainsaw Man">
-          <div class="anime-info">
-            <h3>Chainsaw Man</h3>
-            <p>Denji se fusiona con su demonio mascota para convertirse en Chainsaw Man.</p>
-            <div class="anime-status">
-              <span class="status-badge">En emisión</span>
-              <span class="anime-rating">⭐ 8.4</span>
-            </div>
-          </div>
-          <a href="../public/anime/chainsaw-man/chainsaw-man.html" class="anime-link"></a>
+
+          <!-- Aquí van todas las demás tarjetas de anime... -->
+          
         </div>
       </div>
     </div>
@@ -484,7 +369,8 @@
     // Función de búsqueda
     function buscarAnime() {
       const searchTerm = document.getElementById('search-input').value.toLowerCase();
-      const animeCards = document.querySelectorAll('.anime-card');
+      const activeSection = document.querySelector('.content-section.active');
+      const animeCards = activeSection.querySelectorAll('.anime-card');
       
       animeCards.forEach(card => {
         const title = card.querySelector('h3').textContent.toLowerCase();
@@ -503,8 +389,22 @@
     // Navegación del sidebar
     document.querySelectorAll('.sidebar-nav a').forEach(link => {
       link.addEventListener('click', function(e) {
-        if (!this.href.includes('http') && !this.href.includes('../')) {
+        if (!this.href.includes('http')) {
           e.preventDefault();
+          const sections = document.querySelectorAll('.content-section');
+          const sectionId = this.getAttribute('href').substring(1);
+          
+          // Remover clase active de todas las secciones
+          sections.forEach(section => section.classList.remove('active'));
+          
+          // Mostrar la sección seleccionada
+          if (sectionId === 'anime') {
+            document.getElementById('anime-section').classList.add('active');
+          } else if (sectionId === 'peliculas') {
+            document.getElementById('peliculas-section').classList.add('active');
+          }
+          
+          // Actualizar clase active en la barra lateral
           document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
           this.classList.add('active');
         }
@@ -520,6 +420,9 @@
         }
       });
     });
+
+    // Mostrar la sección de anime por defecto
+    document.querySelector('[href="#anime"]').click();
   </script>
 </body>
 </html>
