@@ -379,19 +379,19 @@
     
       // Episodios de Kono Oto Tomare Temporada 1 (13 episodios)
       const episodes = [
-        { num: 1, title: "Episodio 1", op1: "", op2: "", op3: "", op4: "" },
-        { num: 2, title: "Episodio 2", op1: "", op2: "", op3: "", op4: "" },
-        { num: 3, title: "Episodio 3", op1: "", op2: "", op3: "", op4: "" },
-        { num: 4, title: "Episodio 4", op1: "", op2: "", op3: "", op4: "" },
-        { num: 5, title: "Episodio 5", op1: "", op2: "", op3: "", op4: "" },
-        { num: 6, title: "Episodio 6", op1: "", op2: "", op3: "", op4: "" },
-        { num: 7, title: "Episodio 7", op1: "", op2: "", op3: "", op4: "" },
-        { num: 8, title: "Episodio 8", op1: "", op2: "", op3: "", op4: "" },
-        { num: 9, title: "Episodio 9", op1: "", op2: "", op3: "", op4: "" },
-        { num: 10, title: "Episodio 10", op1: "", op2: "", op3: "", op4: "" },
-        { num: 11, title: "Episodio 11", op1: "", op2: "", op3: "", op4: "" },
-        { num: 12, title: "Episodio 12", op1: "", op2: "", op3: "", op4: "" },
-        { num: 13, title: "Episodio 13", op1: "", op2: "", op3: "", op4: "" }
+        { num: 1, title: "Episodio 1", op1: "https://sendvid.com/embed/8dtdmutk" },
+        { num: 2, title: "Episodio 2", op1: "https://sendvid.com/embed/swmpnxj7" },
+        { num: 3, title: "Episodio 3", op1: "https://sendvid.com/embed/qweq2vc8" },
+        { num: 4, title: "Episodio 4", op1: "https://sendvid.com/embed/p9svn6wj" },
+        { num: 5, title: "Episodio 5", op1: "https://sendvid.com/embed/w17sn9p7" },
+        { num: 6, title: "Episodio 6", op1: "https://sendvid.com/embed/bz68uobi" },
+        { num: 7, title: "Episodio 7", op1: "https://sendvid.com/embed/muv14d72" },
+        { num: 8, title: "Episodio 8", op1: "https://sendvid.com/embed/dzpmwn0n" },
+        { num: 9, title: "Episodio 9", op1: "https://sendvid.com/embed/5f4xy60e" },
+        { num: 10, title: "Episodio 10", op1: "https://sendvid.com/embed/klxqjmjp" },
+        { num: 11, title: "Episodio 11", op1: "https://sendvid.com/embed/kg8lzw3v" },
+        { num: 12, title: "Episodio 12", op1: "https://sendvid.com/embed/tf3b96b4" },
+        { num: 13, title: "Episodio 13", op1: "https://sendvid.com/embed/bg8vohjw" }
       ];
     
       // Generar botones de episodios
@@ -415,7 +415,6 @@
         document.querySelector('#opcion3-player iframe').src = episode.op3 || '';
         document.querySelector('#opcion4-player iframe').src = episode.op4 || '';
         switchPlayer('opcion1');
-        setupAutoPlay();
       }
     
       // Cambiar reproductor

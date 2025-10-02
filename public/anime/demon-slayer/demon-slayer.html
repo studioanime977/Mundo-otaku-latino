@@ -188,6 +188,16 @@
             e.preventDefault();
         }
     });
+
+    // Función para ir a la temporada
+    function goToSeason(seasonFile) {
+      window.location.href = seasonFile;
+    }
+
+    // Función para mostrar alerta de servidor no disponible
+    function showUnavailableAlert(serverName) {
+      alert(`El servidor ${serverName} no está disponible en este momento. Por favor, intenta con otro servidor.`);
+    }
   </script>
 </body>
 </html>

@@ -10,6 +10,94 @@
     * {
       font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', Tahoma, Geneva, Verdana, sans-serif !important;
     }
+    
+    /* Estilos para el reproductor personalizado */
+    .custom-player {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .custom-player:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(255, 92, 173, 0.3);
+    }
+    
+    .player-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+    }
+    
+    .play-button-container {
+      margin-bottom: 2rem;
+    }
+    
+    .play-button {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(45deg, #ff5cad, #ff8a80);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(255, 92, 173, 0.4);
+    }
+    
+    .play-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 35px rgba(255, 92, 173, 0.6);
+    }
+    
+    .play-button svg {
+      margin-left: 5px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+    
+    .video-info {
+      text-align: center;
+      color: white;
+    }
+    
+    .video-info h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .video-info p {
+      margin: 0;
+      font-size: 1rem;
+      opacity: 0.9;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Animación de pulso para el botón de play */
+    @keyframes pulse {
+      0% { box-shadow: 0 8px 25px rgba(255, 92, 173, 0.4); }
+      50% { box-shadow: 0 8px 25px rgba(255, 92, 173, 0.8); }
+      100% { box-shadow: 0 8px 25px rgba(255, 92, 173, 0.4); }
+    }
+    
+    .play-button {
+      animation: pulse 2s infinite;
+    }
   </style>
 </head>
 <body>
@@ -35,17 +123,17 @@
         <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÓN 4</button>
       </div>
       <div class="reproductor-video">
-        <div id="opcion1-player" class="player-container active">
-          <iframe src="" allowfullscreen></iframe>
+        <div id="opcion1-player" class="player-container">
+          <iframe src="" allowfullscreen allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameborder="0" scrolling="no" style="width: 100%; height: 100%; border: none; background: #000;"></iframe>
         </div>
         <div id="opcion2-player" class="player-container">
-          <iframe src="" allowfullscreen></iframe>
+          <iframe src="" allowfullscreen allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameborder="0" scrolling="no" style="width: 100%; height: 100%; border: none; background: #000;"></iframe>
         </div>
         <div id="opcion3-player" class="player-container">
-          <iframe src="" allowfullscreen></iframe>
+          <iframe src="" allowfullscreen allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameborder="0" scrolling="no" style="width: 100%; height: 100%; border: none; background: #000;"></iframe>
         </div>
         <div id="opcion4-player" class="player-container">
-          <iframe src="" allowfullscreen></iframe>
+          <iframe src="" allowfullscreen allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameborder="0" scrolling="no" style="width: 100%; height: 100%; border: none; background: #000;"></iframe>
         </div>
       </div>
     </div>
@@ -60,73 +148,81 @@
 
   <script>
     const episodes = [
-      { num: 1, title: 'Crueldad', op1: 'https://sendvid.com/embed/q7vjj7y2', op2: 'URL_OP2_EP1', op3: 'URL_OP3_EP1' },
-      { num: 2, title: 'El entrenador, Sakonji Urokodaki', op1: 'https://sendvid.com/embed/z0c81x2c', op2: 'URL_OP2_EP2', op3: 'URL_OP3_EP2' },
-      { num: 3, title: 'Sabito y Makomo', op1: 'https://sendvid.com/embed/u8yq5x9b', op2: 'URL_OP2_EP3', op3: 'URL_OP3_EP3' },
-      { num: 4, title: 'Selección final', op1: 'https://sendvid.com/embed/s3y2k5p1', op2: 'URL_OP2_EP4', op3: 'URL_OP3_EP4' },
-      { num: 5, title: 'Tu propio acero', op1: 'https://sendvid.com/embed/t5w6h6g9', op2: 'URL_OP2_EP5', op3: 'URL_OP3_EP5' },
-      { num: 6, title: 'El espadachín que acompaña a un demonio', op1: 'https://sendvid.com/embed/p9x8w7v6', op2: 'URL_OP2_EP6', op3: 'URL_OP3_EP6' },
-      { num: 7, title: 'Muzan Kibutsuji', op1: 'https://sendvid.com/embed/k3v2j2x9', op2: 'URL_OP2_EP7', op3: 'URL_OP3_EP7' },
-      { num: 8, title: 'El hechizo de la luna sangrienta', op1: 'https://sendvid.com/embed/j1b9c8w2', op2: 'URL_OP2_EP8', op3: 'URL_OP3_EP8' },
-      { num: 9, title: 'El demonio de la pelota Temari y el demonio de la flecha', op1: 'https://sendvid.com/embed/x7g5f4v1', op2: 'URL_OP2_EP9', op3: 'URL_OP3_EP9' },
-      { num: 10, title: 'Siempre juntos', op1: 'https://sendvid.com/embed/c6v4b3f8', op2: 'URL_OP2_EP10', op3: 'URL_OP3_EP10' },
-      { num: 11, title: 'La casa de los tambores', op1: 'https://sendvid.com/embed/v2f1j1c7', op2: 'URL_OP2_EP11', op3: 'URL_OP3_EP11' },
-      { num: 12, title: 'El jabalí muestra sus colmillos, Zenitsu duerme', op1: 'https://sendvid.com/embed/b0v9e8d6', op2: 'URL_OP2_EP12', op3: 'URL_OP3_EP12' },
-      { num: 13, title: 'Algo más importante que la vida', op1: 'https://sendvid.com/embed/f8d7g6f5', op2: 'URL_OP2_EP13', op3: 'URL_OP3_EP13' },
-      { num: 14, title: 'La casa con el blasón de la glicinia', op1: 'https://sendvid.com/embed/a6c5b4e3', op2: 'URL_OP2_EP14', op3: 'URL_OP3_EP14' },
-      { num: 15, title: 'Monte Natagumo', op1: 'https://sendvid.com/embed/d5b3a2d1', op2: 'URL_OP2_EP15', op3: 'URL_OP3_EP15' },
-      { num: 16, title: 'Dejando que otros vayan delante', op1: 'https://sendvid.com/embed/h4a2g1b9', op2: 'URL_OP2_EP16', op3: 'URL_OP3_EP16' },
-      { num: 17, title: 'Debes dominar una sola cosa', op1: 'https://sendvid.com/embed/g3h1f9a8', op2: 'URL_OP2_EP17', op3: 'URL_OP3_EP17' },
-      { num: 18, title: 'Un lazo falso', op1: 'https://sendvid.com/embed/f2g9e8h7', op2: 'URL_OP2_EP18', op3: 'URL_OP3_EP18' },
-      { num: 19, title: 'Dios del fuego', op1: 'https://sendvid.com/embed/e1f8d7g6', op2: 'URL_OP2_EP19', op3: 'URL_OP3_EP19' },
-      { num: 20, title: 'Familia de pega', op1: 'https://sendvid.com/embed/d9e7f6d5', op2: 'URL_OP2_EP20', op3: 'URL_OP3_EP20' },
-      { num: 21, title: 'Violación de la normativa', op1: 'https://sendvid.com/embed/c8d6e5c4', op2: 'URL_OP2_EP21', op3: 'URL_OP3_EP21' },
-      { num: 22, title: 'El maestro', op1: 'https://sendvid.com/embed/b7c5d4b3', op2: 'URL_OP2_EP22', op3: 'URL_OP3_EP22' },
-      { num: 23, title: 'Reunión de los Pilares', op1: 'https://sendvid.com/embed/a6b4c3a2', op2: 'URL_OP2_EP23', op3: 'URL_OP3_EP23' },
-      { num: 24, title: 'Entrenamiento de rehabilitación', op1: 'https://sendvid.com/embed/95a3b291', op2: 'URL_OP2_EP24', op3: 'URL_OP3_EP24' },
-      { num: 25, title: 'Tsuguko, Kanao Tsuyuri', op1: 'https://sendvid.com/embed/8492a189', op2: 'URL_OP2_EP25', op3: 'URL_OP3_EP25' },
-      { num: 26, title: 'Nueva misión', op1: 'https://sendvid.com/embed/73819878', op2: 'URL_OP2_EP26', op3: 'URL_OP3_EP26' }
+      { num: 1, title: 'Crueldad', op1: 'https://sendvid.com/embed/7glle3e2' },
+      { num: 2, title: 'El entrenador, Sakonji Urokodaki', op1: 'https://sendvid.com/embed/m8gkn1cm' },
+      { num: 3, title: 'Sabito y Makomo', op1: 'https://sendvid.com/embed/70trk5r2' },
+      { num: 4, title: 'Selección final', op1: 'https://sendvid.com/embed/vcfi08gw' },
+      { num: 5, title: 'Tu propio acero', op1: 'https://sendvid.com/embed/x2ok0v9v' },
+      { num: 6, title: 'El espadachín que acompaña a un demonio', op1: 'https://sendvid.com/embed/a46gpddj' },
+      { num: 7, title: 'Muzan Kibutsuji', op1: 'https://sendvid.com/embed/idoqi1p1' },
+      { num: 8, title: 'El hechizo de la luna sangrienta', op1: 'https://sendvid.com/embed/3vxs2fcd' },
+      { num: 9, title: 'El demonio de la pelota Temari y el demonio de la flecha', op1: 'https://sendvid.com/embed/zzyefq6c' },
+      { num: 10, title: 'Siempre juntos', op1: 'https://sendvid.com/embed/a03sd06x' },
+      { num: 11, title: 'La casa de los tambores', op1: 'https://sendvid.com/embed/7bbq83gu' },
+      { num: 12, title: 'El jabalí muestra sus colmillos, Zenitsu duerme', op1: 'https://sendvid.com/embed/v8jy2m4q' },
+      { num: 13, title: 'Algo más importante que la vida', op1: 'https://sendvid.com/embed/8mqlbd1v' },
+      { num: 14, title: 'La casa con el blasón de la glicinia', op1: 'https://sendvid.com/embed/tvjlx0dq' },
+      { num: 15, title: 'Monte Natagumo', op1: 'https://sendvid.com/embed/vujchpxt' },
+      { num: 16, title: 'Dejando que otros vayan delante', op1: 'https://sendvid.com/embed/p9d4tod2' },
+      { num: 17, title: 'Debes dominar una sola cosa', op1: 'https://sendvid.com/embed/k3rphz15' },
+      { num: 18, title: 'Un lazo falso', op1: 'https://sendvid.com/embed/w5ek8or8' },
+      { num: 19, title: 'Dios del fuego', op1: 'https://sendvid.com/embed/wweuc59l' },
+      { num: 20, title: 'Familia de pega', op1: 'https://sendvid.com/embed/p5s7b57m' },
+      { num: 21, title: 'Violación de la normativa', op1: 'https://sendvid.com/embed/b7p6na01' },
+      { num: 22, title: 'El maestro', op1: 'https://sendvid.com/embed/fmw23ou7' },
+      { num: 23, title: 'Reunión de los Pilares', op1: 'https://sendvid.com/embed/oeux5zb9' },
+      { num: 24, title: 'Entrenamiento de rehabilitación', op1: 'https://sendvid.com/embed/36egtrsq' },
+      { num: 25, title: 'Tsuguko, Kanao Tsuyuri', op1: 'https://sendvid.com/embed/ybzqxhe2' },
+      { num: 26, title: 'Nueva misión', op1: 'https://sendvid.com/embed/nntxi5fa' }
     ];
 
     const episodesGrid = document.getElementById('episodes-grid');
-    episodes.forEach(episode => {
-      const episodeBtn = document.createElement('div');
-      episodeBtn.className = 'episode-btn';
-      episodeBtn.textContent = `Ep ${episode.num}`;
-      episodeBtn.onclick = () => loadEpisode(episode);
-      episodesGrid.appendChild(episodeBtn);
-    });
+    const currentEpisodeTitle = document.getElementById('current-episode-title');
+    const playerIframes = {
+        opcion1: document.querySelector('#opcion1-player iframe'),
+        opcion2: document.querySelector('#opcion2-player iframe'),
+        opcion3: document.querySelector('#opcion3-player iframe'),
+        opcion4: document.querySelector('#opcion4-player iframe')
+    };
 
     function loadEpisode(episode) {
-      document.querySelectorAll('.episode-btn').forEach((btn, index) => {
-        btn.classList.toggle('active', index === episode.num);
-      });
-      
-      document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
-      
-      document.querySelector('#opcion1-player iframe').src = episode.op1 || '';
-      document.querySelector('#opcion2-player iframe').src = episode.op2 || '';
-      document.querySelector('#opcion3-player iframe').src = episode.op3 || '';
-      document.querySelector('#opcion4-player iframe').src = episode.op4 || '';
-      
-      switchPlayer('opcion1');
+        currentEpisodeTitle.textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
+
+        playerIframes.opcion1.src = episode.op1;
+        playerIframes.opcion2.src = episode.op2;
+        playerIframes.opcion3.src = episode.op3;
+        playerIframes.opcion4.src = episode.op4;
+
+        document.querySelectorAll('.episode-btn').forEach(item => item.classList.remove('active'));
+        document.getElementById(`ep-${episode.num}`).classList.add('active');
     }
 
     function switchPlayer(option) {
-      document.querySelectorAll('.player-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      document.getElementById(`${option}-btn`).classList.add('active');
+      document.querySelectorAll('.player-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.player-container').forEach(container => container.classList.remove('active'));
       
-      document.querySelectorAll('.player-container').forEach(container => {
-        container.classList.remove('active');
-      });
-      document.getElementById(`${option}-player`).classList.add('active');
+      document.getElementById(option + '-btn').classList.add('active');
+      document.getElementById(option + '-player').classList.add('active');
     }
 
-    if (episodes.length > 0) {
-      loadEpisode(episodes[0]);
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+        episodes.forEach(ep => {
+            const epItem = document.createElement('div');
+            epItem.className = 'episode-btn';
+            epItem.id = `ep-${ep.num}`;
+            epItem.textContent = `Ep ${ep.num}`;
+            epItem.onclick = () => loadEpisode(ep);
+            episodesGrid.appendChild(epItem);
+        });
+
+        // Cargar el primer episodio por defecto
+        if (episodes.length > 0) {
+            loadEpisode(episodes[0]);
+        }
+        
+        // Activar el primer reproductor por defecto
+        switchPlayer('opcion1');
+    });
 
     // Función de búsqueda
     function searchAnime() {
@@ -145,18 +241,19 @@
   </script>
 
   <script>
-    // Deshabilitar clic derecho
-    document.addEventListener('contextmenu', function(e) {
+    // Bloquear clic derecho
+    window.addEventListener('contextmenu', function (e) {
       e.preventDefault();
     });
 
-    // Bloquear teclas específicas
-    document.addEventListener('keydown', function(e) {
+    // Bloquear teclas F12 y Ctrl+Shift+I
+    window.addEventListener('keydown', function (e) {
       if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
         e.preventDefault();
       }
     });
   </script>
+
 </body>
 </html>
 

@@ -129,6 +129,16 @@
 </body>
 </html>
 <script>
+// Función para ir a la temporada
+function goToSeason(seasonFile) {
+  window.location.href = seasonFile;
+}
+
+// Función para mostrar alerta de servidor no disponible
+function showUnavailableAlert(serverName) {
+  alert(`El servidor ${serverName} no está disponible en este momento. Por favor, intenta con otro servidor.`);
+}
+
 // Bloquear clic derecho
 window.addEventListener('contextmenu', function (e) {
     e.preventDefault();

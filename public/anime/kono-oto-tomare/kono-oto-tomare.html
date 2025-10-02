@@ -17,7 +17,7 @@
     <a href="../../index.html" class="logo">
       <span class="logo-icon"></span>Mundo Otaku Latino
     </a>
-    <a href="../../html/catalogo.html" class="back-btn">ðŸ  Inicio</a>
+    <a href="../../html/catalogo.html" class="back-btn">Inicio</a>
   </header>
     <div class="search-bar">
       <input type="text" placeholder="Buscar anime..." id="search-input">
@@ -49,7 +49,7 @@
       <!-- Kono Oto Tomare Season 1 -->
       <div class="season-card">
         <div class="season-thumbnail">
-          <img src="../../../img/Kono oto tomarï¿½ Season 1.png" alt="Kono Oto Tomare S1">
+          <img src="../../../img/Kono oto tomaré Season 1.png" alt="Kono Oto Tomare S1">
           <div class="season-number">S1</div>
           <div class="season-play-overlay">?</div>
         </div>
@@ -66,10 +66,10 @@
             <div class="progress-fill" id="s1-progress" style="width: 0%"></div>
           </div>
           <div class="progress-text" id="s1-progress-text">No iniciado</div>
-          <button class="watch-btn" id="s1-btn" onclick="goToSeason('season1.html')">?? Ver Temporada</button>
+          <button class="watch-btn" id="s1-btn" onclick="goToSeason('season1.html')">Ver Temporada</button>
           
           <div class="download-servers-section">
-            <div class="servers-title">?? Descargar Temporada Completa</div>
+            <div class="servers-title">Descargar Temporada Completa</div>
             <div class="servers-grid-compact">
               <a href="https://exe.io/KonoototomareS1" target="_blank" class="download-link terabox">?? TeraBox</a>
               <a href="#" onclick="showUnavailableAlert('MEGA'); return false;" class="download-link mega unavailable-server">?? MEGA</a>
@@ -135,6 +135,16 @@
       
       document.getElementById(option + '-btn').classList.add('active');
       document.getElementById(option + '-player').classList.add('active');
+    }
+
+    // Función para ir a la temporada
+    function goToSeason(seasonFile) {
+      window.location.href = seasonFile;
+    }
+
+    // Función para mostrar alerta de servidor no disponible
+    function showUnavailableAlert(serverName) {
+      alert(`El servidor ${serverName} no está disponible en este momento. Por favor, intenta con otro servidor.`);
     }
 
     document.addEventListener('DOMContentLoaded', function() {
