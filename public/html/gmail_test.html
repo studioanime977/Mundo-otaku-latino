@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Mundo Otaku Latino - Catálogo de Anime</title>
+        <meta name="google-adsense-account" content="ca-pub-8480825005176665">
+<meta charset="UTF-8">
+    <title>Mundo Otaku Latino - CatÃ¡logo de Anime</title>
     <script src="https://apis.google.com/js/api.js"></script>
     <script src="../../assets/js/main.js"></script>
     <style>
@@ -107,13 +108,14 @@
             font-family: monospace;
         }
     </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
-        <h1>🧪 Prueba Gmail API - StudioOtaku</h1>
+        <h1>ðŸ§ª Prueba Gmail API - StudioOtaku</h1>
         
         <div class="config-info">
-            <h3>⚙️ Configuración Requerida:</h3>
+            <h3>âš™ï¸ ConfiguraciÃ³n Requerida:</h3>
             <p><strong>1.</strong> Ve a <a href="https://console.developers.google.com/" target="_blank" style="color: #ff5cad;">Google Cloud Console</a></p>
             <p><strong>2.</strong> Crea un proyecto y habilita Gmail API</p>
             <p><strong>3.</strong> Crea credenciales OAuth 2.0</p>
@@ -121,12 +123,12 @@
         </div>
 
         <div class="file-input">
-            <h3>📁 Selecciona una imagen de comprobante:</h3>
+            <h3>ðŸ“ Selecciona una imagen de comprobante:</h3>
             <input type="file" id="fileInput" accept="image/*">
             <p style="font-size: 14px; color: #ccc;">Formatos: JPG, PNG, GIF</p>
         </div>
 
-        <button id="sendBtn" onclick="sendEmail()" class="send-btn">📤 Enviar Correo de Prueba</button>
+        <button id="sendBtn" onclick="sendEmail()" class="send-btn">ðŸ“¤ Enviar Correo de Prueba</button>
 
         <div id="status" class="status" style="display: none;"></div>
     </div>
@@ -148,27 +150,27 @@
             const sendBtn = document.getElementById('sendBtn');
             
             if (!fileInput.files[0]) {
-                showStatus("❌ Selecciona una imagen primero", 'error');
+                showStatus("âŒ Selecciona una imagen primero", 'error');
                 return;
             }
 
             if (CLIENT_ID === "PON_AQUI_TU_CLIENT_ID.apps.googleusercontent.com") {
-                showStatus("⚠️ Configura tu CLIENT_ID de Google primero", 'error');
+                showStatus("âš ï¸ Configura tu CLIENT_ID de Google primero", 'error');
                 return;
             }
 
-            // Deshabilitar botón y mostrar estado
+            // Deshabilitar botÃ³n y mostrar estado
             sendBtn.disabled = true;
-            sendBtn.textContent = '⏳ Inicializando...';
-            showStatus("🔄 Inicializando Gmail API...", 'info');
+            sendBtn.textContent = 'â³ Inicializando...';
+            showStatus("ðŸ”„ Inicializando Gmail API...", 'info');
 
             gapi.load("client:auth2", initClient);
         }
 
         function initClient() {
             const sendBtn = document.getElementById('sendBtn');
-            sendBtn.textContent = '🔐 Autenticando...';
-            showStatus("🔐 Autenticando con Google...", 'info');
+            sendBtn.textContent = 'ðŸ” Autenticando...';
+            showStatus("ðŸ” Autenticando con Google...", 'info');
 
             gapi.client.init({
                 apiKey: API_KEY,
@@ -176,12 +178,12 @@
                 discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"],
                 scope: SCOPES
             }).then(() => {
-                sendBtn.textContent = '🔑 Iniciando sesión...';
-                showStatus("🔑 Iniciando sesión en Google...", 'info');
+                sendBtn.textContent = 'ðŸ”‘ Iniciando sesiÃ³n...';
+                showStatus("ðŸ”‘ Iniciando sesiÃ³n en Google...", 'info');
                 return gapi.auth2.getAuthInstance().signIn();
             }).then(() => {
-                sendBtn.textContent = '📤 Enviando correo...';
-                showStatus("📤 Preparando y enviando correo...", 'info');
+                sendBtn.textContent = 'ðŸ“¤ Enviando correo...';
+                showStatus("ðŸ“¤ Preparando y enviando correo...", 'info');
                 
                 let file = document.getElementById('fileInput').files[0];
                 let reader = new FileReader();
@@ -190,7 +192,7 @@
                     let content = e.target.result.split(",")[1]; // Base64 puro
                     let message =
                         `To: STUDIOOTAKU6@GMAIL.COM\r\n` +
-                        `Subject: 🧪 Prueba Gmail API StudioOtaku - ${file.name}\r\n` +
+                        `Subject: ðŸ§ª Prueba Gmail API StudioOtaku - ${file.name}\r\n` +
                         `Content-Type: multipart/mixed; boundary="boundary"\r\n\r\n` +
                         `--boundary\r\n` +
                         `Content-Type: text/plain; charset="UTF-8"\r\n\r\n` +
@@ -211,39 +213,39 @@
                         userId: "me",
                         resource: { raw: encodedMessage }
                     }).then(() => {
-                        sendBtn.textContent = '✅ ¡Enviado!';
-                        showStatus("📧 ¡Correo enviado con éxito usando Gmail API!", 'success');
+                        sendBtn.textContent = 'âœ… Â¡Enviado!';
+                        showStatus("ðŸ“§ Â¡Correo enviado con Ã©xito usando Gmail API!", 'success');
                         setTimeout(() => {
                             sendBtn.disabled = false;
-                            sendBtn.textContent = '📤 Enviar Correo de Prueba';
+                            sendBtn.textContent = 'ðŸ“¤ Enviar Correo de Prueba';
                         }, 3000);
                     }).catch((error) => {
-                        sendBtn.textContent = '❌ Error';
-                        showStatus(`❌ Error al enviar: ${error.message}`, 'error');
+                        sendBtn.textContent = 'âŒ Error';
+                        showStatus(`âŒ Error al enviar: ${error.message}`, 'error');
                         setTimeout(() => {
                             sendBtn.disabled = false;
-                            sendBtn.textContent = '📤 Enviar Correo de Prueba';
+                            sendBtn.textContent = 'ðŸ“¤ Enviar Correo de Prueba';
                         }, 3000);
                     });
                 };
                 
                 reader.readAsDataURL(file);
             }).catch((error) => {
-                sendBtn.textContent = '❌ Error';
-                showStatus(`❌ Error de autenticación: ${error.message}`, 'error');
+                sendBtn.textContent = 'âŒ Error';
+                showStatus(`âŒ Error de autenticaciÃ³n: ${error.message}`, 'error');
                 setTimeout(() => {
                     sendBtn.disabled = false;
-                    sendBtn.textContent = '📤 Enviar Correo de Prueba';
+                    sendBtn.textContent = 'ðŸ“¤ Enviar Correo de Prueba';
                 }, 3000);
             });
         }
 
-        // Verificar si Gmail API está disponible
+        // Verificar si Gmail API estÃ¡ disponible
         window.addEventListener('load', function() {
             if (typeof gapi === 'undefined') {
-                showStatus("❌ Gmail API no está disponible. Verifica tu conexión a internet.", 'error');
+                showStatus("âŒ Gmail API no estÃ¡ disponible. Verifica tu conexiÃ³n a internet.", 'error');
             } else {
-                showStatus("✅ Gmail API cargada correctamente", 'success');
+                showStatus("âœ… Gmail API cargada correctamente", 'success');
                 setTimeout(() => {
                     document.getElementById('status').style.display = 'none';
                 }, 3000);
@@ -252,3 +254,5 @@
     </script>
 </body>
 </html>
+
+

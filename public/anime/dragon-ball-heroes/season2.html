@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dragon Ball Heroes - Temporada 2 - StudioOtaku</title>
+      <meta name="google-adsense-account" content="ca-pub-8480825005176665">
+<title>Dragon Ball Heroes - Temporada 2 - StudioOtaku</title>
   
   <link rel="stylesheet" href="../../../css/temporadas.css">
   <link rel="stylesheet" href="../../../css/style.css">
@@ -139,17 +140,18 @@
       background-color: #4a47a3;
     }
   </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
 </head>
 <body>
 
   <header class="header">
     <a href="../../../index.html" class="logo">StudioOtaku</a>
-    <a href="../../../public/html/catalogo.html" class="back-btn">🏠 Inicio</a>
+    <a href="../../../public/html/catalogo.html" class="back-btn">ðŸ  Inicio</a>
   </header>
 
   <main class="main-content">
     <div class="left-content">
-      <a href="dragon-ball-heroes.html" class="back-btn">← Volver a Dragon Ball Heroes</a>
+      <a href="dragon-ball-heroes.html" class="back-btn">â† Volver a Dragon Ball Heroes</a>
 
       <div class="title-container">
           <h1 class="season-title">Dragon Ball Heroes - Temporada 2</h1>
@@ -157,15 +159,15 @@
       </div>
 
       <div class="description">
-        <p>En esta segunda temporada, la saga continúa con batallas multidimensionales entre los guerreros más poderosos de diferentes universos y líneas temporales.</p>
+        <p>En esta segunda temporada, la saga continÃºa con batallas multidimensionales entre los guerreros mÃ¡s poderosos de diferentes universos y lÃ­neas temporales.</p>
       </div>
 
       <div class="contenedor-video">
         <div class="player-options">
-          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÓN 1</button>
-          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÓN 2</button>
-          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÓN 3</button>
-          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÓN 4</button>
+          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÃ“N 1</button>
+          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÃ“N 2</button>
+          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÃ“N 3</button>
+          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÃ“N 4</button>
         </div>
         <div class="reproductor-video">
           <div id="opcion1-player" class="player-container active">
@@ -188,13 +190,13 @@
       </div>
 
       <div class="description">
-        <p>Dragon Ball Heroes continúa llevando a los personajes a nuevos niveles de poder con transformaciones y batallas épicas nunca antes vistas.</p>
+        <p>Dragon Ball Heroes continÃºa llevando a los personajes a nuevos niveles de poder con transformaciones y batallas Ã©picas nunca antes vistas.</p>
       </div>
 
       <div class="episodes-container">
           <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
           <div class="episodes-grid" id="episodes-grid">
-              <!-- Los episodios se generarán con JavaScript -->
+              <!-- Los episodios se generarÃ¡n con JavaScript -->
           </div>
       </div>
     </div>
@@ -223,7 +225,7 @@
       </div>
       <div class="popular-item" onclick="window.location.href='../../../public/anime/naruto/naruto.html'">
         <img src="../../../img/Naruto Classic.jpg" alt="Naruto">
-        <div class="title">Naruto - Clásico</div>
+        <div class="title">Naruto - ClÃ¡sico</div>
       </div>
       <div class="popular-item" onclick="window.location.href='../../../public/anime/one-piece/one-piece.html'">
         <img src="../../../img/One Piece Wano.jpg" alt="One Piece">
@@ -251,7 +253,7 @@
   </main>
 
   <style>
-    /* Ajustes para dispositivos móviles */
+    /* Ajustes para dispositivos mÃ³viles */
     @media (max-width: 768px) {
       .header {
         display: flex;
@@ -363,31 +365,31 @@
     </style>
 
     <script>
-      // Función para expandir el reproductor
+      // FunciÃ³n para expandir el reproductor
       function expandPlayer() {
         const videoContainer = document.querySelector('.contenedor-video');
         videoContainer.classList.toggle('expanded');
       }
     
-      // Función para apagar/encender las luces
+      // FunciÃ³n para apagar/encender las luces
       function toggleLights() {
         document.body.classList.toggle('lights-off');
       }
 
-      // Función para cargar episodio
+      // FunciÃ³n para cargar episodio
       function loadEpisode(episode, buttonElement) {
         const iframe = document.querySelector('.contenedor-video iframe');
         if (iframe && episode.op1) {
           iframe.src = episode.op1;
         }
         
-        // Actualizar título del episodio
+        // Actualizar tÃ­tulo del episodio
         const episodeTitle = document.querySelector('h2');
         if (episodeTitle) {
           episodeTitle.textContent = episode.title;
         }
 
-        // Marcar botón activo
+        // Marcar botÃ³n activo
         document.querySelectorAll('.episode-btn').forEach(btn => btn.classList.remove('active'));
         if (buttonElement) {
           buttonElement.classList.add('active');
@@ -454,3 +456,4 @@
     </script>
   </body>
 </html>
+
