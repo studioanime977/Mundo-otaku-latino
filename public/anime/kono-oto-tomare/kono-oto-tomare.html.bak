@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="google-adsense-account" content="ca-pub-8480825005176665">
+<title>Kono Oto Tomare - Mundo Otaku Latino</title>
+  
+  <link rel="stylesheet" href="../../../css/anime.css">`n    <style>`n      * {`n        font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', Tahoma, Geneva, Verdana, sans-serif !important;`n      }`n    </style>
+  <script src="../../assets/js/main.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="/img/mundo-otaku-latino.ico">
+  <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico">
+</head>
+<body>
+  
+
+  <!-- Header -->
+    <header class="header">
+    <a href="../../index.html" class="logo">
+      <span class="logo-icon"></span>Mundo Otaku Latino
+    </a>
+    <a href="../../html/catalogo.html" class="back-btn">Inicio</a>
+  </header>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar anime..." id="search-input">
+      <button onclick="searchAnime()">??</button>
+    </div>
+    <div class="user-actions">
+      <button class="auth-btn">?? Login</button>
+      <button class="auth-btn">? Registro</button>
+      <a href="../../html/catalogo.html" class="auth-btn">?? Inicio</a>
+    </div>
+  </div>
+
+  <main class="main-content">
+    <a href="../../html/catalogo.html" class="back-btn">â† Volver al CatÃ¡logo</a>
+    
+    
+    <div class="anime-header">
+      <h1 class="anime-title">?? Kono Oto Tomare!</h1>
+      <p class="anime-description">
+        Takezo Kurata es el ï¿½nico miembro del club de koto de su escuela preparatoria. Cuando estï¿½ a punto de ser cerrado, aparecen nuevos miembros incluyendo a Chika Kudo, un delincuente con un pasado problemï¿½tico, y Satowa Hozuki, una prodigio del koto. Juntos descubren el poder de la mï¿½sica tradicional japonesa y forman vï¿½nculos que van mï¿½s allï¿½ de las notas musicales.
+      </p>
+      <!-- Top Banner -->
+  <div class="banner-ad" style="text-align: center; margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.1); border-radius: 10px;">
+    <a href="https://exe.io/ref/studiootaku" target="_blank"><img src="https://exe.io/img/ref/r1.gif" title="CuT URLs - Earn money by shortening links with the highest CPMs Ever!" style="max-width: 100%; height: auto; border-radius: 5px;" /></a>
+  </div>
+  <!-- End Top Banner --></div>
+
+    <div class="seasons-container">
+      <!-- Kono Oto Tomare Season 1 -->
+      <div class="season-card">
+        <div class="season-thumbnail">
+          <img src="../../../img/Kono oto tomaré Season 1.png" alt="Kono Oto Tomare S1">
+          <div class="season-number">S1</div>
+          <div class="season-play-overlay">?</div>
+        </div>
+        <div class="season-info">
+          <div class="season-title">Kono Oto Tomare! - Temporada 1</div>
+          <div class="season-description">
+            Takezo Kurata lucha por mantener vivo el club de koto cuando llegan nuevos miembros con diferentes trasfondos. La llegada de Chika Kudo y Satowa Hozuki cambia la dinï¿½mica del club para siempre.
+          </div>
+          <div class="season-stats">
+            <div class="episode-count">?? 13 Episodios</div>
+            <div class="season-year">2019</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="s1-progress" style="width: 0%"></div>
+          </div>
+          <div class="progress-text" id="s1-progress-text">No iniciado</div>
+          <button class="watch-btn" id="s1-btn" onclick="goToSeason('season1.html')">Ver Temporada</button>
+          
+          <div class="download-servers-section">
+            <div class="servers-title">Descargar Temporada Completa</div>
+            <div class="servers-grid-compact">
+              <a href="https://exe.io/KonoototomareS1" target="_blank" class="download-link terabox">?? TeraBox</a>
+              <a href="#" onclick="showUnavailableAlert('MEGA'); return false;" class="download-link mega unavailable-server">?? MEGA</a>
+              <a href="#" onclick="showUnavailableAlert('MediaFire'); return false;" class="download-link mediafire unavailable-server">?? MediaFire</a>
+              <a href="#" onclick="showUnavailableAlert('Dropbox'); return false;" class="download-link dropbox unavailable-server">?? Dropbox</a>
+              <a href="#" onclick="showUnavailableAlert('1Fichier'); return false;" class="download-link fichier unavailable-server">?? 1Fichier</a>
+              <a href="#" onclick="showUnavailableAlert('Stape'); return false;" class="download-link stape unavailable-server">?? Stape</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kono Oto Tomare Season 2 -->
+      <div class="season-card">
+        <div class="season-thumbnail">
+          <img src="../../../img/Kono oto tomarï¿½ Season 2.png" alt="Kono Oto Tomare S2">
+          <div class="season-number">S2</div>
+          <div class="season-play-overlay">?</div>
+        </div>
+        <div class="season-info">
+          <div class="season-title">Kono Oto Tomare! - Temporada 2</div>
+          <div class="season-description">
+            El club de koto se prepara para el concurso nacional mientras los miembros enfrentan desafï¿½os personales y musicales. Las relaciones se profundizan y la mï¿½sica los une mï¿½s que nunca.
+          </div>
+          <div class="season-stats">
+            <div class="episode-count">?? 13 Episodios</div>
+            <div class="season-year">2019</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="s2-progress" style="width: 0%"></div>
+          </div>
+          <div class="progress-text" id="s2-progress-text">No iniciado</div>
+          <button class="watch-btn" id="s2-btn" onclick="goToSeason('season2.html')">?? Ver Temporada</button>
+          
+          <div class="download-servers-section">
+            <div class="servers-title">?? Descargar Temporada Completa</div>
+            <div class="servers-grid-compact">
+              <a href="https://exe.io/KonoototomareS2" target="_blank" class="download-link terabox">?? TeraBox</a>
+              <a href="#" onclick="showUnavailableAlert('MEGA'); return false;" class="download-link mega unavailable-server">?? MEGA</a>
+              <a href="#" onclick="showUnavailableAlert('MediaFire'); return false;" class="download-link mediafire unavailable-server">?? MediaFire</a>
+              <a href="#" onclick="showUnavailableAlert('Dropbox'); return false;" class="download-link dropbox unavailable-server">?? Dropbox</a>
+              <a href="#" onclick="showUnavailableAlert('1Fichier'); return false;" class="download-link fichier unavailable-server">?? 1Fichier</a>
+              <a href="#" onclick="showUnavailableAlert('Stape'); return false;" class="download-link stape unavailable-server">?? Stape</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  <!-- Bottom Banner -->
+  <div class="banner-ad" style="text-align: center; margin: 2rem 0; padding: 1rem; background: rgba(0,0,0,0.1); border-radius: 10px;">
+    <a href="https://exe.io/ref/studiootaku" target="_blank"><img src="https://exe.io/img/ref/r4.png" title="CuT URLs - Earn money by shortening links with the highest CPMs Ever!" style="max-width: 100%; height: auto; border-radius: 5px;" /></a>
+  </div>
+  <!-- End Bottom Banner -->
+</main>
+
+  <script>
+    function switchPlayer(option) {
+      const playerButtons = document.querySelectorAll('.player-btn');
+      const playerContainers = document.querySelectorAll('.player-container');
+      
+      playerButtons.forEach(btn => btn.classList.remove('active'));
+      playerContainers.forEach(container => container.classList.remove('active'));
+      
+      document.getElementById(option + '-btn').classList.add('active');
+      document.getElementById(option + '-player').classList.add('active');
+    }
+
+    // Función para ir a la temporada
+    function goToSeason(seasonFile) {
+      window.location.href = seasonFile;
+    }
+
+    // Función para mostrar alerta de servidor no disponible
+    function showUnavailableAlert(serverName) {
+      alert(`El servidor ${serverName} no está disponible en este momento. Por favor, intenta con otro servidor.`);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const firstPlayerBtn = document.querySelector('.player-btn');
+      if (firstPlayerBtn) {
+        firstPlayerBtn.click();
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Bloquear clic derecho
+window.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+
+// Bloquear teclas F12, Ctrl+Shift+I
+window.addEventListener('keydown', function (e) {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+        e.preventDefault();
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

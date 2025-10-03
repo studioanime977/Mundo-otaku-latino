@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="google-adsense-account" content="ca-pub-8480825005176665">
+<title>Enlaces de Descarga - StudioOtaku</title>
+  <link rel="stylesheet" href="../../css/catalogo.css">
+  <style>
+    :root {
+      --primary-color: #8e44ad;
+      --secondary-color: #9b59b6;
+      --accent-color: #e056fd;
+      --text-color: #f5f5f5;
+      --background-dark: #1a1a2e;
+      --card-bg: #16213e;
+      --card-hover: #0f3460;
+    }
+    
+    body {
+      background: linear-gradient(135deg, var(--background-dark), #2a1a3a);
+      color: var(--text-color);
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .header {
+      background-color: rgba(26, 26, 46, 0.8);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .logo {
+      color: var(--accent-color);
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    
+    .back-btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    
+    .back-btn:hover {
+      background-color: var(--secondary-color);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    .page-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--accent-color);
+      font-size: 2.5rem;
+    }
+    
+    .anime-section {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .anime-title {
+      color: var(--accent-color);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.5rem;
+    }
+    
+    .download-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .download-item {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .download-label {
+      font-weight: bold;
+      margin-right: 1rem;
+      min-width: 150px;
+    }
+    
+    .download-link {
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+    
+    .download-link:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+    
+    .note-section {
+      background-color: rgba(26, 26, 46, 0.8);
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+    }
+    
+    .note-title {
+      color: var(--accent-color);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .download-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .download-label {
+        margin-bottom: 0.5rem;
+      }
+    }
+  </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="/img/mundo-otaku-latino.ico">
+  <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico">
+</head>
+<body>
+  <header class="header">
+    <a href="../../index.html" class="logo">StudioOtaku</a>
+    <a href="../../public/html/catalogo.html" class="back-btn">ðŸ  Inicio</a>
+  </header>
+
+  <div class="container">
+    <h1 class="page-title">Enlaces de Descarga de Animes</h1>
+    
+    <section class="anime-section">
+      <h2 class="anime-title">ðŸ—¡ï¸ Kimetsu no Yaiba (Demon Slayer)</h2>
+      <ul class="download-list">
+        <li class="download-item">
+          <span class="download-label">Temporada 1:</span>
+          <a href="https://exe.io/KimetsuNoYaibaS1" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 2:</span>
+          <a href="https://exe.io/tem2KimetsunoYaiba" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 3:</span>
+          <a href="https://exe.io/kimetsuS3" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 4:</span>
+          <a href="https://exe.io/kimetsuS4" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Tren Infinito:</span>
+          <a href="https://exe.io/KimetsunoYaibaTrenInfino" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Entrenamiento Pilar:</span>
+          <a href="https://exe.io/entrenamientopilar" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Castillo Infinito (Sub):</span>
+          <a href="https://exe.io/SUBTCastillofullhd" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Rugido de Victoria:</span>
+          <a href="https://exe.io/KimetsuNoYaibarugidodevictoria" class="download-link" target="_blank">Descargar</a>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="anime-section">
+      <h2 class="anime-title">âš”ï¸ Nanatsu no Taizai (Los 7 Pecados Capitales)</h2>
+      <ul class="download-list">
+        <li class="download-item">
+          <span class="download-label">Temporada 1:</span>
+          <a href="https://exe.io/NanatsunotaizaiTEM1" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 2:</span>
+          <a href="https://exe.io/NanatsunotaizaiTEM2" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 3:</span>
+          <a href="https://exe.io/NanatsunotaizaiTEM3" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 4:</span>
+          <a href="https://exe.io/NanatsunotaizaiTEM4" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 5:</span>
+          <a href="https://exe.io/NanatsunotaizaiTEM5" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Prisioneros del Cielo:</span>
+          <a href="https://exe.io/NanatsuPrisionerosdelCielo" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">La MaldiciÃ³n de la Luz:</span>
+          <a href="https://exe.io/7pecadosLaMaldiciondelaLuz" class="download-link" target="_blank">Descargar</a>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="anime-section">
+      <h2 class="anime-title">ðŸ”„ Re:Zero</h2>
+      <ul class="download-list">
+        <li class="download-item">
+          <span class="download-label">Temporada 1:</span>
+          <a href="https://exe.io/ReZeroS1" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 2:</span>
+          <a href="https://exe.io/ReZeroS2" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 3:</span>
+          <a href="https://exe.io/ReZeroS3" class="download-link" target="_blank">Descargar</a>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="anime-section">
+      <h2 class="anime-title">ðŸ‘‘ Solo Leveling</h2>
+      <ul class="download-list">
+        <li class="download-item">
+          <span class="download-label">Temporada 1:</span>
+          <a href="https://exe.io/sololevelingS1" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 2:</span>
+          <a href="https://exe.io/SoloLevelingS2" class="download-link" target="_blank">Descargar</a>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="anime-section">
+      <h2 class="anime-title">ðŸ’¼ Sakamoto Days</h2>
+      <ul class="download-list">
+        <li class="download-item">
+          <span class="download-label">Temporada 1:</span>
+          <a href="https://exe.io/sakamotodays" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 2:</span>
+          <a href="https://exe.io/sakamotodaysS2" class="download-link" target="_blank">Descargar</a>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="anime-section">
+      <h2 class="anime-title">ðŸŽ“ Classroom of the Elite</h2>
+      <ul class="download-list">
+        <li class="download-item">
+          <span class="download-label">Temporada 1:</span>
+          <a href="https://exe.io/classroomoftheelites1" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 2:</span>
+          <a href="https://exe.io/classroomoftheelites2" class="download-link" target="_blank">Descargar</a>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="anime-section">
+      <h2 class="anime-title">ðŸ’ª Mashle</h2>
+      <ul class="download-list">
+        <li class="download-item">
+          <span class="download-label">Temporada 1:</span>
+          <a href="https://exe.io/Mashletemporada1" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 2:</span>
+          <a href="https://exe.io/Mashletem2" class="download-link" target="_blank">Descargar</a>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="anime-section">
+      <h2 class="anime-title">ðŸ¦¸â€â™‚ï¸ Boku no Hero Academia</h2>
+      <ul class="download-list">
+        <li class="download-item">
+          <span class="download-label">Temporada 1:</span>
+          <a href="https://exe.io/BokunoHeroAcademiaS1" class="download-link" target="_blank">Descargar</a>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="anime-section">
+      <h2 class="anime-title">ðŸ’• Horimiya</h2>
+      <ul class="download-list">
+        <li class="download-item">
+          <span class="download-label">Temporada 1:</span>
+          <a href="https://exe.io/HorimiyaS1" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 2:</span>
+          <a href="https://exe.io/HorimiyaS2" class="download-link" target="_blank">Descargar</a>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="anime-section">
+      <h2 class="anime-title">ðŸ° Mushoku Tensei</h2>
+      <ul class="download-list">
+        <li class="download-item">
+          <span class="download-label">Temporada 1:</span>
+          <a href="https://exe.io/MushokuTenseitem1" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 2:</span>
+          <a href="https://exe.io/MushokuTenseiS2" class="download-link" target="_blank">Descargar</a>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="anime-section">
+      <h2 class="anime-title">ðŸ•µï¸ Bungo Stray Dogs</h2>
+      <ul class="download-list">
+        <li class="download-item">
+          <span class="download-label">Temporada 1:</span>
+          <a href="https://exe.io/BungouStrayDogsS1" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 2:</span>
+          <a href="https://exe.io/BungouStrayDogsS2" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 3:</span>
+          <a href="https://exe.io/BungouStrayDogsS3" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Temporada 4:</span>
+          <a href="https://exe.io/BungouStrayDogsS4" class="download-link" target="_blank">Descargar</a>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="anime-section">
+      <h2 class="anime-title">ðŸŽ¬ Animes de Una Sola Temporada</h2>
+      <ul class="download-list">
+        <li class="download-item">
+          <span class="download-label">Dragon Ball Heroes:</span>
+          <a href="https://exe.io/DRAGONBALLHEROES" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Even Given the Worthless:</span>
+          <a href="https://exe.io/EvenGiventheWorthlessS1" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Sword Art Online Progressive:</span>
+          <a href="https://exe.io/SwordArtOnlineProgressiveMovie" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Kono Oto Tomare:</span>
+          <a href="https://exe.io/KonoototomareS1" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Papa no Iukoto o Kikinasai:</span>
+          <a href="https://exe.io/PapanoIukotooKikinasai" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">DanMachi:</span>
+          <a href="https://exe.io/DanMachitem1" class="download-link" target="_blank">Descargar</a>
+        </li>
+        <li class="download-item">
+          <span class="download-label">Urusei Yatsura:</span>
+          <a href="https://exe.io/UruseiYatsuratemporada1" class="download-link" target="_blank">Descargar</a>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="anime-section">
+      <h2 class="anime-title">ðŸ“± AplicaciÃ³n MÃ³vil</h2>
+      <ul class="download-list">
+        <li class="download-item">
+          <span class="download-label">Anime TV APK:</span>
+          <a href="https://exe.io/ANIMETV" class="download-link" target="_blank">Descargar</a>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="note-section">
+      <h3 class="note-title">Nota:</h3>
+      <p>Todos los enlaces utilizan el servicio exe.io y redirigen a las descargas correspondientes. La pÃ¡gina tambiÃ©n incluye un sistema VIP para acceso completo y sin publicidad.</p>
+    </section>
+  </div>
+</body>
+<script src="../../assets/js/main.js"></script>
+</html>
+
+

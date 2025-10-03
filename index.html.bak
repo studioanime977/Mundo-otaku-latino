@@ -1,0 +1,778 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+  <!-- TÃ­tulo SEO optimizado (mÃ¡x. 60 caracteres) -->
+  <title>Mundo Otaku Latino - CatÃ¡logo de Anime</title>
+
+  <!-- DescripciÃ³n SEO vs COMPETIDORES (mÃ¡x. 160 caracteres) -->
+  <meta name="description" content="ðŸŽŒ StudioOtaku > Cuevana | Anime Latino SIN ADS | Castillo Infinito gratis | Mejor que DescargarAnimes | HD espaÃ±ol latino | Alternativa AnimeLatinoHD">
+
+  <!-- Keywords COMPETITIVAS vs Cuevana, DescargarAnimes, AnimeLatinoHD -->
+  <meta name="keywords" content="studiootaku, anime latino, anime a la carta, descargar castillo infinito, anime en espaÃ±ol, anime gratis online, Kimetsu no Yaiba castillo infinito, ver anime latino, anime MÃ©xico, anime Colombia, anime mundial, demon slayer movie, anime HD espaÃ±ol, episodios sin publicidad, anime sin anuncios, descarga un solo anuncio, ver anime gratis sin ads, anime streaming sin publicidad, castillo infinito sin anuncios, kimetsu no yaiba gratis, anime completo sin cortes, descargar anime rapido, anime latino HD, ver anime online gratis, anime sin interrupciones, studiootaku sin publicidad, anime premium gratis, castillo infinito completo, demon slayer sin ads, anime latino gratis, doblaje latino, anime espaÃ±ol latino, studiootaku anime latino, anime 2024, anime 2025, mejores animes, top anime, anime popular, anime trending, anime viral, castillo infinito pelicula, kimetsu no yaiba pelicula, demon slayer pelicula, anime full hd, anime 1080p, anime 4k, descargar anime mega, anime mediafire, anime drive, anime terabox, anime dropbox, ver anime movil, anime android, anime ios, anime pc, anime smart tv, anime chromecast, anime roku, studiootaku oficial, studiootaku app, studiootaku apk, anime sin registro, anime sin cuenta, anime directo, anime instantaneo, anime rapido, anime facil, anime simple, anime mejor calidad, anime audio perfecto, anime video perfecto, anime completo espaÃ±ol, anime doblado espaÃ±ol, anime subtitulado espaÃ±ol, anime latino mexico, anime latino colombia, anime latino argentina, anime latino peru, anime latino chile, anime latino espaÃ±a, anime latino venezuela, anime latino ecuador, anime latino bolivia, anime latino paraguay, anime latino uruguay, anime latino costa rica, anime latino panama, anime latino guatemala, anime latino honduras, anime latino salvador, anime latino nicaragua, anime latino republica dominicana, anime latino cuba, anime latino puerto rico, mejor que cuevana, alternativa cuevana, mejor que descargaranimes, alternativa descargaranimes, mejor que animelatinoHD, alternativa animelatinoHD, anime online HD sub espaÃ±ol latino gratis, ver anime online en HD, anime online gratis, mira los ultimos capitulos, anime del momento, anime sin restriccion, anime subtitulados espaÃ±ol latino, calendario de animes, lista de animes, lista de animes mas vistos, anime latino com, ver anime online HD sub, anime HD sub espaÃ±ol latino, anime online HD, anime gratis HD, anime streaming HD, anime completo HD, anime sin cortes HD, anime mejor servidor, anime servidor rapido, anime links directos, anime descarga directa, anime sin esperas, anime sin limites, anime 24/7, anime siempre disponible, anime actualizaciones diarias, anime estrenos, anime temporadas completas, anime peliculas completas, anime ovas completas, anime especiales completos">
+
+  <!-- Meta tags avanzados para posicionamiento #1 -->
+  <meta name="author" content="StudioOtaku">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="language" content="Spanish">
+  <meta name="geo.region" content="MX, CO, ES, AR, PE, CL, VE, EC, BO, PY, UY, CR, PA, GT, HN, SV, NI, DO, CU, PR">
+  <meta name="geo.placename" content="MÃ©xico, Colombia, EspaÃ±a, Argentina, PerÃº, Chile">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="general">
+  <meta name="revisit-after" content="1 day">
+  <meta name="expires" content="never">
+  <meta name="cache-control" content="public">
+  <meta name="theme-color" content="#ff5cad">
+  <meta name="msapplication-TileColor" content="#ff5cad">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  
+  <!-- Meta tags especÃ­ficos para anime -->
+  <meta name="category" content="Entertainment, Anime, Movies, TV Shows">
+  <meta name="coverage" content="Worldwide">
+  <meta name="target" content="anime fans, otaku, spanish speakers, latin america, anime latino fans">
+  <meta name="audience" content="general">
+  <meta name="classification" content="anime streaming, anime download, entertainment, anime latino">
+  <meta name="subject" content="StudioOtaku, Anime Latino, Castillo Infinito, Kimetsu no Yaiba, Anime sin Publicidad">
+  <meta name="abstract" content="StudioOtaku - Plataforma de anime latino. Ve episodios sin publicidad y descarga con un solo anuncio. Anime a la carta en espaÃ±ol latino.">
+  <meta name="topic" content="StudioOtaku, Anime Latino, Castillo Infinito, Kimetsu no Yaiba, Demon Slayer, Doblaje Latino">
+  <meta name="summary" content="StudioOtaku - Tu plataforma de anime latino. Ver y descargar Castillo Infinito sin publicidad. Anime a la carta en espaÃ±ol latino.">
+  <meta name="designer" content="StudioOtaku Team">
+  <meta name="copyright" content="StudioOtaku 2024">
+  <meta name="reply-to" content="contact@studiootaku.com">
+  <meta name="owner" content="StudioOtaku">
+  <meta name="url" content="https://castillo-infinito.vercel.app/">
+  <meta name="identifier-URL" content="https://castillo-infinito.vercel.app/">
+  <meta name="directory" content="submission">
+  <meta name="pagename" content="StudioOtaku - Anime Latino a la Carta Sin Publicidad">
+  <meta name="subtitle" content="Anime latino, episodios sin anuncios, descarga con un solo clic">
+  <meta name="target_country" content="MX, CO, ES, AR, PE, CL">
+  
+  <!-- Meta tags ULTRA AVANZADOS para indexaciÃ³n -->
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta name="slurp" content="index, follow">
+  <meta name="msnbot" content="index, follow">
+  <meta name="duckduckbot" content="index, follow">
+  <meta name="facebookexternalhit" content="index, follow">
+  <meta name="twitterbot" content="index, follow">
+  <meta name="yandexbot" content="index, follow">
+  <meta name="baiduspider" content="index, follow">
+  <meta name="applebot" content="index, follow">
+  <meta name="linkedinbot" content="index, follow">
+  <meta name="pinterestbot" content="index, follow">
+  <meta name="whatsapp" content="index, follow">
+  <meta name="telegrambot" content="index, follow">
+  <meta name="discordbot" content="index, follow">
+  
+  <!-- Meta tags especÃ­ficos para ranking -->
+  <meta name="priority" content="1.0">
+  <meta name="importance" content="high">
+  <meta name="content-language" content="es-MX, es-CO, es-ES, es-AR">
+  <meta name="dc.language" content="es">
+  <meta name="dc.title" content="StudioOtaku - Anime Latino #1">
+  <meta name="dc.creator" content="StudioOtaku Team">
+  <meta name="dc.subject" content="Anime Latino, Castillo Infinito, Kimetsu no Yaiba">
+  <meta name="dc.description" content="Plataforma #1 de anime latino sin publicidad">
+  <meta name="dc.publisher" content="StudioOtaku">
+  <meta name="dc.contributor" content="StudioOtaku Community">
+  <meta name="dc.date" content="2024-09-15">
+  <meta name="dc.type" content="Interactive Resource">
+  <meta name="dc.format" content="text/html">
+  <meta name="dc.identifier" content="https://castillo-infinito.vercel.app/">
+  <meta name="dc.source" content="https://castillo-infinito.vercel.app/">
+  <meta name="dc.relation" content="https://studiootaku.com">
+  <meta name="dc.coverage" content="Worldwide">
+  <meta name="dc.rights" content="Copyright StudioOtaku 2024">
+  
+  <!-- Meta tags para velocidad y performance -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-title" content="StudioOtaku">
+  <meta name="application-name" content="StudioOtaku - Anime Latino">
+  <meta name="msapplication-tooltip" content="Anime Latino Sin Publicidad">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="msapplication-navbutton-color" content="#ff5cad">
+  <meta name="msapplication-window" content="width=1024;height=768">
+  <meta name="msapplication-task" content="name=Anime Latino;action-uri=/;icon-uri=/img/demon-slayer.ico">
+  
+  <!-- Meta tags para redes sociales avanzados -->
+  <meta name="twitter:site" content="@StudioOtaku">
+  <meta name="twitter:creator" content="@StudioOtaku">
+  <meta name="twitter:domain" content="castillo-infinito.vercel.app">
+  <meta name="twitter:app:name:iphone" content="StudioOtaku">
+  <meta name="twitter:app:name:ipad" content="StudioOtaku">
+  <meta name="twitter:app:name:googleplay" content="StudioOtaku">
+  
+  <!-- Meta tags para bÃºsquedas especÃ­ficas -->
+  <meta name="news_keywords" content="anime, castillo infinito, kimetsu no yaiba, demon slayer, anime latino, studiootaku">
+  <meta name="standout" content="https://castillo-infinito.vercel.app/">
+  <meta name="original-source" content="https://castillo-infinito.vercel.app/">
+  <meta name="syndication-source" content="https://castillo-infinito.vercel.app/">
+  <meta name="generator" content="StudioOtaku CMS">
+  <meta name="referrer" content="origin-when-cross-origin">
+  <meta name="color-scheme" content="dark light">
+  <meta name="supported-color-schemes" content="dark light">
+  
+  <!-- Hreflang para diferentes regiones -->
+  <link rel="alternate" hreflang="es-MX" href="https://castillo-infinito.vercel.app/">
+  <link rel="alternate" hreflang="es-CO" href="https://castillo-infinito.vercel.app/">
+  <link rel="alternate" hreflang="es-ES" href="https://castillo-infinito.vercel.app/">
+  <link rel="alternate" hreflang="es-AR" href="https://castillo-infinito.vercel.app/">
+  <link rel="alternate" hreflang="es" href="https://castillo-infinito.vercel.app/">
+  <link rel="alternate" hreflang="x-default" href="https://castillo-infinito.vercel.app/">
+
+  <!-- Open Graph para redes sociales -->
+  <meta property="og:title" content="StudioOtaku - Anime Latino a la Carta | Castillo Infinito">
+  <meta property="og:description" content="StudioOtaku - Tu plataforma de anime latino. Descarga Castillo Infinito, Kimetsu no Yaiba y mÃ¡s anime en espaÃ±ol latino gratis y sin publicidad.">
+  <meta property="og:image" content="https://castillo-infinito.vercel.app/img/demon-slayer.ico">
+  <meta property="og:url" content="https://castillo-infinito.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="StudioOtaku">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="StudioOtaku - Anime Latino a la Carta">
+  <meta name="twitter:description" content="StudioOtaku - Descarga Castillo Infinito y disfruta anime latino gratis sin publicidad">
+  <meta name="twitter:image" content="https://castillo-infinito.vercel.app/img/demon-slayer.ico">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://castillo-infinito.vercel.app/">
+
+  <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/img/mundo-otaku-latino.ico">
+    <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico">
+
+  <!-- VerificaciÃ³n de Google Search Console -->
+  <meta name="google-site-verification" content="google0dbef0fb91be9d0b">
+
+  <!-- ConexiÃ³n de cuenta Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-8480825005176665">
+
+
+
+  <!-- Schema.org JSON-LD ULTRA COMPLETO para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["WebSite", "EntertainmentBusiness", "Organization"],
+    "name": "StudioOtaku - Anime Latino #1",
+    "alternateName": ["StudioOtaku", "Studio Otaku", "Castillo Infinito"],
+    "url": "https://castillo-infinito.vercel.app/",
+    "description": "ðŸŽŒ Plataforma #1 de anime latino sin publicidad. Descarga Castillo Infinito, Kimetsu no Yaiba y mÃ¡s anime gratis en espaÃ±ol latino HD.",
+    "keywords": "anime latino, castillo infinito, kimetsu no yaiba, anime sin publicidad, anime gratis, studiootaku",
+    "inLanguage": ["es-MX", "es-CO", "es-ES", "es-AR", "es"],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "anime fans, otaku, spanish speakers",
+      "geographicArea": ["Mexico", "Colombia", "Spain", "Argentina", "Latin America"]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "StudioOtaku",
+      "url": "https://castillo-infinito.vercel.app/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://castillo-infinito.vercel.app/img/demon-slayer.ico"
+      },
+      "sameAs": [
+        "https://www.facebook.com/STUDIOOTAKU1",
+        "https://www.youtube.com/@STUDIOOTAKU1",
+        "https://rumble.com/c/c-6184817"
+      ]
+    },
+    "mainEntity": {
+      "@type": "VideoObject",
+      "name": "Castillo Infinito - Kimetsu no Yaiba",
+      "description": "PelÃ­cula completa de Kimetsu no Yaiba: Castillo Infinito en espaÃ±ol latino sin publicidad",
+      "thumbnailUrl": "https://castillo-infinito.vercel.app/img/demon-slayer.ico",
+      "uploadDate": "2024-09-15",
+      "duration": "PT117M",
+      "contentUrl": "https://castillo-infinito.vercel.app/",
+      "embedUrl": "https://castillo-infinito.vercel.app/",
+      "genre": ["Anime", "Action", "Adventure", "Supernatural"],
+      "inLanguage": "es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "description": "Anime gratis sin publicidad"
+    },
+    "potentialAction": [
+      {
+        "@type": "SearchAction",
+        "target": "https://castillo-infinito.vercel.app/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      {
+        "@type": "WatchAction",
+        "target": "https://castillo-infinito.vercel.app/",
+        "expectsAcceptanceOf": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "15420",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Usuario Anime"
+        },
+        "reviewBody": "Mejor plataforma de anime latino sin publicidad. Castillo Infinito en perfecta calidad."
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Schema adicional para Anime/Movie -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Movie",
+    "name": "Kimetsu no Yaiba: Castillo Infinito",
+    "alternateName": ["Demon Slayer: Infinity Castle", "Castillo Infinito"],
+    "description": "PelÃ­cula de anime Kimetsu no Yaiba: Castillo Infinito disponible en espaÃ±ol latino sin publicidad en StudioOtaku",
+    "genre": ["Animation", "Action", "Adventure", "Supernatural", "Anime"],
+    "datePublished": "2024",
+    "inLanguage": "es",
+    "subtitleLanguage": ["es", "es-MX", "es-CO"],
+    "duration": "PT117M",
+    "contentRating": "PG-13",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "8500",
+      "bestRating": "5"
+    },
+    "director": {
+      "@type": "Person",
+      "name": "Haruo Sotozaki"
+    },
+    "productionCompany": {
+      "@type": "Organization",
+      "name": "Ufotable"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://castillo-infinito.vercel.app/"
+    }
+  }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f0f23 0%, #2d1b69 50%, #0f0f23 100%);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .header {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid #ff5cad;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ff5cad, #ff8a80);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+    }
+
+    .nav-menu a:hover {
+      background: linear-gradient(45deg, #ff5cad, #ff8a80);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 2rem;
+      background: linear-gradient(135deg, rgba(15, 15, 35, 0.9), rgba(45, 27, 105, 0.9));
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #ff5cad, #ff8a80);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeInUp 1s ease-out;
+      line-height: 1.2;
+      word-wrap: break-word;
+    }
+
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      color: #b0b0b0;
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: #888;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      line-height: 1.6;
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(45deg, #ff5cad, #ff8a80);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      animation: fadeInUp 1s ease-out 0.9s both;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255, 92, 173, 0.4);
+    }
+
+    /* Features Section */
+    .features {
+      padding: 6rem 2rem;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 4rem;
+      background: linear-gradient(45deg, #ff5cad, #ff8a80);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2.5rem;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid rgba(255, 92, 173, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(255, 92, 173, 0.2);
+      border-color: rgba(255, 92, 173, 0.5);
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .feature p {
+      color: #b0b0b0;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 3rem 2rem 1rem;
+      border-top: 2px solid #ff5cad;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      color: #ff5cad;
+      margin-bottom: 1rem;
+    }
+
+    .footer-section p,
+    .footer-section ul {
+      color: #b0b0b0;
+      line-height: 1.6;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section a {
+      color: #b0b0b0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #ff5cad;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      padding: 0.5rem 1rem;
+      background: rgba(255, 92, 173, 0.1);
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: rgba(255, 92, 173, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .footer-text {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 92, 173, 0.2);
+      color: #888;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.5rem;
+        line-height: 1.1;
+      }
+      
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+    }
+
+    /* Responsiveness styles */
+    :root {
+      --primary-color: #ff5cad;
+      --secondary-color: #ff8a80;
+      --accent-color: #6366f1;
+      --background-start: #0f0f23;
+      --background-mid: #1a1a3a;
+      --background-end: #2d1b69;
+      --text-color: #ffffff;
+      --text-secondary: #b8b8b8;
+      --card-bg: rgba(255, 255, 255, 0.08);
+      --card-border: rgba(255, 92, 173, 0.2);
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      --border-radius: 16px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Add more styles here */
+  </style>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665"
+     crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/responsive-style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav-container">
+      <div class="logo">ðŸ§§Mundo Otaku Latino</div>
+      <ul class="nav-menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="public/html/catalogo.html">Anime</a></li>
+        <li><a href="#peliculas">PelÃ­culas</a></li>
+        <li><a href="#generos">GÃ©neros</a></li>
+        <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>StudioOtaku</h1>
+      <p>Tu destino definitivo para anime en espaÃ±ol latino</p>
+      <div class="hero-description">
+        <strong>StudioOtaku</strong> supera a <strong>Cuevana, DescargarAnimes y AnimeLatinoHD</strong> con <strong>anime latino sin publicidad</strong>. 
+        Descarga <strong>Castillo Infinito</strong> y disfruta <strong>Kimetsu no Yaiba</strong>, One Piece, Naruto y mÃ¡s. 
+        <strong>Mejor servidor</strong>, <strong>sin anuncios molestos</strong>, <strong>HD perfecto</strong> disponible para 
+        <strong>MÃ©xico, Colombia y el mundo</strong>. Â¡La mejor alternativa gratis!
+      </div>
+      
+      <!-- Ventajas COMPETITIVAS vs Cuevana, DescargarAnimes, AnimeLatinoHD -->
+      <div class="hero-features" style="display: flex; justify-content: center; gap: 1.5rem; margin: 2rem 0; flex-wrap: wrap;">
+        <div style="background: rgba(76, 175, 80, 0.1); padding: 1rem 1.5rem; border-radius: 25px; border: 1px solid rgba(76, 175, 80, 0.3);">
+          <strong>âœ… Mejor que Cuevana</strong>
+        </div>
+        <div style="background: rgba(255, 92, 173, 0.1); padding: 1rem 1.5rem; border-radius: 25px; border: 1px solid rgba(255, 92, 173, 0.3);">
+          <strong>ðŸš« SIN Publicidad Molesta</strong>
+        </div>
+        <div style="background: rgba(33, 150, 243, 0.1); padding: 1rem 1.5rem; border-radius: 25px; border: 1px solid rgba(33, 150, 243, 0.3);">
+          <strong>âš¡ Mejor Servidor que DescargarAnimes</strong>
+        </div>
+        <div style="background: rgba(255, 193, 7, 0.1); padding: 1rem 1.5rem; border-radius: 25px; border: 1px solid rgba(255, 193, 7, 0.3);">
+          <strong>ðŸŽ¯ Superior a AnimeLatinoHD</strong>
+        </div>
+      </div>
+      
+      <a href="public/html/catalogo.html" class="cta-button">ðŸŽŒ Ver CatÃ¡logo</a>
+    </div>
+  </section>
+
+  <!-- SecciÃ³n Castillo Infinito -->
+  <section class="features">
+    <div class="container">
+      <h2>Â¿QuÃ© es Castillo Infinito?</h2>
+      <div class="hero-description" style="text-align: center; margin-bottom: 3rem;">
+        <strong>Castillo Infinito</strong> es la nueva pelÃ­cula de <strong>Kimetsu no Yaiba (Demon Slayer)</strong>, 
+        uno de los animes mÃ¡s esperados por los fans en <strong>MÃ©xico, Colombia y el mundo</strong>. 
+        Disponible para <strong>descargar gratis</strong> en <strong>espaÃ±ol latino</strong> y subtitulado en HD.
+      </div>
+      
+      <h3 style="text-align: center; margin-bottom: 2rem; color: #ff5cad;">Descargar Castillo Infinito - Opciones Disponibles</h3>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">ðŸ°</div>
+          <h3>Castillo Infinito HD</h3>
+          <p>Descarga <strong>Castillo Infinito</strong> en calidad HD con audio <strong>espaÃ±ol latino</strong>. 
+          La pelÃ­cula completa de <strong>Kimetsu no Yaiba</strong> disponible las 24 horas.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">ðŸŽ¬</div>
+          <h3>Kimetsu no Yaiba Completo</h3>
+          <p>Toda la serie <strong>Kimetsu no Yaiba</strong> disponible: temporadas, pelÃ­culas y especiales. 
+          <strong>Anime a la carta</strong> para disfrutar cuando quieras.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">ðŸŒ</div>
+          <h3>Disponible Mundial</h3>
+          <p><strong>Anime en espaÃ±ol</strong> disponible para <strong>MÃ©xico, Colombia, EspaÃ±a</strong> y todo el mundo. 
+          Acceso global a tu <strong>anime favorito</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SecciÃ³n COMPETITIVA vs Cuevana, DescargarAnimes, AnimeLatinoHD -->
+  <section class="features" style="background: rgba(0, 0, 0, 0.5);">
+    <div class="container">
+      <h2>Â¿Por quÃ© StudioOtaku es Mejor que Cuevana, DescargarAnimes y AnimeLatinoHD?</h2>
+      <div class="hero-description" style="text-align: center; margin-bottom: 3rem;">
+        <strong>StudioOtaku</strong> supera a la competencia con <strong>anime latino sin publicidad molesta</strong>. 
+        Mientras <strong>Cuevana</strong> tiene anuncios invasivos, <strong>DescargarAnimes</strong> es lento y <strong>AnimeLatinoHD</strong> 
+        tiene restricciones, nosotros ofrecemos <strong>Castillo Infinito</strong> y todo nuestro catÃ¡logo <strong>gratis, rÃ¡pido y sin interrupciones</strong>.
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">ðŸ†</div>
+          <h3>Mejor que Cuevana</h3>
+          <p><strong>Sin anuncios invasivos</strong> como Cuevana. Ve <strong>Castillo Infinito</strong> y <strong>Kimetsu no Yaiba</strong> 
+          sin pop-ups molestos. <strong>Mejor servidor</strong>, <strong>mejor calidad</strong>, <strong>mejor experiencia</strong> que Cuevana.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">âš¡</div>
+          <h3>Superior a DescargarAnimes</h3>
+          <p><strong>Descargas mÃ¡s rÃ¡pidas</strong> que DescargarAnimes.net. <strong>Enlaces directos</strong>, 
+          <strong>servidores premium</strong> y <strong>anime HD espaÃ±ol latino</strong> al instante. Â¡Sin esperas ni lÃ­mites!</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">ðŸŽ¯</div>
+          <h3>Supera a AnimeLatinoHD</h3>
+          <p><strong>Mejor calidad HD</strong> que AnimeLatinoHD. <strong>Audio latino perfecto</strong>, 
+          <strong>video sin cortes</strong> y <strong>actualizaciones diarias</strong>. La alternativa definitiva a AnimeLatinoHD.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" style="background: rgba(0, 0, 0, 0.3);">
+    <div class="container">
+      <h2>Anime a la Carta con StudioOtaku</h2>
+      <div class="hero-description" style="text-align: center; margin-bottom: 3rem;">
+        <strong>StudioOtaku</strong> ofrece <strong>anime a la carta</strong>: elige tu serie favorita y mÃ­rala en cualquier dispositivo. 
+        Desde <strong>One Piece</strong> hasta <strong>Naruto</strong>, tenemos el catÃ¡logo mÃ¡s completo de <strong>anime en espaÃ±ol</strong> 
+        <strong>sin publicidad</strong> y con <strong>descarga de un solo anuncio</strong>.
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">ðŸŽ­</div>
+          <h3>Audio Latino Premium Sin Ads</h3>
+          <p>Todos nuestros animes estÃ¡n disponibles con <strong>doblaje latino</strong> de alta calidad <strong>sin publicidad</strong>. 
+          <strong>Anime en espaÃ±ol</strong> para toda LatinoamÃ©rica, <strong>gratis y sin anuncios</strong>.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">âš¡</div>
+          <h3>Descargas InstantÃ¡neas Sin Spam</h3>
+          <p>Enlaces directos y seguros para <strong>descargar anime gratis</strong> con <strong>un solo anuncio</strong>. 
+          <strong>Castillo Infinito</strong> y mÃ¡s disponibles 24/7 <strong>sin publicidad molesta</strong>.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">ðŸ“±</div>
+          <h3>Multiplataforma Sin Interrupciones</h3>
+          <p>Disponible en web y nuestra aplicaciÃ³n mÃ³vil para Android. 
+          <strong>Anime online sin ads</strong> desde cualquier parte del mundo. <strong>Experiencia limpia garantizada</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>StudioOtaku</h3>
+          <p>Tu plataforma favorita para ver anime en espaÃ±ol latino</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="public/html/catalogo.html">ðŸŽŒ CatÃ¡logo</a></li>
+            <li><a href="#generos">GÃ©neros</a></li>
+            <li><a href="https://exe.io/ANIMETV" target="_blank">AplicaciÃ³n APK</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>SÃ­guenos</h3>
+          <div class="social-links">
+            <a href="https://www.facebook.com/STUDIOOTAKU1" target="_blank">ðŸ“˜</a>
+            <a href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank">ðŸ“º</a>
+            <a href="https://rumble.com/c/c-6184817" target="_blank">ðŸ“¹</a>
+            <a href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank">ðŸ’¬</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-text">
+        &copy; 2025 StudioOtaku. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
+<script src="assets/js/main.js"></script>
+

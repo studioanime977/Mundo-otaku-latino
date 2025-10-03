@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="google-adsense-account" content="ca-pub-8480825005176665">
+<title>Dragon Ball - Mundo Otaku Latino</title>
+  
+    <link rel="stylesheet" href="../../../css/anime.css">
+    <style>
+      /* CSS ultra-agresivo para forzar emojis */
+      * {
+        font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', 'EmojiOne Mozilla', 'Twemoji Mozilla', 'Segoe UI Symbol', 'Noto Emoji', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+        text-rendering: optimizeLegibility !important;
+        -webkit-font-feature-settings: "liga", "kern", "clig", "calt" !important;
+        font-feature-settings: "liga", "kern", "clig", "calt" !important;
+        font-variant-emoji: emoji !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+      }
+      
+      /* Forzar renderizado de emojis en todos los elementos */
+      *, *:before, *:after, 
+      .emoji, [class*="emoji"], 
+      body, html, button, input, a, span, div, p, h1, h2, h3, h4, h5, h6,
+      .season-card, .download-link, .auth-btn, .back-btn, .header, .logo {
+        font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', 'EmojiOne Mozilla', 'Twemoji Mozilla', 'Segoe UI Symbol', 'Noto Emoji', 'Segoe UI', sans-serif !important;
+        font-variant-emoji: emoji !important;
+        font-synthesis: none !important;
+        text-rendering: optimizeLegibility !important;
+      }
+      
+      /* EspecÃ­fico para caracteres emoji */
+      [data-emoji], .emoji-char {
+        font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji' !important;
+        font-variant-emoji: emoji !important;
+        font-size: inherit !important;
+        line-height: 1 !important;
+        vertical-align: baseline !important;
+      }
+      
+      /* Forzar UTF-8 y emoji rendering */
+      @supports (font-variant-emoji: emoji) {
+        * {
+          font-variant-emoji: emoji !important;
+        }
+      }
+      
+      /* Fallback para navegadores antiguos */
+      @media screen {
+        * {
+          font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', sans-serif !important;
+        }
+      }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="/img/mundo-otaku-latino.ico">
+  <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico">
+</head>
+<body>
+  
+
+  <!-- Header -->
+    <header class="header">
+    <a href="../../index.html" class="logo">
+      <span class="logo-icon"></span>Mundo Otaku Latino
+    </a>
+    <a href="../../html/catalogo.html" class="back-btn">ðŸ  Inicio</a>
+  </header>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar anime..." id="search-input">
+      <button onclick="searchAnime()">ðŸ”</button>
+    </div>
+    <div class="user-actions">
+      <button class="auth-btn">ðŸ”’ Login</button>
+      <button class="auth-btn">âœŽ Registro</button>
+      <a href="../../html/catalogo.html" class="auth-btn">ðŸ  Inicio</a>
+    </div>
+  </div>
+
+  <main class="main-content">
+    <a href="../../html/catalogo.html" class="back-btn">â†© Volver al CatÃ¡logo</a>
+    <div class="anime-header">
+      <h1 class="anime-title">ðŸ‰ Dragon Ball</h1>
+      <p class="anime-description">
+        La Ã©pica saga de Goku y sus amigos mientras protegen la Tierra de amenazas cada vez mÃ¡s poderosas. Desde las batallas contra los Saiyans hasta enfrentar dioses de la destrucciÃ³n, una aventura llena de transformaciones legendarias y peleas Ã©picas.
+      </p>
+      <!-- Top Banner -->
+  <div class="banner-ad" style="text-align: center; margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.1); border-radius: 10px;">
+    <a href="https://exe.io/ref/studiootaku" target="_blank"><img src="https://exe.io/img/ref/r1.gif" title="CuT URLs - Earn money by shortening links with the highest CPMs Ever!" style="max-width: 100%; height: auto; border-radius: 5px;" /></a>
+  </div>
+  <!-- End Top Banner --></div>
+
+    <div class="seasons-container">
+      <!-- Dragon Ball Z -->
+      <div class="season-card">
+        <div class="season-thumbnail">
+          <img src="../../../img/Dragon Ball Z.jpg" alt="Dragon Ball Z">
+          <div class="season-number">Z</div>
+          <div class="season-play-overlay">â–¶</div>
+        </div>
+        <div class="season-info">
+          <div class="season-title">Dragon Ball Z</div>
+          <div class="season-description">
+            Goku descubre sus orÃ­genes Saiyan y enfrenta enemigos cada vez mÃ¡s poderosos para proteger la Tierra. Las sagas de Vegeta, Freezer, Cell y Majin Buu.
+          </div>
+          <div class="season-stats">
+            <div class="episode-count">ðŸ“º 291 Episodios</div>
+            <div class="season-year">1989-1996</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="dbz-progress" style="width: 0%"></div>
+          </div>
+          <div class="progress-text" id="dbz-progress-text">No iniciado</div>
+          <button class="watch-btn" id="dbz-btn" onclick="goToSeason('temporada-1.html')">â–¶ Ver Serie</button>
+          
+          <!-- Download Servers Section -->
+          <div class="download-servers-section">
+            <div class="servers-title">ðŸ’¾ Descargar Serie Completa</div>
+            <div class="servers-grid-compact">
+              <a href="https://exe.io/DragonBallZ" target="_blank" class="download-link terabox">ðŸ“¦ TeraBox</a>
+              <a href="#" onclick="showUnavailableAlert('MEGA'); return false;" class="download-link mega unavailable-server">â˜ï¸ MEGA</a>
+              <a href="#" onclick="showUnavailableAlert('MediaFire'); return false;" class="download-link mediafire unavailable-server">ðŸ”¥ MediaFire</a>
+              <a href="#" onclick="showUnavailableAlert('Dropbox'); return false;" class="download-link dropbox unavailable-server">ðŸ“ Dropbox</a>
+              <a href="#" onclick="showUnavailableAlert('1Fichier'); return false;" class="download-link fichier unavailable-server">ðŸ“„ 1Fichier</a>
+              <a href="#" onclick="showUnavailableAlert('Stape'); return false;" class="download-link stape unavailable-server">ðŸ”— Stape</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dragon Ball Super -->
+      <div class="season-card">
+        <div class="season-thumbnail">
+          <img src="../../../img/Dragon Ball Super.jpg" alt="Dragon Ball Super">
+          <div class="season-number">Super</div>
+          <div class="season-play-overlay">â–¶</div>
+        </div>
+        <div class="season-info">
+          <div class="season-title">Dragon Ball Super</div>
+          <div class="season-description">
+            Goku alcanza nuevos niveles de poder y enfrenta dioses de la destrucciÃ³n en batallas multiversales. Ultra Instinto y el Torneo del Poder.
+          </div>
+          <div class="season-stats">
+            <div class="episode-count">ðŸ“º 131 Episodios</div>
+            <div class="season-year">2015-2018</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="dbs-progress" style="width: 0%"></div>
+          </div>
+          <div class="progress-text" id="dbs-progress-text">No iniciado</div>
+          <button class="watch-btn" id="dbs-btn" onclick="goToSeason('dbs.html')">â–¶ Ver Serie</button>
+          
+          <!-- Download Servers Section -->
+          <div class="download-servers-section">
+            <div class="servers-title">ðŸ’¾ Descargar Serie Completa</div>
+            <div class="servers-grid-compact">
+              <a href="https://exe.io/DragonBallSuper" target="_blank" class="download-link terabox">ðŸ“¦ TeraBox</a>
+              <a href="#" onclick="showUnavailableAlert('MEGA'); return false;" class="download-link mega unavailable-server">â˜ï¸ MEGA</a>
+              <a href="#" onclick="showUnavailableAlert('MediaFire'); return false;" class="download-link mediafire unavailable-server">ðŸ”¥ MediaFire</a>
+              <a href="#" onclick="showUnavailableAlert('Dropbox'); return false;" class="download-link dropbox unavailable-server">ðŸ“ Dropbox</a>
+              <a href="#" onclick="showUnavailableAlert('1Fichier'); return false;" class="download-link fichier unavailable-server">ðŸ“„ 1Fichier</a>
+              <a href="#" onclick="showUnavailableAlert('Stape'); return false;" class="download-link stape unavailable-server">ðŸ”— Stape</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dragon Ball GT -->
+      <div class="season-card">
+        <div class="season-thumbnail">
+          <img src="../../../img/Dragon Ball GT.jpg" alt="Dragon Ball GT">
+          <div class="season-number">GT</div>
+          <div class="season-play-overlay">â–¶</div>
+        </div>
+        <div class="season-info">
+          <div class="season-title">Dragon Ball GT</div>
+          <div class="season-description">
+            Goku es convertido en niÃ±o y debe buscar las Dragon Balls por toda la galaxia junto a Pan y Trunks. La transformaciÃ³n Super Saiyan 4.
+          </div>
+          <div class="season-stats">
+            <div class="episode-count">ðŸ“º 64 Episodios</div>
+            <div class="season-year">1996-1997</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="dbgt-progress" style="width: 0%"></div>
+          </div>
+          <div class="progress-text" id="dbgt-progress-text">No iniciado</div>
+          <button class="watch-btn" id="dbgt-btn" onclick="goToSeason('dbgt.html')">â–¶ Ver Serie</button>
+          
+          <!-- Download Servers Section -->
+          <div class="download-servers-section">
+            <div class="servers-title">ðŸ’¾ Descargar Serie Completa</div>
+            <div class="servers-grid-compact">
+              <a href="https://exe.io/DragonBallGT" target="_blank" class="download-link terabox">ðŸ“¦ TeraBox</a>
+              <a href="#" onclick="showUnavailableAlert('MEGA'); return false;" class="download-link mega unavailable-server">â˜ï¸ MEGA</a>
+              <a href="#" onclick="showUnavailableAlert('MediaFire'); return false;" class="download-link mediafire unavailable-server">ðŸ”¥ MediaFire</a>
+              <a href="#" onclick="showUnavailableAlert('Dropbox'); return false;" class="download-link dropbox unavailable-server">ðŸ“ Dropbox</a>
+              <a href="#" onclick="showUnavailableAlert('1Fichier'); return false;" class="download-link fichier unavailable-server">ðŸ“„ 1Fichier</a>
+              <a href="#" onclick="showUnavailableAlert('Stape'); return false;" class="download-link stape unavailable-server">ðŸ”— Stape</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  <!-- Bottom Banner -->
+  <div class="banner-ad" style="text-align: center; margin: 2rem 0; padding: 1rem; background: rgba(0,0,0,0.1); border-radius: 10px;">
+    <a href="https://exe.io/ref/studiootaku" target="_blank"><img src="https://exe.io/img/ref/r4.png" title="CuT URLs - Earn money by shortening links with the highest CPMs Ever!" style="max-width: 100%; height: auto; border-radius: 5px;" /></a>
+  </div>
+  <!-- End Bottom Banner -->
+</main>
+
+  <script src="../../assets/js/main.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="/img/mundo-otaku-latino.ico">
+  <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico">
+</head>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Bloquear clic derecho
+window.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+
+// Bloquear teclas F12 y Ctrl+Shift+I
+window.addEventListener('keydown', function (e) {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+        e.preventDefault();
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+

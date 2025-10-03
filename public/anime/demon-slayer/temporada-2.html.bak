@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="google-adsense-account" content="ca-pub-8480825005176665">
+<title>Demon Slayer - Temporada 2 - StudioOtaku</title>
+  
+  <link rel="stylesheet" href="../../../css/temporadas.css">`n    <style>`n      * {`n        font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', Tahoma, Geneva, Verdana, sans-serif !important;`n      }`n    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="/img/mundo-otaku-latino.ico">
+  <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico">
+</head>
+<body>
+
+  <header class="header">
+    <a href="../../../index.html" class="logo">StudioOtaku</a>
+    <a href="../../../public/html/catalogo.html" class="back-btn">ðŸ  Inicio</a>
+  </header>
+
+  <main class="main-content">
+    <a href="demon-slayer.html" class="back-btn">â† Volver a Demon Slayer</a>
+
+    <div class="title-container">
+        <h1 class="season-title">Demon Slayer - Temporada 2</h1>
+        <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
+    </div>
+
+    <div class="contenedor-video">
+      <div class="player-options">
+        <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÃ“N 1</button>
+        <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÃ“N 2</button>
+        <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÃ“N 3</button>
+        <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÃ“N 4</button>
+      </div>
+      <div class="reproductor-video">
+        <div id="opcion1-player" class="player-container active">
+          <iframe src="" allowfullscreen></iframe>
+        </div>
+        <div id="opcion2-player" class="player-container">
+          <iframe src="" allowfullscreen></iframe>
+        </div>
+        <div id="opcion3-player" class="player-container">
+          <iframe src="" allowfullscreen></iframe>
+        </div>
+        <div id="opcion4-player" class="player-container">
+          <iframe src="" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="episodes-container">
+        <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
+        <div class="episodes-grid" id="episodes-grid">
+            <!-- Los episodios se generarÃ¡n con JavaScript -->
+        </div>
+    </div>
+  </main>
+
+  <script>
+    // Preservar los datos de episodios existentes o crear una estructura bÃ¡sica
+    const episodes = [
+        { num: 1, title: 'Pilar del Sonido, Tengen Uzui', op1: 'https://sendvid.com/embed/q1w2e3r4', op2: 'URL_OP2_EP1', op3: 'URL_OP3_EP1' },
+        { num: 2, title: 'InfiltraciÃ³n en el Distrito del Placer', op1: 'https://sendvid.com/embed/w2e3r4q1', op2: 'URL_OP2_EP2', op3: 'URL_OP3_EP2' },
+        { num: 3, title: 'Â¿QuiÃ©n eres?', op1: 'https://sendvid.com/embed/e3r4q1w2', op2: 'URL_OP2_EP3', op3: 'URL_OP3_EP3' },
+        { num: 4, title: 'Esta noche', op1: 'https://sendvid.com/embed/r4q1w2e3', op2: 'URL_OP2_EP4', op3: 'URL_OP3_EP4' },
+        { num: 5, title: 'Â¡Las cosas se van a poner llamativas!', op1: 'https://sendvid.com/embed/q1w2e3r5', op2: 'URL_OP2_EP5', op3: 'URL_OP3_EP5' },
+        { num: 6, title: 'Recuerdos superpuestos', op1: 'https://sendvid.com/embed/w2e3r4q6', op2: 'URL_OP2_EP6', op3: 'URL_OP3_EP6' },
+        { num: 7, title: 'TransformaciÃ³n', op1: 'https://sendvid.com/embed/e3r4q1w7', op2: 'URL_OP2_EP7', op3: 'URL_OP3_EP7' },
+        { num: 8, title: 'ReuniÃ³n', op1: 'https://sendvid.com/embed/r4q1w2e8', op2: 'URL_OP2_EP8', op3: 'URL_OP3_EP8' },
+        { num: 9, title: 'Tras derrotar a una Luna Superior', op1: 'https://sendvid.com/embed/q1w2e3r9', op2: 'URL_OP2_EP9', op3: 'URL_OP3_EP9' },
+        { num: 10, title: 'Â¡No me rendirÃ©!', op1: 'https://sendvid.com/embed/w2e3r4q0', op2: 'URL_OP2_EP10', op3: 'URL_OP3_EP10' },
+        { num: 11, title: 'No importa cuÃ¡ntas veces renazca', op1: 'https://sendvid.com/embed/e3r4q1w1', op2: 'URL_OP2_EP11', op3: 'URL_OP3_EP11' }
+    ];
+
+    // Generar botones de episodios
+    const episodesGrid = document.getElementById('episodes-grid');
+    episodes.forEach(episode => {
+      const episodeBtn = document.createElement('div');
+      episodeBtn.className = 'episode-btn';
+      episodeBtn.textContent = `Ep ${episode.num}`;
+      episodeBtn.onclick = () => loadEpisode(episode);
+      episodesGrid.appendChild(episodeBtn);
+    });
+
+    // Cargar episodio
+    function loadEpisode(episode) {
+      document.querySelectorAll('.episode-btn').forEach((btn, index) => {
+        btn.classList.toggle('active', index === episode.num);
+      });
+      
+      document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
+      
+      document.querySelector('#opcion1-player iframe').src = episode.op1 || '';
+      document.querySelector('#opcion2-player iframe').src = episode.op2 || '';
+      document.querySelector('#opcion3-player iframe').src = episode.op3 || '';
+      document.querySelector('#opcion4-player iframe').src = episode.op4 || '';
+      
+      switchPlayer('opcion1');
+    }
+
+    // Cambiar reproductor
+    function switchPlayer(option) {
+      document.querySelectorAll('.player-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.getElementById(`${option}-btn`).classList.add('active');
+      
+      document.querySelectorAll('.player-container').forEach(container => {
+        container.classList.remove('active');
+      });
+      document.getElementById(`${option}-player`).classList.add('active');
+    }
+
+    // Cargar el primer episodio por defecto
+    if (episodes.length > 0) {
+      loadEpisode(episodes[0]);
+    }
+      // FunciÃ³n de bÃºsqueda`n    function searchAnime() {`n        const searchTerm = document.getElementById('search-input').value.trim();`n        if (searchTerm) {`n            window.location.href = `../../../html/catalogo.html?search=${encodeURIComponent(searchTerm)}`;`n        }`n    }`n`n    // Permitir bÃºsqueda con Enter`n    document.addEventListener('keypress', function(e) {`n        if (e.key === 'Enter' && e.target.id === 'search-input') {`n            searchAnime();`n        }`n    });`n</script>`n</body>
+</html>
+
+
+
+<script>
+  // Deshabilitar clic derecho
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Bloquear teclas especÃ­ficas
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+      e.preventDefault();
+    }
+  });
+</script>
+
+
+
+
+
