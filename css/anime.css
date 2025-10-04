@@ -8,8 +8,6 @@
     font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #0f0f23 0%, #2d1b69 50%, #0f0f23 100%);
     color: #fff;
-    min-height: 100vh;
-    line-height: 1.6;
   }
   
   /* HEADER */
@@ -23,32 +21,33 @@
     border-bottom: 2px solid #ff5cad;
     position: fixed;
     left: 0;
-    right: 0;
-    z-index: 1000;
   }
   
   .logo {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #ff5cad;
-    text-decoration: none;
+    background: linear-gradient(45deg, #ff5cad, #ff8a80);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     display: flex;
     align-items: center;
   }
-
-  .logo-icon {
+  
+  .logo::before {
+    content: "";
     display: inline-block;
-    width: 22px;
-    height: 22px;
-    background-color: #ff5cad;
+    width: 28px;
+    height: 28px;
+  }
+  
+  .logo-icon {
+    display: none; /* evitamos doble icono; el ::before de .logo ya lo agrega */
+    width: 28px;
+    height: 28px;
     margin-right: 12px;
   }
   
-  /* MAIN CONTENT */
-  .main-content {
-    padding-top: 6rem; /* Espacio para el header fijo */
-  }
-
   .back-btn {
     display: inline-block;
     padding: 0.75rem 2rem;
