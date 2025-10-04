@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://castillo-infinito.vercel.app/sitemap.xml
+Sitemap: https://mundootakulatino.vercel.app/sitemap.xml
 
 # Permitir acceso a todas las páginas importantes
 Allow: /html/
