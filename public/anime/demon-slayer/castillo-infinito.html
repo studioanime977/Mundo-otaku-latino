@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -235,7 +235,7 @@
       background-color: #4a47a3;
     }
 
-    /* Ajustes para dispositivos mÃ³viles */
+    /* Ajustes para dispositivos móviles */
     @media (max-width: 768px) {
       .header {
         display: flex;
@@ -319,20 +319,20 @@
   </script>
 
   <div class="header">
-    <a href="../../../index.html" class="logo">ðŸ§§StudioOtaku</a>
-    <a href="../../../public/html/catalogo.html" class="back-btn">ðŸ  Inicio</a>
+    <a href="../../../index.html" class="logo">�x��StudioOtaku</a>
+    <a href="../../../public/html/catalogo.html" class="back-btn">�x�� Inicio</a>
   </div>
 
   <main class="main-content">
     <div class="left-content">
-      <a href="demon-slayer.html" class="back-btn">â† Volver a Demon Slayer</a>
+      <a href="demon-slayer.html" class="back-btn">� � Volver a Demon Slayer</a>
 
       <div class="title-container">
           <h1 class="movie-title">Demon Slayer: Castillo Infinito</h1>
       </div>
 
       <div class="description">
-        <p>Demon Slayer: Castillo Infinito es una pelÃ­cula Ã©pica que continÃºa la historia de Tanjiro y sus compaÃ±eros mientras enfrentan nuevos desafÃ­os en su lucha contra los demonios.</p>
+        <p>Demon Slayer: Castillo Infinito es una película épica que continúa la historia de Tanjiro y sus compañeros mientras enfrentan nuevos desafíos en su lucha contra los demonios.</p>
       </div>
 
       <div class="contenedor-video">
@@ -389,7 +389,7 @@
       </div>
 
       <div class="description">
-        <p>Esta pelÃ­cula presenta una animaciÃ³n espectacular y una historia emocionante que mantiene a los espectadores al borde de sus asientos mientras siguen las aventuras de los cazadores de demonios.</p>
+        <p>Esta película presenta una animación espectacular y una historia emocionante que mantiene a los espectadores al borde de sus asientos mientras siguen las aventuras de los cazadores de demonios.</p>
       </div>
     </div>
 
@@ -417,7 +417,7 @@
       </div>
       <div class="popular-item" onclick="window.location.href='../../../public/anime/naruto/naruto.html'">
         <img src="../../../img/Naruto Classic.jpg" alt="Naruto">
-        <div class="title">Naruto - ClÃ¡sico</div>
+        <div class="title">Naruto - Clásico</div>
       </div>
       <div class="popular-item" onclick="window.location.href='../../../public/anime/one-piece/one-piece.html'">
         <img src="../../../img/One Piece Wano.jpg" alt="One Piece">
@@ -445,18 +445,18 @@
   </main>
 
   <script>
-    // FunciÃ³n para expandir el reproductor
+    // Función para expandir el reproductor
     function expandPlayer() {
       const videoContainer = document.querySelector('.contenedor-video');
       videoContainer.classList.toggle('expanded');
     }
 
-    // FunciÃ³n para apagar/encender las luces
+    // Función para apagar/encender las luces
     function toggleLights() {
       document.body.classList.toggle('lights-off');
     }
 
-    // Bloquear menÃº contextual (clic derecho)
+    // Bloquear menú contextual (clic derecho)
     const v = document.getElementById('miVideo');
     if (v) {
       v.addEventListener('contextmenu', e => e.preventDefault());
@@ -468,14 +468,14 @@
       e.preventDefault();
     });
 
-    // Bloquear teclas especÃ­ficas y herramientas de descarga
+    // Bloquear teclas específicas y herramientas de descarga
     document.addEventListener('keydown', function(e) {
       // Bloquear herramientas de desarrollador
       if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
         e.preventDefault();
         return false;
       }
-      // Bloquear guardar pÃ¡gina y ver cÃ³digo fuente
+      // Bloquear guardar página y ver código fuente
       if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'u')) {
         e.preventDefault();
         return false;
@@ -502,7 +502,7 @@
       }
     });
 
-    // Bloquear selecciÃ³n de texto
+    // Bloquear selección de texto
     document.addEventListener('selectstart', function(e) {
       e.preventDefault();
       return false;
@@ -533,7 +533,7 @@
 
     // Bloquear popups y ventanas emergentes de descarga
     window.addEventListener('beforeunload', function(e) {
-      // Prevenir descargas automÃ¡ticas
+      // Prevenir descargas automáticas
       return;
     });
 
@@ -576,7 +576,7 @@
       return xhr;
     };
 
-    // ProtecciÃ³n adicional contra extensiones de descarga
+    // Protección adicional contra extensiones de descarga
     if (window.chrome && window.chrome.runtime) {
       // Detectar extensiones de Chrome
       window.chrome.runtime = undefined;
@@ -591,7 +591,7 @@
       console.debug = function() {};
     }
 
-    // ProtecciÃ³n contra screenshot y grabaciÃ³n de pantalla
+    // Protección contra screenshot y grabación de pantalla
     document.addEventListener('keydown', function(e) {
       // Bloquear Print Screen
       if (e.key === 'PrintScreen') {
@@ -605,7 +605,7 @@
       }
     });
 
-    // Detectar si la pÃ¡gina estÃ¡ siendo grabada o capturada
+    // Detectar si la página está siendo grabada o capturada
     if (navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia) {
       const originalGetDisplayMedia = navigator.mediaDevices.getDisplayMedia;
       navigator.mediaDevices.getDisplayMedia = function() {

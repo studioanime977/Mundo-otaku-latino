@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+�<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -16,11 +16,11 @@
 
   <header class="header">
     <a href="../../../index.html" class="logo">StudioOtaku</a>
-    <a href="../../../public/html/catalogo.html" class="back-btn">ðŸ  Inicio</a>
+    <a href="../../../public/html/catalogo.html" class="back-btn">�x�� Inicio</a>
   </header>
 
   <main class="main-content">
-    <a href="danmachi.html" class="back-btn">â† Volver a Danmachi</a>
+    <a href="danmachi.html" class="back-btn">� � Volver a Danmachi</a>
 
     <div class="title-container">
         <h1 class="season-title">Danmachi - Temporada 1</h1>
@@ -29,10 +29,10 @@
 
     <div class="contenedor-video">
       <div class="player-options">
-        <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÃ“N 1</button>
-        <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÃ“N 2</button>
-        <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÃ“N 3</button>
-        <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÃ“N 4</button>
+        <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCI�N 1</button>
+        <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCI�N 2</button>
+        <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCI�N 3</button>
+        <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCI�N 4</button>
       </div>
       <div class="reproductor-video">
         <div id="opcion1-player" class="player-container active">
@@ -53,22 +53,22 @@
     <div class="episodes-container">
         <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
         <div class="episodes-grid" id="episodes-grid">
-            <!-- Los episodios se generarÃ¡n con JavaScript -->
+            <!-- Los episodios se generarán con JavaScript -->
         </div>
     </div>
   </main>
 
   <script>
-    // Preservar los datos de episodios existentes o crear una estructura bÃ¡sica
+    // Preservar los datos de episodios existentes o crear una estructura básica
     const episodes = [
         { num: 1, title: "El encuentro del aventurero y la diosa", op1: "https://sendvid.com/embed/x7c6g0s7", op2: "URL_OP2_E1", op3: "URL_OP3_E1", op4: "URL_OP4_E1" },
         { num: 2, title: "Monstruo de las profundidades ~Minotauro~", op1: "https://sendvid.com/embed/4osnc4ng", op2: "URL_OP2_E2", op3: "URL_OP3_E2", op4: "URL_OP4_E2" },
         { num: 3, title: "La diosa de la forja ~Hephaistos~", op1: "https://sendvid.com/embed/57xxoob3", op2: "URL_OP2_E3", op3: "URL_OP3_E3", op4: "URL_OP4_E3" },
         { num: 4, title: "El partidario ~Supporter~", op1: "https://sendvid.com/embed/2gxk2wqo", op2: "URL_OP2_E4", op3: "URL_OP3_E4", op4: "URL_OP4_E4" },
         { num: 5, title: "La magia ~Grimorio~", op1: "https://sendvid.com/embed/al96ti15", op2: "URL_OP2_E5", op3: "URL_OP3_E5", op4: "URL_OP4_E5" },
-        { num: 6, title: "RazÃ³n ~Justicia~", op1: "https://sendvid.com/embed/980uwy50", op2: "URL_OP2_E6", op3: "URL_OP3_E6", op4: "URL_OP4_E6" },
+        { num: 6, title: "Razón ~Justicia~", op1: "https://sendvid.com/embed/980uwy50", op2: "URL_OP2_E6", op3: "URL_OP3_E6", op4: "URL_OP4_E6" },
         { num: 7, title: "La espada princesa ~Ais Wallenstein~", op1: "https://sendvid.com/embed/5do9h8im", op2: "URL_OP2_E7", op3: "URL_OP3_E7", op4: "URL_OP4_E7" },
-        { num: 8, title: "El hÃ©roe desea ser mÃ¡s fuerte ~Nivel superior~", op1: "https://sendvid.com/embed/mup0q2b3", op2: "URL_OP2_E8", op3: "URL_OP3_E8", op4: "URL_OP4_E8" },
+        { num: 8, title: "El héroe desea ser más fuerte ~Nivel superior~", op1: "https://sendvid.com/embed/mup0q2b3", op2: "URL_OP2_E8", op3: "URL_OP3_E8", op4: "URL_OP4_E8" },
         { num: 9, title: "Welf Crozzo ~Forjador~", op1: "https://sendvid.com/embed/67djm7tv", op2: "URL_OP2_E9", op3: "URL_OP3_E9", op4: "URL_OP4_E9" },
         { num: 10, title: "Paso hacia el hogar ~Familia~", op1: "https://sendvid.com/embed/59cs2e4c", op2: "URL_OP2_E10", op3: "URL_OP3_E10", op4: "URL_OP4_E10" },
         { num: 11, title: "Bajo el resort ~Familia de dioses~", op1: "https://sendvid.com/embed/wedzvto4", op2: "URL_OP2_E11", op3: "URL_OP3_E11", op4: "URL_OP4_E11" },
@@ -125,7 +125,7 @@
     e.preventDefault();
   });
 
-  // Bloquear teclas especÃ­ficas
+  // Bloquear teclas específicas
   document.addEventListener('keydown', function(e) {
     if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
       e.preventDefault();

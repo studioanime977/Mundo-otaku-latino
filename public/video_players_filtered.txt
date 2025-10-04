@@ -1,899 +1,149 @@
-Reporte final: enlaces de reproductores (incluye Sendvid, Rumble y otros hosts reproducibles)
+📺 Series por Temporada
 
-Total únicos: 179
+Nanatsu no Taizai (Los 7 Pecados Capitales)
 
-ARCHIVO: anime/chainsaw-man/season1.html
-LINEA: 59
-SNIPPET: { num: 1, title: "Perro & Motosierra", op1: "https://sendvid.com/embed/h23imitj", op2: "URL_OP2_E1", op3: "URL_OP3_E1", op4: "URL_OP4_E1" },
-ENLACE: https://sendvid.com/embed/h23imitj
---------------------------------------------------------------------------------
-ARCHIVO: anime/chainsaw-man/season1.html
-LINEA: 60
-SNIPPET: { num: 2, title: "Llegó el Inicio", op1: "https://sendvid.com/embed/ztyf2nda", op2: "URL_OP2_E2", op3: "URL_OP3_E2", op4: "URL_OP4_E2" },
-ENLACE: https://sendvid.com/embed/ztyf2nda
---------------------------------------------------------------------------------
-ARCHIVO: anime/chainsaw-man/season1.html
-LINEA: 61
-SNIPPET: { num: 3, title: "Servir al Mejor", op1: "https://sendvid.com/embed/fyx4mb85", op2: "URL_OP2_E3", op3: "URL_OP3_E3", op4: "URL_OP4_E3" },
-ENLACE: https://sendvid.com/embed/fyx4mb85
---------------------------------------------------------------------------------
-ARCHIVO: anime/chainsaw-man/season1.html
-LINEA: 62
-SNIPPET: { num: 4, title: "Rescate", op1: "https://sendvid.com/embed/12wuailh", op2: "URL_OP2_E4", op3: "URL_OP3_E4", op4: "URL_OP4_E4" },
-ENLACE: https://sendvid.com/embed/12wuailh
---------------------------------------------------------------------------------
-ARCHIVO: anime/chainsaw-man/season1.html
-LINEA: 63
-SNIPPET: { num: 5, title: "La Pistola es el Demonio", op1: "https://sendvid.com/embed/ui0h089a", op2: "URL_OP2_E5", op3: "URL_OP3_E5", op4: "URL_OP4_E5" },
-ENLACE: https://sendvid.com/embed/ui0h089a
---------------------------------------------------------------------------------
-ARCHIVO: anime/chainsaw-man/season1.html
-LINEA: 64
-SNIPPET: { num: 6, title: "Matar Demonios", op1: "https://sendvid.com/embed/6msi1juq", op2: "URL_OP2_E6", op3: "URL_OP3_E6", op4: "URL_OP4_E6" },
-ENLACE: https://sendvid.com/embed/6msi1juq
---------------------------------------------------------------------------------
-ARCHIVO: anime/chainsaw-man/season1.html
-LINEA: 65
-SNIPPET: { num: 7, title: "El Sabor de un Beso", op1: "https://sendvid.com/embed/xmt7pfb4", op2: "URL_OP2_E7", op3: "URL_OP3_E7", op4: "URL_OP4_E7" },
-ENLACE: https://sendvid.com/embed/xmt7pfb4
---------------------------------------------------------------------------------
-ARCHIVO: anime/chainsaw-man/season1.html
-LINEA: 66
-SNIPPET: { num: 8, title: "El Sonido de una Explosión", op1: "https://sendvid.com/embed/jcqgsf3d", op2: "URL_OP2_E8", op3: "URL_OP3_E8", op4: "URL_OP4_E8" },
-ENLACE: https://sendvid.com/embed/jcqgsf3d
---------------------------------------------------------------------------------
-ARCHIVO: anime/chainsaw-man/season1.html
-LINEA: 67
-SNIPPET: { num: 9, title: "Desde el Catfish", op1: "https://sendvid.com/embed/n3o17q4y", op2: "URL_OP2_E9", op3: "URL_OP3_E9", op4: "URL_OP4_E9" },
-ENLACE: https://sendvid.com/embed/n3o17q4y
---------------------------------------------------------------------------------
-ARCHIVO: anime/chainsaw-man/season1.html
-LINEA: 68
-SNIPPET: { num: 10, title: "El Lazo con el Hermano Mayor", op1: "https://sendvid.com/embed/yhpj1eqr", op2: "URL_OP2_E10", op3: "URL_OP3_E10", op4: "URL_OP4_E10" },
-ENLACE: https://sendvid.com/embed/yhpj1eqr
---------------------------------------------------------------------------------
-ARCHIVO: anime/chainsaw-man/season1.html
-LINEA: 69
-SNIPPET: { num: 11, title: "Inicio del Segundo Periodo", op1: "https://sendvid.com/embed/2b4jwo7h", op2: "URL_OP2_E11", op3: "URL_OP3_E11", op4: "URL_OP4_E11" },
-ENLACE: https://sendvid.com/embed/2b4jwo7h
---------------------------------------------------------------------------------
-ARCHIVO: anime/chainsaw-man/season1.html
-LINEA: 70
-SNIPPET: { num: 12, title: "La Katana vs el Demonio Motocicleta", op1: "https://sendvid.com/embed/8g7dbdnc", op2: "URL_OP2_E12", op3: "URL_OP3_E12", op4: "URL_OP4_E12" }
-ENLACE: https://sendvid.com/embed/8g7dbdnc
---------------------------------------------------------------------------------
-ARCHIVO: anime/classroom-of-the-elite/season1.html
-LINEA: 59
-SNIPPET: { num: 1, title: "¿Qué es la igualdad?", op1: "https://sendvid.com/embed/x7c6g0s7", op2: "https://sendvid.com/embed/x7c6g0s7", op3: "https://sendvid.com/embed/x7c6g0s7", op4: "https://sendvid.com/embed/x7c6g0s7" },
-ENLACE: https://sendvid.com/embed/x7c6g0s7
---------------------------------------------------------------------------------
-ARCHIVO: anime/classroom-of-the-elite/season1.html
-LINEA: 60
-SNIPPET: { num: 2, title: "Es mejor ser odiado que ignorado", op1: "https://sendvid.com/embed/4osnc4ng", op2: "https://sendvid.com/embed/4osnc4ng", op3: "https://sendvid.com/embed/4osnc4ng", op4: "https://sendvid.com/embed/4osnc4ng" },
-ENLACE: https://sendvid.com/embed/4osnc4ng
---------------------------------------------------------------------------------
-ARCHIVO: anime/classroom-of-the-elite/season1.html
-LINEA: 61
-SNIPPET: { num: 3, title: "El hombre es por naturaleza un animal social", op1: "https://sendvid.com/embed/57xxoob3", op2: "https://sendvid.com/embed/57xxoob3", op3: "https://sendvid.com/embed/57xxoob3", op4: "https://sendvid.com/embed/57xxoob3" },
-ENLACE: https://sendvid.com/embed/57xxoob3
---------------------------------------------------------------------------------
-ARCHIVO: anime/classroom-of-the-elite/season1.html
-LINEA: 62
-SNIPPET: { num: 4, title: "Nunca juzgues a las personas por su apariencia", op1: "https://sendvid.com/embed/2gxk2wqo", op2: "https://sendvid.com/embed/2gxk2wqo", op3: "https://sendvid.com/embed/2gxk2wqo", op4: "https://sendvid.com/embed/2gxk2wqo" },
-ENLACE: https://sendvid.com/embed/2gxk2wqo
---------------------------------------------------------------------------------
-ARCHIVO: anime/classroom-of-the-elite/season1.html
-LINEA: 63
-SNIPPET: { num: 5, title: "El infierno son los otros", op1: "https://sendvid.com/embed/al96ti15", op2: "https://sendvid.com/embed/al96ti15", op3: "https://sendvid.com/embed/al96ti15", op4: "https://sendvid.com/embed/al96ti15" },
-ENLACE: https://sendvid.com/embed/al96ti15
---------------------------------------------------------------------------------
-ARCHIVO: anime/classroom-of-the-elite/season1.html
-LINEA: 64
-SNIPPET: { num: 6, title: "No hay nada más desigual que el trato igual de los desiguales", op1: "https://sendvid.com/embed/5xw4v0rf", op2: "", op3: "", op4: "" },
-ENLACE: https://sendvid.com/embed/5xw4v0rf
---------------------------------------------------------------------------------
-ARCHIVO: anime/classroom-of-the-elite/season1.html
-LINEA: 65
-SNIPPET: { num: 7, title: "Nada es más fácil que culpar a otros de nuestras desgracias", op1: "https://sendvid.com/embed/5do9h8im", op2: "https://sendvid.com/embed/5do9h8im", op3: "https://sendvid.com/embed/5do9h8im", op4: "https://sendvid.com/embed/5do9h8im" },
-ENLACE: https://sendvid.com/embed/5do9h8im
---------------------------------------------------------------------------------
-ARCHIVO: anime/classroom-of-the-elite/season1.html
-LINEA: 66
-SNIPPET: { num: 8, title: "Conoce a tu enemigo y conócete a ti mismo", op1: "https://sendvid.com/embed/7s3yaqlj", op2: "", op3: "", op4: "" },
-ENLACE: https://sendvid.com/embed/7s3yaqlj
---------------------------------------------------------------------------------
-ARCHIVO: anime/classroom-of-the-elite/season1.html
-LINEA: 67
-SNIPPET: { num: 9, title: "El hombre es un lobo para el hombre", op1: "https://sendvid.com/embed/67djm7tv", op2: "https://sendvid.com/embed/67djm7tv", op3: "https://sendvid.com/embed/67djm7tv", op4: "https://sendvid.com/embed/67djm7tv" },
-ENLACE: https://sendvid.com/embed/67djm7tv
---------------------------------------------------------------------------------
-ARCHIVO: anime/classroom-of-the-elite/season1.html
-LINEA: 68
-SNIPPET: { num: 10, title: "Cada hombre es culpable de todo el bien que no hizo", op1: "https://sendvid.com/embed/59cs2e4c", op2: "https://sendvid.com/embed/59cs2e4c", op3: "https://sendvid.com/embed/59cs2e4c", op4: "https://sendvid.com/embed/59cs2e4c" },
-ENLACE: https://sendvid.com/embed/59cs2e4c
---------------------------------------------------------------------------------
-ARCHIVO: anime/classroom-of-the-elite/season1.html
-LINEA: 69
-SNIPPET: { num: 11, title: "Lo que la gente comúnmente llama destino es su propia estupidez", op1: "https://sendvid.com/embed/wedzvto4", op2: "https://sendvid.com/embed/wedzvto4", op3: "https://sendvid.com/embed/wedzvto4", op4: "https://sendvid.com/embed/wedzvto4" },
-ENLACE: https://sendvid.com/embed/wedzvto4
---------------------------------------------------------------------------------
-ARCHIVO: anime/classroom-of-the-elite/season1.html
-LINEA: 70
-SNIPPET: { num: 12, title: "El genio duerme en cada hombre", op1: "https://sendvid.com/embed/xlkaq309", op2: "https://sendvid.com/embed/xlkaq309", op3: "https://sendvid.com/embed/xlkaq309", op4: "https://sendvid.com/embed/xlkaq309" }
-ENLACE: https://sendvid.com/embed/xlkaq309
---------------------------------------------------------------------------------
-ARCHIVO: anime/danmachi/season1.html
-LINEA: 59
-SNIPPET: { num: 1, title: "El encuentro del aventurero y la diosa", op1: "https://sendvid.com/embed/x7c6g0s7", op2: "URL_OP2_E1", op3: "URL_OP3_E1", op4: "URL_OP4_E1" },
-ENLACE: https://sendvid.com/embed/x7c6g0s7
---------------------------------------------------------------------------------
-ARCHIVO: anime/danmachi/season1.html
-LINEA: 60
-SNIPPET: { num: 2, title: "Monstruo de las profundidades ~Minotauro~", op1: "https://sendvid.com/embed/4osnc4ng", op2: "URL_OP2_E2", op3: "URL_OP3_E2", op4: "URL_OP4_E2" },
-ENLACE: https://sendvid.com/embed/4osnc4ng
---------------------------------------------------------------------------------
-ARCHIVO: anime/danmachi/season1.html
-LINEA: 61
-SNIPPET: { num: 3, title: "La diosa de la forja ~Hephaistos~", op1: "https://sendvid.com/embed/57xxoob3", op2: "URL_OP2_E3", op3: "URL_OP3_E3", op4: "URL_OP4_E3" },
-ENLACE: https://sendvid.com/embed/57xxoob3
---------------------------------------------------------------------------------
-ARCHIVO: anime/danmachi/season1.html
-LINEA: 62
-SNIPPET: { num: 4, title: "El partidario ~Supporter~", op1: "https://sendvid.com/embed/2gxk2wqo", op2: "URL_OP2_E4", op3: "URL_OP3_E4", op4: "URL_OP4_E4" },
-ENLACE: https://sendvid.com/embed/2gxk2wqo
---------------------------------------------------------------------------------
-ARCHIVO: anime/danmachi/season1.html
-LINEA: 63
-SNIPPET: { num: 5, title: "La magia ~Grimorio~", op1: "https://sendvid.com/embed/al96ti15", op2: "URL_OP2_E5", op3: "URL_OP3_E5", op4: "URL_OP4_E5" },
-ENLACE: https://sendvid.com/embed/al96ti15
---------------------------------------------------------------------------------
-ARCHIVO: anime/danmachi/season1.html
-LINEA: 64
-SNIPPET: { num: 6, title: "Razón ~Justicia~", op1: "https://sendvid.com/embed/980uwy50", op2: "URL_OP2_E6", op3: "URL_OP3_E6", op4: "URL_OP4_E6" },
-ENLACE: https://sendvid.com/embed/980uwy50
---------------------------------------------------------------------------------
-ARCHIVO: anime/danmachi/season1.html
-LINEA: 65
-SNIPPET: { num: 7, title: "La espada princesa ~Ais Wallenstein~", op1: "https://sendvid.com/embed/5do9h8im", op2: "URL_OP2_E7", op3: "URL_OP3_E7", op4: "URL_OP4_E7" },
-ENLACE: https://sendvid.com/embed/5do9h8im
---------------------------------------------------------------------------------
-ARCHIVO: anime/danmachi/season1.html
-LINEA: 66
-SNIPPET: { num: 8, title: "El héroe desea ser más fuerte ~Nivel superior~", op1: "https://sendvid.com/embed/mup0q2b3", op2: "URL_OP2_E8", op3: "URL_OP3_E8", op4: "URL_OP4_E8" },
-ENLACE: https://sendvid.com/embed/mup0q2b3
---------------------------------------------------------------------------------
-ARCHIVO: anime/danmachi/season1.html
-LINEA: 67
-SNIPPET: { num: 9, title: "Welf Crozzo ~Forjador~", op1: "https://sendvid.com/embed/67djm7tv", op2: "URL_OP2_E9", op3: "URL_OP3_E9", op4: "URL_OP4_E9" },
-ENLACE: https://sendvid.com/embed/67djm7tv
---------------------------------------------------------------------------------
-ARCHIVO: anime/danmachi/season1.html
-LINEA: 68
-SNIPPET: { num: 10, title: "Paso hacia el hogar ~Familia~", op1: "https://sendvid.com/embed/59cs2e4c", op2: "URL_OP2_E10", op3: "URL_OP3_E10", op4: "URL_OP4_E10" },
-ENLACE: https://sendvid.com/embed/59cs2e4c
---------------------------------------------------------------------------------
-ARCHIVO: anime/danmachi/season1.html
-LINEA: 69
-SNIPPET: { num: 11, title: "Bajo el resort ~Familia de dioses~", op1: "https://sendvid.com/embed/wedzvto4", op2: "URL_OP2_E11", op3: "URL_OP3_E11", op4: "URL_OP4_E11" },
-ENLACE: https://sendvid.com/embed/wedzvto4
---------------------------------------------------------------------------------
-ARCHIVO: anime/danmachi/season1.html
-LINEA: 70
-SNIPPET: { num: 12, title: "El mal de Orario ~Familia Soma~", op1: "https://sendvid.com/embed/xlkaq309", op2: "URL_OP2_E12", op3: "URL_OP3_E12", op4: "URL_OP4_E12" }
-ENLACE: https://sendvid.com/embed/xlkaq309
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/castillo-infinito.html
-LINEA: 55
-SNIPPET: <script>!function(r,u,m,b,l,e){r._Rumble=b,r[b]||(r[b]=function(){(r[b]._=r[b]._||[]).push(arguments);if(r[b]._.length==1){l=u.createElement(m),e=u.getElementsByTagName(m)[0],l.async=1,l.src="https://rumble.com/embedJS/u3hv8rz"+(arguments[1].video?"."+arguments[1].video:"")+"/?url="+encodeURIComponent(location.href)+"&args="+encodeURIComponent(JSON.stringify([].slice.apply(arguments))),e.parentNod
-ENLACE: https://rumble.com/embedJS/u3hv8rz
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/castillo-infinito.html
-LINEA: 82
-SNIPPET: <div id="player1-player" class="player-container"><iframe src="https://streamtape.com/e/yBxmoA6G7af3vQ/" width="800" height="600" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0"></iframe></div>
-ENLACE: https://streamtape.com/e/yBxmoA6G7af3vQ/
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/castillo-infinito.html
-LINEA: 83
-SNIPPET: <div id="player2-player" class="player-container"><iframe src="https://hglink.to/e/2sfgbaroy7wl" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="640" height="360" allowfullscreen></iframe></div>
-ENLACE: https://hglink.to/e/2sfgbaroy7wl
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/castillo-infinito.html
-LINEA: 84
-SNIPPET: <div id="player3-player" class="player-container"><iframe src="https://sendvid.com/embed/yw3hk68s" allowfullscreen></iframe></div>
-ENLACE: https://sendvid.com/embed/yw3hk68s
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/castillo-infinito.html
-LINEA: 87
-SNIPPET: <div id="player6-player" class="player-container"><iframe src="https://streamtape.com/e/vrlZ6o9RAGu4G7O/" width="800" height="600" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0"></iframe></div>
-ENLACE: https://streamtape.com/e/vrlZ6o9RAGu4G7O/
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/castillo-infinito.html
-LINEA: 88
-SNIPPET: <div id="player7-player" class="player-container"><iframe src="https://hglink.to/e/wle2cabqs493" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="640" height="360" allowfullscreen></iframe></div>
-ENLACE: https://hglink.to/e/wle2cabqs493
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/castillo-infinito.html
-LINEA: 89
-SNIPPET: <div id="player8-player" class="player-container"><iframe src="https://sendvid.com/embed/qdmgw3vu" allowfullscreen></iframe></div>
-ENLACE: https://sendvid.com/embed/qdmgw3vu
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/rugido-de-victoria.html
-LINEA: 39
-SNIPPET: <iframe src="https://www.yourupload.com/embed/111x11111111" allowfullscreen></iframe>
-ENLACE: https://www.yourupload.com/embed/111x11111111
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 59
-SNIPPET: { num: 1, title: 'Crueldad', op1: 'https://sendvid.com/embed/q7vjj7y2', op2: 'URL_OP2_EP1', op3: 'URL_OP3_EP1' },
-ENLACE: https://sendvid.com/embed/q7vjj7y2
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 60
-SNIPPET: { num: 2, title: 'El entrenador, Sakonji Urokodaki', op1: 'https://sendvid.com/embed/z0c81x2c', op2: 'URL_OP2_EP2', op3: 'URL_OP3_EP2' },
-ENLACE: https://sendvid.com/embed/z0c81x2c
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 61
-SNIPPET: { num: 3, title: 'Sabito y Makomo', op1: 'https://sendvid.com/embed/u8yq5x9b', op2: 'URL_OP2_EP3', op3: 'URL_OP3_EP3' },
-ENLACE: https://sendvid.com/embed/u8yq5x9b
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 62
-SNIPPET: { num: 4, title: 'Selección final', op1: 'https://sendvid.com/embed/s3y2k5p1', op2: 'URL_OP2_EP4', op3: 'URL_OP3_EP4' },
-ENLACE: https://sendvid.com/embed/s3y2k5p1
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 63
-SNIPPET: { num: 5, title: 'Tu propio acero', op1: 'https://sendvid.com/embed/t5w6h6g9', op2: 'URL_OP2_EP5', op3: 'URL_OP3_EP5' },
-ENLACE: https://sendvid.com/embed/t5w6h6g9
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 64
-SNIPPET: { num: 6, title: 'El espadachín que acompaña a un demonio', op1: 'https://sendvid.com/embed/p9x8w7v6', op2: 'URL_OP2_EP6', op3: 'URL_OP3_EP6' },
-ENLACE: https://sendvid.com/embed/p9x8w7v6
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 65
-SNIPPET: { num: 7, title: 'Muzan Kibutsuji', op1: 'https://sendvid.com/embed/k3v2j2x9', op2: 'URL_OP2_EP7', op3: 'URL_OP3_EP7' },
-ENLACE: https://sendvid.com/embed/k3v2j2x9
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 66
-SNIPPET: { num: 8, title: 'El hechizo de la luna sangrienta', op1: 'https://sendvid.com/embed/j1b9c8w2', op2: 'URL_OP2_EP8', op3: 'URL_OP3_EP8' },
-ENLACE: https://sendvid.com/embed/j1b9c8w2
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 67
-SNIPPET: { num: 9, title: 'El demonio de la pelota Temari y el demonio de la flecha', op1: 'https://sendvid.com/embed/x7g5f4v1', op2: 'URL_OP2_EP9', op3: 'URL_OP3_EP9' },
-ENLACE: https://sendvid.com/embed/x7g5f4v1
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 68
-SNIPPET: { num: 10, title: 'Siempre juntos', op1: 'https://sendvid.com/embed/c6v4b3f8', op2: 'URL_OP2_EP10', op3: 'URL_OP3_EP10' },
-ENLACE: https://sendvid.com/embed/c6v4b3f8
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 69
-SNIPPET: { num: 11, title: 'La casa de los tambores', op1: 'https://sendvid.com/embed/v2f1j1c7', op2: 'URL_OP2_EP11', op3: 'URL_OP3_EP11' },
-ENLACE: https://sendvid.com/embed/v2f1j1c7
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 70
-SNIPPET: { num: 12, title: 'El jabalí muestra sus colmillos, Zenitsu duerme', op1: 'https://sendvid.com/embed/b0v9e8d6', op2: 'URL_OP2_EP12', op3: 'URL_OP3_EP12' },
-ENLACE: https://sendvid.com/embed/b0v9e8d6
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 71
-SNIPPET: { num: 13, title: 'Algo más importante que la vida', op1: 'https://sendvid.com/embed/f8d7g6f5', op2: 'URL_OP2_EP13', op3: 'URL_OP3_EP13' },
-ENLACE: https://sendvid.com/embed/f8d7g6f5
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 72
-SNIPPET: { num: 14, title: 'La casa con el blasón de la glicinia', op1: 'https://sendvid.com/embed/a6c5b4e3', op2: 'URL_OP2_EP14', op3: 'URL_OP3_EP14' },
-ENLACE: https://sendvid.com/embed/a6c5b4e3
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 73
-SNIPPET: { num: 15, title: 'Monte Natagumo', op1: 'https://sendvid.com/embed/d5b3a2d1', op2: 'URL_OP2_EP15', op3: 'URL_OP3_EP15' },
-ENLACE: https://sendvid.com/embed/d5b3a2d1
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 74
-SNIPPET: { num: 16, title: 'Dejando que otros vayan delante', op1: 'https://sendvid.com/embed/h4a2g1b9', op2: 'URL_OP2_EP16', op3: 'URL_OP3_EP16' },
-ENLACE: https://sendvid.com/embed/h4a2g1b9
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 75
-SNIPPET: { num: 17, title: 'Debes dominar una sola cosa', op1: 'https://sendvid.com/embed/g3h1f9a8', op2: 'URL_OP2_EP17', op3: 'URL_OP3_EP17' },
-ENLACE: https://sendvid.com/embed/g3h1f9a8
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 76
-SNIPPET: { num: 18, title: 'Un lazo falso', op1: 'https://sendvid.com/embed/f2g9e8h7', op2: 'URL_OP2_EP18', op3: 'URL_OP3_EP18' },
-ENLACE: https://sendvid.com/embed/f2g9e8h7
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 77
-SNIPPET: { num: 19, title: 'Dios del fuego', op1: 'https://sendvid.com/embed/e1f8d7g6', op2: 'URL_OP2_EP19', op3: 'URL_OP3_EP19' },
-ENLACE: https://sendvid.com/embed/e1f8d7g6
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 78
-SNIPPET: { num: 20, title: 'Familia de pega', op1: 'https://sendvid.com/embed/d9e7f6d5', op2: 'URL_OP2_EP20', op3: 'URL_OP3_EP20' },
-ENLACE: https://sendvid.com/embed/d9e7f6d5
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 79
-SNIPPET: { num: 21, title: 'Violación de la normativa', op1: 'https://sendvid.com/embed/c8d6e5c4', op2: 'URL_OP2_EP21', op3: 'URL_OP3_EP21' },
-ENLACE: https://sendvid.com/embed/c8d6e5c4
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 80
-SNIPPET: { num: 22, title: 'El maestro', op1: 'https://sendvid.com/embed/b7c5d4b3', op2: 'URL_OP2_EP22', op3: 'URL_OP3_EP22' },
-ENLACE: https://sendvid.com/embed/b7c5d4b3
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 81
-SNIPPET: { num: 23, title: 'Reunión de los Pilares', op1: 'https://sendvid.com/embed/a6b4c3a2', op2: 'URL_OP2_EP23', op3: 'URL_OP3_EP23' },
-ENLACE: https://sendvid.com/embed/a6b4c3a2
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 82
-SNIPPET: { num: 24, title: 'Entrenamiento de rehabilitación', op1: 'https://sendvid.com/embed/95a3b291', op2: 'URL_OP2_EP24', op3: 'URL_OP3_EP24' },
-ENLACE: https://sendvid.com/embed/95a3b291
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 83
-SNIPPET: { num: 25, title: 'Tsuguko, Kanao Tsuyuri', op1: 'https://sendvid.com/embed/8492a189', op2: 'URL_OP2_EP25', op3: 'URL_OP3_EP25' },
-ENLACE: https://sendvid.com/embed/8492a189
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-1.html
-LINEA: 84
-SNIPPET: { num: 26, title: 'Nueva misión', op1: 'https://sendvid.com/embed/73819878', op2: 'URL_OP2_EP26', op3: 'URL_OP3_EP26' }
-ENLACE: https://sendvid.com/embed/73819878
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-2.html
-LINEA: 59
-SNIPPET: { num: 1, title: 'Pilar del Sonido, Tengen Uzui', op1: 'https://sendvid.com/embed/q1w2e3r4', op2: 'URL_OP2_EP1', op3: 'URL_OP3_EP1' },
-ENLACE: https://sendvid.com/embed/q1w2e3r4
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-2.html
-LINEA: 60
-SNIPPET: { num: 2, title: 'Infiltración en el Distrito del Placer', op1: 'https://sendvid.com/embed/w2e3r4q1', op2: 'URL_OP2_EP2', op3: 'URL_OP3_EP2' },
-ENLACE: https://sendvid.com/embed/w2e3r4q1
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-2.html
-LINEA: 61
-SNIPPET: { num: 3, title: '¿Quién eres?', op1: 'https://sendvid.com/embed/e3r4q1w2', op2: 'URL_OP2_EP3', op3: 'URL_OP3_EP3' },
-ENLACE: https://sendvid.com/embed/e3r4q1w2
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-2.html
-LINEA: 62
-SNIPPET: { num: 4, title: 'Esta noche', op1: 'https://sendvid.com/embed/r4q1w2e3', op2: 'URL_OP2_EP4', op3: 'URL_OP3_EP4' },
-ENLACE: https://sendvid.com/embed/r4q1w2e3
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-2.html
-LINEA: 63
-SNIPPET: { num: 5, title: '¡Las cosas se van a poner llamativas!', op1: 'https://sendvid.com/embed/q1w2e3r5', op2: 'URL_OP2_EP5', op3: 'URL_OP3_EP5' },
-ENLACE: https://sendvid.com/embed/q1w2e3r5
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-2.html
-LINEA: 64
-SNIPPET: { num: 6, title: 'Recuerdos superpuestos', op1: 'https://sendvid.com/embed/w2e3r4q6', op2: 'URL_OP2_EP6', op3: 'URL_OP3_EP6' },
-ENLACE: https://sendvid.com/embed/w2e3r4q6
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-2.html
-LINEA: 65
-SNIPPET: { num: 7, title: 'Transformación', op1: 'https://sendvid.com/embed/e3r4q1w7', op2: 'URL_OP2_EP7', op3: 'URL_OP3_EP7' },
-ENLACE: https://sendvid.com/embed/e3r4q1w7
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-2.html
-LINEA: 66
-SNIPPET: { num: 8, title: 'Reunión', op1: 'https://sendvid.com/embed/r4q1w2e8', op2: 'URL_OP2_EP8', op3: 'URL_OP3_EP8' },
-ENLACE: https://sendvid.com/embed/r4q1w2e8
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-2.html
-LINEA: 67
-SNIPPET: { num: 9, title: 'Tras derrotar a una Luna Superior', op1: 'https://sendvid.com/embed/q1w2e3r9', op2: 'URL_OP2_EP9', op3: 'URL_OP3_EP9' },
-ENLACE: https://sendvid.com/embed/q1w2e3r9
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-2.html
-LINEA: 68
-SNIPPET: { num: 10, title: '¡No me rendiré!', op1: 'https://sendvid.com/embed/w2e3r4q0', op2: 'URL_OP2_EP10', op3: 'URL_OP3_EP10' },
-ENLACE: https://sendvid.com/embed/w2e3r4q0
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-2.html
-LINEA: 69
-SNIPPET: { num: 11, title: 'No importa cuántas veces renazca', op1: 'https://sendvid.com/embed/e3r4q1w1', op2: 'URL_OP2_EP11', op3: 'URL_OP3_EP11' }
-ENLACE: https://sendvid.com/embed/e3r4q1w1
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-3.html
-LINEA: 59
-SNIPPET: { num: 1, title: 'El sueño de alguien', op1: 'https://sendvid.com/embed/a1b2c3d4', op2: 'URL_OP2_EP1', op3: 'URL_OP3_EP1' },
-ENLACE: https://sendvid.com/embed/a1b2c3d4
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-3.html
-LINEA: 60
-SNIPPET: { num: 2, title: 'Yoriichi Tipo Cero', op1: 'https://sendvid.com/embed/b2c3d4a1', op2: 'URL_OP2_EP2', op3: 'URL_OP3_EP2' },
-ENLACE: https://sendvid.com/embed/b2c3d4a1
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-3.html
-LINEA: 61
-SNIPPET: { num: 3, title: 'Una espada de hace 300 años', op1: 'https://sendvid.com/embed/c3d4a1b2', op2: 'URL_OP2_EP3', op3: 'URL_OP3_EP3' },
-ENLACE: https://sendvid.com/embed/c3d4a1b2
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-3.html
-LINEA: 62
-SNIPPET: { num: 4, title: 'Gracias, Tokito', op1: 'https://sendvid.com/embed/d4a1b2c3', op2: 'URL_OP2_EP4', op3: 'URL_OP3_EP4' },
-ENLACE: https://sendvid.com/embed/d4a1b2c3
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-3.html
-LINEA: 63
-SNIPPET: { num: 5, title: 'Espada al rojo vivo', op1: 'https://sendvid.com/embed/a1b2c3d5', op2: 'URL_OP2_EP5', op3: 'URL_OP3_EP5' },
-ENLACE: https://sendvid.com/embed/a1b2c3d5
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-3.html
-LINEA: 64
-SNIPPET: { num: 6, title: '¿No se supone que te convertirías en un Pilar?', op1: 'https://sendvid.com/embed/b2c3d4a6', op2: 'URL_OP2_EP6', op3: 'URL_OP3_EP6' },
-ENLACE: https://sendvid.com/embed/b2c3d4a6
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-3.html
-LINEA: 65
-SNIPPET: { num: 7, title: 'El despertar de los villanos', op1: 'https://sendvid.com/embed/c3d4a1b7', op2: 'URL_OP2_EP7', op3: 'URL_OP3_EP7' },
-ENLACE: https://sendvid.com/embed/c3d4a1b7
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-3.html
-LINEA: 66
-SNIPPET: { num: 8, title: 'El Mu en Muichiro', op1: 'https://sendvid.com/embed/d4a1b2c8', op2: 'URL_OP2_EP8', op3: 'URL_OP3_EP8' },
-ENLACE: https://sendvid.com/embed/d4a1b2c8
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-3.html
-LINEA: 67
-SNIPPET: { num: 9, title: 'El Pilar de la Niebla, Muichiro Tokito', op1: 'https://sendvid.com/embed/a1b2c3d9', op2: 'URL_OP2_EP9', op3: 'URL_OP3_EP9' },
-ENLACE: https://sendvid.com/embed/a1b2c3d9
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-3.html
-LINEA: 68
-SNIPPET: { num: 10, title: 'El Pilar del Amor, Mitsuri Kanroji', op1: 'https://sendvid.com/embed/b2c3d4a0', op2: 'URL_OP2_EP10', op3: 'URL_OP3_EP10' },
-ENLACE: https://sendvid.com/embed/b2c3d4a0
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-3.html
-LINEA: 69
-SNIPPET: { num: 11, title: 'Lazos que nos conectan: Amanecer y primera luz', op1: 'https://sendvid.com/embed/c3d4a1b1', op2: 'URL_OP2_EP11', op3: 'URL_OP3_EP11' }
-ENLACE: https://sendvid.com/embed/c3d4a1b1
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-4.html
-LINEA: 59
-SNIPPET: { num: 1, title: 'Para derrotar a Muzan Kibutsuji', op1: 'https://sendvid.com/embed/x1y2z3a4', op2: 'URL_OP2_EP1', op3: 'URL_OP3_EP1' },
-ENLACE: https://sendvid.com/embed/x1y2z3a4
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-4.html
-LINEA: 60
-SNIPPET: { num: 2, title: 'El dolor del Pilar del Agua, Giyu Tomioka', op1: 'https://sendvid.com/embed/y2z3a4x1', op2: 'URL_OP2_EP2', op3: 'URL_OP3_EP2' },
-ENLACE: https://sendvid.com/embed/y2z3a4x1
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-4.html
-LINEA: 61
-SNIPPET: { num: 3, title: 'Tanjiro se recupera y se une al entrenamiento', op1: 'https://sendvid.com/embed/z3a4x1y2', op2: 'URL_OP2_EP3', op3: 'URL_OP3_EP3' },
-ENLACE: https://sendvid.com/embed/z3a4x1y2
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-4.html
-LINEA: 62
-SNIPPET: { num: 4, title: 'Una sonrisa para Tokito', op1: 'https://sendvid.com/embed/a4x1y2z3', op2: 'URL_OP2_EP4', op3: 'URL_OP3_EP4' },
-ENLACE: https://sendvid.com/embed/a4x1y2z3
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-4.html
-LINEA: 63
-SNIPPET: { num: 5, title: 'Me voy a comer un demonio', op1: 'https://sendvid.com/embed/x1y2z3a5', op2: 'URL_OP2_EP5', op3: 'URL_OP3_EP5' },
-ENLACE: https://sendvid.com/embed/x1y2z3a5
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-4.html
-LINEA: 64
-SNIPPET: { num: 6, title: 'El más fuerte de los Cazadores de Demonios', op1: 'https://sendvid.com/embed/y2z3a4x6', op2: 'URL_OP2_EP6', op3: 'URL_OP3_EP6' },
-ENLACE: https://sendvid.com/embed/y2z3a4x6
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-4.html
-LINEA: 65
-SNIPPET: { num: 7, title: 'El Pilar de la Roca, Gyomei Himejima', op1: 'https://sendvid.com/embed/z3a4x1y7', op2: 'URL_OP2_EP7', op3: 'URL_OP3_EP7' },
-ENLACE: https://sendvid.com/embed/z3a4x1y7
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/temporada-4.html
-LINEA: 66
-SNIPPET: { num: 8, title: 'La unión de los Pilares', op1: 'https://sendvid.com/embed/a4x1y2z8', op2: 'URL_OP2_EP8', op3: 'URL_OP3_EP8' }
-ENLACE: https://sendvid.com/embed/a4x1y2z8
---------------------------------------------------------------------------------
-ARCHIVO: anime/demon-slayer/tren-infinito.html
-LINEA: 40
-SNIPPET: <iframe src="https://sendvid.com/embed/abcdef12" allowfullscreen></iframe>
-ENLACE: https://sendvid.com/embed/abcdef12
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 71
-SNIPPET: { num: 1, title: "DRAGON BALL HEROES 01", op1: "https://sendvid.com/embed/03tjflv6" },
-ENLACE: https://sendvid.com/embed/03tjflv6
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 72
-SNIPPET: { num: 2, title: "Episodio 2", op1: "https://sendvid.com/embed/9qzqxmlb" },
-ENLACE: https://sendvid.com/embed/9qzqxmlb
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 73
-SNIPPET: { num: 3, title: "Episodio 3", op1: "https://sendvid.com/embed/yepxxprt" },
-ENLACE: https://sendvid.com/embed/yepxxprt
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 74
-SNIPPET: { num: 4, title: "Episodio 4", op1: "https://sendvid.com/embed/brt1dne1" },
-ENLACE: https://sendvid.com/embed/brt1dne1
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 75
-SNIPPET: { num: 5, title: "Episodio 5", op1: "https://sendvid.com/embed/zi5izo1b" },
-ENLACE: https://sendvid.com/embed/zi5izo1b
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 76
-SNIPPET: { num: 6, title: "Episodio 6", op1: "https://sendvid.com/embed/jbprf0gh" },
-ENLACE: https://sendvid.com/embed/jbprf0gh
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 77
-SNIPPET: { num: 7, title: "Episodio 7", op1: "https://sendvid.com/embed/kpn0gdy3" },
-ENLACE: https://sendvid.com/embed/kpn0gdy3
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 78
-SNIPPET: { num: 8, title: "Episodio 8", op1: "https://sendvid.com/embed/k962wtbo" },
-ENLACE: https://sendvid.com/embed/k962wtbo
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 79
-SNIPPET: { num: 9, title: "Episodio 9", op1: "https://sendvid.com/embed/oniqax8i" },
-ENLACE: https://sendvid.com/embed/oniqax8i
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 80
-SNIPPET: { num: 10, title: "Episodio 10", op1: "https://sendvid.com/embed/yh597hs8" },
-ENLACE: https://sendvid.com/embed/yh597hs8
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 81
-SNIPPET: { num: 11, title: "Episodio 11", op1: "https://sendvid.com/embed/6l9501ci" },
-ENLACE: https://sendvid.com/embed/6l9501ci
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 82
-SNIPPET: { num: 12, title: "Episodio 12", op1: "https://sendvid.com/embed/san9vt9f" },
-ENLACE: https://sendvid.com/embed/san9vt9f
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 83
-SNIPPET: { num: 13, title: "Episodio 13", op1: "https://sendvid.com/embed/otxwi4dq" },
-ENLACE: https://sendvid.com/embed/otxwi4dq
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 84
-SNIPPET: { num: 14, title: "Episodio 14", op1: "https://sendvid.com/embed/s6dphdeu" },
-ENLACE: https://sendvid.com/embed/s6dphdeu
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 85
-SNIPPET: { num: 15, title: "Episodio 15", op1: "https://sendvid.com/embed/wzk034s5" },
-ENLACE: https://sendvid.com/embed/wzk034s5
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 86
-SNIPPET: { num: 16, title: "Episodio 16", op1: "https://sendvid.com/embed/ioy4dqax" },
-ENLACE: https://sendvid.com/embed/ioy4dqax
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 87
-SNIPPET: { num: 17, title: "Episodio 17", op1: "https://sendvid.com/embed/1735jgx0" },
-ENLACE: https://sendvid.com/embed/1735jgx0
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 88
-SNIPPET: { num: 18, title: "Episodio 18", op1: "https://sendvid.com/embed/6xcgjhso" },
-ENLACE: https://sendvid.com/embed/6xcgjhso
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 89
-SNIPPET: { num: 19, title: "Episodio 19", op1: "https://sendvid.com/embed/pl2popjy" },
-ENLACE: https://sendvid.com/embed/pl2popjy
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 90
-SNIPPET: { num: 20, title: "Episodio 20", op1: "https://sendvid.com/embed/cdjdswgc" },
-ENLACE: https://sendvid.com/embed/cdjdswgc
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 91
-SNIPPET: { num: 21, title: "Episodio 21", op1: "https://sendvid.com/embed/mfw15sx9" },
-ENLACE: https://sendvid.com/embed/mfw15sx9
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 92
-SNIPPET: { num: 22, title: "Episodio 22", op1: "https://sendvid.com/embed/e6dn9cm4" },
-ENLACE: https://sendvid.com/embed/e6dn9cm4
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 93
-SNIPPET: { num: 23, title: "Episodio 23", op1: "https://sendvid.com/embed/3uq3y5pk" },
-ENLACE: https://sendvid.com/embed/3uq3y5pk
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 94
-SNIPPET: { num: 24, title: "Episodio 24", op1: "https://sendvid.com/embed/p413yze9" },
-ENLACE: https://sendvid.com/embed/p413yze9
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 95
-SNIPPET: { num: 25, title: "Episodio 25", op1: "https://sendvid.com/embed/zjuy1xpf" },
-ENLACE: https://sendvid.com/embed/zjuy1xpf
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 96
-SNIPPET: { num: 26, title: "Episodio 26", op1: "https://sendvid.com/embed/u0emrz08" },
-ENLACE: https://sendvid.com/embed/u0emrz08
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 97
-SNIPPET: { num: 27, title: "Episodio 27", op1: "https://sendvid.com/embed/ph3saqz1" },
-ENLACE: https://sendvid.com/embed/ph3saqz1
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 98
-SNIPPET: { num: 28, title: "Episodio 28", op1: "https://sendvid.com/embed/brpwu7l6" },
-ENLACE: https://sendvid.com/embed/brpwu7l6
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 99
-SNIPPET: { num: 29, title: "Episodio 29", op1: "https://sendvid.com/embed/meaf8yzu" },
-ENLACE: https://sendvid.com/embed/meaf8yzu
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 100
-SNIPPET: { num: 30, title: "Episodio 30", op1: "https://sendvid.com/embed/y88mnkw9" },
-ENLACE: https://sendvid.com/embed/y88mnkw9
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 101
-SNIPPET: { num: 31, title: "Episodio 31", op1: "https://sendvid.com/embed/50ys6l8x" },
-ENLACE: https://sendvid.com/embed/50ys6l8x
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 102
-SNIPPET: { num: 32, title: "Episodio 32", op1: "https://sendvid.com/embed/9gqw4jhe" },
-ENLACE: https://sendvid.com/embed/9gqw4jhe
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 103
-SNIPPET: { num: 33, title: "Episodio 33", op1: "https://sendvid.com/embed/0q8xrejy" },
-ENLACE: https://sendvid.com/embed/0q8xrejy
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 104
-SNIPPET: { num: 34, title: "Episodio 34", op1: "https://sendvid.com/embed/1xg2ebje" },
-ENLACE: https://sendvid.com/embed/1xg2ebje
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 105
-SNIPPET: { num: 35, title: "Episodio 35", op1: "https://sendvid.com/embed/ac9iaf03" },
-ENLACE: https://sendvid.com/embed/ac9iaf03
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 106
-SNIPPET: { num: 36, title: "Episodio 36", op1: "https://sendvid.com/embed/w7k24fms" },
-ENLACE: https://sendvid.com/embed/w7k24fms
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 107
-SNIPPET: { num: 37, title: "Episodio 37", op1: "https://sendvid.com/embed/qwdq73om" },
-ENLACE: https://sendvid.com/embed/qwdq73om
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 108
-SNIPPET: { num: 38, title: "Episodio 38", op1: "https://sendvid.com/embed/7bh7lauf" },
-ENLACE: https://sendvid.com/embed/7bh7lauf
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 109
-SNIPPET: { num: 39, title: "Episodio 39", op1: "https://sendvid.com/embed/h52cxgtn" },
-ENLACE: https://sendvid.com/embed/h52cxgtn
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 110
-SNIPPET: { num: 40, title: "Episodio 40", op1: "https://sendvid.com/embed/bygqyxlb" },
-ENLACE: https://sendvid.com/embed/bygqyxlb
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 111
-SNIPPET: { num: 41, title: "Episodio 41", op1: "https://sendvid.com/embed/fyw93q1g" },
-ENLACE: https://sendvid.com/embed/fyw93q1g
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 112
-SNIPPET: { num: 42, title: "Episodio 42", op1: "https://sendvid.com/embed/jmms6qtd" },
-ENLACE: https://sendvid.com/embed/jmms6qtd
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 113
-SNIPPET: { num: 43, title: "Episodio 43", op1: "https://sendvid.com/embed/c7yl5xjd" },
-ENLACE: https://sendvid.com/embed/c7yl5xjd
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 114
-SNIPPET: { num: 44, title: "Episodio 44", op1: "https://sendvid.com/embed/1pwr6tuf" },
-ENLACE: https://sendvid.com/embed/1pwr6tuf
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 115
-SNIPPET: { num: 45, title: "Episodio 45", op1: "https://sendvid.com/embed/ojlszhw5" },
-ENLACE: https://sendvid.com/embed/ojlszhw5
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 116
-SNIPPET: { num: 46, title: "Episodio 46", op1: "https://sendvid.com/embed/vk5q4pc2" },
-ENLACE: https://sendvid.com/embed/vk5q4pc2
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 117
-SNIPPET: { num: 47, title: "Episodio 47", op1: "https://sendvid.com/embed/xo0qb4rr" },
-ENLACE: https://sendvid.com/embed/xo0qb4rr
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 118
-SNIPPET: { num: 48, title: "Episodio 48", op1: "https://sendvid.com/embed/vvxzbj9w" },
-ENLACE: https://sendvid.com/embed/vvxzbj9w
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 119
-SNIPPET: { num: 49, title: "Episodio 49", op1: "https://sendvid.com/embed/cvbwauib" },
-ENLACE: https://sendvid.com/embed/cvbwauib
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 120
-SNIPPET: { num: 50, title: "Episodio 50", op1: "https://sendvid.com/embed/jpkmt3kr" },
-ENLACE: https://sendvid.com/embed/jpkmt3kr
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 121
-SNIPPET: { num: 51, title: "Episodio 51", op1: "https://sendvid.com/embed/3cehlpd6" },
-ENLACE: https://sendvid.com/embed/3cehlpd6
---------------------------------------------------------------------------------
-ARCHIVO: anime/dragon-ball-heroes/season.html
-LINEA: 122
-SNIPPET: { num: 52, title: "Episodio 52", op1: "https://sendvid.com/embed/qwponnkr" }
-ENLACE: https://sendvid.com/embed/qwponnkr
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/pelicula-0.html
-LINEA: 38
-SNIPPET: <iframe src="https://www.yourupload.com/embed/111x11111111" allowfullscreen></iframe>
-ENLACE: https://www.yourupload.com/embed/111x11111111
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 35
-SNIPPET: <iframe src="https://sendvid.com/embed/f4k921l4" allowfullscreen></iframe>
-ENLACE: https://sendvid.com/embed/f4k921l4
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 60
-SNIPPET: { num: 1, title: "Ryomen Sukuna", op1: "https://sendvid.com/embed/65ygx4k9", op2: "URL_OP2_E1", op3: "URL_OP3_E1", op4: "URL_OP4_E1" },
-ENLACE: https://sendvid.com/embed/65ygx4k9
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 61
-SNIPPET: { num: 2, title: "Por mí mismo", op1: "https://sendvid.com/embed/2nwmaaoa", op2: "URL_OP2_E2", op3: "URL_OP3_E2", op4: "URL_OP4_E2" },
-ENLACE: https://sendvid.com/embed/2nwmaaoa
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 62
-SNIPPET: { num: 3, title: "Chica de acero", op1: "https://sendvid.com/embed/usav7ve0", op2: "URL_OP2_E3", op3: "URL_OP3_E3", op4: "URL_OP4_E3" },
-ENLACE: https://sendvid.com/embed/usav7ve0
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 63
-SNIPPET: { num: 4, title: "Debe nacer el feto maldito", op1: "https://sendvid.com/embed/xnyduvrr", op2: "URL_OP2_E4", op3: "URL_OP3_E4", op4: "URL_OP4_E4" },
-ENLACE: https://sendvid.com/embed/xnyduvrr
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 64
-SNIPPET: { num: 5, title: "Debe nacer el feto maldito II", op1: "https://sendvid.com/embed/lj4muygb", op2: "URL_OP2_E5", op3: "URL_OP3_E5", op4: "URL_OP4_E5" },
-ENLACE: https://sendvid.com/embed/lj4muygb
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 65
-SNIPPET: { num: 6, title: "Después de la lluvia", op1: "https://sendvid.com/embed/xx7uecjb", op2: "URL_OP2_E6", op3: "URL_OP3_E6", op4: "URL_OP4_E6" },
-ENLACE: https://sendvid.com/embed/xx7uecjb
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 66
-SNIPPET: { num: 7, title: "Asalto", op1: "https://sendvid.com/embed/a1bry78a", op2: "URL_OP2_E7", op3: "URL_OP3_E7", op4: "URL_OP4_E7" },
-ENLACE: https://sendvid.com/embed/a1bry78a
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 67
-SNIPPET: { num: 8, title: "Aburrimiento", op1: "https://sendvid.com/embed/xmwk7mkq", op2: "URL_OP2_E8", op3: "URL_OP3_E8", op4: "URL_OP4_E8" },
-ENLACE: https://sendvid.com/embed/xmwk7mkq
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 68
-SNIPPET: { num: 9, title: "Pez pequeño y castigo inverso", op1: "https://sendvid.com/embed/0f5kmu3o", op2: "URL_OP2_E9", op3: "URL_OP3_E9", op4: "URL_OP4_E9" },
-ENLACE: https://sendvid.com/embed/0f5kmu3o
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 69
-SNIPPET: { num: 10, title: "Mutación pasiva", op1: "https://sendvid.com/embed/yjuruijp", op2: "URL_OP2_E10", op3: "URL_OP3_E10", op4: "URL_OP4_E10" },
-ENLACE: https://sendvid.com/embed/yjuruijp
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 70
-SNIPPET: { num: 11, title: "Estrechez de miras", op1: "https://sendvid.com/embed/nj5i6ct6", op2: "URL_OP2_E11", op3: "URL_OP3_E11", op4: "URL_OP4_E11" },
-ENLACE: https://sendvid.com/embed/nj5i6ct6
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 71
-SNIPPET: { num: 12, title: "Para ti, algún día", op1: "https://sendvid.com/embed/hx4xrt3y", op2: "URL_OP2_E12", op3: "URL_OP3_E12", op4: "URL_OP4_E12" },
-ENLACE: https://sendvid.com/embed/hx4xrt3y
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 72
-SNIPPET: { num: 13, title: "Hasta mañana", op1: "https://sendvid.com/embed/2ekex8gq", op2: "URL_OP2_E13", op3: "URL_OP3_E13", op4: "URL_OP4_E13" },
-ENLACE: https://sendvid.com/embed/2ekex8gq
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 73
-SNIPPET: { num: 14, title: "El interescolar de Kioto", op1: "https://sendvid.com/embed/af8pmkuy", op2: "URL_OP2_E14", op3: "URL_OP3_E14", op4: "URL_OP4_E14" },
-ENLACE: https://sendvid.com/embed/af8pmkuy
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 74
-SNIPPET: { num: 15, title: "El interescolar de Kioto II", op1: "https://sendvid.com/embed/jrliqkeq", op2: "URL_OP2_E15", op3: "URL_OP3_E15", op4: "URL_OP4_E15" },
-ENLACE: https://sendvid.com/embed/jrliqkeq
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 75
-SNIPPET: { num: 16, title: "El interescolar de Kioto III", op1: "https://sendvid.com/embed/q9xduzxk", op2: "URL_OP2_E16", op3: "URL_OP3_E16", op4: "URL_OP4_E16" },
-ENLACE: https://sendvid.com/embed/q9xduzxk
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 76
-SNIPPET: { num: 17, title: "El interescolar de Kioto IV", op1: "https://sendvid.com/embed/o9q47el9", op2: "URL_OP2_E17", op3: "URL_OP3_E17", op4: "URL_OP4_E17" },
-ENLACE: https://sendvid.com/embed/o9q47el9
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 77
-SNIPPET: { num: 18, title: "Sabios", op1: "https://sendvid.com/embed/qp01ay9f", op2: "URL_OP2_E18", op3: "URL_OP3_E18", op4: "URL_OP4_E18" },
-ENLACE: https://sendvid.com/embed/qp01ay9f
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 78
-SNIPPET: { num: 19, title: "Destello oscuro", op1: "https://sendvid.com/embed/jnm3xxsr", op2: "URL_OP2_E19", op3: "URL_OP3_E19", op4: "URL_OP4_E19" },
-ENLACE: https://sendvid.com/embed/jnm3xxsr
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 79
-SNIPPET: { num: 20, title: "Fuera de lo común", op1: "https://sendvid.com/embed/orma7f29", op2: "URL_OP2_E20", op3: "URL_OP3_E20", op4: "URL_OP4_E20" },
-ENLACE: https://sendvid.com/embed/orma7f29
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 80
-SNIPPET: { num: 21, title: "Jujutsu Koshien", op1: "https://sendvid.com/embed/9tj2dcic", op2: "URL_OP2_E21", op3: "URL_OP3_E21", op4: "URL_OP4_E21" },
-ENLACE: https://sendvid.com/embed/9tj2dcic
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 81
-SNIPPET: { num: 22, title: "El origen de la obediencia ciega", op1: "https://sendvid.com/embed/eckl4ppc", op2: "URL_OP2_E22", op3: "URL_OP3_E22", op4: "URL_OP4_E22" },
-ENLACE: https://sendvid.com/embed/eckl4ppc
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 82
-SNIPPET: { num: 23, title: "El origen de la obediencia ciega II", op1: "https://sendvid.com/embed/fw847ssr", op2: "URL_OP2_E23", op3: "URL_OP3_E23", op4: "URL_OP4_E23" },
-ENLACE: https://sendvid.com/embed/fw847ssr
---------------------------------------------------------------------------------
-ARCHIVO: anime/jujutsu-kaisen/temporada-1.html
-LINEA: 83
-SNIPPET: { num: 24, title: "Cómplices", op1: "https://sendvid.com/embed/2l8dxzwi", op2: "URL_OP2_E24", op3: "URL_OP3_E24", op4: "URL_OP4_E24" }
-ENLACE: https://sendvid.com/embed/2l8dxzwi
---------------------------------------------------------------------------------
+T1 → https://exe.io/NanatsunotaizaiTEM1
+
+T2 → https://exe.io/NanatsunotaizaiTEM2
+
+T3 → https://exe.io/NanatsunotaizaiTEM3
+
+T4 → https://exe.io/NanatsunotaizaiTEM4
+
+T5 → https://exe.io/NanatsunotaizaiTEM5
+
+Kimetsu no Yaiba (Demon Slayer)
+
+T1 → https://exe.io/KimetsuNoYaibaS1
+
+T2 → https://exe.io/tem2KimetsunoYaiba
+
+T3 → https://exe.io/kimetsuS3
+
+T4 → https://exe.io/kimetsuS4
+
+Especial Entrenamiento Pilar → https://exe.io/entrenamientopilar
+
+Re:Zero
+
+T1 → https://exe.io/ReZeroS1
+
+T2 → https://exe.io/ReZeroS2
+
+T3 → https://exe.io/ReZeroS3
+
+Classroom of the Elite
+
+T1 → https://exe.io/classroomoftheelites1
+
+T2 → https://exe.io/classroomoftheelites2
+
+Horimiya
+
+T1 → https://exe.io/HorimiyaS1
+
+T2 → https://exe.io/HorimiyaS2
+
+Mashle: Magic and Muscles
+
+T1 → https://exe.io/Mashletemporada1
+
+T2 → https://exe.io/Mashletem2
+
+Mushoku Tensei
+
+T1 → https://exe.io/MushokuTenseitem1
+
+T2 → https://exe.io/MushokuTenseiS2
+
+Bungou Stray Dogs
+
+T1 → https://exe.io/BungouStrayDogsS1
+
+T2 → https://exe.io/BungouStrayDogsS2
+
+T3 → https://exe.io/BungouStrayDogsS3
+
+T4 → https://exe.io/BungouStrayDogsS4
+
+Solo Leveling
+
+T1 → https://exe.io/sololevelingS1
+
+T2 → https://exe.io/SoloLevelingS2
+
+Sakamoto Days
+
+T1 → https://exe.io/sakamotodays
+
+T2 → https://exe.io/sakamotodaysS2
+
+Otros animes por temporada
+
+Even Given the Worthless S1 → https://exe.io/EvenGiventheWorthlessS1
+
+Kono Oto Tomare! S1 → https://exe.io/KonoototomareS1
+
+DanMachi (Is It Wrong to Pick Up Girls in a Dungeon?) T1 → https://exe.io/DanMachitem1
+
+Urusei Yatsura T1 → https://exe.io/UruseiYatsuratemporada1
+
+Boku no Hero Academia (My Hero Academia) T1 → https://exe.io/BokunoHeroAcademiaS1
+
+Nazono Kanojo X (Nazo no Kanojo X / Mysterious Girlfriend X) → https://exe.io/NazonoKanojoX
+
+Chainsaw Man (S1 en español)
+
+Versión 1 → https://exe.io/ChainsawmanS1espanol
+
+Versión 2 (drop) → https://exe.io/ChainsawmanS1dropespanol
+
+Versión 3 (terabox) → https://exe.io/ChainsawmanS1teraboxespanol
+
+🎬 Películas
+
+Kimetsu no Yaiba: Mugen Train (Tren Infinito) → https://exe.io/KimetsunoYaibaTrenInfino
+
+Nanatsu no Taizai: Prisioneros del Cielo → https://exe.io/NanatsuPrisionerosdelCielo
+
+Los 7 Pecados Capitales: Prisioneros del Cielo (duplicado) → https://exe.io/7pecadosPrisionerosdelCielo
+
+Los 7 Pecados Capitales: La Maldición de la Luz → https://exe.io/7pecadosLaMaldiciondelaLuz
+
+Sword Art Online Progressive: la Película → https://exe.io/SwordArtOnlineProgressiveMovie
+
+Kimetsu no Yaiba (Rugido de Victoria / recopilación especial) → https://exe.io/KimetsuNoYaibarugidodevictoria
+
+Superman
+
+Parte 1 → https://exe.io/superman01
+
+Versión 2025 Mediafire → https://exe.io/superman2025mediafire
+
+Papá no Iukoto o Kikinasai! (Listen to Me, Girls. I Am Your Father!) → https://exe.io/PapanoIukotooKikinasai
+
+🏰 Película 2025: Castillo Infinito
+
+No grabada en cine (calidad Sony HD/Full HD)
+
+Mediafire HD → https://exe.io/Castilloinfinito2025SONYHD
+
+Mediafire Full HD → https://exe.io/Castilloinfinito2025SONYFULLHD
+
+Dropbox HD → https://exe.io/Casinfini2025SONYdropboxHD
+
+Dropbox Full HD → https://exe.io/Casinfini2025SONYdropboxFULLHD
+
+Terabox HD → https://exe.io/Casinfi2025SONYteraboxHD
+
+Terabox Full HD → https://exe.io/Castinfin2025SONYteraboxFULLHD
+
+Grabada en cine
+
+Español latino MediaFire → https://exe.io/CastilloInfinitoespanol2025
+
+Español latino Dropbox → https://exe.io/CastilloInfinitodropbox2025
+
+Subtitulado Google Drive → https://exe-links.com/SUBTCastillofullhd
+
+Subtitulado MediaFire → https://exe.io/CastilloInfinito2025

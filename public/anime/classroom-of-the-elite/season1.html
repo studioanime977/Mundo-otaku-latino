@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+�<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -16,11 +16,11 @@
 
   <header class="header">
     <a href="../../../index.html" class="logo">StudioOtaku</a>
-    <a href="../../../public/html/catalogo.html" class="back-btn">ðŸ  Inicio</a>
+    <a href="../../../public/html/catalogo.html" class="back-btn">�x�� Inicio</a>
   </header>
 
   <main class="main-content">
-    <a href="classroom-of-the-elite.html" class="back-btn">â† Volver a Classroom Of The Elite</a>
+    <a href="classroom-of-the-elite.html" class="back-btn">� � Volver a Classroom Of The Elite</a>
 
     <div class="title-container">
         <h1 class="season-title">Classroom Of The Elite - Temporada 1</h1>
@@ -29,10 +29,10 @@
 
     <div class="contenedor-video">
       <div class="player-options">
-        <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÃ“N 1</button>
-        <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÃ“N 2</button>
-        <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÃ“N 3</button>
-        <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÃ“N 4</button>
+        <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCI�N 1</button>
+        <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCI�N 2</button>
+        <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCI�N 3</button>
+        <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCI�N 4</button>
       </div>
       <div class="reproductor-video">
         <div id="opcion1-player" class="player-container active">
@@ -53,25 +53,25 @@
     <div class="episodes-container">
         <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
         <div class="episodes-grid" id="episodes-grid">
-            <!-- Los episodios se generarÃ¡n con JavaScript -->
+            <!-- Los episodios se generarán con JavaScript -->
         </div>
     </div>
   </main>
 
   <script>
-    // Preservar los datos de episodios existentes o crear una estructura bÃ¡sica
+    // Preservar los datos de episodios existentes o crear una estructura básica
     const episodes = [
-        { num: 1, title: "Â¿QuÃ© es la igualdad?", op1: "https://sendvid.com/embed/x7c6g0s7", op2: "https://sendvid.com/embed/x7c6g0s7", op3: "https://sendvid.com/embed/x7c6g0s7", op4: "https://sendvid.com/embed/x7c6g0s7" },
+        { num: 1, title: "�Qué es la igualdad?", op1: "https://sendvid.com/embed/x7c6g0s7", op2: "https://sendvid.com/embed/x7c6g0s7", op3: "https://sendvid.com/embed/x7c6g0s7", op4: "https://sendvid.com/embed/x7c6g0s7" },
         { num: 2, title: "Es mejor ser odiado que ignorado", op1: "https://sendvid.com/embed/4osnc4ng", op2: "https://sendvid.com/embed/4osnc4ng", op3: "https://sendvid.com/embed/4osnc4ng", op4: "https://sendvid.com/embed/4osnc4ng" },
         { num: 3, title: "El hombre es por naturaleza un animal social", op1: "https://sendvid.com/embed/57xxoob3", op2: "https://sendvid.com/embed/57xxoob3", op3: "https://sendvid.com/embed/57xxoob3", op4: "https://sendvid.com/embed/57xxoob3" },
         { num: 4, title: "Nunca juzgues a las personas por su apariencia", op1: "https://sendvid.com/embed/2gxk2wqo", op2: "https://sendvid.com/embed/2gxk2wqo", op3: "https://sendvid.com/embed/2gxk2wqo", op4: "https://sendvid.com/embed/2gxk2wqo" },
         { num: 5, title: "El infierno son los otros", op1: "https://sendvid.com/embed/al96ti15", op2: "https://sendvid.com/embed/al96ti15", op3: "https://sendvid.com/embed/al96ti15", op4: "https://sendvid.com/embed/al96ti15" },
-        { num: 6, title: "No hay nada mÃ¡s desigual que el trato igual de los desiguales", op1: "https://sendvid.com/embed/5xw4v0rf", op2: "", op3: "", op4: "" },
-        { num: 7, title: "Nada es mÃ¡s fÃ¡cil que culpar a otros de nuestras desgracias", op1: "https://sendvid.com/embed/5do9h8im", op2: "https://sendvid.com/embed/5do9h8im", op3: "https://sendvid.com/embed/5do9h8im", op4: "https://sendvid.com/embed/5do9h8im" },
-        { num: 8, title: "Conoce a tu enemigo y conÃ³cete a ti mismo", op1: "https://sendvid.com/embed/7s3yaqlj", op2: "", op3: "", op4: "" },
+        { num: 6, title: "No hay nada más desigual que el trato igual de los desiguales", op1: "https://sendvid.com/embed/5xw4v0rf", op2: "", op3: "", op4: "" },
+        { num: 7, title: "Nada es más fácil que culpar a otros de nuestras desgracias", op1: "https://sendvid.com/embed/5do9h8im", op2: "https://sendvid.com/embed/5do9h8im", op3: "https://sendvid.com/embed/5do9h8im", op4: "https://sendvid.com/embed/5do9h8im" },
+        { num: 8, title: "Conoce a tu enemigo y conócete a ti mismo", op1: "https://sendvid.com/embed/7s3yaqlj", op2: "", op3: "", op4: "" },
         { num: 9, title: "El hombre es un lobo para el hombre", op1: "https://sendvid.com/embed/67djm7tv", op2: "https://sendvid.com/embed/67djm7tv", op3: "https://sendvid.com/embed/67djm7tv", op4: "https://sendvid.com/embed/67djm7tv" },
         { num: 10, title: "Cada hombre es culpable de todo el bien que no hizo", op1: "https://sendvid.com/embed/59cs2e4c", op2: "https://sendvid.com/embed/59cs2e4c", op3: "https://sendvid.com/embed/59cs2e4c", op4: "https://sendvid.com/embed/59cs2e4c" },
-        { num: 11, title: "Lo que la gente comÃºnmente llama destino es su propia estupidez", op1: "https://sendvid.com/embed/wedzvto4", op2: "https://sendvid.com/embed/wedzvto4", op3: "https://sendvid.com/embed/wedzvto4", op4: "https://sendvid.com/embed/wedzvto4" },
+        { num: 11, title: "Lo que la gente comúnmente llama destino es su propia estupidez", op1: "https://sendvid.com/embed/wedzvto4", op2: "https://sendvid.com/embed/wedzvto4", op3: "https://sendvid.com/embed/wedzvto4", op4: "https://sendvid.com/embed/wedzvto4" },
         { num: 12, title: "El genio duerme en cada hombre", op1: "https://sendvid.com/embed/xlkaq309", op2: "https://sendvid.com/embed/xlkaq309", op3: "https://sendvid.com/embed/xlkaq309", op4: "https://sendvid.com/embed/xlkaq309" }
     ];
 
@@ -126,7 +126,7 @@
       e.preventDefault();
     });
   
-    // Bloquear teclas especÃ­ficas
+    // Bloquear teclas específicas
     document.addEventListener('keydown', function(e) {
       if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
         e.preventDefault();

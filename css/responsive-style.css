@@ -1,7 +1,7 @@
 /* Variables CSS para consistencia */
 :root {
-  --primary-color: #ff5cad;
-  --secondary-color: #ff8a80;
+  --primary-color: #6a5af9; /* azul del logo */
+  --secondary-color: #a24bf6; /* violeta del logo */
   --accent-color: #6366f1;
   --background-start: #0f0f23;
   --background-mid: #1a1a3a;
