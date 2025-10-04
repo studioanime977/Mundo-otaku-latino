@@ -1,20 +1,35 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemaps
 Sitemap: https://mundootakulatino.vercel.app/sitemap.xml
 
-# Permitir acceso a todas las páginas importantes
-Allow: /html/
-Allow: /ANIME%20TEMPORADAS%20CON%20EPISODIOS/
+# Permitir acceso a contenido público
+Allow: /public/
+Allow: /public/html/
+Allow: /public/anime/
 Allow: /img/
 Allow: /css/
+Allow: /js/
 
-# Bloquear archivos innecesarios
+# Bloquear archivos y carpetas innecesarias
 Disallow: /php/
 Disallow: /base%20de%20datos/
 Disallow: /.git/
 Disallow: /md/
+Disallow: /*_backup.html
+Disallow: /*_complete.html
+Disallow: /*_new.html
+Disallow: /*_test.html
 
-# Crawl-delay para no sobrecargar el servidor
+# Optimización de rastreo
 Crawl-delay: 1
+
+# User agents específicos
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /img/
+Allow: /public/img/

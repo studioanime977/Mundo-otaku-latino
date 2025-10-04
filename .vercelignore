@@ -1,8 +1,35 @@
-# Archivos a ignorar en el deploy
+# Dependencies
 node_modules/
-.git/
-*.log
-.env
-.env.local
+npm-debug.log
+yarn-error.log
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
 .DS_Store
 Thumbs.db
+
+# Build files
+*.log
+
+# Git
+.git/
+.gitignore
+
+# Temporary files
+*.tmp
+*.bak
+*_backup.*
+*_test.*
+
+# Documentation
+README.md
+md/
+
+# Database
+base de datos/
