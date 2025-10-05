@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/catalogo",
-      "destination": "/html/catalogo.html"
+      "destination": "/public/html/catalogo.html"
     },
     {
       "source": "/anime/:path*",
