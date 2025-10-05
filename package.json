@@ -1,19 +1,12 @@
 {
-  "name": "studiootaku-castillo-infinito",
+  "name": "mundo-otaku-latino",
   "version": "1.0.0",
-  "description": "StudioOtaku - Anime Latino a la Carta",
+  "description": "Mundo Otaku Latino - Anime a la Carta",
   "main": "index.html",
   "scripts": {
-    "start": "http-server .",
-    "build": "echo 'Static site - no build required'",
-    "dev": "http-server . -p 3000"
+    "build": "echo 'Static site ready for deployment'"
   },
-  "homepage": ".",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tu-usuario/castillo-infinito.git"
-  },
-  "keywords": ["anime", "latino", "studiootaku", "static"],
-  "author": "StudioOtaku",
+  "keywords": ["anime", "latino", "otaku", "static"],
+  "author": "StudioAnime977",
   "license": "MIT"
 }
