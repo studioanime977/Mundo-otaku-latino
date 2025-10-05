@@ -7,7 +7,10 @@
     <title>Catálogo de Anime - StudioOtaku</title>
       <link rel="icon" type="image/x-icon" href="../../img/mundo-otaku-latino.ico">
       <link rel="apple-touch-icon" href="../../img/mundo-otaku-latino.ico">
+      <link rel="shortcut icon" href="../../ico/logo.png">
     <link rel="stylesheet" href="../../css/catalogo.css">
+    <link rel="stylesheet" href="../../css/responsive-style.css">
+    <link rel="stylesheet" href="../../css/responsive-navigation.css">
     <script>
       window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
     </script>
@@ -17,18 +20,18 @@
     <script src="../assets/js/main.js"></script>
   </head>
 <body>
-  <div class="header">
-    <div class="logo">StudioOtaku</div>
-    <div class="search-bar">
-      <input type="text" placeholder="Buscar anime..." id="search-input">
-      <button onclick="buscarAnime()">Buscar</button>
-    </div>
-    <div class="user-actions">
-      <button class="auth-btn">Login</button>
-      <button class="auth-btn">Registro</button>
-      <a href="../../index.html" class="auth-btn">Inicio</a>
-    </div>
-  </div>
+  <header class="header">
+    <nav class="nav-container">
+      <div class="logo"><img src="../../ico/logo.png" alt="Mundo Otaku Latino" style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div>
+      <ul class="nav-menu">
+        <li><a href="../../index.html#inicio">Inicio</a></li>
+        <li><a href="#anime" class="active">Anime</a></li>
+        <li><a href="#peliculas">Películas</a></li>
+        <li><a href="#generos">Géneros</a></li>
+        <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
+      </ul>
+    </nav>
+  </header>
   <div class="main-container">
     <div class="left-sidebar">
       <ul class="sidebar-nav">
@@ -470,7 +473,10 @@
         }
       });
     }
-    document.getElementById('search-input').addEventListener('input', buscarAnime);
+    const searchInputEl = document.getElementById('search-input');
+    if (searchInputEl) {
+      searchInputEl.addEventListener('input', buscarAnime);
+    }
     document.querySelectorAll('.sidebar-nav a').forEach(link => {
       link.addEventListener('click', function(e) {
         if (!this.href.includes('http') && !this.href.includes('../')) {

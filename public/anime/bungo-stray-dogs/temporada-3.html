@@ -1,144 +1,162 @@
-�<!DOCTYPE html>
-<html lang="es">
+﻿ï¿½<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="google-adsense-account" content="ca-pub-8480825005176665">
-<title>Bungo Stray Dogs - Temporada 3 - StudioOtaku</title>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="google-adsense-account" content="ca-pub-8480825005176665">
+<title>Bungo Stray Dogs - Temporada 3 - StudioOtaku</title>
+  
+  <link rel="stylesheet" href="../../../css/temporadas.css">`n    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico?v=1">
   
-  <link rel="stylesheet" href="../../../css/temporadas.css">`n    <style>`n      * {`n        font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', Tahoma, Geneva, Verdana, sans-serif !important;`n      }`n    </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/x-icon" href="/img/mundo-otaku-latino.ico?v=1">
-    <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico?v=1">
-  <link rel="shortcut icon" href="/img/mundo-otaku-latino.ico?v=1">
-</head>
-<body>
 
-  <header class="header">
-    <a href="../../../index.html" class="logo">StudioOtaku</a>
-    <a href="../../../public/html/catalogo.html" class="back-btn">�x�� Inicio</a>
-  </header>
-
-  <main class="main-content">
-    <a href="bungo-stray-dogs.html" class="back-btn">� � Volver a Bungo Stray Dogs</a>
-
-    <div class="title-container">
-        <h1 class="season-title">Bungo Stray Dogs - Temporada 3</h1>
-        <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
-    </div>
-
-    <div class="contenedor-video">
-      <div class="player-options">
-        <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCI�N 1</button>
-        <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCI�N 2</button>
-        <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCI�N 3</button>
-        <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCI�N 4</button>
-      </div>
-      <div class="reproductor-video">
-        <div id="opcion1-player" class="player-container active">
-          <iframe src="" allowfullscreen></iframe>
-        </div>
-        <div id="opcion2-player" class="player-container">
-          <iframe src="" allowfullscreen></iframe>
-        </div>
-        <div id="opcion3-player" class="player-container">
-          <iframe src="" allowfullscreen></iframe>
-        </div>
-        <div id="opcion4-player" class="player-container">
-          <iframe src="" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-
-    <div class="episodes-container">
-        <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
-        <div class="episodes-grid" id="episodes-grid">
-            <!-- Los episodios se generarán con JavaScript -->
-        </div>
-    </div>
-  </main>
-
-  <script>
-    // Preservar los datos de episodios existentes o crear una estructura básica
-    const episodes = [
-        { num: 1, title: 'Dazai, Chuuya, quince a�os', op1: 'URL_OP1_EP1', op2: 'URL_OP2_EP1', op3: 'URL_OP3_EP1' },
-        { num: 2, title: 'El dios del fuego', op1: 'URL_OP1_EP2', op2: 'URL_OP2_EP2', op3: 'URL_OP3_EP2' },
-        { num: 3, title: 'Solo un diamante puede pulir a otro', op1: 'URL_OP1_EP3', op2: 'URL_OP2_EP3', op3: 'URL_OP3_EP3' },
-        { num: 4, title: 'Mi regalo es no tener que morir', op1: 'URL_OP1_EP4', op2: 'URL_OP2_EP4', op3: 'URL_OP3_EP4' },
-        { num: 5, title: 'El retrato de un padre', op1: 'URL_OP1_EP5', op2: 'URL_OP2_EP5', op3: 'URL_OP3_EP5' },
-        { num: 6, title: 'Fitzgerald en ascenso', op1: 'URL_OP1_EP6', op2: 'URL_OP2_EP6', op3: 'URL_OP3_EP6' },
-        { num: 7, title: 'El hombre de la m�scara', op1: 'URL_OP1_EP7', op2: 'URL_OP2_EP7', op3: 'URL_OP3_EP7' },
-        { num: 8, title: 'Canibalismo (Parte 1)', op1: 'URL_OP1_EP8', op2: 'URL_OP2_EP8', op3: 'URL_OP3_EP8' },
-        { num: 9, title: 'Canibalismo (Parte 2)', op1: 'URL_OP1_EP9', op2: 'URL_OP2_EP9', op3: 'URL_OP3_EP9' },
-        { num: 10, title: 'Canibalismo (Parte 3)', op1: 'URL_OP1_EP10', op2: 'URL_OP2_EP10', op3: 'URL_OP3_EP10' },
-        { num: 11, title: 'El eco', op1: 'URL_OP1_EP11', op2: 'URL_OP2_EP11', op3: 'URL_OP3_EP11' },
-        { num: 12, title: 'El eco de la vanidad', op1: 'URL_OP1_EP12', op2: 'URL_OP2_EP12', op3: 'URL_OP3_EP12' }
-    ];
-
-    // Generar botones de episodios
-    const episodesGrid = document.getElementById('episodes-grid');
-    episodes.forEach(episode => {
-      const episodeBtn = document.createElement('div');
-      episodeBtn.className = 'episode-btn';
-      episodeBtn.textContent = `Ep ${episode.num}`;
-      episodeBtn.onclick = () => loadEpisode(episode);
-      episodesGrid.appendChild(episodeBtn);
-    });
-
-    // Cargar episodio
-    function loadEpisode(episode) {
-      document.querySelectorAll('.episode-btn').forEach((btn, index) => {
-        btn.classList.toggle('active', index === episode.num);
-      });
-      
-      document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
-      
-      document.querySelector('#opcion1-player iframe').src = episode.op1 || '';
-      document.querySelector('#opcion2-player iframe').src = episode.op2 || '';
-      document.querySelector('#opcion3-player iframe').src = episode.op3 || '';
-      document.querySelector('#opcion4-player iframe').src = episode.op4 || '';
-      
-      switchPlayer('opcion1');
-    }
-
-    // Cambiar reproductor
-    function switchPlayer(option) {
-      document.querySelectorAll('.player-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      document.getElementById(`${option}-btn`).classList.add('active');
-      
-      document.querySelectorAll('.player-container').forEach(container => {
-        container.classList.remove('active');
-      });
-      document.getElementById(`${option}-player`).classList.add('active');
-    }
-
-    // Cargar el primer episodio por defecto
-    if (episodes.length > 0) {
-      loadEpisode(episodes[0]);
-    }
-      // Función de búsqueda`n    function searchAnime() {`n        const searchTerm = document.getElementById('search-input').value.trim();`n        if (searchTerm) {`n            window.location.href = `../../../html/catalogo.html?search=${encodeURIComponent(searchTerm)}`;`n        }`n    }`n`n    // Permitir búsqueda con Enter`n    document.addEventListener('keypress', function(e) {`n        if (e.key === 'Enter' && e.target.id === 'search-input') {`n            searchAnime();`n        }`n    });`n</script>`n</body>
-</html>
-
-
-
-<script>
-  // Deshabilitar clic derecho
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-  });
-
-  // Bloquear teclas específicas
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-      e.preventDefault();
-    }
-  });
-</script>
-
-
-
-
-
+<link rel="stylesheet" href="../../../css/anime.css">
+<link rel="stylesheet" href="../../../css/responsive-style.css">
+<link rel="stylesheet" href="../../../css/responsive-navigation.css">
+<link rel="icon" href="../../../ico/logo.png">
+</head>
+<body>
+
+    <header class="header">
+<nav class="nav-container">
+      <div class="logo"><img src="../../../ico/logo.png" alt="Mundo Otaku Latino" style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div>
+      <ul class="nav-menu">
+        <li><a href="../../index.html#inicio">Inicio</a></li>
+        <li><a href="../../html/catalogo.html">Anime</a></li>
+        <li><a href="#peliculas">Películas</a></li>
+        <li><a href="#generos">Géneros</a></li>
+        <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <a href="../../html/catalogo.html" class="back-btn">Volver al Catalogo</a>
+    
+
+    <div class="title-container">
+        <h1 class="season-title">Bungo Stray Dogs - Temporada 3</h1>
+        <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
+    </div>
+
+    <div class="contenedor-video">
+      <div class="player-options">
+        <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIï¿½N 1</button>
+        <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIï¿½N 2</button>
+        <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIï¿½N 3</button>
+        <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIï¿½N 4</button>
+      </div>
+      <div class="reproductor-video">
+        <div id="opcion1-player" class="player-container active">
+          <iframe src="" allowfullscreen></iframe>
+        </div>
+        <div id="opcion2-player" class="player-container">
+          <iframe src="" allowfullscreen></iframe>
+        </div>
+        <div id="opcion3-player" class="player-container">
+          <iframe src="" allowfullscreen></iframe>
+        </div>
+        <div id="opcion4-player" class="player-container">
+          <iframe src="" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="episodes-container">
+        <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
+        <div class="episodes-grid" id="episodes-grid">
+            <!-- Los episodios se generarÃ¡n con JavaScript -->
+        </div>
+    </div>
+  </main>
+
+  <script>
+    // Preservar los datos de episodios existentes o crear una estructura bÃ¡sica
+    const episodes = [
+        { num: 1, title: 'Dazai, Chuuya, quince aï¿½os', op1: 'URL_OP1_EP1', op2: 'URL_OP2_EP1', op3: 'URL_OP3_EP1' },
+        { num: 2, title: 'El dios del fuego', op1: 'URL_OP1_EP2', op2: 'URL_OP2_EP2', op3: 'URL_OP3_EP2' },
+        { num: 3, title: 'Solo un diamante puede pulir a otro', op1: 'URL_OP1_EP3', op2: 'URL_OP2_EP3', op3: 'URL_OP3_EP3' },
+        { num: 4, title: 'Mi regalo es no tener que morir', op1: 'URL_OP1_EP4', op2: 'URL_OP2_EP4', op3: 'URL_OP3_EP4' },
+        { num: 5, title: 'El retrato de un padre', op1: 'URL_OP1_EP5', op2: 'URL_OP2_EP5', op3: 'URL_OP3_EP5' },
+        { num: 6, title: 'Fitzgerald en ascenso', op1: 'URL_OP1_EP6', op2: 'URL_OP2_EP6', op3: 'URL_OP3_EP6' },
+        { num: 7, title: 'El hombre de la mï¿½scara', op1: 'URL_OP1_EP7', op2: 'URL_OP2_EP7', op3: 'URL_OP3_EP7' },
+        { num: 8, title: 'Canibalismo (Parte 1)', op1: 'URL_OP1_EP8', op2: 'URL_OP2_EP8', op3: 'URL_OP3_EP8' },
+        { num: 9, title: 'Canibalismo (Parte 2)', op1: 'URL_OP1_EP9', op2: 'URL_OP2_EP9', op3: 'URL_OP3_EP9' },
+        { num: 10, title: 'Canibalismo (Parte 3)', op1: 'URL_OP1_EP10', op2: 'URL_OP2_EP10', op3: 'URL_OP3_EP10' },
+        { num: 11, title: 'El eco', op1: 'URL_OP1_EP11', op2: 'URL_OP2_EP11', op3: 'URL_OP3_EP11' },
+        { num: 12, title: 'El eco de la vanidad', op1: 'URL_OP1_EP12', op2: 'URL_OP2_EP12', op3: 'URL_OP3_EP12' }
+    ];
+
+    // Generar botones de episodios
+    const episodesGrid = document.getElementById('episodes-grid');
+    episodes.forEach(episode => {
+      const episodeBtn = document.createElement('div');
+      episodeBtn.className = 'episode-btn';
+      episodeBtn.textContent = `Ep ${episode.num}`;
+      episodeBtn.onclick = () => loadEpisode(episode);
+      episodesGrid.appendChild(episodeBtn);
+    });
+
+    // Cargar episodio
+    function loadEpisode(episode) {
+      document.querySelectorAll('.episode-btn').forEach((btn, index) => {
+        btn.classList.toggle('active', index === episode.num);
+      });
+      
+      document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
+      
+      document.querySelector('#opcion1-player iframe').src = episode.op1 || '';
+      document.querySelector('#opcion2-player iframe').src = episode.op2 || '';
+      document.querySelector('#opcion3-player iframe').src = episode.op3 || '';
+      document.querySelector('#opcion4-player iframe').src = episode.op4 || '';
+      
+      switchPlayer('opcion1');
+    }
+
+    // Cambiar reproductor
+    function switchPlayer(option) {
+      document.querySelectorAll('.player-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.getElementById(`${option}-btn`).classList.add('active');
+      
+      document.querySelectorAll('.player-container').forEach(container => {
+        container.classList.remove('active');
+      });
+      document.getElementById(`${option}-player`).classList.add('active');
+    }
+
+    // Cargar el primer episodio por defecto
+    if (episodes.length > 0) {
+      loadEpisode(episodes[0]);
+    }
+      // FunciÃ³n de bÃºsqueda`n    function searchAnime() {`n        const searchTerm = document.getElementById('search-input').value.trim();`n        if (searchTerm) {`n            window.location.href = `../../../html/catalogo.html?search=${encodeURIComponent(searchTerm)}`;`n        }`n    }`n`n    // Permitir bÃºsqueda con Enter`n    document.addEventListener('keypress', function(e) {`n        if (e.key === 'Enter' && e.target.id === 'search-input') {`n            searchAnime();`n        }`n    });`n</script>`n</body>
+</html>
+
+
+
+<script>
+  // Deshabilitar clic derecho
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Bloquear teclas especÃ­ficas
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+      e.preventDefault();
+    }
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
 

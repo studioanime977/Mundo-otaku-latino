@@ -1,141 +1,159 @@
-�<!DOCTYPE html>
-<html lang="es">
+﻿ï¿½<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="google-adsense-account" content="ca-pub-8480825005176665">
-<title>Danmachi - Temporada 1 - StudioOtaku</title>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="google-adsense-account" content="ca-pub-8480825005176665">
+<title>Danmachi - Temporada 1 - StudioOtaku</title>
+  
+  <link rel="stylesheet" href="../../../css/temporadas.css">`n    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico?v=1">
   
-  <link rel="stylesheet" href="../../../css/temporadas.css">`n    <style>`n      * {`n        font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', Tahoma, Geneva, Verdana, sans-serif !important;`n      }`n    </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/x-icon" href="/img/mundo-otaku-latino.ico?v=1">
-    <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico?v=1">
-  <link rel="shortcut icon" href="/img/mundo-otaku-latino.ico?v=1">
-</head>
-<body>
 
-  <header class="header">
-    <a href="../../../index.html" class="logo">StudioOtaku</a>
-    <a href="../../../public/html/catalogo.html" class="back-btn">�x�� Inicio</a>
-  </header>
-
-  <main class="main-content">
-    <a href="danmachi.html" class="back-btn">� � Volver a Danmachi</a>
-
-    <div class="title-container">
-        <h1 class="season-title">Danmachi - Temporada 1</h1>
-        <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
-    </div>
-
-    <div class="contenedor-video">
-      <div class="player-options">
-        <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCI�N 1</button>
-        <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCI�N 2</button>
-        <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCI�N 3</button>
-        <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCI�N 4</button>
-      </div>
-      <div class="reproductor-video">
-        <div id="opcion1-player" class="player-container active">
-          <iframe src="" allowfullscreen></iframe>
-        </div>
-        <div id="opcion2-player" class="player-container">
-          <iframe src="" allowfullscreen></iframe>
-        </div>
-        <div id="opcion3-player" class="player-container">
-          <iframe src="" allowfullscreen></iframe>
-        </div>
-        <div id="opcion4-player" class="player-container">
-          <iframe src="" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-
-    <div class="episodes-container">
-        <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
-        <div class="episodes-grid" id="episodes-grid">
-            <!-- Los episodios se generarán con JavaScript -->
-        </div>
-    </div>
-  </main>
-
-  <script>
-    // Preservar los datos de episodios existentes o crear una estructura básica
-    const episodes = [
-        { num: 1, title: "El encuentro del aventurero y la diosa", op1: "https://sendvid.com/embed/x7c6g0s7", op2: "URL_OP2_E1", op3: "URL_OP3_E1", op4: "URL_OP4_E1" },
-        { num: 2, title: "Monstruo de las profundidades ~Minotauro~", op1: "https://sendvid.com/embed/4osnc4ng", op2: "URL_OP2_E2", op3: "URL_OP3_E2", op4: "URL_OP4_E2" },
-        { num: 3, title: "La diosa de la forja ~Hephaistos~", op1: "https://sendvid.com/embed/57xxoob3", op2: "URL_OP2_E3", op3: "URL_OP3_E3", op4: "URL_OP4_E3" },
-        { num: 4, title: "El partidario ~Supporter~", op1: "https://sendvid.com/embed/2gxk2wqo", op2: "URL_OP2_E4", op3: "URL_OP3_E4", op4: "URL_OP4_E4" },
-        { num: 5, title: "La magia ~Grimorio~", op1: "https://sendvid.com/embed/al96ti15", op2: "URL_OP2_E5", op3: "URL_OP3_E5", op4: "URL_OP4_E5" },
-        { num: 6, title: "Razón ~Justicia~", op1: "https://sendvid.com/embed/980uwy50", op2: "URL_OP2_E6", op3: "URL_OP3_E6", op4: "URL_OP4_E6" },
-        { num: 7, title: "La espada princesa ~Ais Wallenstein~", op1: "https://sendvid.com/embed/5do9h8im", op2: "URL_OP2_E7", op3: "URL_OP3_E7", op4: "URL_OP4_E7" },
-        { num: 8, title: "El héroe desea ser más fuerte ~Nivel superior~", op1: "https://sendvid.com/embed/mup0q2b3", op2: "URL_OP2_E8", op3: "URL_OP3_E8", op4: "URL_OP4_E8" },
-        { num: 9, title: "Welf Crozzo ~Forjador~", op1: "https://sendvid.com/embed/67djm7tv", op2: "URL_OP2_E9", op3: "URL_OP3_E9", op4: "URL_OP4_E9" },
-        { num: 10, title: "Paso hacia el hogar ~Familia~", op1: "https://sendvid.com/embed/59cs2e4c", op2: "URL_OP2_E10", op3: "URL_OP3_E10", op4: "URL_OP4_E10" },
-        { num: 11, title: "Bajo el resort ~Familia de dioses~", op1: "https://sendvid.com/embed/wedzvto4", op2: "URL_OP2_E11", op3: "URL_OP3_E11", op4: "URL_OP4_E11" },
-        { num: 12, title: "El mal de Orario ~Familia Soma~", op1: "https://sendvid.com/embed/xlkaq309", op2: "URL_OP2_E12", op3: "URL_OP3_E12", op4: "URL_OP4_E12" }
-    ];
-
-    // Generar botones de episodios
-    const episodesGrid = document.getElementById('episodes-grid');
-    episodes.forEach(episode => {
-      const episodeBtn = document.createElement('div');
-      episodeBtn.className = 'episode-btn';
-      episodeBtn.textContent = `Ep ${episode.num}`;
-      episodeBtn.onclick = () => loadEpisode(episode);
-      episodesGrid.appendChild(episodeBtn);
-    });
-
-    // Cargar episodio
-    function loadEpisode(episode) {
-      document.querySelectorAll('.episode-btn').forEach((btn, index) => {
-        btn.classList.toggle('active', index === episode.num);
-      });
-      
-      document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
-      
-      document.querySelector('#opcion1-player iframe').src = episode.op1 || '';
-      document.querySelector('#opcion2-player iframe').src = episode.op2 || '';
-      document.querySelector('#opcion3-player iframe').src = episode.op3 || '';
-      document.querySelector('#opcion4-player iframe').src = episode.op4 || '';
-      
-      switchPlayer('opcion1');
-    }
-
-    // Cambiar reproductor
-    function switchPlayer(option) {
-      document.querySelectorAll('.player-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      document.getElementById(`${option}-btn`).classList.add('active');
-      
-      document.querySelectorAll('.player-container').forEach(container => {
-        container.classList.remove('active');
-      });
-      document.getElementById(`${option}-player`).classList.add('active');
-    }
-
-    // Cargar el primer episodio por defecto
-    if (episodes.length > 0) {
-      loadEpisode(episodes[0]);
-    }
-  </script>
-<script>
-  // Deshabilitar clic derecho
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-  });
-
-  // Bloquear teclas específicas
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-      e.preventDefault();
-    }
-  });
-</script>
-</body>
-</html>
-
-
-
-
+<link rel="stylesheet" href="../../../css/anime.css">
+<link rel="stylesheet" href="../../../css/responsive-style.css">
+<link rel="stylesheet" href="../../../css/responsive-navigation.css">
+<link rel="icon" href="../../../ico/logo.png">
+</head>
+<body>
+
+    <header class="header">
+<nav class="nav-container">
+      <div class="logo"><img src="../../../ico/logo.png" alt="Mundo Otaku Latino" style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div>
+      <ul class="nav-menu">
+        <li><a href="../../index.html#inicio">Inicio</a></li>
+        <li><a href="../../html/catalogo.html">Anime</a></li>
+        <li><a href="#peliculas">Películas</a></li>
+        <li><a href="#generos">Géneros</a></li>
+        <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <a href="../../html/catalogo.html" class="back-btn">Volver al Catalogo</a>
+    
+
+    <div class="title-container">
+        <h1 class="season-title">Danmachi - Temporada 1</h1>
+        <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
+    </div>
+
+    <div class="contenedor-video">
+      <div class="player-options">
+        <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIï¿½N 1</button>
+        <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIï¿½N 2</button>
+        <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIï¿½N 3</button>
+        <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIï¿½N 4</button>
+      </div>
+      <div class="reproductor-video">
+        <div id="opcion1-player" class="player-container active">
+          <iframe src="" allowfullscreen></iframe>
+        </div>
+        <div id="opcion2-player" class="player-container">
+          <iframe src="" allowfullscreen></iframe>
+        </div>
+        <div id="opcion3-player" class="player-container">
+          <iframe src="" allowfullscreen></iframe>
+        </div>
+        <div id="opcion4-player" class="player-container">
+          <iframe src="" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="episodes-container">
+        <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
+        <div class="episodes-grid" id="episodes-grid">
+            <!-- Los episodios se generarÃ¡n con JavaScript -->
+        </div>
+    </div>
+  </main>
+
+  <script>
+    // Preservar los datos de episodios existentes o crear una estructura bÃ¡sica
+    const episodes = [
+        { num: 1, title: "El encuentro del aventurero y la diosa", op1: "https://sendvid.com/embed/x7c6g0s7", op2: "URL_OP2_E1", op3: "URL_OP3_E1", op4: "URL_OP4_E1" },
+        { num: 2, title: "Monstruo de las profundidades ~Minotauro~", op1: "https://sendvid.com/embed/4osnc4ng", op2: "URL_OP2_E2", op3: "URL_OP3_E2", op4: "URL_OP4_E2" },
+        { num: 3, title: "La diosa de la forja ~Hephaistos~", op1: "https://sendvid.com/embed/57xxoob3", op2: "URL_OP2_E3", op3: "URL_OP3_E3", op4: "URL_OP4_E3" },
+        { num: 4, title: "El partidario ~Supporter~", op1: "https://sendvid.com/embed/2gxk2wqo", op2: "URL_OP2_E4", op3: "URL_OP3_E4", op4: "URL_OP4_E4" },
+        { num: 5, title: "La magia ~Grimorio~", op1: "https://sendvid.com/embed/al96ti15", op2: "URL_OP2_E5", op3: "URL_OP3_E5", op4: "URL_OP4_E5" },
+        { num: 6, title: "RazÃ³n ~Justicia~", op1: "https://sendvid.com/embed/980uwy50", op2: "URL_OP2_E6", op3: "URL_OP3_E6", op4: "URL_OP4_E6" },
+        { num: 7, title: "La espada princesa ~Ais Wallenstein~", op1: "https://sendvid.com/embed/5do9h8im", op2: "URL_OP2_E7", op3: "URL_OP3_E7", op4: "URL_OP4_E7" },
+        { num: 8, title: "El hÃ©roe desea ser mÃ¡s fuerte ~Nivel superior~", op1: "https://sendvid.com/embed/mup0q2b3", op2: "URL_OP2_E8", op3: "URL_OP3_E8", op4: "URL_OP4_E8" },
+        { num: 9, title: "Welf Crozzo ~Forjador~", op1: "https://sendvid.com/embed/67djm7tv", op2: "URL_OP2_E9", op3: "URL_OP3_E9", op4: "URL_OP4_E9" },
+        { num: 10, title: "Paso hacia el hogar ~Familia~", op1: "https://sendvid.com/embed/59cs2e4c", op2: "URL_OP2_E10", op3: "URL_OP3_E10", op4: "URL_OP4_E10" },
+        { num: 11, title: "Bajo el resort ~Familia de dioses~", op1: "https://sendvid.com/embed/wedzvto4", op2: "URL_OP2_E11", op3: "URL_OP3_E11", op4: "URL_OP4_E11" },
+        { num: 12, title: "El mal de Orario ~Familia Soma~", op1: "https://sendvid.com/embed/xlkaq309", op2: "URL_OP2_E12", op3: "URL_OP3_E12", op4: "URL_OP4_E12" }
+    ];
+
+    // Generar botones de episodios
+    const episodesGrid = document.getElementById('episodes-grid');
+    episodes.forEach(episode => {
+      const episodeBtn = document.createElement('div');
+      episodeBtn.className = 'episode-btn';
+      episodeBtn.textContent = `Ep ${episode.num}`;
+      episodeBtn.onclick = () => loadEpisode(episode);
+      episodesGrid.appendChild(episodeBtn);
+    });
+
+    // Cargar episodio
+    function loadEpisode(episode) {
+      document.querySelectorAll('.episode-btn').forEach((btn, index) => {
+        btn.classList.toggle('active', index === episode.num);
+      });
+      
+      document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
+      
+      document.querySelector('#opcion1-player iframe').src = episode.op1 || '';
+      document.querySelector('#opcion2-player iframe').src = episode.op2 || '';
+      document.querySelector('#opcion3-player iframe').src = episode.op3 || '';
+      document.querySelector('#opcion4-player iframe').src = episode.op4 || '';
+      
+      switchPlayer('opcion1');
+    }
+
+    // Cambiar reproductor
+    function switchPlayer(option) {
+      document.querySelectorAll('.player-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.getElementById(`${option}-btn`).classList.add('active');
+      
+      document.querySelectorAll('.player-container').forEach(container => {
+        container.classList.remove('active');
+      });
+      document.getElementById(`${option}-player`).classList.add('active');
+    }
+
+    // Cargar el primer episodio por defecto
+    if (episodes.length > 0) {
+      loadEpisode(episodes[0]);
+    }
+  </script>
+<script>
+  // Deshabilitar clic derecho
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Bloquear teclas especÃ­ficas
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+      e.preventDefault();
+    }
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
 
