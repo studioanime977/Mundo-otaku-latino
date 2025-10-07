@@ -1,25 +1,80 @@
-﻿<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="google-adsense-account" content="ca-pub-8480825005176665">
-<title>Demon Slayer: Castillo Infinito - StudioOtaku</title>
-      <link rel="stylesheet" href="../../../css/temporadas.css">
-  <link rel="stylesheet" href="../../../css/style.css">
-  
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
-    <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico?v=1">
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-adsense-account" content="ca-pub-8480825005176665">
+  <title>Demon Slayer: Castillo Infinito - StudioOtaku</title>
 
-<link rel="stylesheet" href="../../../css/anime.css">
-<link rel="stylesheet" href="../../../css/responsive-style.css">
-<link rel="stylesheet" href="../../../css/responsive-navigation.css">
-<link rel="icon" href="../../../ico/logo.png">
-</head>
+  <link rel="stylesheet" href="../../../css/temporadas.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="../../../css/anime.css">
+  <link rel="stylesheet" href="../../../css/responsive-style.css">
+  <link rel="stylesheet" href="../../../css/responsive-navigation.css">
+  <link rel="icon" href="../../../ico/logo.png">
+  <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico?v=1">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
 
+  <!-- Rumble embed helper -->
+  <script>
+    !function(r,u,m,b,l,e){
+      r._Rumble=b,r[b]||(r[b]=function(){
+        (r[b]._=r[b]._||[]).push(arguments);
+        if(r[b]._.length==1){
+          l=u.createElement(m),e=u.getElementsByTagName(m)[0],l.async=1,
+          l.src="https://rumble.com/embedJS/u3hv8rz"+(arguments[1].video?"."+arguments[1].video:"")+"/?url="+encodeURIComponent(location.href)+"&args="+encodeURIComponent(JSON.stringify([].slice.apply(arguments))),
+          e.parentNode.insertBefore(l,e)
+        }
+      })
+    }(window,document,"script","Rumble");
+  </script>
+
+  <style>
+    /* Layout de escritorio: reproductor a la izquierda y Popular a la derecha */
+    .main-content { display: flex; gap: 20px; align-items: flex-start; }
+    .left-content { flex: 3; }
+    .right-content { flex: 1; }
+
+    /* Miniaturas en la sección Popular (desktop) */
+    .right-content .popular-item { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.03); margin-bottom: 10px; cursor: pointer; }
+    .right-content .popular-item:hover { background: rgba(255,255,255,0.06); }
+    .right-content .popular-item img { width: 120px; height: 72px; object-fit: cover; border-radius: 6px; display: block; }
+    .right-content .popular-item .title { font-size: 0.95rem; line-height: 1.3; color: #fff; }
+
+    /* Controles del reproductor */
+    .video-functions { display: flex; gap: 10px; justify-content: flex-start; margin-top: 10px; }
+    .function-btn { padding: 10px 16px; background: linear-gradient(135deg, #6c63ff 0%, #5a54e6 100%); color: #fff; border: none; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,0.15); cursor: pointer; transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease; }
+    .function-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,0,0,0.2); }
+    .function-btn:active { transform: translateY(0); box-shadow: 0 3px 8px rgba(0,0,0,0.15); }
+
+    /* Efecto Expandir */
+    .contenedor-video.expanded .reproductor-video iframe { height: 75vh; }
+    .contenedor-video.expanded video { height: 75vh; width: 100%; }
+
+    /* Efecto Apagar Luces */
+    body.lights-off::before { content: ""; position: fixed; inset: 0; background: rgba(0,0,0,0.85); pointer-events: none; z-index: 999; }
+    .reproductor-video { position: relative; z-index: 1000; }
+
+    /* Asegurar que el reproductor se vea bien */
+    .reproductor-video iframe { width: 100%; height: 480px; border: none; }
+    .reproductor-video video { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+
+    /* Móvil */
+    @media (max-width: 768px) {
+      .main-content { flex-direction: column; margin: 10px; }
+      .right-content { margin-top: 20px; padding: 10px; }
+      .popular-item { flex-direction: column; align-items: center; }
+      .popular-item img { width: 80px; height: 80px; margin-bottom: 10px; }
+    }
+
+    .social-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
+    .social-btn { padding: 10px 15px; background-color: #6c63ff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; text-align: center; }
+    .social-btn:hover { background-color: #4a47a3; }
+  </style>
+</head>
+<body>
   <header class="header">
-<nav class="nav-container">
+    <nav class="nav-container">
       <div class="logo"><img src="../../../ico/logo.png" alt="Mundo Otaku Latino" style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div>
       <ul class="nav-menu">
         <li><a href="../../index.html#inicio">Inicio</a></li>
@@ -29,346 +84,178 @@
         <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
       </ul>
     </nav>
-  </header>
-  <script>
-    !function(r,u,m,b,l,e){
-      r._Rumble=b,r[b]||(r[b]=function(){
-        (r[b]._=r[b]._||[]).push(arguments);
-        if(r[b]._.length==1){
-          l=u.createElement(m),e=u.getElementsByTagName(m)[0],l.async=1,
-          l.src="https://rumble.com/embedJS/u3hv8rz"+(arguments[1].video?"."+arguments[1].video:"")+"/?url="+encodeURIComponent(location.href)+"&args="+encodeURIComponent(JSON.stringify([].slice.apply(arguments))),
-          e.parentNode.insertBefore(l,e)
-        }
-      })
-    }(window,document,"script","Rumble");
-  </script>
-
-  <div class="header">
-    <a href="../../../index.html" class="logo">ï¿½xï¿½ï¿½StudioOtaku</a>
-    
-  </div>
-
-  <main class="main-content">
-    <a href="../../html/catalogo.html" class="back-btn">Volver al Catalogo</a>
-    <div class="left-content">
-      
-
-      <div class="title-container">
-          <h1 class="movie-title">Demon Slayer: Castillo Infinito</h1>
-      </div>
-
-      <div class="description">
-        <p>Demon Slayer: Castillo Infinito es una pelÃ­cula Ã©pica que continÃºa la historia de Tanjiro y sus compaÃ±eros mientras enfrentan nuevos desafÃ­os en su lucha contra los demonios.</p>
-      </div>
-
-      <div class="contenedor-video">
-        <div id="players" class="player-group active">
-          <div class="player-options">
-            <button id="player1-btn" class="player-btn" onclick="switchPlayer('player1')">Reproductor 1</button>
-            <button id="player2-btn" class="player-btn" onclick="switchPlayer('player2')">Reproductor 2</button>
-            <button id="player3-btn" class="player-btn" onclick="switchPlayer('player3')">Reproductor 3</button>
-            <button id="player4-btn" class="player-btn" onclick="switchPlayer('player4')">Reproductor 4</button>
-            <button id="player5-btn" class="player-btn" onclick="switchPlayer('player5')">Reproductor 5</button>
-            <button id="player6-btn" class="player-btn" onclick="switchPlayer('player6')">Reproductor 6</button>
-            <button id="player7-btn" class="player-btn" onclick="switchPlayer('player7')">Reproductor 7</button>
-            <button id="player8-btn" class="player-btn" onclick="switchPlayer('player8')">Reproductor 8</button>
-          </div>
-          <div class="reproductor-video">
-            <div id="player1-player" class="player-container">
-              <iframe src="https://streamtape.com/e/yBxmoA6G7af3vQ/" width="800" height="600" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0"></iframe>
-            </div>
-            <div id="player2-player" class="player-container">
-              <iframe src="https://hglink.to/e/2sfgbaroy7wl" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="640" height="360" allowfullscreen></iframe>
-            </div>
-            <div id="player3-player" class="player-container">
-              <video id="miVideo" 
-                  playsinline
-                  controls
-                  controlsList="nodownload nofullscreen noremoteplayback"
-                  disablePictureInPicture
-                  style="max-width:100%;height:auto;display:block;margin:0 auto;">
-                <source src="https://sendvid.com/embed/yw3hk68s" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-              </video>
-            </div>
-            <div id="player4-player" class="player-container">
-              <div id="rumble_v6wpv6g"></div>
-            </div>
-            <div id="player5-player" class="player-container">
-              <div id="rumble_v6urewg"></div>
-            </div>
-            <div id="player6-player" class="player-container">
-              <iframe src="https://streamtape.com/e/vrlZ6o9RAGu4G7O/" width="800" height="600" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0"></iframe>
-            </div>
-            <div id="player7-player" class="player-container">
-              <iframe src="https://hglink.to/e/wle2cabqs493" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="640" height="360" allowfullscreen></iframe>
-            </div>
-            <div id="player8-player" class="player-container">
-              <iframe src="https://sendvid.com/embed/qdmgw3vu" allowfullscreen></iframe>
-            </div>
-          </div>
-          <div class="video-functions">
-            <button class="function-btn" onclick="expandPlayer()">Expandir</button>
-            <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="description">
-        <p>Esta pelÃ­cula presenta una animaciÃ³n espectacular y una historia emocionante que mantiene a los espectadores al borde de sus asientos mientras siguen las aventuras de los cazadores de demonios.</p>
-      </div>
-    </div>
-
-    <div class="right-content">
-      <h3>Popular</h3>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/spy-x-family/spy-x-family.html'">
-        <img src="../../../img/Spy x Family S1.jpg" alt="Spy x Family">
-        <div class="title">Spy x Family - Temporada 1</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/chainsaw-man/chainsaw-man.html'">
-        <img src="../../../img/Chainsaw Man S1.jpg" alt="Chainsaw Man">
-        <div class="title">Chainsaw Man - Temporada 1</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/attack-on-titan/attack-on-titan.html'">
-        <img src="../../../img/Attack on Titan S4.jpg" alt="Attack on Titan">
-        <div class="title">Attack on Titan - Temporada 4</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/jujutsu-kaisen/jujutsu-kaisen.html'">
-        <img src="../../../img/Jujutsu Kaisen S1.jpg" alt="Jujutsu Kaisen">
-        <div class="title">Jujutsu Kaisen - Temporada 1</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/demon-slayer/demon-slayer.html'">
-        <img src="../../../img/Kimetsu No Yaiba temporada 1.png" alt="Kimetsu No Yaiba">
-        <div class="title">Kimetsu No Yaiba - Temporada 1</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/naruto/naruto.html'">
-        <img src="../../../img/Naruto Classic.jpg" alt="Naruto">
-        <div class="title">Naruto - ClÃ¡sico</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/one-piece/one-piece.html'">
-        <img src="../../../img/One Piece Wano.jpg" alt="One Piece">
-        <div class="title">One Piece - Wano</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/dragon-ball/dragon-ball.html'">
-        <img src="../../../img/Dragon Ball Z.jpg" alt="Dragon Ball Z">
-        <div class="title">Dragon Ball Z</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/bleach/bleach.html'">
-        <img src="../../../img/Bleach TYBW.jpg" alt="Bleach">
-        <div class="title">Bleach - TYBW</div>
-      </div>
-    
-      <div class="social-buttons" style="margin-top: 20px; text-align: center;">
-        <button class="social-btn" id="youtube-btn">YouTube</button>
-        <button class="social-btn" id="whatsapp-btn">WhatsApp</button>
-        <button class="social-btn" id="facebook-btn">Facebook</button>
-        <button class="social-btn" id="facebook-group-btn">Grupo de Facebook</button>
-        <button class="social-btn" id="telegram-channel-btn">Canal de Telegram</button>
-        <button class="social-btn" id="telegram-group-btn">Grupo de Telegram</button>
-        <button class="social-btn" id="download-app-btn">Descargar App Mundo Otaku Latino</button>
-      </div>
-    </div>
-  </main>
-
-  <script>
-    // FunciÃ³n para expandir el reproductor
-    function expandPlayer() {
-      const videoContainer = document.querySelector('.contenedor-video');
-      videoContainer.classList.toggle('expanded');
-    }
-
-    // FunciÃ³n para apagar/encender las luces
-    function toggleLights() {
-      document.body.classList.toggle('lights-off');
-    }
-
-    // Bloquear menÃº contextual (clic derecho)
-    const v = document.getElementById('miVideo');
-    if (v) {
-      v.addEventListener('contextmenu', e => e.preventDefault());
-      v.addEventListener('dragstart', e => e.preventDefault());
-    }
-
-    // Deshabilitar clic derecho
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-    });
-
-    // Bloquear teclas especÃ­ficas y herramientas de descarga
-    document.addEventListener('keydown', function(e) {
-      // Bloquear herramientas de desarrollador
-      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-        e.preventDefault();
-        return false;
-      }
-      // Bloquear guardar pÃ¡gina y ver cÃ³digo fuente
-      if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'u')) {
-        e.preventDefault();
-        return false;
-      }
-      // Bloquear inspector de elementos
-      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') {
-        e.preventDefault();
-        return false;
-      }
-      // Bloquear consola de desarrollador
-      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j') {
-        e.preventDefault();
-        return false;
-      }
-      // Bloquear Ctrl+A (seleccionar todo)
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'a') {
-        e.preventDefault();
-        return false;
-      }
-      // Bloquear Ctrl+P (imprimir)
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'p') {
-        e.preventDefault();
-        return false;
-      }
-    });
-
-    // Bloquear selecciÃ³n de texto
-    document.addEventListener('selectstart', function(e) {
-      e.preventDefault();
-      return false;
-    });
-
-    // Bloquear arrastrar elementos
-    document.addEventListener('dragstart', function(e) {
-      e.preventDefault();
-      return false;
-    });
-
-    // Detectar herramientas de desarrollador abiertas
-    let devtools = {open: false, orientation: null};
-    const threshold = 160;
-    
-    setInterval(() => {
-      if (window.outerHeight - window.innerHeight > threshold || 
-          window.outerWidth - window.innerWidth > threshold) {
-        if (!devtools.open) {
-          devtools.open = true;
-          // Redirigir o mostrar mensaje de advertencia
-          document.body.innerHTML = '<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;z-index:99999;">Acceso no autorizado detectado</div>';
-        }
-      } else {
-        devtools.open = false;
-      }
-    }, 500);
-
-    // Bloquear popups y ventanas emergentes de descarga
-    window.addEventListener('beforeunload', function(e) {
-      // Prevenir descargas automÃ¡ticas
-      return;
-    });
-
-    // Interceptar intentos de descarga
-    document.addEventListener('click', function(e) {
-      const target = e.target;
-      if (target.tagName === 'A' && target.hasAttribute('download')) {
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-      }
-    });
-
-    // Bloquear extensiones de descarga de video comunes
-    Object.defineProperty(navigator, 'webdriver', {
-      get: () => false,
-    });
-
-    // Detectar y bloquear herramientas de descarga
-    const originalFetch = window.fetch;
-    window.fetch = function(...args) {
-      const url = args[0];
-      if (typeof url === 'string' && (url.includes('download') || url.includes('save'))) {
-        return Promise.reject(new Error('Descarga bloqueada'));
-      }
-      return originalFetch.apply(this, args);
-    };
-
-    // Bloquear XMLHttpRequest para descargas
-    const originalXHR = window.XMLHttpRequest;
-    window.XMLHttpRequest = function() {
-      const xhr = new originalXHR();
-      const originalOpen = xhr.open;
-      xhr.open = function(method, url, ...args) {
-        if (typeof url === 'string' && (url.includes('download') || url.includes('save'))) {
-          throw new Error('Descarga bloqueada');
-        }
-        return originalOpen.apply(this, [method, url, ...args]);
-      };
-      return xhr;
-    };
-
-    // ProtecciÃ³n adicional contra extensiones de descarga
-    if (window.chrome && window.chrome.runtime) {
-      // Detectar extensiones de Chrome
-      window.chrome.runtime = undefined;
-    }
-
-    // Bloquear console.log para evitar debugging
-    if (typeof console !== 'undefined') {
-      console.log = function() {};
-      console.warn = function() {};
-      console.error = function() {};
-      console.info = function() {};
-      console.debug = function() {};
-    }
-
-    // ProtecciÃ³n contra screenshot y grabaciÃ³n de pantalla
-    document.addEventListener('keydown', function(e) {
-      // Bloquear Print Screen
-      if (e.key === 'PrintScreen') {
-        e.preventDefault();
-        return false;
-      }
-      // Bloquear Alt+Print Screen
-      if (e.altKey && e.key === 'PrintScreen') {
-        e.preventDefault();
-        return false;
-      }
-    });
-
-    // Detectar si la pÃ¡gina estÃ¡ siendo grabada o capturada
-    if (navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia) {
-      const originalGetDisplayMedia = navigator.mediaDevices.getDisplayMedia;
-      navigator.mediaDevices.getDisplayMedia = function() {
-        return Promise.reject(new Error('Captura de pantalla bloqueada'));
-      };
-    }
-
-    function switchPlayer(player) {
-      document.querySelectorAll('.player-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelector('#' + player + '-btn').classList.add('active');
-
-      document.querySelectorAll('.player-container').forEach(container => container.classList.remove('active'));
-      document.querySelector('#' + player + '-player').classList.add('active');
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      switchPlayer('player1');
-      
-      // Initialize Rumble players
-      if (typeof Rumble !== 'undefined') {
-        Rumble("play", {"video":"v6wpv6g","div":"rumble_v6wpv6g"});
-        Rumble("play", {"video":"v6urewg","div":"rumble_v6urewg"});
-      }
-    });
-  </script>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
+  </header>
+
+  <main class="main-content">
+    <a href="../../html/catalogo.html" class="back-btn">Volver al Catalogo</a>
+    <div class="left-content">
+      <div class="title-container">
+        <h1 class="movie-title">Demon Slayer: Castillo Infinito</h1>
+      </div>
+
+      <div class="description">
+        <p>Demon Slayer: Castillo Infinito continúa la historia de Tanjiro y sus compañeros mientras enfrentan nuevos desafíos en su lucha contra los demonios.</p>
+      </div>
+
+      <div class="contenedor-video">
+        <div class="player-options">
+          <button id="player1-btn" class="player-btn" onclick="switchPlayer('player1')">Reproductor 1</button>
+          <button id="player2-btn" class="player-btn" onclick="switchPlayer('player2')">Reproductor 2</button>
+          <button id="player3-btn" class="player-btn" onclick="switchPlayer('player3')">Reproductor 3</button>
+          <button id="player4-btn" class="player-btn" onclick="switchPlayer('player4')">Reproductor 4</button>
+          <button id="player5-btn" class="player-btn" onclick="switchPlayer('player5')">Reproductor 5</button>
+          <button id="player6-btn" class="player-btn" onclick="switchPlayer('player6')">Reproductor 6</button>
+          <button id="player7-btn" class="player-btn" onclick="switchPlayer('player7')">Reproductor 7</button>
+          <button id="player8-btn" class="player-btn" onclick="switchPlayer('player8')">Reproductor 8</button>
+        </div>
+        <div class="reproductor-video">
+          <div id="player1-player" class="player-container">
+            <iframe src="https://streamtape.com/e/88MRpkp3a9iobp7/" width="800" height="600" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0"></iframe>
+          </div>
+          <div id="player2-player" class="player-container">
+            <iframe src="https://hglink.to/e/x6towvxdhc9h" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="640" height="360" allowfullscreen></iframe>
+          </div>
+          <div id="player3-player" class="player-container">
+            <video id="miVideo" playsinline controls controlsList="nodownload nofullscreen noremoteplayback" disablePictureInPicture>
+              <source src="https://sendvid.com/embed/yw3hk68s" type="video/mp4">
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
+          <div id="player4-player" class="player-container">
+            <div id="rumble_v6wpv6g"></div>
+          </div>
+          <div id="player5-player" class="player-container">
+            <div id="rumble_v6urewg"></div>
+          </div>
+          <div id="player6-player" class="player-container">
+            <iframe src="https://streamtape.com/e/vrlZ6o9RAGu4G7O/" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0"></iframe>
+          </div>
+          <div id="player7-player" class="player-container">
+            <iframe src="https://hglink.to/e/wle2cabqs493" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+          </div>
+          <div id="player8-player" class="player-container">
+            <iframe src="https://sendvid.com/embed/qdmgw3vu" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="video-functions">
+          <button class="function-btn" onclick="expandPlayer()">Expandir</button>
+          <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
+        </div>
+      </div>
+
+      <div class="description">
+        <p>Esta película presenta una animación espectacular y una historia emocionante que mantiene a los espectadores al borde de sus asientos.</p>
+      </div>
+    </div>
+
+    <div class="right-content">
+      <h3>Popular</h3>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/spy-x-family/spy-x-family.html'">
+        <img src="../../../img/Spy x Family S1.jpg" alt="Spy x Family">
+        <div class="title">Spy x Family - Temporada 1</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/chainsaw-man/chainsaw-man.html'">
+        <img src="../../../img/Chainsaw Man S1.jpg" alt="Chainsaw Man">
+        <div class="title">Chainsaw Man - Temporada 1</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/attack-on-titan/attack-on-titan.html'">
+        <img src="../../../img/Attack on Titan S4.jpg" alt="Attack on Titan">
+        <div class="title">Attack on Titan - Temporada 4</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/jujutsu-kaisen/jujutsu-kaisen.html'">
+        <img src="../../../img/Jujutsu Kaisen S1.jpg" alt="Jujutsu Kaisen">
+        <div class="title">Jujutsu Kaisen - Temporada 1</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/demon-slayer/demon-slayer.html'">
+        <img src="../../../img/Kimetsu No Yaiba temporada 1.png" alt="Kimetsu No Yaiba">
+        <div class="title">Kimetsu No Yaiba - Temporada 1</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/naruto/naruto.html'">
+        <img src="../../../img/Naruto Classic.jpg" alt="Naruto">
+        <div class="title">Naruto - Clásico</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/one-piece/one-piece.html'">
+        <img src="../../../img/One Piece Wano.jpg" alt="One Piece">
+        <div class="title">One Piece - Wano</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/dragon-ball/dragon-ball.html'">
+        <img src="../../../img/Dragon Ball Z.jpg" alt="Dragon Ball Z">
+        <div class="title">Dragon Ball Z</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../../../public/anime/bleach/bleach.html'">
+        <img src="../../../img/Bleach TYBW.jpg" alt="Bleach">
+        <div class="title">Bleach - TYBW</div>
+      </div>
+
+      <div class="social-buttons" style="margin-top: 20px; text-align: center;">
+        <button class="social-btn" id="youtube-btn">YouTube</button>
+        <button class="social-btn" id="whatsapp-btn">WhatsApp</button>
+        <button class="social-btn" id="facebook-btn">Facebook</button>
+        <button class="social-btn" id="facebook-group-btn">Grupo de Facebook</button>
+        <button class="social-btn" id="telegram-channel-btn">Canal de Telegram</button>
+        <button class="social-btn" id="telegram-group-btn">Grupo de Telegram</button>
+        <button class="social-btn" id="download-app-btn">Descargar App Mundo Otaku Latino</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function expandPlayer() {
+      const videoContainer = document.querySelector('.contenedor-video');
+      videoContainer.classList.toggle('expanded');
+    }
+    function toggleLights() {
+      document.body.classList.toggle('lights-off');
+    }
+
+    // Bloquear clic derecho y F12 mínimos
+    window.addEventListener('contextmenu', e => e.preventDefault());
+    window.addEventListener('keydown', function (e) {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+        e.preventDefault();
+      }
+    });
+
+    function switchPlayer(player) {
+      document.querySelectorAll('.player-btn').forEach(btn => btn.classList.remove('active'));
+      const btn = document.getElementById(player + '-btn'); if (btn) btn.classList.add('active');
+      document.querySelectorAll('.player-container').forEach(container => container.classList.remove('active'));
+      const cont = document.getElementById(player + '-player'); if (cont) cont.classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      switchPlayer('player1');
+      if (typeof Rumble !== 'undefined') {
+        Rumble("play", {"video":"v6wpv6g","div":"rumble_v6wpv6g"});
+        Rumble("play", {"video":"v6urewg","div":"rumble_v6urewg"});
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
