@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="es">
 
@@ -58,6 +58,10 @@
 
     /* Opcional: asegurar que el iframe del reproductor se vea bien */
     .reproductor-video iframe { width: 100%; height: 480px; border: none; }
+    /* Botón Descargar alineado a la derecha */
+    .video-functions { align-items: center; }
+    .download-btn { margin-left: auto; background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
+    .function-btn.disabled { opacity: 0.5; pointer-events: none; }
   </style>
 </head>
 <body>
@@ -86,7 +90,7 @@
       </div>
 
       <div class="description">
-        <p>En esta temporada, los sobrevivientes de la humanidad enfrentan nuevos desafíos y descubren más secretos sobre los titanes.</p>
+        <p>Disfruta de Attack on Titan Temporada 2 completa (12 episodios). Selecciona un episodio y elige el reproductor. La opción 1 contiene los enlaces de mxdrop.</p>
       </div>
 
       <div class="contenedor-video">
@@ -113,11 +117,12 @@
         <div class="video-functions">
           <button class="function-btn" onclick="expandPlayer()">Expandir</button>
           <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
+          <a id="download-btn" class="function-btn download-btn" href="#" target="_blank" rel="noopener noreferrer">Descargar</a>
         </div>
       </div>
 
       <div class="description">
-        <p>Attack On Titan continúa cautivando con su mezcla de acción, drama y misterio, llevando a los espectadores a un mundo lleno de peligros y revelaciones impactantes.</p>
+        <p>12/12 episodios disponibles. Estado: Temporada completa.</p>
       </div>
 
       <div class="episodes-container">
@@ -219,35 +224,36 @@
 
 
 
-    // Preservar los datos de episodios existentes o crear una estructura bÃ¡sica
+    // Convierte cualquier URL de StreamTape (/v/ o /e/) a URL embebible /e/{id}/
+    function toEmbed(url) {
+      if (!url) return '';
+      try {
+        const m = url.match(/\/\/(?:www\.)?streamtape\.com\/(?:v|e)\/([^/?#]+)/i);
+        if (m && m[1]) return `https://streamtape.com/e/${m[1]}/`;
+      } catch (_) {}
+      // Fallback: reemplazo simple
+      return url.replace('/v/', '/e/') + (url.endsWith('/') ? '' : '/');
+    }
 
+    // Estructura de 12 episodios con enlaces de mxdrop en Opción 1
     const episodes = [
-
-      { num: 1, title: "Episodio 1", op1: "", op2: "", op3: "", op4: "" },
-
-      { num: 2, title: "Episodio 2", op1: "", op2: "", op3: "", op4: "" },
-
-      { num: 3, title: "Episodio 3", op1: "", op2: "", op3: "", op4: "" },
-
-      { num: 4, title: "Episodio 4", op1: "", op2: "", op3: "", op4: "" },
-
-      { num: 5, title: "Episodio 5", op1: "", op2: "", op3: "", op4: "" },
-
-      { num: 6, title: "Episodio 6", op1: "", op2: "", op3: "", op4: "" },
-
-      { num: 7, title: "Episodio 7", op1: "", op2: "", op3: "", op4: "" },
-
-      { num: 8, title: "Episodio 8", op1: "", op2: "", op3: "", op4: "" },
-
-      { num: 9, title: "Episodio 9", op1: "", op2: "", op3: "", op4: "" },
-
-      { num: 10, title: "Episodio 10", op1: "", op2: "", op3: "", op4: "" },
-
-      { num: 11, title: "Episodio 11", op1: "", op2: "", op3: "", op4: "" },
-
-      { num: 12, title: "Episodio 12", op1: "", op2: "", op3: "", op4: "" }
-
+      { num: 1, title: "Episodio 1", op1: "https://mxdrop.to/e/dkrowgwwf7mxewg", op2: "", op3: "", op4: "" },
+      { num: 2, title: "Episodio 2", op1: "https://mxdrop.to/e/dkrowg61f8rlqz", op2: "", op3: "", op4: "" },
+      { num: 3, title: "Episodio 3", op1: "https://mxdrop.to/e/z1j903vwu7dwxm", op2: "", op3: "", op4: "" },
+      { num: 4, title: "Episodio 4", op1: "https://mxdrop.to/e/r60v4l1lh7xd0o", op2: "", op3: "", op4: "" },
+      { num: 5, title: "Episodio 5", op1: "https://mxdrop.to/e/gjdmx8npto9ox0", op2: "", op3: "", op4: "" },
+      { num: 6, title: "Episodio 6", op1: "https://mxdrop.to/e/9wx40g1jb3l0g07", op2: "", op3: "", op4: "" },
+      { num: 7, title: "Episodio 7", op1: "https://mxdrop.to/e/elzrjg78fkw3pg", op2: "", op3: "", op4: "" },
+      { num: 8, title: "Episodio 8", op1: "https://mxdrop.to/e/9wx40g8winjx84", op2: "", op3: "", op4: "" },
+      { num: 9, title: "Episodio 9", op1: "https://mxdrop.to/e/8lj9xjrxseogm8", op2: "", op3: "", op4: "" },
+      { num: 10, title: "Episodio 10", op1: "https://mxdrop.to/e/q1d7z64wu7j9p6", op2: "", op3: "", op4: "" },
+      { num: 11, title: "Episodio 11", op1: "https://mxdrop.to/e/owzd1zgmtl6voxr", op2: "", op3: "", op4: "" },
+      { num: 12, title: "Episodio 12", op1: "https://mxdrop.to/e/dkrownxluvkeo0", op2: "", op3: "", op4: "" }
     ];
+  
+    // Estado actual
+    let currentEpisode = null;
+    let currentOption = 'opcion1';
 
 
 
@@ -272,51 +278,69 @@
 
 
     // Cargar episodio
-
     function loadEpisode(episode) {
-
       document.querySelectorAll('.episode-btn').forEach((btn, index) => {
-
         btn.classList.toggle('active', index + 1 === episode.num);
-
       });
-
       document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
-
-      document.querySelector('#opcion1-player iframe').src = episode.op1 || '';
-
-      document.querySelector('#opcion2-player iframe').src = episode.op2 || '';
-
-      document.querySelector('#opcion3-player iframe').src = episode.op3 || '';
-
-      document.querySelector('#opcion4-player iframe').src = episode.op4 || '';
-
+      document.querySelector('#opcion1-player iframe').src = toEmbed(episode.op1);
+      document.querySelector('#opcion2-player iframe').src = toEmbed(episode.op2);
+      document.querySelector('#opcion3-player iframe').src = toEmbed(episode.op3);
+      document.querySelector('#opcion4-player iframe').src = toEmbed(episode.op4);
+      currentEpisode = episode;
       switchPlayer('opcion1');
-
     }
 
 
 
     // Cambiar reproductor
-
     function switchPlayer(option) {
-
       document.querySelectorAll('.player-btn').forEach(btn => {
-
         btn.classList.remove('active');
-
       });
-
       document.getElementById(`${option}-btn`).classList.add('active');
-
       document.querySelectorAll('.player-container').forEach(container => {
-
         container.classList.remove('active');
-
       });
-
       document.getElementById(`${option}-player`).classList.add('active');
+      currentOption = option;
+      updateDownloadLink();
+    }
 
+    // Determina el URL original (no embebido) según el reproductor activo
+    function getUrlForOption(ep, option) {
+      if (!ep) return '';
+      const map = { opcion1: 'op1', opcion2: 'op2', opcion3: 'op3', opcion4: 'op4' };
+      const key = map[option] || 'op1';
+      return ep[key] || '';
+    }
+
+    // Actualiza el botón Descargar con el enlace del reproductor activo
+    function updateDownloadLink() {
+      const a = document.getElementById('download-btn');
+      const url = getUrlForOption(currentEpisode, currentOption);
+      let finalUrl = url;
+      
+      // Si contiene /e/ en el enlace, convertir a /f/ para descarga directa
+      if (/\/e\//.test(url)) {
+        finalUrl = url.replace('/e/', '/f/');
+      }
+      
+      if (finalUrl) {
+        // Generar enlace acortado con exe.io API (formato simple)
+        const apiToken = '110e7b6cbdf7a5aa354afb395e889c7aba3411c6';
+        // Asegurar que el URL tenga protocolo
+        if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) {
+          finalUrl = 'https://' + finalUrl;
+        }
+        const shortenedUrl = `https://exe.io/st?api=${apiToken}&url=${finalUrl}`;
+        
+        a.href = shortenedUrl;
+        a.classList.remove('disabled');
+      } else {
+        a.href = '#';
+        a.classList.add('disabled');
+      }
     }
 
 

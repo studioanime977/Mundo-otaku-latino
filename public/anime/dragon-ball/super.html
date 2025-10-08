@@ -517,17 +517,13 @@
       }
       
       if (finalUrl) {
-        // Generar título personalizado para el enlace
-        const customTitle = `Dragon Ball Super Episodio ${currentEpisode.num}`;
-        const customName = `dragonballsuper${currentEpisode.num}`;
-        
-        // Generar enlace acortado con exe.io API con título y nombre personalizado
+        // Generar enlace acortado con exe.io API (formato simple)
         const apiToken = '110e7b6cbdf7a5aa354afb395e889c7aba3411c6';
         // Asegurar que el URL tenga protocolo
         if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) {
           finalUrl = 'https://' + finalUrl;
         }
-        const shortenedUrl = `https://exe.io/st?api=${apiToken}&url=${finalUrl}&title=${encodeURIComponent(customTitle)}&alias=${customName}`;
+        const shortenedUrl = `https://exe.io/st?api=${apiToken}&url=${finalUrl}`;
         
         a.href = shortenedUrl;
         a.classList.remove('disabled');
