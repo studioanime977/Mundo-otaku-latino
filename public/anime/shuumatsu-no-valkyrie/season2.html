@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta name="f08cd2b5211f5b0a95753720000f639c66350c1d" content="f08cd2b5211f5b0a95753720000f639c66350c1d" />
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-adsense-account" content="ca-pub-8480825005176665">
-  <title>Naruto - Temporada 1 - StudioOtaku</title>
+  <title>Shuumatsu no Valkyrie - Temporada 2 - Mundo Otaku Latino</title>
   
   <link rel="stylesheet" href="../../../css/temporadas.css">
   <link rel="stylesheet" href="../../../css/style.css">
   
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
-  <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico?v=1">
-
-  <link rel="stylesheet" href="../../../css/anime.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script><link rel="stylesheet" href="../../../css/anime.css">
   <link rel="stylesheet" href="../../../css/responsive-style.css">
-  <link rel="stylesheet" href="../../../css/responsive-navigation.css">
-  <link rel="icon" href="../../../ico/logo.png">
-
-  <style>
+  <link rel="stylesheet" href="../../../css/responsive-navigation.css"><style>
     /* Layout de escritorio: reproductor a la izquierda y Popular a la derecha */
     .main-content { display: flex; gap: 20px; align-items: flex-start; }
     .left-content { flex: 3; }
@@ -50,6 +46,9 @@
     .download-btn { margin-left: auto; background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
     .function-btn.disabled { opacity: 0.5; pointer-events: none; }
   </style>
+    <link rel="icon" type="image/png" href="../../../ico/logo.png">
+    <link rel="apple-touch-icon" href="../../../ico/logo.png">
+    <link rel="shortcut icon" href="../../../ico/logo.png">
 </head>
 <body>
 
@@ -71,12 +70,12 @@
     <div class="left-content">
       
       <div class="title-container">
-        <h1 class="season-title">Naruto - Temporada 1</h1>
+        <h1 class="season-title">Shuumatsu no Valkyrie - Temporada 2</h1>
         <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
       </div>
 
       <div class="description">
-        <p>Sigue las aventuras de Naruto Uzumaki, un joven ninja de la Aldea Oculta de la Hoja que sueña con convertirse en Hokage. En esta primera temporada, conocemos a Naruto, Sasuke y Sakura mientras forman el Equipo 7 bajo la tutela de Kakashi Hatake.</p>
+        <p>Disfruta de Shuumatsu no Valkyrie Temporada 2 completa (10 episodios). Selecciona un episodio y elige el reproductor. La opción 1 contiene los enlaces de mxdrop.</p>
       </div>
 
       <div class="contenedor-video">
@@ -108,7 +107,7 @@
       </div>
 
       <div class="description">
-        <p>220/220 episodios disponibles. Estado: Temporada completa.</p>
+        <p>10/10 episodios disponibles con enlaces de mxdrop. Estado: Temporada completa.</p>
       </div>
 
       <div class="episodes-container">
@@ -129,17 +128,17 @@
         <img src="../../../img/Jujutsu Kaisen S1.jpg" alt="Jujutsu Kaisen">
         <div class="title">Jujutsu Kaisen</div>
       </div>
-      <div class="popular-item" onclick="window.location.href='temporada-2.html'">
-        <img src="../../../img/Naruto Shippuden S1.jpg" alt="Naruto Shippuden">
-        <div class="title">Naruto - Temporada 2 (Shippuden)</div>
-      </div>
       <div class="popular-item" onclick="window.location.href='../demon-slayer/temporada-1.html'">
         <img src="../../../img/Demon Slayer S1.jpg" alt="Demon Slayer">
         <div class="title">Demon Slayer</div>
       </div>
-      <div class="popular-item" onclick="window.location.href='../boku-no-hero-academia/temporada-1.html'">
-        <img src="../../../img/Boku no Hero Academia S1.jpg" alt="Boku no Hero Academia">
-        <div class="title">Boku no Hero Academia</div>
+      <div class="popular-item" onclick="window.location.href='season1.html'">
+        <img src="../../../img/Shuumatsu no Valkyrie S1.jpg" alt="Shuumatsu no Valkyrie S1">
+        <div class="title">Shuumatsu no Valkyrie - Temporada 1</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../re-zero/season1.html'">
+        <img src="../../../img/Re Zero S1.jpg" alt="Re:Zero S1">
+        <div class="title">Re:Zero - Temporada 1</div>
       </div>
     
       <div class="social-buttons" style="margin-top: 20px; text-align: center;">
@@ -181,34 +180,19 @@
     let currentEpisode = null;
     let currentOption = 'opcion1';
 
-    // Estructura de 220 episodios de Naruto Temporada 1 (solo primeros 20 como ejemplo)
+    // Estructura de 10 episodios de Shuumatsu no Valkyrie Temporada 2
     const episodes = [
-      { num: 1, title: "¡Entra! Naruto Uzumaki", op1: "", op2: "", op3: "", op4: "" },
-      { num: 2, title: "¡Mi nombre es Konohamaru!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 3, title: "¡Sasuke y Sakura: amigos o enemigos!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 4, title: "¡Prueba de supervivencia: examen de las campanitas!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 5, title: "¡Fracasaste! La conclusión de Kakashi", op1: "", op2: "", op3: "", op4: "" },
-      { num: 6, title: "¡Una misión importante! ¡Rumbo al País de las Olas!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 7, title: "¡El asesino de la niebla!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 8, title: "¡La promesa manchada de lágrimas!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 9, title: "¡Kakashi: el ninja copiador!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 10, title: "¡El bosque de chakra!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 11, title: "¡El país que no tenía héroes!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 12, title: "¡Batalla en el puente! ¡Zabuza regresa!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 13, title: "¡La técnica secreta de Haku! ¡Espejos de hielo demoníaco!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 14, title: "¡El número uno en sorprender a la gente! ¡Naruto participa!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 15, title: "¡Pelea de cero! ¡El momento en que un hombre muestra su valor!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 16, title: "¡El sello liberado! ¡El poder oculto de Naruto!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 17, title: "¡El pasado de Haku! ¡Recuerdos solitarios en la nieve!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 18, title: "¡Una herramienta llamada shinobi! ¡La determinación de Naruto y Sasuke!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 19, title: "¡Zabuza regresa! ¡La batalla en el puente!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 20, title: "¡Un nuevo capítulo comienza! ¡Los exámenes Chunin!", op1: "", op2: "", op3: "", op4: "" }
+      { num: 1, title: "La Segunda Ronda", op1: "https://mxdrop.to/e/wlwj8r4kfp8wv0", op2: "", op3: "", op4: "" },
+      { num: 2, title: "El Dios del Mar", op1: "https://mxdrop.to/e/4d9k4z09i66xjr", op2: "", op3: "", op4: "" },
+      { num: 3, title: "La Furia de Poseidón", op1: "https://mxdrop.to/e/r60xg4rniokxxx", op2: "", op3: "", op4: "" },
+      { num: 4, title: "El Luchador Más Fuerte", op1: "https://mxdrop.to/e/pj68nqr1cxgjer", op2: "", op3: "", op4: "" },
+      { num: 5, title: "La Técnica Definitiva", op1: "https://mxdrop.to/e/q1d8gr49fdzzx4", op2: "", op3: "", op4: "" },
+      { num: 6, title: "El Orgullo de la Humanidad", op1: "https://mxdrop.to/e/dkrx4v18h66kx7", op2: "", op3: "", op4: "" },
+      { num: 7, title: "La Tercera Batalla", op1: "https://mxdrop.to/e/mkzv4wkealr060", op2: "", op3: "", op4: "" },
+      { num: 8, title: "El Dios de la Fortuna", op1: "https://mxdrop.to/e/k0e8gkwksjmln", op2: "", op3: "", op4: "" },
+      { num: 9, title: "La Suerte del Destino", op1: "https://mxdrop.to/e/nln6gjojc88lx3", op2: "", op3: "", op4: "" },
+      { num: 10, title: "El Veredicto Final", op1: "https://mxdrop.to/e/36q7rkv4bv091l", op2: "", op3: "", op4: "" }
     ];
-
-    // Generar todos los 220 episodios
-    for (let i = 21; i <= 220; i++) {
-      episodes.push({ num: i, title: `Episodio ${i}`, op1: "", op2: "", op3: "", op4: "" });
-    }
 
     // Generar botones de episodios
     const episodesGrid = document.getElementById('episodes-grid');

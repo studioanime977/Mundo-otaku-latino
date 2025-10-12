@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta name="f08cd2b5211f5b0a95753720000f639c66350c1d" content="f08cd2b5211f5b0a95753720000f639c66350c1d" />
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-adsense-account" content="ca-pub-8480825005176665">
-  <title>One Piece - Alabasta - StudioOtaku</title>
+  <title>Solo Leveling - Temporada 2 - Mundo Otaku Latino</title>
   
   <link rel="stylesheet" href="../../../css/temporadas.css">
   <link rel="stylesheet" href="../../../css/style.css">
   
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
-  <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico?v=1">
-
-  <link rel="stylesheet" href="../../../css/anime.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script><link rel="stylesheet" href="../../../css/anime.css">
   <link rel="stylesheet" href="../../../css/responsive-style.css">
-  <link rel="stylesheet" href="../../../css/responsive-navigation.css">
-  <link rel="icon" href="../../../ico/logo.png">
-
-  <style>
+  <link rel="stylesheet" href="../../../css/responsive-navigation.css"><style>
     /* Layout de escritorio: reproductor a la izquierda y Popular a la derecha */
     .main-content { display: flex; gap: 20px; align-items: flex-start; }
     .left-content { flex: 3; }
@@ -50,6 +46,9 @@
     .download-btn { margin-left: auto; background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
     .function-btn.disabled { opacity: 0.5; pointer-events: none; }
   </style>
+    <link rel="icon" type="image/png" href="../../../ico/logo.png">
+    <link rel="apple-touch-icon" href="../../../ico/logo.png">
+    <link rel="shortcut icon" href="../../../ico/logo.png">
 </head>
 <body>
 
@@ -71,12 +70,12 @@
     <div class="left-content">
       
       <div class="title-container">
-        <h1 class="season-title">One Piece - Alabasta</h1>
-        <h2 class="episode-title" id="current-episode-title">Episodio 62</h2>
+        <h1 class="season-title">Solo Leveling - Temporada 2</h1>
+        <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
       </div>
 
       <div class="description">
-        <p>La tripulación de los Sombreros de Paja llega a Alabasta para ayudar a la princesa Vivi a salvar su reino de la guerra civil orquestada por Crocodile y Baroque Works.</p>
+        <p>Disfruta de Solo Leveling Temporada 2 completa (13 episodios). Selecciona un episodio y elige el reproductor. La opción 1 contiene los enlaces de mxdrop.</p>
       </div>
 
       <div class="contenedor-video">
@@ -108,7 +107,7 @@
       </div>
 
       <div class="description">
-        <p>77/77 episodios disponibles (62-138). Estado: Saga Alabasta completa.</p>
+        <p>13/13 episodios disponibles con enlaces de mxdrop. Estado: Temporada completa.</p>
       </div>
 
       <div class="episodes-container">
@@ -125,14 +124,6 @@
         <img src="../../../img/Attack on Titan S1.jpg" alt="Attack on Titan">
         <div class="title">Attack on Titan</div>
       </div>
-      <div class="popular-item" onclick="window.location.href='../naruto/temporada-1.html'">
-        <img src="../../../img/Naruto S1.jpg" alt="Naruto">
-        <div class="title">Naruto</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='temporada-1.html'">
-        <img src="../../../img/One Piece S1.jpg" alt="One Piece East Blue">
-        <div class="title">One Piece - East Blue</div>
-      </div>
       <div class="popular-item" onclick="window.location.href='../jujutsu-kaisen/temporada-1.html'">
         <img src="../../../img/Jujutsu Kaisen S1.jpg" alt="Jujutsu Kaisen">
         <div class="title">Jujutsu Kaisen</div>
@@ -140,6 +131,14 @@
       <div class="popular-item" onclick="window.location.href='../demon-slayer/temporada-1.html'">
         <img src="../../../img/Demon Slayer S1.jpg" alt="Demon Slayer">
         <div class="title">Demon Slayer</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='season1.html'">
+        <img src="../../../img/Solo Leveling season 1.jpg" alt="Solo Leveling S1">
+        <div class="title">Solo Leveling - Temporada 1</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../shuumatsu-no-valkyrie/season2.html'">
+        <img src="../../../img/shuumatsu no valkyrie Temporada 2.jpg" alt="Shuumatsu no Valkyrie S2">
+        <div class="title">Shuumatsu no Valkyrie - Temporada 2</div>
       </div>
     
       <div class="social-buttons" style="margin-top: 20px; text-align: center;">
@@ -181,33 +180,22 @@
     let currentEpisode = null;
     let currentOption = 'opcion1';
 
-    // Estructura de 77 episodios de One Piece Alabasta (episodios 62-138)
+    // Estructura de 13 episodios de Solo Leveling Temporada 2
     const episodes = [
-      { num: 62, title: "¡La aventura en una isla misteriosa! ¡Nami está enferma!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 63, title: "¡Precaución mientras sube! ¡El cielo que conduce a la tierra!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 64, title: "¡El reino del amor y la pasión! ¡La reina Vivi!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 65, title: "¡Operación Utopía en marcha! ¡El plan de Baroque Works!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 66, title: "¡El reino de arena! ¡La lluvia verde de Arabasta!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 67, title: "¡Aventura en el país del arena! ¡Los demonios que viven en el desierto!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 68, title: "¡Conoce a los Kung-Fu Dugongs! ¡El héroe del desierto!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 69, title: "¡Luffy vs. Vivi! ¡El juramento de los compañeros!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 70, title: "¡Alubarna se acerca! ¡La princesa Vivi y los Piratas del Sombrero de Paja!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 71, title: "¡Vivir fuerte! ¡Ace y Luffy's Hot-Blooded Brotherly Bond!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 72, title: "¡Ace y Luffy! ¡Recuerdos de hermanos calientes!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 73, title: "¡Alubarna está en llamas! ¡Capitán Smoker vs. Capitán Ace!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 74, title: "¡Luffy vs. Smoker! ¡Ace interviene!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 75, title: "¡Luffy hunted! ¡La operación de captura de Smoker!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 76, title: "¡Tiempo de partida! ¡Vivi's Adventures with the Straw Hats!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 77, title: "¡El Green City Erumalu y los Kung Fu Dugongs!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 78, title: "¡Luffy vs. Crocodile! ¡Water Luffy and Crocodile's Weakness!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 79, title: "¡Luffy All-Out Attack! ¡Red Hawk vs. Crocodile!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 80, title: "¡Luffy vs. Crocodile! ¡Round 2!", op1: "", op2: "", op3: "", op4: "" }
+      { num: 1, title: "El Arco de la Isla Jeju", op1: "https://mxdrop.to/e/elz84dj9ur3xeo", op2: "", op3: "", op4: "" },
+      { num: 2, title: "La Verdadera Fuerza", op1: "https://mxdrop.to/e/xw9ep4d1sed6m6", op2: "", op3: "", op4: "" },
+      { num: 3, title: "El Cazador Nacional", op1: "https://mxdrop.to/e/nln6g70kce1z00", op2: "", op3: "", op4: "" },
+      { num: 4, title: "La Invasión de las Hormigas", op1: "https://mxdrop.to/e/r60xgj6vig6kjl", op2: "", op3: "", op4: "" },
+      { num: 5, title: "El Rey de las Hormigas", op1: "https://mxdrop.to/e/k0e8g6djcn71w", op2: "", op3: "", op4: "" },
+      { num: 6, title: "La Batalla Final en Jeju", op1: "https://mxdrop.to/e/1no1grposwq196", op2: "", op3: "", op4: "" },
+      { num: 7, title: "El Despertar del Poder", op1: "https://mxdrop.to/e/k0e8g7m7i3mngz1", op2: "", op3: "", op4: "" },
+      { num: 8, title: "El Nuevo Nivel", op1: "https://mxdrop.to/e/r60xgz3oh0xxkv", op2: "", op3: "", op4: "" },
+      { num: 9, title: "La Sombra del Rey", op1: "https://mxdrop.to/e/r60xgzqebnv07o", op2: "", op3: "", op4: "" },
+      { num: 10, title: "El Ejército de Sombras", op1: "https://mxdrop.to/e/pj68n17zc3lod1", op2: "", op3: "", op4: "" },
+      { num: 11, title: "La Verdad Revelada", op1: "https://mxdrop.to/e/nln6gw3wun3z99", op2: "", op3: "", op4: "" },
+      { num: 12, title: "El Monarca de las Sombras", op1: "https://mxdrop.to/e/q1d8gndrhx7morm", op2: "", op3: "", op4: "" },
+      { num: 13, title: "El Verdadero Solo Leveling", op1: "https://mxdrop.to/e/jdk84x36blw7jm", op2: "", op3: "", op4: "" }
     ];
-
-    // Generar todos los episodios hasta el 138
-    for (let i = 81; i <= 138; i++) {
-      episodes.push({ num: i, title: `Episodio ${i}`, op1: "", op2: "", op3: "", op4: "" });
-    }
 
     // Generar botones de episodios
     const episodesGrid = document.getElementById('episodes-grid');
@@ -222,7 +210,7 @@
     // Cargar episodio
     function loadEpisode(episode) {
       document.querySelectorAll('.episode-btn').forEach((btn, index) => {
-        btn.classList.toggle('active', index + 1 === episode.num - 61);
+        btn.classList.toggle('active', index + 1 === episode.num);
       });
       document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
       document.querySelector('#opcion1-player iframe').src = toEmbed(episode.op1);

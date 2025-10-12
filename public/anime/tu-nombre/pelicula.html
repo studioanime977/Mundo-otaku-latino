@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta name="f08cd2b5211f5b0a95753720000f639c66350c1d" content="f08cd2b5211f5b0a95753720000f639c66350c1d" />
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-adsense-account" content="ca-pub-8480825005176665">
@@ -9,15 +11,9 @@
   <link rel="stylesheet" href="../../../css/temporadas.css">
   <link rel="stylesheet" href="../../../css/style.css">
   
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
-  <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico?v=1">
-
-  <link rel="stylesheet" href="../../../css/anime.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script><link rel="stylesheet" href="../../../css/anime.css">
   <link rel="stylesheet" href="../../../css/responsive-style.css">
-  <link rel="stylesheet" href="../../../css/responsive-navigation.css">
-  <link rel="icon" href="../../../ico/logo.png">
-
-  <style>
+  <link rel="stylesheet" href="../../../css/responsive-navigation.css"><style>
     /* Layout de escritorio: reproductor a la izquierda y Popular a la derecha */
     .main-content { display: flex; gap: 20px; align-items: flex-start; }
     .left-content { flex: 3; }
@@ -50,6 +46,9 @@
     .download-btn { margin-left: auto; background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
     .function-btn.disabled { opacity: 0.5; pointer-events: none; }
   </style>
+    <link rel="icon" type="image/png" href="../../../ico/logo.png">
+    <link rel="apple-touch-icon" href="../../../ico/logo.png">
+    <link rel="shortcut icon" href="../../../ico/logo.png">
 </head>
 <body>
 
@@ -76,7 +75,7 @@
       </div>
 
       <div class="description">
-        <p>Una hermosa historia de amor que trasciende el tiempo y el espacio. Mitsuha y Taki, dos jóvenes que viven en lugares completamente diferentes, comienzan a intercambiar cuerpos de manera misteriosa.</p>
+        <p>Disfruta de "Tu Nombre" (Your Name) película completa en HD 1080p. Selecciona el reproductor de tu preferencia. La opción 1 contiene el enlace de mxdrop.</p>
       </div>
 
       <div class="contenedor-video">
@@ -88,7 +87,7 @@
         </div>
         <div class="reproductor-video">
           <div id="opcion1-player" class="player-container active">
-            <iframe src="" allowfullscreen></iframe>
+            <iframe src="https://mxdrop.to/e/mkzjw9r9soevgv" allowfullscreen></iframe>
           </div>
           <div id="opcion2-player" class="player-container">
             <iframe src="" allowfullscreen></iframe>
@@ -103,12 +102,12 @@
         <div class="video-functions">
           <button class="function-btn" onclick="expandPlayer()">Expandir</button>
           <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
-          <a id="download-btn" class="function-btn download-btn" href="#" target="_blank" rel="noopener noreferrer">Descargar</a>
+          <a id="download-btn" class="function-btn download-btn" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/mkzjw9r9soevgv" target="_blank" rel="noopener noreferrer">Descargar</a>
         </div>
       </div>
 
       <div class="description">
-        <p>Película completa disponible. Duración: 106 minutos. Estado: Disponible en HD.</p>
+        <p>Película completa disponible con enlace de mxdrop. Duración: 106 minutos. Estado: Disponible en HD 1080p.</p>
       </div>
 
       <div class="movie-info">
@@ -198,7 +197,7 @@
     // URLs de la película (una sola película)
     const movieData = {
       title: "Tu nombre (Your Name)",
-      op1: "",
+      op1: "https://mxdrop.to/e/mkzjw9r9soevgv",
       op2: "",
       op3: "",
       op4: ""
@@ -299,6 +298,9 @@
     document.getElementById('download-app-btn').addEventListener('click', function() {
       window.open('https://exe.io/ANIMETV', '_blank');
     });
+
+    // Cargar la película al iniciar la página
+    loadMovie();
   </script>
 <section class="anuncio-responsive">
   <!-- Anuncio Google responsivo -->

@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta name="f08cd2b5211f5b0a95753720000f639c66350c1d" content="f08cd2b5211f5b0a95753720000f639c66350c1d" />
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-adsense-account" content="ca-pub-8480825005176665">
-  <title>One Piece - East Blue - StudioOtaku</title>
+  <title>Shuumatsu no Valkyrie - Temporada 1 - Mundo Otaku Latino</title>
   
   <link rel="stylesheet" href="../../../css/temporadas.css">
   <link rel="stylesheet" href="../../../css/style.css">
   
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
-  <link rel="apple-touch-icon" href="/img/mundo-otaku-latino.ico?v=1">
-
-  <link rel="stylesheet" href="../../../css/anime.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script><link rel="stylesheet" href="../../../css/anime.css">
   <link rel="stylesheet" href="../../../css/responsive-style.css">
-  <link rel="stylesheet" href="../../../css/responsive-navigation.css">
-  <link rel="icon" href="../../../ico/logo.png">
-
-  <style>
+  <link rel="stylesheet" href="../../../css/responsive-navigation.css"><style>
     /* Layout de escritorio: reproductor a la izquierda y Popular a la derecha */
     .main-content { display: flex; gap: 20px; align-items: flex-start; }
     .left-content { flex: 3; }
@@ -50,6 +46,9 @@
     .download-btn { margin-left: auto; background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
     .function-btn.disabled { opacity: 0.5; pointer-events: none; }
   </style>
+    <link rel="icon" type="image/png" href="../../../ico/logo.png">
+    <link rel="apple-touch-icon" href="../../../ico/logo.png">
+    <link rel="shortcut icon" href="../../../ico/logo.png">
 </head>
 <body>
 
@@ -71,12 +70,12 @@
     <div class="left-content">
       
       <div class="title-container">
-        <h1 class="season-title">One Piece - East Blue</h1>
+        <h1 class="season-title">Shuumatsu no Valkyrie - Temporada 1</h1>
         <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
       </div>
 
       <div class="description">
-        <p>Sigue las aventuras de Monkey D. Luffy en el East Blue, donde comienza su búsqueda del One Piece y forma su tripulación de Piratas del Sombrero de Paja.</p>
+        <p>Disfruta de Shuumatsu no Valkyrie Temporada 1 completa (12 episodios). Selecciona un episodio y elige el reproductor. Los enlaces estarán disponibles próximamente.</p>
       </div>
 
       <div class="contenedor-video">
@@ -108,7 +107,7 @@
       </div>
 
       <div class="description">
-        <p>61/61 episodios disponibles. Estado: Saga East Blue completa.</p>
+        <p>12/12 episodios. Estado: Enlaces próximamente disponibles.</p>
       </div>
 
       <div class="episodes-container">
@@ -125,14 +124,6 @@
         <img src="../../../img/Attack on Titan S1.jpg" alt="Attack on Titan">
         <div class="title">Attack on Titan</div>
       </div>
-      <div class="popular-item" onclick="window.location.href='../naruto/temporada-1.html'">
-        <img src="../../../img/Naruto S1.jpg" alt="Naruto">
-        <div class="title">Naruto</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='temporada-2.html'">
-        <img src="../../../img/One Piece S2.jpg" alt="One Piece Alabasta">
-        <div class="title">One Piece - Alabasta</div>
-      </div>
       <div class="popular-item" onclick="window.location.href='../jujutsu-kaisen/temporada-1.html'">
         <img src="../../../img/Jujutsu Kaisen S1.jpg" alt="Jujutsu Kaisen">
         <div class="title">Jujutsu Kaisen</div>
@@ -140,6 +131,14 @@
       <div class="popular-item" onclick="window.location.href='../demon-slayer/temporada-1.html'">
         <img src="../../../img/Demon Slayer S1.jpg" alt="Demon Slayer">
         <div class="title">Demon Slayer</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='season2.html'">
+        <img src="../../../img/shuumatsu no valkyrie Temporada 2.jpg" alt="Shuumatsu no Valkyrie S2">
+        <div class="title">Shuumatsu no Valkyrie - Temporada 2</div>
+      </div>
+      <div class="popular-item" onclick="window.location.href='../re-zero/season1.html'">
+        <img src="../../../img/Re Zero S1.jpg" alt="Re:Zero S1">
+        <div class="title">Re:Zero - Temporada 1</div>
       </div>
     
       <div class="social-buttons" style="margin-top: 20px; text-align: center;">
@@ -181,34 +180,21 @@
     let currentEpisode = null;
     let currentOption = 'opcion1';
 
-    // Estructura de 61 episodios de One Piece East Blue (solo primeros 20 como ejemplo)
+    // Estructura de 12 episodios de Shuumatsu no Valkyrie Temporada 1
     const episodes = [
-      { num: 1, title: "¡Soy Luffy! ¡El hombre que será el Rey de los Piratas!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 2, title: "¡Aparece el gran espadachín! ¡El cazador de piratas Roronoa Zoro!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 3, title: "¡Morgan vs. Luffy! ¿Quién es esa hermosa joven?", op1: "", op2: "", op3: "", op4: "" },
-      { num: 4, title: "¡El pasado de Luffy! ¡Aparece Shanks el Pelirrojo!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 5, title: "¡Miedo, poder misterioso! ¡Capitán Buggy, el payaso pirata!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 6, title: "¡Desesperado enfrentamiento! ¡El espadachín Zoro vs. el acróbata Cabaji!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 7, title: "¡Épico duelo! ¡El espadachín Zoro vs. el acróbata Cabaji! Parte 2", op1: "", op2: "", op3: "", op4: "" },
-      { num: 8, title: "¿Quién ganará? ¡Showdown de habilidad del diablo!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 9, title: "¡El mentiroso honorable! ¡Capitán Usopp!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 10, title: "¡El extraño poder más fuerte! ¡Capitán Kuro vs. Luffy!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 11, title: "¡Conspiración expuesta! ¡Capitán Kuro: el mayordomo Klahadore!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 12, title: "¡Choque! ¡Kuro vs. Luffy! ¡Cómo se protege a un ser querido!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 13, title: "¡El terror, el misterioso poder! ¡Capitán Kuro vs. Luffy!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 14, title: "¡Luffy de vuelta! ¡Miss Kaya de los Mil Planes!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 15, title: "¡Derrota a Klahadore! ¡La gran batalla en la pendiente!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 16, title: "¡Protege a Kaya! ¡Los piratas Usopp contra los Gatos Negros!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 17, title: "¡Ira explosiva! ¡Kuro vs. Luffy! ¡Decisión final!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 18, title: "¡Eres un amigo extraordinario! ¡Usopp y el Going Merry!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 19, title: "¡Los tres más poderosos! ¡Zoro, Sanji y el cocinero de combate!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 20, title: "¡Invitado no deseado! ¡Sanji el cocinero y Luffy el glotón!", op1: "", op2: "", op3: "", op4: "" }
+      { num: 1, title: "El Fin del Mundo", op1: "", op2: "", op3: "", op4: "" },
+      { num: 2, title: "El Ragnarök Comienza", op1: "", op2: "", op3: "", op4: "" },
+      { num: 3, title: "Lü Bu vs Thor", op1: "", op2: "", op3: "", op4: "" },
+      { num: 4, title: "El Orgullo de la Humanidad", op1: "", op2: "", op3: "", op4: "" },
+      { num:5, title: "El Primer Hombre", op1: "", op2: "", op3: "", op4: "" },
+      { num: 6, title: "Adam vs Zeus", op1: "", op2: "", op3: "", op4: "" },
+      { num:7, title: "El Padre de la Humanidad", op1: "", op2: "", op3: "", op4: "" },
+      { num: 8, title: "El Samurai Más Fuerte", op1: "", op2: "", op3: "", op4: "" },
+      { num:9, title: "Kojiro Sasaki", op1: "", op2: "", op3: "", op4: "" },
+      { num: 10, title: "El Dios del Mar", op1: "", op2: "", op3: "", op4: "" },
+      { num: 11, title: "La Técnica Perfecta", op1: "", op2: "", op3: "", op4: "" },
+      { num: 12, title: "El Veredicto", op1: "", op2: "", op3: "", op4: "" }
     ];
-
-    // Generar todos los 61 episodios
-    for (let i = 21; i <= 61; i++) {
-      episodes.push({ num: i, title: `Episodio ${i}`, op1: "", op2: "", op3: "", op4: "" });
-    }
 
     // Generar botones de episodios
     const episodesGrid = document.getElementById('episodes-grid');
