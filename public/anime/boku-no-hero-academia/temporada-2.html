@@ -24,7 +24,7 @@
   .left-content { flex: 3; }
   .right-content { flex: 1; }
 
-  /* Miniaturas en la sección Popular (desktop) */
+  /* Miniaturas en la secciÃ³n Popular (desktop) */
   .right-content .popular-item { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.03); margin-bottom: 10px; cursor: pointer; }
   .right-content .popular-item:hover { background: rgba(255,255,255,0.06); }
   .right-content .popular-item img { width: 120px; height: 72px; object-fit: cover; border-radius: 6px; display: block; }
@@ -46,6 +46,10 @@
 
   /* Opcional: asegurar que el iframe del reproductor se vea bien */
   .reproductor-video iframe { width: 100%; height: 480px; border: none; }
+  /* BotÃ³n Descargar alineado a la derecha */
+  .video-functions { align-items: center; }
+  .download-btn { margin-left: auto; background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
+  .function-btn.disabled { opacity: 0.5; pointer-events: none; }
 </style>
 </head>
 <body>
@@ -56,8 +60,8 @@
       <ul class="nav-menu">
         <li><a href="../../index.html#inicio">Inicio</a></li>
         <li><a href="../../html/catalogo.html">Anime</a></li>
-        <li><a href="#peliculas">Películas</a></li>
-        <li><a href="#generos">Géneros</a></li>
+        <li><a href="#peliculas">PelÃ­culas</a></li>
+        <li><a href="#generos">GÃ©neros</a></li>
         <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
       </ul>
     </nav>
@@ -73,19 +77,19 @@
       </div>
 
       <div class="description">
-        <p>En esta temporada, los estudiantes de la Academia U.A. enfrentan nuevos desafíos y participan en el emocionante Festival Deportivo, donde demuestran sus habilidades.</p>
+        <p>Disfruta de Boku no Hero Academia Temporada 2 completa (25 episodios). Selecciona un episodio y elige el reproductor. La opción 1 contiene los enlaces de mxdrop.</p>
       </div>
 
       <div class="contenedor-video">
         <div class="player-options">
-          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÓN 1</button>
-          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÓN 2</button>
-          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÓN 3</button>
-          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÓN 4</button>
+          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÃ“N 1</button>
+          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÃ“N 2</button>
+          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÃ“N 3</button>
+          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÃ“N 4</button>
         </div>
         <div class="reproductor-video">
           <div id="opcion1-player" class="player-container active">
-            <iframe src="https://www.dailymotion.com/embed/video/x7vqj6v" allowfullscreen></iframe>
+            <iframe src="" allowfullscreen></iframe>
           </div>
           <div id="opcion2-player" class="player-container">
             <iframe src="" allowfullscreen></iframe>
@@ -100,17 +104,18 @@
         <div class="video-functions">
           <button class="function-btn" onclick="expandPlayer()">Expandir</button>
           <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
+          <a id="download-btn" class="function-btn download-btn" href="#" target="_blank" rel="noopener noreferrer">Descargar</a>
         </div>
       </div>
 
       <div class="description">
-        <p>Boku No Hero Academia continÃºa emocionando con acciÃ³n, drama y desarrollo de personajes mientras los hÃ©roes en formaciÃ³n enfrentan pruebas cada vez mÃ¡s difÃ­ciles.</p>
+        <p>25/25 episodios disponibles. Estado: Temporada completa.</p>
       </div>
 
       <div class="episodes-container">
           <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
           <div class="episodes-grid" id="episodes-grid">
-              <!-- Los episodios se generarÃ¡n con JavaScript -->
+              <!-- Los episodios se generarÃƒÂ¡n con JavaScript -->
           </div>
       </div>
     </div>
@@ -139,7 +144,7 @@
       </div>
       <div class="popular-item" onclick="window.location.href='../../../public/anime/naruto/naruto.html'">
         <img src="../../../img/Naruto Classic.jpg" alt="Naruto">
-        <div class="title">Naruto - ClÃ¡sico</div>
+        <div class="title">Naruto - ClÃƒÂ¡sico</div>
       </div>
       <div class="popular-item" onclick="window.location.href='../../../public/anime/one-piece/one-piece.html'">
         <img src="../../../img/One Piece Wano.jpg" alt="One Piece">
@@ -167,7 +172,7 @@
   </main>
 
   <style>
-    /* Ajustes para dispositivos mÃ³viles */
+    /* Ajustes para dispositivos mÃƒÂ³viles */
     @media (max-width: 768px) {
       .header {
         display: flex;
@@ -284,7 +289,7 @@
 
     <script>
 
-      // FunciÃ³n para expandir el reproductor
+      // FunciÃƒÂ³n para expandir el reproductor
 
       function expandPlayer() {
 
@@ -296,7 +301,7 @@
 
     
 
-      // FunciÃ³n para apagar/encender las luces
+      // FunciÃƒÂ³n para apagar/encender las luces
 
       function toggleLights() {
 
@@ -330,43 +335,147 @@
 
     
 
-      // Preservar los datos de episodios existentes o crear una estructura bÃ¡sica
-
+      // Estructura de 25 episodios con enlaces de mxdrop en Opción 1
       const episodes = [
-
-        { num: 1, title: "Episodio 1", op1: "", op2: "", op3: "", op4: "" },
-
-        { num: 2, title: "Episodio 2", op1: "", op2: "", op3: "", op4: "" },
-
-        { num: 3, title: "Episodio 3", op1: "", op2: "", op3: "", op4: "" },
-
-        { num: 4, title: "Episodio 4", op1: "", op2: "", op3: "", op4: "" },
-
-        { num: 5, title: "Episodio 5", op1: "", op2: "", op3: "", op4: "" },
-
-        { num: 6, title: "Episodio 6", op1: "", op2: "", op3: "", op4: "" },
-
-        { num: 7, title: "Episodio 7", op1: "", op2: "", op3: "", op4: "" },
-
-        { num: 8, title: "Episodio 8", op1: "", op2: "", op3: "", op4: "" },
-
-        { num: 9, title: "Episodio 9", op1: "", op2: "", op3: "", op4: "" },
-
-        { num: 10, title: "Episodio 10", op1: "", op2: "", op3: "", op4: "" },
-
-        { num: 11, title: "Episodio 11", op1: "", op2: "", op3: "", op4: "" },
-
-        { num: 12, title: "Episodio 12", op1: "", op2: "", op3: "", op4: "" }
-
+        { num: 1, title: "Episodio 1", op1: "https://mxdrop.to/e/l79v49wecqvmnw4", op2: "", op3: "", op4: "" },
+        { num: 2, title: "Episodio 2", op1: "https://mxdrop.to/e/vkq1jq6of6kp48", op2: "", op3: "", op4: "" },
+        { num: 3, title: "Episodio 3", op1: "https://mxdrop.to/e/elzrgzn9iq1q1n8", op2: "", op3: "", op4: "" },
+        { num: 4, title: "Episodio 4", op1: "https://mxdrop.to/e/36qowq9mamw90q3", op2: "", op3: "", op4: "" },
+        { num: 5, title: "Episodio 5", op1: "https://mxdrop.to/e/jdkvrkglsmdxmk", op2: "", op3: "", op4: "" },
+        { num: 6, title: "Episodio 6", op1: "https://mxdrop.to/e/k0evoexotqz49k", op2: "", op3: "", op4: "" },
+        { num: 7, title: "Episodio 7", op1: "https://mxdrop.to/e/36qowqjzcwmkvj", op2: "", op3: "", op4: "" },
+        { num: 8, title: "Episodio 8", op1: "https://mxdrop.to/e/4d9oj96zinv83p", op2: "", op3: "", op4: "" },
+        { num: 9, title: "Episodio 9", op1: "https://mxdrop.to/e/jdkvrk6jf8dm0e", op2: "", op3: "", op4: "" },
+        { num: 10, title: "Episodio 10", op1: "https://mxdrop.to/e/r60v7014ao1xk", op2: "", op3: "", op4: "" },
+        { num: 11, title: "Episodio 11", op1: "https://mxdrop.to/e/36qow34gsj7oww", op2: "", op3: "", op4: "" },
+        { num: 12, title: "Episodio 12", op1: "https://mxdrop.to/e/xw91xq1nuxm7vm", op2: "", op3: "", op4: "" },
+        { num: 13, title: "Episodio 13", op1: "https://mxdrop.to/e/jdkvrzz7t0mw1p", op2: "", op3: "", op4: "" },
+        { num: 14, title: "Episodio 14", op1: "https://mxdrop.to/e/q1d709lqc608zg", op2: "", op3: "", op4: "" },
+        { num: 15, title: "Episodio 15", op1: "https://mxdrop.to/e/wlw9qmnvuvwr3d", op2: "", op3: "", op4: "" },
+        { num: 16, title: "Episodio 16", op1: "https://mxdrop.to/e/owzd69emi4xzx1", op2: "", op3: "", op4: "" },
+        { num: 17, title: "Episodio 17", op1: "https://mxdrop.to/e/wlw9qmr7a1xlvv", op2: "", op3: "", op4: "" },
+        { num: 18, title: "Episodio 18", op1: "https://mxdrop.to/e/8lj9mqg0s1vlnw", op2: "", op3: "", op4: "" },
+        { num: 19, title: "Episodio 19", op1: "https://mxdrop.to/e/elzrg0d9uq0v70r", op2: "", op3: "", op4: "" },
+        { num: 20, title: "Episodio 20", op1: "https://mxdrop.to/e/xw91xq3gsxo8rg", op2: "", op3: "", op4: "" },
+        { num: 21, title: "Episodio 21", op1: "https://mxdrop.to/e/03z47j1puk7mnj", op2: "", op3: "", op4: "" },
+        { num: 22, title: "Episodio 22", op1: "https://mxdrop.to/e/nln8exk8u9de17", op2: "", op3: "", op4: "" },
+        { num: 23, title: "Episodio 23", op1: "https://mxdrop.to/e/1nodk47xh3qop1", op2: "", op3: "", op4: "" },
+        { num: 24, title: "Episodio 24", op1: "https://mxdrop.to/e/nln8exega6nq7j", op2: "", op3: "", op4: "" },
+        { num: 25, title: "Episodio 25", op1: "https://mxdrop.to/e/k0evowvwa7ezgm", op2: "", op3: "", op4: "" }
       ];
 
     
 
       // Generar botones de episodios
-
       const episodesGrid = document.getElementById('episodes-grid');
-
       episodes.forEach(episode => {
+        const episodeBtn = document.createElement('button');
+        episodeBtn.className = 'episode-btn';
+        episodeBtn.textContent = `Ep ${episode.num}`;
+        episodeBtn.onclick = () => loadEpisode(episode);
+        episodesGrid.appendChild(episodeBtn);
+      });
+
+      // Convierte cualquier URL de StreamTape (/v/ o /e/) a URL embebible /e/{id}/
+      function toEmbed(url) {
+        if (!url) return '';
+        try {
+          const m = url.match(/\/\/(?:www\.)?streamtape\.com\/(?:v|e)\/([^/?#]+)/i);
+          if (m && m[1]) return `https://streamtape.com/e/${m[1]}/`;
+        } catch (_) {}
+        // Fallback: reemplazo simple
+        return url.replace('/v/', '/e/') + (url.endsWith('/') ? '' : '/');
+      }
+
+      // Estado actual
+      let currentEpisode = null;
+      let currentOption = 'opcion1';
+
+      // Cargar episodio
+      function loadEpisode(episode) {
+        document.querySelectorAll('.episode-btn').forEach((btn, index) => {
+          btn.classList.toggle('active', index + 1 === episode.num);
+        });
+        document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
+        document.querySelector('#opcion1-player iframe').src = toEmbed(episode.op1);
+        document.querySelector('#opcion2-player iframe').src = toEmbed(episode.op2);
+        document.querySelector('#opcion3-player iframe').src = toEmbed(episode.op3);
+        document.querySelector('#opcion4-player iframe').src = toEmbed(episode.op4);
+        currentEpisode = episode;
+        switchPlayer('opcion1');
+      }
+
+      // Cambiar reproductor
+      function switchPlayer(option) {
+        document.querySelectorAll('.player-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        document.getElementById(`${option}-btn`).classList.add('active');
+        document.querySelectorAll('.player-container').forEach(container => {
+          container.classList.remove('active');
+        });
+        document.getElementById(`${option}-player`).classList.add('active');
+        currentOption = option;
+        updateDownloadLink();
+      }
+
+      // Determina el URL original segÃºn el reproductor activo
+      function getUrlForOption(ep, option) {
+        if (!ep) return '';
+        const map = { opcion1: 'op1', opcion2: 'op2', opcion3: 'op3', opcion4: 'op4' };
+        const key = map[option] || 'op1';
+        return ep[key] || '';
+      }
+
+      // Actualiza el botÃ³n Descargar con el enlace del reproductor activo
+      function updateDownloadLink() {
+        const a = document.getElementById('download-btn');
+        const url = getUrlForOption(currentEpisode, currentOption);
+        let finalUrl = url;
+        
+        // Si contiene /e/ en el enlace, convertir a /f/ para descarga directa
+        if (/\/e\//.test(url)) {
+          finalUrl = url.replace('/e/', '/f/');
+        }
+        
+        if (finalUrl) {
+          // Generar enlace acortado con exe.io API (formato simple)
+          const apiToken = '110e7b6cbdf7a5aa354afb395e889c7aba3411c6';
+          // Asegurar que el URL tenga protocolo
+          if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) {
+            finalUrl = 'https://' + finalUrl;
+          }
+          const shortenedUrl = `https://exe.io/st?api=${apiToken}&url=${finalUrl}`;
+          
+          a.href = shortenedUrl;
+          a.classList.remove('disabled');
+        } else {
+          a.href = '#';
+          a.classList.add('disabled');
+        }
+      }
+
+      // Cargar el primer episodio por defecto
+      if (episodes.length > 0) {
+        loadEpisode(episodes[0]);
+      }
+
+    </script>
+  <section class="anuncio-responsive">
+  <!-- Anuncio Google responsivo -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8480825005176665"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</section>
+</body>
+</html>
+
 
 
 

@@ -5,22 +5,24 @@ Allow: /
 Sitemap: https://mundootakulatino.vercel.app/sitemap.xml
 
 # Permitir acceso a contenido público
-Allow: /public/
-Allow: /public/html/
-Allow: /public/anime/
+Allow: /html/
+Allow: /anime/
 Allow: /img/
 Allow: /css/
 Allow: /js/
+Allow: /assets/
+Allow: /ico/
 
 # Bloquear archivos y carpetas innecesarias
 Disallow: /php/
-Disallow: /base%20de%20datos/
+Disallow: /api/
 Disallow: /.git/
 Disallow: /md/
 Disallow: /*_backup.html
 Disallow: /*_complete.html
 Disallow: /*_new.html
 Disallow: /*_test.html
+Disallow: /*_restructured.html
 
 # Optimización de rastreo
 Crawl-delay: 1
@@ -32,4 +34,4 @@ Crawl-delay: 0
 
 User-agent: Googlebot-Image
 Allow: /img/
-Allow: /public/img/
+Allow: /assets/

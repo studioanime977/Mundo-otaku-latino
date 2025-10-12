@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="es">
 
@@ -36,7 +36,7 @@
     .left-content { flex: 3; }
     .right-content { flex: 1; }
 
-    /* Miniaturas en la sección Popular (desktop) */
+    /* Miniaturas en la secciÃ³n Popular (desktop) */
     .right-content .popular-item { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.03); margin-bottom: 10px; cursor: pointer; }
     .right-content .popular-item:hover { background: rgba(255,255,255,0.06); }
     .right-content .popular-item img { width: 120px; height: 72px; object-fit: cover; border-radius: 6px; display: block; }
@@ -58,7 +58,7 @@
 
     /* Opcional: asegurar que el iframe del reproductor se vea bien */
     .reproductor-video iframe { width: 100%; height: 480px; border: none; }
-    /* Botón Descargar alineado a la derecha */
+    /* BotÃ³n Descargar alineado a la derecha */
     .video-functions { align-items: center; }
     .download-btn { margin-left: auto; background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
     .function-btn.disabled { opacity: 0.5; pointer-events: none; }
@@ -72,8 +72,8 @@
       <ul class="nav-menu">
         <li><a href="../../index.html#inicio">Inicio</a></li>
         <li><a href="../../html/catalogo.html">Anime</a></li>
-        <li><a href="#peliculas">Películas</a></li>
-        <li><a href="#generos">Géneros</a></li>
+        <li><a href="#peliculas">PelÃ­culas</a></li>
+        <li><a href="#generos">GÃ©neros</a></li>
         <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
       </ul>
     </nav>
@@ -90,15 +90,15 @@
       </div>
 
       <div class="description">
-        <p>Disfruta de Attack on Titan Temporada 2 completa (12 episodios). Selecciona un episodio y elige el reproductor. La opción 1 contiene los enlaces de mxdrop.</p>
+        <p>Disfruta de Attack on Titan Temporada 2 completa (12 episodios). Selecciona un episodio y elige el reproductor. La opciÃ³n 1 contiene los enlaces de mxdrop.</p>
       </div>
 
       <div class="contenedor-video">
         <div class="player-options">
-          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÓN 1</button>
-          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÓN 2</button>
-          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÓN 3</button>
-          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÓN 4</button>
+          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÃ“N 1</button>
+          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÃ“N 2</button>
+          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÃ“N 3</button>
+          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÃ“N 4</button>
         </div>
         <div class="reproductor-video">
           <div id="opcion1-player" class="player-container active">
@@ -128,7 +128,7 @@
       <div class="episodes-container">
           <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
           <div class="episodes-grid" id="episodes-grid">
-              <!-- Los episodios se generarán con JavaScript -->
+              <!-- Los episodios se generarÃ¡n con JavaScript -->
           </div>
       </div>
     </div>
@@ -157,7 +157,7 @@
       </div>
       <div class="popular-item" onclick="window.location.href='../../../public/anime/naruto/naruto.html'">
         <img src="../../../img/Naruto Classic.jpg" alt="Naruto">
-        <div class="title">Naruto - Clásico</div>
+        <div class="title">Naruto - ClÃ¡sico</div>
       </div>
       <div class="popular-item" onclick="window.location.href='../../../public/anime/one-piece/one-piece.html'">
         <img src="../../../img/One Piece Wano.jpg" alt="One Piece">
@@ -178,7 +178,7 @@
 
   <script>
 
-    // FunciÃ³n para expandir el reproductor
+    // FunciÃƒÂ³n para expandir el reproductor
 
     function expandPlayer() {
 
@@ -190,7 +190,7 @@
 
 
 
-    // FunciÃ³n para apagar/encender las luces
+    // FunciÃƒÂ³n para apagar/encender las luces
 
     function toggleLights() {
 
@@ -235,7 +235,7 @@
       return url.replace('/v/', '/e/') + (url.endsWith('/') ? '' : '/');
     }
 
-    // Estructura de 12 episodios con enlaces de mxdrop en Opción 1
+    // Estructura de 12 episodios con enlaces de mxdrop en OpciÃ³n 1
     const episodes = [
       { num: 1, title: "Episodio 1", op1: "https://mxdrop.to/e/dkrowgwwf7mxewg", op2: "", op3: "", op4: "" },
       { num: 2, title: "Episodio 2", op1: "https://mxdrop.to/e/dkrowg61f8rlqz", op2: "", op3: "", op4: "" },
@@ -307,7 +307,7 @@
       updateDownloadLink();
     }
 
-    // Determina el URL original (no embebido) según el reproductor activo
+    // Determina el URL original (no embebido) segÃºn el reproductor activo
     function getUrlForOption(ep, option) {
       if (!ep) return '';
       const map = { opcion1: 'op1', opcion2: 'op2', opcion3: 'op3', opcion4: 'op4' };
@@ -315,7 +315,7 @@
       return ep[key] || '';
     }
 
-    // Actualiza el botón Descargar con el enlace del reproductor activo
+    // Actualiza el botÃ³n Descargar con el enlace del reproductor activo
     function updateDownloadLink() {
       const a = document.getElementById('download-btn');
       const url = getUrlForOption(currentEpisode, currentOption);
@@ -355,9 +355,22 @@
 
   </script>
 
+<section class="anuncio-responsive">
+  <!-- Anuncio Google responsivo -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8480825005176665"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</section>
 </body>
 
 </html>
+
 
 
 

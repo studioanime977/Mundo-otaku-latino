@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="es">
 
@@ -36,7 +36,7 @@
   .left-content { flex: 3; }
   .right-content { flex: 1; }
 
-  /* Miniaturas en la sección Popular (desktop) */
+  /* Miniaturas en la secciÃ³n Popular (desktop) */
   .right-content .popular-item { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.03); margin-bottom: 10px; cursor: pointer; }
   .right-content .popular-item:hover { background: rgba(255,255,255,0.06); }
   .right-content .popular-item img { width: 120px; height: 72px; object-fit: cover; border-radius: 6px; display: block; }
@@ -58,6 +58,10 @@
 
   /* Opcional: asegurar que el iframe del reproductor se vea bien */
   .reproductor-video iframe { width: 100%; height: 480px; border: none; }
+  /* BotÃ³n Descargar alineado a la derecha */
+  .video-functions { align-items: center; }
+  .download-btn { margin-left: auto; background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
+  .function-btn.disabled { opacity: 0.5; pointer-events: none; }
 </style>
 </head>
 
@@ -71,8 +75,8 @@
       <ul class="nav-menu">
         <li><a href="../../index.html#inicio">Inicio</a></li>
         <li><a href="../../html/catalogo.html">Anime</a></li>
-        <li><a href="#peliculas">Películas</a></li>
-        <li><a href="#generos">Géneros</a></li>
+        <li><a href="#peliculas">PelÃ­culas</a></li>
+        <li><a href="#generos">GÃ©neros</a></li>
         <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
       </ul>
     </nav>
@@ -110,13 +114,13 @@
 
         <div class="player-options">
 
-          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÓN 1</button>
+          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÃ“N 1</button>
 
-          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÓN 2</button>
+          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÃ“N 2</button>
 
-          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÓN 3</button>
+          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÃ“N 3</button>
 
-          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÓN 4</button>
+          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÃ“N 4</button>
 
         </div>
         <div class="reproductor-video">
@@ -142,26 +146,22 @@
           <div id="opcion4-player" class="player-container">
 
             <iframe src="" allowfullscreen></iframe>
-
           </div>
 
         </div>
 
         <div class="video-functions">
-
           <button class="function-btn" onclick="expandPlayer()">Expandir</button>
-
           <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
-
+          <a id="download-btn" class="function-btn download-btn" href="#" target="_blank" rel="noopener noreferrer">Descargar</a>
         </div>
 
       </div>
 
 
-
       <div class="description">
 
-        <p>Boku No Hero Academia sigue emocionando con acciÃ³n y drama mientras los hÃ©roes en formaciÃ³n enfrentan pruebas cada vez mÃ¡s difÃ­ciles.</p>
+        <p>Boku No Hero Academia sigue emocionando con acciÃƒÂ³n y drama mientras los hÃƒÂ©roes en formaciÃƒÂ³n enfrentan pruebas cada vez mÃƒÂ¡s difÃƒÂ­ciles.</p>
 
       </div>
 
@@ -173,7 +173,7 @@
 
           <div class="episodes-grid" id="episodes-grid">
 
-              <!-- Los episodios se generarÃ¡n con JavaScript -->
+              <!-- Los episodios se generarÃƒÂ¡n con JavaScript -->
 
           </div>
 
@@ -231,7 +231,7 @@
 
         <img src="../../../img/Naruto Classic.jpg" alt="Naruto">
 
-        <div class="title">Naruto - ClÃ¡sico</div>
+        <div class="title">Naruto - ClÃƒÂ¡sico</div>
 
       </div>
 
@@ -287,7 +287,7 @@
 
   <style>
 
-    /* Ajustes para dispositivos mÃ³viles */
+    /* Ajustes para dispositivos mÃƒÂ³viles */
 
     @media (max-width: 768px) {
 
@@ -511,7 +511,7 @@
 
     <script>
 
-      // FunciÃ³n para expandir el reproductor
+      // FunciÃƒÂ³n para expandir el reproductor
 
       function expandPlayer() {
 
@@ -523,7 +523,7 @@
 
     
 
-      // FunciÃ³n para apagar/encender las luces
+      // FunciÃƒÂ³n para apagar/encender las luces
 
       function toggleLights() {
 
@@ -557,7 +557,7 @@
 
     
 
-      // Preservar los datos de episodios existentes o crear una estructura bÃ¡sica
+      // Preservar los datos de episodios existentes o crear una estructura bÃƒÂ¡sica
 
       const episodes = [
 
@@ -598,16 +598,32 @@
         episodesGrid.appendChild(episodeBtn);
       });
 
+      // Convierte cualquier URL de StreamTape (/v/ o /e/) a URL embebible /e/{id}/
+      function toEmbed(url) {
+        if (!url) return '';
+        try {
+          const m = url.match(/\/\/(?:www\.)?streamtape\.com\/(?:v|e)\/([^/?#]+)/i);
+          if (m && m[1]) return `https://streamtape.com/e/${m[1]}/`;
+        } catch (_) {}
+        // Fallback: reemplazo simple
+        return url.replace('/v/', '/e/') + (url.endsWith('/') ? '' : '/');
+      }
+
+      // Estado actual
+      let currentEpisode = null;
+      let currentOption = 'opcion1';
+
       // Cargar episodio
       function loadEpisode(episode) {
         document.querySelectorAll('.episode-btn').forEach((btn, index) => {
           btn.classList.toggle('active', index + 1 === episode.num);
         });
         document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
-        document.querySelector('#opcion1-player iframe').src = episode.op1 || '';
-        document.querySelector('#opcion2-player iframe').src = episode.op2 || '';
-        document.querySelector('#opcion3-player iframe').src = episode.op3 || '';
-        document.querySelector('#opcion4-player iframe').src = episode.op4 || '';
+        document.querySelector('#opcion1-player iframe').src = toEmbed(episode.op1);
+        document.querySelector('#opcion2-player iframe').src = toEmbed(episode.op2);
+        document.querySelector('#opcion3-player iframe').src = toEmbed(episode.op3);
+        document.querySelector('#opcion4-player iframe').src = toEmbed(episode.op4);
+        currentEpisode = episode;
         switchPlayer('opcion1');
         if (typeof setupAutoPlay === 'function') {
           setupAutoPlay();
@@ -624,6 +640,44 @@
           container.classList.remove('active');
         });
         document.getElementById(`${option}-player`).classList.add('active');
+        currentOption = option;
+        updateDownloadLink();
+      }
+
+      // Determina el URL original segÃºn el reproductor activo
+      function getUrlForOption(ep, option) {
+        if (!ep) return '';
+        const map = { opcion1: 'op1', opcion2: 'op2', opcion3: 'op3', opcion4: 'op4' };
+        const key = map[option] || 'op1';
+        return ep[key] || '';
+      }
+
+      // Actualiza el botÃ³n Descargar con el enlace del reproductor activo
+      function updateDownloadLink() {
+        const a = document.getElementById('download-btn');
+        const url = getUrlForOption(currentEpisode, currentOption);
+        let finalUrl = url;
+        
+        // Si contiene /e/ en el enlace, convertir a /f/ para descarga directa
+        if (/\/e\//.test(url)) {
+          finalUrl = url.replace('/e/', '/f/');
+        }
+        
+        if (finalUrl) {
+          // Generar enlace acortado con exe.io API (formato simple)
+          const apiToken = '110e7b6cbdf7a5aa354afb395e889c7aba3411c6';
+          // Asegurar que el URL tenga protocolo
+          if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) {
+            finalUrl = 'https://' + finalUrl;
+          }
+          const shortenedUrl = `https://exe.io/st?api=${apiToken}&url=${finalUrl}`;
+          
+          a.href = shortenedUrl;
+          a.classList.remove('disabled');
+        } else {
+          a.href = '#';
+          a.classList.add('disabled');
+        }
       }
 
       // Cargar el primer episodio por defecto
@@ -665,8 +719,21 @@
         window.open('https://exe.io/ANIMETV', '_blank');
       });
     </script>
+<section class="anuncio-responsive">
+  <!-- Anuncio Google responsivo -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8480825005176665"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</section>
 </body>
 </html>
+
 
 
 
