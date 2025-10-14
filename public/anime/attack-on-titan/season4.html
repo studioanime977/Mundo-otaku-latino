@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="es">
 
 <head>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
     <meta name="f08cd2b5211f5b0a95753720000f639c66350c1d" content="f08cd2b5211f5b0a95753720000f639c66350c1d" />
 
 <meta charset="UTF-8">
@@ -40,7 +41,7 @@
     .reproductor-video { position: relative; z-index: 1000; }
     body.lights-off .function-btn { background: #333; color: #ffd54f; }
     .reproductor-video iframe { width: 100%; height: 480px; border: none; }
-    /* BotÃ³n Descargar alineado a la derecha */
+    /* Botón Descargar alineado a la derecha */
     .video-functions { align-items: center; }
     .download-btn { margin-left: auto; background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
     .function-btn.disabled { opacity: 0.5; pointer-events: none; }
@@ -60,8 +61,8 @@
       <ul class="nav-menu">
         <li><a href="../../index.html#inicio">Inicio</a></li>
         <li><a href="../../html/catalogo.html">Anime</a></li>
-        <li><a href="#peliculas">PelÃ­culas</a></li>
-        <li><a href="#generos">GÃ©neros</a></li>
+        <li><a href="#peliculas">Películas</a></li>
+        <li><a href="#generos">Géneros</a></li>
         <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
       </ul>
     </nav>
@@ -90,7 +91,7 @@
 
 
       <div class="description">
-        <p>Disfruta de Attack on Titan Temporada 4 (16 episodios disponibles de 28 totales). Selecciona un episodio y elige el reproductor. La opciÃ³n 1 contiene los enlaces de mxdrop.</p>
+        <p>Disfruta de Attack on Titan Temporada 4 (16 episodios disponibles de 28 totales). Selecciona un episodio y elige el reproductor. La opción 1 contiene los enlaces de mxdrop.</p>
       </div>
 
 
@@ -98,10 +99,10 @@
       <div class="contenedor-video">
 
         <div class="player-options">
-          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÃ“N 1</button>
-          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÃ“N 2</button>
-          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÃ“N 3</button>
-          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÃ“N 4</button>
+          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÓN 1</button>
+          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÓN 2</button>
+          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÓN 3</button>
+          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÓN 4</button>
         </div>
 
         <div class="reproductor-video">
@@ -154,7 +155,7 @@
 
           <div class="episodes-grid" id="episodes-grid">
 
-              <!-- Los episodios se generarÃƒÂ¡n con JavaScript -->
+              <!-- Los episodios se generarÃ¡n con JavaScript -->
 
           </div>
 
@@ -212,7 +213,7 @@
 
         <img src="../../../img/Naruto Classic.jpg" alt="Naruto">
 
-        <div class="title">Naruto - ClÃ¡sico</div>
+        <div class="title">Naruto - Clásico</div>
 
       </div>
 
@@ -248,7 +249,7 @@
 
   <script>
 
-    // FunciÃƒÂ³n para expandir el reproductor
+    // FunciÃ³n para expandir el reproductor
 
     function expandPlayer() {
 
@@ -260,7 +261,7 @@
 
 
 
-    // FunciÃƒÂ³n para apagar/encender las luces
+    // FunciÃ³n para apagar/encender las luces
 
     function toggleLights() {
 
@@ -305,7 +306,7 @@
       return url.replace('/v/', '/e/') + (url.endsWith('/') ? '' : '/');
     }
 
-    // Estructura de 16 episodios disponibles con enlaces de mxdrop en OpciÃ³n 1
+    // Estructura de 16 episodios disponibles con enlaces de mxdrop en Opción 1
     const episodes = [
       { num: 1, title: "Episodio 1", op1: "https://mxdrop.to/e/vkq1d1e1f4pjx7", op2: "", op3: "", op4: "" },
       { num: 2, title: "Episodio 2", op1: "https://mxdrop.to/e/k0evkvgof6omqw", op2: "", op3: "", op4: "" },
@@ -381,7 +382,7 @@
       updateDownloadLink();
     }
 
-    // Determina el URL original (no embebido) segÃºn el reproductor activo
+    // Determina el URL original (no embebido) según el reproductor activo
     function getUrlForOption(ep, option) {
       if (!ep) return '';
       const map = { opcion1: 'op1', opcion2: 'op2', opcion3: 'op3', opcion4: 'op4' };
@@ -389,7 +390,7 @@
       return ep[key] || '';
     }
 
-    // Actualiza el botÃ³n Descargar con el enlace del reproductor activo
+    // Actualiza el botón Descargar con el enlace del reproductor activo
     function updateDownloadLink() {
       const a = document.getElementById('download-btn');
       const url = getUrlForOption(currentEpisode, currentOption);

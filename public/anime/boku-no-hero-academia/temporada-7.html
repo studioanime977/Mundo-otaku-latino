@@ -1,6 +1,7 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
     <meta name="f08cd2b5211f5b0a95753720000f639c66350c1d" content="f08cd2b5211f5b0a95753720000f639c66350c1d" />
 
   <meta charset="UTF-8">
@@ -21,7 +22,7 @@
   
   /* Miniaturas en la secci n Popular (desktop) */
 
-  /* Miniaturas en la secciÃ³n Popular (desktop) */
+  /* Miniaturas en la sección Popular (desktop) */
   .right-content .popular-item { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.03); margin-bottom: 10px; cursor: pointer; }
   .right-content .popular-item:hover { background: rgba(255,255,255,0.06); }
   .right-content .popular-item img { width: 120px; height: 72px; object-fit: cover; border-radius: 6px; display: block; }
@@ -43,7 +44,7 @@
 
   /* Opcional: asegurar que el iframe del reproductor se vea bien */
   .reproductor-video iframe { width: 100%; height: 480px; border: none; }
-  /* BotÃ³n Descargar alineado a la derecha */
+  /* Botón Descargar alineado a la derecha */
   .video-functions { align-items: center; }
   .download-btn { margin-left: auto; background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
   .function-btn.disabled { opacity: 0.5; pointer-events: none; }
@@ -60,8 +61,8 @@
       <ul class="nav-menu">
         <li><a href="../../index.html#inicio">Inicio</a></li>
         <li><a href="../../html/catalogo.html">Anime</a></li>
-        <li><a href="#peliculas">PelÃ­culas</a></li>
-        <li><a href="#generos">GÃ©neros</a></li>
+        <li><a href="#peliculas">Películas</a></li>
+        <li><a href="#generos">Géneros</a></li>
         <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
       </ul>
     </nav>
@@ -77,15 +78,15 @@
       </div>
 
       <div class="description">
-        <p>En esta temporada final, Deku y sus compaÃ±eros enfrentan el desafÃ­o mÃ¡s grande de sus vidas mientras la batalla final entre hÃ©roes y villanos llega a su clÃ­max definitivo.</p>
+        <p>En esta temporada final, Deku y sus compañeros enfrentan el desafío más grande de sus vidas mientras la batalla final entre héroes y villanos llega a su clímax definitivo.</p>
       </div>
 
       <div class="contenedor-video">
         <div class="player-options">
-          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÃ“N 1</button>
-          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÃ“N 2</button>
-          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÃ“N 3</button>
-          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÃ“N 4</button>
+          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÓN 1</button>
+          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÓN 2</button>
+          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÓN 3</button>
+          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÓN 4</button>
         </div>
         <div class="reproductor-video">
           <div id="opcion1-player" class="player-container active">
@@ -109,13 +110,13 @@
       </div>
 
     <div class="description">
-      <p>Boku No Hero Academia continÃºa emocionando con acciÃ³n y drama mientras los hÃ©roes en formaciÃ³n enfrentan pruebas cada vez mÃ¡s difÃ­ciles.</p>
+      <p>Boku No Hero Academia continúa emocionando con acción y drama mientras los héroes en formación enfrentan pruebas cada vez más difíciles.</p>
     </div>
 
     <div class="episodes-container">
         <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
         <div class="episodes-grid" id="episodes-grid">
-            <!-- Los episodios se generarÃƒÂ¡n con JavaScript -->
+            <!-- Los episodios se generarÃ¡n con JavaScript -->
         </div>
     </div>
     </div>
@@ -144,7 +145,7 @@
       </div>
       <div class="popular-item" onclick="window.location.href='../../../public/anime/naruto/naruto.html'">
         <img src="../../../img/Naruto Classic.jpg" alt="Naruto">
-        <div class="title">Naruto - ClÃ¡sico</div>
+        <div class="title">Naruto - Clásico</div>
       </div>
       <div class="popular-item" onclick="window.location.href='../../../public/anime/one-piece/one-piece.html'">
         <img src="../../../img/One Piece Wano.jpg" alt="One Piece">
@@ -172,7 +173,7 @@
   </main>
 
   <style>
-    /* Ajustes para dispositivos mÃ³viles */
+    /* Ajustes para dispositivos móviles */
     @media (max-width: 768px) {
       .header {
         display: flex;
@@ -284,13 +285,13 @@
   </style>
 
   <script>
-    // FunciÃ³n para expandir el reproductor
+    // Función para expandir el reproductor
     function expandPlayer() {
       const videoContainer = document.querySelector('.contenedor-video');
       videoContainer.classList.toggle('expanded');
     }
   
-    // FunciÃ³n para apagar/encender las luces
+    // Función para apagar/encender las luces
     function toggleLights() {
       document.body.classList.toggle('lights-off');
     }
@@ -307,7 +308,7 @@
       }
     });
   
-    // Preservar los datos de episodios existentes o crear una estructura bÃ¡sica
+    // Preservar los datos de episodios existentes o crear una estructura básica
     const episodes = [
       { num: 1, title: "Episodio 1", op1: "", op2: "", op3: "", op4: "" },
       { num: 2, title: "Episodio 2", op1: "", op2: "", op3: "", op4: "" },
@@ -388,7 +389,7 @@
       updateDownloadLink();
     }
 
-    // Determina el URL original segÃºn el reproductor activo
+    // Determina el URL original según el reproductor activo
     function getUrlForOption(ep, option) {
       if (!ep) return '';
       const map = { opcion1: 'op1', opcion2: 'op2', opcion3: 'op3', opcion4: 'op4' };
@@ -396,7 +397,7 @@
       return ep[key] || '';
     }
 
-    // Actualiza el botÃ³n Descargar con el enlace del reproductor activo
+    // Actualiza el botón Descargar con el enlace del reproductor activo
     function updateDownloadLink() {
       const a = document.getElementById('download-btn');
       const url = getUrlForOption(currentEpisode, currentOption);
