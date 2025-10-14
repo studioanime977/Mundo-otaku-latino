@@ -4,16 +4,17 @@ Allow: /
 # Sitemaps
 Sitemap: https://mundootakulatino.vercel.app/sitemap.xml
 
-# Permitir acceso a contenido público
-Allow: /html/
-Allow: /anime/
+# Permitir acceso total a contenido público
+Allow: /public/
+Allow: /public/html/
+Allow: /public/anime/
 Allow: /img/
 Allow: /css/
 Allow: /js/
 Allow: /assets/
 Allow: /ico/
 
-# Bloquear archivos y carpetas innecesarias
+# Bloquear archivos y carpetas innecesarias para SEO
 Disallow: /php/
 Disallow: /api/
 Disallow: /.git/
@@ -23,15 +24,51 @@ Disallow: /*_complete.html
 Disallow: /*_new.html
 Disallow: /*_test.html
 Disallow: /*_restructured.html
+Disallow: /*.py
+Disallow: /*.json
+Disallow: /*.md
+Disallow: /node_modules/
 
-# Optimización de rastreo
-Crawl-delay: 1
+# Optimización de rastreo para mejorar SEO
+Crawl-delay: 0
 
-# User agents específicos
+# User agents específicos optimizados
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
+Allow: /public/anime/demon-slayer/castillo-infinito.html
 
 User-agent: Googlebot-Image
 Allow: /img/
 Allow: /assets/
+Allow: /ico/
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Agentes de redes sociales
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Keywords SEO para rastreo
+# descargar castillo infinito
+# demon slayer castillo infinito español latino
+# kimetsu no yaiba castillo infinito 2025
+# anime latino gratis
+# ver anime online sin publicidad
+# mundo otaku latino
+# studiootaku
