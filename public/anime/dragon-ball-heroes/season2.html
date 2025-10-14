@@ -100,14 +100,16 @@
           </div>
         </div>
         <div class="video-functions">
+          <button class="function-btn" onclick="previousEpisode()">⏮ Anterior</button>
           <button class="function-btn" onclick="expandPlayer()">Expandir</button>
           <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
+          <button class="function-btn" onclick="nextEpisode()">Siguiente ⏭</button>
           <a id="download-btn" class="function-btn download-btn" href="#" target="_blank" rel="noopener noreferrer">Descargar</a>
         </div>
       </div>
 
       <div class="description">
-        <p>12/12 episodios disponibles. Estado: Temporada completa.</p>
+        <p>26/26 episodios disponibles. Estado: Temporada completa.</p>
       </div>
 
       <div class="episodes-container">
@@ -180,20 +182,34 @@
     let currentEpisode = null;
     let currentOption = 'opcion1';
 
-    // Estructura de 12 episodios de Dragon Ball Heroes Temporada 2
+    // Estructura de 26 episodios de Dragon Ball Heroes Temporada 2 con MXDrop links
     const episodes = [
-      { num: 1, title: "El Conflicto del Tiempo y el Espacio! Los Guerreros Supremos se Reúnen", op1: "", op2: "", op3: "", op4: "" },
-      { num: 2, title: "¡La Batalla Decisiva! ¡El Nuevo Conflicto Espacio-Temporal Comienza!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 3, title: "¡Goku vs. Goku Black! ¡La Batalla Suprema del Destino!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 4, title: "¡El Poder del Dios de la Destrucción! ¡Beerus vs. Champa!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 5, title: "¡La Fusión Definitiva! ¡Gogeta vs. Broly!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 6, title: "¡El Despertar del Legendario! ¡Super Saiyan 4 Limit Breaker!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 7, title: "¡La Batalla Final! ¡Goku vs. el Rey Demonio!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 8, title: "¡El Poder Supremo! ¡Ultra Instinto Perfecto!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 9, title: "¡La Amenaza Definitiva! ¡El Árbol del Universo!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 10, title: "¡Batalla Dimensional! ¡Los Guerreros del Multiverso!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 11, title: "¡El Enfrentamiento Final! ¡Fu vs. Todos los Guerreros!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 12, title: "¡La Victoria Definitiva! ¡El Fin del Conflicto Espacio-Temporal!", op1: "", op2: "", op3: "", op4: "" }
+      { num: 1, title: "El Conflicto del Tiempo y el Espacio! Los Guerreros Supremos se Reúnen", op1: "https://mxdrop.to/e/q1dmd1o7bxkq9zv", op2: "", op3: "", op4: "" },
+      { num: 2, title: "¡La Batalla Decisiva! ¡El Nuevo Conflicto Espacio-Temporal Comienza!", op1: "https://mxdrop.to/e/r60k068qb4dzg3", op2: "", op3: "", op4: "" },
+      { num: 3, title: "¡Goku vs. Goku Black! ¡La Batalla Suprema del Destino!", op1: "https://mxdrop.to/e/7kjqjkvefopo8z", op2: "", op3: "", op4: "" },
+      { num: 4, title: "¡El Poder del Dios de la Destrucción! ¡Beerus vs. Champa!", op1: "https://mxdrop.to/e/wlwpwl7qtpw907", op2: "", op3: "", op4: "" },
+      { num: 5, title: "¡La Fusión Definitiva! ¡Gogeta vs. Broly!", op1: "https://mxdrop.to/e/vkqpqkxqtdx3on", op2: "", op3: "", op4: "" },
+      { num: 6, title: "¡El Despertar del Legendario! ¡Super Saiyan 4 Limit Breaker!", op1: "https://mxdrop.to/e/7kjqjkovtr0qgq", op2: "", op3: "", op4: "" },
+      { num: 7, title: "¡La Batalla Final! ¡Goku vs. el Rey Demonio!", op1: "https://mxdrop.to/e/z1jgjq9zupxpr9", op2: "", op3: "", op4: "" },
+      { num: 8, title: "¡El Poder Supremo! ¡Ultra Instinto Perfecto!", op1: "https://mxdrop.to/e/elzxz48wiwmekr", op2: "", op3: "", op4: "" },
+      { num: 9, title: "¡La Amenaza Definitiva! ¡El Árbol del Universo!", op1: "https://mxdrop.to/e/elzxz4e8a8pe1g", op2: "", op3: "", op4: "" },
+      { num: 10, title: "¡Batalla Dimensional! ¡Los Guerreros del Multiverso!", op1: "https://mxdrop.to/e/wlwpw8x3b0qz906", op2: "", op3: "", op4: "" },
+      { num: 11, title: "¡El Enfrentamiento Final! ¡Fu vs. Todos los Guerreros!", op1: "https://mxdrop.to/e/r60k0gplikvlq3", op2: "", op3: "", op4: "" },
+      { num: 12, title: "¡La Victoria Definitiva! ¡El Fin del Conflicto Espacio-Temporal!", op1: "https://mxdrop.to/e/4d9p944zbvox8", op2: "", op3: "", op4: "" },
+      { num: 13, title: "", op1: "https://mxdrop.to/e/xw9g9pp7hopdx4", op2: "", op3: "", op4: "" },
+      { num: 14, title: "", op1: "https://mxdrop.to/e/q1dmdgq3a03g1z", op2: "", op3: "", op4: "" },
+      { num: 15, title: "", op1: "https://mxdrop.to/e/67ror3jvh3vwzm", op2: "", op3: "", op4: "" },
+      { num: 16, title: "", op1: "https://mxdrop.to/e/8ljojvxwu97wm", op2: "", op3: "", op4: "" },
+      { num: 17, title: "", op1: "https://mxdrop.to/e/l7989gorbgr4x9", op2: "", op3: "", op4: "" },
+      { num: 18, title: "", op1: "https://mxdrop.to/e/xw9g9p4rt19mk7", op2: "", op3: "", op4: "" },
+      { num: 19, title: "", op1: "https://mxdrop.to/e/9wxkx6lrivx0qe", op2: "", op3: "", op4: "" },
+      { num: 20, title: "", op1: "https://mxdrop.to/e/67ror3knapjoeg", op2: "", op3: "", op4: "" },
+      { num: 21, title: "", op1: "https://mxdrop.to/e/gjdgd4w1twd8r9r", op2: "", op3: "", op4: "" },
+      { num: 22, title: "", op1: "https://mxdrop.to/e/pj6p6nvwign4rnl", op2: "", op3: "", op4: "" },
+      { num: 23, title: "", op1: "https://mxdrop.to/e/nlnvngdnce7z8x", op2: "", op3: "", op4: "" },
+      { num: 24, title: "", op1: "https://mxdrop.to/e/l7989g4mb4lp4d", op2: "", op3: "", op4: "" },
+      { num: 25, title: "", op1: "https://mxdrop.to/e/owzxzgvncv8n8e", op2: "", op3: "", op4: "" },
+      { num: 26, title: "", op1: "https://mxdrop.to/e/vkqpqe77bo7jx9", op2: "", op3: "", op4: "" }
     ];
 
     // Generar botones de episodios
@@ -206,21 +222,26 @@
       episodesGrid.appendChild(episodeBtn);
     });
 
+    // Cargar el primer episodio por defecto
+    if (episodes.length > 0) {
+      loadEpisode(episodes[0]);
+      updateNavigationButtons(); // Inicializar botones de navegación
+    }
+
     // Cargar episodio
     function loadEpisode(episode) {
       document.querySelectorAll('.episode-btn').forEach((btn, index) => {
         btn.classList.toggle('active', index + 1 === episode.num);
       });
       document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
-      document.querySelector('#opcion1-player iframe').src = toEmbed(episode.op1);
-      document.querySelector('#opcion2-player iframe').src = toEmbed(episode.op2);
-      document.querySelector('#opcion3-player iframe').src = toEmbed(episode.op3);
-      document.querySelector('#opcion4-player iframe').src = toEmbed(episode.op4);
+      document.querySelector('#opcion1-player iframe').src = episode.op1;
+      document.querySelector('#opcion2-player iframe').src = episode.op2;
+      document.querySelector('#opcion3-player iframe').src = episode.op3;
+      document.querySelector('#opcion4-player iframe').src = episode.op4;
       currentEpisode = episode;
       switchPlayer('opcion1');
-      if (typeof setupAutoPlay === 'function') {
-        setupAutoPlay();
-      }
+      updateDownloadLink(); // Asegurar que el botón de descarga esté disponible
+      updateNavigationButtons(); // Actualizar botones de navegación
     }
 
     // Cambiar reproductor
@@ -273,9 +294,56 @@
       }
     }
 
-    // Cargar el primer episodio por defecto
-    if (episodes.length > 0) {
-      loadEpisode(episodes[0]);
+    // Función para actualizar la disponibilidad de los botones de navegación
+    function updateNavigationButtons() {
+      const prevBtn = document.querySelector('button[onclick="previousEpisode()"]');
+      const nextBtn = document.querySelector('button[onclick="nextEpisode()"]');
+
+      if (prevBtn && nextBtn) {
+        if (currentEpisode && currentEpisode.num > 1) {
+          prevBtn.disabled = false;
+          prevBtn.classList.remove('disabled');
+        } else {
+          prevBtn.disabled = true;
+          prevBtn.classList.add('disabled');
+        }
+
+        if (currentEpisode && currentEpisode.num < episodes.length) {
+          nextBtn.disabled = false;
+          nextBtn.classList.remove('disabled');
+        } else {
+          nextBtn.disabled = true;
+          nextBtn.classList.add('disabled');
+        }
+      }
+    }
+
+    // Función para ir al episodio anterior
+    function previousEpisode() {
+      if (!currentEpisode || currentEpisode.num <= 1) return;
+
+      const previousEpisodeNum = currentEpisode.num - 1;
+      const previousEpisode = episodes.find(ep => ep.num === previousEpisodeNum);
+
+      if (previousEpisode) {
+        loadEpisode(previousEpisode);
+        // Hacer scroll hacia arriba para ver el reproductor
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    // Función para ir al siguiente episodio
+    function nextEpisode() {
+      if (!currentEpisode || currentEpisode.num >= episodes.length) return;
+
+      const nextEpisodeNum = currentEpisode.num + 1;
+      const nextEpisode = episodes.find(ep => ep.num === nextEpisodeNum);
+
+      if (nextEpisode) {
+        loadEpisode(nextEpisode);
+        // Hacer scroll hacia arriba para ver el reproductor
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
 
     // Mover botones de servidor al reproductor

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="es">
 
@@ -133,8 +133,10 @@
         </div>
 
         <div class="video-functions">
+          <button class="function-btn" onclick="previousEpisode()">⏮ Anterior</button>
           <button class="function-btn" onclick="expandPlayer()">Expandir</button>
           <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
+          <button class="function-btn" onclick="nextEpisode()">Siguiente ⏭</button>
           <a id="download-btn" class="function-btn download-btn" href="#" target="_blank" rel="noopener noreferrer">Descargar</a>
         </div>
 
@@ -371,6 +373,8 @@
       document.querySelector('#opcion4-player iframe').src = toEmbed(episode.op4);
       currentEpisode = episode;
       switchPlayer('opcion1');
+      updateDownloadLink(); // Asegurar que el botón de descarga esté disponible
+      updateNavigationButtons(); // Actualizar botones de navegación
     }
 
 
@@ -427,12 +431,62 @@
 
 
 
+    // Función para actualizar la disponibilidad de los botones de navegación
+    function updateNavigationButtons() {
+      const prevBtn = document.querySelector('button[onclick="previousEpisode()"]');
+      const nextBtn = document.querySelector('button[onclick="nextEpisode()"]');
+
+      if (prevBtn && nextBtn) {
+        if (currentEpisode && currentEpisode.num > 1) {
+          prevBtn.disabled = false;
+          prevBtn.classList.remove('disabled');
+        } else {
+          prevBtn.disabled = true;
+          prevBtn.classList.add('disabled');
+        }
+
+        if (currentEpisode && currentEpisode.num < episodes.length) {
+          nextBtn.disabled = false;
+          nextBtn.classList.remove('disabled');
+        } else {
+          nextBtn.disabled = true;
+          nextBtn.classList.add('disabled');
+        }
+      }
+    }
+
+    // Función para ir al episodio anterior
+    function previousEpisode() {
+      if (!currentEpisode || currentEpisode.num <= 1) return;
+
+      const previousEpisodeNum = currentEpisode.num - 1;
+      const previousEpisode = episodes.find(ep => ep.num === previousEpisodeNum);
+
+      if (previousEpisode) {
+        loadEpisode(previousEpisode);
+        // Hacer scroll hacia arriba para ver el reproductor
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    // Función para ir al siguiente episodio
+    function nextEpisode() {
+      if (!currentEpisode || currentEpisode.num >= episodes.length) return;
+
+      const nextEpisodeNum = currentEpisode.num + 1;
+      const nextEpisode = episodes.find(ep => ep.num === nextEpisodeNum);
+
+      if (nextEpisode) {
+        loadEpisode(nextEpisode);
+        // Hacer scroll hacia arriba para ver el reproductor
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
     // Cargar el primer episodio por defecto
-
     if (episodes.length > 0) {
-
       loadEpisode(episodes[0]);
-
+      updateNavigationButtons(); // Inicializar botones de navegación
     }
 
   </script>

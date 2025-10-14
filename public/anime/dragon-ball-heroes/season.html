@@ -100,14 +100,16 @@
           </div>
         </div>
         <div class="video-functions">
+          <button class="function-btn" onclick="previousEpisode()">⏮ Anterior</button>
           <button class="function-btn" onclick="expandPlayer()">Expandir</button>
           <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
+          <button class="function-btn" onclick="nextEpisode()">Siguiente ⏭</button>
           <a id="download-btn" class="function-btn download-btn" href="#" target="_blank" rel="noopener noreferrer">Descargar</a>
         </div>
       </div>
 
       <div class="description">
-        <p>22/22 episodios disponibles. Estado: Temporada completa.</p>
+        <p>26/26 episodios disponibles. Estado: Temporada completa.</p>
       </div>
 
       <div class="episodes-container">
@@ -180,30 +182,34 @@
     let currentEpisode = null;
     let currentOption = 'opcion1';
 
-    // Estructura de 22 episodios de Dragon Ball Heroes Temporada 1
+    // Estructura de 26 episodios de Dragon Ball Heroes Temporada 1 con MXDrop links
     const episodes = [
-      { num: 1, title: "Goku vs. Goku! Un encuentro súper dimensional", op1: "", op2: "", op3: "", op4: "" },
-      { num: 2, title: "Peligro! El Planeta Prisión se colapsa", op1: "", op2: "", op3: "", op4: "" },
-      { num: 3, title: "Goku vs. Turles! Enfrentamiento de los Saiyans", op1: "", op2: "", op3: "", op4: "" },
-      { num: 4, title: "Super Saiyan 4 Vegito vs. Super Saiyan Blue Vegito", op1: "", op2: "", op3: "", op4: "" },
-      { num: 5, title: "Zamasu revive! El Rey Demonio del Universo", op1: "", op2: "", op3: "", op4: "" },
-      { num: 6, title: "Rampaging! The Evil Saiyan's Rampage!", op1: "", op2: "", op3: "", op4: "" },
-      { num: 7, title: "Zamasu vs. Jiren! Enfrentamiento dimensional", op1: "", op2: "", op3: "", op4: "" },
-      { num: 8, title: "La llegada de Fu! Los planes del científico malvado", op1: "", op2: "", op3: "", op4: "" },
-      { num: 9, title: "Goku vs. Hearts! Batalla en el núcleo del universo", op1: "", op2: "", op3: "", op4: "" },
-      { num: 10, title: "Hearts vs. Hit! Batalla de asesinos", op1: "", op2: "", op3: "", op4: "" },
-      { num: 11, title: "Trunks vs. Zamasu! Batalla del futuro", op1: "", op2: "", op3: "", op4: "" },
-      { num: 12, title: "El poder supremo! Ultra Instinto vs. Hearts", op1: "", op2: "", op3: "", op4: "" },
-      { num: 13, title: "La batalla final! Goku vs. Hearts", op1: "", op2: "", op3: "", op4: "" },
-      { num: 14, title: "Fu's Plan! The Threat of the Universal Tree", op1: "", op2: "", op3: "", op4: "" },
-      { num: 15, title: "Goku vs. Dr. W! Battle in the Subspace", op1: "", op2: "", op3: "", op4: "" },
-      { num: 16, title: "Fierce Fight! Universe 11's Climactic Battle", op1: "", op2: "", op3: "", op4: "" },
-      { num: 17, title: "Super Warriors Gather! Universe 7's Decisive Battle", op1: "", op2: "", op3: "", op4: "" },
-      { num: 18, title: "Super Showdown! The Universal Conflict Comes to an End", op1: "", op2: "", op3: "", op4: "" },
-      { num: 19, title: "The Ultimate Godslayer! Hearts is Born", op1: "", op2: "", op3: "", op4: "" },
-      { num: 20, title: "Decisive Battle! Farewell Trunks", op1: "", op2: "", op3: "", op4: "" },
-      { num: 21, title: "The Ultimate Showdown! The New Space-Time War Begins", op1: "", op2: "", op3: "", op4: "" },
-      { num: 22, title: "Fu's True Identity! The Ultimate Battle Begins", op1: "", op2: "", op3: "", op4: "" }
+      { num: 1, title: "Goku vs. Goku! Un encuentro súper dimensional", op1: "https://mxdrop.to/e/vkqpqnlzbqgeezp", op2: "", op3: "", op4: "" },
+      { num: 2, title: "Peligro! El Planeta Prisión se colapsa", op1: "https://mxdrop.to/e/67rorq9dh4jzgr", op2: "", op3: "", op4: "" },
+      { num: 3, title: "Goku vs. Turles! Enfrentamiento de los Saiyans", op1: "https://mxdrop.to/e/z1jgjpj1ujj6e4", op2: "", op3: "", op4: "" },
+      { num: 4, title: "Super Saiyan 4 Vegito vs. Super Saiyan Blue Vegito", op1: "https://mxdrop.to/e/4d9p9nmxu48j1z", op2: "", op3: "", op4: "" },
+      { num: 5, title: "Zamasu revive! El Rey Demonio del Universo", op1: "https://mxdrop.to/e/1nopov4jhwrrxn", op2: "", op3: "", op4: "" },
+      { num: 6, title: "Rampaging! The Evil Saiyan's Rampage!", op1: "https://mxdrop.to/e/l79896njb33g8w", op2: "", op3: "", op4: "" },
+      { num: 7, title: "Zamasu vs. Jiren! Enfrentamiento dimensional", op1: "https://mxdrop.to/e/03zmzv3vb0v4w", op2: "", op3: "", op4: "" },
+      { num: 8, title: "La llegada de Fu! Los planes del científico malvado", op1: "https://mxdrop.to/e/1nopov9qtvwwo8", op2: "", op3: "", op4: "" },
+      { num: 9, title: "Goku vs. Hearts! Batalla en el núcleo del universo", op1: "https://mxdrop.to/e/9wxkxnw7bopwvl", op2: "", op3: "", op4: "" },
+      { num: 10, title: "Hearts vs. Hit! Batalla de asesinos", op1: "https://mxdrop.to/e/r60k0wgvh44ld0", op2: "", op3: "", op4: "" },
+      { num: 11, title: "Trunks vs. Zamasu! Batalla del futuro", op1: "https://mxdrop.to/e/gjdgdn14ce0q7q", op2: "", op3: "", op4: "" },
+      { num: 12, title: "El poder supremo! Ultra Instinto vs. Hearts", op1: "https://mxdrop.to/e/wlwpwn84fpmejo", op2: "", op3: "", op4: "" },
+      { num: 13, title: "La batalla final! Goku vs. Hearts", op1: "https://mxdrop.to/e/elzxznq0ieg98e", op2: "", op3: "", op4: "" },
+      { num: 14, title: "Fu's Plan! The Threat of the Universal Tree", op1: "https://mxdrop.to/e/vkqpqn04f6dr1l", op2: "", op3: "", op4: "" },
+      { num: 15, title: "Goku vs. Dr. W! Battle in the Subspace", op1: "https://mxdrop.to/e/nlnvn0z8h4q87o", op2: "", op3: "", op4: "" },
+      { num: 16, title: "Fierce Fight! Universe 11's Climactic Battle", op1: "https://mxdrop.to/e/67rorq88u40ogn", op2: "", op3: "", op4: "" },
+      { num: 17, title: "Super Warriors Gather! Universe 7's Decisive Battle", op1: "https://mxdrop.to/e/mkz9zdp8i99omv", op2: "", op3: "", op4: "" },
+      { num: 18, title: "Super Showdown! The Universal Conflict Comes to an End", op1: "https://mxdrop.to/e/r60k0weeb7x86x", op2: "", op3: "", op4: "" },
+      { num: 19, title: "The Ultimate Godslayer! Hearts is Born", op1: "https://mxdrop.to/e/67ror7w1h89pzw", op2: "", op3: "", op4: "" },
+      { num: 20, title: "Decisive Battle! Farewell Trunks", op1: "https://mxdrop.to/e/36q4q673uno441", op2: "", op3: "", op4: "" },
+      { num: 21, title: "The Ultimate Showdown! The New Space-Time War Begins", op1: "https://mxdrop.to/e/l79897e7te68vz", op2: "", op3: "", op4: "" },
+      { num: 22, title: "Fu's True Identity! The Ultimate Battle Begins", op1: "https://mxdrop.to/e/9wxkxwokhqp1xr", op2: "", op3: "", op4: "" },
+      { num: 23, title: "", op1: "https://mxdrop.to/e/67ror79vbr69w9", op2: "", op3: "", op4: "" },
+      { num: 24, title: "", op1: "https://mxdrop.to/e/9wxkxw1pu3v4q86", op2: "", op3: "", op4: "" },
+      { num: 25, title: "", op1: "https://mxdrop.to/e/elzxzl4xbzvpq9", op2: "", op3: "", op4: "" },
+      { num: 26, title: "", op1: "https://mxdrop.to/e/elzxzl70i48wln", op2: "", op3: "", op4: "" }
     ];
 
     // Generar botones de episodios
@@ -216,21 +222,26 @@
       episodesGrid.appendChild(episodeBtn);
     });
 
+    // Cargar el primer episodio por defecto
+    if (episodes.length > 0) {
+      loadEpisode(episodes[0]);
+      updateNavigationButtons(); // Inicializar botones de navegación
+    }
+
     // Cargar episodio
     function loadEpisode(episode) {
       document.querySelectorAll('.episode-btn').forEach((btn, index) => {
         btn.classList.toggle('active', index + 1 === episode.num);
       });
       document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
-      document.querySelector('#opcion1-player iframe').src = toEmbed(episode.op1);
-      document.querySelector('#opcion2-player iframe').src = toEmbed(episode.op2);
-      document.querySelector('#opcion3-player iframe').src = toEmbed(episode.op3);
-      document.querySelector('#opcion4-player iframe').src = toEmbed(episode.op4);
+      document.querySelector('#opcion1-player iframe').src = episode.op1;
+      document.querySelector('#opcion2-player iframe').src = episode.op2;
+      document.querySelector('#opcion3-player iframe').src = episode.op3;
+      document.querySelector('#opcion4-player iframe').src = episode.op4;
       currentEpisode = episode;
       switchPlayer('opcion1');
-      if (typeof setupAutoPlay === 'function') {
-        setupAutoPlay();
-      }
+      updateDownloadLink(); // Asegurar que el botón de descarga esté disponible
+      updateNavigationButtons(); // Actualizar botones de navegación
     }
 
     // Cambiar reproductor
@@ -260,12 +271,12 @@
       const a = document.getElementById('download-btn');
       const url = getUrlForOption(currentEpisode, currentOption);
       let finalUrl = url;
-      
+
       // Si contiene /e/ en el enlace, convertir a /f/ para descarga directa
       if (/\/e\//.test(url)) {
         finalUrl = url.replace('/e/', '/f/');
       }
-      
+
       if (finalUrl) {
         // Generar enlace acortado con exe.io API (formato simple)
         const apiToken = '110e7b6cbdf7a5aa354afb395e889c7aba3411c6';
@@ -274,7 +285,7 @@
           finalUrl = 'https://' + finalUrl;
         }
         const shortenedUrl = `https://exe.io/st?api=${apiToken}&url=${finalUrl}`;
-        
+
         a.href = shortenedUrl;
         a.classList.remove('disabled');
       } else {
@@ -283,9 +294,56 @@
       }
     }
 
-    // Cargar el primer episodio por defecto
-    if (episodes.length > 0) {
-      loadEpisode(episodes[0]);
+    // Función para actualizar la disponibilidad de los botones de navegación
+    function updateNavigationButtons() {
+      const prevBtn = document.querySelector('button[onclick="previousEpisode()"]');
+      const nextBtn = document.querySelector('button[onclick="nextEpisode()"]');
+
+      if (prevBtn && nextBtn) {
+        if (currentEpisode && currentEpisode.num > 1) {
+          prevBtn.disabled = false;
+          prevBtn.classList.remove('disabled');
+        } else {
+          prevBtn.disabled = true;
+          prevBtn.classList.add('disabled');
+        }
+
+        if (currentEpisode && currentEpisode.num < episodes.length) {
+          nextBtn.disabled = false;
+          nextBtn.classList.remove('disabled');
+        } else {
+          nextBtn.disabled = true;
+          nextBtn.classList.add('disabled');
+        }
+      }
+    }
+
+    // Función para ir al episodio anterior
+    function previousEpisode() {
+      if (!currentEpisode || currentEpisode.num <= 1) return;
+
+      const previousEpisodeNum = currentEpisode.num - 1;
+      const previousEpisode = episodes.find(ep => ep.num === previousEpisodeNum);
+
+      if (previousEpisode) {
+        loadEpisode(previousEpisode);
+        // Hacer scroll hacia arriba para ver el reproductor
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    // Función para ir al siguiente episodio
+    function nextEpisode() {
+      if (!currentEpisode || currentEpisode.num >= episodes.length) return;
+
+      const nextEpisodeNum = currentEpisode.num + 1;
+      const nextEpisode = episodes.find(ep => ep.num === nextEpisodeNum);
+
+      if (nextEpisode) {
+        loadEpisode(nextEpisode);
+        // Hacer scroll hacia arriba para ver el reproductor
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
 
     // Mover botones de servidor al reproductor
