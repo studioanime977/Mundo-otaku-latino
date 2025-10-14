@@ -3,7 +3,6 @@
 <html lang="es">
 
 <head>
-    <meta name="referrer" content="no-referrer-when-downgrade" />
     <meta name="f08cd2b5211f5b0a95753720000f639c66350c1d" content="f08cd2b5211f5b0a95753720000f639c66350c1d" />
 
 <meta charset="UTF-8">
@@ -37,7 +36,7 @@
         <li><a href="../../html/catalogo.html">Anime</a></li>
         <li><a href="#peliculas">Películas</a></li>
         <li><a href="#generos">Géneros</a></li>
-        <li><a href="javascript:void(0)" target="_blank">APK</a></li>
+        <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
       </ul>
     </nav>
   </header>
@@ -124,7 +123,130 @@
 
 
 
-  </body>
+  <script>
+
+    // Preservar los datos de episodios existentes o crear una estructura básica
+
+    const episodes = [
+
+    { num: 1, title: "Episodio 1", op1: "", op2: "", op3: "", op4: "" }
+
+  ];
+
+
+
+    // Generar botones de episodios
+
+    const episodesGrid = document.getElementById('episodes-grid');
+
+    episodes.forEach(episode => {
+
+      const episodeBtn = document.createElement('div');
+
+      episodeBtn.className = 'episode-btn';
+
+      episodeBtn.textContent = `Ep ${episode.num}`;
+
+      episodeBtn.onclick = () => loadEpisode(episode);
+
+      episodesGrid.appendChild(episodeBtn);
+
+    });
+
+
+
+    // Cargar episodio
+
+    function loadEpisode(episode) {
+
+      document.querySelectorAll('.episode-btn').forEach((btn, index) => {
+
+        btn.classList.toggle('active', index === episode.num);
+
+      });
+
+      
+
+      document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
+
+      
+
+      document.querySelector('#opcion1-player iframe').src = episode.op1 || '';
+
+      document.querySelector('#opcion2-player iframe').src = episode.op2 || '';
+
+      document.querySelector('#opcion3-player iframe').src = episode.op3 || '';
+
+      document.querySelector('#opcion4-player iframe').src = episode.op4 || '';
+
+      
+
+      switchPlayer('opcion1');
+
+    }
+
+
+
+    // Cambiar reproductor
+
+    function switchPlayer(option) {
+
+      document.querySelectorAll('.player-btn').forEach(btn => {
+
+        btn.classList.remove('active');
+
+      });
+
+      document.getElementById(`${option}-btn`).classList.add('active');
+
+      
+
+      document.querySelectorAll('.player-container').forEach(container => {
+
+        container.classList.remove('active');
+
+      });
+
+      document.getElementById(`${option}-player`).classList.add('active');
+
+    }
+
+
+
+    // Cargar el primer episodio por defecto
+
+    if (episodes.length > 0) {
+
+      loadEpisode(episodes[0]);
+
+    }
+
+      // Función de búsqueda`n    function searchAnime() {`n        const searchTerm = document.getElementById('search-input').value.trim();`n        if (searchTerm) {`n            window.location.href = `../../../html/catalogo.html?search=${encodeURIComponent(searchTerm)}`;`n        }`n    }`n`n    // Permitir búsqueda con Enter`n    document.addEventListener('keypress', function(e) {`n        if (e.key === 'Enter' && e.target.id === 'search-input') {`n            searchAnime();`n        }`n    });`n</script>`n<section class="anuncio-responsive">
+  <!-- Anuncio Google responsivo -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8480825005176665"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</section>
+<script>
+(function(mxtv){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = mxtv || {};
+s.src = "\/\/aggressivestruggle.com\/bKX.V\/s\/dFG\/l\/0PYBWEcI\/-evmn9au\/ZoUZlDkcP\/TmY\/2\/NZz\/UM1BNQz\/EeteNxjRYt3wNZTMUE3jMEgo";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
+
+</body>
 
 </html>
 
