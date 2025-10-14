@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -20,7 +20,7 @@
     .left-content { flex: 3; }
     .right-content { flex: 1; }
 
-    /* Miniaturas en la sección Popular (desktop) */
+    /* Miniaturas en la secciÃ³n Popular (desktop) */
     .right-content .popular-item { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.03); margin-bottom: 10px; cursor: pointer; }
     .right-content .popular-item:hover { background: rgba(255,255,255,0.06); }
     .right-content .popular-item img { width: 120px; height: 72px; object-fit: cover; border-radius: 6px; display: block; }
@@ -42,7 +42,7 @@
 
     /* Opcional: asegurar que el iframe del reproductor se vea bien */
     .reproductor-video iframe { width: 100%; height: 480px; border: none; }
-    /* Botón Descargar alineado a la derecha */
+    /* BotÃ³n Descargar alineado a la derecha */
     .video-functions { align-items: center; }
     .download-btn { margin-left: auto; background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
     .function-btn.disabled { opacity: 0.5; pointer-events: none; }
@@ -59,9 +59,9 @@
       <ul class="nav-menu">
         <li><a href="../../index.html#inicio">Inicio</a></li>
         <li><a href="../../html/catalogo.html">Anime</a></li>
-        <li><a href="#peliculas">Películas</a></li>
-        <li><a href="#generos">Géneros</a></li>
-        <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
+        <li><a href="#peliculas">PelÃ­culas</a></li>
+        <li><a href="#generos">GÃ©neros</a></li>
+        <li><a href="javascript:void(0)" target="_blank">APK</a></li>
       </ul>
     </nav>
   </header>
@@ -76,15 +76,15 @@
       </div>
 
       <div class="description">
-        <p>Disfruta de Classroom of the Elite Temporada 2 completa (13 episodios). Selecciona un episodio y elige el reproductor. La opción 1 contiene los enlaces de mxdrop.</p>
+        <p>Disfruta de Classroom of the Elite Temporada 2 completa (13 episodios). Selecciona un episodio y elige el reproductor. La opciÃ³n 1 contiene los enlaces de mxdrop.</p>
       </div>
 
       <div class="contenedor-video">
         <div class="player-options">
-          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÓN 1</button>
-          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÓN 2</button>
-          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÓN 3</button>
-          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÓN 4</button>
+          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÃ“N 1</button>
+          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÃ“N 2</button>
+          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÃ“N 3</button>
+          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÃ“N 4</button>
         </div>
         <div class="reproductor-video">
           <div id="opcion1-player" class="player-container active">
@@ -114,7 +114,7 @@
       <div class="episodes-container">
         <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
         <div class="episodes-grid" id="episodes-grid">
-          <!-- Los episodios se generarán con JavaScript -->
+          <!-- Los episodios se generarÃ¡n con JavaScript -->
         </div>
       </div>
     </div>
@@ -154,190 +154,5 @@
     </div>
   </main>
 
-  <script>
-    // Función para expandir el reproductor
-    function expandPlayer() {
-      const videoContainer = document.querySelector('.contenedor-video');
-      videoContainer.classList.toggle('expanded');
-    }
-  
-    // Función para apagar/encender las luces
-    function toggleLights() {
-      document.body.classList.toggle('lights-off');
-    }
-
-    // Convierte cualquier URL de StreamTape (/v/ o /e/) a URL embebible /e/{id}/
-    function toEmbed(url) {
-      if (!url) return '';
-      try {
-        const m = url.match(/\/\/(?:www\.)?streamtape\.com\/(?:v|e)\/([^\/?#]+)/i);
-        if (m && m[1]) return `https://streamtape.com/e/${m[1]}/`;
-      } catch (_) {}
-      // Fallback: reemplazo simple
-      return url.replace('/v/', '/e/') + (url.endsWith('/') ? '' : '/');
-    }
-
-    // Estado actual
-    let currentEpisode = null;
-    let currentOption = 'opcion1';
-
-    // Estructura de 13 episodios con enlaces de mxdrop en Opción 1 (falta episodio 1)
-    const episodes = [
-      { num: 1, title: "Es dudoso que la igualdad sea siempre una virtud", op1: "https://mxdrop.to/e/elz81vw6a1zme8", op2: "", op3: "", op4: "" },
-      { num: 2, title: "No hay nada más desigual que el trato igualitario de personas desiguales", op1: "https://mxdrop.to/e/q1d8pk38coj4xg", op2: "", op3: "", op4: "" },
-      { num: 3, title: "El hombre es por naturaleza un animal social", op1: "https://mxdrop.to/e/q1d8pkxlsomknp", op2: "", op3: "", op4: "" },
-      { num: 4, title: "Nunca he conocido a un hombre tan ignorante que no pudiera aprender algo de él", op1: "https://mxdrop.to/e/gjdze8dkulwo4w", op2: "", op3: "", op4: "" },
-      { num: 5, title: "La fortuna favorece a la mente preparada", op1: "https://mxdrop.to/e/elz81g08tjoq9w", op2: "", op3: "", op4: "" },
-      { num: 6, title: "Es más fácil resistir al principio que al final", op1: "https://mxdrop.to/e/l79jex8raplr8z", op2: "", op3: "", op4: "" },
-      { num: 7, title: "Las personas se unen y permanecen juntas por miedo", op1: "https://mxdrop.to/e/l79je44psw484o", op2: "", op3: "", op4: "" },
-      { num: 8, title: "La competencia es algo que surge cuando las personas se reúnen", op1: "https://mxdrop.to/e/wlwjx99ps7d9pd", op2: "", op3: "", op4: "" },
-      { num: 9, title: "El hombre es la medida de todas las cosas", op1: "https://mxdrop.to/e/k0e8pj4vhnek3r", op2: "", op3: "", op4: "" },
-      { num: 10, title: "El hombre es un animal que hace tratos", op1: "https://mxdrop.to/e/q1d8pjr1sxl6wez", op2: "", op3: "", op4: "" },
-      { num: 11, title: "Lo que no me mata me hace más fuerte", op1: "https://mxdrop.to/e/03z6p09wao4xr8", op2: "", op3: "", op4: "" },
-      { num: 12, title: "Incluso un genio no puede ganar contra el trabajo duro", op1: "https://mxdrop.to/e/z1jxk399ugv48g9", op2: "", op3: "", op4: "" },
-      { num: 13, title: "El genio es uno por ciento inspiración y noventa y nueve por ciento transpiración", op1: "https://mxdrop.to/e/4d9krw40hq3wxzw", op2: "", op3: "", op4: "" }
-    ];
-
-    // Generar botones de episodios
-    const episodesGrid = document.getElementById('episodes-grid');
-    episodes.forEach(episode => {
-      const episodeBtn = document.createElement('button');
-      episodeBtn.className = 'episode-btn';
-      episodeBtn.textContent = `Ep ${episode.num}`;
-      episodeBtn.onclick = () => loadEpisode(episode);
-      episodesGrid.appendChild(episodeBtn);
-    });
-
-    // Cargar episodio
-    function loadEpisode(episode) {
-      document.querySelectorAll('.episode-btn').forEach((btn, index) => {
-        btn.classList.toggle('active', index + 1 === episode.num);
-      });
-      document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
-      document.querySelector('#opcion1-player iframe').src = toEmbed(episode.op1);
-      document.querySelector('#opcion2-player iframe').src = toEmbed(episode.op2);
-      document.querySelector('#opcion3-player iframe').src = toEmbed(episode.op3);
-      document.querySelector('#opcion4-player iframe').src = toEmbed(episode.op4);
-      currentEpisode = episode;
-      switchPlayer('opcion1');
-      if (typeof setupAutoPlay === 'function') {
-        setupAutoPlay();
-      }
-    }
-
-    // Cambiar reproductor
-    function switchPlayer(option) {
-      document.querySelectorAll('.player-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      document.getElementById(`${option}-btn`).classList.add('active');
-      document.querySelectorAll('.player-container').forEach(container => {
-        container.classList.remove('active');
-      });
-      document.getElementById(`${option}-player`).classList.add('active');
-      currentOption = option;
-      updateDownloadLink();
-    }
-
-    // Determina el URL original según el reproductor activo
-    function getUrlForOption(ep, option) {
-      if (!ep) return '';
-      const map = { opcion1: 'op1', opcion2: 'op2', opcion3: 'op3', opcion4: 'op4' };
-      const key = map[option] || 'op1';
-      return ep[key] || '';
-    }
-
-    // Actualiza el botón Descargar con el enlace del reproductor activo
-    function updateDownloadLink() {
-      const a = document.getElementById('download-btn');
-      const url = getUrlForOption(currentEpisode, currentOption);
-      let finalUrl = url;
-      
-      // Si contiene /e/ en el enlace, convertir a /f/ para descarga directa
-      if (/\/e\//.test(url)) {
-        finalUrl = url.replace('/e/', '/f/');
-      }
-      
-      if (finalUrl) {
-        // Generar enlace acortado con exe.io API (formato simple)
-        const apiToken = '110e7b6cbdf7a5aa354afb395e889c7aba3411c6';
-        // Asegurar que el URL tenga protocolo
-        if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) {
-          finalUrl = 'https://' + finalUrl;
-        }
-        const shortenedUrl = `https://exe.io/st?api=${apiToken}&url=${finalUrl}`;
-        
-        a.href = shortenedUrl;
-        a.classList.remove('disabled');
-      } else {
-        a.href = '#';
-        a.classList.add('disabled');
-      }
-    }
-
-    // Cargar el primer episodio por defecto
-    if (episodes.length > 0) {
-      loadEpisode(episodes[0]);
-    }
-
-    // Mover botones de servidor al reproductor
-    const playerOptions = document.querySelector('.player-options');
-    const videoContainer = document.querySelector('.contenedor-video');
-    videoContainer.insertBefore(playerOptions, videoContainer.firstChild);
-
-    // Botones sociales
-    document.getElementById('youtube-btn').addEventListener('click', function() {
-      window.open('https://www.youtube.com/@MundoOtakuLatino', '_blank');
-    });
-
-    document.getElementById('whatsapp-btn').addEventListener('click', function() {
-      window.open('https://exe.io/WhatsAppMOL', '_blank');
-    });
-
-    document.getElementById('facebook-btn').addEventListener('click', function() {
-      window.open('https://exe.io/FacebookMOL', '_blank');
-    });
-
-    document.getElementById('facebook-group-btn').addEventListener('click', function() {
-      window.open('https://exe.io/GrupoFacebookMOL', '_blank');
-    });
-
-    document.getElementById('telegram-channel-btn').addEventListener('click', function() {
-      window.open('https://exe.io/CanalTelegramMOL', '_blank');
-    });
-
-    document.getElementById('telegram-group-btn').addEventListener('click', function() {
-      window.open('https://exe.io/GrupoTelegramMOL', '_blank');
-    });
-
-    document.getElementById('download-app-btn').addEventListener('click', function() {
-      window.open('https://exe.io/ANIMETV', '_blank');
-    });
-  </script>
-<section class="anuncio-responsive">
-  <!-- Anuncio Google responsivo -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-8480825005176665"
-       data-ad-slot="1234567890"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</section>
-<script>
-(function(mxtv){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = mxtv || {};
-s.src = "\/\/aggressivestruggle.com\/bKX.V\/s\/dFG\/l\/0PYBWEcI\/-evmn9au\/ZoUZlDkcP\/TmY\/2\/NZz\/UM1BNQz\/EeteNxjRYt3wNZTMUE3jMEgo";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-
-</body>
+  </body>
 </html>
