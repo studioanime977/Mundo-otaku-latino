@@ -1,4 +1,4 @@
-﻿ï¿½<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="es">
 
@@ -47,6 +47,17 @@
     </nav>
   </header>
 
+    <div class="search-bar">
+
+      <input type="text" placeholder="Buscar anime..." id="search-input">
+
+      <button onclick="searchAnime()">🔍</button>
+
+    </div>
+
+
+  </div>
+
 
 
   <main class="main-content">
@@ -59,11 +70,11 @@
 
     <div class="anime-header">
 
-      <h1 class="anime-title">ï¿½xRx Tu nombre (Your Name)</h1>
+      <h1 class="anime-title">💫 Tu nombre (Your Name)</h1>
 
       <p class="anime-description">
 
-        Una hermosa historia de amor que trasciende el tiempo y el espacio. Mitsuha y Taki son dos adolescentes que viven en mundos completamente diferentes, pero que estÃ¡n conectados por un fenÃ³meno misterioso que les permite intercambiar cuerpos. Esta pelÃ­cula de Makoto Shinkai es una obra maestra visual y emocional que ha cautivado a audiencias de todo el mundo.
+        Una hermosa historia de amor que trasciende el tiempo y el espacio. Mitsuha y Taki son dos adolescentes que viven en mundos completamente diferentes, pero que están conectados por un fenómeno misterioso que les permite intercambiar cuerpos. Esta película de Makoto Shinkai es una obra maestra visual y emocional que ha cautivado a audiencias de todo el mundo.
 
       </p>
 
@@ -91,23 +102,23 @@
 
           <div class="season-number">4K</div>
 
-          <div class="season-play-overlay">ï¿½ï¿½</div>
+          <div class="season-play-overlay">▶</div>
 
         </div>
 
         <div class="season-info">
 
-          <div class="season-title">Tu nombre (Your Name) - PelÃ­cula</div>
+          <div class="season-title">Tu nombre (Your Name) - Película</div>
 
           <div class="season-description">
 
-            Una historia romÃ¡ntica sobrenatural sobre dos adolescentes que intercambian cuerpos misteriosamente. Mitsuha vive en una pequeÃ±a ciudad rural, mientras que Taki vive en Tokio. A travÃ©s de sus intercambios, desarrollan una conexiÃ³n profunda que trasciende el tiempo y el espacio.
+            Una historia romántica sobrenatural sobre dos adolescentes que intercambian cuerpos misteriosamente. Mitsuha vive en una pequeña ciudad rural, mientras que Taki vive en Tokio. A través de sus intercambios, desarrollan una conexión profunda que trasciende el tiempo y el espacio.
 
           </div>
 
           <div class="season-stats">
 
-            <div class="episode-count">ï¿½x}ï¿½ PelÃ­cula Completa</div>
+            <div class="episode-count">🎬 Película Completa</div>
 
             <div class="season-year">2016</div>
 
@@ -121,27 +132,27 @@
 
           <div class="progress-text" id="movie-progress-text">No iniciado</div>
 
-          <button class="watch-btn" id="movie-btn" onclick="goToMovie('pelicula.html')">ï¿½ï¿½ï¸ Ver PelÃ­cula</button>
+          <button class="watch-btn" id="movie-btn" onclick="goToMovie('pelicula.html')">▶ Ver Película</button>
 
           
 
           <div class="download-servers-section">
 
-            <div class="servers-title">ï¿½xï¿½ Descargar PelÃ­cula Completa</div>
+            <div class="servers-title">🔥 Descargar Película Completa</div>
 
             <div class="servers-grid-compact">
 
-              <a href="https://exe.io/YourName4k" target="_blank" class="download-link terabox">ï¿½xï¿½ TeraBox</a>
+              <a href="https://exe.io/YourName4k" target="_blank" class="download-link terabox">📦 TeraBox</a>
 
-              <a href="https://exe.io/TUNOMBRE4K" onclick="showUnavailableAlert('MEGA'); return false;" class="download-link mega unavailable-server">ï¿½Üï¸ MEGA</a>
+              <a href="#" onclick="showUnavailableAlert('MEGA'); return false;" class="download-link mega unavailable-server">📦 MEGA</a>
 
-              <a href="https://exe.io/YourName4kmediafire" target="_blank" class="download-link terabox">ï¿½xï¿½ MediaFire</a>
+              <a href="https://exe.io/YourName4kmediafire" target="_blank" class="download-link mediafire">📦 MediaFire</a>
 
-              <a href="https://exe.io/TUNOMBRE4K" onclick="showUnavailableAlert('Dropbox'); return false;" class="download-link dropbox unavailable-server">ï¿½xï¿½ Dropbox</a>
+              <a href="#" onclick="showUnavailableAlert('Dropbox'); return false;" class="download-link dropbox unavailable-server">📦 Dropbox</a>
 
-              <a href="https://exe.io/TUNOMBRE4K" onclick="showUnavailableAlert('1Fichier'); return false;" class="download-link fichier unavailable-server">ï¿½x 1Fichier</a>
+              <a href="#" onclick="showUnavailableAlert('1Fichier'); return false;" class="download-link fichier unavailable-server">📦 1Fichier</a>
 
-              <a href="https://exe.io/TUNOMBRE4K" onclick="showUnavailableAlert('Stape'); return false;" class="download-link stape unavailable-server">ï¿½x Stape</a>
+              <a href="#" onclick="showUnavailableAlert('Stape'); return false;" class="download-link stape unavailable-server">📦 Stape</a>
 
             </div>
 
@@ -195,6 +206,10 @@
 
       window.location.href = movieFile;
 
+    }
+
+    function showUnavailableAlert(serverName) {
+      alert(`El servidor de ${serverName} no está disponible actualmente. Por favor, intente con otra opción.`);
     }
 
 

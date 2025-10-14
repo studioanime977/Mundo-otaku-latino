@@ -99,13 +99,17 @@
   
   /* SEASON CARDS */
   .seasons-container, .seasons-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: row;
     gap: 2rem;
     margin-bottom: 3rem;
+    overflow-x: auto;
   }
   
   .season-card {
+    flex: 0 0 auto;
+    width: 350px;
+    min-width: 350px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
     border: 1px solid rgba(255, 92, 173, 0.2);
@@ -114,6 +118,21 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+  }
+  
+  /* Responsive: scroll horizontal en tablets y móviles */
+  @media (max-width: 1024px) {
+    .season-card {
+      width: 300px;
+      min-width: 300px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .season-card {
+      width: 280px;
+      min-width: 280px;
+    }
   }
   
   .season-card:hover {

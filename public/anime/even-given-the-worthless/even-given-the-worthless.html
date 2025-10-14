@@ -1,4 +1,4 @@
-﻿ï¿½<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="es">
 
@@ -14,8 +14,6 @@
 <title>Even Given The Worthless - Mundo Otaku Latino</title>
 
   
-
-  `n    
 
 <script src="../../assets/js/main.js"></script>
 
@@ -51,20 +49,7 @@
 
       <input type="text" placeholder="Buscar anime..." id="search-input">
 
-      <button onclick="searchAnime()">=
-</button>
-
-    </div>
-
-    <div class="user-actions">
-
-      <button class="auth-btn">=
- Login</button>
-
-      <button class="auth-btn"> Registro</button>
-
-      <a href="../../html/catalogo.html" class="auth-btn">=
- Inicio</a>
+      <button onclick="searchAnime()">🔍</button>
 
     </div>
 
@@ -84,12 +69,11 @@
 
     <div class="anime-header">
 
-      <h1 class="anime-title">=
- Even Given the Worthless</h1>
+      <h1 class="anime-title">🗡️ Even Given the Worthless</h1>
 
       <p class="anime-description">
 
-        Shinichi Kanou es un otaku ordinario que es transportado a otro mundo junto con toda su clase. Mientras sus compaeros reciben habilidades poderosas, l obtiene una habilidad aparentemente intil. Sin embargo, pronto descubre que su poder tiene un potencial oculto que podra cambiar el destino del mundo.
+        Shinichi Kanou es un otaku ordinario que es transportado a otro mundo junto con toda su clase. Mientras sus compañeros reciben habilidades poderosas, l obtiene una habilidad aparentemente inútil. Sin embargo, pronto descubre que su poder tiene un potencial oculto que podrá cambiar el destino del mundo.
 
       </p>
 
@@ -117,7 +101,7 @@
 
           <div class="season-number">S1</div>
 
-          <div class="season-play-overlay">?</div>
+          <div class="season-play-overlay">▶</div>
 
         </div>
 
@@ -127,14 +111,13 @@
 
           <div class="season-description">
 
-            Shinichi Kanou y sus compaeros de clase son transportados a un mundo de fantasa. Mientras otros reciben habilidades poderosas, Shinichi obtiene una habilidad aparentemente intil que lo convierte en el ms dbil de la clase.
+            Shinichi Kanou y sus compañeros de clase son transportados a un mundo de fantasía. Mientras otros reciben habilidades poderosas, Shinichi obtiene una habilidad aparentemente inútil que lo convierte en el más débil de la clase.
 
           </div>
 
           <div class="season-stats">
 
-            <div class="episode-count">=
- 12 Episodios</div>
+            <div class="episode-count">📺 12 Episodios</div>
 
             <div class="season-year">2024</div>
 
@@ -148,35 +131,27 @@
 
           <div class="progress-text" id="s1-progress-text">No iniciado</div>
 
-          <button class="watch-btn" id="s1-btn" onclick="goToSeason('season1.html')">=
- Ver Temporada</button>
+          <button class="watch-btn" id="s1-btn" onclick="goToSeason('season1.html')">▶ Ver Temporada</button>
 
           
 
           <div class="download-servers-section">
 
-            <div class="servers-title">=
- Descargar Temporada Completa</div>
+            <div class="servers-title">🔥 Descargar Temporada Completa</div>
 
             <div class="servers-grid-compact">
 
-              <a href="https://exe.io/EvenGiventheWorthlessS1" target="_blank" class="download-link terabox">=
- TeraBox</a>
+              <a href="https://exe.io/EvenGiventheWorthlessS1" target="_blank" class="download-link terabox">📦 TeraBox</a>
 
-              <a href="#" onclick="showUnavailableAlert('MEGA'); return false;" class="download-link mega unavailable-server">=
- MEGA</a>
+              <a href="#" onclick="showUnavailableAlert('MEGA'); return false;" class="download-link mega unavailable-server">📦 MEGA</a>
 
-              <a href="#" onclick="showUnavailableAlert('MediaFire'); return false;" class="download-link mediafire unavailable-server">=
- MediaFire</a>
+              <a href="#" onclick="showUnavailableAlert('MediaFire'); return false;" class="download-link mediafire unavailable-server">📦 MediaFire</a>
 
-              <a href="#" onclick="showUnavailableAlert('Dropbox'); return false;" class="download-link dropbox unavailable-server">=
- Dropbox</a>
+              <a href="#" onclick="showUnavailableAlert('Dropbox'); return false;" class="download-link dropbox unavailable-server">📦 Dropbox</a>
 
-              <a href="#" onclick="showUnavailableAlert('1Fichier'); return false;" class="download-link fichier unavailable-server">=
- 1Fichier</a>
+              <a href="#" onclick="showUnavailableAlert('1Fichier'); return false;" class="download-link fichier unavailable-server">📦 1Fichier</a>
 
-              <a href="#" onclick="showUnavailableAlert('Stape'); return false;" class="download-link stape unavailable-server">=
- Stape</a>
+              <a href="#" onclick="showUnavailableAlert('Stape'); return false;" class="download-link stape unavailable-server">📦 Stape</a>
 
             </div>
 
@@ -237,6 +212,18 @@
       }
 
     });
+
+
+
+    // Función para navegar a una temporada
+    function goToSeason(seasonFile) {
+      window.location.href = seasonFile;
+    }
+
+    // Función para mostrar alerta de servidor no disponible
+    function showUnavailableAlert(serverName) {
+      alert(`${serverName} no está disponible en este momento. Por favor, intenta con otro servidor.`);
+    }
 
   </script>
 
