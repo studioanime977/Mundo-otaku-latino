@@ -1,316 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- PÁGINAS PRINCIPALES -->
-  <url>
-    <loc>https://mundootakulatino.vercel.app/</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/index.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/html/catalogo.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- DEMON SLAYER - CASTILLO INFINITO (MÁXIMA PRIORIDAD SEO) -->
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/castillo-infinito.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/demon-slayer.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/temporada-1.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/temporada-2.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/temporada-3.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/temporada-4.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/tren-infinito.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/entrenamiento-pilar.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/rugido-de-victoria.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- OTROS ANIMES POPULARES -->
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/attack-on-titan/attack-on-titan.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/jujutsu-kaisen/jujutsu-kaisen.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/k-pop-demon-hunter/k-pop-demon-hunter.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/boku-no-hero-academia/boku-no-hero-academia.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/solo-leveling/solo-leveling.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/sakamoto-days/sakamoto-days.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/chainsaw-man/chainsaw-man.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/one-piece/one-piece.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/naruto/naruto.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/dragon-ball/dragon-ball.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/tokyo-ghoul/tokyo-ghoul.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/one-punch-man/one-punch-man.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/mob-psycho-100/mob-psycho-100.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/re-zero/re-zero.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/mushoku-tensei/mushoku-tensei.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/classroom-of-the-elite/classroom-of-the-elite.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/mashle/mashle.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/nanatsu-no-taizai/nanatsu-no-taizai.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/bungo-stray-dogs/bungo-stray-dogs.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/dragon-ball-heroes/dragon-ball-heroes.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/danmachi/danmachi.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/horimiya/horimiya.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/kono-oto-tomare/kono-oto-tomare.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/nazo-no-kanojo-x/nazo-no-kanojo-x.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/papa-no-iukoto-o-kikinasai/papa-no-iukoto-o-kikinasai.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/sao-progressive/sao-progressive.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/shuumatsu-no-valkyrie/shuumatsu-no-valkyrie.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/superman2025/superman2025.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/tu-nombre/tu-nombre.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/urusei-yatsura/urusei-yatsura.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mundootakulatino.vercel.app/public/anime/even-given-the-worthless/even-given-the-worthless.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- VERIFICACIÓN GOOGLE -->
-  <url>
-    <loc>https://mundootakulatino.vercel.app/google0dbef0fb91be9d0b.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
+<url><loc>https://mundootakulatino.vercel.app/</loc><lastmod>2025-10-14</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/index.html</loc><lastmod>2025-10-14</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/html/catalogo.html</loc><lastmod>2025-10-14</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/castillo-infinito.html</loc><lastmod>2025-10-14</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/demon-slayer.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/temporada-1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/temporada-2.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/temporada-3.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/temporada-4.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/entrenamiento-pilar.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/tren-infinito.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/demon-slayer/rugido-de-victoria.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/attack-on-titan/attack-on-titan.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/attack-on-titan/season1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/attack-on-titan/season2.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/attack-on-titan/season3.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/attack-on-titan/season4.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/attack-on-titan/movie1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/boku-no-hero-academia/boku-no-hero-academia.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/boku-no-hero-academia/temporada-1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/boku-no-hero-academia/temporada-2.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/boku-no-hero-academia/temporada-3.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/boku-no-hero-academia/temporada-4.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/boku-no-hero-academia/temporada-5.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/boku-no-hero-academia/temporada-6.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/boku-no-hero-academia/temporada-7.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/jujutsu-kaisen/jujutsu-kaisen.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/k-pop-demon-hunter/k-pop-demon-hunter.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/solo-leveling/solo-leveling.html</loc><lastmod>2025-10-14</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/sakamoto-days/sakamoto-days.html</loc><lastmod>2025-10-14</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/chainsaw-man/chainsaw-man.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/one-piece/one-piece.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/naruto/naruto.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/dragon-ball/dragon-ball.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/tokyo-ghoul/tokyo-ghoul.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/one-punch-man/one-punch-man.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/mob-psycho-100/mob-psycho-100.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/re-zero/re-zero.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/mushoku-tensei/mushoku-tensei.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/classroom-of-the-elite/classroom-of-the-elite.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/classroom-of-the-elite/season1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/classroom-of-the-elite/temporada-2.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/mashle/mashle.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/nanatsu-no-taizai/nanatsu-no-taizai.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/bungo-stray-dogs/bungo-stray-dogs.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/dragon-ball-heroes/dragon-ball-heroes.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/danmachi/danmachi.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/danmachi/season1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/horimiya/horimiya.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/kono-oto-tomare/kono-oto-tomare.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/nazo-no-kanojo-x/nazo-no-kanojo-x.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/papa-no-iukoto-o-kikinasai/papa-no-iukoto-o-kikinasai.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/sao-progressive/sao-progressive.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/sao-progressive/kuraki-yuuyami-no-scherz.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/sao-progressive/season2.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/shuumatsu-no-valkyrie/shuumatsu-no-valkyrie.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/shuumatsu-no-valkyrie/season1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/shuumatsu-no-valkyrie/season2.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/superman2025/superman2025.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/superman2025/season1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/tu-nombre/tu-nombre.html</loc><lastmod>2025-10-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/tu-nombre/pelicula.html</loc><lastmod>2025-10-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/urusei-yatsura/urusei-yatsura.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/urusei-yatsura/season1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/even-given-the-worthless/even-given-the-worthless.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/even-given-the-worthless/season1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/death-note/death-note.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/fullmetal-alchemist/fullmetal-alchemist.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/hunter-x-hunter/hunter-x-hunter.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/bleach/bleach.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/code-geass/code-geass.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/steins-gate/steins-gate.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/evangelion/evangelion.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/sword-art-online/sword-art-online.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/no-game-no-life/no-game-no-life.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/tokyo-ghoul/temporada-1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/dragon-ball/super.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/dragon-ball-heroes/season.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/dragon-ball-heroes/season2.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/chainsaw-man/reze-arc.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/chainsaw-man/season1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/solo-leveling/season1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/solo-leveling/season2.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/bungo-stray-dogs/temporada-1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/bungo-stray-dogs/temporada-2.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/bungo-stray-dogs/temporada-3.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/bungo-stray-dogs/temporada-4.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/bungo-stray-dogs/temporada-5.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/naruto/season1.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/naruto/season2.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/one-piece/east-blue.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/one-piece/alabasta.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/one-piece/enies-lobby.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/one-piece/marineford.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/public/anime/one-piece/wano.html</loc><lastmod>2025-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://mundootakulatino.vercel.app/google0dbef0fb91be9d0b.html</loc><lastmod>2025-10-14</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
 </urlset>
