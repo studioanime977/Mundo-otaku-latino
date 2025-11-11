@@ -23,6 +23,72 @@
         .popular-item { flex-direction: column; align-items: center; }
         .popular-item img { width: 80px; height: 80px; margin-bottom: 10px; }
       }
+
+      /* === Modal Suscríbete === */
+      .subscribe-modal[hidden] { display: none; }
+      .subscribe-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        place-items: center;
+        background: rgba(10,12,16,0.75);
+        backdrop-filter: blur(4px);
+      }
+      .subscribe-modal::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url('../../../ico/suscribete.png') center/220px no-repeat;
+        opacity: 0.25;
+        filter: drop-shadow(0 6px 18px rgba(0,0,0,0.4));
+      }
+      .subscribe-card {
+        position: relative;
+        width: min(720px, 92vw);
+        border-radius: 16px;
+        padding: 22px 22px 18px;
+        background: linear-gradient(180deg, rgba(21,25,35,0.95), rgba(21,25,35,0.98));
+        border: 1px solid #2a3142;
+        box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+        text-align: center;
+        color: #fff;
+      }
+      .subscribe-card .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .subscribe-card .brand img { width: 32px; height: 32px; }
+      .subscribe-title { font-size: 1.6rem; margin: 6px 0 8px; }
+      .subscribe-desc { color: #b8bcc8; margin: 0 0 14px; }
+      .subscribe-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+      .btn {
+        display: inline-flex; align-items: center; gap: 10px;
+        padding: 10px 16px; border-radius: 12px; text-decoration: none;
+        border: 1px solid #334050; transition: all .18s ease; font-weight: 700;
+      }
+      .btn img { width: 20px; height: 20px; }
+      .btn-primary { background: #ea4335; color: #fff; border-color: #ea4335; }
+      .btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
+      .btn-ghost { background: #1a2131; color: #e8e8ea; }
+      .btn-ghost:hover { border-color: #3b4a63; transform: translateY(-1px); }
+      .btn-facebook { background: #1877F2; color: #fff; border-color: #1877F2; }
+      .btn-facebook:hover { filter: brightness(1.08); transform: translateY(-1px); }
+      .btn-tiktok {
+        background: linear-gradient(90deg, #25F4EE, #FE2C55);
+        color: #fff;
+        border-color: transparent;
+      }
+      .btn-tiktok:hover { filter: brightness(1.08); transform: translateY(-1px); }
+      .subscribe-foot { margin-top: 10px; font-size: .9rem; color: #9aa1af; }
+
+      @media (max-width: 768px) {
+        .subscribe-title { font-size: 1.35rem; }
+      }
     </style>
 </head>
 <body>
@@ -38,6 +104,22 @@
         </ul>
       </nav>
     </header>
+    
+    <!-- Modal Suscríbete -->
+    <div id="subscribe-modal" class="subscribe-modal" role="dialog" aria-modal="true" aria-labelledby="subscribe-title" hidden>
+      <div class="subscribe-card">
+        <div class="brand"><img src="../../../ico/youtube.png" alt="YouTube">Mundo Otaku Latino</div>
+        <h2 id="subscribe-title" class="subscribe-title">¡Apóyanos suscribiéndote al canal!</h2>
+        <p class="subscribe-desc">Tu apoyo nos ayuda a mantener el sitio y subir nuevo contenido. ¡Gracias por estar aquí!</p>
+        <div class="subscribe-actions">
+          <a class="btn btn-primary" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="Abrir canal en YouTube"><img src="../../../ico/youtube.png" alt="YouTube"> Suscribirme en YouTube</a>
+          <a class="btn btn-facebook" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener" aria-label="Abrir Facebook"><img src="../../../ico/facebook.png" alt="Facebook"> Facebook</a>
+          <a class="btn btn-tiktok" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener" aria-label="Abrir TikTok"><img src="../../../ico/TIKTOK.webp" alt="TikTok"> TikTok</a>
+          <button id="subscribe-dismiss" class="btn btn-ghost" aria-label="Cerrar y continuar">Continuar al sitio</button>
+        </div>
+        <div class="subscribe-foot">Se mostrará una vez por sesión.</div>
+      </div>
+    </div>
     <main class="container">
         <div class="main-content">
           <div class="left-content">
@@ -46,7 +128,7 @@
 
             <section class="player-selector" aria-label="Selector de idioma y servidor">
                 <div class="language-toggle" role="tablist" aria-label="Idiomas disponibles">
-                    <button class="lang-btn active" role="tab" aria-selected="true" data-language="lat">
+                    <button class="lang-btn" role="tab" aria-selected="false" data-language="lat">
                         <img src="../../../ico/LAT.png" alt="Latino">
                         <span>Latino</span>
                     </button>
@@ -68,14 +150,16 @@
                     <a href="#" class="server-card"
                        data-url-lat="https://hglink.to/e/x6towvxdhc9h"
                        data-fallback-lat="https://hglink.to/e/x6towvxdhc9h"
+                       data-url-sub="https://hglink.to/e/wle2cabqs493"
                        aria-label="StreamWish">
                         <img src="../../../ico/STREAMWISH.png" alt="StreamWish">
                         <span>StreamWish</span>
                     </a>
 
-                    <a href="#" class="server-card active"
+                    <a href="#" class="server-card"
                        data-url-lat="https://mxdrop.to/e/xw90zpw7alo9x3r"
                        data-fallback-lat="https://mdy48tn97.com/e/xw90zpw7alo9x3r"
+                       data-url-sub="#"
                        aria-label="MixDrop">
                         <img src="../../../ico/mixdrop.webp" alt="MixDrop">
                         <span>MixDrop</span>
@@ -84,13 +168,15 @@
                     <a href="#" class="server-card"
                        data-url-lat="https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4"
                        data-fallback-lat="https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4"
+                       data-url-sub="https://streamtape.com/e/vrlZ6o9RAGu4G7O/"
+                       data-fallback-sub="https://streamtape.com/e/vrlZ6o9RAGu4G7O/"
                        aria-label="StreamTape">
                         <img src="../../../ico/streamtape.png" alt="StreamTape">
                         <span>StreamTape</span>
                     </a>
 
                     <a href="#" class="server-card"
-                       data-url-lat="https://example.com/latino/netu"
+                       data-url-lat="https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09"
                        data-url-sub="https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09"
                        data-fallback-sub="https://waaw.ac/f/uOpfkz58kWeh"
                        aria-label="Netu">
@@ -109,6 +195,7 @@
                     <a href="#" class="server-card"
                        data-url-lat="https://hglink.to/e/x6towvxdhc9h"
                        data-fallback-lat="https://hglink.to/e/x6towvxdhc9h"
+                       data-url-sub="https://hglink.to/e/wle2cabqs493"
                        aria-label="HGLINK">
                         <img src="../../../ico/HGLINK.png" alt="HGLINK">
                         <span>HGLINK</span>
@@ -211,5 +298,32 @@
     </main>
 
     <script src="../../../assets/js/server-selector.js"></script>
+    <script>
+      (function() {
+        const modal = document.getElementById('subscribe-modal');
+        const dismiss = document.getElementById('subscribe-dismiss');
+        const KEY = 'subscribeModalShown';
+        function openModal() {
+          if (!modal) return;
+          modal.hidden = false;
+          document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+          modal.hidden = true;
+          document.body.style.overflow = '';
+          try { sessionStorage.setItem(KEY, '1'); } catch (_) {}
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+          let shown = '0';
+          try { shown = sessionStorage.getItem(KEY) || '0'; } catch (_) {}
+          if (shown !== '1') openModal();
+        });
+        if (dismiss) dismiss.addEventListener('click', closeModal);
+        // Cerrar al hacer click fuera de la tarjeta
+        if (modal) modal.addEventListener('click', function(e){ if (e.target === modal) closeModal(); });
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+      })();
+    </script>
 </body>
 </html>

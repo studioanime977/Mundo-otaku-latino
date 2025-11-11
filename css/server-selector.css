@@ -92,6 +92,21 @@ html, body {
 
 .server-card:hover { transform: translateY(-1px); border-color: #334050; }
 .server-card.active { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(88,101,242,0.20) inset; }
+/* Estados deshabilitados por no tener enlace disponible */
+.server-card.disabled,
+.server-card[aria-disabled="true"] {
+  opacity: 0.45;
+  filter: grayscale(0.4);
+  cursor: not-allowed;
+  pointer-events: none;
+  border-color: var(--border);
+  box-shadow: none;
+}
+.server-card.disabled img,
+.server-card[aria-disabled="true"] img {
+  filter: grayscale(1);
+  opacity: 0.85;
+}
 
 .player-frame-wrap {
   position: relative;
@@ -107,6 +122,30 @@ html, body {
   height: 62vh;
   border: 0;
 }
+
+.player-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(15,17,21,0.92), rgba(15,17,21,0.96));
+  text-align: center;
+  padding: 20px;
+}
+.placeholder-inner { max-width: 520px; }
+.placeholder-icon { width: 86px; height: 86px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); }
+.placeholder-text { margin: 12px 0 16px; color: var(--muted); font-size: 1rem; }
+.placeholder-cta {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #ea4335;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+.placeholder-cta:hover { filter: brightness(1.08); }
 
 .player-fallback {
   margin-top: 10px;
