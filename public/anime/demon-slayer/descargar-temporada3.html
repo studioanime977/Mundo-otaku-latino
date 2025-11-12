@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Descargas – Castillo Infinito</title>
+  <title>Descargas – Demon Slayer Temporada 3</title>
   <link rel="stylesheet" href="../../../css/style.css" />
   <link rel="stylesheet" href="../../../css/responsive-style.css" />
   <link rel="stylesheet" href="../../../css/responsive-navigation.css" />
@@ -12,7 +12,6 @@
   <link rel="apple-touch-icon" href="../../../ico/logo.png" />
   <style>
     .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
-    .header-space { margin-top: 8px; }
     .back-btn { display:inline-block; margin:12px 0; padding:10px 16px; background:#6c63ff; color:#fff; border-radius:8px; text-decoration:none; }
     .lang-toggle { display:flex; gap:8px; margin:12px 0 16px; }
     .lang-toggle button { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; background:#2c2c2c; color:#ddd; }
@@ -20,14 +19,14 @@
     .download-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
     .card { background: rgba(255,255,255,0.04); border-radius:10px; padding:12px; }
     .card h4 { margin:0 0 8px 0; }
-    .actions { display:flex; gap:10px; align-items:center; }
+    .links { list-style:none; padding:0; margin:0; display:grid; grid-template-columns: 1fr; gap:8px; }
     .btn { display:inline-block; padding:8px 12px; border-radius:8px; text-decoration:none; }
     .btn-download { background:#27ae60; color:#fff; }
-    .btn-copy { background:#111; color:#fff; }
+    .btn.disabled { opacity:0.55; pointer-events:none; }
     .section { display:none; }
     .section.active { display:block; }
     @media (max-width:768px){ .download-grid { grid-template-columns: 1fr; } }
-    /* Footer nuevo */
+
     .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
     .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .footer .footer-section h3 { margin: 0 0 8px; }
@@ -60,16 +59,9 @@
       if (!['lat','sub'].includes(lang)) { lang = 'lat'; }
       setActiveLanguage(lang);
     }
-    function copyHref(el){
-      const href = el.getAttribute('href');
-      navigator.clipboard.writeText(href).then(()=>{
-        el.textContent = 'Copiado';
-        setTimeout(()=>{ el.textContent = 'Copiar link'; }, 1500);
-      });
-    }
     document.addEventListener('DOMContentLoaded', initFromQuery);
   </script>
-</head>
+  </head>
 <body>
   <header class="header">
     <nav class="nav-container">
@@ -85,105 +77,62 @@
   </header>
 
   <main class="container">
-    <a class="back-btn" href="./castillo-infinito.html">◄ Volver al episodio</a>
-    <h1>Descargas – Castillo Infinito</h1>
-    <p>Elige idioma y servidor. Todos los enlaces pasan por el acortador exe.io para protegerlos.</p>
+    <a class="back-btn" href="./temporada-3.html">◄ Volver a la temporada 3</a>
+    <h1>Descargas – Temporada 3</h1>
+    <p>Elige idioma y servidor. Todos los enlaces son externos a los proveedores.</p>
 
     <div class="lang-toggle" role="tablist" aria-label="Idiomas">
       <button role="tab" class="active" data-lang="lat" onclick="setActiveLanguage('lat')">Latino</button>
       <button role="tab" data-lang="sub" onclick="setActiveLanguage('sub')">Sub Español</button>
     </div>
 
-    <!-- Latino -->
     <section class="section active" data-lang="lat" aria-label="Descargas Latino">
       <div class="download-grid">
         <div class="card">
-          <h4>Terabox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castilloterasSONY2025">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castilloterasSONY2025" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
           <h4>MixDrop</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
+          <ul class="links">
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xw9wnlvqae11ql?download">Descargar Ep 01</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/l79j9zdqfq13z80?download">Descargar Ep 02</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/nln6n9vqf7kmwk?download">Descargar Ep 04</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36q7rw10aloxgj?download">Descargar Ep 06</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/elz84g71h686zw?download">Descargar Ep 07</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/gjdz48xqi8lnq4?download">Descargar Ep 08</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xw9epx4makqjx4?download">Descargar Ep 09</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/z1jxqmldudxld?download">Descargar Ep 10</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0e8god0i9z448?download">Descargar Ep 11</a></li>
+          </ul>
         </div>
         <div class="card">
           <h4>StreamTape</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>StreamWish</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>EarnVids</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>MediaFire</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Dropbox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
+          <ul class="links">
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/9PK4LO7wM6Ha20Z/Kimetsu_no_Yaiba_-_Temporada_3_Episodio_01.mp4">Descargar Ep 01</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/p8xOjev9vJHrePW/Kimetsu_no_Yaiba_-_Temporada_3_Episodio_02.mp4">Descargar Ep 02</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/ALAXLmoOD2TwPg/Kimetsu_no_Yaiba_-_Temporada_3_Episodio_03.mp4">Descargar Ep 03</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/4y601KLAZKUK32D/Kimetsu_no_Yaiba_-_Temporada_3_Episodio_04.mp4">Descargar Ep 04</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/ZxoGPwPLLlhB49/Kimetsu_no_Yaiba_-_Temporada_3_Episodio_05.mp4">Descargar Ep 05</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/op4l0KpOZqHdmr/Kimetsu_no_Yaiba_-_Temporada_3_Episodio_06.mp4">Descargar Ep 06</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/beae2p3JOrSxRw/Kimetsu_no_Yaiba_-_Temporada_3_Episodio_07.mp4">Descargar Ep 07</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/ZKwm34JqV0ug6j/Kimetsu_no_Yaiba_-_Temporada_3_Episodio_08.mp4">Descargar Ep 08</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/wzlgrVMXpRiJvLP/Kimetsu_no_Yaiba_-_Temporada_3_Episodio_09.mp4">Descargar Ep 09</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/6P8ADM9WbPF9JPM/Kimetsu_no_Yaiba_-_Temporada_3_Episodio_10.mp4">Descargar Ep 10</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/jAmKKJgAxzFzK0r/Kimetsu_no_Yaiba_-_Temporada_3_Episodio_11.mp4">Descargar Ep 11</a></li>
+          </ul>
         </div>
       </div>
     </section>
 
-
-    <!-- Sub Español -->
     <section class="section" data-lang="sub" aria-label="Descargas Sub Español">
       <div class="download-grid">
         <div class="card">
-          <h4>Netu (HQQ)</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Terabox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/CASTISUBTERA">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/CASTISUBTERA" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>MediaFire</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Dropbox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
+          <h4>HD MULTIHOST</h4>
+          <ul class="links">
+            <li><a class="btn btn-download disabled" href="#" aria-disabled="true">—</a></li>
+            <li><a class="btn btn-download disabled" href="#" aria-disabled="true">—</a></li>
+          </ul>
         </div>
       </div>
+      <p style="opacity:.8; margin-top:8px;">Próximamente enlaces Sub Español.</p>
     </section>
-
   </main>
 
   <footer class="footer">
@@ -260,8 +209,5 @@
     </div>
   </footer>
 
-  <script>
-    // Permite abrir esta página con ?lang=lat|es|sub desde el episodio
-  </script>
-</body>
-</html>
+  </body>
+  </html>

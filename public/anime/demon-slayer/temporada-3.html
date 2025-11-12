@@ -15,39 +15,17 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script><link rel="stylesheet" href="../../../css/anime.css">
   <link rel="stylesheet" href="../../../css/responsive-style.css">
   <link rel="stylesheet" href="../../../css/responsive-navigation.css"><style>
-    /* Layout de escritorio: reproductor a la izquierda y Popular a la derecha */
     .main-content { display: flex; gap: 20px; align-items: flex-start; }
     .left-content { flex: 3; }
     .right-content { flex: 1; }
-
-    /* Miniaturas en la sección Popular (desktop) */
+    .back-btn { display: inline-block; margin: 12px 0; padding: 10px 16px; background: #6c63ff; color: #fff; border-radius: 8px; text-decoration: none; }
     .right-content .popular-item { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.03); margin-bottom: 10px; cursor: pointer; }
     .right-content .popular-item:hover { background: rgba(255,255,255,0.06); }
     .right-content .popular-item img { width: 120px; height: 72px; object-fit: cover; border-radius: 6px; display: block; }
     .right-content .popular-item .title { font-size: 0.95rem; line-height: 1.3; color: #fff; }
-
-    /* Controles del reproductor */
-    .video-functions { display: flex; gap: 10px; justify-content: flex-start; margin-top: 10px; }
-    .function-btn { padding: 10px 16px; background: linear-gradient(135deg, #6c63ff 0%, #5a54e6 100%); color: #fff; border: none; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,0.15); cursor: pointer; transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease; }
-    .function-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,0,0,0.2); }
-    .function-btn:active { transform: translateY(0); box-shadow: 0 3px 8px rgba(0,0,0,0.15); }
-
-    /* Efecto Expandir */
-    .contenedor-video.expanded .reproductor-video iframe { height: 75vh; }
-
-    /* Efecto Apagar Luces */
-    body.lights-off::before { content: ""; position: fixed; inset: 0; background: rgba(0,0,0,0.85); pointer-events: none; z-index: 999; }
-    .reproductor-video { position: relative; z-index: 1000; }
-    body.lights-off .function-btn { background: #333; color: #ffd54f; }
-
-    /* Opcional: asegurar que el iframe del reproductor se vea bien */
     .reproductor-video iframe { width: 100%; height: 480px; border: none; }
-    /* Botón Descargar alineado a la derecha */
-    .video-functions { align-items: center; }
-    .download-btn { margin-left: auto; background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
-    .function-btn.disabled { opacity: 0.5; pointer-events: none; }
+    .player-frame-wrap { background: #111; border-radius: 12px; overflow: hidden; }
   </style>
-  <!-- Estilos de footer unificado -->
   <style>
     .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
     .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -66,7 +44,6 @@
     .footer .footer-text { text-align: center; margin-top: 12px; opacity: 0.8; }
     @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
   </style>
-  <!-- Estilos del modal de suscripción -->
   <style>
     .subscribe-modal[hidden] { display: none; }
     .subscribe-modal { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; background: rgba(10,12,16,0.75); backdrop-filter: blur(4px); }
@@ -109,7 +86,6 @@
     </nav>
   </header>
 
-  <!-- Modal Suscríbete -->
   <div id="subscribe-modal" class="subscribe-modal" role="dialog" aria-modal="true" aria-labelledby="subscribe-title" hidden>
     <div class="subscribe-card">
       <div class="brand"><img src="../../../ico/youtube.png" alt="YouTube">Mundo Otaku Latino</div>
@@ -125,8 +101,9 @@
     </div>
   </div>
 
-  <main class="main-content">
-    <a href="../../html/catalogo.html" class="back-btn">Volver al Catalogo</a>
+  <main class="container">
+    <div class="main-content">
+    <a href="../../html/catalogo.html" class="back-btn">Volver al Catálogo</a>
     <div class="left-content">
       
       <div class="title-container">
@@ -135,48 +112,91 @@
       </div>
 
       <div class="description">
-        <p>Disfruta de Demon Slayer Temporada 3 (11 episodios). Selecciona un episodio y elige el reproductor. La opción 1 contiene los enlaces de mxdrop disponibles.</p>
+        <p>Disfruta de Demon Slayer Temporada 3 (11 episodios). Selecciona un episodio y elige el reproductor. Servidores disponibles en Latino: MixDrop y StreamTape.</p>
       </div>
 
       <div class="contenedor-video">
-        <div class="player-options">
-          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÓN 1</button>
-          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÓN 2</button>
-          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÓN 3</button>
-          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÓN 4</button>
-        </div>
-        <div class="reproductor-video">
-          <div id="opcion1-player" class="player-container active">
-            <iframe src="" allowfullscreen></iframe>
+        <section class="player-selector" aria-label="Selector de idioma y servidor">
+          <div class="language-toggle" role="tablist" aria-label="Idiomas disponibles">
+            <button class="lang-btn" role="tab" aria-selected="false" data-language="lat">
+              <img src="../../../ico/LAT.png" alt="Latino">
+              <span>Latino</span>
+            </button>
+            <button class="lang-btn" role="tab" aria-selected="false" data-language="sub">
+              <img src="../../../ico/SUB.png" alt="Subtitulado">
+              <span>Subtitulado</span>
+            </button>
           </div>
-          <div id="opcion2-player" class="player-container">
-            <iframe src="" allowfullscreen></iframe>
+
+          <div class="server-grid" aria-label="Servidores disponibles">
+            <a href="#" class="server-card" data-server="Filemoon" data-url-lat="#" data-url-sub="#" aria-label="Filemoon">
+              <img src="../../../ico/FILEMOON.png" alt="Filemoon">
+              <span>Filemoon</span>
+            </a>
+            <a href="#" class="server-card" data-server="StreamWish" data-url-lat="#" data-url-sub="#" aria-label="StreamWish">
+              <img src="../../../ico/STREAMWISH.png" alt="StreamWish">
+              <span>StreamWish</span>
+            </a>
+            <a href="#" class="server-card" data-server="MixDrop" data-url-lat="#" data-url-sub="#" aria-label="MixDrop">
+              <img src="../../../ico/mixdrop.webp" alt="MixDrop">
+              <span>MixDrop</span>
+            </a>
+            <a href="#" class="server-card" data-server="StreamTape" data-url-lat="#" data-url-sub="#" aria-label="StreamTape">
+              <img src="../../../ico/streamtape.png" alt="StreamTape">
+              <span>StreamTape</span>
+            </a>
+            <a href="#" class="server-card" data-server="Netu" data-url-lat="#" data-url-sub="#" aria-label="Netu">
+              <img src="../../../ico/netu.png" alt="Netu">
+              <span>Netu</span>
+            </a>
+            <a href="#" class="server-card" data-server="Uqload" data-url-lat="#" data-url-sub="#" aria-label="Uqload">
+              <img src="../../../ico/UQLOAD.webp" alt="Uqload">
+              <span>Uqload</span>
+            </a>
+            <a href="#" class="server-card" data-server="HGLINK" data-url-lat="#" data-url-sub="#" aria-label="HGLINK">
+              <img src="../../../ico/HGLINK.png" alt="HGLINK">
+              <span>HGLINK</span>
+            </a>
+            <a href="#" class="server-card" data-server="EarnVids" data-url-lat="#" data-url-sub="#" aria-label="EarnVids">
+              <img src="../../../ico/earnvids.jpg" alt="EarnVids">
+              <span>EarnVids</span>
+            </a>
+            <a href="#" class="server-card" data-server="LULU VDO" data-url-lat="#" data-url-sub="#" aria-label="LULU VDO">
+              <img src="../../../ico/LULUVDO.webp" alt="LULU VDO">
+              <span>LULU VDO</span>
+            </a>
+            <a href="#" class="server-card" data-server="HexUpload" data-url-lat="#" data-url-sub="#" aria-label="HexUpload">
+              <img src="../../../ico/HEXUPLOAD.png" alt="HexUpload">
+              <span>HexUpload</span>
+            </a>
           </div>
-          <div id="opcion3-player" class="player-container">
-            <iframe src="" allowfullscreen></iframe>
+
+          <div class="player-frame-wrap">
+            <iframe id="player-frame" title="Reproductor" src="about:blank" allow="autoplay" allowfullscreen loading="lazy"></iframe>
           </div>
-          <div id="opcion4-player" class="player-container">
-            <iframe src="" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="video-functions">
-          <button class="function-btn" onclick="expandPlayer()">Expandir</button>
-          <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
-          <a id="download-btn" class="function-btn download-btn" href="#" target="_blank" rel="noopener noreferrer">Descargar</a>
-        </div>
+        </section>
       </div>
 
       <div class="description">
-        <p>8/11 episodios disponibles con enlaces de mxdrop (faltan episodios 1, 3 y 5). Estado: En progreso.</p>
+        <p>11/11 episodios disponibles con enlaces de StreamTape; MixDrop en 8 episodios.</p>
       </div>
 
-      <div class="episodes-container">
+      <section class="navigation-buttons" aria-label="Navegación de episodios" style="display:grid; grid-template-columns: 1fr auto 1fr; align-items:center; column-gap:10px; margin:12px 0;">
+        <button id="prev-ep" class="nav-btn" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:start;">◄ episodio anterior</button>
+        <button id="toggle-episodes" class="nav-btn" aria-expanded="false" style="padding:10px 16px; border-radius:8px; background:#6c63ff; color:#fff; border:none; justify-self:center;">lista de episodios</button>
+        <button id="next-ep" class="nav-btn" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:end;">siguiente episodio ►</button>
+      </section>
+
+      <div class="episodes-container" id="episodes-container" hidden>
         <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
-        <div class="episodes-grid" id="episodes-grid">
-          <!-- Los episodios se generarán con JavaScript -->
-        </div>
+        <div class="episodes-grid" id="episodes-grid"></div>
       </div>
+      <section class="download-servers-section" aria-label="Enlaces de descarga" style="margin-top:18px;">
+        <div class="servers-title" style="font-weight:700; margin-bottom:8px;">Descargas</div>
+        <a href="./descargar-temporada3.html" class="download-link" style="background:#27ae60; color:#fff; padding:10px 14px; border-radius:8px; display:inline-block;">Descargar Temporada 3</a>
+      </section>
     </div>
+
 
     <div class="right-content">
       <h3>Popular</h3>
@@ -217,7 +237,8 @@
         <div class="title">Bleach - TYBW</div>
       </div>
     
-      <!-- Bloque social sustituido por footer unificado -->
+      
+    </div>
     </div>
   </main>
 
@@ -232,7 +253,7 @@
           <h3>Enlaces</h3>
           <ul>
             <li><a href="../../index.html#inicio">Inicio</a></li>
-            <li><a href="../../html/catalogo.html">🗂️ Catalogo</a></li>
+            <li><a href="../../html/catalogo.html">🗂️ Catálogo</a></li>
             <li><a href="#generos">Géneros</a></li>
             <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
           </ul>
@@ -295,49 +316,34 @@
     </div>
   </footer>
 
+  <script src="../../../assets/js/server-selector.js"></script>
   <script>
-    // Función para expandir el reproductor
-    function expandPlayer() {
-      const videoContainer = document.querySelector('.contenedor-video');
-      videoContainer.classList.toggle('expanded');
-    }
-  
-    // Función para apagar/encender las luces
-    function toggleLights() {
-      document.body.classList.toggle('lights-off');
-    }
-
-    // Convierte cualquier URL de StreamTape (/v/ o /e/) a URL embebible /e/{id}/
-    function toEmbed(url) {
+    function normalizeUrl(url) {
       if (!url) return '';
-      try {
-        const m = url.match(/\/\/(?:www\.)?streamtape\.com\/(?:v|e)\/([^\/?#]+)/i);
-        if (m && m[1]) return `https://streamtape.com/e/${m[1]}/`;
-      } catch (_) {}
-      // Fallback: reemplazo simple
-      return url.replace('/v/', '/e/') + (url.endsWith('/') ? '' : '/');
+      return url;
+    }
+    function mixdropFallback(url) {
+      if (!url) return '';
+      const m = url.match(/https?:\/\/mxdrop\.to\/e\/([^\/?#]+)/i);
+      return m ? `https://mdy48tn97.com/e/${m[1]}` : '';
     }
 
-    // Estado actual
     let currentEpisode = null;
-    let currentOption = 'opcion1';
 
-    // Estructura de 11 episodios de Demon Slayer Temporada 3 (Arco de la Villa de los Herreros)
     const episodes = [
-      { num: 1, title: "Alguien que es gentil con los demonios", op1: "https://mxdrop.to/e/1no18pzebe1dd4", op2: "https://mxdrop.to/e/owzq3zgkse7mom", op3: "https://mxdrop.to/e/pj6839j4bnzp7l", op4: "" },
-      { num: 2, title: "Yoriichi Type Zero", op1: "https://mxdrop.to/e/l79j9zdqfq13z80", op2: "", op3: "", op4: "" },
-      { num: 3, title: "Una espada de hace 300 años", op1: "", op2: "", op3: "", op4: "" },
-      { num: 4, title: "Gracias, Tokito-kun", op1: "https://mxdrop.to/e/nln6n9vqf7kmwk", op2: "", op3: "", op4: "" },
-      { num: 5, title: "Bright Red Sword", op1: "https://mxdrop.to/e/7kjwdedxsd1ngqd", op2: "https://mxdrop.to/e/9wxp79plinp7lx", op3: "", op4: "" },
-      { num: 6, title: "¿No eres tú?", op1: "https://mxdrop.to/e/36q7rw10aloxgj", op2: "", op3: "", op4: "" },
-      { num: 7, title: "Extremely Happy", op1: "https://mxdrop.to/e/elz84g71h686zw", op2: "", op3: "", op4: "" },
-      { num: 8, title: "El Secreto del Muñeco de Combate", op1: "https://mxdrop.to/e/gjdz48xqi8lnq4", op2: "", op3: "", op4: "" },
-      { num: 9, title: "Mist Hashira Muichiro Tokito", op1: "https://mxdrop.to/e/xw9epx4makqjx4", op2: "", op3: "", op4: "" },
-      { num: 10, title: "Love Hashira Mitsuri Kanroji", op1: "https://mxdrop.to/e/z1jxqmldudxld", op2: "", op3: "", op4: "" },
-      { num: 11, title: "Connecting Bonds", op1: "https://mxdrop.to/e/k0e8god0i9z448", op2: "", op3: "", op4: "" }
+      { num: 1, title: "Alguien que es gentil con los demonios", op1: "https://mxdrop.to/e/xw9wnlvqae11ql", op2: "https://hqq.ac/e/UG1sL2ltcmZvT1dRNnlpUjlaTzZNUT09", op3: "", op4: "https://streamtape.com/e/9PK4LO7wM6Ha20Z" },
+      { num: 2, title: "Yoriichi Type Zero", op1: "https://mxdrop.to/e/l79j9zdqfq13z80", op2: "https://hqq.ac/e/Ymw1T2RQK2FPTDJTbTd5WTRHM0Q2UT09", op3: "", op4: "https://streamtape.com/e/p8xOjev9vJHrePW" },
+      { num: 3, title: "Una espada de hace 300 años", op1: "", op2: "https://hqq.ac/e/RUlaRWhoeko1L2QzdXNlZUR1WnE2QT09", op3: "", op4: "https://streamtape.com/e/ALAXLmoOD2TwPg" },
+      { num: 4, title: "Gracias, Tokito-kun", op1: "https://mxdrop.to/e/nln6n9vqf7kmwk", op2: "https://hqq.ac/e/Qi9VQ0NSTVFNa3JPMjM0ZUNyMk9CZz09", op3: "", op4: "https://streamtape.com/e/4y601KLAZKUK32D" },
+      { num: 5, title: "Bright Red Sword", op1: "", op2: "https://hqq.ac/e/OFIwVDg1cUpWV3d4U1BoMUdBL3A3Zz09", op3: "", op4: "https://streamtape.com/e/ZxoGPwPLLlhB49" },
+      { num: 6, title: "¿No eres tú?", op1: "https://mxdrop.to/e/36q7rw10aloxgj", op2: "https://hqq.ac/e/MU1qVXRudDdMMU9yTkNWWGpBcjR2QT09", op3: "", op4: "https://streamtape.com/e/op4l0KpOZqHdmr" },
+      { num: 7, title: "Extremely Happy", op1: "https://mxdrop.to/e/elz84g71h686zw", op2: "https://hqq.ac/e/cGtta0VnYlQ4d3R6bGpoRnpVNmtlZz09", op3: "", op4: "https://streamtape.com/e/beae2p3JOrSxRw" },
+      { num: 8, title: "El Secreto del Muñeco de Combate", op1: "https://mxdrop.to/e/gjdz48xqi8lnq4", op2: "https://hqq.ac/e/eVRzZU9ib2tRVXhzMEV0L2VBS2xwQT09", op3: "", op4: "https://streamtape.com/e/ZKwm34JqV0ug6j" },
+      { num: 9, title: "Mist Hashira Muichiro Tokito", op1: "https://mxdrop.to/e/xw9epx4makqjx4", op2: "https://hqq.ac/e/cFVMaFRkanZETzl6TkEvelBYRnRJdz09", op3: "", op4: "https://streamtape.com/e/wzlgrVMXpRiJvLP" },
+      { num: 10, title: "Love Hashira Mitsuri Kanroji", op1: "https://mxdrop.to/e/z1jxqmldudxld", op2: "https://hqq.ac/e/Vlh5WFpxN2Q2bUxlVlVWaGtzMTErUT09", op3: "", op4: "https://streamtape.com/e/6P8ADM9WbPF9JPM" },
+      { num: 11, title: "Connecting Bonds", op1: "https://mxdrop.to/e/k0e8god0i9z448", op2: "https://hqq.ac/e/a3prc0dCZjhlNE9yZ25ra0R5L0hKdz09", op3: "", op4: "https://streamtape.com/e/jAmKKJgAxzFzK0r" }
     ];
 
-    // Generar botones de episodios
     const episodesGrid = document.getElementById('episodes-grid');
     episodes.forEach(episode => {
       const episodeBtn = document.createElement('button');
@@ -347,86 +353,94 @@
       episodesGrid.appendChild(episodeBtn);
     });
 
-    // Cargar episodio
+    function applyEpisodeToServerGrid(ep) {
+      const mixdropCard = document.querySelector('.server-card[data-server="MixDrop"]');
+      const streamTapeCard = document.querySelector('.server-card[data-server="StreamTape"]');
+      const netuCard = document.querySelector('.server-card[data-server="Netu"]');
+      const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"]):not([data-server="StreamTape"]):not([data-server="Netu"])');
+      const mixLat = normalizeUrl(ep.op1 || '');
+      if (mixdropCard) {
+        mixdropCard.setAttribute('data-url-lat', mixLat || '#');
+        const fb = mixdropFallback(mixLat);
+        if (fb) { mixdropCard.setAttribute('data-fallback-lat', fb); } else { mixdropCard.removeAttribute('data-fallback-lat'); }
+        mixdropCard.setAttribute('data-url-sub', '#');
+      }
+      const stLat = normalizeUrl(ep.op4 || '');
+      if (streamTapeCard) {
+        streamTapeCard.setAttribute('data-url-lat', stLat || '#');
+        streamTapeCard.setAttribute('data-url-sub', '#');
+      }
+      const netuLat = normalizeUrl(ep.op2 || '');
+      if (netuCard) {
+        netuCard.setAttribute('data-url-lat', netuLat || '#');
+        netuCard.setAttribute('data-url-sub', '#');
+      }
+      otherCards.forEach(card => { card.setAttribute('data-url-lat', '#'); card.setAttribute('data-url-sub', '#'); });
+    }
+
     function loadEpisode(episode) {
       document.querySelectorAll('.episode-btn').forEach((btn, index) => {
         btn.classList.toggle('active', index + 1 === episode.num);
       });
       document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
-      document.querySelector('#opcion1-player iframe').src = toEmbed(episode.op1);
-      document.querySelector('#opcion2-player iframe').src = toEmbed(episode.op2);
-      document.querySelector('#opcion3-player iframe').src = toEmbed(episode.op3);
-      document.querySelector('#opcion4-player iframe').src = toEmbed(episode.op4);
       currentEpisode = episode;
-      switchPlayer('opcion1');
-      if (typeof setupAutoPlay === 'function') {
-        setupAutoPlay();
-      }
+      applyEpisodeToServerGrid(episode);
+      updateNavState();
     }
 
-    // Cambiar reproductor
-    function switchPlayer(option) {
-      document.querySelectorAll('.player-btn').forEach(btn => {
-        btn.classList.remove('active');
+    function updateNavState() {
+      const prev = document.getElementById('prev-ep');
+      const next = document.getElementById('next-ep');
+      if (!prev || !next || !currentEpisode) return;
+      prev.disabled = currentEpisode.num <= 1;
+      next.disabled = currentEpisode.num >= episodes.length;
+      prev.style.background = prev.disabled ? '#2c2c2c' : '#6c63ff';
+      prev.style.color = prev.disabled ? '#bbb' : '#fff';
+      next.style.background = next.disabled ? '#2c2c2c' : '#6c63ff';
+      next.style.color = next.disabled ? '#bbb' : '#fff';
+    }
+    const prevBtn = document.getElementById('prev-ep');
+    const nextBtn = document.getElementById('next-ep');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        if (!currentEpisode) return;
+        const idx = currentEpisode.num - 2;
+        if (idx >= 0) loadEpisode(episodes[idx]);
       });
-      document.getElementById(`${option}-btn`).classList.add('active');
-      document.querySelectorAll('.player-container').forEach(container => {
-        container.classList.remove('active');
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        if (!currentEpisode) return;
+        const idx = currentEpisode.num;
+        if (idx < episodes.length) loadEpisode(episodes[idx]);
       });
-      document.getElementById(`${option}-player`).classList.add('active');
-      currentOption = option;
-      updateDownloadLink();
     }
-
-    // Determina el URL original según el reproductor activo
-    function getUrlForOption(ep, option) {
-      if (!ep) return '';
-      const map = { opcion1: 'op1', opcion2: 'op2', opcion3: 'op3', opcion4: 'op4' };
-      const key = map[option] || 'op1';
-      return ep[key] || '';
-    }
-
-    // Actualiza el botón Descargar con el enlace del reproductor activo
-    function updateDownloadLink() {
-      const a = document.getElementById('download-btn');
-      const url = getUrlForOption(currentEpisode, currentOption);
-      let finalUrl = url;
-      
-      // Si contiene /e/ en el enlace, convertir a /f/ para descarga directa
-      if (/\/e\//.test(url)) {
-        finalUrl = url.replace('/e/', '/f/');
-      }
-      
-      if (finalUrl) {
-        // Generar enlace acortado con exe.io API (formato simple)
-        const apiToken = '110e7b6cbdf7a5aa354afb395e889c7aba3411c6';
-        // Asegurar que el URL tenga protocolo
-        if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) {
-          finalUrl = 'https://' + finalUrl;
+    const toggleBtn = document.getElementById('toggle-episodes');
+    const episodesBox = document.getElementById('episodes-container');
+    if (toggleBtn && episodesBox) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = episodesBox.hasAttribute('hidden');
+        if (isHidden) {
+          episodesBox.removeAttribute('hidden');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+          episodesBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          episodesBox.setAttribute('hidden', '');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        const shortenedUrl = `https://exe.io/st?api=${apiToken}&url=${finalUrl}`;
-        
-        a.href = shortenedUrl;
-        a.classList.remove('disabled');
-      } else {
-        a.href = '#';
-        a.classList.add('disabled');
+      });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!currentEpisode && episodes && episodes.length) {
+        const firstMix = episodes.find(ep => normalizeUrl(ep.op1 || ''));
+        currentEpisode = firstMix || episodes[0];
+        applyEpisodeToServerGrid(currentEpisode);
+        updateNavState();
       }
-    }
-
-    // Cargar el primer episodio por defecto
-    if (episodes.length > 0) {
-      loadEpisode(episodes[0]);
-    }
-
-    // Mover botones de servidor al reproductor
-    const playerOptions = document.querySelector('.player-options');
-    const videoContainer = document.querySelector('.contenedor-video');
-    videoContainer.insertBefore(playerOptions, videoContainer.firstChild);
-
+    });
   </script>
 <section class="anuncio-responsive">
-  <!-- Anuncio Google responsivo -->
   <ins class="adsbygoogle"
        style="display:block"
        data-ad-client="ca-pub-8480825005176665"
@@ -443,7 +457,7 @@ var d = document,
     s = d.createElement('script'),
     l = d.scripts[d.scripts.length - 1];
 s.settings = mxtv || {};
-s.src = "\/\/aggressivestruggle.com\/bKX.V\/s\/dFG\/l\/0PYBWEcI\/-evmn9au\/ZoUZlDkcP\/TmY\/2\/NZz\/UM1BNQz\/EeteNxjRYt3wNZTMUE3jMEgo";
+s.src = "\/\/aggressivestruggle.com\/bKX.V\/s\/dFG\/l\/0PYBWEcI\/ -evmn9au\/ZoUZlDkcP\/TmY\/2\/NZz\/UM1BNQz\/EeteNxjRYt3wNZTMUE3jMEgo";
 s.async = true;
 s.referrerPolicy = 'no-referrer-when-downgrade';
 l.parentNode.insertBefore(s, l);

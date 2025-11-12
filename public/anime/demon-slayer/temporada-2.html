@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="../../../css/temporadas.css">
   <link rel="stylesheet" href="../../../css/style.css">
   
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script><link rel="stylesheet" href="../../../css/anime.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../../css/anime.css">
   <link rel="stylesheet" href="../../../css/responsive-style.css">
   <link rel="stylesheet" href="../../../css/responsive-navigation.css"><style>
     /* Layout de escritorio: reproductor a la izquierda y Popular a la derecha */
@@ -139,43 +140,88 @@
       </div>
 
       <div class="contenedor-video">
-        <div class="player-options">
-          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÓN 1</button>
-          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÓN 2</button>
-          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÓN 3</button>
-          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÓN 4</button>
-        </div>
-        <div class="reproductor-video">
-          <div id="opcion1-player" class="player-container active">
-            <iframe src="" allowfullscreen></iframe>
+        <section class="player-selector" aria-label="Selector de idioma y servidor">
+          <div class="language-toggle" role="tablist" aria-label="Idiomas disponibles">
+            <button class="lang-btn" role="tab" aria-selected="false" data-language="lat">
+              <img src="../../../ico/LAT.png" alt="Latino">
+              <span>Latino</span>
+            </button>
+            <button class="lang-btn" role="tab" aria-selected="false" data-language="sub">
+              <img src="../../../ico/SUB.png" alt="Subtitulado">
+              <span>Subtitulado</span>
+            </button>
           </div>
-          <div id="opcion2-player" class="player-container">
-            <iframe src="" allowfullscreen></iframe>
+
+          <div class="server-grid" aria-label="Servidores disponibles">
+            <a href="#" class="server-card" data-server="Filemoon" data-url-lat="#" data-url-sub="#" aria-label="Filemoon">
+              <img src="../../../ico/FILEMOON.png" alt="Filemoon">
+              <span>Filemoon</span>
+            </a>
+            <a href="#" class="server-card" data-server="StreamWish" data-url-lat="#" data-url-sub="#" aria-label="StreamWish">
+              <img src="../../../ico/STREAMWISH.png" alt="StreamWish">
+              <span>StreamWish</span>
+            </a>
+            <a href="#" class="server-card" data-server="MixDrop" data-url-lat="#" data-url-sub="#" aria-label="MixDrop">
+              <img src="../../../ico/mixdrop.webp" alt="MixDrop">
+              <span>MixDrop</span>
+            </a>
+            <a href="#" class="server-card" data-server="StreamTape" data-url-lat="#" data-url-sub="#" aria-label="StreamTape">
+              <img src="../../../ico/streamtape.png" alt="StreamTape">
+              <span>StreamTape</span>
+            </a>
+            <a href="#" class="server-card" data-server="Netu" data-url-lat="#" data-url-sub="#" aria-label="Netu">
+              <img src="../../../ico/netu.png" alt="Netu">
+              <span>Netu</span>
+            </a>
+            <a href="#" class="server-card" data-server="Uqload" data-url-lat="#" data-url-sub="#" aria-label="Uqload">
+              <img src="../../../ico/UQLOAD.webp" alt="Uqload">
+              <span>Uqload</span>
+            </a>
+            <a href="#" class="server-card" data-server="HGLINK" data-url-lat="#" data-url-sub="#" aria-label="HGLINK">
+              <img src="../../../ico/HGLINK.png" alt="HGLINK">
+              <span>HGLINK</span>
+            </a>
+            <a href="#" class="server-card" data-server="EarnVids" data-url-lat="#" data-url-sub="#" aria-label="EarnVids">
+              <img src="../../../ico/earnvids.jpg" alt="EarnVids">
+              <span>EarnVids</span>
+            </a>
+            <a href="#" class="server-card" data-server="LULU VDO" data-url-lat="#" data-url-sub="#" aria-label="LULU VDO">
+              <img src="../../../ico/LULUVDO.webp" alt="LULU VDO">
+              <span>LULU VDO</span>
+            </a>
+            <a href="#" class="server-card" data-server="HexUpload" data-url-lat="#" data-url-sub="#" aria-label="HexUpload">
+              <img src="../../../ico/HEXUPLOAD.png" alt="HexUpload">
+              <span>HexUpload</span>
+            </a>
           </div>
-          <div id="opcion3-player" class="player-container">
-            <iframe src="" allowfullscreen></iframe>
+
+          <div class="player-frame-wrap">
+            <iframe id="player-frame" title="Reproductor" src="about:blank" allow="autoplay" allowfullscreen loading="lazy"></iframe>
           </div>
-          <div id="opcion4-player" class="player-container">
-            <iframe src="" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="video-functions">
-          <button class="function-btn" onclick="expandPlayer()">Expandir</button>
-          <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
-          <a id="download-btn" class="function-btn download-btn" href="#" target="_blank" rel="noopener noreferrer">Descargar</a>
-        </div>
+        </section>
+        <!-- Controles de Expandir/Apagar/Descargar eliminados -->
       </div>
 
       <div class="description">
         <p>11/11 episodios disponibles con enlaces de mxdrop. Estado: Temporada completa.</p>
       </div>
 
-      <div class="episodes-container">
+      <section class="navigation-buttons" aria-label="Navegación de episodios" style="display:grid; grid-template-columns: 1fr auto 1fr; align-items:center; column-gap:10px; margin:12px 0;">
+        <button id="prev-ep" class="nav-btn" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:start;">◄ episodio anterior</button>
+        <button id="toggle-episodes" class="nav-btn" aria-expanded="false" style="padding:10px 16px; border-radius:8px; background:#6c63ff; color:#fff; border:none; justify-self:center;">lista de episodios</button>
+        <button id="next-ep" class="nav-btn" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:end;">siguiente episodio ►</button>
+      </section>
+
+      <div class="episodes-container" id="episodes-container" hidden>
         <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
         <div class="episodes-grid" id="episodes-grid">
           <!-- Los episodios se generarán con JavaScript -->
         </div>
       </div>
+      <section class="download-servers-section" aria-label="Enlaces de descarga" style="margin-top:18px;">
+        <div class="servers-title" style="font-weight:700; margin-bottom:8px;">Descargas</div>
+        <a href="./descargar-temporada2.html" class="download-link" style="background:#27ae60; color:#fff; padding:10px 14px; border-radius:8px; display:inline-block;">Descargar Temporada 2</a>
+      </section>
     </div>
 
     <div class="right-content">
@@ -294,6 +340,7 @@
       <p class="footer-text">&copy; 2025 StudioOtaku. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script src="../../../assets/js/server-selector.js"></script>
 
   <script>
     // Función para expandir el reproductor
@@ -318,23 +365,33 @@
       return url.replace('/v/', '/e/') + (url.endsWith('/') ? '' : '/');
     }
 
+    // Helpers para normalizar enlaces y definir fallback de MixDrop
+    function normalizeUrl(url) {
+      if (!url) return '';
+      return url; // mxdrop ya está en formato /e/
+    }
+    function mixdropFallback(url) {
+      if (!url) return '';
+      const m = url.match(/https?:\/\/mxdrop\.to\/e\/([^\/?#]+)/i);
+      return m ? `https://mdy48tn97.com/e/${m[1]}` : '';
+    }
+
     // Estado actual
     let currentEpisode = null;
-    let currentOption = 'opcion1';
 
     // Estructura de 11 episodios de Demon Slayer Temporada 2 (Arco del Distrito Rojo)
     const episodes = [
-      { num: 1, title: "Hashira de Sonido Tengen Uzui", op1: "https://mxdrop.to/e/z1jxdvw4bkxrp4", op2: "", op3: "", op4: "" },
-      { num: 2, title: "Infiltrándose en el Distrito Rojo", op1: "https://mxdrop.to/e/7kjw0nd6i7qx60", op2: "", op3: "", op4: "" },
-      { num: 3, title: "¿Qué eres?", op1: "https://mxdrop.to/e/l79jwkj0bn3q1p", op2: "", op3: "", op4: "" },
-      { num: 4, title: "Esta noche", op1: "https://mxdrop.to/e/elz8epd9ue4ve3", op2: "", op3: "", op4: "" },
-      { num: 5, title: "Las cosas están a punto de ponerse llamativas", op1: "https://mxdrop.to/e/r60xdrx0sw7x0n", op2: "", op3: "", op4: "" },
-      { num: 6, title: "Capas de miedo", op1: "https://mxdrop.to/e/l79jwmr3sqqd4qe", op2: "", op3: "", op4: "" },
-      { num: 7, title: "Transformación", op1: "https://mxdrop.to/e/03z6rezecrgo8e", op2: "", op3: "", op4: "" },
-      { num: 8, title: "Reunión", op1: "https://mxdrop.to/e/q1d86kpzhn4en1", op2: "", op3: "", op4: "" },
-      { num: 9, title: "Derrota de una Luna Superior", op1: "https://mxdrop.to/e/wlwjw9m1c81e6j", op2: "", op3: "", op4: "" },
-      { num: 10, title: "Nunca rindas", op1: "https://mxdrop.to/e/7kjwjjrpu6m7ld", op2: "", op3: "", op4: "" },
-      { num: 11, title: "No importa cuántas vidas", op1: "https://mxdrop.to/e/8ljrj1eqi64qe4p", op2: "", op3: "", op4: "" }
+      { num: 1, title: "Hashira de Sonido Tengen Uzui", op1: "https://mxdrop.to/e/z1jxdvw4bkxrp4", op2: "https://hqq.ac/e/aHR2c09XVHdVY2N3TXVrdVZrblQxUT09", op3: "", op4: "" },
+      { num: 2, title: "Infiltrándose en el Distrito Rojo", op1: "https://mxdrop.to/e/7kjw0nd6i7qx60", op2: "https://hqq.ac/e/TlY1VisyV2grcElUemd0aG5zMkp5UT09", op3: "", op4: "" },
+      { num: 3, title: "¿Qué eres?", op1: "https://mxdrop.to/e/l79jwkj0bn3q1p", op2: "https://hqq.ac/e/R09qUWUzcnBCZGF6eElYUExKWkhqZz09", op3: "", op4: "" },
+      { num: 4, title: "Esta noche", op1: "https://mxdrop.to/e/elz8epd9ue4ve3", op2: "https://hqq.ac/e/MjhOdVlCYWs5UjlZaHVmR2lKdXQ4Zz09", op3: "", op4: "" },
+      { num: 5, title: "Las cosas están a punto de ponerse llamativas", op1: "https://mxdrop.to/e/r60xdrx0sw7x0n", op2: "https://hqq.ac/e/L1hHa3hGbXBPM3ZEOXNIK2hWODFaQT09", op3: "", op4: "" },
+      { num: 6, title: "Capas de miedo", op1: "https://mxdrop.to/e/l79jwmr3sqqd4qe", op2: "https://hqq.ac/e/K2REZWI0ZDZkUHZ3dC91TWU0LzhtZz09", op3: "", op4: "" },
+      { num: 7, title: "Transformación", op1: "https://mxdrop.to/e/03z6rezecrgo8e", op2: "https://hqq.ac/e/bXVPWWNzeHM3QnJVaDdjanljM3VsQT09", op3: "", op4: "" },
+      { num: 8, title: "Reunión", op1: "https://mxdrop.to/e/q1d86kpzhn4en1", op2: "https://hqq.ac/e/OS90cFErMkVXdXoyVkxEVVcwWGpJQT09", op3: "", op4: "" },
+      { num: 9, title: "Derrota de una Luna Superior", op1: "https://mxdrop.to/e/wlwjw9m1c81e6j", op2: "https://hqq.ac/e/MytTTExMYU1xTUxqT0NWZHR1Qkc0Zz09", op3: "", op4: "" },
+      { num: 10, title: "Nunca rindas", op1: "https://mxdrop.to/e/7kjwjjrpu6m7ld", op2: "https://hqq.ac/e/bWdXeUlnSkRPLzhHK1NaUWN4bndjUT09", op3: "", op4: "" },
+      { num: 11, title: "No importa cuántas vidas", op1: "https://mxdrop.to/e/8ljrj1eqi64qe4p", op2: "https://hqq.ac/e/QW4yR0JZVWpSbHhsYThXbTVYODJhZz09", op3: "", op4: "" }
     ];
 
     // Generar botones de episodios
@@ -347,82 +404,125 @@
       episodesGrid.appendChild(episodeBtn);
     });
 
-    // Cargar episodio
+    // Aplica el episodio a la grilla de servidores (MixDrop como fuente principal en Latino)
+    function applyEpisodeToServerGrid(ep) {
+      const mixdropCard = document.querySelector('.server-card[data-server="MixDrop"]');
+      const netuCard = document.querySelector('.server-card[data-server="Netu"]');
+      const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"])');
+      const latUrlMix = normalizeUrl(ep.op1 || '');
+      const latUrlNetu = normalizeUrl(ep.op2 || '');
+      if (mixdropCard) {
+        mixdropCard.setAttribute('data-url-lat', latUrlMix || '#');
+        const fb = mixdropFallback(latUrlMix);
+        if (fb) {
+          mixdropCard.setAttribute('data-fallback-lat', fb);
+        } else {
+          mixdropCard.removeAttribute('data-fallback-lat');
+        }
+        mixdropCard.setAttribute('data-url-sub', '#');
+      }
+      if (netuCard) {
+        netuCard.setAttribute('data-url-lat', latUrlNetu || '#');
+        netuCard.setAttribute('data-url-sub', '#');
+      }
+      otherCards.forEach(card => {
+        if (!card.matches('[data-server="MixDrop"], [data-server="Netu"]')) {
+          card.setAttribute('data-url-lat', '#');
+          card.setAttribute('data-url-sub', '#');
+        }
+      });
+    }
+
+    // Cargar episodio usando el nuevo selector de servidores
     function loadEpisode(episode) {
       document.querySelectorAll('.episode-btn').forEach((btn, index) => {
         btn.classList.toggle('active', index + 1 === episode.num);
       });
       document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
-      document.querySelector('#opcion1-player iframe').src = toEmbed(episode.op1);
-      document.querySelector('#opcion2-player iframe').src = toEmbed(episode.op2);
-      document.querySelector('#opcion3-player iframe').src = toEmbed(episode.op3);
-      document.querySelector('#opcion4-player iframe').src = toEmbed(episode.op4);
       currentEpisode = episode;
-      switchPlayer('opcion1');
-      if (typeof setupAutoPlay === 'function') {
-        setupAutoPlay();
-      }
-    }
-
-    // Cambiar reproductor
-    function switchPlayer(option) {
-      document.querySelectorAll('.player-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      document.getElementById(`${option}-btn`).classList.add('active');
-      document.querySelectorAll('.player-container').forEach(container => {
-        container.classList.remove('active');
-      });
-      document.getElementById(`${option}-player`).classList.add('active');
-      currentOption = option;
-      updateDownloadLink();
-    }
-
-    // Determina el URL original según el reproductor activo
-    function getUrlForOption(ep, option) {
-      if (!ep) return '';
-      const map = { opcion1: 'op1', opcion2: 'op2', opcion3: 'op3', opcion4: 'op4' };
-      const key = map[option] || 'op1';
-      return ep[key] || '';
-    }
-
-    // Actualiza el botón Descargar con el enlace del reproductor activo
-    function updateDownloadLink() {
-      const a = document.getElementById('download-btn');
-      const url = getUrlForOption(currentEpisode, currentOption);
-      let finalUrl = url;
-      
-      // Si contiene /e/ en el enlace, convertir a /f/ para descarga directa
-      if (/\/e\//.test(url)) {
-        finalUrl = url.replace('/e/', '/f/');
-      }
-      
-      if (finalUrl) {
-        // Generar enlace acortado con exe.io API (formato simple)
-        const apiToken = '110e7b6cbdf7a5aa354afb395e889c7aba3411c6';
-        // Asegurar que el URL tenga protocolo
-        if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) {
-          finalUrl = 'https://' + finalUrl;
+      applyEpisodeToServerGrid(episode);
+      // Si ya hay un idioma seleccionado, refrescar disponibilidad y cargar preferido
+      try {
+        const activeLangBtn = document.querySelector('.lang-btn[aria-selected="true"]');
+        if (activeLangBtn) {
+          activeLangBtn.click();
+        } else {
+          // Si no hay idioma activo, activar Latino por defecto para mostrar servidores disponibles
+          const latBtn = document.querySelector('.lang-btn[data-language="lat"]');
+          if (latBtn) latBtn.click();
         }
-        const shortenedUrl = `https://exe.io/st?api=${apiToken}&url=${finalUrl}`;
-        
-        a.href = shortenedUrl;
-        a.classList.remove('disabled');
-      } else {
-        a.href = '#';
-        a.classList.add('disabled');
-      }
+      } catch (_) {}
+      updateNavState();
+    }
+
+    // Navegación anterior/siguiente
+    function updateNavState() {
+      const prev = document.getElementById('prev-ep');
+      const next = document.getElementById('next-ep');
+      if (!prev || !next || !currentEpisode) return;
+      prev.disabled = currentEpisode.num <= 1;
+      next.disabled = currentEpisode.num >= episodes.length;
+      prev.style.background = prev.disabled ? '#2c2c2c' : '#6c63ff';
+      prev.style.color = prev.disabled ? '#bbb' : '#fff';
+      next.style.background = next.disabled ? '#2c2c2c' : '#6c63ff';
+      next.style.color = next.disabled ? '#bbb' : '#fff';
+    }
+    const prevBtn = document.getElementById('prev-ep');
+    const nextBtn = document.getElementById('next-ep');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        if (!currentEpisode) return;
+        const idx = currentEpisode.num - 2; // episodio anterior
+        if (idx >= 0) loadEpisode(episodes[idx]);
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        if (!currentEpisode) return;
+        const idx = currentEpisode.num; // siguiente episodio
+        if (idx < episodes.length) loadEpisode(episodes[idx]);
+      });
     }
 
     // Cargar el primer episodio por defecto
-    if (episodes.length > 0) {
-      loadEpisode(episodes[0]);
-    }
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!currentEpisode && episodes && episodes.length) {
+        const firstMix = episodes.find(ep => normalizeUrl(ep.op1 || ''));
+        currentEpisode = firstMix || episodes[0];
+        applyEpisodeToServerGrid(currentEpisode);
+        updateNavState();
+      }
+      const latBtn = document.querySelector('.lang-btn[data-language="lat"]');
+      if (latBtn) {
+        latBtn.click();
+      }
+    });
 
-    // Mover botones de servidor al reproductor
+    // Mover botones de servidor al reproductor (si existen)
     const playerOptions = document.querySelector('.player-options');
     const videoContainer = document.querySelector('.contenedor-video');
-    videoContainer.insertBefore(playerOptions, videoContainer.firstChild);
+    if (playerOptions && videoContainer && videoContainer.firstChild) {
+      videoContainer.insertBefore(playerOptions, videoContainer.firstChild);
+    }
+
+    // Toggle de lista de episodios
+    const toggleBtn = document.getElementById('toggle-episodes');
+    const episodesContainer = document.getElementById('episodes-container');
+    if (toggleBtn && episodesContainer) {
+      toggleBtn.addEventListener('click', function () {
+        const isHidden = episodesContainer.hasAttribute('hidden');
+        if (isHidden) {
+          episodesContainer.removeAttribute('hidden');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+          try {
+            episodesContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } catch (_) {}
+        } else {
+          episodesContainer.setAttribute('hidden', '');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
 
   </script>
 <section class="anuncio-responsive">
