@@ -165,8 +165,8 @@
         <section class="player-selector" aria-label="Selector de servidor">
           <!-- Selector de idioma LAT/SUB -->
           <div class="language-toggle" aria-label="Seleccionar idioma">
-            <button class="lang-btn active" data-lang="sub"><img src="../../../ico/SUB.png" alt="Sub Español"><span>Sub Español</span></button>
-            <button class="lang-btn" data-lang="lat"><img src="../../../ico/LAT.png" alt="Latino"><span>Latino</span></button>
+            <button class="lang-btn active" data-lang="lat"><img src="../../../ico/LAT.png" alt="Latino"><span>Latino</span></button>
+            <button class="lang-btn" data-lang="sub" aria-disabled="true"><img src="../../../ico/SUB.png" alt="Sub Español"><span>Sub Español (Próximamente)</span></button>
           </div>
           <div class="server-grid" aria-label="Servidores disponibles">
             <a href="#" class="server-card" data-target="player1" aria-label="MixDrop">
@@ -258,7 +258,7 @@
           <div>—</div>
 
           <div style="display:flex; align-items:center; gap:8px;">
-            <a class="download-btn" href="./descarga-rugido-de-victoria.html?lang=sub" style="padding:8px 12px; background:#27ae60; color:#fff; border-radius:8px; text-decoration:none;">Descarga</a>
+            <a class="download-btn" href="#" aria-disabled="true" style="padding:8px 12px; border-radius:8px; text-decoration:none; background:#2c2c2c; color:#bbb; pointer-events:none;">Próximamente</a>
           </div>
           <div><span style="display:inline-block; padding:6px 10px; border-radius:8px; background:#111; color:#fff;">HD MULTIHOST</span></div>
           <div>Sub Español</div>
@@ -434,11 +434,19 @@
           const lang = btn.getAttribute('data-lang');
           // Por ahora todo el contenido es Sub Español.
           // Si selecciona LAT y aún no hay fuentes, mostramos una breve indicación.
-          if (lang === 'lat') {
-            console.info('Audio Latino aún no disponible en esta página.');
+          if (lang === 'sub') {
+            console.info('Sub Español no disponible por ahora.');
           }
         });
       });
+
+      // Idioma por defecto: Latino
+      const defaultLat = document.querySelector('.lang-btn[data-lang="lat"]');
+      const defaultSub = document.querySelector('.lang-btn[data-lang="sub"]');
+      if (defaultLat) {
+        defaultLat.classList.add('active');
+        defaultSub && defaultSub.classList.remove('active');
+      }
 
       // Selección inicial
       const firstCard = document.querySelector('.server-card');
