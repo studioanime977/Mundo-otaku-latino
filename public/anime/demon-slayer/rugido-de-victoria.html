@@ -63,6 +63,14 @@
     .social-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
     .social-btn { padding: 10px 15px; background-color: #6c63ff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; text-align: center; }
     .social-btn:hover { background-color: #4a47a3; }
+
+    /* Selector de idioma */
+    .language-toggle { display:flex; gap:10px; align-items:center; margin: 8px 0 12px; }
+    .lang-btn { display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:10px; border:1px solid #334050; background:#1a2131; color:#e8e8ea; font-weight:700; cursor:pointer; transition: all .18s ease; }
+    .lang-btn img { width:18px; height:18px; }
+    .lang-btn:hover { transform: translateY(-1px); filter: brightness(1.08); }
+    .lang-btn.active { background:#6c63ff; color:#fff; border-color:#6c63ff; }
+    .lang-btn[aria-disabled="true"] { opacity:0.6; cursor:not-allowed; }
   </style>
   <!-- Estilos de footer unificado -->
   <style>
@@ -155,6 +163,11 @@
       <div class="contenedor-video">
         <!-- Selector de servidores al estilo Castillo Infinito (sin tocar iframes/links) -->
         <section class="player-selector" aria-label="Selector de servidor">
+          <!-- Selector de idioma LAT/SUB -->
+          <div class="language-toggle" aria-label="Seleccionar idioma">
+            <button class="lang-btn active" data-lang="sub"><img src="../../../ico/SUB.png" alt="Sub Español"><span>Sub Español</span></button>
+            <button class="lang-btn" data-lang="lat"><img src="../../../ico/LAT.png" alt="Latino"><span>Latino</span></button>
+          </div>
           <div class="server-grid" aria-label="Servidores disponibles">
             <a href="#" class="server-card" data-target="player1" aria-label="MixDrop">
               <img src="../../../ico/mixdrop.webp" alt="MixDrop">
@@ -219,11 +232,7 @@
             <iframe src="https://sendvid.com/embed/placeholder8" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="video-functions">
-          <button class="function-btn" onclick="expandPlayer()">Expandir</button>
-          <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
-          <a id="download-btn" class="function-btn download-btn" href="https://mxdrop.to/f/36q71oq6ummnknj" target="_blank" rel="noopener noreferrer">Descargar</a>
-        </div>
+        <!-- Controles de video eliminados según solicitud -->
       </div>
       <!-- Navegación y bloque de enlaces (alineado con Castillo Infinito) -->
       <section class="navigation-buttons" aria-label="Navegación de episodios" style="display:grid; grid-template-columns: 1fr auto 1fr; align-items:center; column-gap:10px; margin:12px 0;">
@@ -414,6 +423,23 @@
         });
       });
 
+      // Selector de idioma
+      const langButtons = document.querySelectorAll('.lang-btn');
+      langButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const disabled = btn.getAttribute('aria-disabled') === 'true';
+          if (disabled) return;
+          langButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const lang = btn.getAttribute('data-lang');
+          // Por ahora todo el contenido es Sub Español.
+          // Si selecciona LAT y aún no hay fuentes, mostramos una breve indicación.
+          if (lang === 'lat') {
+            console.info('Audio Latino aún no disponible en esta página.');
+          }
+        });
+      });
+
       // Selección inicial
       const firstCard = document.querySelector('.server-card');
       if (firstCard) {
@@ -482,32 +508,6 @@ l.parentNode.insertBefore(s, l);
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="es">
