@@ -1,300 +1,315 @@
-﻿<!DOCTYPE html>
-
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta name="f08cd2b5211f5b0a95753720000f639c66350c1d" content="f08cd2b5211f5b0a95753720000f639c66350c1d" />
-
-<meta charset="UTF-8">
-
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-      <meta name="google-adsense-account" content="ca-pub-8480825005176665">
-
-<title>Attack On Titan - PelÃ­cula - StudioOtaku</title>
-
-  
-<link rel="stylesheet" href="../../../css/temporadas.css">
-<link rel="stylesheet" href="../../../css/style.css">
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8480825005176665" crossorigin="anonymous"></script><link rel="stylesheet" href="../../../css/anime.css">
-<link rel="stylesheet" href="../../../css/responsive-style.css">
-<link rel="stylesheet" href="../../../css/responsive-navigation.css"><style>
-    /* Layout de escritorio: reproductor a la izquierda y Popular a la derecha */
+  <meta name="google-adsense-account" content="ca-pub-8480825005176665">
+  <title>Attack On Titan - Película 1 - StudioOtaku</title>
+  <link rel="stylesheet" href="../../../css/server-selector.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="../../../css/anime.css">
+  <link rel="stylesheet" href="../../../css/responsive-style.css">
+  <link rel="stylesheet" href="../../../css/responsive-navigation.css">
+  <link rel="icon" type="image/png" href="../../../ico/logo.png">
+  <link rel="apple-touch-icon" href="../../../ico/logo.png">
+  <link rel="shortcut icon" href="../../../ico/logo.png">
+  <style>
+    .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
+    .back-btn { display: inline-block; margin: 12px 0; padding: 10px 16px; background: #6c63ff; color: #fff; border-radius: 8px; text-decoration: none; }
+    .player-frame-wrap { background: #111; border-radius: 12px; overflow: hidden; }
+    .player-frame-wrap iframe { width: 100%; height: 520px; border: none; }
     .main-content { display: flex; gap: 20px; align-items: flex-start; }
     .left-content { flex: 3; }
     .right-content { flex: 1; }
-
-    /* Miniaturas en la secciÃ³n Popular (desktop) */
     .right-content .popular-item { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.03); margin-bottom: 10px; cursor: pointer; }
     .right-content .popular-item:hover { background: rgba(255,255,255,0.06); }
     .right-content .popular-item img { width: 120px; height: 72px; object-fit: cover; border-radius: 6px; display: block; }
     .right-content .popular-item .title { font-size: 0.95rem; line-height: 1.3; color: #fff; }
-
-    /* Controles del reproductor */
-    .video-functions { display: flex; gap: 10px; justify-content: flex-start; margin-top: 10px; }
-    .function-btn { padding: 10px 16px; background: linear-gradient(135deg, #6c63ff 0%, #5a54e6 100%); color: #fff; border: none; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,0.15); cursor: pointer; transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease; }
-    .function-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,0,0,0.2); }
-    .function-btn:active { transform: translateY(0); box-shadow: 0 3px 8px rgba(0,0,0,0.15); }
-
-    /* Efecto Expandir */
-    .contenedor-video.expanded .reproductor-video iframe { height: 75vh; }
-
-    /* Efecto Apagar Luces */
-    body.lights-off::before { content: ""; position: fixed; inset: 0; background: rgba(0,0,0,0.85); pointer-events: none; z-index: 999; }
-    .reproductor-video { position: relative; z-index: 1000; }
-    body.lights-off .function-btn { background: #333; color: #ffd54f; }
-
-    /* Opcional: asegurar que el iframe del reproductor se vea bien */
-    .reproductor-video iframe { width: 100%; height: 480px; border: none; }
-    /* BotÃ³n Descargar alineado a la derecha */
-    .video-functions { align-items: center; }
-    .download-btn { margin-left: auto; background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
-    .function-btn.disabled { opacity: 0.5; pointer-events: none; }
+    .header + main.container { padding-top: 6rem; }
   </style>
-    <link rel="icon" type="image/png" href="../../../ico/logo.png">
-    <link rel="apple-touch-icon" href="../../../ico/logo.png">
-    <link rel="shortcut icon" href="../../../ico/logo.png">
+  <style>
+    .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .footer .footer-section h3 { margin: 0 0 8px; }
+    .footer .footer-section p { margin: 0; opacity: 0.85; }
+    .footer .footer-section ul { list-style: none; padding: 0; margin: 0; }
+    .footer .footer-section ul li { margin: 6px 0; }
+    .footer .footer-section a { color: #fff; text-decoration: none; }
+    .footer .footer-section a:hover { text-decoration: underline; }
+    .footer .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    @media (min-width:768px){ .footer .social-links { grid-template-columns: repeat(4, 1fr); } }
+    .footer .social-item { display: flex; align-items: center; gap: 8px; background: #111; border-radius: 10px; padding: 10px; text-decoration: none; color: #fff; }
+    .footer .social-item:hover { background: #1a1a1a; }
+    .footer .social-item img { width: 22px; height: 22px; border-radius: 4px; object-fit: cover; }
+    .footer .social-item span { line-height: 1; }
+    .footer .footer-text { text-align: center; margin-top: 12px; opacity: 0.8; }
+    @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
-
-    <header class="header">
-<nav class="nav-container">
+  <header class="header">
+    <nav class="nav-container">
       <div class="logo"><img src="../../../ico/logo.png" alt="Mundo Otaku Latino" style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div>
       <ul class="nav-menu">
         <li><a href="../../index.html#inicio">Inicio</a></li>
         <li><a href="../../html/catalogo.html">Anime</a></li>
-        <li><a href="#peliculas">PelÃ­culas</a></li>
-        <li><a href="#generos">GÃ©neros</a></li>
+        <li><a href="#peliculas">Películas</a></li>
+        <li><a href="#generos">Géneros</a></li>
         <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="main-content">
-    <a href="../../html/catalogo.html" class="back-btn">Volver al Catalogo</a>
-    <div class="left-content">
-      
-      <div class="title-container">
-        <h1 class="season-title">Attack On Titan - PelÃ­cula</h1>
-        <h2 class="episode-title" id="current-episode-title">PelÃ­cula Completa</h2>
-      </div>
-
-      <div class="description">
-        <p>Disfruta de la pelÃ­cula completa de Attack on Titan. Una experiencia cinematogrÃ¡fica Ã©pica que cierra la saga con impresionantes secuencias de acciÃ³n.</p>
-      </div>
-
-      <div class="contenedor-video">
-        <div class="player-options">
-          <button id="opcion1-btn" class="player-btn active" onclick="switchPlayer('opcion1')">OPCIÃ“N 1</button>
-          <button id="opcion2-btn" class="player-btn" onclick="switchPlayer('opcion2')">OPCIÃ“N 2</button>
-          <button id="opcion3-btn" class="player-btn" onclick="switchPlayer('opcion3')">OPCIÃ“N 3</button>
-          <button id="opcion4-btn" class="player-btn" onclick="switchPlayer('opcion4')">OPCIÃ“N 4</button>
+  <main class="container">
+    <div class="main-content">
+      <a href="../../html/catalogo.html" class="back-btn">Volver al Catálogo</a>
+      <a href="attack-on-titan.html" class="back-btn">Volver a Attack on Titan</a>
+      <div class="left-content">
+        <h1>Attack On Titan – Película 1</h1>
+        <p>Español – Servidor MixDrop.</p>
+        <div class="title-container">
+          <h2 class="episode-title" id="current-episode-title">Película</h2>
         </div>
-        <div class="reproductor-video">
-          <div id="opcion1-player" class="player-container active">
-            <iframe src="" allowfullscreen></iframe>
+
+        <section class="player-selector" aria-label="Selector de idioma y servidor">
+          <div class="language-toggle" role="tablist" aria-label="Idiomas disponibles">
+            <button class="lang-btn" role="tab" aria-selected="true" data-language="lat">
+              <img src="../../../ico/LAT.png" alt="Latino">
+              <span>Latino</span>
+            </button>
+            <button class="lang-btn" role="tab" aria-selected="false" data-language="sub">
+              <img src="../../../ico/SUB.png" alt="Subtitulado">
+              <span>Subtitulado</span>
+            </button>
           </div>
-          <div id="opcion2-player" class="player-container">
-            <iframe src="" allowfullscreen></iframe>
+
+          <div class="server-grid" aria-label="Servidores disponibles">
+            <a href="#" class="server-card" data-server="MixDrop" data-url-lat="https://mxdrop.to/e/8lj9dngghd4ep0" data-url-sub="#" aria-label="MixDrop">
+              <img src="../../../ico/mixdrop.webp" alt="MixDrop">
+              <span>MixDrop</span>
+            </a>
+            <a href="#" class="server-card" data-server="StreamTape" data-url-lat="#" data-url-sub="#" aria-label="StreamTape">
+              <img src="../../../ico/streamtape.png" alt="StreamTape">
+              <span>StreamTape</span>
+            </a>
+            <a href="#" class="server-card" data-server="Filemoon" data-url-lat="#" data-url-sub="#" aria-label="Filemoon">
+              <img src="../../../ico/FILEMOON.png" alt="Filemoon">
+              <span>Filemoon</span>
+            </a>
+            <a href="#" class="server-card" data-server="Netu" data-url-lat="#" data-url-sub="#" aria-label="Netu">
+              <img src="../../../ico/netu.png" alt="Netu">
+              <span>Netu</span>
+            </a>
+            <a href="#" class="server-card" data-server="Uqload" data-url-lat="#" data-url-sub="#" aria-label="Uqload">
+              <img src="../../../ico/UQLOAD.webp" alt="Uqload">
+              <span>Uqload</span>
+            </a>
+            <a href="#" class="server-card" data-server="HGLINK" data-url-lat="#" data-url-sub="#" aria-label="HGLINK">
+              <img src="../../../ico/HGLINK.png" alt="HGLINK">
+              <span>HGLINK</span>
+            </a>
+            <a href="#" class="server-card" data-server="EarnVids" data-url-lat="#" data-url-sub="#" aria-label="EarnVids">
+              <img src="../../../ico/earnvids.jpg" alt="EarnVids">
+              <span>EarnVids</span>
+            </a>
+            <a href="#" class="server-card" data-server="LULU VDO" data-url-lat="#" data-url-sub="#" aria-label="LULU VDO">
+              <img src="../../../ico/LULUVDO.webp" alt="LULU VDO">
+              <span>LULU VDO</span>
+            </a>
+            <a href="#" class="server-card" data-server="HexUpload" data-url-lat="#" data-url-sub="#" aria-label="HexUpload">
+              <img src="../../../ico/HEXUPLOAD.png" alt="HexUpload">
+              <span>HexUpload</span>
+            </a>
           </div>
-          <div id="opcion3-player" class="player-container">
-            <iframe src="" allowfullscreen></iframe>
+
+          <div class="player-frame-wrap">
+            <iframe id="player-frame" title="Reproductor" src="https://mxdrop.to/e/8lj9dngghd4ep0" allow="autoplay" allowfullscreen loading="lazy"></iframe>
           </div>
-          <div id="opcion4-player" class="player-container">
-            <iframe src="" allowfullscreen></iframe>
-          </div>
+        </section>
+
+        <section class="navigation-buttons" aria-label="Navegación de episodios" style="display:grid; grid-template-columns: 1fr auto 1fr; align-items:center; column-gap:10px; margin:12px 0;">
+          <button id="prev-ep" class="nav-btn" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:start;">◄ episodio anterior</button>
+          <button id="toggle-episodes" class="nav-btn" aria-expanded="false" style="padding:10px 16px; border-radius:8px; background:#6c63ff; color:#fff; border:none; justify-self:center;">lista de episodios</button>
+          <button id="next-ep" class="nav-btn" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:end;">siguiente episodio ►</button>
+        </section>
+
+        <div class="episodes-container" id="episodes-container" hidden>
+          <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
+          <div class="episodes-grid" id="episodes-grid"></div>
         </div>
-        <div class="video-functions">
-          <button class="function-btn" onclick="expandPlayer()">Expandir</button>
-          <button class="function-btn" onclick="toggleLights()">Apagar Luces</button>
-          <a id="download-btn" class="function-btn download-btn" href="#" target="_blank" rel="noopener noreferrer">Descargar</a>
-        </div>
+
+        <section aria-label="Enlaces de descarga" style="margin-top:18px;">
+          <div style="font-weight:700; margin-bottom:8px;">Descargas</div>
+          <a href="./descargar-movie1.html" style="background:#27ae60; color:#fff; padding:10px 14px; border-radius:8px; display:inline-block;">Descargar Película</a>
+        </section>
       </div>
 
-      <div class="description">
-        <p>PelÃ­cula completa disponible. Estado: Completa.</p>
-      </div>
-    </div>
-
-    <div class="right-content">
-      <h3>Popular</h3>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/spy-x-family/spy-x-family.html'">
-        <img src="../../../img/Spy x Family S1.jpg" alt="Spy x Family">
-        <div class="title">Spy x Family - Temporada 1</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/chainsaw-man/chainsaw-man.html'">
-        <img src="../../../img/Chainsaw Man S1.jpg" alt="Chainsaw Man">
-        <div class="title">Chainsaw Man - Temporada 1</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/attack-on-titan/attack-on-titan.html'">
-        <img src="../../../img/Attack on Titan S4.jpg" alt="Attack on Titan">
-        <div class="title">Attack on Titan - Temporada 4</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/jujutsu-kaisen/jujutsu-kaisen.html'">
-        <img src="../../../img/Jujutsu Kaisen S1.jpg" alt="Jujutsu Kaisen">
-        <div class="title">Jujutsu Kaisen - Temporada 1</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/demon-slayer/demon-slayer.html'">
-        <img src="../../../img/Kimetsu No Yaiba temporada 1.png" alt="Kimetsu No Yaiba">
-        <div class="title">Kimetsu No Yaiba - Temporada 1</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/naruto/naruto.html'">
-        <img src="../../../img/Naruto Classic.jpg" alt="Naruto">
-        <div class="title">Naruto - ClÃ¡sico</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/one-piece/one-piece.html'">
-        <img src="../../../img/One Piece Wano.jpg" alt="One Piece">
-        <div class="title">One Piece - Wano</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/dragon-ball/dragon-ball.html'">
-        <img src="../../../img/Dragon Ball Z.jpg" alt="Dragon Ball Z">
-        <div class="title">Dragon Ball Z</div>
-      </div>
-      <div class="popular-item" onclick="window.location.href='../../../public/anime/bleach/bleach.html'">
-        <img src="../../../img/Bleach TYBW.jpg" alt="Bleach">
-        <div class="title">Bleach - TYBW</div>
+      <div class="right-content">
+        <h3>Popular</h3>
+        <div class="popular-item" onclick="window.location.href='../../../public/anime/spy-x-family/spy-x-family.html'">
+          <img src="../../../img/Spy x Family S1.jpg" alt="Spy x Family">
+          <div class="title">Spy x Family - Temporada 1</div>
+        </div>
+        <div class="popular-item" onclick="window.location.href='../../../public/anime/chainsaw-man/chainsaw-man.html'">
+          <img src="../../../img/Chainsaw Man S1.jpg" alt="Chainsaw Man">
+          <div class="title">Chainsaw Man - Temporada 1</div>
+        </div>
+        <div class="popular-item" onclick="window.location.href='../../../public/anime/demon-slayer/demon-slayer.html'">
+          <img src="../../../img/Kimetsu No Yaiba temporada 1.png" alt="Kimetsu No Yaiba">
+          <div class="title">Kimetsu No Yaiba - Temporada 1</div>
+        </div>
       </div>
     </div>
   </main>
 
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>StudioOtaku</h3>
+          <p>Tu plataforma favorita para ver anime en español latino</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="../../index.html#inicio">Inicio</a></li>
+            <li><a href="../../html/catalogo.html">🗂️ Catálogo</a></li>
+            <li><a href="#generos">Géneros</a></li>
+            <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-links" aria-label="Redes sociales y canales oficiales">
+            <a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener" aria-label="APP Anime TV">
+              <img src="../../../ico/logo.png" alt="APP Anime TV" />
+              <span>APP Anime TV</span>
+            </a>
+            <a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener" aria-label="Canal de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram" />
+              <span>Canal Telegram</span>
+            </a>
+            <a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener" aria-label="Grupo de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram Grupo" />
+              <span>Grupo Telegram</span>
+            </a>
+            <a class="social-item" href="https://rumble.com/c/c-6184817?e9s=src_v1_clr" target="_blank" rel="noopener" aria-label="Página de Rumble">
+              <img src="../../../ico/RUMBLE.webp" alt="Rumble" />
+              <span>Página en Rumble</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener" aria-label="Facebook Studio">
+              <img src="../../../ico/facebook.png" alt="Facebook" />
+              <span>Facebook</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/723496132540351" target="_blank" rel="noopener" aria-label="Grupo de Anime en Facebook">
+              <img src="../../../ico/facebook.png" alt="Facebook Grupo Anime" />
+              <span>Grupo Anime</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/1071796301003086" target="_blank" rel="noopener" aria-label="Grupo de Free Fire en Facebook">
+              <img src="../../../ico/facebook.png" alt="Facebook Grupo Free Fire" />
+              <span>Grupo Free Fire</span>
+            </a>
+            <a class="social-item" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener" aria-label="TikTok">
+              <img src="../../../ico/TIKTOK.webp" alt="TikTok" />
+              <span>TikTok</span>
+            </a>
+            <a class="social-item" href="https://www.instagram.com/studiootaku01" target="_blank" rel="noopener" aria-label="Instagram">
+              <img src="../../../ico/INSTAGRAM.webp" alt="Instagram" />
+              <span>Instagram</span>
+            </a>
+            <a class="social-item" href="https://github.com/studioanime977" target="_blank" rel="noopener" aria-label="GitHub">
+              <img src="../../../ico/GUITHUP.webp" alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+            <a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="YouTube">
+              <img src="../../../ico/youtube.png" alt="YouTube" />
+              <span>YouTube</span>
+            </a>
+            <a class="social-item" href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <img src="../../../ico/whatsapp.webp" alt="WhatsApp" />
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-text">&copy; 2025 StudioOtaku. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../../../assets/js/server-selector.js"></script>
   <script>
-
-    // FunciÃ³n para expandir el reproductor
-    function expandPlayer() {
-      const videoContainer = document.querySelector('.contenedor-video');
-      videoContainer.classList.toggle('expanded');
-    }
-
-    // FunciÃ³n para apagar/encender las luces
-    function toggleLights() {
-      document.body.classList.toggle('lights-off');
-    }
-
-    // Bloquear clic derecho
-    window.addEventListener('contextmenu', function (e) {
-      e.preventDefault();
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnLat = document.querySelector('.lang-btn[data-language="lat"]');
+      const mixdropCard = document.querySelector('.server-card[data-server="MixDrop"]');
+      try { if (btnLat) btnLat.click(); } catch (_) {}
+      try { if (mixdropCard) mixdropCard.click(); } catch (_) {}
     });
-
-    // Bloquear teclas F12 y Ctrl+Shift+I
-    window.addEventListener('keydown', function (e) {
-      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-        e.preventDefault();
-      }
-    });
-
-    // Convierte cualquier URL de StreamTape (/v/ o /e/) a URL embebible /e/{id}/
-    function toEmbed(url) {
+  </script>
+  <script>
+    function normalizeUrl(url) { return url || ''; }
+    function mixdropFallback(url) {
       if (!url) return '';
-      try {
-        const m = url.match(/\/\/(?:www\.)?streamtape\.com\/(?:v|e)\/([^/?#]+)/i);
-        if (m && m[1]) return `https://streamtape.com/e/${m[1]}/`;
-      } catch (_) {}
-      // Fallback: reemplazo simple
-      return url.replace('/v/', '/e/') + (url.endsWith('/') ? '' : '/');
+      const m = url.match(/https?:\/\/mxdrop\.to\/e\/([^\/?#]+)/i);
+      return m ? `https://mdy48tn97.com/e/${m[1]}` : '';
     }
-
-    // Datos de la pelÃ­cula
-    const movieData = {
-      title: "Attack on Titan - PelÃ­cula",
-      op1: "https://mxdrop.to/e/8lj9dngghd4ep0",
-      op2: "",
-      op3: "",
-      op4: ""
-    };
-  
-    // Estado actual
-    let currentOption = 'opcion1';
-
-    // Cargar pelÃ­cula al inicio
-    function loadMovie() {
-      document.querySelector('#opcion1-player iframe').src = toEmbed(movieData.op1);
-      document.querySelector('#opcion2-player iframe').src = toEmbed(movieData.op2);
-      document.querySelector('#opcion3-player iframe').src = toEmbed(movieData.op3);
-      document.querySelector('#opcion4-player iframe').src = toEmbed(movieData.op4);
-      switchPlayer('opcion1');
-    }
-
-    // Cambiar reproductor
-    function switchPlayer(option) {
-      document.querySelectorAll('.player-btn').forEach(btn => {
-        btn.classList.remove('active');
+    let currentEpisode = null;
+    const episodes = [
+      { num: 1, title: "Película 1", op1: "https://mxdrop.to/e/8lj9dngghd4ep0" }
+    ];
+    const episodesGrid = document.getElementById('episodes-grid');
+    if (episodesGrid) {
+      episodes.forEach(episode => {
+        const episodeBtn = document.createElement('button');
+        episodeBtn.className = 'episode-btn';
+        episodeBtn.textContent = 'Película';
+        episodeBtn.onclick = () => loadEpisode(episode);
+        episodesGrid.appendChild(episodeBtn);
       });
-      document.getElementById(`${option}-btn`).classList.add('active');
-      document.querySelectorAll('.player-container').forEach(container => {
-        container.classList.remove('active');
+    }
+    function applyEpisodeToServerGrid(ep) {
+      const mixdropCard = document.querySelector('.server-card[data-server="MixDrop"]');
+      const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"])');
+      const latUrl = normalizeUrl(ep.op1 || '');
+      if (mixdropCard) {
+        mixdropCard.setAttribute('data-url-lat', latUrl || '#');
+        const fb = mixdropFallback(latUrl);
+        if (fb) { mixdropCard.setAttribute('data-fallback-lat', fb); } else { mixdropCard.removeAttribute('data-fallback-lat'); }
+        mixdropCard.setAttribute('data-url-sub', '#');
+      }
+      otherCards.forEach(card => { card.setAttribute('data-url-lat', '#'); card.setAttribute('data-url-sub', '#'); });
+    }
+    function loadEpisode(episode) {
+      const titleEl = document.getElementById('current-episode-title');
+      if (titleEl) titleEl.textContent = episode.title || 'Película';
+      currentEpisode = episode;
+      applyEpisodeToServerGrid(episode);
+      updateNavState();
+    }
+    function updateNavState() {
+      const prev = document.getElementById('prev-ep');
+      const next = document.getElementById('next-ep');
+      if (!prev || !next || !currentEpisode) return;
+      prev.disabled = currentEpisode.num <= 1;
+      next.disabled = currentEpisode.num >= episodes.length;
+      prev.style.background = prev.disabled ? '#2c2c2c' : '#6c63ff';
+      prev.style.color = prev.disabled ? '#bbb' : '#fff';
+      next.style.background = next.disabled ? '#2c2c2c' : '#6c63ff';
+      next.style.color = next.disabled ? '#bbb' : '#fff';
+    }
+    const prevBtn = document.getElementById('prev-ep');
+    const nextBtn = document.getElementById('next-ep');
+    if (prevBtn) { prevBtn.addEventListener('click', () => { if (!currentEpisode) return; const idx = currentEpisode.num - 2; if (idx >= 0) loadEpisode(episodes[idx]); }); }
+    if (nextBtn) { nextBtn.addEventListener('click', () => { if (!currentEpisode) return; const idx = currentEpisode.num; if (idx < episodes.length) loadEpisode(episodes[idx]); }); }
+    const toggleBtn = document.getElementById('toggle-episodes');
+    const episodesBox = document.getElementById('episodes-container');
+    if (toggleBtn && episodesBox) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = episodesBox.hasAttribute('hidden');
+        if (isHidden) { episodesBox.removeAttribute('hidden'); toggleBtn.setAttribute('aria-expanded', 'true'); episodesBox.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        else { episodesBox.setAttribute('hidden', ''); toggleBtn.setAttribute('aria-expanded', 'false'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
       });
-      document.getElementById(`${option}-player`).classList.add('active');
-      currentOption = option;
-      updateDownloadLink();
     }
-
-    // Determina el URL original segÃºn el reproductor activo
-    function getUrlForOption(option) {
-      const map = { opcion1: 'op1', opcion2: 'op2', opcion3: 'op3', opcion4: 'op4' };
-      const key = map[option] || 'op1';
-      return movieData[key] || '';
-    }
-
-    // Actualiza el botÃ³n Descargar con el enlace del reproductor activo
-    function updateDownloadLink() {
-      const a = document.getElementById('download-btn');
-      const url = getUrlForOption(currentOption);
-      let finalUrl = url;
-      
-      // Si contiene /e/ en el enlace, convertir a /f/ para descarga directa
-      if (/\/e\//.test(url)) {
-        finalUrl = url.replace('/e/', '/f/');
-      }
-      
-      if (finalUrl) {
-        // Generar enlace acortado con exe.io API (formato simple)
-        const apiToken = '110e7b6cbdf7a5aa354afb395e889c7aba3411c6';
-        // Asegurar que el URL tenga protocolo
-        if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) {
-          finalUrl = 'https://' + finalUrl;
-        }
-        const shortenedUrl = `https://exe.io/st?api=${apiToken}&url=${finalUrl}`;
-        
-        a.href = shortenedUrl;
-        a.classList.remove('disabled');
-      } else {
-        a.href = '#';
-        a.classList.add('disabled');
-      }
-    }
-
-    // Cargar la pelÃ­cula por defecto
-    loadMovie();
-
+    loadEpisode(episodes[0]);
   </script>
-
-<section class="anuncio-responsive">
-  <!-- Anuncio Google responsivo -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-8480825005176665"
-       data-ad-slot="1234567890"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</section>
-<script>
-(function(mxtv){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = mxtv || {};
-s.src = "\/\/aggressivestruggle.com\/bKX.V\/s\/dFG\/l\/0PYBWEcI\/-evmn9au\/ZoUZlDkcP\/TmY\/2\/NZz\/UM1BNQz\/EeteNxjRYt3wNZTMUE3jMEgo";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-
 </body>
-
 </html>
-

@@ -66,6 +66,43 @@
     <link rel="apple-touch-icon" href="../../../ico/logo.png">
     <link rel="shortcut icon" href="../../../ico/logo.png">
 </head>
+<head>
+  <style>
+    .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .footer .footer-section h3 { margin: 0 0 8px; }
+    .footer .footer-section p { margin: 0; opacity: 0.85; }
+    .footer .footer-section ul { list-style: none; padding: 0; margin: 0; }
+    .footer .footer-section ul li { margin: 6px 0; }
+    .footer .footer-section a { color: #fff; text-decoration: none; }
+    .footer .footer-section a:hover { text-decoration: underline; }
+    .footer .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    @media (min-width:768px){ .footer .social-links { grid-template-columns: repeat(4, 1fr); } }
+    .footer .social-item { display: flex; align-items: center; gap: 8px; background: #111; border-radius: 10px; padding: 10px; text-decoration: none; color: #fff; }
+    .footer .social-item:hover { background: #1a1a1a; }
+    .footer .social-item img { width: 22px; height: 22px; border-radius: 4px; object-fit: cover; }
+    .footer .social-item span { line-height: 1; }
+    .footer .footer-text { text-align: center; margin-top: 12px; opacity: 0.8; }
+    @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
+  </style>
+  <style>
+    .seasons-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
+    .season-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius:12px; overflow:hidden; transition: transform .18s ease, box-shadow .18s ease; }
+    .season-card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.35); }
+    .season-image { width:100%; height:160px; object-fit:cover; display:block; }
+    .season-title { font-size:1.06rem; font-weight:800; margin:10px 12px 4px; }
+    .season-desc { font-size:0.95rem; color:#ddd; margin:0 12px 12px; }
+    .season-actions { display:flex; gap:10px; padding:12px; }
+    .btn-watch { display:inline-block; padding:10px 14px; border-radius:8px; background:#6c63ff; color:#fff; text-decoration:none; transition: filter .15s ease; }
+    .btn-download { display:inline-block; padding:10px 14px; border-radius:8px; text-decoration:none; background:#27ae60; color:#fff; transition: filter .15s ease; }
+    .btn-watch:hover, .btn-download:hover { filter: brightness(1.08); }
+    @media (max-width: 900px) { .seasons-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .seasons-grid { grid-template-columns: 1fr; } }
+  </style>
+  <style>
+    .header + main.main-content { padding-top: 6rem; }
+  </style>
+</head>
 
 <body>
 
@@ -88,7 +125,7 @@
 
     <main class="main-content">
 
-    <a href="../../html/catalogo.html" class="back-btn">Volver al Catalogo</a>
+    <a href="../../html/catalogo.html" class="back-btn">Volver al Catálogo</a>
 
 
 
@@ -109,219 +146,63 @@
     <div class="seasons-grid">
 
         <div class="season-card">
-
-            <img src="../../../img/Kimetsu No Yaiba temporada 1.png" alt="Kimetsu No Yaiba T1">
-
-            <div class="season-info">
-
-                <h2 class="season-title">Temporada 1</h2>
-
-                <a href="temporada-1.html" class="watch-btn">Ver Temporada</a>
-
-                <div class="download-servers-section">
-
-                    <div class="servers-title">Descargar Temporada Completa</div>
-
-                    <div class="servers-grid-compact">
-
-                        <a href="https://exe.io/KimetsuNoYaibaS1" target="_blank" class="download-link terabox">📦 TeraBox</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link mega unavailable-server">🔴 MEGA</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link mediafire unavailable-server">📁 MediaFire</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link dropbox unavailable-server">📦 Dropbox</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link fichier unavailable-server">📄 1Fichier</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link stape unavailable-server">🔗 Stape</a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+          <img class="season-image" src="../../../img/Kimetsu No Yaiba temporada 1.png" alt="Demon Slayer Temporada 1">
+          <div class="season-title">Temporada 1</div>
+          <div class="season-desc">26 episodios — inicio de la aventura de Tanjiro.</div>
+          <div class="season-actions">
+            <a class="btn-watch" href="temporada-1.html">Ver temporada</a>
+            <a class="btn-download" href="descargar-temporada1.html" target="_blank" rel="noopener">Descargas</a>
+          </div>
         </div>
 
         <div class="season-card">
-
-            <img src="../../../img/tem 2 Kimetsu no Yaiba.png" alt="Kimetsu No Yaiba T2">
-
-            <div class="season-info">
-
-                <h2 class="season-title">Temporada 2</h2>
-
-                <a href="temporada-2.html" class="watch-btn">Ver Temporada</a>
-
-                <div class="download-servers-section">
-
-                    <div class="servers-title">Descargar Temporada Completa</div>
-
-                    <div class="servers-grid-compact">
-
-                        <a href="https://exe.io/tem2KimetsunoYaiba" target="_blank" class="download-link terabox">📦 TeraBox</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link mega unavailable-server">🔴 MEGA</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link mediafire unavailable-server">📁 MediaFire</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link dropbox unavailable-server">📦 Dropbox</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link fichier unavailable-server">📄 1Fichier</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link stape unavailable-server">🔗 Stape</a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+          <img class="season-image" src="../../../img/tem 2 Kimetsu no Yaiba.png" alt="Demon Slayer Temporada 2">
+          <div class="season-title">Temporada 2</div>
+          <div class="season-desc">Distrito del entretenimiento — nuevas lunas superiores.</div>
+          <div class="season-actions">
+            <a class="btn-watch" href="temporada-2.html">Ver temporada</a>
+            <a class="btn-download" href="descargar-temporada2.html" target="_blank" rel="noopener">Descargas</a>
+          </div>
         </div>
 
         <div class="season-card">
-
-            <img src="../../../img/Kimetsu No Yaiba temporada 3.jpg" alt="Kimetsu No Yaiba T3">
-
-            <div class="season-info">
-
-                <h2 class="season-title">Temporada 3</h2>
-
-                <a href="temporada-3.html" class="watch-btn">Ver Temporada</a>
-
-                <div class="download-servers-section">
-
-                    <div class="servers-title">Descargar Temporada Completa</div>
-
-                    <div class="servers-grid-compact">
-
-                        <a href="https://exe.io/kimetsuS3" target="_blank" class="download-link terabox">📦 TeraBox</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link mega unavailable-server">🔴 MEGA</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link mediafire unavailable-server">📁 MediaFire</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link dropbox unavailable-server">📦 Dropbox</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link fichier unavailable-server">📄 1Fichier</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link stape unavailable-server">🔗 Stape</a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+          <img class="season-image" src="../../../img/Kimetsu No Yaiba temporada 3.jpg" alt="Demon Slayer Temporada 3">
+          <div class="season-title">Temporada 3</div>
+          <div class="season-desc">Aldea de los Herreros — combate decisivo.</div>
+          <div class="season-actions">
+            <a class="btn-watch" href="temporada-3.html">Ver temporada</a>
+            <a class="btn-download" href="descargar-temporada3.html" target="_blank" rel="noopener">Descargas</a>
+          </div>
         </div>
 
         <div class="season-card">
-
-            <img src="../../../img/kimetsu tem 4.png" alt="Kimetsu No Yaiba T4">
-
-            <div class="season-info">
-
-                <h2 class="season-title">Temporada 4</h2>
-
-                <a href="temporada-4.html" class="watch-btn">Ver Temporada</a>
-
-                <div class="download-servers-section">
-
-                    <div class="servers-title">Descargar Temporada Completa</div>
-
-                    <div class="servers-grid-compact">
-
-                        <a href="https://exe.io/kimetsuS4" target="_blank" class="download-link terabox">📦 TeraBox</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link mega unavailable-server">🔴 MEGA</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link mediafire unavailable-server">📁 MediaFire</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link dropbox unavailable-server">📦 Dropbox</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link fichier unavailable-server">📄 1Fichier</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link stape unavailable-server">🔗 Stape</a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+          <img class="season-image" src="../../../img/kimetsu tem 4.png" alt="Demon Slayer Temporada 4">
+          <div class="season-title">Temporada 4</div>
+          <div class="season-desc">Entrenamiento Pilar — preparación para el clímax.</div>
+          <div class="season-actions">
+            <a class="btn-watch" href="temporada-4.html">Ver temporada</a>
+            <a class="btn-download" href="descargar-temporada4.html" target="_blank" rel="noopener">Descargas</a>
+          </div>
         </div>
 
         <div class="season-card">
-
-            <img src="../../../img/Kimetsu no Yaiba Tren Infino.png" alt="Kimetsu No Yaiba Tren Infinito">
-
-            <div class="season-info">
-
-                <h2 class="season-title">Película: Tren Infinito</h2>
-
-                <a href="tren-infinito.html" class="watch-btn">Ver Película</a>
-
-                <div class="download-servers-section">
-
-                    <div class="servers-title">Descargar Temporada Completa</div>
-
-                    <div class="servers-grid-compact">
-
-                        <a href="https://exe.io/KimetsunoYaibaTrenInfino" target="_blank" class="download-link terabox">📦 TeraBox</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link mega unavailable-server">🔴 MEGA</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link mediafire unavailable-server">📁 MediaFire</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link dropbox unavailable-server">📦 Dropbox</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link fichier unavailable-server">📄 1Fichier</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link stape unavailable-server">🔗 Stape</a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+          <img class="season-image" src="../../../img/Kimetsu no Yaiba Tren Infino.png" alt="Tren Infinito">
+          <div class="season-title">Película: Tren Infinito</div>
+          <div class="season-desc">Tanjiro y Rengoku enfrentan una pesadilla a bordo.</div>
+          <div class="season-actions">
+            <a class="btn-watch" href="tren-infinito.html">Ver película</a>
+            <a class="btn-download" href="descargar-treninfinito.html" target="_blank" rel="noopener">Descargas</a>
+          </div>
         </div>
 
         <div class="season-card">
-
-            <img src="../../../img/entrenamiento pilar.png" alt="Kimetsu No Yaiba Entrenamiento Pilar">
-
-            <div class="season-info">
-
-                <h2 class="season-title">Película: Entrenamiento Pilar</h2>
-
-                <a href="entrenamiento-pilar.html" class="watch-btn">Movie</a>
-
-                <div class="download-servers-section">
-
-                    <div class="servers-title">Descargar Temporada Completa</div>
-
-                    <div class="servers-grid-compact">
-
-                        <a href="https://exe.io/entrenamientopilar" target="_blank" class="download-link terabox">📦 TeraBox</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link mega unavailable-server">🔴 MEGA</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link mediafire unavailable-server">📁 MediaFire</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link dropbox unavailable-server">📦 Dropbox</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link fichier unavailable-server">📄 1Fichier</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link stape unavailable-server">🔗 Stape</a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+          <img class="season-image" src="../../../img/entrenamiento pilar.png" alt="Entrenamiento Pilar">
+          <div class="season-title">Película: Entrenamiento Pilar</div>
+          <div class="season-desc">Preparación con los Hashira para el enfrentamiento final.</div>
+          <div class="season-actions">
+            <a class="btn-watch" href="entrenamiento-pilar.html">Ver película</a>
+            <a class="btn-download" href="descarga-entrenamientopilar.html" target="_blank" rel="noopener">Descargas</a>
+          </div>
         </div>
 
         <div class="season-card">
@@ -332,8 +213,8 @@
 
                 <h2 class="season-title">Película: Castillo Infinito</h2>
 
-                <a href="castillo-infinito.html" class="watch-btn">Ver Película</a>
-                <a href="descarga-castilloinfinito.html" class="watch-btn">Descargar</a>
+                <a href="castillo-infinito.html" class="btn-watch">Ver película</a>
+                <a href="descarga-castilloinfinito.html" class="btn-download" target="_blank" rel="noopener">Descargas</a>
 
                 <div class="download-servers-section" style="display:none">
 
@@ -406,39 +287,13 @@
         </div>
 
         <div class="season-card">
-
-            <img src="../../../img/Demon Slayer Kimetsu No Yaiba rugido de victoria.png" alt="Kimetsu No Yaiba Rugido de Victoria">
-
-            <div class="season-info">
-
-                <h2 class="season-title">Película: Rugido de Victoria</h2>
-
-                <a href="rugido-de-victoria.html" class="watch-btn">Ver Película</a>
-
-                <div class="download-servers-section">
-
-                    <div class="servers-title">Descargar Temporada Completa</div>
-
-                    <div class="servers-grid-compact">
-
-                        <a href="https://exe.io/KimetsuNoYaibarugidodevictoria" target="_blank" class="download-link terabox">📦 TeraBox</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link mega unavailable-server">🔴 MEGA</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link mediafire unavailable-server">📁 MediaFire</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link dropbox unavailable-server">📦 Dropbox</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link fichier unavailable-server">📄 1Fichier</a>
-
-                        <a href="entrenamiento-pilar.html" class="download-link stape unavailable-server">🔗 Stape</a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+          <img class="season-image" src="../../../img/Demon Slayer Kimetsu No Yaiba rugido de victoria.png" alt="Rugido de Victoria">
+          <div class="season-title">Película: Rugido de Victoria</div>
+          <div class="season-desc">Clímax cinematográfico de la saga.</div>
+          <div class="season-actions">
+            <a class="btn-watch" href="rugido-de-victoria.html">Ver película</a>
+            <a class="btn-download" href="descarga-rugido-de-victoria.html" target="_blank" rel="noopener">Descargas</a>
+          </div>
         </div>
 
     </div>
@@ -460,6 +315,80 @@
     </section>
 
   </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>StudioOtaku</h3>
+          <p>Tu plataforma favorita para ver anime en español latino</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="../../index.html#inicio">Inicio</a></li>
+            <li><a href="../../html/catalogo.html">🗂️ Catálogo</a></li>
+            <li><a href="#generos">Géneros</a></li>
+            <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-links" aria-label="Redes sociales y canales oficiales">
+            <a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener" aria-label="APP Anime TV">
+              <img src="../../../ico/logo.png" alt="APP Anime TV" />
+              <span>APP Anime TV</span>
+            </a>
+            <a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener" aria-label="Canal de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram" />
+              <span>Canal Telegram</span>
+            </a>
+            <a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener" aria-label="Grupo de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram Grupo" />
+              <span>Grupo Telegram</span>
+            </a>
+            <a class="social-item" href="https://rumble.com/c/c-6184817?e9s=src_v1_clr" target="_blank" rel="noopener" aria-label="Página de Rumble">
+              <img src="../../../ico/RUMBLE.webp" alt="Rumble" />
+              <span>Página en Rumble</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener" aria-label="Facebook Studio">
+              <img src="../../../ico/facebook.png" alt="Facebook" />
+              <span>Facebook</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/723496132540351" target="_blank" rel="noopener" aria-label="Grupo de Anime en Facebook">
+              <img src="../../../ico/facebook.png" alt="Facebook Grupo Anime" />
+              <span>Grupo Anime</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/1071796301003086" target="_blank" rel="noopener" aria-label="Grupo de Free Fire en Facebook">
+              <img src="../../../ico/facebook.png" alt="Facebook Grupo Free Fire" />
+              <span>Grupo Free Fire</span>
+            </a>
+            <a class="social-item" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener" aria-label="TikTok">
+              <img src="../../../ico/TIKTOK.webp" alt="TikTok" />
+              <span>TikTok</span>
+            </a>
+            <a class="social-item" href="https://www.instagram.com/studiootaku01" target="_blank" rel="noopener" aria-label="Instagram">
+              <img src="../../../ico/INSTAGRAM.webp" alt="Instagram" />
+              <span>Instagram</span>
+            </a>
+            <a class="social-item" href="https://github.com/studioanime977" target="_blank" rel="noopener" aria-label="GitHub">
+              <img src="../../../ico/GUITHUP.webp" alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+            <a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="YouTube">
+              <img src="../../../ico/youtube.png" alt="YouTube" />
+              <span>YouTube</span>
+            </a>
+            <a class="social-item" href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <img src="../../../ico/whatsapp.webp" alt="WhatsApp" />
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-text">&copy; 2025 StudioOtaku. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
 
 

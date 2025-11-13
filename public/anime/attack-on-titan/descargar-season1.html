@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Descargas – Entrenamiento Pilar</title>
+  <title>Descargas – Attack on Titan Temporada 1</title>
   <link rel="stylesheet" href="../../../css/style.css" />
   <link rel="stylesheet" href="../../../css/responsive-style.css" />
   <link rel="stylesheet" href="../../../css/responsive-navigation.css" />
@@ -13,22 +13,14 @@
   <style>
     .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
     .back-btn { display:inline-block; margin:12px 0; padding:10px 16px; background:#6c63ff; color:#fff; border-radius:8px; text-decoration:none; }
-    .lang-toggle { display:flex; gap:8px; margin:12px 0 16px; }
-    .lang-toggle button { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; background:#2c2c2c; color:#ddd; }
-    .lang-toggle button.active { background:#6c63ff; color:#fff; }
     .download-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
     .card { background: rgba(255,255,255,0.04); border-radius:10px; padding:12px; }
     .card h4 { margin:0 0 8px 0; }
-    .actions { display:flex; gap:10px; align-items:center; }
-    .btn { display:inline-block; padding:8px 12px; border-radius:8px; text-decoration:none; }
-    .btn-download { background:#27ae60; color:#fff; }
-    .btn-copy { background:#111; color:#fff; }
-    .btn.disabled { opacity:0.55; pointer-events:none; }
-    .section { display:none; }
-    .section.active { display:block; }
-    @media (max-width:768px){ .download-grid { grid-template-columns: 1fr; } }
-
-    /* Footer nuevo */
+    .links { list-style:none; padding:0; margin:0; display:grid; grid-template-columns: 1fr; gap:8px; }
+    .btn-download { display:inline-block; padding:10px 14px; border-radius:8px; text-decoration:none; background:#27ae60; color:#fff; }
+    .header + main.container { padding-top: 6rem; }
+  </style>
+  <style>
     .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
     .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .footer .footer-section h3 { margin: 0 0 8px; }
@@ -46,34 +38,6 @@
     .footer .footer-text { text-align: center; margin-top: 12px; opacity: 0.8; }
     @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
   </style>
-  <script>
-    function setActiveLanguage(lang){
-      document.querySelectorAll('.lang-toggle button').forEach(b=>{
-        b.classList.toggle('active', b.dataset.lang===lang);
-      });
-      document.querySelectorAll('.section').forEach(s=>{
-        s.classList.toggle('active', s.dataset.lang===lang);
-      });
-    }
-    function initFromQuery(){
-      const params = new URLSearchParams(window.location.search);
-      let lang = params.get('lang') || 'lat';
-      if (!['lat','sub'].includes(lang)) { lang = 'lat'; }
-      setActiveLanguage(lang);
-    }
-    function copyHref(el){
-      const href = el.getAttribute('href');
-      if (!href || href === '#') return;
-      navigator.clipboard.writeText(href).then(()=>{
-        el.textContent = 'Copiado';
-        setTimeout(()=>{ el.textContent = 'Copiar link'; }, 1500);
-      });
-    }
-    document.addEventListener('DOMContentLoaded', initFromQuery);
-  </script>
-  <style>
-    .header + main.container { padding-top: 6rem; }
-  </style>
 </head>
 <body>
   <header class="header">
@@ -90,65 +54,44 @@
   </header>
 
   <main class="container">
-    <a class="back-btn" href="./entrenamiento-pilar.html">◄ Volver al episodio</a>
-    <h1>Descargas – Entrenamiento Pilar</h1>
-    <p>Elige idioma y servidor. Todos los enlaces pasan por el acortador exe.io.</p>
+    <a class="back-btn" href="../../html/catalogo.html">◄ Volver al catálogo</a>
+    <a class="back-btn" href="./season1.html">◄ Volver a la temporada 1</a>
+    <h1>Descargas – Attack on Titan Temporada 1</h1>
+    <p>Español – Servidor MixDrop.</p>
 
-    <div class="lang-toggle" role="tablist" aria-label="Idiomas">
-      <button role="tab" class="active" data-lang="lat" onclick="setActiveLanguage('lat')">Latino</button>
-      <button role="tab" data-lang="sub" onclick="setActiveLanguage('sub')">Sub Español</button>
+    <div class="download-grid">
+      <div class="card">
+        <h4>MixDrop</h4>
+        <ul class="links">
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/dkrow77ki1kjnl?download">Descargar Ep 01</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/7kj46vz3f8q4ve?download">Descargar Ep 02</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/q1d7rn0df4l608?download">Descargar Ep 03</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/8lj9deoocl76xd?download">Descargar Ep 04</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/nln8rkvxid8k80?download">Descargar Ep 05</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/pj60qwmrcw40e?download">Descargar Ep 06</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36qoxeqxa7nj7z?download">Descargar Ep 07</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36qoxenmfe4z17?download">Descargar Ep 08</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/elzrjvl8t7173k?download">Descargar Ep 09</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xw9168vdblmnlpz?download">Descargar Ep 10</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/67rwge4jcl6d7jz?download">Descargar Ep 11</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/dkrow861bxmvwr?download">Descargar Ep 12</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/1nodje30t4v698?download">Descargar Ep 13</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/4d9oze00c97vg7?download">Descargar Ep 14</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/vkq1rg0ga060v7?download">Descargar Ep 15</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/jdkvg66jijr9kz?download">Descargar Ep 16</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/vkq1rgxxun7v87?download">Descargar Ep 17</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/9wx40m4ea3nrprj?download">Descargar Ep 18</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/vkq1rxp1f9xvd0?download">Descargar Ep 19</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/8lj9dz78i4kn8l?download">Descargar Ep 20</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/4d9ozwvvh3pgxv?download">Descargar Ep 21</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/1nodj7vlid7enk?download">Descargar Ep 22</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xw916mo4fpqpm4?download">Descargar Ep 23</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/1nodj784hpdodg?download">Descargar Ep 24</a></li>
+          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/vkq1rxv9t9pged?download">Descargar Ep 25</a></li>
+        </ul>
+      </div>
     </div>
-
-    <!-- Latino -->
-    <section class="section active" data-lang="lat" aria-label="Descargas Latino">
-      <div class="download-grid">
-        <div class="card">
-          <h4>MixDrop</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/36q7p3kzbmkz88j?download">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/36q7p3kzbmkz88j?download" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>StreamTape</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/oLrxd8P7JdsJgqK/kimetsu_entrenamiento_pilar.mp4">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/oLrxd8P7JdsJgqK/kimetsu_entrenamiento_pilar.mp4" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Terabox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://1024terabox.com/s/1h_ie7MY7Ll7owcOsGErX0Q">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://1024terabox.com/s/1h_ie7MY7Ll7owcOsGErX0Q" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sub Español -->
-    <section class="section" data-lang="sub" aria-label="Descargas Sub Español">
-      <div class="download-grid">
-        <div class="card">
-          <h4>MixDrop</h4>
-          <div class="actions">
-            <a class="btn btn-download disabled" href="#" aria-disabled="true">Descargar</a>
-            <a class="btn btn-copy disabled" href="#" aria-disabled="true">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>StreamTape</h4>
-          <div class="actions">
-            <a class="btn btn-download disabled" href="#" aria-disabled="true">Descargar</a>
-            <a class="btn btn-copy disabled" href="#" aria-disabled="true">Copiar link</a>
-          </div>
-        </div>
-      </div>
-      <p style="opacity:.8; margin-top:8px;">Próximamente enlaces Sub Español.</p>
-    </section>
-
   </main>
-
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
@@ -160,7 +103,7 @@
           <h3>Enlaces</h3>
           <ul>
             <li><a href="../../index.html#inicio">Inicio</a></li>
-            <li><a href="../../html/catalogo.html">🗂️ Catalogo</a></li>
+            <li><a href="../../html/catalogo.html">🗂️ Catálogo</a></li>
             <li><a href="#generos">Géneros</a></li>
             <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
           </ul>
@@ -222,6 +165,5 @@
       <p class="footer-text">&copy; 2025 StudioOtaku. Todos los derechos reservados.</p>
     </div>
   </footer>
-
 </body>
 </html>
