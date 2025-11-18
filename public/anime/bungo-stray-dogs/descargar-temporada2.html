@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descargas – Bungou Stray Dogs Temporada 2</title>
+  <link rel="stylesheet" href="../../../css/style.css" />
+  <link rel="stylesheet" href="../../../css/responsive-style.css" />
+  <link rel="stylesheet" href="../../../css/responsive-navigation.css" />
+  <link rel="icon" href="../../../ico/logo.png" type="image/png" sizes="32x32" />
+  <link rel="shortcut icon" href="../../../ico/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../../../ico/logo.png" />
+  <style>
+    .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
+    .back-btn { display:inline-block; margin:12px 0; padding:10px 16px; background:#6c63ff; color:#fff; border-radius:8px; text-decoration:none; }
+    .lang-toggle { display:flex; gap:8px; margin:12px 0 16px; }
+    .lang-toggle button { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; background:#2c2c2c; color:#ddd; }
+    .lang-toggle button.active { background:#6c63ff; color:#fff; }
+    .download-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
+    .card { background: rgba(255,255,255,0.04); border-radius:10px; padding:12px; }
+    .card h4 { margin:0 0 8px 0; }
+    .links { list-style:none; padding:0; margin:0; display:grid; grid-template-columns: 1fr; gap:8px; }
+    .btn.btn-download { display:inline-block; padding:10px 14px; border-radius:8px; background:#27ae60; color:#fff; text-decoration:none; }
+    .section { display:none; }
+    .section.active { display:block; }
+  </style>
+  <script>
+    function setActiveLanguage(lang){
+      document.querySelectorAll('.lang-toggle button').forEach(b=>{
+        b.classList.toggle('active', b.dataset.lang===lang);
+      });
+      document.querySelectorAll('.section').forEach(s=>{
+        s.classList.toggle('active', s.dataset.lang===lang);
+      });
+    }
+    function initFromQuery(){
+      const params = new URLSearchParams(window.location.search);
+      let lang = params.get('lang') || 'lat';
+      if (!['lat','sub'].includes(lang)) { lang = 'lat'; }
+      setActiveLanguage(lang);
+    }
+    document.addEventListener('DOMContentLoaded', initFromQuery);
+  </script>
+  <style>
+    .header + main.container { padding-top: 6rem; }
+  </style>
+  <style>
+    .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .footer .footer-section h3 { margin: 0 0 8px; }
+    .footer .footer-section p { margin: 0; opacity: 0.85; }
+    .footer .footer-section ul { list-style: none; padding: 0; margin: 0; }
+    .footer .footer-section ul li { margin: 6px 0; }
+    .footer .footer-section a { color: #fff; text-decoration: none; }
+    .footer .footer-section a:hover { text-decoration: underline; }
+    .footer .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    @media (min-width:768px){ .footer .social-links { grid-template-columns: repeat(4, 1fr); } }
+    .footer .social-item { display: flex; align-items: center; gap: 8px; background: #111; border-radius: 10px; padding: 10px; text-decoration: none; color: #fff; }
+    .footer .social-item:hover { background: #1a1a1a; }
+    .footer .social-item img { width: 22px; height: 22px; border-radius: 4px; object-fit: cover; }
+    .footer .social-item span { line-height: 1; }
+    .footer .footer-text { text-align: center; margin-top: 12px; opacity: 0.8; }
+    @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav-container">
+      <div class="logo"><img src="../../../ico/logo.png" alt="Mundo Otaku Latino" style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div>
+      <ul class="nav-menu">
+        <li><a href="../../index.html#inicio">Inicio</a></li>
+        <li><a href="../../html/catalogo.html">Anime</a></li>
+        <li><a href="#peliculas">Películas</a></li>
+        <li><a href="#generos">Géneros</a></li>
+        <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <a class="back-btn" href="./temporada-2.html">◄ Volver a la temporada 2</a>
+    <h1>Descargas – Temporada 2</h1>
+    <p>Elige idioma y servidor. Todos los enlaces son externos a los proveedores.</p>
+
+    <div class="lang-toggle" role="tablist" aria-label="Idiomas">
+      <button role="tab" class="active" data-lang="lat" onclick="setActiveLanguage('lat')">Latino</button>
+      <button role="tab" data-lang="sub" onclick="setActiveLanguage('sub')">Sub Español</button>
+    </div>
+
+    <section class="section active" data-lang="lat" aria-label="Descargas Latino">
+      <div class="download-grid">
+        <div class="card">
+          <h4>MixDrop</h4>
+          <ul class="links">
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/pj60dkqpbg1g604">Descargar Ep 01</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/9wx4gn0vh43v1g">Descargar Ep 02</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0evonqqa3q91m">Descargar Ep 03</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/z1j9mp43f71rvd">Descargar Ep 04</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0evonzjsvrp1w">Descargar Ep 05</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/nln8e0d0bvene">Descargar Ep 06</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/nln8el6gavnnng">Descargar Ep 07</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0evonj4iplolj">Descargar Ep 08</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/4d9ojdr9uo7no8">Descargar Ep 09</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xw91xw9osxgqv">Descargar Ep 10</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0evo0mzt3mxwex">Descargar Ep 11</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/8lj9ml4zh18909">Descargar Ep 12</a></li>
+            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/wlw9qlewbedqkw">Descargar OVA</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>StreamTape</h4>
+          <p>Sin enlaces disponibles para StreamTape en esta temporada.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-lang="sub" aria-label="Descargas Sub Español">
+      <p>Sin enlaces disponibles para Sub Español.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>StudioOtaku</h3>
+          <p>Tu plataforma favorita para ver anime en español latino</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="../../index.html#inicio">Inicio</a></li>
+            <li><a href="../../html/catalogo.html">🗂️ Catálogo</a></li>
+            <li><a href="#generos">Géneros</a></li>
+            <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-links" aria-label="Redes sociales y canales oficiales">
+            <a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener" aria-label="APP Anime TV">
+              <img src="../../../ico/logo.png" alt="APP Anime TV" />
+              <span>APP Anime TV</span>
+            </a>
+            <a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener" aria-label="Canal de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram" />
+              <span>Canal Telegram</span>
+            </a>
+            <a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener" aria-label="Grupo de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram Grupo" />
+              <span>Grupo Telegram</span>
+            </a>
+            <a class="social-item" href="https://rumble.com/c/c-6184817?e9s=src_v1_clr" target="_blank" rel="noopener" aria-label="Página de Rumble">
+              <img src="../../../ico/RUMBLE.webp" alt="Rumble" />
+              <span>Página en Rumble</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener" aria-label="Facebook Studio">
+              <img src="../../../ico/facebook.png" alt="Facebook" />
+              <span>Facebook</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/723496132540351" target="_blank" rel="noopener" aria-label="Grupo de Anime en Facebook">
+              <img src="../../../ico/facebook.png" alt="Facebook Grupo Anime" />
+              <span>Grupo Anime</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/1071796301003086" target="_blank" rel="noopener" aria-label="Grupo de Free Fire en Facebook">
+              <img src="../../../ico/facebook.png" alt="Facebook Grupo Free Fire" />
+              <span>Grupo Free Fire</span>
+            </a>
+            <a class="social-item" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener" aria-label="TikTok">
+              <img src="../../../ico/TIKTOK.webp" alt="TikTok" />
+              <span>TikTok</span>
+            </a>
+            <a class="social-item" href="https://www.instagram.com/studiootaku01" target="_blank" rel="noopener" aria-label="Instagram">
+              <img src="../../../ico/INSTAGRAM.webp" alt="Instagram" />
+              <span>Instagram</span>
+            </a>
+            <a class="social-item" href="https://github.com/studioanime977" target="_blank" rel="noopener" aria-label="GitHub">
+              <img src="../../../ico/GUITHUP.webp" alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+            <a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="YouTube">
+              <img src="../../../ico/youtube.png" alt="YouTube" />
+              <span>YouTube</span>
+            </a>
+            <a class="social-item" href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <img src="../../../ico/whatsapp.webp" alt="WhatsApp" />
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-text">&copy; 2025 StudioOtaku. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  </body>
+  </html>
