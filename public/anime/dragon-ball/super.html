@@ -467,6 +467,17 @@
     });
     loadEpisode(episodes[0]);
   </script>
+  <script>
+    (function(){
+      const p=new URLSearchParams(window.location.search)
+      const ep=parseInt(p.get('ep'))
+      if(Number.isFinite(ep) && ep>=1){
+        const buttons=document.querySelectorAll('.episode-btn')
+        const target=buttons[ep-1]
+        if(target){ target.click() }
+      }
+    })()
+  </script>
   
 </body>
 </html>
