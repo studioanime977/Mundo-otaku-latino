@@ -354,5 +354,12 @@
       });
     });
   </script>
+  <script>
+    (function(){
+      const p=new URLSearchParams(window.location.search)
+      const ep=parseInt(p.get('ep'))
+      if(Number.isFinite(ep)&&ep>=1&&ep<=episodes.length){loadEpisode(episodes[ep-1])}
+    })()
+  </script>
 </body>
 </html>

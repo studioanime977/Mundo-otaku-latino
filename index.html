@@ -30,6 +30,12 @@
     .ornaments{position:absolute;inset:0;pointer-events:none}
     .orb{position:absolute;width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.3);animation:float 7s ease-in-out infinite}
     .orb:nth-child(1){left:8%;top:22%}.orb:nth-child(2){left:18%;top:68%}.orb:nth-child(3){left:76%;top:18%}.orb:nth-child(4){left:86%;top:64%}
+    .footer-splash{width:min(900px,92vw);padding:8px 16px;border-top:1px solid rgba(255,255,255,0.12)}
+    .footer-title{text-align:center;font-weight:700;color:#fff;opacity:0.9}
+    .social-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:8px}
+    .social-item{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:8px 10px;text-decoration:none;color:#fff}
+    .social-item img{width:22px;height:22px;border-radius:4px;object-fit:cover}
+    @media (max-width:480px){.social-links{grid-template-columns:repeat(2,1fr)}}
     @keyframes spin{to{transform:rotate(360deg)}}
     @keyframes load{to{width:100%}}
     @keyframes pop{0%,100%{transform:translateY(0);opacity:0.6}50%{transform:translateY(-4px);opacity:1}}
@@ -48,6 +54,23 @@
     <div class="loader"><div class="bar"></div></div>
     <div class="actions"><a class="btn" href="./public/html/catalogo.html">Entrar ahora</a></div>
     <div class="ornaments"><span class="orb"></span><span class="orb"></span><span class="orb"></span><span class="orb"></span></div>
+    <div class="footer-splash" aria-label="Redes sociales">
+      <div class="footer-title">Mundo Otaku Latino | StudioOtaku</div>
+      <div class="social-links" aria-label="Redes sociales y canales oficiales">
+        <a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener" aria-label="APP Anime TV"><img src="./ico/logo.png" alt="APP Anime TV" /><span>APP Anime TV</span></a>
+        <a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener" aria-label="Canal de Telegram"><img src="./ico/telegram.webp" alt="Telegram" /><span>Canal Telegram</span></a>
+        <a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener" aria-label="Grupo de Telegram"><img src="./ico/telegram.webp" alt="Telegram Grupo" /><span>Grupo Telegram</span></a>
+        <a class="social-item" href="https://rumble.com/c/c-6184817?e9s=src_v1_clr" target="_blank" rel="noopener" aria-label="Página de Rumble"><img src="./ico/RUMBLE.webp" alt="Rumble" /><span>Página en Rumble</span></a>
+        <a class="social-item" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener" aria-label="Facebook Studio"><img src="./ico/facebook.png" alt="Facebook" /><span>Facebook</span></a>
+        <a class="social-item" href="https://www.facebook.com/groups/723496132540351" target="_blank" rel="noopener" aria-label="Grupo de Anime en Facebook"><img src="./ico/facebook.png" alt="Facebook Grupo Anime" /><span>Grupo Anime</span></a>
+        <a class="social-item" href="https://www.facebook.com/groups/1071796301003086" target="_blank" rel="noopener" aria-label="Grupo de Free Fire en Facebook"><img src="./ico/facebook.png" alt="Facebook Grupo Free Fire" /><span>Grupo Free Fire</span></a>
+        <a class="social-item" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener" aria-label="TikTok"><img src="./ico/TIKTOK.webp" alt="TikTok" /><span>TikTok</span></a>
+        <a class="social-item" href="https://www.instagram.com/studiootaku01" target="_blank" rel="noopener" aria-label="Instagram"><img src="./ico/INSTAGRAM.webp" alt="Instagram" /><span>Instagram</span></a>
+        <a class="social-item" href="https://github.com/studioanime977" target="_blank" rel="noopener" aria-label="GitHub"><img src="./ico/GUITHUP.webp" alt="GitHub" /><span>GitHub</span></a>
+        <a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="YouTube"><img src="./ico/youtube.png" alt="YouTube" /><span>YouTube</span></a>
+        <a class="social-item" href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="./ico/whatsapp.webp" alt="WhatsApp" /><span>WhatsApp</span></a>
+      </div>
+    </div>
   </div>
   <script>
     setTimeout(function(){ window.location.href = './public/html/catalogo.html' }, 2800)
