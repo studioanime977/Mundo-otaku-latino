@@ -62,3 +62,119 @@
 
 
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danmachi | Mundo Otaku Latino</title>
+  <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="../../../css/anime.css">
+  <link rel="stylesheet" href="../../../css/responsive-style.css">
+  <link rel="stylesheet" href="../../../css/responsive-navigation.css">
+  <link rel="stylesheet" href="../../../assets/css/catalogo.css?v=2">
+  <link rel="icon" type="image/png" href="../../../ico/logo.png">
+  <style>
+    .series-hero{position:relative;min-height:60vh;border-radius:12px;overflow:hidden;background-size:cover;background-position:center;margin-top:64px}
+    .series-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.8) 100%)}
+    .hero-content{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:4rem 1rem;display:grid;gap:12px}
+    .series-title{font-size:2rem;font-weight:800}
+    .series-meta{display:flex;gap:10px;flex-wrap:wrap;color:#ddd}
+    .series-actions{display:flex;gap:12px;margin-top:8px}
+    .cta{padding:10px 16px;border-radius:8px;background:#f47521;color:#000;text-decoration:none;font-weight:800}
+    .secondary{padding:10px 16px;border-radius:8px;background:#2c2c2c;color:#fff;text-decoration:none;font-weight:700}
+    .season-switch{display:flex;gap:8px;align-items:center;margin:1rem 0}
+    .season-select{padding:8px 10px;border-radius:8px;background:#111;color:#fff;border:1px solid rgba(255,255,255,0.12)}
+    .download-btn{padding:8px 12px;border-radius:8px;background:#27ae60;color:#fff;text-decoration:none;font-weight:700}
+    .episodes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+    .ep-card{position:relative;border-radius:12px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,0.08)}
+    .ep-thumb{height:120px}
+    .ep-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .ep-info{padding:10px}
+    .ep-title{font-weight:700}
+    .ep-meta{color:#bbb;font-size:.9rem;margin-top:4px}
+    .ep-link{position:absolute;inset:0}
+  </style>
+</head>
+<body>
+  <nav>
+    <div>
+      <img src="../../../ico/logo.png" alt="Mundo Otaku Latino" style="height:20px; margin-right:8px;">
+      <div>Mundo Otaku Latino</div>
+    </div>
+    <button class="menu-toggle" aria-label="Abrir menú"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    <div class="nav-links">
+      <a class="nav-link active" href="../../index.html">Inicio</a>
+      <div class="nav-link">Temporadas</div>
+      <div class="nav-link">Películas</div>
+      <div class="nav-link">Series</div>
+      <div class="nav-link">Ofertas</div>
+      <div class="nav-link">Contacto</div>
+      <div class="svg-container"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg></div>
+      <div class="svg-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" /></svg></div>
+    </div>
+  </nav>
+  <section class="series-hero" style="background-image:url('../../../img/DanMachi tem 1.png')">
+    <div class="hero-content">
+      <div class="series-title">Danmachi</div>
+      <div class="series-meta">Sub · Dob · Fantasía</div>
+      <div class="series-actions">
+        <a class="cta" href="season1.html?ep=1">Comenzar a ver S1 E1</a>
+        <a class="secondary" href="#episodios">Ver episodios</a>
+      </div>
+    </div>
+  </section>
+  <main class="page-container">
+    <div class="season-switch"><label for="season">Temporada</label><select id="season" class="season-select"><option value="1">S1</option></select><a id="download-link" class="download-btn" href="descargar-season1.html" target="_blank" rel="noopener">Descargar Temporada 1</a></div>
+    <section id="episodios" aria-label="Lista de episodios"><div class="episodes-grid" id="episodes-grid"></div></section>
+  </main>
+  <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-section"><h3>StudioOtaku</h3><p>Tu plataforma favorita para ver anime en español latino</p></div><div class="footer-section"><h3>Enlaces</h3><ul><li><a href="../../index.html">Inicio</a></li><li><a href="../../html/catalogo.html">🗂️ Catálogo</a></li><li><a href="#generos">Géneros</a></li><li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li></ul></div><div class="footer-section"><h3>Síguenos</h3><div class="social-links" aria-label="Redes sociales y canales oficiales"><a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener" aria-label="APP Anime TV"><img src="../../../ico/logo.png" alt="APP Anime TV" /><span>APP Anime TV</span></a><a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener" aria-label="Canal de Telegram"><img src="../../../ico/telegram.webp" alt="Telegram" /><span>Canal Telegram</span></a><a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener" aria-label="Grupo de Telegram"><img src="../../../ico/telegram.webp" alt="Telegram Grupo" /><span>Grupo Telegram</span></a><a class="social-item" href="https://rumble.com/c/c-6184817?e9s=src_v1_clr" target="_blank" rel="noopener" aria-label="Página de Rumble"><img src="../../../ico/RUMBLE.webp" alt="Rumble" /><span>Página en Rumble</span></a><a class="social-item" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener" aria-label="Facebook Studio"><img src="../../../ico/facebook.png" alt="Facebook" /><span>Facebook</span></a><a class="social-item" href="https://www.facebook.com/groups/723496132540351" target="_blank" rel="noopener" aria-label="Grupo de Anime en Facebook"><img src="../../../ico/facebook.png" alt="Facebook Grupo Anime" /><span>Grupo Anime</span></a><a class="social-item" href="https://www.facebook.com/groups/1071796301003086" target="_blank" rel="noopener" aria-label="Grupo de Free Fire en Facebook"><img src="../../../ico/facebook.png" alt="Facebook Grupo Free Fire" /><span>Grupo Free Fire</span></a><a class="social-item" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener" aria-label="TikTok"><img src="../../../ico/TIKTOK.webp" alt="TikTok" /><span>TikTok</span></a><a class="social-item" href="https://www.instagram.com/studiootaku01" target="_blank" rel="noopener" aria-label="Instagram"><img src="../../../ico/INSTAGRAM.webp" alt="Instagram" /><span>Instagram</span></a><a class="social-item" href="https://github.com/studioanime977" target="_blank" rel="noopener" aria-label="GitHub"><img src="../../../ico/GUITHUP.webp" alt="GitHub" /><span>GitHub</span></a><a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="YouTube"><img src="../../../ico/youtube.png" alt="YouTube" /><span>YouTube</span></a><a class="social-item" href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="../../../ico/whatsapp.webp" alt="WhatsApp" /><span>WhatsApp</span></a></div></div></div><p class="footer-text">&copy; 2025 StudioOtaku. Todos los derechos reservados.</p></div></footer>
+  <script>
+    const navToggle=document.querySelector('.menu-toggle'), navEl=document.querySelector('nav'), navLinks=document.querySelector('.nav-links'); if(navToggle&&navEl&&navLinks){ navToggle.addEventListener('click',e=>{ e.stopPropagation(); const isOpen=navEl.classList.toggle('open'); navToggle.setAttribute('aria-expanded', isOpen?'true':'false'); document.body.style.overflow=isOpen?'hidden':'' }); document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ navEl.classList.remove('open'); document.body.style.overflow='' } }) }
+    const seasons={'1':{count:12,url:'season1.html',thumb:'../../../img/DanMachi tem 1.png',dl:'descargar-season1.html'}}
+    const grid=document.getElementById('episodes-grid'), select=document.getElementById('season'); function renderSeason(key){ const s=seasons[key]; if(!s||!grid) return; grid.innerHTML=Array.from({length:s.count},(_,i)=>{ const ep=i+1; return `<div class=\"ep-card\"><div class=\"ep-thumb\"><img src=\"${s.thumb}\" alt=\"S${key}E${ep}\"></div><div class=\"ep-info\"><div class=\"ep-title\">S${key}E${ep}</div><div class=\"ep-meta\">23m · Latino</div></div><a class=\"ep-link\" href=\"${s.url}?ep=${ep}\"></a></div>` }).join(''); const dl=document.getElementById('download-link'); if(dl&&s.dl){ dl.href=s.dl; dl.textContent=`Descargar Temporada ${key}` } }
+    select.addEventListener('change', e=>renderSeason(e.target.value)); renderSeason('1')
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
