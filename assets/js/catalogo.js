@@ -125,7 +125,7 @@ function init() {
 
   gsap.set("#demo", { height: Math.max(heroHeight, offsetTop + cardHeight + 30) });
   gsap.set("#pagination", { top: offsetTop + cardHeight + 30, left: offsetLeft, y: 200, opacity: 0, zIndex: 60 });
-  gsap.set("nav", { y: -200, opacity: 0 });
+  gsap.set("nav", { y: 0, opacity: 1 });
 
   gsap.set(getCard(active), { x: 0, y: 0, width: window.innerWidth, height: heroHeight });
   gsap.set(getCardContent(active), { x: 0, y: 0, opacity: 0 });
@@ -155,7 +155,6 @@ function init() {
     gsap.to(getCardContent(i), { x: offsetLeft + index * (cardWidth + gap), zIndex: 40, delay: 0.05 * index, ease, delay: startDelay });
   });
   gsap.to("#pagination", { y: 0, opacity: 1, ease, delay: startDelay });
-  gsap.to("nav", { y: 0, opacity: 1, ease, delay: startDelay });
   gsap.to(detailsActive, { opacity: 1, x: 0, ease, delay: startDelay });
   document.querySelectorAll('.discover').forEach(btn=>{ btn.onclick = ()=>{ window.location.href = data[order[0]].href; }; })
 }
@@ -324,7 +323,6 @@ if (navToggle && navEl && navLinks) {
   document.addEventListener('click', (e) => {
     const target = e.target
     const clickedMenuItem = target.closest('.nav-links a, .nav-links .nav-link')
-    if (!navEl.contains(target)) navEl.classList.remove('open')
     if (clickedMenuItem) navEl.classList.remove('open')
     if (!navEl.classList.contains('open')) document.body.style.overflow = ''
   })

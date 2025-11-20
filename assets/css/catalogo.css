@@ -606,7 +606,7 @@ nav {
   background:var(--bg-darker); 
   border-bottom:1px solid var(--border-color); 
 }
-nav .menu-toggle { display:none; width:36px; height:36px; border:none; background:transparent; color: var(--text-primary); }
+nav .menu-toggle { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border:none; background:transparent; color: var(--text-primary); }
 nav .menu-toggle svg { width: 24px; height: 24px; }
 nav .nav-links { display:inline-flex; gap:32px; flex-wrap:wrap; }
 nav .menu-toggle { position: relative; padding: 6px; border-radius: 6px; }
@@ -655,7 +655,21 @@ nav > div:last-child > div {
   text-transform: none;
   position: relative;
 }
+nav > div:last-child > a {
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 8px 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: none;
+  position: relative;
+  text-decoration: none;
+}
 nav > div:last-child > div:hover {
+  color: var(--text-primary);
+}
+nav > div:last-child > a:hover {
   color: var(--text-primary);
 }
 nav > div:last-child > .active { 
@@ -908,6 +922,7 @@ nav > div:last-child > .active:after {
     overflow-x: hidden;
   }
   nav.open .nav-links > div { display:block; width:100%; background:rgba(255,255,255,0.08); padding:10px 12px; border-radius:8px; }
+  nav.open .nav-links > a { display:block; width:100%; background:rgba(255,255,255,0.08); padding:10px 12px; border-radius:8px; text-decoration:none; color: var(--text-primary); }
   .details{ 
     top: 80px; 
     bottom: auto; 

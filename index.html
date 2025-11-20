@@ -2,123 +2,56 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="f08cd2b5211f5b0a95753720000f639c66350c1d" content="f08cd2b5211f5b0a95753720000f639c66350c1d" />
-
-  <!-- 🧠 SEO PRINCIPAL STUDIO OTAKU -->
-  <meta name="description" content="Descarga o mira online animes en español latino gratis. Disfruta las películas Castillo Infinito y K-Pop Demon Hunters en calidad HD. ¡StudioOtaku, tu mundo anime sin límites!">
-  <meta name="keywords" content="descargar animes, anime español latino, ver anime online, Castillo Infinito, K-Pop Demon Hunters, StudioOtaku, películas anime, anime latino HD, descargar anime gratis">
-  <link rel="canonical" href="https://studiootaku.com/">
-
-  <!-- Open Graph (para redes sociales) -->
-  <meta property="og:title" content="StudioOtaku | Animes en Español Latino Gratis">
-  <meta property="og:description" content="Mira y descarga animes como Castillo Infinito y K-Pop Demon Hunters en HD. Anime en español latino sin anuncios.">
-  <meta property="og:image" content="https://studiootaku.com/img/logo.png">
-  <meta property="og:url" content="https://studiootaku.com/">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="StudioOtaku | Anime Latino Gratis">
-  <meta name="twitter:description" content="Descarga o mira tus animes favoritos doblados al español latino. ¡Castillo Infinito y K-Pop Demon Hunters ya disponibles!">
-  <meta name="twitter:image" content="https://studiootaku.com/img/logo.png">
-
-  <!-- Datos estructurados (JSON-LD sitio web) -->
-  
-  <!-- Footer unificado -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido | Mundo Otaku Latino</title>
+  <meta name="description" content="Bienvenido a Mundo Otaku Latino. Preparando tu experiencia anime.">
+  <meta property="og:title" content="Bienvenido a Mundo Otaku Latino">
+  <meta property="og:description" content="Cargando tu experiencia anime...">
+  <link rel="icon" type="image/png" href="./ico/logo.png">
   <style>
-    .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
-    .footer .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
-    .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .footer .footer-section h3 { margin: 0 0 8px; }
-    .footer .footer-section p { margin: 0; opacity: 0.85; }
-    .footer .footer-section ul { list-style: none; padding: 0; margin: 0; }
-    .footer .footer-section ul li { margin: 6px 0; }
-    .footer .footer-section a { color: #fff; text-decoration: none; }
-    .footer .footer-section a:hover { text-decoration: underline; }
-    .footer .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    @media (min-width:768px){ .footer .social-links { grid-template-columns: repeat(4, 1fr); } }
-    .footer .social-item { display: flex; align-items: center; gap: 8px; background: #111; border-radius: 10px; padding: 10px; text-decoration: none; color: #fff; }
-    .footer .social-item:hover { background: #1a1a1a; }
-    .footer .social-item img { width: 22px; height: 22px; border-radius: 4px; object-fit: cover; }
-    .footer .social-item span { line-height: 1; }
-    .footer .footer-text { text-align: center; margin-top: 12px; opacity: 0.8; }
-    @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
+    :root{--bg1:#0f0f23;--bg2:#2d1b69;--accent:#ff5cad;--accent2:#ff8a80;--text:#fff;--muted:#c9c9c9}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{width:100%;height:100%}
+    body{display:grid;place-items:center;background:radial-gradient(1200px 600px at 20% 20%, rgba(255,92,173,0.12), transparent 40%), radial-gradient(900px 500px at 80% 0%, rgba(255,138,128,0.12), transparent 45%), linear-gradient(135deg,var(--bg1),var(--bg2));color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;overflow:hidden}
+    .scene{position:relative;width:min(900px,92vw);height:min(560px,70vh);border-radius:24px;background:rgba(255,255,255,0.06);backdrop-filter:saturate(140%) blur(14px);border:1px solid rgba(255,255,255,0.12);box-shadow:0 20px 60px rgba(0,0,0,0.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;overflow:hidden}
+    .glow{position:absolute;inset:-40%;filter:blur(40px);background:conic-gradient(from 180deg at 50% 50%, rgba(255,92,173,0.18), rgba(255,138,128,0.14), rgba(255,92,173,0.22), rgba(255,138,128,0.18));animation:spin 18s linear infinite}
+    .title{position:relative;text-align:center;font-weight:800;letter-spacing:-0.5px}
+    .title .brand{display:block;font-size:clamp(1.2rem,4.8vw,2.2rem);color:#fff;text-shadow:0 0 8px rgba(0,0,0,0.6),0 6px 18px rgba(0,0,0,0.45)}
+    .title .headline{display:block;font-size:clamp(2rem,8vw,3.2rem);background:linear-gradient(45deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 6px 22px rgba(255,92,173,0.35))}
+    .subtitle{opacity:0.9;color:var(--muted);font-size:clamp(0.95rem,2.6vw,1.1rem);text-align:center}
+    .loader{position:relative;width:min(520px,80%);height:10px;border-radius:99px;background:rgba(255,255,255,0.15);overflow:hidden}
+    .bar{position:absolute;left:0;top:0;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));box-shadow:0 0 18px rgba(255,92,173,0.6);animation:load 2400ms ease-in-out forwards}
+    .dots{display:inline-flex;gap:8px;align-items:center}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);opacity:0.8;animation:pop 900ms ease-in-out infinite}
+    .dot:nth-child(2){animation-delay:150ms}.dot:nth-child(3){animation-delay:300ms}
+    .actions{display:flex;gap:12px;margin-top:6px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;background:linear-gradient(45deg,var(--accent),var(--accent2));color:#000;text-decoration:none;font-weight:700}
+    .btn:active{transform:scale(0.98)}
+    .ornaments{position:absolute;inset:0;pointer-events:none}
+    .orb{position:absolute;width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.3);animation:float 7s ease-in-out infinite}
+    .orb:nth-child(1){left:8%;top:22%}.orb:nth-child(2){left:18%;top:68%}.orb:nth-child(3){left:76%;top:18%}.orb:nth-child(4){left:86%;top:64%}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes load{to{width:100%}}
+    @keyframes pop{0%,100%{transform:translateY(0);opacity:0.6}50%{transform:translateY(-4px);opacity:1}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    @media (max-width:480px){.scene{height:min(520px,72vh);gap:20px}.title .headline{font-size:clamp(1.8rem,9vw,2.6rem)}.loader{height:8px}}
   </style>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>StudioOtaku</h3>
-          <p>Tu plataforma favorita para ver anime en español latino</p>
-        </div>
-        <div class="footer-section">
-          <h3>Enlaces</h3>
-          <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="./public/html/catalogo.html">🗂️ Catalogo</a></li>
-            <li><a href="#generos">Géneros</a></li>
-            <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Síguenos</h3>
-          <div class="social-links" aria-label="Redes sociales y canales oficiales">
-            <a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener" aria-label="APP Anime TV">
-              <img src="./ico/logo.png" alt="APP Anime TV" />
-              <span>APP Anime TV</span>
-            </a>
-            <a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener" aria-label="Canal de Telegram">
-              <img src="./ico/telegram.webp" alt="Telegram" />
-              <span>Canal Telegram</span>
-            </a>
-            <a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener" aria-label="Grupo de Telegram">
-              <img src="./ico/telegram.webp" alt="Telegram Grupo" />
-              <span>Grupo Telegram</span>
-            </a>
-            <a class="social-item" href="https://rumble.com/c/c-6184817?e9s=src_v1_clr" target="_blank" rel="noopener" aria-label="Página de Rumble">
-              <img src="./ico/RUMBLE.webp" alt="Rumble" />
-              <span>Página en Rumble</span>
-            </a>
-            <a class="social-item" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener" aria-label="Facebook Studio">
-              <img src="./ico/facebook.png" alt="Facebook" />
-              <span>Facebook</span>
-            </a>
-            <a class="social-item" href="https://www.facebook.com/groups/723496132540351" target="_blank" rel="noopener" aria-label="Grupo de Anime en Facebook">
-              <img src="./ico/facebook.png" alt="Facebook Grupo Anime" />
-              <span>Grupo Anime</span>
-            </a>
-            <a class="social-item" href="https://www.facebook.com/groups/1071796301003086" target="_blank" rel="noopener" aria-label="Grupo de Free Fire en Facebook">
-              <img src="./ico/facebook.png" alt="Facebook Grupo Free Fire" />
-              <span>Grupo Free Fire</span>
-            </a>
-            <a class="social-item" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener" aria-label="TikTok">
-              <img src="./ico/TIKTOK.webp" alt="TikTok" />
-              <span>TikTok</span>
-            </a>
-            <a class="social-item" href="https://www.instagram.com/studiootaku01" target="_blank" rel="noopener" aria-label="Instagram">
-              <img src="./ico/INSTAGRAM.webp" alt="Instagram" />
-              <span>Instagram</span>
-            </a>
-            <a class="social-item" href="https://github.com/studioanime977" target="_blank" rel="noopener" aria-label="GitHub">
-              <img src="./ico/GUITHUP.webp" alt="GitHub" />
-              <span>GitHub</span>
-            </a>
-            <a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="YouTube">
-              <img src="./ico/youtube.png" alt="YouTube" />
-              <span>YouTube</span>
-            </a>
-            <a class="social-item" href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank" rel="noopener" aria-label="WhatsApp">
-              <img src="./ico/whatsapp.webp" alt="WhatsApp" />
-              <span>WhatsApp</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <p class="footer-text">&copy; 2025 StudioOtaku. Todos los derechos reservados.</p>
+</head>
+<body>
+  <div class="scene" role="dialog" aria-live="polite" aria-label="Bienvenido">
+    <div class="glow"></div>
+    <div class="title">
+      <span class="brand">Bienvenido a</span>
+      <span class="headline">Mundo Otaku Latino</span>
     </div>
-  </footer>
-  
+    <div class="subtitle">Preparando tu experiencia anime <span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span></div>
+    <div class="loader"><div class="bar"></div></div>
+    <div class="actions"><a class="btn" href="./public/html/catalogo.html">Entrar ahora</a></div>
+    <div class="ornaments"><span class="orb"></span><span class="orb"></span><span class="orb"></span><span class="orb"></span></div>
+  </div>
+  <script>
+    setTimeout(function(){ window.location.href = './public/html/catalogo.html' }, 2800)
+  </script>
 </body>
 </html>
 
