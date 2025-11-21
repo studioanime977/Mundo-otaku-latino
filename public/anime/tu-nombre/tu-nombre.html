@@ -69,5 +69,6 @@
     const grid=document.getElementById('episodes-grid'), select=document.getElementById('season'); function renderSeason(key){ const s=seasons[key]; if(!s||!grid) return; grid.innerHTML=Array.from({length:s.count},(_,i)=>{ const ep=i+1; const label='Película'; const href=s.url; return `<div class=\"ep-card\"><div class=\"ep-thumb\"><img src=\"${s.thumb}\" alt=\"${label}\"></div><div class=\"ep-info\"><div class=\"ep-title\">${label}</div><div class=\"ep-meta\">110m · Latino</div></div><a class=\"ep-link\" href=\"${href}\"></a></div>` }).join(''); const dl=document.getElementById('download-link'); if(dl){ dl.href=s.dl; dl.textContent='Descargar Película' } }
     select.addEventListener('change', e=>renderSeason(e.target.value)); renderSeason('p1')
   </script>
+<script src="../../../assets/js/ads.js"></script>
 </body>
 </html>
