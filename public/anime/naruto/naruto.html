@@ -1,125 +1,74 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-    <meta name="f08cd2b5211f5b0a95753720000f639c66350c1d" content="f08cd2b5211f5b0a95753720000f639c66350c1d" />
-
-    <!-- SEO Avanzado para "Naruto" - Mundo Otaku Latino -->
-    <title>Ver o Descargar Naruto | Mundo Otaku Latino</title>
-
-    <meta name="description" content="Mira o descarga Naruto en Mundo Otaku Latino. Disfruta la saga ninja más épica de la historia, doblada o subtitulada, en alta calidad y sin publicidad molesta. #Naruto #NarutoShippuden #MundoOtakuLatino">
-    <meta name="keywords" content="Naruto, Naruto Shippuden, ver anime, descargar anime, anime gratis, Naruto series, Naruto Uzumaki, Sasuke, Sakura, ninjas, anime acción, Mundo Otaku Latino, anime subtitulado, anime doblado, series anime 2025, StudioOtaku">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Mundo Otaku Latino">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Ver o Descargar Naruto | Mundo Otaku Latino">
-    <meta property="og:description" content="Disfruta Naruto completo en Mundo Otaku Latino. Ver online o descarga directa Naruto Classic, Shippuden y Boruto sin anuncios.">
-    <meta property="og:image" content="https://mundootakulatino.vercel.app/public/anime/naruto/naruto.jpg">
-    <meta property="og:url" content="https://mundootakulatino.vercel.app/public/anime/naruto/naruto.html">
-    <meta property="og:site_name" content="Mundo Otaku Latino">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ver o Descargar Naruto | Mundo Otaku Latino">
-    <meta name="twitter:description" content="Mira o descarga Naruto, la saga ninja más épica de todos los tiempos, disponible en Mundo Otaku Latino.">
-    <meta name="twitter:image" content="https://mundootakulatino.vercel.app/public/anime/naruto/naruto.jpg">
-
-    <!-- Datos estructurados JSON-LD (Google SEO) -->
-    
-
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naruto | Mundo Otaku Latino</title>
+  <link rel="stylesheet" href="../../../assets/css/catalogo.css?v=2">
+  <link rel="icon" type="image/png" href="../../../ico/logo.png">
+  <style>
+    .series-hero{position:relative;min-height:60vh;border-radius:12px;overflow:hidden;background-size:cover;background-position:center;margin-top:64px}
+    .series-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.8) 100%)}
+    .series-hero .hero-content{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:4rem 1rem;display:grid;gap:12px}
+    .series-title{font-size:2rem;font-weight:800}
+    .series-meta{display:flex;gap:10px;flex-wrap:wrap;color:#ddd}
+    .series-actions{display:flex;gap:12px;margin-top:8px}
+    .cta{padding:10px 16px;border-radius:8px;background:#f47521;color:#000;text-decoration:none;font-weight:800}
+    .secondary{padding:10px 16px;border-radius:8px;background:#2c2c2c;color:#fff;text-decoration:none;font-weight:700}
+    .season-switch{display:flex;gap:12px;align-items:center;flex-wrap:wrap;position:relative;z-index:5;margin:1rem 0}
+    .season-select{padding:8px 10px;border-radius:8px;background:#111;color:#fff;border:1px solid rgba(255,255,255,0.12)}
+    .download-btn{display:inline-flex;align-items:center;padding:8px 12px;border-radius:8px;background:#27ae60;color:#fff;text-decoration:none;font-weight:700}
+    .episodes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .ep-card{position:relative;border-radius:12px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,0.08)}
+    .ep-thumb{height:120px}
+    .ep-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .ep-info{padding:10px}
+    .ep-title{font-weight:700}
+    .ep-meta{color:#bbb;font-size:.9rem;margin-top:4px}
+    .ep-link{position:absolute;inset:0}
+  </style>
+  <meta name="google-adsense-account" content="ca-pub-8480825005176665">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Mundo Otaku Latino">
+</head>
+<body>
+  <nav>
+    <div>
+      <img src="../../../ico/logo.png" alt="Mundo Otaku Latino" style="height:20px; margin-right:8px;">
+      <div>Mundo Otaku Latino</div>
+    </div>
+    <button class="menu-toggle" aria-label="Abrir menú"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    <div class="nav-links">
+      <a class="nav-link active" href="../../index.html">Inicio</a>
+      <div class="nav-link">Temporadas</div>
+      <div class="nav-link">Películas</div>
+      <div class="nav-link">Series</div>
+      <div class="nav-link">Ofertas</div>
+      <div class="nav-link">Contacto</div>
+      <div class="svg-container"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg></div>
+      <div class="svg-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-
+16→-.437-.695z" clip-rule="evenodd" /></svg></div>
+    </div>
+  </nav>
+  <section class="series-hero" style="background-image:url('../../../img/Naruto Classic.jpg')">
+    <div class="hero-content">
+      <div class="series-title">Naruto</div>
+      <div class="series-meta">Acción · Aventura</div>
+      <div class="series-actions">
+        <a class="cta" href="classic.html?ep=1">Comenzar a ver Classic E1</a>
+        <a class="secondary" href="#episodios">Ver episodios</a>
+      </div>
+    </div>
+  </section>
+  <main class="page-container">
+    <div class="season-switch"><label for="season">Selecciona</label><select id="season" class="season-select"><option value="classic">Classic</option></select><a id="download-link" class="download-btn" href="#" target="_blank" rel="noopener">Descargar</a></div>
+    <section id="episodios" aria-label="Lista de episodios"><div class="episodes-grid" id="episodes-grid"></div></section>
+  </main>
+  <script>
+    const navToggle=document.querySelector('.menu-toggle'), navEl=document.querySelector('nav'), navLinks=document.querySelector('.nav-links'); if(navToggle&&navEl&&navLinks){ navToggle.addEventListener('click',e=>{ e.stopPropagation(); const isOpen=navEl.classList.toggle('open'); navToggle.setAttribute('aria-expanded', isOpen?'true':'false'); document.body.style.overflow=isOpen?'hidden':'' }); document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ navEl.classList.remove('open'); document.body.style.overflow='' } }) }
+    const seasons={'classic':{count:24,url:'classic.html',thumb:'../../../img/Naruto Classic.jpg',dl:'#'}}
+    const grid=document.getElementById('episodes-grid'), select=document.getElementById('season'); function renderSeason(key){ const s=seasons[key]; if(!s||!grid) return; grid.innerHTML=Array.from({length:s.count},(_,i)=>{ const ep=i+1; const label=`Classic E${ep}`; const href=`${s.url}?ep=${ep}`; return `<div class=\"ep-card\"><div class=\"ep-thumb\"><img src=\"${s.thumb}\" alt=\"${label}\"></div><div class=\"ep-info\"><div class=\"ep-title\">${label}</div><div class=\"ep-meta\">23m · Latino</div></div><a class=\"ep-link\" href=\"${href}\"></a></div>` }).join(''); const dl=document.getElementById('download-link'); if(dl){ dl.href=s.dl; dl.textContent='Descargar Classic' } }
+    select.addEventListener('change', e=>renderSeason(e.target.value)); renderSeason('classic')
+  </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-
-// Bloquear clic derecho
-
-window.addEventListener('contextmenu', function (e) {
-
-    e.preventDefault();
-
-});
-
-
-
-// Bloquear teclas F12, Ctrl+Shift+I
-
-window.addEventListener('keydown', function (e) {
-
-    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-
-        e.preventDefault();
-
-    }
-
-});
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
