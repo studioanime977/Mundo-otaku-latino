@@ -12,6 +12,7 @@
   <link rel="apple-touch-icon" href="../../../ico/logo.png" />
   <style>
     .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
+    .header-space { margin-top: 8px; }
     .back-btn { display:inline-block; margin:12px 0; padding:10px 16px; background:#6c63ff; color:#fff; border-radius:8px; text-decoration:none; }
     .lang-toggle { display:flex; gap:8px; margin:12px 0 16px; }
     .lang-toggle button { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; background:#2c2c2c; color:#ddd; }
@@ -19,32 +20,14 @@
     .download-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
     .card { background: rgba(255,255,255,0.04); border-radius:10px; padding:12px; }
     .card h4 { margin:0 0 8px 0; }
-    .links { list-style:none; padding:0; margin:0; display:grid; grid-template-columns: 1fr; gap:8px; }
-    .btn.btn-download { display:inline-block; padding:10px 14px; border-radius:8px; background:#27ae60; color:#fff; text-decoration:none; }
+    .actions { display:flex; gap:10px; align-items:center; }
+    .btn { display:inline-block; padding:8px 12px; border-radius:8px; text-decoration:none; }
+    .btn-download { background:#27ae60; color:#fff; }
+    .btn-copy { background:#111; color:#fff; }
     .section { display:none; }
     .section.active { display:block; }
-  </style>
-  <script>
-    function setActiveLanguage(lang){
-      document.querySelectorAll('.lang-toggle button').forEach(b=>{
-        b.classList.toggle('active', b.dataset.lang===lang);
-      });
-      document.querySelectorAll('.section').forEach(s=>{
-        s.classList.toggle('active', s.dataset.lang===lang);
-      });
-    }
-    function initFromQuery(){
-      const params = new URLSearchParams(window.location.search);
-      let lang = params.get('lang') || 'lat';
-      if (!['lat','sub'].includes(lang)) { lang = 'lat'; }
-      setActiveLanguage(lang);
-    }
-    document.addEventListener('DOMContentLoaded', initFromQuery);
-  </script>
-  <style>
-    .header + main.container { padding-top: 6rem; }
-  </style>
-  <style>
+    @media (max-width:768px){ .download-grid { grid-template-columns: 1fr; } }
+    /* Footer nuevo */
     .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
     .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .footer .footer-section h3 { margin: 0 0 8px; }
@@ -62,6 +45,33 @@
     .footer .footer-text { text-align: center; margin-top: 12px; opacity: 0.8; }
     @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
   </style>
+  <script>
+    function setActiveLanguage(lang){
+      document.querySelectorAll('.lang-toggle button').forEach(b=>{
+        b.classList.toggle('active', b.dataset.lang===lang);
+      });
+      document.querySelectorAll('.section').forEach(s=>{
+        s.classList.toggle('active', s.dataset.lang===lang);
+      });
+    }
+    function initFromQuery(){
+      const params = new URLSearchParams(window.location.search);
+      let lang = params.get('lang') || 'lat';
+      if (!['lat','sub'].includes(lang)) { lang = 'lat'; }
+      setActiveLanguage(lang);
+    }
+    function copyHref(el){
+      const href = el.getAttribute('href');
+      navigator.clipboard.writeText(href).then(()=>{
+        el.textContent = 'Copiado';
+        setTimeout(()=>{ el.textContent = 'Copiar link'; }, 1500);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', initFromQuery);
+  </script>
+  <style>
+    .header + main.container { padding-top: 6rem; }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -78,57 +88,105 @@
   </header>
 
   <main class="container">
-    <a class="back-btn" href="./temporada-1.html">◄ Volver a la temporada 1</a>
-    <h1>Descargas – Temporada 1</h1>
-    <p>Elige idioma y servidor. Todos los enlaces son externos a los proveedores.</p>
+    <a class="back-btn" href="./castillo-infinito.html">◄ Volver al episodio</a>
+    <h1>Descargas – Bungo Stray Dogs Temporada 1</h1>
+    <p>Elige idioma y servidor. Todos los enlaces pasan por el acortador exe.io para protegerlos.</p>
 
     <div class="lang-toggle" role="tablist" aria-label="Idiomas">
       <button role="tab" class="active" data-lang="lat" onclick="setActiveLanguage('lat')">Latino</button>
       <button role="tab" data-lang="sub" onclick="setActiveLanguage('sub')">Sub Español</button>
     </div>
 
+    <!-- Latino -->
     <section class="section active" data-lang="lat" aria-label="Descargas Latino">
       <div class="download-grid">
         <div class="card">
+          <h4>Terabox</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castilloterasSONY2025">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castilloterasSONY2025" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
           <h4>MixDrop</h4>
-          <ul class="links">
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/wlw9qkemi49dwv">Descargar Ep 01</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xw91xlr7hlomj8k">Descargar Ep 02</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/03z479wks6ljdk">Descargar Ep 04</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/9wx4g109im1qen">Descargar Ep 03</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0evow9js318wrx">Descargar Ep 06</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/gjdm807kser7em">Descargar Ep 05</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0evow6za3ox91w">Descargar Ep 07</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/8lj9m1wdf9p9oe">Descargar Ep 08</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/r60v7p1xfvvzzen">Descargar Ep 09</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36qow9ejioo3go">Descargar Ep 10</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/q1d70v0vbxxoj91">Descargar Ep 11</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/67rwxqwmurv3dv">Descargar Ep 12</a></li>
-          </ul>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
         </div>
         <div class="card">
           <h4>StreamTape</h4>
-          <ul class="links">
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Wq67a9eGoJHW8O/Bungou_Stray_Dog_-_Temporada_1_Episodio_01.mp4">Descargar Ep 01</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/yjZLzYDD4McKO4/Bungou_Stray_Dog_-_Temporada_1_Episodio_02.mp4">Descargar Ep 02</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Y6O1LkjWYeFvA4r/Bungou_Stray_Dog_-_Temporada_1_Episodio_03.mp4">Descargar Ep 03</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/zLwYMqDDLKHpVQ/Bungou_Stray_Dog_-_Temporada_1_Episodio_04.mp4">Descargar Ep 04</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/opgV11BKKzhWkR/Bungou_Stray_Dog_-_Temporada_1_Episodio_05.mp4">Descargar Ep 05</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/rKvAx779WOibqem/Bungou_Stray_Dog_-_Temporada_1_Episodio_06.mp4">Descargar Ep 06</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/qlpbZeALGmize1L/Bungou_Stray_Dog_-_Temporada_1_Episodio_07.mp4">Descargar Ep 07</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/OWB1zM2RVwHZVzz/Bungou_Stray_Dog_-_Temporada_1_Episodio_08.mp4">Descargar Ep 08</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/DMxzQe1bxvH3wk/Bungou_Stray_Dog_-_Temporada_1_Episodio_09.mp4">Descargar Ep 09</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/eoZOz7lrZlfYgkz/Bungou_Stray_Dog_-_Temporada_1_Episodio_10.mp4">Descargar Ep 10</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/e3bKKp8m1vtw2m/Bungou_Stray_Dog_-_Temporada_1_Episodio_11.mp4">Descargar Ep 11</a></li>
-            <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/4yRDyLgJkwCKQqY/Bungou_Stray_Dog_-_Temporada_1_Episodio_12.mp4">Descargar Ep 12</a></li>
-          </ul>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>StreamWish</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>EarnVids</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>MediaFire</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Dropbox</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
         </div>
       </div>
     </section>
 
+
+    <!-- Sub Español -->
     <section class="section" data-lang="sub" aria-label="Descargas Sub Español">
-      <p>Sin enlaces disponibles para Sub Español.</p>
+      <div class="download-grid">
+        <div class="card">
+          <h4>Netu (HQQ)</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Terabox</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/CASTISUBTERA">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/CASTISUBTERA" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>MediaFire</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Dropbox</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+      </div>
     </section>
+
   </main>
 
   <footer class="footer">
@@ -142,7 +200,7 @@
           <h3>Enlaces</h3>
           <ul>
             <li><a href="../../index.html#inicio">Inicio</a></li>
-            <li><a href="../../html/catalogo.html">🗂️ Catálogo</a></li>
+            <li><a href="../../html/catalogo.html">🗂️ Catalogo</a></li>
             <li><a href="#generos">Géneros</a></li>
             <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
           </ul>
@@ -204,7 +262,51 @@
       <p class="footer-text">&copy; 2025 StudioOtaku. Todos los derechos reservados.</p>
     </div>
   </footer>
-    
+
+  <script>
+    // Permite abrir esta página con ?lang=lat|es|sub desde el episodio
+  </script>
+  
 <script src="../../../assets/js/ads.js"></script>
+<!-- OLD LINKS PRESERVED:
+https://exe.io/ANIMETV
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/wlw9qkemi49dwv
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xw91xlr7hlomj8k
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/03z479wks6ljdk
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/9wx4g109im1qen
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0evow9js318wrx
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/gjdm807kser7em
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0evow6za3ox91w
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/8lj9m1wdf9p9oe
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/r60v7p1xfvvzzen
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36qow9ejioo3go
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/q1d70v0vbxxoj91
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/67rwxqwmurv3dv
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Wq67a9eGoJHW8O/Bungou_Stray_Dog_-_Temporada_1_Episodio_01.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/yjZLzYDD4McKO4/Bungou_Stray_Dog_-_Temporada_1_Episodio_02.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Y6O1LkjWYeFvA4r/Bungou_Stray_Dog_-_Temporada_1_Episodio_03.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/zLwYMqDDLKHpVQ/Bungou_Stray_Dog_-_Temporada_1_Episodio_04.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/opgV11BKKzhWkR/Bungou_Stray_Dog_-_Temporada_1_Episodio_05.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/rKvAx779WOibqem/Bungou_Stray_Dog_-_Temporada_1_Episodio_06.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/qlpbZeALGmize1L/Bungou_Stray_Dog_-_Temporada_1_Episodio_07.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/OWB1zM2RVwHZVzz/Bungou_Stray_Dog_-_Temporada_1_Episodio_08.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/DMxzQe1bxvH3wk/Bungou_Stray_Dog_-_Temporada_1_Episodio_09.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/eoZOz7lrZlfYgkz/Bungou_Stray_Dog_-_Temporada_1_Episodio_10.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/e3bKKp8m1vtw2m/Bungou_Stray_Dog_-_Temporada_1_Episodio_11.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/4yRDyLgJkwCKQqY/Bungou_Stray_Dog_-_Temporada_1_Episodio_12.mp4
+https://exe.io/ANIMETV
+https://exe.io/ANIMETV
+https://t.me/Mundoootakulatino
+https://t.me/qquiCA9FiB41MDkx
+https://rumble.com/c/c-6184817?e9s=src_v1_clr
+https://www.facebook.com/STUDIOOTAKU01
+https://www.facebook.com/groups/723496132540351
+https://www.facebook.com/groups/1071796301003086
+https://www.tiktok.com/@studiootaku01
+https://www.instagram.com/studiootaku01
+https://github.com/studioanime977
+https://www.youtube.com/@STUDIOOTAKU1
+https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm
+-->
 </body>
-  </html>
+</html>

@@ -12,6 +12,7 @@
   <link rel="apple-touch-icon" href="../../../ico/logo.png" />
   <style>
     .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
+    .header-space { margin-top: 8px; }
     .back-btn { display:inline-block; margin:12px 0; padding:10px 16px; background:#6c63ff; color:#fff; border-radius:8px; text-decoration:none; }
     .lang-toggle { display:flex; gap:8px; margin:12px 0 16px; }
     .lang-toggle button { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; background:#2c2c2c; color:#ddd; }
@@ -19,10 +20,55 @@
     .download-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
     .card { background: rgba(255,255,255,0.04); border-radius:10px; padding:12px; }
     .card h4 { margin:0 0 8px 0; }
-    .links { list-style:none; padding:0; margin:0; display:grid; grid-template-columns: 1fr; gap:8px; }
-    .btn-download { display:inline-block; padding:10px 14px; border-radius:8px; text-decoration:none; background:#27ae60; color:#fff; }
-    .btn-stape { background:#6c63ff; color:#fff; }
+    .actions { display:flex; gap:10px; align-items:center; }
+    .btn { display:inline-block; padding:8px 12px; border-radius:8px; text-decoration:none; }
+    .btn-download { background:#27ae60; color:#fff; }
+    .btn-copy { background:#111; color:#fff; }
+    .section { display:none; }
+    .section.active { display:block; }
+    @media (max-width:768px){ .download-grid { grid-template-columns: 1fr; } }
+    /* Footer nuevo */
+    .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .footer .footer-section h3 { margin: 0 0 8px; }
+    .footer .footer-section p { margin: 0; opacity: 0.85; }
+    .footer .footer-section ul { list-style: none; padding: 0; margin: 0; }
+    .footer .footer-section ul li { margin: 6px 0; }
+    .footer .footer-section a { color: #fff; text-decoration: none; }
+    .footer .footer-section a:hover { text-decoration: underline; }
+    .footer .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    @media (min-width:768px){ .footer .social-links { grid-template-columns: repeat(4, 1fr); } }
+    .footer .social-item { display: flex; align-items: center; gap: 8px; background: #111; border-radius: 10px; padding: 10px; text-decoration: none; color: #fff; }
+    .footer .social-item:hover { background: #1a1a1a; }
+    .footer .social-item img { width: 22px; height: 22px; border-radius: 4px; object-fit: cover; }
+    .footer .social-item span { line-height: 1; }
+    .footer .footer-text { text-align: center; margin-top: 12px; opacity: 0.8; }
+    @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
   </style>
+  <script>
+    function setActiveLanguage(lang){
+      document.querySelectorAll('.lang-toggle button').forEach(b=>{
+        b.classList.toggle('active', b.dataset.lang===lang);
+      });
+      document.querySelectorAll('.section').forEach(s=>{
+        s.classList.toggle('active', s.dataset.lang===lang);
+      });
+    }
+    function initFromQuery(){
+      const params = new URLSearchParams(window.location.search);
+      let lang = params.get('lang') || 'lat';
+      if (!['lat','sub'].includes(lang)) { lang = 'lat'; }
+      setActiveLanguage(lang);
+    }
+    function copyHref(el){
+      const href = el.getAttribute('href');
+      navigator.clipboard.writeText(href).then(()=>{
+        el.textContent = 'Copiado';
+        setTimeout(()=>{ el.textContent = 'Copiar link'; }, 1500);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', initFromQuery);
+  </script>
   <style>
     .header + main.container { padding-top: 6rem; }
   </style>
@@ -42,84 +88,205 @@
   </header>
 
   <main class="container">
-    <a class="back-btn" href="./tren-infinito.html">Volver</a>
-    <h1>Descargas – Demon Slayer Tren Infinito</h1>
+    <a class="back-btn" href="./castillo-infinito.html">◄ Volver al episodio</a>
+    <h1>Descargas – Demon Slayer treninfinito</h1>
+    <p>Elige idioma y servidor. Todos los enlaces pasan por el acortador exe.io para protegerlos.</p>
 
-    <div class="lang-toggle" role="tablist" aria-label="Idiomas disponibles">
-      <button id="btn-lat" role="tab" aria-selected="true" class="active">Latino</button>
-      <button id="btn-sub" role="tab" aria-selected="false">Subtitulado</button>
+    <div class="lang-toggle" role="tablist" aria-label="Idiomas">
+      <button role="tab" class="active" data-lang="lat" onclick="setActiveLanguage('lat')">Latino</button>
+      <button role="tab" data-lang="sub" onclick="setActiveLanguage('sub')">Sub Español</button>
     </div>
 
-    <div class="download-grid">
-      <div id="card-lat" aria-label="Descargas Latino">
-        <h4>Latino</h4>
-        <div class="download-grid">
-          <div class="card">
-            <h4>MixDrop</h4>
-            <ul class="links">
-              <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/owzqeqx9tl6jz9q?download">Descargar Ep 01</a></li>
-              <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/l79jzvxnfqdpnkm?download">Descargar Ep 02</a></li>
-              <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/mkzvevneuqdx83?download">Descargar Ep 03</a></li>
-              <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/dkrx0xq9tv4wpm?download">Descargar Ep 04</a></li>
-              <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xw9ere73b0n79?download">Descargar Ep 05</a></li>
-              <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/elz8789daerrev?download">Descargar Ep 06</a></li>
-              <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/4d9kxkw6fwk7q8?download">Descargar Ep 07</a></li>
-            </ul>
+    <!-- Latino -->
+    <section class="section active" data-lang="lat" aria-label="Descargas Latino">
+      <div class="download-grid">
+        <div class="card">
+          <h4>Terabox</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castilloterasSONY2025">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castilloterasSONY2025" onclick="copyHref(this); return false;">Copiar link</a>
           </div>
-          <div class="card">
-            <h4>StreamTape</h4>
-            <ul class="links">
-              <li><a class="btn btn-stape" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/6Qb0PxQeeoT9RoO/Kimetsu_no_Yaiba_Tren_Infino_01.mp4">Descargar Ep 01</a></li>
-              <li><a class="btn btn-stape" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/qObqdQakBZFyBY/Kimetsu_no_Yaiba_Tren_Infino_02.mp4">Descargar Ep 02</a></li>
-              <li><a class="btn btn-stape" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/g9ZzL3Xb99Tq133/Kimetsu_no_Yaiba_Tren_Infino_03.mp4">Descargar Ep 03</a></li>
-              <li><a class="btn btn-stape" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/JYQPzw9eY1Ijzr0/Kimetsu_no_Yaiba_Tren_Infino_04.mp4">Descargar Ep 04</a></li>
-              <li><a class="btn btn-stape" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/PypeQPdAm6F0d6O/Kimetsu_no_Yaiba_Tren_Infino_05.mp4">Descargar Ep 05</a></li>
-              <li><a class="btn btn-stape" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/J01LxaLmkqUjkXx/Kimetsu_no_Yaiba_Tren_Infino_06.mp4">Descargar Ep 06</a></li>
-              <li><a class="btn btn-stape" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/rBJwoB0V9WiM9d/Kimetsu_no_Yaiba_Tren_Infino_07.mp4">Descargar Ep 07</a></li>
-              <li><a class="btn btn-stape" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/39XeLYvOWdhdZPj/Kimetsu_no_Yaiba_Tren_Infino_movie.mp4">Descargar Película</a></li>
-            </ul>
+        </div>
+        <div class="card">
+          <h4>MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>StreamWish</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>EarnVids</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>MediaFire</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Dropbox</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
           </div>
         </div>
       </div>
+    </section>
 
-      <div id="card-sub" aria-label="Descargas Subtitulado" hidden>
-        <h4>Subtitulado</h4>
-        <div class="download-grid">
-          <div class="card">
-            <h4>MixDrop</h4>
-            <ul class="links">
-              <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/l798zwmzcqrqdm9?download">Descargar versión Sub</a></li>
-            </ul>
+
+    <!-- Sub Español -->
+    <section class="section" data-lang="sub" aria-label="Descargas Sub Español">
+      <div class="download-grid">
+        <div class="card">
+          <h4>Netu (HQQ)</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09" onclick="copyHref(this); return false;">Copiar link</a>
           </div>
-          <div class="card">
-            <h4>StreamTape</h4>
-            <ul class="links">
-              <li><a class="btn btn-stape" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/zpPjWrLKB7UYMAK/tren_infinito_sub_titulada.mp4">Descargar versión Sub</a></li>
-            </ul>
+        </div>
+        <div class="card">
+          <h4>Terabox</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/CASTISUBTERA">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/CASTISUBTERA" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>MediaFire</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Dropbox</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
   </main>
 
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>StudioOtaku</h3>
+          <p>Tu plataforma favorita para ver anime en español latino</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="../../index.html#inicio">Inicio</a></li>
+            <li><a href="../../html/catalogo.html">🗂️ Catalogo</a></li>
+            <li><a href="#generos">Géneros</a></li>
+            <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-links" aria-label="Redes sociales y canales oficiales">
+            <a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener" aria-label="APP Anime TV">
+              <img src="../../../ico/logo.png" alt="APP Anime TV" />
+              <span>APP Anime TV</span>
+            </a>
+            <a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener" aria-label="Canal de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram" />
+              <span>Canal Telegram</span>
+            </a>
+            <a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener" aria-label="Grupo de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram Grupo" />
+              <span>Grupo Telegram</span>
+            </a>
+            <a class="social-item" href="https://rumble.com/c/c-6184817?e9s=src_v1_clr" target="_blank" rel="noopener" aria-label="Página de Rumble">
+              <img src="../../../ico/RUMBLE.webp" alt="Rumble" />
+              <span>Página en Rumble</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener" aria-label="Facebook Studio">
+              <img src="../../../ico/facebook.png" alt="Facebook" />
+              <span>Facebook</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/723496132540351" target="_blank" rel="noopener" aria-label="Grupo de Anime en Facebook">
+              <img src="../../../ico/facebook.png" alt="Facebook Grupo Anime" />
+              <span>Grupo Anime</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/1071796301003086" target="_blank" rel="noopener" aria-label="Grupo de Free Fire en Facebook">
+              <img src="../../../ico/facebook.png" alt="Facebook Grupo Free Fire" />
+              <span>Grupo Free Fire</span>
+            </a>
+            <a class="social-item" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener" aria-label="TikTok">
+              <img src="../../../ico/TIKTOK.webp" alt="TikTok" />
+              <span>TikTok</span>
+            </a>
+            <a class="social-item" href="https://www.instagram.com/studiootaku01" target="_blank" rel="noopener" aria-label="Instagram">
+              <img src="../../../ico/INSTAGRAM.webp" alt="Instagram" />
+              <span>Instagram</span>
+            </a>
+            <a class="social-item" href="https://github.com/studioanime977" target="_blank" rel="noopener" aria-label="GitHub">
+              <img src="../../../ico/GUITHUP.webp" alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+            <a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="YouTube">
+              <img src="../../../ico/youtube.png" alt="YouTube" />
+              <span>YouTube</span>
+            </a>
+            <a class="social-item" href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <img src="../../../ico/whatsapp.webp" alt="WhatsApp" />
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-text">&copy; 2025 StudioOtaku. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
   <script>
-    const btnLat = document.getElementById('btn-lat');
-    const btnSub = document.getElementById('btn-sub');
-    const cardLat = document.getElementById('card-lat');
-    const cardSub = document.getElementById('card-sub');
-    function setActive(which){
-      const isLat = which === 'lat';
-      btnLat.classList.toggle('active', isLat);
-      btnSub.classList.toggle('active', !isLat);
-      btnLat.setAttribute('aria-selected', String(isLat));
-      btnSub.setAttribute('aria-selected', String(!isLat));
-      cardLat.hidden = !isLat;
-      cardSub.hidden = isLat;
-    }
-    btnLat.addEventListener('click', () => setActive('lat'));
-    btnSub.addEventListener('click', () => setActive('sub'));
+    // Permite abrir esta página con ?lang=lat|es|sub desde el episodio
   </script>
   
 <script src="../../../assets/js/ads.js"></script>
+<!-- OLD LINKS PRESERVED:
+https://exe.io/ANIMETV
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/owzqeqx9tl6jz9q?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/l79jzvxnfqdpnkm?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/mkzvevneuqdx83?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/dkrx0xq9tv4wpm?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xw9ere73b0n79?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/elz8789daerrev?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/4d9kxkw6fwk7q8?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/6Qb0PxQeeoT9RoO/Kimetsu_no_Yaiba_Tren_Infino_01.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/qObqdQakBZFyBY/Kimetsu_no_Yaiba_Tren_Infino_02.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/g9ZzL3Xb99Tq133/Kimetsu_no_Yaiba_Tren_Infino_03.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/JYQPzw9eY1Ijzr0/Kimetsu_no_Yaiba_Tren_Infino_04.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/PypeQPdAm6F0d6O/Kimetsu_no_Yaiba_Tren_Infino_05.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/J01LxaLmkqUjkXx/Kimetsu_no_Yaiba_Tren_Infino_06.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/rBJwoB0V9WiM9d/Kimetsu_no_Yaiba_Tren_Infino_07.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/39XeLYvOWdhdZPj/Kimetsu_no_Yaiba_Tren_Infino_movie.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/l798zwmzcqrqdm9?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/zpPjWrLKB7UYMAK/tren_infinito_sub_titulada.mp4
+-->
 </body>
 </html>

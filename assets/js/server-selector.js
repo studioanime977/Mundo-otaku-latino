@@ -1,6 +1,7 @@
 (() => {
   const langButtons = document.querySelectorAll('.lang-btn');
   const serverCards = document.querySelectorAll('.server-card');
+  const serverGrid = document.querySelector('.server-grid');
   const frame = document.getElementById('player-frame');
   const frameWrap = document.querySelector('.player-frame-wrap');
   const PREF_NS = 'serverPrefV1';
@@ -59,13 +60,13 @@
       btn.classList.toggle('active', isActive);
       btn.setAttribute('aria-selected', String(isActive));
     });
+    // Expandir el grid de servidores cuando se selecciona un idioma
+    if (serverGrid && !serverGrid.classList.contains('expanded')) {
+      serverGrid.classList.add('expanded');
+    }
     // Actualizar disponibilidad según idioma
     updateServerAvailabilityForLanguage(lang);
-    // Cargar automáticamente el primer servidor válido para el idioma elegido
-    const preferred = findPreferredCardForLanguage(lang);
-    if (preferred) {
-      loadServer(preferred);
-    }
+    // NO cargar automáticamente servidor - dejar que el usuario elija
   }
 
   function getServerKey(card) {
@@ -78,7 +79,7 @@
   }
 
   function setPref(key, value) {
-    try { localStorage.setItem(key, value); } catch (_) {}
+    try { localStorage.setItem(key, value); } catch (_) { }
   }
 
   function loadServer(card) {
@@ -95,6 +96,13 @@
     serverCards.forEach(c => c.classList.remove('active'));
     card.classList.add('active');
 
+    // Colapsar el grid de servidores después de seleccionar uno
+    if (serverGrid) {
+      setTimeout(() => {
+        serverGrid.classList.remove('expanded');
+      }, 300);
+    }
+
     // Verifica primario, si falla, memoriza fallback para próximas cargas
     try {
       fetch(url, { mode: 'no-cors' })
@@ -106,7 +114,20 @@
   }
 
   langButtons.forEach(btn => {
-    btn.addEventListener('click', () => setActiveLanguage(btn.dataset.language));
+    btn.addEventListener('click', () => {
+      const clickedLang = btn.dataset.language;
+      const isCurrentlyActive = btn.classList.contains('active');
+      const isExpanded = serverGrid && serverGrid.classList.contains('expanded');
+
+      // Si se hace clic en el mismo idioma activo y el grid está expandido, colapsar
+      if (isCurrentlyActive && isExpanded) {
+        serverGrid.classList.remove('expanded');
+        return;
+      }
+
+      // Si se hace clic en un idioma (mismo o diferente), expandir y activar
+      setActiveLanguage(clickedLang);
+    });
   });
 
   serverCards.forEach(card => {

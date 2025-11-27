@@ -12,15 +12,22 @@
   <link rel="apple-touch-icon" href="../../../ico/logo.png" />
   <style>
     .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
+    .header-space { margin-top: 8px; }
     .back-btn { display:inline-block; margin:12px 0; padding:10px 16px; background:#6c63ff; color:#fff; border-radius:8px; text-decoration:none; }
+    .lang-toggle { display:flex; gap:8px; margin:12px 0 16px; }
+    .lang-toggle button { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; background:#2c2c2c; color:#ddd; }
+    .lang-toggle button.active { background:#6c63ff; color:#fff; }
     .download-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
     .card { background: rgba(255,255,255,0.04); border-radius:10px; padding:12px; }
     .card h4 { margin:0 0 8px 0; }
-    .links { list-style:none; padding:0; margin:0; display:grid; grid-template-columns: 1fr; gap:8px; }
-    .btn.btn-download { display:inline-block; padding:10px 14px; border-radius:8px; background:#27ae60; color:#fff; text-decoration:none; }
-    .header + main.container { padding-top: 6rem; }
-  </style>
-  <style>
+    .actions { display:flex; gap:10px; align-items:center; }
+    .btn { display:inline-block; padding:8px 12px; border-radius:8px; text-decoration:none; }
+    .btn-download { background:#27ae60; color:#fff; }
+    .btn-copy { background:#111; color:#fff; }
+    .section { display:none; }
+    .section.active { display:block; }
+    @media (max-width:768px){ .download-grid { grid-template-columns: 1fr; } }
+    /* Footer nuevo */
     .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
     .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .footer .footer-section h3 { margin: 0 0 8px; }
@@ -38,6 +45,33 @@
     .footer .footer-text { text-align: center; margin-top: 12px; opacity: 0.8; }
     @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
   </style>
+  <script>
+    function setActiveLanguage(lang){
+      document.querySelectorAll('.lang-toggle button').forEach(b=>{
+        b.classList.toggle('active', b.dataset.lang===lang);
+      });
+      document.querySelectorAll('.section').forEach(s=>{
+        s.classList.toggle('active', s.dataset.lang===lang);
+      });
+    }
+    function initFromQuery(){
+      const params = new URLSearchParams(window.location.search);
+      let lang = params.get('lang') || 'lat';
+      if (!['lat','sub'].includes(lang)) { lang = 'lat'; }
+      setActiveLanguage(lang);
+    }
+    function copyHref(el){
+      const href = el.getAttribute('href');
+      navigator.clipboard.writeText(href).then(()=>{
+        el.textContent = 'Copiado';
+        setTimeout(()=>{ el.textContent = 'Copiar link'; }, 1500);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', initFromQuery);
+  </script>
+  <style>
+    .header + main.container { padding-top: 6rem; }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -54,49 +88,105 @@
   </header>
 
   <main class="container">
-    <a class="back-btn" href="../../html/catalogo.html">◄ Volver al catálogo</a>
-    <a class="back-btn" href="./season1.html">◄ Volver a la temporada 1</a>
-    <h1>Descargas – Danmachi Temporada 1</h1>
-    <p>Español – Servidores MixDrop y StreamTape.</p>
+    <a class="back-btn" href="./castillo-infinito.html">◄ Volver al episodio</a>
+    <h1>Descargas – Danmachi season1</h1>
+    <p>Elige idioma y servidor. Todos los enlaces pasan por el acortador exe.io para protegerlos.</p>
 
-    <div class="download-grid">
-      <div class="card">
-        <h4>MixDrop</h4>
-        <ul class="links">
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/q1d867ppsx73r91?download">Descargar Ep 01</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36q70oqkbmvxm6e?download">Descargar Ep 02</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/vkq9l1vof1zxdq?download">Descargar Ep 03</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/pj68m03efe0rk8?download">Descargar Ep 04</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/4d9k7o1nbwr6v3?download">Descargar Ep 05</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/jdk83vwgtx6eox?download">Descargar Ep 06</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/q1d867x3c77o93?download">Descargar Ep 07</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/vkq9l1grt71d4k?download">Descargar Ep 08</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xw9ej1zefv4lk8?download">Descargar Ep 09</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/gjdzozzlak9loe?download">Descargar Ep 10</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xmmmeZ7jjPiq9Z?download">Descargar Ep 11</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/l79jwj7vuqv166m?download">Descargar Ep 12</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/7kjw0w1nipo9wr?download">Descargar Ep 13</a></li>
-        </ul>
-      </div>
-      <div class="card">
-        <h4>StreamTape</h4>
-        <ul class="links">
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/kom7Y4aBLjiOv9L/Danmachi_-_Temporada_1_Episodio_01.mp4">Descargar Ep 01</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/bw2wpjKAQvCKJv/Danmachi_-_Temporada_1_Episodio_02.mp4">Descargar Ep 02</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/rDoz89PgRrsbDld/Danmachi_-_Temporada_1_Episodio_03.mp4">Descargar Ep 03</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/4W4pmaD2xesKlqV/Danmachi_-_Temporada_1_Episodio_04.mp4">Descargar Ep 04</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/mqOdlGlJzVib9Mm/Danmachi_-_Temporada_1_Episodio_05.mp4">Descargar Ep 05</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/P3P7PG1A3Mt0qDQ/Danmachi_-_Temporada_1_Episodio_06.mp4">Descargar Ep 06</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/kgZD3pxGVaUrBA/Danmachi_-_Temporada_1_Episodio_07.mp4">Descargar Ep 07</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/yb6eMKALaOI1pmM/Danmachi_-_Temporada_1_Episodio_08.mp4">Descargar Ep 08</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/z1JapoZ4YRUYqYq/Danmachi_-_Temporada_1_Episodio_09.mp4">Descargar Ep 09</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/bq0DPKMW1kSPwvL/Danmachi_-_Temporada_1_Episodio_10.mp4">Descargar Ep 10</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/xmmmeZ7jjPiq9Z/Danmachi_-_Temporada_1_Episodio_11.mp4">Descargar Ep 11</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/MqxJZOVJDyUmO4a/Danmachi_-_Temporada_1_Episodio_12.mp4">Descargar Ep 12</a></li>
-          <li><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/ox36x0dL0YIJ22z/Danmachi_-_Temporada_1_Episodio_13.mp4">Descargar Ep 13</a></li>
-        </ul>
-      </div>
+    <div class="lang-toggle" role="tablist" aria-label="Idiomas">
+      <button role="tab" class="active" data-lang="lat" onclick="setActiveLanguage('lat')">Latino</button>
+      <button role="tab" data-lang="sub" onclick="setActiveLanguage('sub')">Sub Español</button>
     </div>
+
+    <!-- Latino -->
+    <section class="section active" data-lang="lat" aria-label="Descargas Latino">
+      <div class="download-grid">
+        <div class="card">
+          <h4>Terabox</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castilloterasSONY2025">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castilloterasSONY2025" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>StreamWish</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>EarnVids</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>MediaFire</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Dropbox</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Sub Español -->
+    <section class="section" data-lang="sub" aria-label="Descargas Sub Español">
+      <div class="download-grid">
+        <div class="card">
+          <h4>Netu (HQQ)</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Terabox</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/CASTISUBTERA">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/CASTISUBTERA" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>MediaFire</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Dropbox</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -110,7 +200,7 @@
           <h3>Enlaces</h3>
           <ul>
             <li><a href="../../index.html#inicio">Inicio</a></li>
-            <li><a href="../../html/catalogo.html">🗂️ Catálogo</a></li>
+            <li><a href="../../html/catalogo.html">🗂️ Catalogo</a></li>
             <li><a href="#generos">Géneros</a></li>
             <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
           </ul>
@@ -172,7 +262,53 @@
       <p class="footer-text">&copy; 2025 StudioOtaku. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <script>
+    // Permite abrir esta página con ?lang=lat|es|sub desde el episodio
+  </script>
   
 <script src="../../../assets/js/ads.js"></script>
+<!-- OLD LINKS PRESERVED:
+https://exe.io/ANIMETV
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/q1d867ppsx73r91?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36q70oqkbmvxm6e?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/vkq9l1vof1zxdq?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/pj68m03efe0rk8?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/4d9k7o1nbwr6v3?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/jdk83vwgtx6eox?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/q1d867x3c77o93?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/vkq9l1grt71d4k?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xw9ej1zefv4lk8?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/gjdzozzlak9loe?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xmmmeZ7jjPiq9Z?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/l79jwj7vuqv166m?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/7kjw0w1nipo9wr?download
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/kom7Y4aBLjiOv9L/Danmachi_-_Temporada_1_Episodio_01.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/bw2wpjKAQvCKJv/Danmachi_-_Temporada_1_Episodio_02.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/rDoz89PgRrsbDld/Danmachi_-_Temporada_1_Episodio_03.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/4W4pmaD2xesKlqV/Danmachi_-_Temporada_1_Episodio_04.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/mqOdlGlJzVib9Mm/Danmachi_-_Temporada_1_Episodio_05.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/P3P7PG1A3Mt0qDQ/Danmachi_-_Temporada_1_Episodio_06.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/kgZD3pxGVaUrBA/Danmachi_-_Temporada_1_Episodio_07.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/yb6eMKALaOI1pmM/Danmachi_-_Temporada_1_Episodio_08.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/z1JapoZ4YRUYqYq/Danmachi_-_Temporada_1_Episodio_09.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/bq0DPKMW1kSPwvL/Danmachi_-_Temporada_1_Episodio_10.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/xmmmeZ7jjPiq9Z/Danmachi_-_Temporada_1_Episodio_11.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/MqxJZOVJDyUmO4a/Danmachi_-_Temporada_1_Episodio_12.mp4
+https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/ox36x0dL0YIJ22z/Danmachi_-_Temporada_1_Episodio_13.mp4
+https://exe.io/ANIMETV
+https://exe.io/ANIMETV
+https://t.me/Mundoootakulatino
+https://t.me/qquiCA9FiB41MDkx
+https://rumble.com/c/c-6184817?e9s=src_v1_clr
+https://www.facebook.com/STUDIOOTAKU01
+https://www.facebook.com/groups/723496132540351
+https://www.facebook.com/groups/1071796301003086
+https://www.tiktok.com/@studiootaku01
+https://www.instagram.com/studiootaku01
+https://github.com/studioanime977
+https://www.youtube.com/@STUDIOOTAKU1
+https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm
+-->
 </body>
 </html>

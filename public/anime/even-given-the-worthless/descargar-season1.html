@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Descargas – Even Given the Worthless Appraiser Class Temporada 1</title>
+    <link rel="stylesheet" href="../../../css/style.css" />
+    <link rel="stylesheet" href="../../../css/responsive-style.css" />
+    <link rel="stylesheet" href="../../../css/responsive-navigation.css" />
+    <link rel="icon" href="../../../ico/logo.png" type="image/png" sizes="32x32" />
+    <link rel="shortcut icon" href="../../../ico/logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../../../ico/logo.png" />
+    <style>
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        .header-space {
+            margin-top: 8px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin: 12px 0;
+            padding: 10px 16px;
+            background: #6c63ff;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .lang-toggle {
+            display: flex;
+            gap: 8px;
+            margin: 12px 0 16px;
+        }
+
+        .lang-toggle button {
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            background: #2c2c2c;
+            color: #ddd;
+        }
+
+        .lang-toggle button.active {
+            background: #6c63ff;
+            color: #fff;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            padding: 12px;
+        }
+
+        .card h4 {
+            margin: 0 0 8px 0;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .btn-download {
+            background: #27ae60;
+            color: #fff;
+        }
+
+        .btn-copy {
+            background: #111;
+            color: #fff;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @media (max-width:768px) {
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer nuevo */
+        .footer {
+            margin-top: 28px;
+            padding: 16px 0;
+            background: rgba(255, 255, 255, 0.04);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .footer .footer-section h3 {
+            margin: 0 0 8px;
+        }
+
+        .footer .footer-section p {
+            margin: 0;
+            opacity: 0.85;
+        }
+
+        .footer .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer .footer-section ul li {
+            margin: 6px 0;
+        }
+
+        .footer .footer-section a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer .social-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        @media (min-width:768px) {
+            .footer .social-links {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .footer .social-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #111;
+            border-radius: 10px;
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .footer .social-item:hover {
+            background: #1a1a1a;
+        }
+
+        .footer .social-item img {
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .footer .social-item span {
+            line-height: 1;
+        }
+
+        .footer .footer-text {
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.8;
+        }
+
+        @media (max-width:768px) {
+            .footer .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script>
+        function setActiveLanguage(lang) {
+            document.querySelectorAll('.lang-toggle button').forEach(b => {
+                b.classList.toggle('active', b.dataset.lang === lang);
+            });
+            document.querySelectorAll('.section').forEach(s => {
+                s.classList.toggle('active', s.dataset.lang === lang);
+            });
+        }
+        function initFromQuery() {
+            const params = new URLSearchParams(window.location.search);
+            let lang = params.get('lang') || 'sub';
+            if (!['lat', 'sub'].includes(lang)) { lang = 'sub'; }
+            setActiveLanguage(lang);
+        }
+        function copyHref(el) {
+            const href = el.getAttribute('href');
+            navigator.clipboard.writeText(href).then(() => {
+                el.textContent = 'Copiado';
+                setTimeout(() => { el.textContent = 'Copiar link'; }, 1500);
+            });
+        }
+        document.addEventListener('DOMContentLoaded', initFromQuery);
+    </script>
+    <style>
+        .header+main.container {
+            padding-top: 6rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo"><img src="../../../ico/logo.png" alt="Mundo Otaku Latino"
+                    style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div>
+            <ul class="nav-menu">
+                <li><a href="../../index.html#inicio">Inicio</a></li>
+                <li><a href="../../html/catalogo.html">Anime</a></li>
+                <li><a href="#peliculas">Películas</a></li>
+                <li><a href="#generos">Géneros</a></li>
+                <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <a class="back-btn" href="./season1.html">◄ Volver al episodio</a>
+        <h1>Descargas – Even Given the Worthless Appraiser Class Temporada 1</h1>
+        <p>Elige idioma y servidor. Todos los enlaces pasan por el acortador exe.io para protegerlos.</p>
+
+        <div class="lang-toggle" role="tablist" aria-label="Idiomas">
+            <button role="tab" data-lang="lat" onclick="setActiveLanguage('lat')">Latino</button>
+            <button role="tab" class="active" data-lang="sub" onclick="setActiveLanguage('sub')">Sub Español</button>
+        </div>
+
+        <!-- Latino -->
+        <section class="section" data-lang="lat" aria-label="Descargas Latino">
+            <div class="download-grid">
+                <div class="card">
+                    <h4>No disponible</h4>
+                    <p>No hay enlaces de descarga en Latino para esta temporada.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sub Español -->
+        <section class="section active" data-lang="sub" aria-label="Descargas Sub Español">
+            <h3 style="margin-bottom:16px;">MixDrop</h3>
+            <div class="download-grid">
+                <div class="card">
+                    <h4>Episodio 01</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/7kjw0qv7i83lnk?download">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/7kjw0qv7i83lnk?download"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 02</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/pj68mz03fg79ggz?download">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/pj68mz03fg79ggz?download"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 03</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/1no16mq4i77p17?download">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/1no16mq4i77p17?download"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 04</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/z1jxdk7qakrrj6?download">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/z1jxdk7qakrrj6?download"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 05</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/pj68mzlgtvdq94?download">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/pj68mzlgtvdq94?download"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 06</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/1no166o4t1qmpv?download">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/1no166o4t1qmpv?download"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 07</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/9wxpox4kaj7nvz?download">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/9wxpox4kaj7nvz?download"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 08</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0e811q3ulz964?download">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0e811q3ulz964?download"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 09</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/pj68m686ak43r4?download">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/pj68m686ak43r4?download"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 10</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/mkzvqzeqbxvqxog?download">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/mkzvqzeqbxvqxog?download"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 11</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/8ljr7q7nao9zqk?download">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/8ljr7q7nao9zqk?download"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 12</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/z1jxdplrc986ro?download">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/z1jxdplrc986ro?download"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin:24px 0 16px;">StreamTape</h3>
+            <div class="download-grid">
+                <div class="card">
+                    <h4>Episodio 01</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://streamtape.com/v/ALZeQ1yVb3ibpR/capitulo_1_-_El_trabajo_de_la_peor_clase_posible.webm.mp4">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://streamtape.com/v/ALZeQ1yVb3ibpR/capitulo_1_-_El_trabajo_de_la_peor_clase_posible.webm.mp4"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 02</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://streamtape.com/v/KLLZyGyMwYi0kBp/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_01.mp4">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://streamtape.com/v/KLLZyGyMwYi0kBp/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_01.mp4"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 03</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://streamtape.com/v/Lpj1PVoqlwCRqKX/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_02.mp4">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://streamtape.com/v/Lpj1PVoqlwCRqKX/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_02.mp4"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 04</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://streamtape.com/v/bPvddX1bM3sPwpl/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_03.mp4">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://streamtape.com/v/bPvddX1bM3sPwpl/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_03.mp4"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 05</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://streamtape.com/v/GjVP3O7bKJIlyr/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_04.mp4">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://streamtape.com/v/GjVP3O7bKJIlyr/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_04.mp4"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 06</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://streamtape.com/v/ydBkexpK2Zf14PG/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_05.mp4">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://streamtape.com/v/ydBkexpK2Zf14PG/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_05.mp4"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 07</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://streamtape.com/v/bqpVdG1XYkcPMyJ/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_06.mp4">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://streamtape.com/v/bqpVdG1XYkcPMyJ/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_06.mp4"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 08</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://streamtape.com/v/LqzW89O1QLfRQDB/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_08.mp4">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://streamtape.com/v/LqzW89O1QLfRQDB/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_08.mp4"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 09</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://streamtape.com/v/OXX9QyaWa1fZjL7/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_09.mp4">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://streamtape.com/v/OXX9QyaWa1fZjL7/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_09.mp4"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 10</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://streamtape.com/v/1jzMe8wdw4i6LR/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_07.mp4">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://streamtape.com/v/1jzMe8wdw4i6LR/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_07.mp4"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 11</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://streamtape.com/v/8ZpxW3MKgJSozee/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_10.mp4">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://streamtape.com/v/8ZpxW3MKgJSozee/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_10.mp4"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Episodio 12</h4>
+                    <div class="actions">
+                        <a class="btn btn-download" target="_blank" rel="noopener"
+                            href="https://streamtape.com/v/o6q8j4e8X7txrG/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_11.mp4">Descargar</a>
+                        <a class="btn btn-copy"
+                            href="https://streamtape.com/v/o6q8j4e8X7txrG/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_11.mp4"
+                            onclick="copyHref(this); return false;">Copiar link</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>StudioOtaku</h3>
+                    <p>Tu plataforma favorita para ver anime en español latino</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="../../index.html#inicio">Inicio</a></li>
+                        <li><a href="../../html/catalogo.html">🗂️ Catálogo</a></li>
+                        <li><a href="#generos">Géneros</a></li>
+                        <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links" aria-label="Redes sociales y canales oficiales">
+                        <a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener"
+                            aria-label="APP Anime TV">
+                            <img src="../../../ico/logo.png" alt="APP Anime TV" />
+                            <span>APP Anime TV</span>
+                        </a>
+                        <a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener"
+                            aria-label="Canal de Telegram">
+                            <img src="../../../ico/telegram.webp" alt="Telegram" />
+                            <span>Canal Telegram</span>
+                        </a>
+                        <a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener"
+                            aria-label="Grupo de Telegram">
+                            <img src="../../../ico/telegram.webp" alt="Telegram Grupo" />
+                            <span>Grupo Telegram</span>
+                        </a>
+                        <a class="social-item" href="https://rumble.com/c/c-6184817?e9s=src_v1_clr" target="_blank"
+                            rel="noopener" aria-label="Página de Rumble">
+                            <img src="../../../ico/RUMBLE.webp" alt="Rumble" />
+                            <span>Página en Rumble</span>
+                        </a>
+                        <a class="social-item" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank"
+                            rel="noopener" aria-label="Facebook Studio">
+                            <img src="../../../ico/facebook.png" alt="Facebook" />
+                            <span>Facebook</span>
+                        </a>
+                        <a class="social-item" href="https://www.facebook.com/groups/723496132540351" target="_blank"
+                            rel="noopener" aria-label="Grupo de Anime en Facebook">
+                            <img src="../../../ico/facebook.png" alt="Facebook Grupo Anime" />
+                            <span>Grupo Anime</span>
+                        </a>
+                        <a class="social-item" href="https://www.facebook.com/groups/1071796301003086" target="_blank"
+                            rel="noopener" aria-label="Grupo de Free Fire en Facebook">
+                            <img src="../../../ico/facebook.png" alt="Facebook Grupo Free Fire" />
+                            <span>Grupo Free Fire</span>
+                        </a>
+                        <a class="social-item" href="https://www.tiktok.com/@studiootaku01" target="_blank"
+                            rel="noopener" aria-label="TikTok">
+                            <img src="../../../ico/TIKTOK.webp" alt="TikTok" />
+                            <span>TikTok</span>
+                        </a>
+                        <a class="social-item" href="https://www.instagram.com/studiootaku01" target="_blank"
+                            rel="noopener" aria-label="Instagram">
+                            <img src="../../../ico/INSTAGRAM.webp" alt="Instagram" />
+                            <span>Instagram</span>
+                        </a>
+                        <a class="social-item" href="https://github.com/studioanime977" target="_blank" rel="noopener"
+                            aria-label="GitHub">
+                            <img src="../../../ico/GUITHUP.webp" alt="GitHub" />
+                            <span>GitHub</span>
+                        </a>
+                        <a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank"
+                            rel="noopener" aria-label="YouTube">
+                            <img src="../../../ico/youtube.png" alt="YouTube" />
+                            <span>YouTube</span>
+                        </a>
+                        <a class="social-item" href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank"
+                            rel="noopener" aria-label="WhatsApp">
+                            <img src="../../../ico/whatsapp.webp" alt="WhatsApp" />
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-text">&copy; 2025 StudioOtaku. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Permite abrir esta página con ?lang=lat|es|sub desde el episodio
+    </script>
+
+    <script src="../../../assets/js/ads.js"></script>
+</body>
+
+</html>
