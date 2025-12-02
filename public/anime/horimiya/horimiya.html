@@ -162,90 +162,79 @@
       inset: 0
     }
 
-    @media (max-width: 600px) {
-      .episodes-grid {
-        grid-template-columns: repeat(2, 1fr)
-      }
-    }
-  </style>
-</head>
+    style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div><ul class="nav-menu"><li><a href="../../index.html#inicio">Inicio</a></li><li><a href="../../html/catalogo.html">Anime</a></li><li><a href="#peliculas">Películas</a></li><li><a href="#generos">Géneros</a></li><li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li></ul></nav></header><section class="series-hero"
 
-<body>
-  <header class="header">
-    <nav class="nav-container">
-      <div class="logo"><img src="../../../ico/logo.png" alt="Mundo Otaku Latino"
-          style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div>
-      <ul class="nav-menu">
-        <li><a href="../../index.html#inicio">Inicio</a></li>
-        <li><a href="../../html/catalogo.html">Anime</a></li>
-        <li><a href="#peliculas">Películas</a></li>
-        <li><a href="#generos">Géneros</a></li>
-        <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="series-hero"
-    style="background-image:url('../../../img/horimiya-the-missing-pieces-key-visual-tall.png')">
-    <div class="hero-content">
-      <div class="series-title">Horimiya</div>
-      <div class="series-meta">Sub · Dob · Romance</div>
-      <div class="series-actions">
-        <a class="cta" href="season1.html?ep=1">Comenzar a ver S1 E1</a>
-        <a class="secondary" href="#episodios">Ver episodios</a>
-      </div>
-    </div>
-  </section>
-  <main class="page-container">
-    <div class="season-switch"><label for="season">Temporada</label><select id="season" class="season-select">
-        <option value="1">S1</option>
-        <option value="2">S2</option>
-      </select><a id="download-link" class="download-btn" href="#">Descargar</a></div>
-    <section id="episodios" aria-label="Lista de episodios">
-      <div class="episodes-grid" id="episodes-grid"></div>
-    </section>
-  </main>
-  <script>
-    const seasonData = {
+    style="background-image:url('../../../img/horimiya-the-missing-pieces-key-visual-tall.png')"><div class="hero-content"><div class="series-title">Horimiya</div><div class="series-meta">Sub · Dob · Romance</div><div class="series-actions"><a class="cta" href="season1.html?ep=1">Comenzar a ver S1 E1</a><a class="secondary" href="#episodios">Ver episodios</a></div></div></section><main class="page-container"><div class="season-switch"><label for="season">Temporada</label><select id="season" class="season-select"><option value="1">S1</option><option value="2">S2</option></select><a id="download-link" class="download-btn" href="#">Descargar</a></div><section id="episodios" aria-label="Lista de episodios"><div class="episodes-grid" id="episodes-grid"></div></section></main><script>const seasonData= {
       1: {
         count: 13,
-        url: 'season1.html',
-        thumb: '../../../img/horimiya-the-missing-pieces-key-visual-tall.png',
-        downloadUrl: 'descargar-season1.html'
-      },
+          url: 'season1.html',
+          thumb: '../../../img/horimiya-the-missing-pieces-key-visual-tall.png',
+          downloadUrl: 'descargar-season1.html'
+      }
+
+      ,
       2: {
         count: 13,
-        url: 'season2.html',
-        thumb: '../../../img/horimiya-the-missing-pieces-key-visual-tall.png',
-        downloadUrl: 'descargar-season2.html'
-      }
-    };
-    const seasonSelect = document.getElementById('season');
-    const episodesGrid = document.getElementById('episodes-grid');
-    const downloadLink = document.getElementById('download-link');
-
-    function loadSeason(season) {
-      const data = seasonData[season];
-      if (!data || !episodesGrid) return;
-
-      episodesGrid.innerHTML = Array.from({ length: data.count }, (_, i) => {
-        const ep = i + 1;
-        const label = `S${season}E${ep}`;
-        const href = `${data.url}?ep=${ep}`;
-        return `<div class="ep-card"><div class="ep-thumb"><img src="${data.thumb}" alt="${label}"></div><div class="ep-info"><div class="ep-title">${label}</div><div class="ep-meta">23m · Latino</div></div><a class="ep-link" href="${href}"></a></div>`;
-      }).join('');
-
-      if (downloadLink && data.downloadUrl) {
-        downloadLink.href = data.downloadUrl;
-        downloadLink.textContent = `Descargar Temporada ${season}`;
+          url: 'season2.html',
+          thumb: '../../../img/horimiya-the-missing-pieces-key-visual-tall.png',
+          downloadUrl: 'descargar-season2.html'
       }
     }
 
-    seasonSelect.addEventListener('change', (e) => loadSeason(parseInt(e.target.value)));
-    loadSeason(1);
-  </script>
-  <script src="../../../assets/js/catalogo.js?v=2"></script>
-  <script src="../../../assets/js/ads.js"></script>
-</body>
+    ;
+    const seasonSelect=document.getElementById('season');
+    const episodesGrid=document.getElementById('episodes-grid');
+    const downloadLink=document.getElementById('download-link');
 
-</html>
+    function loadSeason(season) {
+      const data=seasonData[season];
+      if ( !data || !episodesGrid) return;
+
+      episodesGrid.innerHTML=Array.from({
+        length: data.count
+      }
+
+      , (_, i)=> {
+        const ep=i + 1;
+
+        const label=`S$ {
+          season
+        }
+
+        E$ {
+          ep
+        }
+
+        `;
+
+        const href=`$ {
+          data.url
+        }
+
+        ?ep=$ {
+          ep
+        }
+
+        `;
+
+        return `<div class="ep-card" ><div class="ep-thumb" ><img src="${data.thumb}" alt="${label}" ></div><div class="ep-info" ><div class="ep-title" >$ {
+          label
+        }
+
+        </div><div class="ep-meta" >23m · Latino</div></div><a class="ep-link" href="${href}" ></a></div>`;
+      }).join('');
+
+    if (downloadLink && data.downloadUrl) {
+      downloadLink.href=data.downloadUrl;
+
+      downloadLink.textContent=`Descargar Temporada $ {
+        season
+      }
+
+      `;
+    }
+    }
+
+    seasonSelect.addEventListener('change', (e)=> loadSeason(parseInt(e.target.value)));
+    loadSeason(1);
+    </script><script src="../../../assets/js/catalogo.js?v=2"></script><script src="../../../assets/js/ads.js"></script></body></html>
