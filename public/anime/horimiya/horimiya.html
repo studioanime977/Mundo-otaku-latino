@@ -101,82 +101,62 @@
       background: #27ae60;
       color: #fff;
       text-decoration: none;
-      font-weight: 700
+      font-weight: 600
+    }
+
+    .page-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem
     }
 
     .episodes-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+      margin-top: 1rem
     }
 
-    .ep-card {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #111;
-      border: 1px solid rgba(255, 255, 255, 0.08)
+    .episode-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.2s
     }
 
-    .ep-thumb {
-      height: 120px
+    .episode-card:hover {
+      background: rgba(255, 255, 255, 0.08)
     }
 
-    .ep-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block
+    .episode-card .ep-num {
+      font-weight: 700;
+      margin-bottom: 4px
     }
 
-    .ep-info {
-      padding: 10px
-    }
-
-    .ep-title {
-      font-weight: 700
-    }
-
-    .ep-meta {
-      color: #bbb;
-      font-size: .9rem;
-      margin-top: 4px
-    }
-
-    .ep-link {
-      position: absolute;
-      inset: 0
+    .episode-card .ep-title {
+      font-size: 0.85rem;
+      color: #aaa
     }
   </style>
 </head>
 
 <body>
-  <nav>
-    <div>
-      <img src="../../../ico/logo.png" alt="Mundo Otaku Latino" style="height:20px; margin-right:8px;">
-      <div>Mundo Otaku Latino</div>
-    </div>
-    <button class="menu-toggle" aria-label="Abrir menú"><span class="bar"></span><span class="bar"></span><span
-        class="bar"></span></button>
-    <div class="nav-links">
-      <a class="nav-link active" href="../../index.html">Inicio</a>
-      <div class="nav-link">Temporadas</div>
-      <div class="nav-link">Películas</div>
-      <div class="nav-link">Series</div>
-      <div class="nav-link">Ofertas</div>
-      <div class="nav-link">Contacto</div>
-      <div class="svg-container"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-          stroke-width="1.5" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-        </svg></div>
-      <div class="svg-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path fill-rule="evenodd"
-            d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
-            clip-rule="evenodd" />
-        </svg></div>
-    </div>
-  </nav>
+  <header class="header">
+    <nav class="nav-container">
+      <div class="logo"><img src="../../../ico/logo.png" alt="Mundo Otaku Latino"
+          style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div>
+      <ul class="nav-menu">
+        <li><a href="../../index.html#inicio">Inicio</a></li>
+        <li><a href="../../html/catalogo.html">Anime</a></li>
+        <li><a href="#peliculas">Películas</a></li>
+        <li><a href="#generos">Géneros</a></li>
+        <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <section class="series-hero"
     style="background-image:url('../../../img/horimiya-the-missing-pieces-key-visual-tall.png')">
     <div class="hero-content">
@@ -192,56 +172,46 @@
     <div class="season-switch"><label for="season">Temporada</label><select id="season" class="season-select">
         <option value="1">S1</option>
         <option value="2">S2</option>
-      </select><a id="download-link" class="download-btn" href="#" target="_blank" rel="noopener">Descargar</a></div>
+      </select><a id="download-link" class="download-btn" href="#">Descargar</a></div>
     <section id="episodios" aria-label="Lista de episodios">
       <div class="episodes-grid" id="episodes-grid"></div>
     </section>
   </main>
   <script>
+    const seasonData = {
+      1: {
+        count: 13,
+        url: 'season1.html',
+        downloadUrl: 'descargar-season1.html'
+      },
+      2: {
+        count: 13,
+        url: 'season2.html',
+        downloadUrl: 'descargar-season2.html'
+      }
+    };
+    const seasonSelect = document.getElementById('season');
+    const episodesGrid = document.getElementById('episodes-grid');
+    const downloadLink = document.getElementById('download-link');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script>
-
-  // Bloquear clic derecho
-
-      window.addEventListener('contextmenu', function (e) {
-
-        e.preventDefault();
-
-  });
-
-
-
-      // Bloquear teclas F12, Ctrl+Shift+I
-
-      window.addEventListener('keydown', function (e) {
-
-    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-
-        e.preventDefault();
-
+    function loadSeason(season) {
+      const data = seasonData[season];
+      episodesGrid.innerHTML = '';
+      for (let i = 1; i <= data.count; i++) {
+        const card = document.createElement('div');
+        card.className = 'episode-card';
+        card.innerHTML = `<div class="ep-num">Episodio ${i}</div>`;
+        card.onclick = () => window.location.href = `${data.url}?ep=${i}`;
+        episodesGrid.appendChild(card);
+      }
+      downloadLink.href = data.downloadUrl;
     }
 
-  });
-
+    seasonSelect.addEventListener('change', (e) => loadSeason(parseInt(e.target.value)));
+    loadSeason(1);
   </script>
+  <script src="../../../assets/js/catalogo.js?v=2"></script>
+  <script src="../../../assets/js/ads.js"></script>
+</body>
+
+</html>
