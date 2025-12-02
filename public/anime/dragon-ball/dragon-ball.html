@@ -12,6 +12,44 @@
   <link rel="stylesheet" href="../../../assets/css/catalogo.css?v=2">
   <link rel="icon" type="image/png" href="../../../ico/logo.png">
   <style>
+    body {
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
+      background-repeat: repeat;
+      background-size: 200px 200px;
+      animation: stars 4s linear infinite;
+      opacity: 0.3;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes stars {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-200px);
+      }
+    }
+
     .series-hero {
       position: relative;
       min-height: 60vh;
@@ -138,40 +176,8 @@
       margin-top: 4px
     }
 
-    .ep-link {
-      position: absolute;
-      inset: 0
-    }
-  </style>
-  <style>
-    body {
-      background: linear-gradient(-45deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
-    }
-
-    @keyframes gradientShift {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-  </style>
-  <style>
-    .season-switch {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 5
+    position: relative;
+    z-index: 5
     }
 
     .download-btn {
