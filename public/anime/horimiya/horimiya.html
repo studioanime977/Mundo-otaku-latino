@@ -101,43 +101,71 @@
       background: #27ae60;
       color: #fff;
       text-decoration: none;
-      font-weight: 600
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(39, 174, 96, 0.25)
     }
 
     .page-container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 1rem
+      padding: 1rem;
+      padding-top: 6rem
     }
 
     .episodes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 10px;
-      margin-top: 1rem
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px
     }
 
-    .episode-card {
-      background: rgba(255, 255, 255, 0.04);
-      border-radius: 8px;
-      padding: 10px;
-      text-align: center;
-      cursor: pointer;
-      transition: background 0.2s
+    .ep-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #111;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.2s, box-shadow 0.2s
     }
 
-    .episode-card:hover {
-      background: rgba(255, 255, 255, 0.08)
+    .ep-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35)
     }
 
-    .episode-card .ep-num {
-      font-weight: 700;
-      margin-bottom: 4px
+    .ep-thumb {
+      height: 120px
     }
 
-    .episode-card .ep-title {
-      font-size: 0.85rem;
-      color: #aaa
+    .ep-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .ep-info {
+      padding: 10px
+    }
+
+    .ep-title {
+      font-weight: 700
+    }
+
+    .ep-meta {
+      color: #bbb;
+      font-size: .9rem;
+      margin-top: 4px
+    }
+
+    .ep-link {
+      position: absolute;
+      inset: 0
+    }
+
+    @media (max-width: 600px) {
+      .episodes-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
     }
   </style>
 </head>
@@ -182,11 +210,13 @@
       1: {
         count: 13,
         url: 'season1.html',
+        thumb: '../../../img/horimiya-the-missing-pieces-key-visual-tall.png',
         downloadUrl: 'descargar-season1.html'
       },
       2: {
         count: 13,
         url: 'season2.html',
+        thumb: '../../../img/horimiya-the-missing-pieces-key-visual-tall.png',
         downloadUrl: 'descargar-season2.html'
       }
     };
@@ -196,15 +226,19 @@
 
     function loadSeason(season) {
       const data = seasonData[season];
-      episodesGrid.innerHTML = '';
-      for (let i = 1; i <= data.count; i++) {
-        const card = document.createElement('div');
-        card.className = 'episode-card';
-        card.innerHTML = `<div class="ep-num">Episodio ${i}</div>`;
-        card.onclick = () => window.location.href = `${data.url}?ep=${i}`;
-        episodesGrid.appendChild(card);
+      if (!data || !episodesGrid) return;
+
+      episodesGrid.innerHTML = Array.from({ length: data.count }, (_, i) => {
+        const ep = i + 1;
+        const label = `S${season}E${ep}`;
+        const href = `${data.url}?ep=${ep}`;
+        return `<div class="ep-card"><div class="ep-thumb"><img src="${data.thumb}" alt="${label}"></div><div class="ep-info"><div class="ep-title">${label}</div><div class="ep-meta">23m · Latino</div></div><a class="ep-link" href="${href}"></a></div>`;
+      }).join('');
+
+      if (downloadLink && data.downloadUrl) {
+        downloadLink.href = data.downloadUrl;
+        downloadLink.textContent = `Descargar Temporada ${season}`;
       }
-      downloadLink.href = data.downloadUrl;
     }
 
     seasonSelect.addEventListener('change', (e) => loadSeason(parseInt(e.target.value)));
