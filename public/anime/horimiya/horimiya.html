@@ -5,199 +5,202 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Horimiya | Mundo Otaku Latino</title>
-  <link rel="stylesheet" href="../../../css/style.css">
-  <link rel="stylesheet" href="../../../css/anime.css">
-  <link rel="stylesheet" href="../../../css/responsive-style.css">
-  <link rel="stylesheet" href="../../../css/responsive-navigation.css">
-  <link rel="stylesheet" href="../../../assets/css/catalogo.css?v=2">
-  <link rel="icon" type="image/png" href="../../../ico/logo.png">
-  <style>
-    .series-hero {
-      position: relative;
-      min-height: 60vh;
-      border-radius: 12px;
-      overflow: hidden;
-      background-size: cover;
-      background-position: center;
-      margin-top: 64px
-    }
 
-    .series-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.65) 40%, rgba(0, 0, 0, 0.8) 100%)
-    }
+  .series-hero .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  display: grid;
+  gap: 12px
+  }
 
-    .series-hero .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 4rem 1rem;
-      display: grid;
-      gap: 12px
-    }
+  .series-title {
+  font-size: 2rem;
+  font-weight: 800
+  }
 
-    .series-title {
-      font-size: 2rem;
-      font-weight: 800
-    }
+  .series-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: #ddd
+  }
 
-    .series-meta {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      color: #ddd
-    }
+  .series-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px
+  }
 
-    .series-actions {
-      display: flex;
-      gap: 12px;
-      margin-top: 8px
-    }
+  .cta {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #f47521;
+  color: #000;
+  text-decoration: none;
+  font-weight: 800
+  }
 
-    .cta {
-      padding: 10px 16px;
-      border-radius: 8px;
-      background: #f47521;
-      color: #000;
-      text-decoration: none;
-      font-weight: 800
-    }
+  .secondary {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #2c2c2c;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700
+  }
 
-    .secondary {
-      padding: 10px 16px;
-      border-radius: 8px;
-      background: #2c2c2c;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700
-    }
+  .season-switch {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 5;
+  margin: 1rem 0
+  }
 
-    .season-switch {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 5;
-      margin: 1rem 0
-    }
+  .season-select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12)
+  }
 
-    .season-select {
-      padding: 8px 10px;
-      border-radius: 8px;
-      background: #111;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.12)
-    }
+  .download-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #27ae60;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(39, 174, 96, 0.25)
+  }
 
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 12px;
-      border-radius: 8px;
-      background: #27ae60;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      box-shadow: 0 6px 18px rgba(39, 174, 96, 0.25)
-    }
+  .page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-top: 6rem
+  }
 
-    .page-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1rem;
-      padding-top: 6rem
-    }
+  .episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px
+  }
 
-    .episodes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 12px
-    }
+  .ep-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s
+  }
 
-    .ep-card {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #111;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: transform 0.2s, box-shadow 0.2s
-    }
+  .ep-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35)
+  }
 
-    .ep-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35)
-    }
+  .ep-thumb {
+  height: 120px
+  }
 
-    .ep-thumb {
-      height: 120px
-    }
+  .ep-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block
+  }
 
-    .ep-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block
-    }
+  .ep-info {
+  padding: 10px
+  }
 
-    .ep-info {
-      padding: 10px
-    }
+  .ep-title {
+  font-weight: 700
+  }
 
-    .ep-title {
-      font-weight: 700
-    }
+  .ep-meta {
+  color: #bbb;
+  font-size: .9rem;
+  margin-top: 4px
+  }
 
-    .ep-meta {
-      color: #bbb;
-      font-size: .9rem;
-      margin-top: 4px
-    }
+  .ep-link {
+  position: absolute;
+  inset: 0
+  }
 
-    .ep-link {
-      position: absolute;
-      inset: 0
-    }
-
-    style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div><ul class="nav-menu"><li><a href="../../index.html#inicio">Inicio</a></li><li><a href="../../html/catalogo.html">Anime</a></li><li><a href="#peliculas">Películas</a></li><li><a href="#generos">Géneros</a></li><li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li></ul></nav></header><section class="series-hero"
-
-    style="background-image:url('../../../img/horimiya-the-missing-pieces-key-visual-tall.png')"><div class="hero-content"><div class="series-title">Horimiya</div><div class="series-meta">Sub · Dob · Romance</div><div class="series-actions"><a class="cta" href="season1.html?ep=1">Comenzar a ver S1 E1</a><a class="secondary" href="#episodios">Ver episodios</a></div></div></section><main class="page-container"><div class="season-switch"><label for="season">Temporada</label><select id="season" class="season-select"><option value="1">S1</option><option value="2">S2</option></select><a id="download-link" class="download-btn" href="#">Descargar</a></div><section id="episodios" aria-label="Lista de episodios"><div class="episodes-grid" id="episodes-grid"></div></section></main><script>const seasonData= {
+  style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div>
+  <ul class="nav-menu">
+    <li><a href="../../index.html#inicio">Inicio</a></li>
+    <li><a href="../../html/catalogo.html">Anime</a></li>
+    <li><a href="#peliculas">Películas</a></li>
+    <li><a href="#generos">Géneros</a></li>
+    <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
+  </ul>
+  </nav>
+  </header>
+  <section class="series-hero"
+    style="background-image:url('../../../img/horimiya-the-missing-pieces-key-visual-tall.png')">
+    <div class="hero-content">
+      <div class="series-title">Horimiya</div>
+      <div class="series-meta">Sub · Dob · Romance</div>
+      <div class="series-actions"><a class="cta" href="season1.html?ep=1">Comenzar a ver S1 E1</a><a class="secondary"
+          href="#episodios">Ver episodios</a></div>
+    </div>
+  </section>
+  <main class="page-container">
+    <div class="season-switch"><label for="season">Temporada</label><select id="season" class="season-select">
+        <option value="1">S1</option>
+        <option value="2">S2</option>
+      </select><a id="download-link" class="download-btn" href="#">Descargar</a></div>
+    <section id="episodios" aria-label="Lista de episodios">
+      <div class="episodes-grid" id="episodes-grid"></div>
+    </section>
+  </main>
+  <script>const seasonData = {
       1: {
         count: 13,
-          url: 'season1.html',
-          thumb: '../../../img/horimiya-the-missing-pieces-key-visual-tall.png',
-          downloadUrl: 'descargar-season1.html'
+        url: 'season1.html',
+        thumb: '../../../img/horimiya-the-missing-pieces-key-visual-tall.png',
+        downloadUrl: 'descargar-season1.html'
       }
 
       ,
       2: {
         count: 13,
-          url: 'season2.html',
-          thumb: '../../../img/horimiya-the-missing-pieces-key-visual-tall.png',
-          downloadUrl: 'descargar-season2.html'
+        url: 'season2.html',
+        thumb: '../../../img/horimiya-the-missing-pieces-key-visual-tall.png',
+        downloadUrl: 'descargar-season2.html'
       }
     }
 
-    ;
-    const seasonSelect=document.getElementById('season');
-    const episodesGrid=document.getElementById('episodes-grid');
-    const downloadLink=document.getElementById('download-link');
+      ;
+    const seasonSelect = document.getElementById('season');
+    const episodesGrid = document.getElementById('episodes-grid');
+    const downloadLink = document.getElementById('download-link');
 
     function loadSeason(season) {
-      const data=seasonData[season];
-      if ( !data || !episodesGrid) return;
+      const data = seasonData[season];
+      if (!data || !episodesGrid) return;
 
-      episodesGrid.innerHTML=Array.from({
+      episodesGrid.innerHTML = Array.from({
         length: data.count
       }
 
-      , (_, i)=> {
-        const ep=i + 1;
+        , (_, i) => {
+          const ep = i + 1;
 
-        const label=`S$ {
+          const label = `S$ {
           season
         }
 
@@ -207,7 +210,7 @@
 
         `;
 
-        const href=`$ {
+          const href = `$ {
           data.url
         }
 
@@ -217,24 +220,29 @@
 
         `;
 
-        return `<div class="ep-card" ><div class="ep-thumb" ><img src="${data.thumb}" alt="${label}" ></div><div class="ep-info" ><div class="ep-title" >$ {
+          return `<div class="ep-card" ><div class="ep-thumb" ><img src="${data.thumb}" alt="${label}" ></div><div class="ep-info" ><div class="ep-title" >$ {
           label
         }
 
         </div><div class="ep-meta" >23m · Latino</div></div><a class="ep-link" href="${href}" ></a></div>`;
-      }).join('');
+        }).join('');
 
-    if (downloadLink && data.downloadUrl) {
-      downloadLink.href=data.downloadUrl;
+      if (downloadLink && data.downloadUrl) {
+        downloadLink.href = data.downloadUrl;
 
-      downloadLink.textContent=`Descargar Temporada $ {
+        downloadLink.textContent = `Descargar Temporada $ {
         season
       }
 
       `;
-    }
+      }
     }
 
-    seasonSelect.addEventListener('change', (e)=> loadSeason(parseInt(e.target.value)));
+    seasonSelect.addEventListener('change', (e) => loadSeason(parseInt(e.target.value)));
     loadSeason(1);
-    </script><script src="../../../assets/js/catalogo.js?v=2"></script><script src="../../../assets/js/ads.js"></script></body></html>
+  </script>
+  <script src="../../../assets/js/catalogo.js?v=2"></script>
+  <script src="../../../assets/js/ads.js"></script>
+  </body>
+
+</html>
