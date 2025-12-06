@@ -35,14 +35,37 @@ const data = [
   { place:'Serie', title:'URUSEI', title2:'YATSURA', description:'Temporada 1.', image:'../../img/Urusei Yatsura temporada 1.jpg', href:'../anime/urusei-yatsura/urusei-yatsura.html' }
 ]
 
+// Variables globales para filtros
+let currentFilter = 'all';
+let currentSearchTerm = '';
+
 // Renderizar grid de catálogo
-function renderGrid(){
+function renderGrid(filteredData = data){
   const grid = document.getElementById('catalog-grid');
+  const noResults = document.getElementById('noResults');
+  const resultsCount = document.getElementById('resultsCount');
+  
   if (!grid) {
     console.warn('Element catalog-grid not found');
     return;
   }
-  grid.innerHTML = data.map(item => `
+
+  // Actualizar contador de resultados
+  if (resultsCount) {
+    const count = filteredData.length;
+    resultsCount.querySelector('span').textContent = count;
+  }
+
+  // Mostrar/ocultar mensaje de sin resultados
+  if (filteredData.length === 0) {
+    grid.style.display = 'none';
+    if (noResults) noResults.style.display = 'block';
+  } else {
+    grid.style.display = 'grid';
+    if (noResults) noResults.style.display = 'none';
+  }
+
+  grid.innerHTML = filteredData.map(item => `
     <div class="anime-card">
       <a href="${item.href}" class="anime-link">
         <img src="${item.image}" alt="${item.title} ${item.title2}">
@@ -59,8 +82,107 @@ function renderGrid(){
   `).join('');
 }
 
-// Iniciar
+// Función de filtrado
+function filterAnime() {
+  let filtered = data;
+
+  // Filtrar por tipo (Serie/Película)
+  if (currentFilter !== 'all') {
+    filtered = filtered.filter(item => item.place === currentFilter);
+  }
+
+  // Filtrar por búsqueda (busca en título, descripción y tipo)
+  if (currentSearchTerm) {
+    filtered = filtered.filter(item => {
+      const searchLower = currentSearchTerm.toLowerCase();
+      const fullTitle = `${item.title} ${item.title2}`.toLowerCase();
+      const description = item.description.toLowerCase();
+      const place = item.place.toLowerCase();
+      
+      // Buscar en título, descripción o tipo
+      return fullTitle.includes(searchLower) || 
+             description.includes(searchLower) || 
+             place.includes(searchLower);
+    });
+  }
+
+  renderGrid(filtered);
+}
+
+// Inicializar búsqueda
+function initSearch() {
+  const searchInput = document.getElementById('searchInput');
+  const clearBtn = document.getElementById('clearSearch');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      currentSearchTerm = e.target.value;
+      filterAnime();
+
+      // Mostrar/ocultar botón de limpiar
+      if (clearBtn) {
+        clearBtn.style.display = currentSearchTerm ? 'flex' : 'none';
+      }
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        currentSearchTerm = '';
+        clearBtn.style.display = 'none';
+        filterAnime();
+        searchInput.focus();
+      }
+    });
+  }
+}
+
+// Inicializar filtros
+function initFilters() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remover clase active de todos los botones
+      filterBtns.forEach(b => b.classList.remove('active'));
+      
+      // Agregar clase active al botón clickeado
+      btn.classList.add('active');
+
+      // Actualizar filtro actual
+      currentFilter = btn.getAttribute('data-filter');
+
+      // Aplicar filtro
+      filterAnime();
+    });
+  });
+}
+
+// Conectar la lupa del nav con el buscador
+function initNavSearch() {
+  const searchIcon = document.querySelector('nav .svg-container:first-of-type');
+  const searchInput = document.getElementById('searchInput');
+
+  if (searchIcon && searchInput) {
+    searchIcon.addEventListener('click', () => {
+      // Hacer scroll al buscador
+      searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      // Enfocar el input después de un pequeño delay
+      setTimeout(() => {
+        searchInput.focus();
+      }, 500);
+    });
+  }
+}
+
+// Iniciar todo
 renderGrid();
+initSearch();
+initFilters();
+initNavSearch();
 
 const navToggle = document.querySelector('.menu-toggle')
 const navEl = document.querySelector('nav')
