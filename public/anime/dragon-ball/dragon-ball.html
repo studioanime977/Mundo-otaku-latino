@@ -13,41 +13,17 @@
   <link rel="icon" type="image/png" href="../../../ico/logo.png">
   <style>
     body {
-      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-      min-height: 100vh;
+      background: linear-gradient(-45deg, #0d0221, #1a0b2e, #2d1b69, #3a0f5c, #1e0836);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
       position: relative;
+      overflow-x: hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background:
-        radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)),
-        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
-        radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
-        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
-        radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)),
-        radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
-      background-repeat: repeat;
-      background-size: 200px 200px;
-      animation: stars 4s linear infinite;
-      opacity: 0.3;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    @keyframes stars {
-      0% {
-        transform: translateY(0);
-      }
-
-      100% {
-        transform: translateY(-200px);
-      }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .series-hero {
@@ -139,23 +115,52 @@
 
     .episodes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 12px
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px
     }
 
     .ep-card {
       position: relative;
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
-      background: #111;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease
+      background: linear-gradient(135deg, rgba(20, 20, 40, 0.95) 0%, rgba(30, 20, 50, 0.95) 100%);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      transition: all .3s ease;
+    }
+
+    .ep-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 3px;
+      background: linear-gradient(90deg, #00ff72, #00f7ff, #ff0aa7, #ffbe0b, #00ff72);
+      background-size: 400% 100%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      animation: borderMove 3s linear infinite;
+      z-index: 1;
+    }
+
+    .ep-thumb,
+    .ep-info {
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes borderMove {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 400% 0%; }
     }
 
     .ep-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-      border-color: rgba(255, 255, 255, 0.15)
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(131, 56, 236, 0.4),
+                  0 0 30px rgba(58, 134, 255, 0.3),
+                  0 0 50px rgba(255, 0, 110, 0.2);
     }
 
     .ep-thumb {
@@ -221,12 +226,53 @@
     .episodes-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px
+      gap: 8px
     }
+
+    .page-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px;
+      padding-top: 6rem;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+  <style>
+    .bubbles { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+    .bubble { position: absolute; bottom: -100px; border-radius: 50%; opacity: 0.7; animation: rise linear infinite; backdrop-filter: blur(3px); border: 2px solid rgba(255, 255, 255, 0.2); }
+    .bubble:nth-child(1) { width: 80px; height: 80px; left: 10%; animation-duration: 8s; animation-delay: 0s; background: radial-gradient(circle at 30% 30%, rgba(255, 0, 110, 0.4), rgba(255, 0, 110, 0.1)); box-shadow: 0 0 40px rgba(255, 0, 110, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    .bubble:nth-child(2) { width: 60px; height: 60px; left: 25%; animation-duration: 10s; animation-delay: 2s; background: radial-gradient(circle at 30% 30%, rgba(131, 56, 236, 0.4), rgba(131, 56, 236, 0.1)); box-shadow: 0 0 40px rgba(131, 56, 236, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    .bubble:nth-child(3) { width: 100px; height: 100px; left: 40%; animation-duration: 12s; animation-delay: 1s; background: radial-gradient(circle at 30% 30%, rgba(58, 134, 255, 0.4), rgba(58, 134, 255, 0.1)); box-shadow: 0 0 40px rgba(58, 134, 255, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    .bubble:nth-child(4) { width: 70px; height: 70px; left: 55%; animation-duration: 9s; animation-delay: 3s; background: radial-gradient(circle at 30% 30%, rgba(6, 255, 165, 0.4), rgba(6, 255, 165, 0.1)); box-shadow: 0 0 40px rgba(6, 255, 165, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    .bubble:nth-child(5) { width: 90px; height: 90px; left: 70%; animation-duration: 11s; animation-delay: 0.5s; background: radial-gradient(circle at 30% 30%, rgba(255, 190, 11, 0.4), rgba(255, 190, 11, 0.1)); box-shadow: 0 0 40px rgba(255, 190, 11, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    .bubble:nth-child(6) { width: 50px; height: 50px; left: 85%; animation-duration: 7s; animation-delay: 2.5s; background: radial-gradient(circle at 30% 30%, rgba(255, 0, 110, 0.4), rgba(255, 0, 110, 0.1)); box-shadow: 0 0 40px rgba(255, 0, 110, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    .bubble:nth-child(7) { width: 75px; height: 75px; left: 15%; animation-duration: 13s; animation-delay: 1.5s; background: radial-gradient(circle at 30% 30%, rgba(131, 56, 236, 0.4), rgba(131, 56, 236, 0.1)); box-shadow: 0 0 40px rgba(131, 56, 236, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    .bubble:nth-child(8) { width: 65px; height: 65px; left: 50%; animation-duration: 10s; animation-delay: 4s; background: radial-gradient(circle at 30% 30%, rgba(58, 134, 255, 0.4), rgba(58, 134, 255, 0.1)); box-shadow: 0 0 40px rgba(58, 134, 255, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    @keyframes rise { 0% { bottom: -100px; transform: translateX(0) rotate(0deg); opacity: 0; } 10% { opacity: 0.7; } 90% { opacity: 0.7; } 100% { bottom: 110vh; transform: translateX(100px) rotate(360deg); opacity: 0; } }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(13, 2, 33, 0.95); backdrop-filter: blur(10px); transition: transform 0.3s ease; }
+    nav.hide { transform: translateY(-100%); }
+    .series-hero { position: relative; z-index: 1; }
+    footer { position: relative; z-index: 1; background: rgba(13, 2, 33, 0.85); backdrop-filter: blur(15px); border-top: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3); }
+    .footer { background: rgba(13, 2, 33, 0.85) !important; backdrop-filter: blur(15px); border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    .footer-content { background: transparent !important; }
+    .footer-section h3 { color: #fff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+    .social-item { background: rgba(255, 255, 255, 0.05) !important; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.1) !important; transition: all 0.3s ease; }
+    .social-item:hover { background: rgba(255, 255, 255, 0.1) !important; border-color: rgba(255, 255, 255, 0.2) !important; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 255, 114, 0.3); }
   </style>
 </head>
 
 <body>
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
   <nav>
     <div>
       <img src="../../../ico/logo.png" alt="Mundo Otaku Latino" style="height:20px; margin-right:8px;">
@@ -324,6 +370,20 @@
   </footer>
   <script>
     const navToggle = document.querySelector('.menu-toggle'), navEl = document.querySelector('nav'), navLinks = document.querySelector('.nav-links'); if (navToggle && navEl && navLinks) { navToggle.addEventListener('click', e => { e.stopPropagation(); const isOpen = navEl.classList.toggle('open'); navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); document.body.style.overflow = isOpen ? 'hidden' : '' }); document.addEventListener('keydown', e => { if (e.key === 'Escape') { navEl.classList.remove('open'); document.body.style.overflow = '' } }) }
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll <= 0) {
+        navEl.classList.remove('hide');
+        return;
+      }
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        navEl.classList.add('hide');
+      } else {
+        navEl.classList.remove('hide');
+      }
+      lastScroll = currentScroll;
+    });
     const seasons = { 'super': { count: 12, url: 'super.html', thumb: '../../../img/Dragon Ball Z.jpg', dl: 'descargar-super.html' } }
     const grid = document.getElementById('episodes-grid'), select = document.getElementById('season'); function renderSeason(key) { const s = seasons[key]; if (!s || !grid) return; grid.innerHTML = Array.from({ length: s.count }, (_, i) => { const ep = i + 1; return `<div class=\"ep-card\"><div class=\"ep-thumb\"><img src=\"${s.thumb}\" alt=\"${key}E${ep}\"></div><div class=\"ep-info\"><div class=\"ep-title\">${key}E${ep}</div><div class=\"ep-meta\">23m · Latino</div></div><a class=\"ep-link\" href=\"${s.url}?ep=${ep}\"></a></div>` }).join(''); const dl = document.getElementById('download-link'); if (dl && s.dl) { dl.href = s.dl; dl.textContent = 'Descargar Super' } }
     select.addEventListener('change', e => renderSeason(e.target.value)); renderSeason('super')
