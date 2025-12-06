@@ -40,6 +40,7 @@ html {
   margin-bottom: 0;
   background: var(--bg-darker);
   overflow: hidden;
+  isolation: isolate;
 }
 /* ===== HEADER ESTILO CRUNCHYROLL ===== */
 .header {
@@ -127,7 +128,7 @@ html {
   position: relative; 
   z-index: 1; 
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f0f23 0%, #2d1b69 50%, #0f0f23 100%);
+  background: transparent;
 }
 .catalog-main .main-content { 
   margin-top: 0; 
@@ -274,18 +275,51 @@ html {
 }
 /* ===== ANIME CARDS ESTILO CRUNCHYROLL ===== */
 .anime-card {
-  background: transparent;
-  border-radius: 4px;
-  overflow: hidden;
+  background: rgba(20, 20, 40, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  overflow: visible;
   border: none;
-  transition: all 0.2s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
+  padding: 3px;
 }
+
+.anime-card::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 15px;
+  padding: 3px;
+  background: linear-gradient(90deg, #00ff72, #00f7ff, #ff0aa7, #ffbe0b, #00ff72);
+  background-size: 400% 100%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: borderMove 3s linear infinite;
+  z-index: -1;
+}
+
+@keyframes borderMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 400% 0%; }
+}
+
+.anime-card > * {
+  position: relative;
+  z-index: 1;
+}
+
 .anime-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(131, 56, 236, 0.4),
+              0 0 30px rgba(58, 134, 255, 0.3),
+              0 0 50px rgba(255, 0, 110, 0.2);
 }
-.anime-card:hover .anime-card img {
+.anime-card:hover img {
   transform: scale(1.05);
 }
 
@@ -369,13 +403,11 @@ html {
   font-size: 12px;
 }
 .anime-link {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: block;
+  text-decoration: none;
+  color: inherit;
   width: 100%;
   height: 100%;
-  z-index: 10;
-  text-decoration: none;
 }
 @media (max-width: 768px) {
   .main-container {

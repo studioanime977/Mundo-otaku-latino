@@ -4,13 +4,602 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Anime - Mundo Otaku Latino</title>
-    <link rel="stylesheet" href="../../assets/css/catalogo.css?v=2">
+    <link rel="stylesheet" href="../../assets/css/catalogo.css?v=3">
     <style>
-      .no-js .cover{display:none}
+      body {
+        background: linear-gradient(-45deg, #0d0221, #1a0b2e, #2d1b69, #3a0f5c, #1e0836);
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      .bubbles { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; overflow: hidden; pointer-events: none; }
+      .bubble { position: absolute; bottom: -100px; border-radius: 50%; opacity: 0.6; animation: rise linear infinite; backdrop-filter: blur(3px); border: 2px solid rgba(255, 255, 255, 0.2); }
+      .bubble:nth-child(1) { width: 80px; height: 80px; left: 10%; animation-duration: 8s; animation-delay: 0s; background: radial-gradient(circle at 30% 30%, rgba(255, 0, 110, 0.4), rgba(255, 0, 110, 0.1)); box-shadow: 0 0 40px rgba(255, 0, 110, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+      .bubble:nth-child(2) { width: 60px; height: 60px; left: 25%; animation-duration: 10s; animation-delay: 2s; background: radial-gradient(circle at 30% 30%, rgba(131, 56, 236, 0.4), rgba(131, 56, 236, 0.1)); box-shadow: 0 0 40px rgba(131, 56, 236, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+      .bubble:nth-child(3) { width: 100px; height: 100px; left: 40%; animation-duration: 12s; animation-delay: 1s; background: radial-gradient(circle at 30% 30%, rgba(58, 134, 255, 0.4), rgba(58, 134, 255, 0.1)); box-shadow: 0 0 40px rgba(58, 134, 255, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+      .bubble:nth-child(4) { width: 70px; height: 70px; left: 55%; animation-duration: 9s; animation-delay: 3s; background: radial-gradient(circle at 30% 30%, rgba(6, 255, 165, 0.4), rgba(6, 255, 165, 0.1)); box-shadow: 0 0 40px rgba(6, 255, 165, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+      .bubble:nth-child(5) { width: 90px; height: 90px; left: 70%; animation-duration: 11s; animation-delay: 0.5s; background: radial-gradient(circle at 30% 30%, rgba(255, 190, 11, 0.4), rgba(255, 190, 11, 0.1)); box-shadow: 0 0 40px rgba(255, 190, 11, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+      .bubble:nth-child(6) { width: 50px; height: 50px; left: 85%; animation-duration: 7s; animation-delay: 2.5s; background: radial-gradient(circle at 30% 30%, rgba(255, 0, 110, 0.4), rgba(255, 0, 110, 0.1)); box-shadow: 0 0 40px rgba(255, 0, 110, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+      .bubble:nth-child(7) { width: 75px; height: 75px; left: 15%; animation-duration: 13s; animation-delay: 1.5s; background: radial-gradient(circle at 30% 30%, rgba(131, 56, 236, 0.4), rgba(131, 56, 236, 0.1)); box-shadow: 0 0 40px rgba(131, 56, 236, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+      .bubble:nth-child(8) { width: 65px; height: 65px; left: 50%; animation-duration: 10s; animation-delay: 4s; background: radial-gradient(circle at 30% 30%, rgba(58, 134, 255, 0.4), rgba(58, 134, 255, 0.1)); box-shadow: 0 0 40px rgba(58, 134, 255, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+      @keyframes rise { 0% { bottom: -100px; transform: translateX(0) rotate(0deg); opacity: 0; } 10% { opacity: 0.6; } 90% { opacity: 0.6; } 100% { bottom: 110vh; transform: translateX(100px) rotate(360deg); opacity: 0; } }
+
+      nav { position: fixed !important; z-index: 100 !important; }
+      .catalog-main { position: relative; z-index: 2; margin-top: 0; }
+
+      /* Estilos del Modal Brave */
+      .brave-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        animation: fadeIn 0.3s ease;
+      }
+
+      .brave-modal-overlay.hidden {
+        display: none;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .brave-modal {
+        background: linear-gradient(135deg, #1a0b2e 0%, #2d1b69 50%, #1e0836 100%);
+        border: 2px solid rgba(251, 84, 43, 0.3);
+        border-radius: 24px;
+        max-width: 600px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 20px 60px rgba(251, 84, 43, 0.4), 0 0 100px rgba(139, 92, 246, 0.2);
+        animation: slideUp 0.4s ease;
+      }
+
+      .brave-modal-header {
+        text-align: center;
+        padding: 30px 30px 20px;
+        border-bottom: 2px solid rgba(251, 84, 43, 0.2);
+      }
+
+      .brave-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        background: linear-gradient(135deg, #FB542B, #ff7a59);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba(251, 84, 43, 0.5);
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+
+      .brave-icon svg {
+        width: 50px;
+        height: 50px;
+      }
+
+      .brave-modal-header h2 {
+        color: #fff;
+        font-size: 2rem;
+        margin: 0;
+        font-weight: 700;
+        background: linear-gradient(135deg, #fff, #FB542B);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .brave-modal-content {
+        padding: 30px;
+        color: #fff;
+      }
+
+      .brave-intro {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #FB542B;
+      }
+
+      .brave-description {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .brave-recommendation {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+        text-align: center;
+        color: #fff;
+      }
+
+      .brave-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 25px;
+      }
+
+      .brave-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 20px;
+        background: rgba(251, 84, 43, 0.1);
+        border: 2px solid rgba(251, 84, 43, 0.3);
+        border-radius: 16px;
+        text-decoration: none;
+        color: #fff;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+
+      .brave-link:hover {
+        background: rgba(251, 84, 43, 0.2);
+        border-color: #FB542B;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(251, 84, 43, 0.4);
+      }
+
+      .brave-link svg {
+        width: 40px;
+        height: 40px;
+        color: #FB542B;
+      }
+
+      .brave-timer {
+        text-align: center;
+        padding: 15px;
+        background: rgba(139, 92, 246, 0.1);
+        border: 2px solid rgba(139, 92, 246, 0.3);
+        border-radius: 12px;
+        margin-bottom: 10px;
+      }
+
+      .brave-timer p {
+        margin: 0;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .brave-timer span {
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: #8b5cf6;
+      }
+
+      .brave-modal-footer {
+        padding: 20px 30px 30px;
+        text-align: center;
+      }
+
+      .brave-continue-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 40px;
+        background: linear-gradient(135deg, #8b5cf6, #6366f1);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+      }
+
+      .brave-continue-btn:disabled {
+        background: linear-gradient(135deg, #4a5568, #2d3748);
+        cursor: not-allowed;
+        opacity: 0.6;
+        box-shadow: none;
+      }
+
+      .brave-continue-btn:not(:disabled):hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
+        background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      }
+
+      .brave-continue-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .brave-modal {
+          width: 95%;
+          max-width: none;
+        }
+
+        .brave-modal-header h2 {
+          font-size: 1.5rem;
+        }
+
+        .brave-links {
+          grid-template-columns: 1fr;
+        }
+
+        .brave-modal-content {
+          padding: 20px;
+        }
+
+        .brave-description {
+          text-align: left;
+        }
+      }
+
+      /* Estilos del Carrusel */
+      .hero-carousel {
+        position: relative;
+        z-index: 2;
+        margin-top: 64px;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .carousel-track {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      }
+
+      .carousel-slide.active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        /* Mejoras para imágenes nítidas */
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        filter: brightness(1.1) contrast(1.05) saturate(1.1);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+      }
+
+      .carousel-slide::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.8) 0%,
+          rgba(0, 0, 0, 0.4) 50%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        z-index: 1;
+      }
+
+      .carousel-content {
+        position: absolute;
+        bottom: 80px;
+        left: 60px;
+        z-index: 2;
+        max-width: 600px;
+        color: white;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+      }
+
+      .carousel-content h2 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin: 0 0 20px 0;
+        background: linear-gradient(135deg, #fff, #a78bfa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: none;
+        filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.8));
+      }
+
+      .carousel-content p {
+        font-size: 1.3rem;
+        margin: 0 0 30px 0;
+        line-height: 1.6;
+        opacity: 0.95;
+      }
+
+      .carousel-btn {
+        display: inline-block;
+        padding: 15px 40px;
+        background: linear-gradient(135deg, #8b5cf6, #6366f1);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+        text-shadow: none;
+      }
+
+      .carousel-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
+        background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      }
+
+      .carousel-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 3;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .carousel-control:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .carousel-control.prev {
+        left: 30px;
+      }
+
+      .carousel-control.next {
+        right: 30px;
+      }
+
+      .carousel-control svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .carousel-indicators {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 12px;
+        z-index: 3;
+      }
+
+      .indicator-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 0;
+      }
+
+      .indicator-dot:hover {
+        background: rgba(255, 255, 255, 0.7);
+        transform: scale(1.2);
+      }
+
+      .indicator-dot.active {
+        background: white;
+        width: 40px;
+        border-radius: 6px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .carousel-container {
+          height: 450px;
+        }
+
+        .carousel-content {
+          bottom: 50px;
+          left: 30px;
+          max-width: 80%;
+        }
+
+        .carousel-content h2 {
+          font-size: 2rem;
+        }
+
+        .carousel-content p {
+          font-size: 1rem;
+          margin-bottom: 20px;
+        }
+
+        .carousel-btn {
+          padding: 12px 30px;
+          font-size: 1rem;
+        }
+
+        .carousel-control {
+          width: 45px;
+          height: 45px;
+        }
+
+        .carousel-control.prev {
+          left: 15px;
+        }
+
+        .carousel-control.next {
+          right: 15px;
+        }
+
+        .carousel-control svg {
+          width: 22px;
+          height: 22px;
+        }
+
+        .carousel-indicators {
+          bottom: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .carousel-container {
+          height: 350px;
+        }
+
+        .carousel-content h2 {
+          font-size: 1.5rem;
+        }
+
+        .carousel-content p {
+          font-size: 0.9rem;
+        }
+
+        .carousel-btn {
+          padding: 10px 25px;
+          font-size: 0.9rem;
+        }
+      }
     </style>
   </head>
   <body class="no-js">
+    <div class="bubbles">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
     <div class="indicator"></div>
+    
+    <!-- Modal de Recomendación Brave -->
+    <div class="brave-modal-overlay" id="braveModal">
+      <div class="brave-modal">
+        <div class="brave-modal-header">
+          <div class="brave-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#FB542B"/>
+              <path d="M2 17L12 22L22 17V7L12 12L2 7V17Z" fill="#FB542B"/>
+            </svg>
+          </div>
+          <h2>🌟 Recomendación Especial</h2>
+        </div>
+        <div class="brave-modal-content">
+          <p class="brave-intro">
+            <strong>¡Tenemos una alianza con Brave Browser!</strong>
+          </p>
+          <p class="brave-description">
+            Brave bloquea los anuncios molestos que salen en otras webs. Gracias a nuestro patrocinio con Brave, 
+            <strong>Mundo Otaku Latino</strong> te ofrece una mejor experiencia de navegación sin anuncios intrusivos.
+          </p>
+          <p class="brave-recommendation">
+            📱 <strong>Te recomendamos instalar Brave</strong> tanto para PC, celulares y tablets:
+          </p>
+          <div class="brave-links">
+            <a href="https://brave.com/download/" target="_blank" rel="noopener" class="brave-link brave-pc">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <span>Brave para PC</span>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.brave.browser" target="_blank" rel="noopener" class="brave-link brave-mobile">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+              <span>Brave para Móvil/Tablet</span>
+            </a>
+          </div>
+          <div class="brave-timer">
+            <p>Puedes continuar en <span id="timerCount">10</span> segundos...</p>
+          </div>
+        </div>
+        <div class="brave-modal-footer">
+          <button class="brave-continue-btn" id="continueBtn" disabled>
+            <span class="btn-text">Continuar al Sitio</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
     <nav>
       <div>
         <img src="../../ico/logo.png" alt="Mundo Otaku Latino" style="height:20px; margin-right:8px;">
@@ -40,42 +629,153 @@
         </div>
       </div>
     </nav>
-    <div id="demo"></div>
-    <div class="details" id="details-even">
-      <div class="place-box"><div class="text">Anime Destacado</div></div>
-      <div class="title-box-1"><div class="title-1">MUNDO OTAKU</div></div>
-      <div class="title-box-2"><div class="title-2">LATINO</div></div>
-      <div class="desc">Explora temporadas, películas y series organizadas en un catálogo moderno.</div>
-      <div class="cta">
-        <button class="bookmark">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M6.32 2.577a49.255 49.255 0 0111.36 0c1.497.174 2.57 1.46 2.57 2.93V21a.75.75 0 01-1.085.67L12 18.089l-7.165 3.583A.75.75 0 013.75 21V5.507c0-1.47 1.073-2.756 2.57-2.93z" clip-rule="evenodd" /></svg>
+    
+    <!-- Carrusel de Anime Destacados -->
+    <section class="hero-carousel">
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="carousel-slide active">
+            <img src="../../img/castillo infinito.png" alt="Demon Slayer Castillo Infinito">
+            <div class="carousel-content">
+              <h2>Demon Slayer: Castillo Infinito</h2>
+              <p>La batalla final en el Castillo Infinito - ¡Próximamente!</p>
+              <a href="../anime/demon-slayer/demon-slayer.html" class="carousel-btn">Ver Ahora</a>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../../img/Las guerras K-Pop Demon Hunters.jpg" alt="K-Pop Demon Hunter">
+            <div class="carousel-content">
+              <h2>K-Pop Demon Hunter</h2>
+              <p>Película 1 - Acción y música en una batalla épica</p>
+              <a href="../anime/k-pop-demon-hunter/k-pop-demon-hunter.html" class="carousel-btn">Ver Ahora</a>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../../img/Attack on Titan S4.jpg" alt="Attack on Titan">
+            <div class="carousel-content">
+              <h2>Attack on Titan</h2>
+              <p>Explora todas las temporadas y especiales</p>
+              <a href="../anime/attack-on-titan/attack-on-titan.html" class="carousel-btn">Ver Ahora</a>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../../img/Kimetsu No Yaiba temporada 1.png" alt="Demon Slayer">
+            <div class="carousel-content">
+              <h2>Demon Slayer</h2>
+              <p>Serie y películas - La épica batalla contra los demonios</p>
+              <a href="../anime/demon-slayer/demon-slayer.html" class="carousel-btn">Ver Ahora</a>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../../img/Jujutsu Kaisen S2.jpg" alt="Jujutsu Kaisen">
+            <div class="carousel-content">
+              <h2>Jujutsu Kaisen</h2>
+              <p>Temporadas y película 0 - Hechicería y acción</p>
+              <a href="../anime/jujutsu-kaisen/jujutsu-kaisen.html" class="carousel-btn">Ver Ahora</a>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../../img/Solo Leveling season 1.jpg" alt="Solo Leveling">
+            <div class="carousel-content">
+              <h2>Solo Leveling</h2>
+              <p>De cazador débil a leyenda invencible</p>
+              <a href="../anime/solo-leveling/solo-leveling.html" class="carousel-btn">Ver Ahora</a>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../../img/BokunoHeroAcademia S7.jpg" alt="Boku no Hero Academia">
+            <div class="carousel-content">
+              <h2>Boku no Hero Academia</h2>
+              <p>Temporadas completas disponibles - El camino del héroe</p>
+              <a href="../anime/boku-no-hero-academia/boku-no-hero-academia.html" class="carousel-btn">Ver Ahora</a>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../../img/Chainsaw Man S1.jpg" alt="Chainsaw Man">
+            <div class="carousel-content">
+              <h2>Chainsaw Man</h2>
+              <p>Acción demoníaca y caos desenfrenado</p>
+              <a href="../anime/chainsaw-man/chainsaw-man.html" class="carousel-btn">Ver Ahora</a>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../../img/One Piece Wano.jpg" alt="One Piece">
+            <div class="carousel-content">
+              <h2>One Piece</h2>
+              <p>La aventura pirata más grande de todos los tiempos</p>
+              <a href="../anime/one-piece/one-piece.html" class="carousel-btn">Ver Ahora</a>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../../img/Naruto Shippuden.jpg" alt="Naruto">
+            <div class="carousel-content">
+              <h2>Naruto</h2>
+              <p>Clásico y más - El camino del ninja</p>
+              <a href="../anime/naruto/naruto.html" class="carousel-btn">Ver Ahora</a>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../../img/Tokyo Ghoul S1.jpg" alt="Tokyo Ghoul">
+            <div class="carousel-content">
+              <h2>Tokyo Ghoul</h2>
+              <p>Serie completa - Entre humanos y ghouls</p>
+              <a href="../anime/tokyo-ghoul/tokyo-ghoul.html" class="carousel-btn">Ver Ahora</a>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../../img/Mushoku Tensei tem 1.png" alt="Mushoku Tensei">
+            <div class="carousel-content">
+              <h2>Mushoku Tensei</h2>
+              <p>Temporadas 1 y 2 - Reencarnación y aventura</p>
+              <a href="../anime/mushoku-tensei/mushoku-tensei.html" class="carousel-btn">Ver Ahora</a>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../../img/rezeroS1.png" alt="Re:Zero">
+            <div class="carousel-content">
+              <h2>Re:Zero</h2>
+              <p>Temporadas 1-3 - Volver a morir para vivir</p>
+              <a href="../anime/re-zero/re-zero.html" class="carousel-btn">Ver Ahora</a>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../../img/Dragon Ball Z.jpg" alt="Dragon Ball">
+            <div class="carousel-content">
+              <h2>Dragon Ball Z</h2>
+              <p>La serie legendaria que definió una generación</p>
+              <a href="../anime/dragon-ball/dragon-ball.html" class="carousel-btn">Ver Ahora</a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control prev" aria-label="Anterior">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
         </button>
-        <button class="discover">Descubrir</button>
-      </div>
-    </div>
-    <div class="details" id="details-odd">
-      <div class="place-box"><div class="text">Anime Destacado</div></div>
-      <div class="title-box-1"><div class="title-1">MUNDO OTAKU</div></div>
-      <div class="title-box-2"><div class="title-2">LATINO</div></div>
-      <div class="desc">Explora temporadas, películas y series organizadas en un catálogo moderno.</div>
-      <div class="cta">
-        <button class="bookmark">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M6.32 2.577a49.255 49.255 0 0111.36 0c1.497.174 2.57 1.46 2.57 2.93V21a.75.75 0 01-1.085.67L12 18.089l-7.165 3.583A.75.75 0 013.75 21V5.507c0-1.47 1.073-2.756 2.57-2.93z" clip-rule="evenodd" /></svg>
+        <button class="carousel-control next" aria-label="Siguiente">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
         </button>
-        <button class="discover">Descubrir</button>
+        <div class="carousel-indicators">
+          <button class="indicator-dot active" data-slide="0" aria-label="Slide 1"></button>
+          <button class="indicator-dot" data-slide="1" aria-label="Slide 2"></button>
+          <button class="indicator-dot" data-slide="2" aria-label="Slide 3"></button>
+          <button class="indicator-dot" data-slide="3" aria-label="Slide 4"></button>
+          <button class="indicator-dot" data-slide="4" aria-label="Slide 5"></button>
+          <button class="indicator-dot" data-slide="5" aria-label="Slide 6"></button>
+          <button class="indicator-dot" data-slide="6" aria-label="Slide 7"></button>
+          <button class="indicator-dot" data-slide="7" aria-label="Slide 8"></button>
+          <button class="indicator-dot" data-slide="8" aria-label="Slide 9"></button>
+          <button class="indicator-dot" data-slide="9" aria-label="Slide 10"></button>
+          <button class="indicator-dot" data-slide="10" aria-label="Slide 11"></button>
+          <button class="indicator-dot" data-slide="11" aria-label="Slide 12"></button>
+          <button class="indicator-dot" data-slide="12" aria-label="Slide 13"></button>
+          <button class="indicator-dot" data-slide="13" aria-label="Slide 14"></button>
+        </div>
       </div>
-    </div>
-    <div class="pagination" id="pagination">
-      <div class="arrow arrow-left">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
-      </div>
-      <div class="arrow arrow-right">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
-      </div>
-      <div class="progress-sub-container"><div class="progress-sub-background"><div class="progress-sub-foreground"></div></div></div>
-      <div class="slide-numbers" id="slide-numbers"></div>
-    </div>
-    <div class="cover"></div>
+    </section>
+    
     <section class="catalog-main">
       <div class="main-content">
         <h2 class="section-title">Catálogo de Anime</h2>
