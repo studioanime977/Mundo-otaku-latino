@@ -148,7 +148,14 @@
       border-radius: 12px;
       overflow: hidden;
       background: #111;
-      border: 1px solid rgba(255, 255, 255, 0.08)
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease
+    }
+
+    .ep-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      border-color: rgba(255, 255, 255, 0.15)
     }
 
     .ep-thumb {
@@ -176,8 +183,11 @@
       margin-top: 4px
     }
 
-    position: relative;
-    z-index: 5
+    .ep-link {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+      z-index: 10
     }
 
     .download-btn {
