@@ -7,6 +7,19 @@
   <link rel="stylesheet" href="../../../assets/css/catalogo.css?v=2">
   <link rel="icon" type="image/png" href="../../../ico/logo.png">
   <style>
+    body {
+      background: linear-gradient(-45deg, #0d0221, #1a0b2e, #2d1b69, #3a0f5c, #1e0836);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
     .series-hero{position:relative;min-height:60vh;border-radius:12px;overflow:hidden;background-size:cover;background-position:center;margin-top:64px}
     .series-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.8) 100%)}
     .series-hero .hero-content{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:4rem 1rem;display:grid;gap:12px}
@@ -18,20 +31,106 @@
     .season-switch{display:flex;gap:12px;align-items:center;flex-wrap:wrap;position:relative;z-index:5;margin:1rem 0}
     .season-select{padding:8px 10px;border-radius:8px;background:#111;color:#fff;border:1px solid rgba(255,255,255,0.12)}
     .download-btn{display:inline-flex;align-items:center;padding:8px 12px;border-radius:8px;background:#27ae60;color:#fff;text-decoration:none;font-weight:700}
-    .episodes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .ep-card{position:relative;border-radius:12px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,0.08)}
+    .episodes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px
+    }
+    .ep-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(20, 20, 40, 0.95) 0%, rgba(30, 20, 50, 0.95) 100%);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      transition: all .3s ease;
+    }
+
+    .ep-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 3px;
+      background: linear-gradient(90deg, #00ff72, #00f7ff, #ff0aa7, #ffbe0b, #00ff72);
+      background-size: 400% 100%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      animation: borderMove 3s linear infinite;
+      z-index: 1;
+    }
+
+    .ep-thumb,
+    .ep-info {
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes borderMove {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 400% 0%; }
+    }
+
+    .ep-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(131, 56, 236, 0.4),
+                  0 0 30px rgba(58, 134, 255, 0.3),
+                  0 0 50px rgba(255, 0, 110, 0.2);
+    }
     .ep-thumb{height:120px}
     .ep-thumb img{width:100%;height:100%;object-fit:cover;display:block}
     .ep-info{padding:10px}
     .ep-title{font-weight:700}
     .ep-meta{color:#bbb;font-size:.9rem;margin-top:4px}
     .ep-link{position:absolute;inset:0}
+    .page-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px;
+      padding-top: 6rem;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+  <style>
+    .bubbles { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+    .bubble { position: absolute; bottom: -100px; border-radius: 50%; opacity: 0.7; animation: rise linear infinite; backdrop-filter: blur(3px); border: 2px solid rgba(255, 255, 255, 0.2); }
+    .bubble:nth-child(1) { width: 80px; height: 80px; left: 10%; animation-duration: 8s; animation-delay: 0s; background: radial-gradient(circle at 30% 30%, rgba(255, 0, 110, 0.4), rgba(255, 0, 110, 0.1)); box-shadow: 0 0 40px rgba(255, 0, 110, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    .bubble:nth-child(2) { width: 60px; height: 60px; left: 25%; animation-duration: 10s; animation-delay: 2s; background: radial-gradient(circle at 30% 30%, rgba(131, 56, 236, 0.4), rgba(131, 56, 236, 0.1)); box-shadow: 0 0 40px rgba(131, 56, 236, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    .bubble:nth-child(3) { width: 100px; height: 100px; left: 40%; animation-duration: 12s; animation-delay: 1s; background: radial-gradient(circle at 30% 30%, rgba(58, 134, 255, 0.4), rgba(58, 134, 255, 0.1)); box-shadow: 0 0 40px rgba(58, 134, 255, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    .bubble:nth-child(4) { width: 70px; height: 70px; left: 55%; animation-duration: 9s; animation-delay: 3s; background: radial-gradient(circle at 30% 30%, rgba(6, 255, 165, 0.4), rgba(6, 255, 165, 0.1)); box-shadow: 0 0 40px rgba(6, 255, 165, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    .bubble:nth-child(5) { width: 90px; height: 90px; left: 70%; animation-duration: 11s; animation-delay: 0.5s; background: radial-gradient(circle at 30% 30%, rgba(255, 190, 11, 0.4), rgba(255, 190, 11, 0.1)); box-shadow: 0 0 40px rgba(255, 190, 11, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    .bubble:nth-child(6) { width: 50px; height: 50px; left: 85%; animation-duration: 7s; animation-delay: 2.5s; background: radial-gradient(circle at 30% 30%, rgba(255, 0, 110, 0.4), rgba(255, 0, 110, 0.1)); box-shadow: 0 0 40px rgba(255, 0, 110, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    .bubble:nth-child(7) { width: 75px; height: 75px; left: 15%; animation-duration: 13s; animation-delay: 1.5s; background: radial-gradient(circle at 30% 30%, rgba(131, 56, 236, 0.4), rgba(131, 56, 236, 0.1)); box-shadow: 0 0 40px rgba(131, 56, 236, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    .bubble:nth-child(8) { width: 65px; height: 65px; left: 50%; animation-duration: 10s; animation-delay: 4s; background: radial-gradient(circle at 30% 30%, rgba(58, 134, 255, 0.4), rgba(58, 134, 255, 0.1)); box-shadow: 0 0 40px rgba(58, 134, 255, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
+    @keyframes rise { 0% { bottom: -100px; transform: translateX(0) rotate(0deg); opacity: 0; } 10% { opacity: 0.7; } 90% { opacity: 0.7; } 100% { bottom: 110vh; transform: translateX(100px) rotate(360deg); opacity: 0; } }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(13, 2, 33, 0.95); backdrop-filter: blur(10px); transition: transform 0.3s ease; }
+    nav.hide { transform: translateY(-100%); }
+    .series-hero { position: relative; z-index: 1; }
+    footer { position: relative; z-index: 1; background: rgba(13, 2, 33, 0.85); backdrop-filter: blur(15px); border-top: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3); }
+    .footer { background: rgba(13, 2, 33, 0.85) !important; backdrop-filter: blur(15px); border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    .footer-content { background: transparent !important; }
+    .footer-section h3 { color: #fff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+    .social-item { background: rgba(255, 255, 255, 0.05) !important; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.1) !important; transition: all 0.3s ease; }
+    .social-item:hover { background: rgba(255, 255, 255, 0.1) !important; border-color: rgba(255, 255, 255, 0.2) !important; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 255, 114, 0.3); }
   </style>
   <meta name="google-adsense-account" content="ca-pub-8480825005176665">
   <meta name="robots" content="index,follow">
   <meta name="author" content="Mundo Otaku Latino">
 </head>
 <body>
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
   <nav>
     <div>
       <img src="../../../ico/logo.png" alt="Mundo Otaku Latino" style="height:20px; margin-right:8px;">
@@ -65,10 +164,97 @@
   </main>
   <script>
     const navToggle=document.querySelector('.menu-toggle'), navEl=document.querySelector('nav'), navLinks=document.querySelector('.nav-links'); if(navToggle&&navEl&&navLinks){ navToggle.addEventListener('click',e=>{ e.stopPropagation(); const isOpen=navEl.classList.toggle('open'); navToggle.setAttribute('aria-expanded', isOpen?'true':'false'); document.body.style.overflow=isOpen?'hidden':'' }); document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ navEl.classList.remove('open'); document.body.style.overflow='' } }) }
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll <= 0) {
+        navEl.classList.remove('hide');
+        return;
+      }
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        navEl.classList.add('hide');
+      } else {
+        navEl.classList.remove('hide');
+      }
+      lastScroll = currentScroll;
+    });
     const seasons={'t1':{count:12,url:'#',thumb:'../../../img/Mob Psycho 100 S1.jpg',dl:'#'}}
     const grid=document.getElementById('episodes-grid'), select=document.getElementById('season'); function renderSeason(key){ const s=seasons[key]; if(!s||!grid) return; grid.innerHTML=Array.from({length:s.count},(_,i)=>{ const ep=i+1; const label=`${key.toUpperCase()}E${ep}`; const href=s.url; return `<div class=\"ep-card\"><div class=\"ep-thumb\"><img src=\"${s.thumb}\" alt=\"${label}\"></div><div class=\"ep-info\"><div class=\"ep-title\">${label}</div><div class=\"ep-meta\">24m · Latino</div></div><a class=\"ep-link\" href=\"${href}\" target=\"_self\"></a></div>` }).join(''); const dl=document.getElementById('download-link'); if(dl){ dl.href=s.dl; dl.textContent=`Descargar ${key.toUpperCase()}` } }
     select.addEventListener('change', e=>renderSeason(e.target.value)); renderSeason('t1')
   </script>
-<script src="../../../assets/js/ads.js"></script>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Mundo Otaku Latino</h3>
+          <p>Tu plataforma favorita para ver anime en español latino</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="../../html/catalogo.html">🗂️ Catálogo</a></li>
+            <li><a href="#generos">Géneros</a></li>
+            <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-links" aria-label="Redes sociales y canales oficiales">
+            <a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener" aria-label="APP Anime TV">
+              <img src="../../../ico/logo.png" alt="APP Anime TV" />
+              <span>APP Anime TV</span>
+            </a>
+            <a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener" aria-label="Canal de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram" />
+              <span>Canal Telegram</span>
+            </a>
+            <a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener" aria-label="Grupo de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram Grupo" />
+              <span>Grupo Telegram</span>
+            </a>
+            <a class="social-item" href="https://rumble.com/c/c-6184817?e9s=src_v1_clr" target="_blank" rel="noopener" aria-label="Página de Rumble">
+              <img src="../../../ico/RUMBLE.webp" alt="Rumble" />
+              <span>Página en Rumble</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener" aria-label="Facebook Studio">
+              <img src="../../../ico/facebook.png" alt="Facebook" />
+              <span>Facebook</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/723496132540351" target="_blank" rel="noopener" aria-label="Grupo de Anime en Facebook">
+              <img src="../../../ico/facebook.png" alt="Facebook Grupo Anime" />
+              <span>Grupo Anime</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/1071796301003086" target="_blank" rel="noopener" aria-label="Grupo de Free Fire en Facebook">
+              <img src="../../../ico/facebook.png" alt="Facebook Grupo Free Fire" />
+              <span>Grupo Free Fire</span>
+            </a>
+            <a class="social-item" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener" aria-label="TikTok">
+              <img src="../../../ico/TIKTOK.webp" alt="TikTok" />
+              <span>TikTok</span>
+            </a>
+            <a class="social-item" href="https://www.instagram.com/studiootaku01" target="_blank" rel="noopener" aria-label="Instagram">
+              <img src="../../../ico/INSTAGRAM.webp" alt="Instagram" />
+              <span>Instagram</span>
+            </a>
+            <a class="social-item" href="https://github.com/studioanime977" target="_blank" rel="noopener" aria-label="GitHub">
+              <img src="../../../ico/GUITHUP.webp" alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+            <a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="YouTube">
+              <img src="../../../ico/youtube.png" alt="YouTube" />
+              <span>YouTube</span>
+            </a>
+            <a class="social-item" href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <img src="../../../ico/whatsapp.webp" alt="WhatsApp" />
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-text">&copy; 2025 Mundo Otaku Latino. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 </body>
+<script src="../../../assets/js/ads.js"></script>
 </html>
