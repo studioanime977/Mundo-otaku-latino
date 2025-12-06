@@ -215,13 +215,9 @@ class BraveModal {
     this.timeLeft = 10;
     this.timerInterval = null;
     
-    // Verificar si ya se mostró el modal en esta sesión
-    const modalShown = sessionStorage.getItem('braveModalShown');
-    
-    if (!modalShown && this.modal) {
+    // El modal siempre se mostrará, sin importar si ya se vio antes
+    if (this.modal) {
       this.init();
-    } else if (this.modal) {
-      this.modal.classList.add('hidden');
     }
   }
 
@@ -267,9 +263,6 @@ class BraveModal {
   }
 
   closeModal() {
-    // Guardar en sessionStorage que ya se mostró
-    sessionStorage.setItem('braveModalShown', 'true');
-    
     // Animación de salida
     if (this.modal) {
       this.modal.style.animation = 'fadeOut 0.3s ease';
