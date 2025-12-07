@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descargas – Jujutsu Kaisen Temporada 1</title>
+  <link rel="stylesheet" href="../../../css/style.css" />
+  <link rel="stylesheet" href="../../../css/responsive-style.css" />
+  <link rel="stylesheet" href="../../../css/responsive-navigation.css" />
+  <link rel="icon" href="../../../ico/logo.png" type="image/png" sizes="32x32" />
+  <link rel="shortcut icon" href="../../../ico/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../../../ico/logo.png" />
+  <style>
+    .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
+    .header-space { margin-top: 8px; }
+    .back-btn { display:inline-block; margin:12px 0; padding:10px 16px; background:#6c63ff; color:#fff; border-radius:8px; text-decoration:none; }
+    .lang-toggle { display:flex; gap:8px; margin:12px 0 16px; }
+    .lang-toggle button { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; background:#2c2c2c; color:#ddd; }
+    .lang-toggle button.active { background:#6c63ff; color:#fff; }
+    .download-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
+    .card { background: rgba(255,255,255,0.04); border-radius:10px; padding:12px; }
+    .card h4 { margin:0 0 8px 0; }
+    .actions { display:flex; gap:10px; align-items:center; }
+    .btn { display:inline-block; padding:8px 12px; border-radius:8px; text-decoration:none; }
+    .btn-download { background:#27ae60; color:#fff; }
+    .btn-copy { background:#111; color:#fff; }
+    .section { display:none; }
+    .section.active { display:block; }
+    @media (max-width:768px){ .download-grid { grid-template-columns: 1fr; } }
+    /* Footer nuevo */
+    .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .footer .footer-section h3 { margin: 0 0 8px; }
+    .footer .footer-section p { margin: 0; opacity: 0.85; }
+    .footer .footer-section ul { list-style: none; padding: 0; margin: 0; }
+    .footer .footer-section ul li { margin: 6px 0; }
+    .footer .footer-section a { color: #fff; text-decoration: none; }
+    .footer .footer-section a:hover { text-decoration: underline; }
+    .footer .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    @media (min-width:768px){ .footer .social-links { grid-template-columns: repeat(4, 1fr); } }
+    .footer .social-item { display: flex; align-items: center; gap: 8px; background: #111; border-radius: 10px; padding: 10px; text-decoration: none; color: #fff; }
+    .footer .social-item:hover { background: #1a1a1a; }
+    .footer .social-item img { width: 22px; height: 22px; border-radius: 4px; object-fit: cover; }
+    .footer .social-item span { line-height: 1; }
+    .footer .footer-text { text-align: center; margin-top: 12px; opacity: 0.8; }
+    @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
+  </style>
+  <script>
+    function setActiveLanguage(lang){
+      document.querySelectorAll('.lang-toggle button').forEach(b=>{
+        b.classList.toggle('active', b.dataset.lang===lang);
+      });
+      document.querySelectorAll('.section').forEach(s=>{
+        s.classList.toggle('active', s.dataset.lang===lang);
+      });
+    }
+    function initFromQuery(){
+      const params = new URLSearchParams(window.location.search);
+      let lang = params.get('lang') || 'lat';
+      if (!['lat','sub'].includes(lang)) { lang = 'lat'; }
+      setActiveLanguage(lang);
+    }
+    function copyHref(el){
+      const href = el.getAttribute('href');
+      navigator.clipboard.writeText(href).then(()=>{
+        el.textContent = 'Copiado';
+        setTimeout(()=>{ el.textContent = 'Copiar link'; }, 1500);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', initFromQuery);
+  </script>
+  <style>
+    .header + main.container { padding-top: 6rem; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav-container">
+      <div class="logo"><img src="../../../ico/logo.png" alt="Mundo Otaku Latino" style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div>
+      <ul class="nav-menu">
+        <li><a href="../../index.html#inicio">Inicio</a></li>
+        <li><a href="../../html/catalogo.html">Anime</a></li>
+        <li><a href="#peliculas">Películas</a></li>
+        <li><a href="#generos">Géneros</a></li>
+        <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <a class="back-btn" href="./temporada-1.html">◄ Volver al episodio</a>
+    <h1>Descargas – Jujutsu Kaisen Temporada 1</h1>
+    <p>Elige el episodio y servidor. Todos los enlaces pasan por el acortador exe.io para protegerlos.</p>
+
+    <div class="lang-toggle" role="tablist" aria-label="Idiomas">
+      <button role="tab" class="active" data-lang="lat" onclick="setActiveLanguage('lat')">Latino</button>
+    </div>
+
+    <!-- Latino -->
+    <section class="section active" data-lang="lat" aria-label="Descargas Latino">
+      <div class="download-grid">
+        <!-- Episodio 1 -->
+        <div class="card">
+          <h4>Episodio 1 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/nlnzndv6fgo8pj?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/nlnzndv6fgo8pj?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 1 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/jA6WLdY4gLcad4/Jujutsu_Kaisen_Epi_1.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/jA6WLdY4gLcad4/Jujutsu_Kaisen_Epi_1.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 2 -->
+        <div class="card">
+          <h4>Episodio 2 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xw949m3lc37gkd?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xw949m3lc37gkd?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 2 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/xvY74rkdXehDpv/Jujutsu_Kaisen_Epi_2.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/xvY74rkdXehDpv/Jujutsu_Kaisen_Epi_2.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 3 -->
+        <div class="card">
+          <h4>Episodio 3 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/r60807xdto0kr4?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/r60807xdto0kr4?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 3 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/LMZzGOAoeZcRpPD/Jujutsu_Kaisen_Epi_3.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/LMZzGOAoeZcRpPD/Jujutsu_Kaisen_Epi_3.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 4 -->
+        <div class="card">
+          <h4>Episodio 4 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/7kj7jz3dfdepdqg?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/7kj7jz3dfdepdqg?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 4 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/A6XYZKwY0bIXy3L/Jujutsu_Kaisen_Epi_4.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/A6XYZKwY0bIXy3L/Jujutsu_Kaisen_Epi_4.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 5 -->
+        <div class="card">
+          <h4>Episodio 5 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/wlw4wqxrt0zgv74?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/wlw4wqxrt0zgv74?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 5 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Ry0LvvBwyOtdyLW/Jujutsu_Kaisen_Epi_5.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Ry0LvvBwyOtdyLW/Jujutsu_Kaisen_Epi_5.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 6 -->
+        <div class="card">
+          <h4>Episodio 6 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/r608079lukll9g?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/r608079lukll9g?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 6 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Kqq3w9g0egF0yK2/Jujutsu_Kaisen_Epi_6.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Kqq3w9g0egF0yK2/Jujutsu_Kaisen_Epi_6.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 7 -->
+        <div class="card">
+          <h4>Episodio 7 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0eqeonxsvrkve?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0eqeonxsvrkve?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 7 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Q00O1QMV0lI00ya/Jujutsu_Kaisen_Epi_7.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Q00O1QMV0lI00ya/Jujutsu_Kaisen_Epi_7.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 8 -->
+        <div class="card">
+          <h4>Episodio 8 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/4d969jd6b4nprl?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/4d969jd6b4nprl?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 8 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/r9g3y7j6bKCb0vD/Jujutsu_Kaisen_Epi_8.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/r9g3y7j6bKCb0vD/Jujutsu_Kaisen_Epi_8.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 9 -->
+        <div class="card">
+          <h4>Episodio 9 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/wlw4wq8zie67m6?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/wlw4wq8zie67m6?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 9 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/aGdLolMq0lFMJm/Jujutsu_Kaisen_Epi_9.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/aGdLolMq0lFMJm/Jujutsu_Kaisen_Epi_9.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 10 -->
+        <div class="card">
+          <h4>Episodio 10 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/4d969wrna07684?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/4d969wrna07684?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 10 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Vyao6kgoQASYRV/Jujutsu_Kaisen_Epi_10.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Vyao6kgoQASYRV/Jujutsu_Kaisen_Epi_10.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 11 -->
+        <div class="card">
+          <h4>Episodio 11 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36qvql04bkl9kr?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36qvql04bkl9kr?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 11 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/LYqBwj621RuRzM6/Jujutsu_Kaisen_Epi_11.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/LYqBwj621RuRzM6/Jujutsu_Kaisen_Epi_11.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 12 -->
+        <div class="card">
+          <h4>Episodio 12 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36qvqlqxapq8n8?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36qvqlqxapq8n8?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 12 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/6PQvrwQ0m3hLAr/Jujutsu_Kaisen_Epi_12.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/6PQvrwQ0m3hLAr/Jujutsu_Kaisen_Epi_12.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 13 -->
+        <div class="card">
+          <h4>Episodio 13 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/q1d3dkvesewvj7?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/q1d3dkvesewvj7?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 13 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/e0mXoGa7AviJJv/Jujutsu_Kaisen_Epi_13.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/e0mXoGa7AviJJv/Jujutsu_Kaisen_Epi_13.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 14 -->
+        <div class="card">
+          <h4>Episodio 14 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0eqe4nrf3mvzeg?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0eqe4nrf3mvzeg?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 14 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/mPoD0Y4keYsbPmB/Jujutsu_Kaisen_Epi_14.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/mPoD0Y4keYsbPmB/Jujutsu_Kaisen_Epi_14.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 15 -->
+        <div class="card">
+          <h4>Episodio 15 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/wlw4wzlqfjmjn?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/wlw4wzlqfjmjn?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 15 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/R6rLrDYGBBsd8j3/Jujutsu_Kaisen_Epi_15.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/R6rLrDYGBBsd8j3/Jujutsu_Kaisen_Epi_15.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 16 -->
+        <div class="card">
+          <h4>Episodio 16 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36qvql11coe8d0?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36qvql11coe8d0?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 16 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/dVY3ppWy3bckWyW/Jujutsu_Kaisen_Epi_16.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/dVY3ppWy3bckWyW/Jujutsu_Kaisen_Epi_16.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 17 -->
+        <div class="card">
+          <h4>Episodio 17 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/l7919prws3nmlq?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/l7919prws3nmlq?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 17 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/zrybjwpBjgtYmZP/Jujutsu_Kaisen_Epi_17.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/zrybjwpBjgtYmZP/Jujutsu_Kaisen_Epi_17.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 18 -->
+        <div class="card">
+          <h4>Episodio 18 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/vkq4qxdmsmvokg?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/vkq4qxdmsmvokg?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 18 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/wYkaza2KkvTJ7BR/Jujutsu_Kaisen_Epi_18.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/wYkaza2KkvTJ7BR/Jujutsu_Kaisen_Epi_18.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 19 -->
+        <div class="card">
+          <h4>Episodio 19 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/vkq4qx46iejmnv?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/vkq4qx46iejmnv?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 19 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/BB4M4xooOLCypoD/Jujutsu_Kaisen_Epi_19.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/BB4M4xooOLCypoD/Jujutsu_Kaisen_Epi_19.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 20 -->
+        <div class="card">
+          <h4>Episodio 20 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/mkzxz6gvazj3vl?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/mkzxz6gvazj3vl?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 20 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/6xz0B7RR8pi9MGk/Jujutsu_Kaisen_Epi_20.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/6xz0B7RR8pi9MGk/Jujutsu_Kaisen_Epi_20.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 21 -->
+        <div class="card">
+          <h4>Episodio 21 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/03zgz0epi41gpw?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/03zgz0epi41gpw?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 21 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/1q2bG0aVkvSeoAA/Jujutsu_Kaisen_Epi_21.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/1q2bG0aVkvSeoAA/Jujutsu_Kaisen_Epi_21.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 22 -->
+        <div class="card">
+          <h4>Episodio 22 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/1no3o779h06gn9?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/1no3o779h06gn9?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 22 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/YZJX9RKG7Qc30Y/Jujutsu_Kaisen_Epi_22.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/YZJX9RKG7Qc30Y/Jujutsu_Kaisen_Epi_22.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 23 -->
+        <div class="card">
+          <h4>Episodio 23 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/elzdz3g9u0x4zd?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/elzdz3g9u0x4zd?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 23 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/gVpYMb4Dv8TqdOw/Jujutsu_Kaisen_Epi_23.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/gVpYMb4Dv8TqdOw/Jujutsu_Kaisen_Epi_23.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 24 -->
+        <div class="card">
+          <h4>Episodio 24 - MixDrop</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/7kj7jz44s80oq?download">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/7kj7jz44s80oq?download" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 24 - StreamTape</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/0L4ddbKm11CbPW2/Jujutsu_Kaisen_Epi_24.mp4">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/0L4ddbKm11CbPW2/Jujutsu_Kaisen_Epi_24.mp4" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>StudioOtaku</h3>
+          <p>Tu plataforma favorita para ver anime en español latino</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="../../index.html#inicio">Inicio</a></li>
+            <li><a href="../../html/catalogo.html">🗂️ Catálogo</a></li>
+            <li><a href="#generos">Géneros</a></li>
+            <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-links" aria-label="Redes sociales y canales oficiales">
+            <a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener" aria-label="APP Anime TV">
+              <img src="../../../ico/logo.png" alt="APP Anime TV" />
+              <span>APP Anime TV</span>
+            </a>
+            <a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener" aria-label="Canal de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram" />
+              <span>Canal Telegram</span>
+            </a>
+            <a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener" aria-label="Grupo de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram Grupo" />
+              <span>Grupo Telegram</span>
+            </a>
+            <a class="social-item" href="https://rumble.com/c/c-6184817?e9s=src_v1_clr" target="_blank" rel="noopener" aria-label="Página de Rumble">
+              <img src="../../../ico/RUMBLE.webp" alt="Rumble" />
+              <span>Página en Rumble</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener" aria-label="Facebook Studio">
+              <img src="../../../ico/facebook.png" alt="Facebook" />
+              <span>Facebook</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/723496132540351" target="_blank" rel="noopener" aria-label="Grupo de Anime en Facebook">
+              <img src="../../../ico/facebook.png" alt="Facebook Grupo Anime" />
+              <span>Grupo Anime</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/1071796301003086" target="_blank" rel="noopener" aria-label="Grupo de Free Fire en Facebook">
+              <img src="../../../ico/facebook.png" alt="Facebook Grupo Free Fire" />
+              <span>Grupo Free Fire</span>
+            </a>
+            <a class="social-item" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener" aria-label="TikTok">
+              <img src="../../../ico/TIKTOK.webp" alt="TikTok" />
+              <span>TikTok</span>
+            </a>
+            <a class="social-item" href="https://www.instagram.com/studiootaku01" target="_blank" rel="noopener" aria-label="Instagram">
+              <img src="../../../ico/INSTAGRAM.webp" alt="Instagram" />
+              <span>Instagram</span>
+            </a>
+            <a class="social-item" href="https://github.com/studioanime977" target="_blank" rel="noopener" aria-label="GitHub">
+              <img src="../../../ico/GUITHUP.webp" alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+            <a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="YouTube">
+              <img src="../../../ico/youtube.png" alt="YouTube" />
+              <span>YouTube</span>
+            </a>
+            <a class="social-item" href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <img src="../../../ico/whatsapp.webp" alt="WhatsApp" />
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-text">&copy; 2025 StudioOtaku. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../../../assets/js/ads.js"></script>
+</body>
+</html>
