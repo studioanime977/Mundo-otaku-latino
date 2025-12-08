@@ -178,7 +178,7 @@
       }
       lastScroll = currentScroll;
     });
-    const seasons={'1':{count:12,url:'season1.html',thumb:'../../../img/Mashle  temporada 1.png',dl:'#'},'2':{count:12,url:'season2.html',thumb:'../../../img/mashle temporada 2.jpg',dl:'#'}}
+    const seasons={'1':{count:12,url:'season1.html',thumb:'../../../img/Mashle  temporada 1.png',dl:'descargar-s1.html'},'2':{count:12,url:'season2.html',thumb:'../../../img/mashle temporada 2.jpg',dl:'#'}}
     const grid=document.getElementById('episodes-grid'), select=document.getElementById('season'); function renderSeason(key){ const s=seasons[key]; if(!s||!grid) return; grid.innerHTML=Array.from({length:s.count},(_,i)=>{ const ep=i+1; const label=`S${key}E${ep}`; const href=`${s.url}?ep=${ep}`; return `<div class=\"ep-card\"><div class=\"ep-thumb\"><img src=\"${s.thumb}\" alt=\"${label}\"></div><div class=\"ep-info\"><div class=\"ep-title\">${label}</div><div class=\"ep-meta\">23m · Latino</div></div><a class=\"ep-link\" href=\"${href}\"></a></div>` }).join(''); const dl=document.getElementById('download-link'); if(dl){ dl.href=s.dl; dl.textContent=`Descargar Temporada ${key}` } }
     select.addEventListener('change', e=>renderSeason(e.target.value)); renderSeason('1')
   </script>
