@@ -8,12 +8,510 @@
   <meta name="google-adsense-account" content="ca-pub-8480825005176665">
   <title>Nanatsu no Taizai - Temporada 1 - StudioOtaku</title>
   
+  <link rel="stylesheet" href="../../../css/anime.css">
+  <link rel="stylesheet" href="../../../css/server-selector.css">
   <link rel="stylesheet" href="../../../css/temporadas.css">
   <link rel="stylesheet" href="../../../css/style.css">
-  
-  
+  <link rel="stylesheet" href="../../../css/responsive-style.css">
+  <link rel="stylesheet" href="../../../css/responsive-navigation.css">
+  <link rel="icon" href="../../../ico/logo.png" type="image/png" sizes="32x32">
+  <link rel="shortcut icon" href="../../../ico/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="../../../ico/logo.png">
+  <style>
+    /* Estilos footer nuevo */
+    .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .footer .footer-section h3 { margin: 0 0 8px; }
+    .footer .footer-section p { margin: 0; opacity: 0.85; }
+    .footer .footer-section ul { list-style: none; padding: 0; margin: 0; }
+    .footer .footer-section ul li { margin: 6px 0; }
+    .footer .footer-section a { color: #fff; text-decoration: none; }
+    .footer .footer-section a:hover { text-decoration: underline; }
+    .footer .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    @media (min-width:768px){ .footer .social-links { grid-template-columns: repeat(4, 1fr); } }
+    .footer .social-item { display: flex; align-items: center; gap: 8px; background: #111; border-radius: 10px; padding: 10px; text-decoration: none; color: #fff; }
+    .footer .social-item:hover { background: #1a1a1a; }
+    .footer .social-item img { width: 22px; height: 22px; border-radius: 4px; object-fit: cover; }
+    .footer .social-item span { line-height: 1; }
+    .footer .footer-text { text-align: center; margin-top: 12px; opacity: 0.8; }
+    @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
+  </style>
+  <style>
+    .main-content { display: flex; gap: 20px; align-items: flex-start; }
+    .left-content { flex: 3; }
+    .right-content { flex: 1; }
+    .right-content h3 { margin-top: 0; }
+    .popular-item { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.03); margin-bottom: 10px; cursor: pointer; }
+    .popular-item:hover { background: rgba(255,255,255,0.06); }
+    .popular-item img { width: 120px; height: 72px; object-fit: cover; border-radius: 6px; display: block; }
+    .popular-item .title { font-size: 0.95rem; line-height: 1.3; color: #fff; }
+    .back-btn { display: inline-block; margin: 12px 0; padding: 10px 16px; background: #6c63ff; color: #fff; border-radius: 8px; text-decoration: none; }
+    @media (max-width: 768px) {
+      .main-content { flex-direction: column; }
+      .popular-item { flex-direction: column; align-items: center; }
+      .popular-item img { width: 80px; height: 80px; margin-bottom: 10px; }
+    }
 
-  
-<script src="../../../assets/js/ads.js"></script>
+    /* === Modal Suscríbete === */
+    .subscribe-modal[hidden] { display: none; }
+    .subscribe-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      background: rgba(10,12,16,0.75);
+      backdrop-filter: blur(4px);
+    }
+    .subscribe-modal::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('../../../ico/suscribete.png') center/220px no-repeat;
+      opacity: 0.25;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,0.4));
+    }
+    .subscribe-card {
+      position: relative;
+      width: min(720px, 92vw);
+      border-radius: 16px;
+      padding: 22px 22px 18px;
+      background: linear-gradient(180deg, rgba(21,25,35,0.95), rgba(21,25,35,0.98));
+      border: 1px solid #2a3142;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+      text-align: center;
+      color: #fff;
+    }
+    .subscribe-card .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+    .subscribe-card .brand img { width: 32px; height: 32px; }
+    .subscribe-title { font-size: 1.6rem; margin: 6px 0 8px; }
+    .subscribe-desc { color: #b8bcc8; margin: 0 0 14px; }
+    .subscribe-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 10px 16px; border-radius: 12px; text-decoration: none;
+      border: 1px solid #334050; transition: all .18s ease; font-weight: 700;
+    }
+    .btn img { width: 20px; height: 20px; }
+    .btn-primary { background: #ea4335; color: #fff; border-color: #ea4335; }
+    .btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
+    .btn-ghost { background: #1a2131; color: #e8e8ea; }
+    .btn-ghost:hover { border-color: #3b4a63; transform: translateY(-1px); }
+    .btn-facebook { background: #1877F2; color: #fff; border-color: #1877F2; }
+    .btn-facebook:hover { filter: brightness(1.08); transform: translateY(-1px); }
+    .btn-tiktok {
+      background: linear-gradient(90deg, #25F4EE, #FE2C55);
+      color: #fff;
+      border-color: transparent;
+    }
+    .btn-tiktok:hover { filter: brightness(1.08); transform: translateY(-1px); }
+    .subscribe-foot { margin-top: 10px; font-size: .9rem; color: #9aa1af; }
+
+    @media (max-width: 768px) {
+      .subscribe-title { font-size: 1.35rem; }
+    }
+  </style>
+  <style>
+    .header + main.container { padding-top: 6rem; }
+  </style>
+</head>
+<body>
+    <header class="header">
+      <nav class="nav-container">
+        <div class="logo"><img src="../../../ico/logo.png" alt="Mundo Otaku Latino" style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div>
+        <ul class="nav-menu">
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../html/catalogo.html">Anime</a></li>
+          <li><a href="#peliculas">Películas</a></li>
+          <li><a href="#generos">Géneros</a></li>
+          <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <!-- Modal Suscríbete -->
+    <div id="subscribe-modal" class="subscribe-modal" role="dialog" aria-modal="true" aria-labelledby="subscribe-title" hidden>
+      <div class="subscribe-card">
+        <div class="brand"><img src="../../../ico/youtube.png" alt="YouTube">Mundo Otaku Latino</div>
+        <h2 id="subscribe-title" class="subscribe-title">¡Apóyanos suscribiéndote al canal!</h2>
+        <p class="subscribe-desc">Tu apoyo nos ayuda a mantener el sitio y subir nuevo contenido. ¡Gracias por estar aquí!</p>
+        <div class="subscribe-actions">
+          <a class="btn btn-primary" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="Abrir canal en YouTube"><img src="../../../ico/youtube.png" alt="YouTube"> Suscribirme en YouTube</a>
+          <a class="btn btn-facebook" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener" aria-label="Abrir Facebook"><img src="../../../ico/facebook.png" alt="Facebook"> Facebook</a>
+          <a class="btn btn-tiktok" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener" aria-label="Abrir TikTok"><img src="../../../ico/TIKTOK.webp" alt="TikTok"> TikTok</a>
+          <button id="subscribe-dismiss" class="btn btn-ghost" aria-label="Cerrar y continuar">Continuar al sitio</button>
+        </div>
+        <div class="subscribe-foot">Se mostrará una vez por sesión.</div>
+      </div>
+    </div>
+    <main class="container">
+        <div class="main-content">
+          <div class="left-content">
+            <a href="./nanatsu-no-taizai.html" class="back-btn">Volver a Nanatsu no Taizai</a>
+            <h1 class="page-title">Nanatsu no Taizai - Temporada 1</h1>
+
+            
+
+            <section class="player-selector" aria-label="Selector de idioma y servidor">
+                <div class="language-toggle" role="tablist" aria-label="Idiomas disponibles">
+                    <button class="lang-btn" role="tab" aria-selected="false" data-language="lat">
+                        <img src="../../../ico/LAT.png" alt="Latino">
+                        <span>Latino</span>
+                    </button>
+                    <button class="lang-btn" role="tab" aria-selected="false" data-language="sub">
+                        <img src="../../../ico/SUB.png" alt="Subtitulado">
+                        <span>Subtitulado</span>
+                    </button>
+                </div>
+
+                <div class="server-grid" aria-label="Servidores disponibles">
+                    <a href="#" class="server-card" data-server="MixDrop"
+                       data-url-lat="#"
+                       data-url-sub="#"
+                       aria-label="MixDrop">
+                        <img src="../../../ico/mixdrop.webp" alt="MixDrop">
+                        <span>MixDrop</span>
+                    </a>
+
+                    <a href="#" class="server-card" data-server="StreamTape"
+                       data-url-lat="#"
+                       data-url-sub="#"
+                       aria-label="StreamTape">
+                        <img src="../../../ico/streamtape.png" alt="StreamTape">
+                        <span>StreamTape</span>
+                    </a>
+
+                    <a href="#" class="server-card"
+                       data-url-lat="#"
+                       data-url-sub="#"
+                       aria-label="Filemoon">
+                        <img src="../../../ico/FILEMOON.png" alt="Filemoon">
+                        <span>Filemoon</span>
+                    </a>
+
+                    <a href="#" class="server-card"
+                       data-url-lat="#"
+                       data-url-sub="#"
+                       aria-label="StreamWish">
+                        <img src="../../../ico/STREAMWISH.png" alt="StreamWish">
+                        <span>StreamWish</span>
+                    </a>
+
+                    <a href="#" class="server-card"
+                       data-url-lat="#"
+                       data-url-sub="#"
+                       aria-label="Netu">
+                        <img src="../../../ico/netu.png" alt="Netu">
+                        <span>Netu</span>
+                    </a>
+
+                    <a href="#" class="server-card"
+                       data-url-lat="#"
+                       data-url-sub="#"
+                       aria-label="Uqload">
+                        <img src="../../../ico/UQLOAD.webp" alt="Uqload">
+                        <span>Uqload</span>
+                    </a>
+                </div>
+
+                <h2 id="current-episode-title" style="text-align:center; margin:16px 0;">Selecciona un episodio</h2>
+
+                <div class="player-frame-wrap">
+                    <iframe id="player-frame" title="Reproductor" src="about:blank" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </section>
+
+    <section class="navigation-buttons" aria-label="Navegación de episodios" style="display:grid; grid-template-columns: 1fr auto 1fr; align-items:center; column-gap:10px; margin:12px 0;">
+      <button id="prev-ep" class="nav-btn" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:start;">◄ episodio anterior</button>
+      <button id="toggle-episodes" class="nav-btn" aria-expanded="false" style="padding:10px 16px; border-radius:8px; background:#6c63ff; color:#fff; border:none; justify-self:center;">lista de episodios</button>
+      <button id="next-ep" class="nav-btn" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:end;">siguiente episodio ►</button>
+    </section>
+    <div class="episodes-container" id="episodes-container" hidden>
+      <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
+      <div class="episodes-grid" id="episodes-grid"></div>
+    </div>
+    
+    
+
+            <section class="episode-info" aria-label="Información del episodio" style="margin-top:16px;">
+              <h2 style="margin-bottom:8px;">Nanatsu no Taizai - Temporada 1</h2>
+              <p style="opacity:0.9;">Los Siete Pecados Capitales fueron una vez un grupo de caballeros activos en el reino de Britannia, quienes se disolvieron después de que supuestamente conspiraron para derrocar al reino. Su líder, Meliodas, se embarca en un viaje para reunir al grupo y limpiar sus nombres.</p>
+            </section>
+
+            <section class="downloads" aria-label="Enlaces de descarga" style="margin-top:8px;">
+              <h3 style="margin:0 0 10px 0;">Enlaces</h3>
+              <div class="downloads-table" style="display:grid; grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr; gap:8px; align-items:center;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <a class="download-btn" href="descargar-s1.html" style="padding:8px 12px; background:#27ae60; color:#fff; border-radius:8px; text-decoration:none;">Descarga</a>
+                </div>
+                <div><span style="display:inline-block; padding:6px 10px; border-radius:8px; background:#111; color:#fff;">HD MULTIHOST</span></div>
+                <div>Audio Latino</div>
+                <div>—</div>
+                <div>—</div>
+              </div>
+            </section>
+          </div>
+          <div class="right-content">
+            <h3>Popular</h3>
+            <div class="popular-item" onclick="window.location.href='../jujutsu-kaisen/jujutsu-kaisen.html'">
+              <img src="../../../img/Jujutsu Kaisen S1.jpg" alt="Jujutsu Kaisen">
+              <div class="title">Jujutsu Kaisen - Temporada 1</div>
+            </div>
+            <div class="popular-item" onclick="window.location.href='../spy-x-family/spy-x-family.html'">
+              <img src="../../../img/Spy x Family S1.jpg" alt="Spy x Family">
+              <div class="title">Spy x Family - Temporada 1</div>
+            </div>
+            <div class="popular-item" onclick="window.location.href='../chainsaw-man/chainsaw-man.html'">
+              <img src="../../../img/Chainsaw Man S1.jpg" alt="Chainsaw Man">
+              <div class="title">Chainsaw Man - Temporada 1</div>
+            </div>
+            <div class="popular-item" onclick="window.location.href='../boku-no-hero-academia/boku-no-hero-academia.html'">
+              <img src="../../../img/Boku no Hero Academia S1.jpg" alt="Boku no Hero Academia">
+              <div class="title">Boku no Hero Academia - Temporada 1</div>
+            </div>
+            <div class="popular-item" onclick="window.location.href='../demon-slayer/demon-slayer.html'">
+              <img src="../../../img/Kimetsu No Yaiba temporada 1.png" alt="Kimetsu No Yaiba">
+              <div class="title">Kimetsu No Yaiba - Temporada 1</div>
+            </div>
+          </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>StudioOtaku</h3>
+            <p>Tu plataforma favorita para ver anime en español latino</p>
+          </div>
+          <div class="footer-section">
+            <h3>Enlaces</h3>
+            <ul>
+              <li><a href="../../index.html#inicio">Inicio</a></li>
+              <li><a href="../../html/catalogo.html">🗂️ Catálogo</a></li>
+              <li><a href="#generos">Géneros</a></li>
+              <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Síguenos</h3>
+            <div class="social-links" aria-label="Redes sociales y canales oficiales">
+              <a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener" aria-label="APP Anime TV">
+                <img src="../../../ico/logo.png" alt="APP Anime TV" />
+                <span>APP Anime TV</span>
+              </a>
+              <a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener" aria-label="Canal de Telegram">
+                <img src="../../../ico/telegram.webp" alt="Telegram" />
+                <span>Canal Telegram</span>
+              </a>
+              <a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener" aria-label="Grupo de Telegram">
+                <img src="../../../ico/telegram.webp" alt="Telegram Grupo" />
+                <span>Grupo Telegram</span>
+              </a>
+              <a class="social-item" href="https://rumble.com/c/c-6184817?e9s=src_v1_clr" target="_blank" rel="noopener" aria-label="Página de Rumble">
+                <img src="../../../ico/RUMBLE.webp" alt="Rumble" />
+                <span>Página en Rumble</span>
+              </a>
+              <a class="social-item" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener" aria-label="Facebook Studio">
+                <img src="../../../ico/facebook.png" alt="Facebook" />
+                <span>Facebook</span>
+              </a>
+              <a class="social-item" href="https://www.facebook.com/groups/723496132540351" target="_blank" rel="noopener" aria-label="Grupo de Anime en Facebook">
+                <img src="../../../ico/facebook.png" alt="Facebook Grupo Anime" />
+                <span>Grupo Anime</span>
+              </a>
+              <a class="social-item" href="https://www.facebook.com/groups/1071796301003086" target="_blank" rel="noopener" aria-label="Grupo de Free Fire en Facebook">
+                <img src="../../../ico/facebook.png" alt="Facebook Grupo Free Fire" />
+                <span>Grupo Free Fire</span>
+              </a>
+              <a class="social-item" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener" aria-label="TikTok">
+                <img src="../../../ico/TIKTOK.webp" alt="TikTok" />
+                <span>TikTok</span>
+              </a>
+              <a class="social-item" href="https://www.instagram.com/studiootaku01" target="_blank" rel="noopener" aria-label="Instagram">
+                <img src="../../../ico/INSTAGRAM.webp" alt="Instagram" />
+                <span>Instagram</span>
+              </a>
+              <a class="social-item" href="https://github.com/studioanime977" target="_blank" rel="noopener" aria-label="GitHub">
+                <img src="../../../ico/GUITHUP.webp" alt="GitHub" />
+                <span>GitHub</span>
+              </a>
+              <a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="YouTube">
+                <img src="../../../ico/youtube.png" alt="YouTube" />
+                <span>YouTube</span>
+              </a>
+              <a class="social-item" href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <img src="../../../ico/whatsapp.webp" alt="WhatsApp" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <p class="footer-text">&copy; 2025 StudioOtaku. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    
+
+    <script src="../../../assets/js/server-selector.js"></script>
+    <script src="../../../assets/js/ads.js"></script>
+    <script>
+      (function() {
+        const modal = document.getElementById('subscribe-modal');
+        const dismiss = document.getElementById('subscribe-dismiss');
+        const KEY = 'subscribeModalShown';
+        function openModal() {
+          if (!modal) return;
+          modal.hidden = false;
+          document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+          modal.hidden = true;
+          document.body.style.overflow = '';
+          try { sessionStorage.setItem(KEY, '1'); } catch (_) {}
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+          let shown = '0';
+          try { shown = sessionStorage.getItem(KEY) || '0'; } catch (_) {}
+          if (shown !== '1') openModal();
+        });
+        if (dismiss) dismiss.addEventListener('click', closeModal);
+        if (modal) modal.addEventListener('click', function(e){ if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+      })();
+    </script>
+<script>
+    function normalizeUrl(url) { return url || ''; }
+    function mixdropFallback(url) {
+      if (!url) return '';
+      const m = url.match(/https?:\/\/mxdrop\.to\/e\/([^\/?#]+)/i);
+      return m ? `https://mdy48tn97.com/e/${m[1]}` : '';
+    }
+    let currentEpisode = null;
+    const episodes = [
+      { num: 1,  title: "Episodio 1",  op1: "https://mxdrop.to/e/4d9knexga70nx0", st: "https://streamtape.com/e/r9Djp7A9mycbz9x/Nanatsu_no_taizai_-_Temporada_1_Episodio_01.mkv.mp4" },
+      { num: 2,  title: "Episodio 2",  op1: "https://mxdrop.to/e/xw9eo8vmbv6vnw", st: "https://streamtape.com/e/6woRYmRWaQspVq/Nanatsu_no_taizai_-_Temporada_1_Episodio_02.mkv.mp4" },
+      { num: 3,  title: "Episodio 3",  op1: "https://mxdrop.to/e/67rmqejrslele31", st: "https://streamtape.com/e/vBXgdyeKX3Sw2O/Nanatsu_no_taizai_-_Temporada_1_Episodio_03.mkv.mp4" },
+      { num: 4,  title: "Episodio 4",  op1: "https://mxdrop.to/e/pj68kwombmxwrm", st: "https://streamtape.com/e/9PjzL8J3B9ta8Aj/Nanatsu_no_taizai_-_Temporada_1_Episodio_04.mkv.mp4" },
+      { num: 5,  title: "Episodio 5",  op1: "https://mxdrop.to/e/pj68kwg6h7oqmz", st: "https://streamtape.com/e/JywRxxYZ6khj12D/Nanatsu_no_taizai_-_Temporada_1_Episodio_05.mkv.mp4" },
+      { num: 6,  title: "Episodio 6",  op1: "https://mxdrop.to/e/8ljr4e6zh1xnr", st: "https://streamtape.com/e/A3zjl7rZd1TDK8/Nanatsu_no_taizai_-_Temporada_1_Episodio_06.mkv.mp4" },
+      { num: 7,  title: "Episodio 7",  op1: "https://mxdrop.to/e/vkq9ngm0tm8zwp", st: "https://streamtape.com/e/qaB9dVWZY3FzbAL/Nanatsu_no_taizai_-_Temporada_1_Episodio_07.mkv.mp4" },
+      { num: 8,  title: "Episodio 8",  op1: "https://mxdrop.to/e/wlwjn377a4klpj", st: "https://streamtape.com/e/kkWjYLMxy2sOkWB/Nanatsu_no_taizai_-_Temporada_1_Episodio_08.mkv.mp4" },
+      { num: 9,  title: "Episodio 9",  op1: "https://mxdrop.to/e/dkrxq870cpope", st: "https://streamtape.com/e/p1d4Ymqdywir28p/Nanatsu_no_taizai_-_Temporada_1_Episodio_09.mkv.mp4" },
+      { num: 10, title: "Episodio 10", op1: "https://mxdrop.to/e/nln60ke6akorpp", st: "https://streamtape.com/e/WgogMVpzRzSWoB/Nanatsu_no_taizai_-_Temporada_1_Episodio_10.mkv.mp4" },
+      { num: 11, title: "Episodio 11", op1: "https://mxdrop.to/e/mkzvd7pqbxm3jo", st: "https://streamtape.com/e/0R7ekawpgKfbX2P/Nanatsu_no_taizai_-_Temporada_1_Episodio_11.mkv.mp4" },
+      { num: 12, title: "Episodio 12", op1: "https://mxdrop.to/e/mkzvd7moao1pr7", st: "https://streamtape.com/e/Y1jO7Ax83YhBp9/Nanatsu_no_taizai_-_Temporada_1_Episodio_12.mkv.mp4" },
+      { num: 13, title: "Episodio 13", op1: "https://mxdrop.to/e/xw9eom17hv7zdj", st: "https://streamtape.com/e/GXZomGVgdpH1gG7/Nanatsu_no_taizai_-_Temporada_1_Episodio_13.mkv.mp4" },
+      { num: 14, title: "Episodio 14", op1: "https://mxdrop.to/e/pj68k78kfg73k3v", st: "https://streamtape.com/e/4GAyV601rRskO1/Nanatsu_no_taizai_-_Temporada_1_Episodio_14.mkv.mp4" },
+      { num: 15, title: "Episodio 15", op1: "https://mxdrop.to/e/elz8n3xwhpnpkg", st: "https://streamtape.com/e/vYkmZvmbLPc4ZG2/Nanatsu_no_taizai_-_Temporada_1_Episodio_15.mkv.mp4" },
+      { num: 16, title: "Episodio 16", op1: "https://mxdrop.to/e/jdk89opgbx10mm", st: "https://streamtape.com/e/PX34bar3kvH04JD/Nanatsu_no_taizai_-_Temporada_1_Episodio_16.mkv.mp4" },
+      { num: 17, title: "Episodio 17", op1: "https://mxdrop.to/e/jdk89ok1ieoml", st: "https://streamtape.com/e/zXKVgvGwoytYLaQ/Nanatsu_no_taizai_-_Temporada_1_Episodio_17.mkv.mp4" },
+      { num: 18, title: "Episodio 18", op1: "https://mxdrop.to/e/1no1v7o9heq7gm", st: "" },
+      { num: 19, title: "Episodio 19", op1: "https://mxdrop.to/e/owzq70wxblw0q8", st: "" },
+      { num: 20, title: "Episodio 20", op1: "https://mxdrop.to/e/owzq70gqfv41o3", st: "" },
+      { num: 21, title: "Episodio 21", op1: "https://mxdrop.to/e/pj68k7enakmr7w", st: "" },
+      { num: 22, title: "Episodio 22", op1: "https://mxdrop.to/e/elz8n37qbldwnm", st: "" },
+      { num: 23, title: "Episodio 23", op1: "https://mxdrop.to/e/l79j6powc0d8xd", st: "" },
+      { num: 24, title: "Episodio 24", op1: "https://mxdrop.to/e/l79j6pkwfqz8lo", st: "" }
+    ];
+    const episodesGrid = document.getElementById('episodes-grid');
+    episodes.forEach(episode => {
+      const episodeBtn = document.createElement('button');
+      episodeBtn.className = 'episode-btn';
+      episodeBtn.textContent = `Ep ${episode.num}`;
+      episodeBtn.onclick = () => loadEpisode(episode);
+      episodesGrid.appendChild(episodeBtn);
+    });
+    function applyEpisodeToServerGrid(ep) {
+      const mixdropCard = document.querySelector('.server-card[data-server="MixDrop"]');
+      const streamTapeCard = document.querySelector('.server-card[data-server="StreamTape"]');
+      const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"]):not([data-server="StreamTape"])');
+      const latUrlMix = normalizeUrl(ep.op1 || '');
+      const latUrlSt = normalizeUrl(ep.st || '');
+      if (mixdropCard) {
+        mixdropCard.setAttribute('data-url-lat', latUrlMix || '#');
+        const fb = mixdropFallback(latUrlMix);
+        if (fb) { mixdropCard.setAttribute('data-fallback-lat', fb); } else { mixdropCard.removeAttribute('data-fallback-lat'); }
+        mixdropCard.setAttribute('data-url-sub', '#');
+      }
+      if (streamTapeCard) {
+        streamTapeCard.setAttribute('data-url-lat', latUrlSt || '#');
+        streamTapeCard.setAttribute('data-url-sub', '#');
+        streamTapeCard.removeAttribute('data-fallback-lat');
+      }
+      otherCards.forEach(card => { card.setAttribute('data-url-lat', '#'); card.setAttribute('data-url-sub', '#'); });
+    }
+    function loadEpisode(episode) {
+      document.querySelectorAll('.episode-btn').forEach((btn, index) => { btn.classList.toggle('active', index + 1 === episode.num); });
+      document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
+      currentEpisode = episode;
+      applyEpisodeToServerGrid(episode);
+      updateNavState();
+    }
+    function updateNavState() {
+      const prev = document.getElementById('prev-ep');
+      const next = document.getElementById('next-ep');
+      if (!prev || !next || !currentEpisode) return;
+      prev.disabled = currentEpisode.num <= 1;
+      next.disabled = currentEpisode.num >= episodes.length;
+      prev.style.background = prev.disabled ? '#2c2c2c' : '#6c63ff';
+      prev.style.color = prev.disabled ? '#bbb' : '#fff';
+      next.style.background = next.disabled ? '#2c2c2c' : '#6c63ff';
+      next.style.color = next.disabled ? '#bbb' : '#fff';
+    }
+    const prevBtn = document.getElementById('prev-ep');
+    const nextBtn = document.getElementById('next-ep');
+    if (prevBtn) { prevBtn.addEventListener('click', () => { if (!currentEpisode) return; const idx = currentEpisode.num - 2; if (idx >= 0) loadEpisode(episodes[idx]); }); }
+    if (nextBtn) { nextBtn.addEventListener('click', () => { if (!currentEpisode) return; const idx = currentEpisode.num; if (idx < episodes.length) loadEpisode(episodes[idx]); }); }
+    const toggleBtn = document.getElementById('toggle-episodes');
+    const episodesBox = document.getElementById('episodes-container');
+    if (toggleBtn && episodesBox) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = episodesBox.hasAttribute('hidden');
+        if (isHidden) { episodesBox.removeAttribute('hidden'); toggleBtn.setAttribute('aria-expanded', 'true'); episodesBox.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        else { episodesBox.setAttribute('hidden', ''); toggleBtn.setAttribute('aria-expanded', 'false'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      });
+    }
+    const langBtns = document.querySelectorAll('.lang-btn');
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.language;
+        const hasLinks = (ep) => {
+          if (!ep) return false;
+          if (lang === 'sub') return false;
+          return Boolean(normalizeUrl(ep.op1 || '') || normalizeUrl(ep.st || ''));
+        };
+        if (!hasLinks(currentEpisode)) {
+          const target = episodes.find(e => hasLinks(e)) || episodes[0];
+          loadEpisode(target);
+          try { btn.click(); } catch (_) {}
+        }
+      });
+    });
+    
+    // Cargar episodio desde URL o el primero por defecto
+    if (episodes.length > 0) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const epParam = urlParams.get('ep');
+      if (epParam) {
+        const epNum = parseInt(epParam);
+        const targetEp = episodes.find(e => e.num === epNum);
+        if (targetEp) {
+          loadEpisode(targetEp);
+        } else {
+          loadEpisode(episodes[0]);
+        }
+      } else {
+        loadEpisode(episodes[0]);
+      }
+    }
+  </script>
 </body>
 </html>
