@@ -1,19 +1,238 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta name="f08cd2b5211f5b0a95753720000f639c66350c1d" content="f08cd2b5211f5b0a95753720000f639c66350c1d" />
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-adsense-account" content="ca-pub-8480825005176665">
   <title>Tu nombre (Your Name) - Película Completa - StudioOtaku</title>
-  
-  <link rel="stylesheet" href="../../../css/temporadas.css">
+  <link rel="stylesheet" href="../../../css/server-selector.css">
   <link rel="stylesheet" href="../../../css/style.css">
-  
-  
+  <link rel="stylesheet" href="../../../css/anime.css">
+  <link rel="stylesheet" href="../../../css/responsive-style.css">
+  <link rel="stylesheet" href="../../../css/responsive-navigation.css">
+  <link rel="icon" type="image/png" href="../../../ico/logo.png">
+  <link rel="apple-touch-icon" href="../../../ico/logo.png">
+  <link rel="shortcut icon" href="../../../ico/logo.png">
+  <style>
+    .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
+    .back-btn { display: inline-block; margin: 12px 0; padding: 10px 16px; background: #6c63ff; color: #fff; border-radius: 8px; text-decoration: none; }
+    .player-frame-wrap { background: #111; border-radius: 12px; overflow: hidden; }
+    .player-frame-wrap iframe { width: 100%; height: 520px; border: none; }
+    .main-content { display: flex; gap: 20px; align-items: flex-start; }
+    .left-content { flex: 3; }
+    .right-content { flex: 1; }
+    .right-content .popular-item { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.03); margin-bottom: 10px; cursor: pointer; }
+    .right-content .popular-item:hover { background: rgba(255,255,255,0.06); }
+    .right-content .popular-item img { width: 120px; height: 72px; object-fit: cover; border-radius: 6px; display: block; }
+    .right-content .popular-item .title { font-size: 0.95rem; line-height: 1.3; color: #fff; }
+    .header + main.container { padding-top: 6rem; }
+  </style>
+  <style>
+    .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .footer .footer-section h3 { margin: 0 0 8px; }
+    .footer .footer-section p { margin: 0; opacity: 0.85; }
+    .footer .footer-section ul { list-style: none; padding: 0; margin: 0; }
+    .footer .footer-section ul li { margin: 6px 0; }
+    .footer .footer-section a { color: #fff; text-decoration: none; }
+    .footer .footer-section a:hover { text-decoration: underline; }
+    .footer .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    @media (min-width:768px){ .footer .social-links { grid-template-columns: repeat(4, 1fr); } }
+    .footer .social-item { display: flex; align-items: center; gap: 8px; background: #111; border-radius: 10px; padding: 10px; text-decoration: none; color: #fff; }
+    .footer .social-item:hover { background: #1a1a1a; }
+    .footer .social-item img { width: 22px; height: 22px; border-radius: 4px; object-fit: cover; }
+    .footer .social-item span { line-height: 1; }
+    .footer .footer-text { text-align: center; margin-top: 12px; opacity: 0.8; }
+    @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav-container">
+      <div class="logo"><img src="../../../ico/logo.png" alt="Mundo Otaku Latino" style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div>
+      <ul class="nav-menu">
+        <li><a href="../../index.html#inicio">Inicio</a></li>
+        <li><a href="../../html/catalogo.html">Anime</a></li>
+        <li><a href="#peliculas">Películas</a></li>
+        <li><a href="#generos">Géneros</a></li>
+        <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  
-<script src="../../../assets/js/ads.js"></script>
+  <main class="container">
+    <div class="main-content">
+      <div class="left-content">
+        <a href="../../html/catalogo.html" class="back-btn">Volver al Catálogo</a>
+        <a href="tu-nombre.html" class="back-btn">Volver a Tu Nombre</a>
+
+        <h1>Tu nombre (Your Name) – Película</h1>
+        <p>Español – Servidor MixDrop.</p>
+        <div class="title-container">
+          <h2 class="episode-title" id="current-episode-title">Película</h2>
+        </div>
+
+        <section class="player-selector" aria-label="Selector de idioma y servidor">
+          <div class="language-toggle" role="tablist" aria-label="Idiomas disponibles">
+            <button class="lang-btn" role="tab" aria-selected="true" data-language="lat">
+              <img src="../../../ico/LAT.png" alt="Español">
+              <span>Español</span>
+            </button>
+          </div>
+
+          <div class="server-grid" aria-label="Servidores disponibles">
+            <a href="#" class="server-card" data-server="MixDrop" data-url-lat="https://mxdrop.to/e/mkzjw9r9soevgv" data-url-sub="#" aria-label="MixDrop">
+              <img src="../../../ico/mixdrop.webp" alt="MixDrop">
+              <span>MixDrop</span>
+            </a>
+          </div>
+
+          <div class="player-frame-wrap">
+            <iframe id="player-frame" title="Reproductor" src="https://mxdrop.to/e/mkzjw9r9soevgv" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </section>
+
+        <section class="navigation-buttons" aria-label="Navegación" style="display:grid; grid-template-columns: 1fr auto 1fr; align-items:center; column-gap:10px; margin:12px 0;">
+          <button id="prev-ep" class="nav-btn" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:start;">◄ episodio anterior</button>
+          <button id="toggle-episodes" class="nav-btn" aria-expanded="false" style="padding:10px 16px; border-radius:8px; background:#6c63ff; color:#fff; border:none; justify-self:center;">lista</button>
+          <button id="next-ep" class="nav-btn" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:end;">siguiente episodio ►</button>
+        </section>
+
+        <div class="episodes-container" id="episodes-container" hidden>
+          <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Contenido</h3>
+          <div class="episodes-grid" id="episodes-grid"></div>
+        </div>
+
+        <section aria-label="Enlaces de descarga" style="margin-top:18px;">
+          <div style="font-weight:700; margin-bottom:8px;">Descargas</div>
+          <a href="./descargartunombre.html" style="background:#27ae60; color:#fff; padding:10px 14px; border-radius:8px; display:inline-block;">Descargar Película</a>
+        </section>
+      </div>
+
+      <div class="right-content">
+        <h3>Popular</h3>
+        <div class="popular-item" onclick="window.location.href='../../../public/anime/spy-x-family/spy-x-family.html'">
+          <img src="../../../img/Spy x Family S1.jpg" alt="Spy x Family">
+          <div class="title">Spy x Family - Temporada 1</div>
+        </div>
+        <div class="popular-item" onclick="window.location.href='../../../public/anime/chainsaw-man/chainsaw-man.html'">
+          <img src="../../../img/Chainsaw Man S1.jpg" alt="Chainsaw Man">
+          <div class="title">Chainsaw Man - Temporada 1</div>
+        </div>
+        <div class="popular-item" onclick="window.location.href='../../../public/anime/demon-slayer/demon-slayer.html'">
+          <img src="../../../img/Kimetsu No Yaiba temporada 1.png" alt="Kimetsu No Yaiba">
+          <div class="title">Kimetsu No Yaiba - Temporada 1</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>StudioOtaku</h3>
+          <p>Tu plataforma favorita para ver anime en español latino</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="../../index.html#inicio">Inicio</a></li>
+            <li><a href="../../html/catalogo.html">🗂️ Catálogo</a></li>
+            <li><a href="#generos">Géneros</a></li>
+            <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-links" aria-label="Redes sociales y canales oficiales">
+            <a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener" aria-label="APP Anime TV">
+              <img src="../../../ico/logo.png" alt="APP Anime TV" />
+              <span>APP Anime TV</span>
+            </a>
+            <a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener" aria-label="Canal de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram" />
+              <span>Canal Telegram</span>
+            </a>
+            <a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener" aria-label="Grupo de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram Grupo" />
+              <span>Grupo Telegram</span>
+            </a>
+            <a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="YouTube">
+              <img src="../../../ico/youtube.png" alt="YouTube" />
+              <span>YouTube</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-text">&copy; 2025 StudioOtaku. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../../../assets/js/server-selector.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnLat = document.querySelector('.lang-btn[data-language="lat"]');
+      const mixdropCard = document.querySelector('.server-card[data-server="MixDrop"]');
+      try { if (btnLat) btnLat.click(); } catch (_) {}
+      try { if (mixdropCard) mixdropCard.click(); } catch (_) {}
+    });
+  </script>
+  <script>
+    let currentEpisode = null;
+    const episodes = [
+      { num: 1, title: 'Película', op1: 'https://mxdrop.to/e/mkzjw9r9soevgv' }
+    ];
+    const episodesGrid = document.getElementById('episodes-grid');
+    if (episodesGrid) {
+      episodes.forEach(episode => {
+        const episodeBtn = document.createElement('button');
+        episodeBtn.className = 'episode-btn';
+        episodeBtn.textContent = 'Película';
+        episodeBtn.onclick = () => loadEpisode(episode);
+        episodesGrid.appendChild(episodeBtn);
+      });
+    }
+    function applyEpisodeToServerGrid(ep) {
+      const mixdropCard = document.querySelector('.server-card[data-server="MixDrop"]');
+      if (mixdropCard) {
+        mixdropCard.setAttribute('data-url-lat', ep.op1 || '#');
+        mixdropCard.setAttribute('data-url-sub', '#');
+      }
+    }
+    function loadEpisode(episode) {
+      const titleEl = document.getElementById('current-episode-title');
+      if (titleEl) titleEl.textContent = episode.title || 'Película';
+      currentEpisode = episode;
+      applyEpisodeToServerGrid(episode);
+      updateNavState();
+    }
+    function updateNavState() {
+      const prev = document.getElementById('prev-ep');
+      const next = document.getElementById('next-ep');
+      if (!prev || !next || !currentEpisode) return;
+      prev.disabled = true;
+      next.disabled = true;
+    }
+    const toggleBtn = document.getElementById('toggle-episodes');
+    const episodesBox = document.getElementById('episodes-container');
+    if (toggleBtn && episodesBox) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = episodesBox.hasAttribute('hidden');
+        if (isHidden) {
+          episodesBox.removeAttribute('hidden');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+          episodesBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          episodesBox.setAttribute('hidden', '');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    }
+    loadEpisode(episodes[0]);
+  </script>
+
+  <script src="../../../assets/js/ads.js"></script>
 </body>
 </html>

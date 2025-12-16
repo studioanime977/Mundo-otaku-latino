@@ -84,7 +84,7 @@
     .ep-info{padding:10px}
     .ep-title{font-weight:700}
     .ep-meta{color:#bbb;font-size:.9rem;margin-top:4px}
-    .ep-link{position:absolute;inset:0}
+    .ep-link{position:absolute;inset:0;cursor:pointer;z-index:10}
     .page-container {
       max-width: 1100px;
       margin: 0 auto;
@@ -178,7 +178,7 @@
       }
       lastScroll = currentScroll;
     });
-    const seasons={'1':{count:24,url:'season1.html',thumb:'../../../img/Nanatsu no taizai TEM  1.jpg',dl:'#'},'2':{count:24,url:'season2.html',thumb:'../../../img/Nanatsu no taizai TEM  2.jpg',dl:'#'},'3':{count:24,url:'season3.html',thumb:'../../../img/Nanatsu no taizai TEM  3.jpg',dl:'#'},'4':{count:24,url:'season4.html',thumb:'../../../img/Nanatsu no taizai TEM  4.jpg',dl:'#'},'5':{count:24,url:'season5.html',thumb:'../../../img/Nanatsu no taizai TEM  5.jpg',dl:'#'},'pc':{count:1,url:'prisioneros-del-cielo.html',thumb:'../../../img/Nanatsu no taizai Prisioneros del Cielo.jpg',dl:'#'},'ml':{count:1,url:'la-maldicion-de-la-luz.html',thumb:'../../../img/Nanatsu no taizai La Maldición de la Luz.jpg',dl:'#'}}
+    const seasons={'1':{count:24,url:'season1.html',thumb:'../../../img/Nanatsu no taizai TEM  1.jpg',dl:'descargar-s1.html'},'2':{count:24,url:'season2.html',thumb:'../../../img/Nanatsu no taizai TEM  2.jpg',dl:'descargar-s2.html'},'3':{count:24,url:'season3.html',thumb:'../../../img/Nanatsu no taizai TEM  3.jpg',dl:'descargar-s3.html'},'4':{count:24,url:'season4.html',thumb:'../../../img/Nanatsu no taizai TEM  4.jpg',dl:'descargar-s4.html'},'5':{count:24,url:'season5.html',thumb:'../../../img/Nanatsu no taizai TEM  5.jpg',dl:'descargar-s5.html'},'pc':{count:1,url:'prisioneros-del-cielo.html',thumb:'../../../img/Nanatsu no taizai Prisioneros del Cielo.jpg',dl:'descargar-PrisionerosdelCielo.html'},'ml':{count:1,url:'la-maldicion-de-la-luz.html',thumb:'../../../img/Nanatsu no taizai La Maldición de la Luz.jpg',dl:'descargar-maldiciondelaluz.html'}}
     const grid=document.getElementById('episodes-grid'), select=document.getElementById('season'); function renderSeason(key){ const s=seasons[key]; if(!s||!grid) return; grid.innerHTML=Array.from({length:s.count},(_,i)=>{ const ep=i+1; const isMovie=s.count===1; const label=isMovie ? (key==='pc'?'Prisioneros del Cielo':'La Maldición de la Luz') : `S${key}E${ep}`; const href=isMovie ? s.url : `${s.url}?ep=${ep}`; return `<div class=\"ep-card\"><div class=\"ep-thumb\"><img src=\"${s.thumb}\" alt=\"${label}\"></div><div class=\"ep-info\"><div class=\"ep-title\">${label}</div><div class=\"ep-meta\">${isMovie?'90m':'23m'} · Latino</div></div><a class=\"ep-link\" href=\"${href}\"></a></div>` }).join(''); const dl=document.getElementById('download-link'); if(dl){ dl.href=s.dl; dl.textContent= s.count===1 ? 'Descargar Película' : `Descargar Temporada ${key}` } }
     select.addEventListener('change', e=>renderSeason(e.target.value)); renderSeason('1')
   </script>
