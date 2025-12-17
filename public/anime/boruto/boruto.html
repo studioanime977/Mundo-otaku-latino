@@ -99,7 +99,7 @@
     });
 
     const seasons = {
-      'ng': { count: 33, url: 'boruto-next-generations.html', thumb: '../../../img/borutocads.jpg', dl: 'descargar-next-generations.html' }
+      'ng': { count: 245, url: 'boruto-next-generations.html', thumb: '../../../img/borutocads.jpg', dl: 'descargar-next-generations.html' }
     }
 
     const grid = document.getElementById('episodes-grid')
@@ -108,12 +108,35 @@
     function renderSeason(key) {
       const s = seasons[key]
       if (!s || !grid) return
-      grid.innerHTML = Array.from({ length: s.count }, (_, i) => {
-        const ep = i + 1
-        const label = `E${ep}`
-        const href = `${s.url}?ep=${ep}`
-        return `<div class="ep-card"><div class="ep-thumb"><img src="${s.thumb}" alt="${label}"></div><div class="ep-info"><div class="ep-title">${label}</div><div class="ep-meta">23m · Sub Español</div></div><a class="ep-link" href="${href}"></a></div>`
-      }).join('')
+      grid.innerHTML = ''
+
+      const total = s.count
+      const batchSize = 60
+      let index = 0
+
+      function renderBatch(){
+        const frag = document.createDocumentFragment()
+        const end = Math.min(index + batchSize, total)
+
+        for (; index < end; index++) {
+          const ep = index + 1
+          const label = `E${ep}`
+          const href = `${s.url}?ep=${ep}`
+
+          const card = document.createElement('div')
+          card.className = 'ep-card'
+          card.innerHTML = `<div class="ep-thumb"><img src="${s.thumb}" alt="${label}"></div><div class="ep-info"><div class="ep-title">${label}</div><div class="ep-meta">23m · Sub Español</div></div><a class="ep-link" href="${href}"></a>`
+          frag.appendChild(card)
+        }
+
+        grid.appendChild(frag)
+
+        if (index < total) {
+          requestAnimationFrame(renderBatch)
+        }
+      }
+
+      renderBatch()
       const dl = document.getElementById('download-link')
       if (dl && s.dl) dl.href = s.dl
     }
