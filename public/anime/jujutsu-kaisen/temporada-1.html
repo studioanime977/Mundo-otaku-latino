@@ -204,6 +204,14 @@
                         <span>StreamTape</span>
                     </a>
 
+                    <a href="#" class="server-card" data-server="MEGA"
+                       data-url-lat="#"
+                       data-url-sub="#"
+                       aria-label="MEGA">
+                        <img src="../../../ico/mega.png" alt="MEGA">
+                        <span>MEGA</span>
+                    </a>
+
 
                     <a href="#" class="server-card"
                        data-url-lat="#"
@@ -459,30 +467,30 @@
     }
     let currentEpisode = null;
     const episodes = [
-      { num: 1,  title: "Episodio 1",  op1: "https://mxdrop.to/e/nlnzndv6fgo8pj", st: "https://streamtape.com/e/jA6WLdY4gLcad4/Jujutsu_Kaisen_Epi_1.mp4" },
-      { num: 2,  title: "Episodio 2",  op1: "https://mxdrop.to/e/xw949m3lc37gkd", st: "https://streamtape.com/e/xvY74rkdXehDpv/Jujutsu_Kaisen_Epi_2.mp4" },
-      { num: 3,  title: "Episodio 3",  op1: "https://mxdrop.to/e/r60807xdto0kr4", st: "https://streamtape.com/e/LMZzGOAoeZcRpPD/Jujutsu_Kaisen_Epi_3.mp4" },
-      { num: 4,  title: "Episodio 4",  op1: "https://mxdrop.to/e/7kj7jz3dfdepdqg", st: "https://streamtape.com/e/A6XYZKwY0bIXy3L/Jujutsu_Kaisen_Epi_4.mp4" },
-      { num: 5,  title: "Episodio 5",  op1: "https://mxdrop.to/e/wlw4wqxrt0zgv74", st: "https://streamtape.com/e/Ry0LvvBwyOtdyLW/Jujutsu_Kaisen_Epi_5.mp4" },
-      { num: 6,  title: "Episodio 6",  op1: "https://mxdrop.to/e/r608079lukll9g", st: "https://streamtape.com/e/Kqq3w9g0egF0yK2/Jujutsu_Kaisen_Epi_6.mp4" },
-      { num: 7,  title: "Episodio 7",  op1: "https://mxdrop.to/e/k0eqeonxsvrkve", st: "https://streamtape.com/e/Q00O1QMV0lI00ya/Jujutsu_Kaisen_Epi_7.mp4" },
-      { num: 8,  title: "Episodio 8",  op1: "https://mxdrop.to/e/4d969jd6b4nprl", st: "https://streamtape.com/e/r9g3y7j6bKCb0vD/Jujutsu_Kaisen_Epi_8.mp4" },
-      { num: 9,  title: "Episodio 9",  op1: "https://mxdrop.to/e/wlw4wq8zie67m6", st: "https://streamtape.com/e/aGdLolMq0lFMJm/Jujutsu_Kaisen_Epi_9.mp4" },
-      { num: 10, title: "Episodio 10", op1: "https://mxdrop.to/e/4d969wrna07684", st: "https://streamtape.com/e/Vyao6kgoQASYRV/Jujutsu_Kaisen_Epi_10.mp4" },
-      { num: 11, title: "Episodio 11", op1: "https://mxdrop.to/e/36qvql04bkl9kr", st: "https://streamtape.com/e/LYqBwj621RuRzM6/Jujutsu_Kaisen_Epi_11.mp4" },
-      { num: 12, title: "Episodio 12", op1: "https://mxdrop.to/e/36qvqlqxapq8n8", st: "https://streamtape.com/e/6PQvrwQ0m3hLAr/Jujutsu_Kaisen_Epi_12.mp4" },
-      { num: 13, title: "Episodio 13", op1: "https://mxdrop.to/e/q1d3dkvesewvj7", st: "https://streamtape.com/e/e0mXoGa7AviJJv/Jujutsu_Kaisen_Epi_13.mp4" },
-      { num: 14, title: "Episodio 14", op1: "https://mxdrop.to/e/k0eqe4nrf3mvzeg", st: "https://streamtape.com/e/mPoD0Y4keYsbPmB/Jujutsu_Kaisen_Epi_14.mp4" },
-      { num: 15, title: "Episodio 15", op1: "https://mxdrop.to/e/wlw4wzlqfjmjn", st: "https://streamtape.com/e/R6rLrDYGBBsd8j3/Jujutsu_Kaisen_Epi_15.mp4" },
-      { num: 16, title: "Episodio 16", op1: "https://mxdrop.to/e/36qvql11coe8d0", st: "https://streamtape.com/e/dVY3ppWy3bckWyW/Jujutsu_Kaisen_Epi_16.mp4" },
-      { num: 17, title: "Episodio 17", op1: "https://mxdrop.to/e/l7919prws3nmlq", st: "https://streamtape.com/e/zrybjwpBjgtYmZP/Jujutsu_Kaisen_Epi_17.mp4" },
-      { num: 18, title: "Episodio 18", op1: "https://mxdrop.to/e/vkq4qxdmsmvokg", st: "https://streamtape.com/e/wYkaza2KkvTJ7BR/Jujutsu_Kaisen_Epi_18.mp4" },
-      { num: 19, title: "Episodio 19", op1: "https://mxdrop.to/e/vkq4qx46iejmnv", st: "https://streamtape.com/e/BB4M4xooOLCypoD/Jujutsu_Kaisen_Epi_19.mp4" },
-      { num: 20, title: "Episodio 20", op1: "https://mxdrop.to/e/mkzxz6gvazj3vl", st: "https://streamtape.com/e/6xz0B7RR8pi9MGk/Jujutsu_Kaisen_Epi_20.mp4" },
-      { num: 21, title: "Episodio 21", op1: "https://mxdrop.to/e/03zgz0epi41gpw", st: "https://streamtape.com/e/1q2bG0aVkvSeoAA/Jujutsu_Kaisen_Epi_21.mp4" },
-      { num: 22, title: "Episodio 22", op1: "https://mxdrop.to/e/1no3o779h06gn9", st: "https://streamtape.com/e/YZJX9RKG7Qc30Y/Jujutsu_Kaisen_Epi_22.mp4" },
-      { num: 23, title: "Episodio 23", op1: "https://mxdrop.to/e/elzdz3g9u0x4zd", st: "https://streamtape.com/e/gVpYMb4Dv8TqdOw/Jujutsu_Kaisen_Epi_23.mp4" },
-      { num: 24, title: "Episodio 24", op1: "https://mxdrop.to/e/7kj7jz44s80oq", st: "https://streamtape.com/e/0L4ddbKm11CbPW2/Jujutsu_Kaisen_Epi_24.mp4" }
+      { num: 1,  title: "Episodio 1",  op1: "https://mxdrop.to/e/nlnzndv6fgo8pj", st: "https://streamtape.com/e/jA6WLdY4gLcad4/Jujutsu_Kaisen_Epi_1.mp4", mega: "https://mega.nz/embed/ddF2XKBC#aWPsr17ZwXtBYQhUhiwNKTpPYtdo0V_bK7ZWh7SrBug", megaSub: "https://mega.nz/embed/RcNk0RxZ#wZR54whhn1OyUhsCdzRT4jG4gRwCm2YcSyIZWsWsj6s" },
+      { num: 2,  title: "Episodio 2",  op1: "https://mxdrop.to/e/xw949m3lc37gkd", st: "https://streamtape.com/e/xvY74rkdXehDpv/Jujutsu_Kaisen_Epi_2.mp4", mega: "https://mega.nz/embed/EMFTVYYb#SwDXpdfBWbmuuk0VqBePIw2UPngYINvV-m4NYSkGJQE", megaSub: "https://mega.nz/embed/NRVhTYIJ#sJ_Ub9-7Eq40d3zPcXNp9O2XLA2gVFGjnETR9mp_JzM" },
+      { num: 3,  title: "Episodio 3",  op1: "https://mxdrop.to/e/r60807xdto0kr4", st: "https://streamtape.com/e/LMZzGOAoeZcRpPD/Jujutsu_Kaisen_Epi_3.mp4", mega: "https://mega.nz/embed/9UdjVDaK#tDSnuWoNUQLYX4Mx2QyHlTww42bHiH7YwFVyelu32AE", megaSub: "https://mega.nz/embed/BYFTBApA#vQmu1-Wm3qZSQMqfsrrl90iODZgOgZYn-Hru7hFh5gY" },
+      { num: 4,  title: "Episodio 4",  op1: "https://mxdrop.to/e/7kj7jz3dfdepdqg", st: "https://streamtape.com/e/A6XYZKwY0bIXy3L/Jujutsu_Kaisen_Epi_4.mp4", mega: "https://mega.nz/embed/8FkwlJoQ#IYIC-yroG5bbcblJBCGVt3RtKY5VwDynGh8ZuJ8ZSEk", megaSub: "https://mega.nz/embed/QQ8nCKJB#PVdTNIXY8Bd1uIfGZDqQcaHr1hGPwOLnSgSZL5TScrg" },
+      { num: 5,  title: "Episodio 5",  op1: "https://mxdrop.to/e/wlw4wqxrt0zgv74", st: "https://streamtape.com/e/Ry0LvvBwyOtdyLW/Jujutsu_Kaisen_Epi_5.mp4", mega: "https://mega.nz/embed/gRNAXL4C#RumSXIq1A0W9Zfu6NXkaMZlnsfVEOnFDKO-BmPyfjjU", megaSub: "https://mega.nz/embed/tdFiRRra#zsi_Mhnk73Ctgo6fP-8dEbXnzOjj-GEJDVLBJeYFlGs" },
+      { num: 6,  title: "Episodio 6",  op1: "https://mxdrop.to/e/r608079lukll9g", st: "https://streamtape.com/e/Kqq3w9g0egF0yK2/Jujutsu_Kaisen_Epi_6.mp4", mega: "https://mega.nz/embed/lJlkiCQS#r7oZSTGs1Yo5-66Mqzst_YM14cOwx4zGqI_rxTNR2vs", megaSub: "https://mega.nz/embed/0YMXBChC#OtgRLj01jFDbIMTOPwksY_x5L7C7ambE87QOEGXYkMg" },
+      { num: 7,  title: "Episodio 7",  op1: "https://mxdrop.to/e/k0eqeonxsvrkve", st: "https://streamtape.com/e/Q00O1QMV0lI00ya/Jujutsu_Kaisen_Epi_7.mp4", mega: "https://mega.nz/embed/1Zs0gYQQ#cTf7ezlH6ccxEeO9NUI5NJTFVVcDNZG_sW84dPlENVE", megaSub: "https://mega.nz/embed/RFcHDAqR#n2kEDIrGiMj2I0Muvh-CgbzL3BV2NEIO3mfe16Y5Ork" },
+      { num: 8,  title: "Episodio 8",  op1: "https://mxdrop.to/e/4d969jd6b4nprl", st: "https://streamtape.com/e/r9g3y7j6bKCb0vD/Jujutsu_Kaisen_Epi_8.mp4", mega: "https://mega.nz/embed/8QFDQAaK#4gL3fBF936pB_sLGV3edtDtrD4I7z09-4D_merFy1NE", megaSub: "https://mega.nz/embed/0IUWRT7R#1gnw_zjD-uPPmD1c4X1e2HMeBha9DGAkBU-QwKa_hsw" },
+      { num: 9,  title: "Episodio 9",  op1: "https://mxdrop.to/e/wlw4wq8zie67m6", st: "https://streamtape.com/e/aGdLolMq0lFMJm/Jujutsu_Kaisen_Epi_9.mp4", mega: "https://mega.nz/embed/JM1XUSSa#n1A9vkN8uzvQkCauDWmnp8sDbB_aByll-jr-80Eg7oc", megaSub: "https://mega.nz/embed/oMkknb4Z#v_qnxfT6i88pb2DOKg2wUoqSSb2KkvoFs47sFgDai18" },
+      { num: 10, title: "Episodio 10", op1: "https://mxdrop.to/e/4d969wrna07684", st: "https://streamtape.com/e/Vyao6kgoQASYRV/Jujutsu_Kaisen_Epi_10.mp4", mega: "https://mega.nz/embed/RJVgWZbQ#lWKDNYFu-ErGgXCFGitocVcBvk65h5M6zQ4SMNuAGm8", megaSub: "https://mega.nz/embed/NM1WhabQ#8tpS3PFYX2WS0q8n8CC-xjGhCuuMSKXiSUs1yu4m-uw" },
+      { num: 11, title: "Episodio 11", op1: "https://mxdrop.to/e/36qvql04bkl9kr", st: "https://streamtape.com/e/LYqBwj621RuRzM6/Jujutsu_Kaisen_Epi_11.mp4", mega: "https://mega.nz/embed/BZNDwJqC#0Rm7C6NuHp6Y14yTYF-JfCOxi588CG40oHIgpYBG584", megaSub: "https://mega.nz/embed/YY921YKK#cTBq8i2qBe0YNlS_6-tHrCLNASBqbpTApV2zc7XJ81k" },
+      { num: 12, title: "Episodio 12", op1: "https://mxdrop.to/e/36qvqlqxapq8n8", st: "https://streamtape.com/e/6PQvrwQ0m3hLAr/Jujutsu_Kaisen_Epi_12.mp4", mega: "https://mega.nz/embed/tJVHVQKR#7wtrxWQk5GpGTi5jP28CjE_j82QcKVNH7AKNF8caEFo", megaSub: "https://mega.nz/embed/kRl2BSwI#-DSv9DGmYCcOlqkfyn4dZC2NtdxpV7T4X_Eeiwv9vX0" },
+      { num: 13, title: "Episodio 13", op1: "https://mxdrop.to/e/q1d3dkvesewvj7", st: "https://streamtape.com/e/e0mXoGa7AviJJv/Jujutsu_Kaisen_Epi_13.mp4", mega: "https://mega.nz/embed/MAtDkabK#2JenPAAqMsndKDg5jWpwQtoALRmUBHq5qo4p6aYVj4A", megaSub: "https://mega.nz/embed/ZJ0kERDS#9vqaCPN0yINSoKVhnB15Ya4RzTsHF_52v9GAPBzQBDc" },
+      { num: 14, title: "Episodio 14", op1: "https://mxdrop.to/e/k0eqe4nrf3mvzeg", st: "https://streamtape.com/e/mPoD0Y4keYsbPmB/Jujutsu_Kaisen_Epi_14.mp4", mega: "https://mega.nz/embed/dE1SnDDZ#ipWZ123c6g6Xr0J-V2DX-klxa8JGqkRwolrhoyXQuik", megaSub: "https://mega.nz/embed/IV02lbiL#7phmgxrwLyLmCMc_c8FfUrNZyfzRz6bAbEAI8DrMAFA" },
+      { num: 15, title: "Episodio 15", op1: "https://mxdrop.to/e/wlw4wzlqfjmjn", st: "https://streamtape.com/e/R6rLrDYGBBsd8j3/Jujutsu_Kaisen_Epi_15.mp4", mega: "https://mega.nz/embed/gFdRELaS#20r-nkBtcO30G4JQh7kxqLNBZN4aj16-ke-b3-lfZ-g", megaSub: "https://mega.nz/embed/tA9jEJ5Q#e87viDLHdG19CyTsKfzHlhYlrLGc3UlfGbIfq2DJDWM" },
+      { num: 16, title: "Episodio 16", op1: "https://mxdrop.to/e/36qvql11coe8d0", st: "https://streamtape.com/e/dVY3ppWy3bckWyW/Jujutsu_Kaisen_Epi_16.mp4", mega: "https://mega.nz/embed/wF8lBaIL#9zfNMjtSfIHSEupNqbXOBND49eBPBwtJVY1z0YstnU0", megaSub: "https://mega.nz/embed/dBNgVB7L#RiWfAwgGq3F6yDfNLOiY9_s1P99piFx4gsNT63ipxZQ" },
+      { num: 17, title: "Episodio 17", op1: "https://mxdrop.to/e/l7919prws3nmlq", st: "https://streamtape.com/e/zrybjwpBjgtYmZP/Jujutsu_Kaisen_Epi_17.mp4", mega: "https://mega.nz/embed/kFV1CBRR#notY-6cKCcUrSYSNxxOq9AabhWCIK883Rgg33gmpeXM", megaSub: "https://mega.nz/embed/dMknSRzA#Y2rhIaMUOLwiHojF9IpSGk_-g6khjMDDqo_9xqjl-8k" },
+      { num: 18, title: "Episodio 18", op1: "https://mxdrop.to/e/vkq4qxdmsmvokg", st: "https://streamtape.com/e/wYkaza2KkvTJ7BR/Jujutsu_Kaisen_Epi_18.mp4", mega: "https://mega.nz/embed/ER0ARTYC#Gt_YkUYHfNomjXvoa_0c-waB_ot1QyszTtrTv1WuCTI", megaSub: "https://mega.nz/embed/hN9ySZjY#fP4YDGoN87RRp8DU4cqgvmVK5H9c1ctRPAUJCp6D7i8" },
+      { num: 19, title: "Episodio 19", op1: "https://mxdrop.to/e/vkq4qx46iejmnv", st: "https://streamtape.com/e/BB4M4xooOLCypoD/Jujutsu_Kaisen_Epi_19.mp4", mega: "https://mega.nz/embed/IRlkTCDT#JbBp8_ofLYDlyZ7mTw_lkKK8xaNeljke7votCbcCfKE", megaSub: "https://mega.nz/embed/RElFDbxA#JfgP1Vn1yD6uX9AwGNvKPt4X5hDMLDOxJjFWYzSL8Cg" },
+      { num: 20, title: "Episodio 20", op1: "https://mxdrop.to/e/mkzxz6gvazj3vl", st: "https://streamtape.com/e/6xz0B7RR8pi9MGk/Jujutsu_Kaisen_Epi_20.mp4", mega: "https://mega.nz/embed/AFsGnbaa#-zw7bcXxMW4xNDhYeKsQMV_pg5BY9kwFNTElwzWrGnQ", megaSub: "https://mega.nz/embed/8AFzjCqC#AeKD_X0RzkCh14mnX8BBN4imbQuIwJdqsAgIj-cnlis" },
+      { num: 21, title: "Episodio 21", op1: "https://mxdrop.to/e/03zgz0epi41gpw", st: "https://streamtape.com/e/1q2bG0aVkvSeoAA/Jujutsu_Kaisen_Epi_21.mp4", mega: "https://mega.nz/embed/JdtyASqL#9GcNmoQgWdEDd2-F7FNeenAwGfY-LuqLR4heJ6X4r2c", megaSub: "https://mega.nz/embed/dAtQhJwK#xX4qQZHeqLRz0M_07JBm4evj2ElznoFaiMNYb_QE_qY" },
+      { num: 22, title: "Episodio 22", op1: "https://mxdrop.to/e/1no3o779h06gn9", st: "https://streamtape.com/e/YZJX9RKG7Qc30Y/Jujutsu_Kaisen_Epi_22.mp4", mega: "https://mega.nz/embed/oY9xwQxD#lW0fXXAuQ9LKZKtJgPOrjcMC4yi6370ibeK7SKSLj_s", megaSub: "https://mega.nz/embed/dIsWBBrZ#Jz-7FjVQRHek0v9O35qK1tjNy2_djtBI-HqiOUuguSI" },
+      { num: 23, title: "Episodio 23", op1: "https://mxdrop.to/e/elzdz3g9u0x4zd", st: "https://streamtape.com/e/gVpYMb4Dv8TqdOw/Jujutsu_Kaisen_Epi_23.mp4", mega: "https://mega.nz/embed/oEdkQYKa#hezDUeKWK_6eDEovQ85PSU-vJS3pXuzAE6dDQMga2SM", megaSub: "https://mega.nz/embed/ARUmRBZS#GzPS8qKbbxMr9s0lN_h1Ox4qmjuqdnB4XUNg42PBKh8" },
+      { num: 24, title: "Episodio 24", op1: "https://mxdrop.to/e/7kj7jz44s80oq", st: "https://streamtape.com/e/0L4ddbKm11CbPW2/Jujutsu_Kaisen_Epi_24.mp4", mega: "https://mega.nz/embed/FU8h0SYR#0Vd_aIuHZKCL5Ic7GrqhhScFGoeAZxrZONsUaQbicmE", megaSub: "https://mega.nz/embed/AYlQnApJ#t2SpHTHjs8Xm5umIrd77RNZfPDCEZ_0W5QktMy2jzl8" }
     ];
     const episodesGrid = document.getElementById('episodes-grid');
     episodes.forEach(episode => {
@@ -495,9 +503,12 @@
     function applyEpisodeToServerGrid(ep) {
       const mixdropCard = document.querySelector('.server-card[data-server="MixDrop"]');
       const streamTapeCard = document.querySelector('.server-card[data-server="StreamTape"]');
-      const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"]):not([data-server="StreamTape"])');
+      const megaCard = document.querySelector('.server-card[data-server="MEGA"]');
+      const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"]):not([data-server="StreamTape"]):not([data-server="MEGA"])');
       const latUrlMix = normalizeUrl(ep.op1 || '');
       const latUrlSt = normalizeUrl(ep.st || '');
+      const latUrlMega = normalizeUrl(ep.mega || '');
+      const subUrlMega = normalizeUrl(ep.megaSub || '');
       if (mixdropCard) {
         mixdropCard.setAttribute('data-url-lat', latUrlMix || '#');
         const fb = mixdropFallback(latUrlMix);
@@ -508,6 +519,11 @@
         streamTapeCard.setAttribute('data-url-lat', latUrlSt || '#');
         streamTapeCard.setAttribute('data-url-sub', '#');
         streamTapeCard.removeAttribute('data-fallback-lat');
+      }
+      if (megaCard) {
+        megaCard.setAttribute('data-url-lat', latUrlMega || '#');
+        megaCard.setAttribute('data-url-sub', subUrlMega || '#');
+        megaCard.removeAttribute('data-fallback-lat');
       }
       otherCards.forEach(card => { card.setAttribute('data-url-lat', '#'); card.setAttribute('data-url-sub', '#'); });
     }
@@ -548,8 +564,8 @@
         const lang = btn.dataset.language;
         const hasLinks = (ep) => {
           if (!ep) return false;
-          if (lang === 'sub') return false;
-          return Boolean(normalizeUrl(ep.op1 || '') || normalizeUrl(ep.st || ''));
+          if (lang === 'sub') return Boolean(normalizeUrl(ep.megaSub || ''));
+          return Boolean(normalizeUrl(ep.op1 || '') || normalizeUrl(ep.st || '') || normalizeUrl(ep.mega || ''));
         };
         if (!hasLinks(currentEpisode)) {
           const target = episodes.find(e => hasLinks(e)) || episodes[0];

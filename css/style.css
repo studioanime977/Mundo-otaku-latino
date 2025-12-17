@@ -12,6 +12,10 @@
   box-shadow: 0 0 15px rgba(255, 0, 150, 0.3);
 }
 
+.btn-copy {
+  display: none !important;
+}
+
 @media (max-width: 768px) {
   .anuncio-responsive {
     margin: 10px auto;

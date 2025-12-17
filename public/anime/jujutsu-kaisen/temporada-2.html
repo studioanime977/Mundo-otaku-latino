@@ -204,6 +204,14 @@
                         <span>StreamTape</span>
                     </a>
 
+                    <a href="#" class="server-card" data-server="MEGA"
+                       data-url-lat="#"
+                       data-url-sub="#"
+                       aria-label="MEGA">
+                        <img src="../../../ico/mega.png" alt="MEGA">
+                        <span>MEGA</span>
+                    </a>
+
 
                     <a href="#" class="server-card"
                        data-url-lat="#"
@@ -457,29 +465,33 @@
       const m = url.match(/https?:\/\/mxdrop\.to\/e\/([^\/?#]+)/i);
       return m ? `https://mdy48tn97.com/e/${m[1]}` : '';
     }
+    function megaEmbedFromFile(url) {
+      if (!url) return '';
+      return url.replace('mega.nz/file/', 'mega.nz/embed/');
+    }
     let currentEpisode = null;
     const episodes = [
-      { num: 1,  title: "Episodio 1",  op1: "https://mxdrop.to/e/36qvqw83hjpvoj", st: "https://streamtape.com/e/vYrMxPWZMXt4g0a/jujutsusu_S2_E1.mp4" },
-      { num: 2,  title: "Episodio 2",  op1: "https://mxdrop.to/e/1no3owkgs36vej", st: "https://streamtape.com/e/glJDg1lJeAUJbb/jujutsusu_S2_E2.mkv.mp4" },
-      { num: 3,  title: "Episodio 3",  op1: "https://mxdrop.to/e/dkr6dormumw8ww", st: "https://streamtape.com/e/ggY74KoWdZS3pQ/jujutsusu_S2_E3.mkv.mp4" },
-      { num: 4,  title: "Episodio 4",  op1: "https://mxdrop.to/e/pj6g90jrhgdw7rl", st: "https://streamtape.com/e/9WJRmVJ6ZKhO9X/jujutsusu_S2_E4.mkv.mp4" },
-      { num: 5,  title: "Episodio 5",  op1: "https://mxdrop.to/e/pj6g90e3iklo63", st: "https://streamtape.com/e/D90y60wvj9TwkZ/jujutsusu_S2_E5.mkv.mp4" },
-      { num: 6,  title: "Episodio 6",  op1: "https://mxdrop.to/e/owzm9drkb13n48", st: "https://streamtape.com/e/DPdJGbqD4Ackaxr/jujutsusu_S2_E6.mkv.mp4" },
-      { num: 7,  title: "Episodio 7",  op1: "https://mxdrop.to/e/4d96mo66tlroo7", st: "https://streamtape.com/e/WgelerBL3YHbjRB/jujutsusu_S2_E7.mkv.mp4" },
-      { num: 8,  title: "Episodio 8",  op1: "https://mxdrop.to/e/dkr6dopji73n8nk", st: "https://streamtape.com/e/MkVPP0rG6QHm76r/jujutsusu_S2_E8.mkv.mp4" },
-      { num: 9,  title: "Episodio 9",  op1: "https://mxdrop.to/e/8ljkq9m7t6d3k0n", st: "https://streamtape.com/e/ZV32YWyVjzhqlw6/jujutsusu_S2_E9.mkv.mp4" },
-      { num: 10, title: "Episodio 10", op1: "https://mxdrop.to/e/owzmz6o7s6rke6", st: "https://streamtape.com/e/8P0RgqPjkltowoP/jujutsusu_S2_E10.mkv.mp4" },
-      { num: 11, title: "Episodio 11", op1: "https://mxdrop.to/e/gjd7d8p7tjx9k1", st: "https://streamtape.com/e/9y678XGz0mtaKMa/jujutsusu_S2_E11.mkv.mp4" },
-      { num: 12, title: "Episodio 12", op1: "https://mxdrop.to/e/l79194pdflro9e", st: "https://streamtape.com/e/bZKa1W7P9ghP0mw/jujutsusu_S2_E12.mkv.mp4" },
-      { num: 13, title: "Episodio 13", op1: "https://mxdrop.to/e/vkq4qw9muqjo8g", st: "https://streamtape.com/e/OxyGdMDkyWfZjyr/jujutsusu_S2_E13.mkv.mp4" },
-      { num: 14, title: "Episodio 14", op1: "https://mxdrop.to/e/q1d3d4dla709o3", st: "https://streamtape.com/e/rKPaMPqx6Wsb6Ol/jujutsusu_S2_E14.mkv.mp4" },
-      { num: 15, title: "Episodio 15", op1: "https://mxdrop.to/e/vkq4qwk9tq84kmq", st: "https://streamtape.com/e/Vx1aPzrVoVcK2mz/jujutsusu_S2_E15.mkv.mp4" },
-      { num: 16, title: "Episodio 16", op1: "https://mxdrop.to/e/q1d3d4qqtnd8ov", st: "https://streamtape.com/e/8K9qyYPXp1sjjr/jujutsusu_S2_E16.mkv.mp4" },
-      { num: 17, title: "Episodio 17", op1: "https://mxdrop.to/e/pj6g6roraqjrgv", st: "https://streamtape.com/e/pMXlBgeRVOHryaM/jujutsusu_S2_E17.mkv.mp4" },
-      { num: 18, title: "Episodio 18", op1: "https://mxdrop.to/e/8ljkjpe3hqpqrm", st: "https://streamtape.com/e/BYwW81a3ZxHyzJq/jujutsusu_S2_E18.mkv.mp4" },
-      { num: 19, title: "Episodio 19", op1: "https://mxdrop.to/e/l7919x49hogg67", st: "https://streamtape.com/e/KXBpjvxGZecJKB/jujutsusu_S2_E19.mkv.mp4" },
-      { num: 20, title: "Episodio 20", op1: "https://mxdrop.to/e/pj6g90p6a901oo", st: "https://streamtape.com/e/QKXp4aZgMjh0Oow/jujutsusu_S2_E20.mkv.mp4" },
-      { num: 21, title: "Episodio 21", op1: "https://mxdrop.to/e/67r09wlqix0qon", st: "https://streamtape.com/e/vo9rKdaZZpC4p24/jujutsusu_S2_E21.mkv.mp4" }
+      { num: 1,  title: "Episodio 1",  op1: "https://mxdrop.to/e/36qvqw83hjpvoj", st: "https://streamtape.com/e/vYrMxPWZMXt4g0a/jujutsusu_S2_E1.mp4", megaFile: "https://mega.nz/file/ABtHmIBA#5Rn7efbx3dcqfVlsPFfRjTk6HI6IhFs6GDg79ePuH8I", megaSubFile: "https://mega.nz/file/RRsHSTiS#e8BNhqyxoCltQWuB03CaShL-MmAXnzrc9siq2waGw10" },
+      { num: 2,  title: "Episodio 2",  op1: "https://mxdrop.to/e/1no3owkgs36vej", st: "https://streamtape.com/e/glJDg1lJeAUJbb/jujutsusu_S2_E2.mkv.mp4", megaFile: "https://mega.nz/file/dYkgwC7a#ZnVZFCLQ_fc3sK2Fi30OSWxkGNlIlYYPr3UJn21uty0", megaSubFile: "https://mega.nz/file/9JsRhIgK#IbGBausol7afE1ZsI4bZq_6lCPk8iZO7URVu2yAFHwQ" },
+      { num: 3,  title: "Episodio 3",  op1: "https://mxdrop.to/e/dkr6dormumw8ww", st: "https://streamtape.com/e/ggY74KoWdZS3pQ/jujutsusu_S2_E3.mkv.mp4", megaFile: "https://mega.nz/file/AIk1iJAK#zQ6LifVuRCK7SfHhkgg3h806en4VfPDfA1YAddr9r8s", megaSubFile: "https://mega.nz/file/ZEciSB4I#wUPiOkNl8lnFImurxXTxX0fqb4zHlOf3jXdqNaKlgOI" },
+      { num: 4,  title: "Episodio 4",  op1: "https://mxdrop.to/e/pj6g90jrhgdw7rl", st: "https://streamtape.com/e/9WJRmVJ6ZKhO9X/jujutsusu_S2_E4.mkv.mp4", megaFile: "https://mega.nz/file/Zd0TGCLY#XtecuvTujFyCKg2MjqqJY_05bLXdTV9LFfq4dW4CMT0", megaSubFile: "https://mega.nz/file/RcMHHZLQ#N6YO-5r1Z3Zfz468HRmt5ioTHNgROHSfiijm7hJ0NPc" },
+      { num: 5,  title: "Episodio 5",  op1: "https://mxdrop.to/e/pj6g90e3iklo63", st: "https://streamtape.com/e/D90y60wvj9TwkZ/jujutsusu_S2_E5.mkv.mp4", megaFile: "https://mega.nz/file/YVlRUKRC#xJ1FjAqOT1IpyW_tB5zRJ8IZpD1Lem8L_x9-Ix44eIM", megaSubFile: "https://mega.nz/file/sdtmzDYA#Isr4SJwvDs8KlCRyXWzeDTyF6yCqshRdYsNsGl-jb5g" },
+      { num: 6,  title: "Episodio 6",  op1: "https://mxdrop.to/e/owzm9drkb13n48", st: "https://streamtape.com/e/DPdJGbqD4Ackaxr/jujutsusu_S2_E6.mkv.mp4", megaFile: "https://mega.nz/file/EEVCBDRb#xEBBz_Ltf1Tr0G_PPK_Vs88hgutovfH267M82PX3ONY", megaSubFile: "https://mega.nz/file/hJsziKLD#5odLPo1QEPJ44IjFPnNWCHuUpG0j9ZnY7eLmxaPnZv8" },
+      { num: 7,  title: "Episodio 7",  op1: "https://mxdrop.to/e/4d96mo66tlroo7", st: "https://streamtape.com/e/WgelerBL3YHbjRB/jujutsusu_S2_E7.mkv.mp4", megaFile: "https://mega.nz/file/YZkUUJ7R#2TTWx3Sb_dnPR9OM0zrDdVWlPwpMyhU5OL09AATtHbw", megaSubFile: "https://mega.nz/file/Rcdh2RIJ#iZv8quIzguaftHAYTYNAA6rI5jAHpRW1B6FptEaqKG4" },
+      { num: 8,  title: "Episodio 8",  op1: "https://mxdrop.to/e/dkr6dopji73n8nk", st: "https://streamtape.com/e/MkVPP0rG6QHm76r/jujutsusu_S2_E8.mkv.mp4", megaFile: "https://mega.nz/file/pJVznBbR#j5KkNIbEqR3JsGOTCxG-VGSjYpxHdzCOPcdo2fJY2SU", megaSubFile: "https://mega.nz/file/gBESxQ7Z#a1b8iKlau4j2HvDDDyc6hqIFP5F_BfvsXNvshBEo3I4" },
+      { num: 9,  title: "Episodio 9",  op1: "https://mxdrop.to/e/8ljkq9m7t6d3k0n", st: "https://streamtape.com/e/ZV32YWyVjzhqlw6/jujutsusu_S2_E9.mkv.mp4", megaFile: "https://mega.nz/file/8RdgWIhB#50V1olVBOQprqjRJAC_aCNY2KUstdE8HF-oRnG5xUtk", megaSubFile: "https://mega.nz/file/xNV11QgZ#TFlm52ohlYzfJwAHQUjqJXzoxGP8wivYm31Nj2JNCRU" },
+      { num: 10, title: "Episodio 10", op1: "https://mxdrop.to/e/owzmz6o7s6rke6", st: "https://streamtape.com/e/8P0RgqPjkltowoP/jujutsusu_S2_E10.mkv.mp4", megaFile: "https://mega.nz/file/lckm3ZCD#jVvZrhkveK4zmtCp-9ImBKb-Sk7LdML_Ou8Gltj6hkk", megaSubFile: "https://mega.nz/file/dQ1hRRyQ#DJT1KtwoOlw59zR1NOx4wzJ1jsjOk2tTSetsBGt7b6I" },
+      { num: 11, title: "Episodio 11", op1: "https://mxdrop.to/e/gjd7d8p7tjx9k1", st: "https://streamtape.com/e/9y678XGz0mtaKMa/jujutsusu_S2_E11.mkv.mp4", megaFile: "https://mega.nz/file/pc1AVC6a#7L-nxkBj3z2wh4K7bP7PDyEm9A1jRuIFnSNg-kntsZs", megaSubFile: "https://mega.nz/file/BAczGIra#PKusvDpUJQk1egC1Dwg01XQtx8l3k8BX26JykE4tRJo" },
+      { num: 12, title: "Episodio 12", op1: "https://mxdrop.to/e/l79194pdflro9e", st: "https://streamtape.com/e/bZKa1W7P9ghP0mw/jujutsusu_S2_E12.mkv.mp4", megaFile: "https://mega.nz/file/dE1AGRyB#X-kjPDk6ZamdJHuKQ0Zm2ya5JxV9i_iANNNFQg-BOgk", megaSubFile: "https://mega.nz/file/hV8XEAgI#x159w1OMyoxp9SzTL0xC_nMHWEaxnGwKyIo6cW2mN4I" },
+      { num: 13, title: "Episodio 13", op1: "https://mxdrop.to/e/vkq4qw9muqjo8g", st: "https://streamtape.com/e/OxyGdMDkyWfZjyr/jujutsusu_S2_E13.mkv.mp4", megaFile: "https://mega.nz/file/wBVTlJZZ#4TMTbuViRg2JEvsMXNyFVV9fgEgor5NmvS6fw8sBsi4", megaSubFile: "https://mega.nz/file/0Z9SGaaL#mND0TMNTo7H4Zh5DekMb0FW6DXkOSgRlcs8TiJBveso" },
+      { num: 14, title: "Episodio 14", op1: "https://mxdrop.to/e/q1d3d4dla709o3", st: "https://streamtape.com/e/rKPaMPqx6Wsb6Ol/jujutsusu_S2_E14.mkv.mp4", megaFile: "https://mega.nz/file/4MdgET5D#DORnYcynlwr-Zi098_WLKaUf6eLDEw0g5FIvoN40TxE", megaSubFile: "https://mega.nz/file/MZ8yjBIA#YXvrZjhSQ3jVryFucEsokm3dPZrqnkPoNrLS7tWEQaI" },
+      { num: 15, title: "Episodio 15", op1: "https://mxdrop.to/e/vkq4qwk9tq84kmq", st: "https://streamtape.com/e/Vx1aPzrVoVcK2mz/jujutsusu_S2_E15.mkv.mp4", megaFile: "https://mega.nz/file/AM1UGJQC#GcilZrU2cMejJfVCI54u3ztTXKWP8uwNj5LCxXd-LR8", megaSubFile: "https://mega.nz/file/gVNxxJYS#6fiLSBY9mn5pMuWbUCjAURYfK9piP08cw9mZSdTeM_8" },
+      { num: 16, title: "Episodio 16", op1: "https://mxdrop.to/e/q1d3d4qqtnd8ov", st: "https://streamtape.com/e/8K9qyYPXp1sjjr/jujutsusu_S2_E16.mkv.mp4", megaFile: "https://mega.nz/file/dBMBxaCL#r07_9WStpzqLQQ1AJL4IoUwd8aKPrWkm2JJ0kAuXFao", megaSubFile: "https://mega.nz/file/YAsEzTJC#h_CrZ-O-pdUQ85uP9g6X67DU48woS8Bf7O3xtpYvb0M" },
+      { num: 17, title: "Episodio 17", op1: "https://mxdrop.to/e/pj6g6roraqjrgv", st: "https://streamtape.com/e/pMXlBgeRVOHryaM/jujutsusu_S2_E17.mkv.mp4", megaFile: "https://mega.nz/file/5d13GIJK#L-jJGlkPB64Faab8deSBrqrvoHWMVpzaH2x6aNPP560", megaSubFile: "https://mega.nz/file/gFEiQC7R#FTupKwdBHvlayctCYCgu1iRDB1JD9S2Mx7dTxbEQdRU" },
+      { num: 18, title: "Episodio 18", op1: "https://mxdrop.to/e/8ljkjpe3hqpqrm", st: "https://streamtape.com/e/BYwW81a3ZxHyzJq/jujutsusu_S2_E18.mkv.mp4", megaFile: "https://mega.nz/file/pd8DnTQL#wrPX3i4bxSTwE7B4FttYV4x6Oh-2pwSYxTuWOUzZL5Y", megaSubFile: "https://mega.nz/file/MYMRQAZa#afgJdhOpt_Jkko-Ig5rXBi1B0SW1C1Ezn18vOXzEC70" },
+      { num: 19, title: "Episodio 19", op1: "https://mxdrop.to/e/l7919x49hogg67", st: "https://streamtape.com/e/KXBpjvxGZecJKB/jujutsusu_S2_E19.mkv.mp4", megaFile: "https://mega.nz/file/1Qky3T7K#l5VqMzp3uTZTwjCKd3ki0C7--nkptp_U-sXHIhQx3kI", megaSubFile: "https://mega.nz/file/8MUCVYya#6YdMTJZRf1Z9GS7ynvJZi8Dm5xgXN5qsw9tnty7CObo" },
+      { num: 20, title: "Episodio 20", op1: "https://mxdrop.to/e/pj6g90p6a901oo", st: "https://streamtape.com/e/QKXp4aZgMjh0Oow/jujutsusu_S2_E20.mkv.mp4", megaFile: "https://mega.nz/file/ZdlhiAjA#loCHafCGjnylr07N5mmi6NiiZZPVBlCQQw5MBuznL54", megaSubFile: "https://mega.nz/file/dF8UkTLD#zyXTHrlY9MEYXQYnB2M5QWWHh772QmEDAEnN4HN3P6Q" },
+      { num: 21, title: "Episodio 21", op1: "https://mxdrop.to/e/67r09wlqix0qon", st: "https://streamtape.com/e/vo9rKdaZZpC4p24/jujutsusu_S2_E21.mkv.mp4", megaFile: "https://mega.nz/file/dAUBEZyZ#Ey5JpQTaai6SSrZv9h4_CPhK5K48NdDyNGCRQgScCoU", megaSubFile: "https://mega.nz/file/NN1gGRCB#rOScsh-B0W4-ke5jqzO9kpW3b68izErcDSMQV_pZI9g" }
     ];
     const episodesGrid = document.getElementById('episodes-grid');
     episodes.forEach(episode => {
@@ -492,9 +504,12 @@
     function applyEpisodeToServerGrid(ep) {
       const mixdropCard = document.querySelector('.server-card[data-server="MixDrop"]');
       const streamTapeCard = document.querySelector('.server-card[data-server="StreamTape"]');
-      const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"]):not([data-server="StreamTape"])');
+      const megaCard = document.querySelector('.server-card[data-server="MEGA"]');
+      const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"]):not([data-server="StreamTape"]):not([data-server="MEGA"])');
       const latUrlMix = normalizeUrl(ep.op1 || '');
       const latUrlSt = normalizeUrl(ep.st || '');
+      const latUrlMega = megaEmbedFromFile(normalizeUrl(ep.megaFile || ''));
+      const subUrlMega = megaEmbedFromFile(normalizeUrl(ep.megaSubFile || ''));
       if (mixdropCard) {
         mixdropCard.setAttribute('data-url-lat', latUrlMix || '#');
         const fb = mixdropFallback(latUrlMix);
@@ -505,6 +520,11 @@
         streamTapeCard.setAttribute('data-url-lat', latUrlSt || '#');
         streamTapeCard.setAttribute('data-url-sub', '#');
         streamTapeCard.removeAttribute('data-fallback-lat');
+      }
+      if (megaCard) {
+        megaCard.setAttribute('data-url-lat', latUrlMega || '#');
+        megaCard.setAttribute('data-url-sub', subUrlMega || '#');
+        megaCard.removeAttribute('data-fallback-lat');
       }
       otherCards.forEach(card => { card.setAttribute('data-url-lat', '#'); card.setAttribute('data-url-sub', '#'); });
     }
@@ -545,8 +565,8 @@
         const lang = btn.dataset.language;
         const hasLinks = (ep) => {
           if (!ep) return false;
-          if (lang === 'sub') return false;
-          return Boolean(normalizeUrl(ep.op1 || '') || normalizeUrl(ep.st || ''));
+          if (lang === 'sub') return Boolean(normalizeUrl(ep.megaSubFile || ''));
+          return Boolean(normalizeUrl(ep.op1 || '') || normalizeUrl(ep.st || '') || normalizeUrl(ep.megaFile || ''));
         };
         if (!hasLinks(currentEpisode)) {
           const target = episodes.find(e => hasLinks(e)) || episodes[0];

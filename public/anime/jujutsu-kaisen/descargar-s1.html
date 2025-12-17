@@ -26,7 +26,12 @@
     .btn-copy { background:#111; color:#fff; }
     .section { display:none; }
     .section.active { display:block; }
+    .server-rows { display: grid; gap: 14px; }
+    .server-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .server-row.single { grid-template-columns: 1fr; }
+    .server-title { margin: 0 0 10px 0; font-size: 1.1rem; }
     @media (max-width:768px){ .download-grid { grid-template-columns: 1fr; } }
+    @media (max-width:768px){ .server-row { grid-template-columns: 1fr; } }
     /* Footer nuevo */
     .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
     .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -60,6 +65,52 @@
       if (!['lat','sub'].includes(lang)) { lang = 'lat'; }
       setActiveLanguage(lang);
     }
+    function groupLatByServer(){
+      const source = document.getElementById('lat-all-cards');
+      if (!source) return;
+      const mixGrid = document.getElementById('lat-mixdrop-grid');
+      const stGrid = document.getElementById('lat-streamtape-grid');
+      const megaGridB = document.getElementById('lat-mega-grid-b');
+      const cards = Array.from(source.querySelectorAll('.card'));
+      cards.forEach(card => {
+        const titleEl = card.querySelector('h4');
+        const t = (titleEl ? titleEl.textContent : '').toLowerCase();
+        const epMatch = (titleEl ? titleEl.textContent : '').match(/episodio\s+(\d+)/i);
+        const epNum = epMatch ? parseInt(epMatch[1], 10) : null;
+        if (t.includes('mixdrop')) {
+          if (mixGrid) mixGrid.appendChild(card);
+          return;
+        }
+        if (t.includes('streamtape')) {
+          if (stGrid) stGrid.appendChild(card);
+          return;
+        }
+        if (t.includes('mega')) {
+          const target = (epNum !== null && epNum >= 13) ? megaGridB : megaGridA;
+          if (target) target.appendChild(card);
+          return;
+        }
+      });
+      source.remove();
+    }
+    function groupSubByServer(){
+      const source = document.getElementById('sub-all-cards');
+      if (!source) return;
+      const megaGridA = document.getElementById('sub-mega-grid-a');
+      const megaGridB = document.getElementById('sub-mega-grid-b');
+      const cards = Array.from(source.querySelectorAll('.card'));
+      cards.forEach(card => {
+        const titleEl = card.querySelector('h4');
+        const t = (titleEl ? titleEl.textContent : '').toLowerCase();
+        const epMatch = (titleEl ? titleEl.textContent : '').match(/episodio\s+(\d+)/i);
+        const epNum = epMatch ? parseInt(epMatch[1], 10) : null;
+        if (t.includes('mega')) {
+          const target = (epNum !== null && epNum >= 13) ? megaGridB : megaGridA;
+          if (target) target.appendChild(card);
+        }
+      });
+      source.remove();
+    }
     function copyHref(el){
       const href = el.getAttribute('href');
       navigator.clipboard.writeText(href).then(()=>{
@@ -67,7 +118,7 @@
         setTimeout(()=>{ el.textContent = 'Copiar link'; }, 1500);
       });
     }
-    document.addEventListener('DOMContentLoaded', initFromQuery);
+    document.addEventListener('DOMContentLoaded', () => { initFromQuery(); groupLatByServer(); groupSubByServer(); });
   </script>
   <style>
     .header + main.container { padding-top: 6rem; }
@@ -94,11 +145,33 @@
 
     <div class="lang-toggle" role="tablist" aria-label="Idiomas">
       <button role="tab" class="active" data-lang="lat" onclick="setActiveLanguage('lat')">Latino</button>
+      <button role="tab" data-lang="sub" onclick="setActiveLanguage('sub')">Subtitulado</button>
     </div>
 
     <!-- Latino -->
     <section class="section active" data-lang="lat" aria-label="Descargas Latino">
-      <div class="download-grid">
+      <div class="server-rows">
+        <div class="server-row">
+          <div>
+            <h3 class="server-title">MixDrop</h3>
+            <div id="lat-mixdrop-grid" class="download-grid"></div>
+          </div>
+          <div>
+            <h3 class="server-title">StreamTape</h3>
+            <div id="lat-streamtape-grid" class="download-grid"></div>
+          </div>
+        </div>
+        <div class="server-row">
+          <div>
+            <h3 class="server-title">MEGA (1-12)</h3>
+            <div id="lat-mega-grid-a" class="download-grid"></div>
+          </div>
+          <div>
+            <h3 class="server-title">MEGA (13-24)</h3>
+            <div id="lat-mega-grid-b" class="download-grid"></div>
+          </div>
+        </div>
+        <div id="lat-all-cards" class="download-grid" hidden>
         <!-- Episodio 1 -->
         <div class="card">
           <h4>Episodio 1 - MixDrop</h4>
@@ -481,6 +554,420 @@
             <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/0L4ddbKm11CbPW2/Jujutsu_Kaisen_Epi_24.mp4">Descargar</a>
             <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/0L4ddbKm11CbPW2/Jujutsu_Kaisen_Epi_24.mp4" onclick="copyHref(this); return false;">Copiar link</a>
           </div>
+        </div>
+
+        <!-- MEGA -->
+        <div class="card">
+          <h4>Episodio 1 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/ddF2XKBC#aWPsr17ZwXtBYQhUhiwNKTpPYtdo0V_bK7ZWh7SrBug">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/ddF2XKBC#aWPsr17ZwXtBYQhUhiwNKTpPYtdo0V_bK7ZWh7SrBug" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 2 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/EMFTVYYb#SwDXpdfBWbmuuk0VqBePIw2UPngYINvV-m4NYSkGJQE">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/EMFTVYYb#SwDXpdfBWbmuuk0VqBePIw2UPngYINvV-m4NYSkGJQE" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 3 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/9UdjVDaK#tDSnuWoNUQLYX4Mx2QyHlTww42bHiH7YwFVyelu32AE">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/9UdjVDaK#tDSnuWoNUQLYX4Mx2QyHlTww42bHiH7YwFVyelu32AE" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 4 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/8FkwlJoQ#IYIC-yroG5bbcblJBCGVt3RtKY5VwDynGh8ZuJ8ZSEk">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/8FkwlJoQ#IYIC-yroG5bbcblJBCGVt3RtKY5VwDynGh8ZuJ8ZSEk" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 5 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/gRNAXL4C#RumSXIq1A0W9Zfu6NXkaMZlnsfVEOnFDKO-BmPyfjjU">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/gRNAXL4C#RumSXIq1A0W9Zfu6NXkaMZlnsfVEOnFDKO-BmPyfjjU" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 6 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/lJlkiCQS#r7oZSTGs1Yo5-66Mqzst_YM14cOwx4zGqI_rxTNR2vs">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/lJlkiCQS#r7oZSTGs1Yo5-66Mqzst_YM14cOwx4zGqI_rxTNR2vs" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 7 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/1Zs0gYQQ#cTf7ezlH6ccxEeO9NUI5NJTFVVcDNZG_sW84dPlENVE">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/1Zs0gYQQ#cTf7ezlH6ccxEeO9NUI5NJTFVVcDNZG_sW84dPlENVE" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 8 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/8QFDQAaK#4gL3fBF936pB_sLGV3edtDtrD4I7z09-4D_merFy1NE">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/8QFDQAaK#4gL3fBF936pB_sLGV3edtDtrD4I7z09-4D_merFy1NE" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 9 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/JM1XUSSa#n1A9vkN8uzvQkCauDWmnp8sDbB_aByll-jr-80Eg7oc">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/JM1XUSSa#n1A9vkN8uzvQkCauDWmnp8sDbB_aByll-jr-80Eg7oc" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 10 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/RJVgWZbQ#lWKDNYFu-ErGgXCFGitocVcBvk65h5M6zQ4SMNuAGm8">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/RJVgWZbQ#lWKDNYFu-ErGgXCFGitocVcBvk65h5M6zQ4SMNuAGm8" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 11 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/BZNDwJqC#0Rm7C6NuHp6Y14yTYF-JfCOxi588CG40oHIgpYBG584">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/BZNDwJqC#0Rm7C6NuHp6Y14yTYF-JfCOxi588CG40oHIgpYBG584" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 12 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/tJVHVQKR#7wtrxWQk5GpGTi5jP28CjE_j82QcKVNH7AKNF8caEFo">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/tJVHVQKR#7wtrxWQk5GpGTi5jP28CjE_j82QcKVNH7AKNF8caEFo" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 13 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/MAtDkabK#2JenPAAqMsndKDg5jWpwQtoALRmUBHq5qo4p6aYVj4A">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/MAtDkabK#2JenPAAqMsndKDg5jWpwQtoALRmUBHq5qo4p6aYVj4A" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 14 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/dE1SnDDZ#ipWZ123c6g6Xr0J-V2DX-klxa8JGqkRwolrhoyXQuik">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/dE1SnDDZ#ipWZ123c6g6Xr0J-V2DX-klxa8JGqkRwolrhoyXQuik" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 15 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/gFdRELaS#20r-nkBtcO30G4JQh7kxqLNBZN4aj16-ke-b3-lfZ-g">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/gFdRELaS#20r-nkBtcO30G4JQh7kxqLNBZN4aj16-ke-b3-lfZ-g" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 16 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/wF8lBaIL#9zfNMjtSfIHSEupNqbXOBND49eBPBwtJVY1z0YstnU0">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/wF8lBaIL#9zfNMjtSfIHSEupNqbXOBND49eBPBwtJVY1z0YstnU0" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 17 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/kFV1CBRR#notY-6cKCcUrSYSNxxOq9AabhWCIK883Rgg33gmpeXM">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/kFV1CBRR#notY-6cKCcUrSYSNxxOq9AabhWCIK883Rgg33gmpeXM" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 18 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/ER0ARTYC#Gt_YkUYHfNomjXvoa_0c-waB_ot1QyszTtrTv1WuCTI">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/ER0ARTYC#Gt_YkUYHfNomjXvoa_0c-waB_ot1QyszTtrTv1WuCTI" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 19 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/IRlkTCDT#JbBp8_ofLYDlyZ7mTw_lkKK8xaNeljke7votCbcCfKE">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/IRlkTCDT#JbBp8_ofLYDlyZ7mTw_lkKK8xaNeljke7votCbcCfKE" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 20 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/AFsGnbaa#-zw7bcXxMW4xNDhYeKsQMV_pg5BY9kwFNTElwzWrGnQ">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/AFsGnbaa#-zw7bcXxMW4xNDhYeKsQMV_pg5BY9kwFNTElwzWrGnQ" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 21 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/JdtyASqL#9GcNmoQgWdEDd2-F7FNeenAwGfY-LuqLR4heJ6X4r2c">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/JdtyASqL#9GcNmoQgWdEDd2-F7FNeenAwGfY-LuqLR4heJ6X4r2c" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 22 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/oY9xwQxD#lW0fXXAuQ9LKZKtJgPOrjcMC4yi6370ibeK7SKSLj_s">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/oY9xwQxD#lW0fXXAuQ9LKZKtJgPOrjcMC4yi6370ibeK7SKSLj_s" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 23 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/oEdkQYKa#hezDUeKWK_6eDEovQ85PSU-vJS3pXuzAE6dDQMga2SM">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/oEdkQYKa#hezDUeKWK_6eDEovQ85PSU-vJS3pXuzAE6dDQMga2SM" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Episodio 24 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/FU8h0SYR#0Vd_aIuHZKCL5Ic7GrqhhScFGoeAZxrZONsUaQbicmE">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/FU8h0SYR#0Vd_aIuHZKCL5Ic7GrqhhScFGoeAZxrZONsUaQbicmE" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subtitulado -->
+    <section class="section" data-lang="sub" aria-label="Descargas Subtitulado">
+      <div class="server-rows">
+        <div class="server-row">
+          <div>
+            <h3 class="server-title">MixDrop</h3>
+            <div class="download-grid"></div>
+          </div>
+          <div>
+            <h3 class="server-title">StreamTape</h3>
+            <div class="download-grid"></div>
+          </div>
+        </div>
+        <div class="server-row">
+          <div>
+            <h3 class="server-title">MEGA (1-12)</h3>
+            <div id="sub-mega-grid-a" class="download-grid"></div>
+          </div>
+          <div>
+            <h3 class="server-title">MEGA (13-24)</h3>
+            <div id="sub-mega-grid-b" class="download-grid"></div>
+          </div>
+        </div>
+        <div id="sub-all-cards" class="download-grid" hidden>
+        <!-- Episodio 1 -->
+        <div class="card">
+          <h4>Episodio 1 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/RcNk0RxZ#wZR54whhn1OyUhsCdzRT4jG4gRwCm2YcSyIZWsWsj6s">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/RcNk0RxZ#wZR54whhn1OyUhsCdzRT4jG4gRwCm2YcSyIZWsWsj6s" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 2 -->
+        <div class="card">
+          <h4>Episodio 2 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/NRVhTYIJ#sJ_Ub9-7Eq40d3zPcXNp9O2XLA2gVFGjnETR9mp_JzM">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/NRVhTYIJ#sJ_Ub9-7Eq40d3zPcXNp9O2XLA2gVFGjnETR9mp_JzM" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 3 -->
+        <div class="card">
+          <h4>Episodio 3 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/BYFTBApA#vQmu1-Wm3qZSQMqfsrrl90iODZgOgZYn-Hru7hFh5gY">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/BYFTBApA#vQmu1-Wm3qZSQMqfsrrl90iODZgOgZYn-Hru7hFh5gY" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 4 -->
+        <div class="card">
+          <h4>Episodio 4 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/QQ8nCKJB#PVdTNIXY8Bd1uIfGZDqQcaHr1hGPwOLnSgSZL5TScrg">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/QQ8nCKJB#PVdTNIXY8Bd1uIfGZDqQcaHr1hGPwOLnSgSZL5TScrg" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 5 -->
+        <div class="card">
+          <h4>Episodio 5 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/tdFiRRra#zsi_Mhnk73Ctgo6fP-8dEbXnzOjj-GEJDVLBJeYFlGs">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/tdFiRRra#zsi_Mhnk73Ctgo6fP-8dEbXnzOjj-GEJDVLBJeYFlGs" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 6 -->
+        <div class="card">
+          <h4>Episodio 6 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/0YMXBChC#OtgRLj01jFDbIMTOPwksY_x5L7C7ambE87QOEGXYkMg">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/0YMXBChC#OtgRLj01jFDbIMTOPwksY_x5L7C7ambE87QOEGXYkMg" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 7 -->
+        <div class="card">
+          <h4>Episodio 7 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/RFcHDAqR#n2kEDIrGiMj2I0Muvh-CgbzL3BV2NEIO3mfe16Y5Ork">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/RFcHDAqR#n2kEDIrGiMj2I0Muvh-CgbzL3BV2NEIO3mfe16Y5Ork" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 8 -->
+        <div class="card">
+          <h4>Episodio 8 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/0IUWRT7R#1gnw_zjD-uPPmD1c4X1e2HMeBha9DGAkBU-QwKa_hsw">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/0IUWRT7R#1gnw_zjD-uPPmD1c4X1e2HMeBha9DGAkBU-QwKa_hsw" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 9 -->
+        <div class="card">
+          <h4>Episodio 9 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/oMkknb4Z#v_qnxfT6i88pb2DOKg2wUoqSSb2KkvoFs47sFgDai18">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/oMkknb4Z#v_qnxfT6i88pb2DOKg2wUoqSSb2KkvoFs47sFgDai18" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 10 -->
+        <div class="card">
+          <h4>Episodio 10 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/NM1WhabQ#8tpS3PFYX2WS0q8n8CC-xjGhCuuMSKXiSUs1yu4m-uw">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/NM1WhabQ#8tpS3PFYX2WS0q8n8CC-xjGhCuuMSKXiSUs1yu4m-uw" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 11 -->
+        <div class="card">
+          <h4>Episodio 11 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/YY921YKK#cTBq8i2qBe0YNlS_6-tHrCLNASBqbpTApV2zc7XJ81k">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/YY921YKK#cTBq8i2qBe0YNlS_6-tHrCLNASBqbpTApV2zc7XJ81k" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 12 -->
+        <div class="card">
+          <h4>Episodio 12 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/kRl2BSwI#-DSv9DGmYCcOlqkfyn4dZC2NtdxpV7T4X_Eeiwv9vX0">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/kRl2BSwI#-DSv9DGmYCcOlqkfyn4dZC2NtdxpV7T4X_Eeiwv9vX0" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 13 -->
+        <div class="card">
+          <h4>Episodio 13 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/ZJ0kERDS#9vqaCPN0yINSoKVhnB15Ya4RzTsHF_52v9GAPBzQBDc">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/ZJ0kERDS#9vqaCPN0yINSoKVhnB15Ya4RzTsHF_52v9GAPBzQBDc" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 14 -->
+        <div class="card">
+          <h4>Episodio 14 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/IV02lbiL#7phmgxrwLyLmCMc_c8FfUrNZyfzRz6bAbEAI8DrMAFA">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/IV02lbiL#7phmgxrwLyLmCMc_c8FfUrNZyfzRz6bAbEAI8DrMAFA" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 15 -->
+        <div class="card">
+          <h4>Episodio 15 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/tA9jEJ5Q#e87viDLHdG19CyTsKfzHlhYlrLGc3UlfGbIfq2DJDWM">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/tA9jEJ5Q#e87viDLHdG19CyTsKfzHlhYlrLGc3UlfGbIfq2DJDWM" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 16 -->
+        <div class="card">
+          <h4>Episodio 16 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/dBNgVB7L#RiWfAwgGq3F6yDfNLOiY9_s1P99piFx4gsNT63ipxZQ">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/dBNgVB7L#RiWfAwgGq3F6yDfNLOiY9_s1P99piFx4gsNT63ipxZQ" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 17 -->
+        <div class="card">
+          <h4>Episodio 17 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/dMknSRzA#Y2rhIaMUOLwiHojF9IpSGk_-g6khjMDDqo_9xqjl-8k">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/dMknSRzA#Y2rhIaMUOLwiHojF9IpSGk_-g6khjMDDqo_9xqjl-8k" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 18 -->
+        <div class="card">
+          <h4>Episodio 18 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/hN9ySZjY#fP4YDGoN87RRp8DU4cqgvmVK5H9c1ctRPAUJCp6D7i8">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/hN9ySZjY#fP4YDGoN87RRp8DU4cqgvmVK5H9c1ctRPAUJCp6D7i8" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 19 -->
+        <div class="card">
+          <h4>Episodio 19 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/RElFDbxA#JfgP1Vn1yD6uX9AwGNvKPt4X5hDMLDOxJjFWYzSL8Cg">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/RElFDbxA#JfgP1Vn1yD6uX9AwGNvKPt4X5hDMLDOxJjFWYzSL8Cg" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 20 -->
+        <div class="card">
+          <h4>Episodio 20 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/8AFzjCqC#AeKD_X0RzkCh14mnX8BBN4imbQuIwJdqsAgIj-cnlis">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/8AFzjCqC#AeKD_X0RzkCh14mnX8BBN4imbQuIwJdqsAgIj-cnlis" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 21 -->
+        <div class="card">
+          <h4>Episodio 21 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/dAtQhJwK#xX4qQZHeqLRz0M_07JBm4evj2ElznoFaiMNYb_QE_qY">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/dAtQhJwK#xX4qQZHeqLRz0M_07JBm4evj2ElznoFaiMNYb_QE_qY" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 22 -->
+        <div class="card">
+          <h4>Episodio 22 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/dIsWBBrZ#Jz-7FjVQRHek0v9O35qK1tjNy2_djtBI-HqiOUuguSI">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/dIsWBBrZ#Jz-7FjVQRHek0v9O35qK1tjNy2_djtBI-HqiOUuguSI" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 23 -->
+        <div class="card">
+          <h4>Episodio 23 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/ARUmRBZS#GzPS8qKbbxMr9s0lN_h1Ox4qmjuqdnB4XUNg42PBKh8">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/ARUmRBZS#GzPS8qKbbxMr9s0lN_h1Ox4qmjuqdnB4XUNg42PBKh8" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
+
+        <!-- Episodio 24 -->
+        <div class="card">
+          <h4>Episodio 24 - MEGA</h4>
+          <div class="actions">
+            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/AYlQnApJ#t2SpHTHjs8Xm5umIrd77RNZfPDCEZ_0W5QktMy2jzl8">Descargar</a>
+            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mega.nz/file/AYlQnApJ#t2SpHTHjs8Xm5umIrd77RNZfPDCEZ_0W5QktMy2jzl8" onclick="copyHref(this); return false;">Copiar link</a>
+          </div>
+        </div>
         </div>
       </div>
     </section>
