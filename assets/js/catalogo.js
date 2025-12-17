@@ -335,22 +335,37 @@ class BraveModal {
     this.modal = document.getElementById('braveModal');
     this.continueBtn = document.getElementById('continueBtn');
     this.timerElement = document.getElementById('timerCount');
-    this.timeLeft = 10;
+    this.storageKey = 'mol_brave_seen';
+    this.timeLeft = this.getInitialSeconds();
     this.timerInterval = null;
-    
+
     // El modal siempre se mostrará, sin importar si ya se vio antes
     if (this.modal) {
       this.init();
     }
   }
 
+  getInitialSeconds() {
+    try {
+      const seen = localStorage.getItem(this.storageKey) === '1';
+      return seen ? 3 : 10;
+    } catch (_) {
+      return 10;
+    }
+  }
+
   init() {
     // Mostrar el modal
     this.modal.classList.remove('hidden');
-    
+
+    // Pintar valor inicial del contador
+    if (this.timerElement) {
+      this.timerElement.textContent = this.timeLeft;
+    }
+
     // Iniciar el temporizador
     this.startTimer();
-    
+
     // Event listener para el botón continuar
     this.continueBtn?.addEventListener('click', () => {
       this.closeModal();
@@ -360,11 +375,11 @@ class BraveModal {
   startTimer() {
     this.timerInterval = setInterval(() => {
       this.timeLeft--;
-      
+
       if (this.timerElement) {
         this.timerElement.textContent = this.timeLeft;
       }
-      
+
       if (this.timeLeft <= 0) {
         this.enableContinueButton();
         clearInterval(this.timerInterval);
@@ -376,7 +391,7 @@ class BraveModal {
     if (this.continueBtn) {
       this.continueBtn.disabled = false;
       this.continueBtn.style.animation = 'pulse 1s ease-in-out infinite';
-      
+
       // Cambiar el texto del temporizador
       const timerDiv = document.querySelector('.brave-timer p');
       if (timerDiv) {
@@ -386,6 +401,10 @@ class BraveModal {
   }
 
   closeModal() {
+    try {
+      localStorage.setItem(this.storageKey, '1');
+    } catch (_) {}
+
     // Animación de salida
     if (this.modal) {
       this.modal.style.animation = 'fadeOut 0.3s ease';
@@ -393,7 +412,7 @@ class BraveModal {
         this.modal.classList.add('hidden');
       }, 300);
     }
-    
+
     // Limpiar el intervalo si aún está corriendo
     if (this.timerInterval) {
       clearInterval(this.timerInterval);
