@@ -1,5 +1,5 @@
 (function () {
-  const PASSWORD = "CAMBIA_ESTA_PASSWORD";
+  const PASSWORD = "Cs3437532922";
   const STORAGE_KEY = "mol_auth_ok";
 
   function deny() {
