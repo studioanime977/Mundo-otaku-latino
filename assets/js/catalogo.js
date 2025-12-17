@@ -2,6 +2,7 @@
 const data = [
   { place:'Serie', title:'ATTACK', title2:'ON TITAN', description:'Explora todas las temporadas y especiales.', image:'../../img/Attack on Titan S1.jpg', href:'../anime/attack-on-titan/attack-on-titan.html' },
   { place:'Serie', title:'BOKU', title2:'NO HERO', description:'Temporadas completas disponibles.', image:'../../img/BokunoHeroAcademia S1.png', href:'../anime/boku-no-hero-academia/boku-no-hero-academia.html' },
+  { place:'Serie', title:'BORUTO', title2:'NEXT GENERATIONS', description:'Sub Español (MEGA).', image:'../../img/Boruto Next Generations.png', href:'../anime/boruto/boruto.html' },
   { place:'Serie', title:'BUNGO', title2:'STRAY DOGS', description:'Todas las temporadas.', image:'../../img/Bungou Stray Dogs S1.jpg', href:'../anime/bungo-stray-dogs/bungo-stray-dogs.html' },
   { place:'Serie', title:'CHAINSAW', title2:'MAN', description:'Temporada 1.', image:'../../img/Chainsaw Man S1.jpg', href:'../anime/chainsaw-man/chainsaw-man.html' },
   { place:'Serie', title:'CLASSROOM', title2:'OF THE ELITE', description:'Temporadas 1 y 2.', image:'../../img/classroom of the elite  season 1.png', href:'../anime/classroom-of-the-elite/classroom-of-the-elite.html' },

@@ -16,6 +16,10 @@
   display: none !important;
 }
 
+.copy-btn {
+  display: none !important;
+}
+
 @media (max-width: 768px) {
   .anuncio-responsive {
     margin: 10px auto;

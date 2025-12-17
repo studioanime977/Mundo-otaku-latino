@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-adsense-account" content="ca-pub-8480825005176665">
+  <title>Boruto Next Generations - Sub Español - Mundo Otaku Latino</title>
+  <link rel="stylesheet" href="../../../assets/css/catalogo.css?v=2">
+  <link rel="stylesheet" href="../../../css/server-selector.css">
+  <link rel="stylesheet" href="../../../css/temporadas.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="../../../css/anime.css">
+  <link rel="stylesheet" href="../../../css/responsive-style.css">
+  <link rel="stylesheet" href="../../../css/responsive-navigation.css">
+  <link rel="icon" type="image/png" href="../../../ico/logo.png">
+  <link rel="apple-touch-icon" href="../../../ico/logo.png">
+  <link rel="shortcut icon" href="../../../ico/logo.png">
+  <style>
+    .main-content { display: flex; gap: 20px; align-items: flex-start; }
+    .left-content { flex: 3; }
+    .right-content { flex: 1; }
+    .back-btn { display: inline-block; margin: 12px 0; padding: 10px 16px; background: #6c63ff; color: #fff; border-radius: 8px; text-decoration: none; }
+    .right-content .popular-item { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.03); margin-bottom: 10px; cursor: pointer; }
+    .right-content .popular-item:hover { background: rgba(255,255,255,0.06); }
+    .right-content .popular-item img { width: 120px; height: 72px; object-fit: cover; border-radius: 6px; display: block; }
+    .right-content .popular-item .title { font-size: 0.95rem; line-height: 1.3; color: #fff; }
+    .player-frame-wrap { background: #111; border-radius: 12px; overflow: hidden; }
+    .player-frame-wrap iframe { width: 100%; height: 480px; border: none; }
+    .header + main.container { padding-top: 6rem; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav-container">
+      <div class="logo"><img src="../../../ico/logo.png" alt="Mundo Otaku Latino" style="height:28px; vertical-align:middle; margin-right:8px;">Mundo Otaku Latino</div>
+      <ul class="nav-menu">
+        <li><a href="../../index.html#inicio">Inicio</a></li>
+        <li><a href="../../html/catalogo.html">Anime</a></li>
+        <li><a href="#peliculas">Películas</a></li>
+        <li><a href="#generos">Géneros</a></li>
+        <li><a href="https://exe.io/ANIMETV" target="_blank">APK</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="main-content">
+      <div class="left-content">
+        <a href="./boruto.html" class="back-btn">Volver a Boruto</a>
+
+        <div class="title-container">
+          <h1 class="season-title">Boruto Next Generations</h1>
+          <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
+        </div>
+
+        <div class="description">
+          <p>Selecciona episodio y luego el servidor. Disponible: MEGA (Sub Español).</p>
+        </div>
+
+        <div class="contenedor-video">
+          <section class="player-selector" aria-label="Selector de servidor">
+            <div class="language-toggle" role="tablist" aria-label="Idiomas disponibles">
+              <button class="lang-btn" role="tab" aria-selected="true" data-language="sub">
+                <img src="../../../ico/SUB.png" alt="Subtitulado">
+                <span>Sub Español</span>
+              </button>
+            </div>
+
+            <div class="server-grid" aria-label="Servidores disponibles">
+              <a href="#" class="server-card" data-server="MEGA" data-url-sub="#" aria-label="MEGA">
+                <img src="../../../ico/MEGA.png" alt="MEGA">
+                <span>MEGA</span>
+              </a>
+            </div>
+
+            <div class="player-frame-wrap">
+              <iframe id="player-frame" title="Reproductor" src="about:blank" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </section>
+        </div>
+
+        <section class="navigation-buttons" aria-label="Navegación de episodios" style="display:grid; grid-template-columns: 1fr auto 1fr; align-items:center; column-gap:10px; margin:12px 0;">
+          <button id="prev-ep" class="nav-btn" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:start;">◄ episodio anterior</button>
+          <button id="toggle-episodes" class="nav-btn" aria-expanded="false" style="padding:10px 16px; border-radius:8px; background:#6c63ff; color:#fff; border:none; justify-self:center;">lista de episodios</button>
+          <button id="next-ep" class="nav-btn" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:end;">siguiente episodio ►</button>
+        </section>
+
+        <div class="episodes-container" id="episodes-container" hidden>
+          <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
+          <div class="episodes-grid" id="episodes-grid"></div>
+        </div>
+
+        <section aria-label="Enlaces de descarga" style="margin-top:18px;">
+          <div style="font-weight:700; margin-bottom:8px;">Descargas</div>
+          <a href="./descargar-next-generations.html" style="background:#27ae60; color:#fff; padding:10px 14px; border-radius:8px; display:inline-block;">Descargar Boruto Next Generations</a>
+        </section>
+      </div>
+
+      <div class="right-content">
+        <h3>Popular</h3>
+        <div class="popular-item" onclick="window.location.href='../naruto/naruto.html'">
+          <img src="../../../img/Naruto Classic.jpg" alt="Naruto">
+          <div class="title">Naruto</div>
+        </div>
+        <div class="popular-item" onclick="window.location.href='../jujutsu-kaisen/jujutsu-kaisen.html'">
+          <img src="../../../img/Jujutsu Kaisen S1.jpg" alt="Jujutsu Kaisen">
+          <div class="title">Jujutsu Kaisen</div>
+        </div>
+        <div class="popular-item" onclick="window.location.href='../one-piece/one-piece.html'">
+          <img src="../../../img/One Piece East Blue.png" alt="One Piece">
+          <div class="title">One Piece</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Mundo Otaku Latino</h3>
+          <p>Tu plataforma favorita para ver anime en español latino</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="../../index.html#inicio">Inicio</a></li>
+            <li><a href="../../html/catalogo.html">🗂️ Catálogo</a></li>
+            <li><a href="#generos">Géneros</a></li>
+            <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-links" aria-label="Redes sociales y canales oficiales">
+            <a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener" aria-label="APP Anime TV">
+              <img src="../../../ico/logo.png" alt="APP Anime TV" />
+              <span>APP Anime TV</span>
+            </a>
+            <a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener" aria-label="Canal de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram" />
+              <span>Canal Telegram</span>
+            </a>
+            <a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener" aria-label="Grupo de Telegram">
+              <img src="../../../ico/telegram.webp" alt="Telegram Grupo" />
+              <span>Grupo Telegram</span>
+            </a>
+            <a class="social-item" href="https://rumble.com/c/c-6184817?e9s=src_v1_clr" target="_blank" rel="noopener" aria-label="Página de Rumble">
+              <img src="../../../ico/RUMBLE.webp" alt="Rumble" />
+              <span>Página en Rumble</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener" aria-label="Facebook Studio">
+              <img src="../../../ico/facebook.png" alt="Facebook" />
+              <span>Facebook</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/723496132540351" target="_blank" rel="noopener" aria-label="Grupo Anime en Facebook">
+              <img src="../../../ico/facebook.png" alt="Facebook Grupo Anime" />
+              <span>Grupo Anime</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/1071796301003086" target="_blank" rel="noopener" aria-label="Grupo Free Fire en Facebook">
+              <img src="../../../ico/facebook.png" alt="Facebook Grupo Free Fire" />
+              <span>Grupo Free Fire</span>
+            </a>
+            <a class="social-item" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener" aria-label="TikTok">
+              <img src="../../../ico/TIKTOK.webp" alt="TikTok" />
+              <span>TikTok</span>
+            </a>
+            <a class="social-item" href="https://www.instagram.com/studiootaku01" target="_blank" rel="noopener" aria-label="Instagram">
+              <img src="../../../ico/INSTAGRAM.webp" alt="Instagram" />
+              <span>Instagram</span>
+            </a>
+            <a class="social-item" href="https://github.com/studioanime977" target="_blank" rel="noopener" aria-label="GitHub">
+              <img src="../../../ico/GUITHUP.webp" alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+            <a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="YouTube">
+              <img src="../../../ico/youtube.png" alt="YouTube" />
+              <span>YouTube</span>
+            </a>
+            <a class="social-item" href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <img src="../../../ico/whatsapp.webp" alt="WhatsApp" />
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-text">&copy; 2025 Mundo Otaku Latino. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    function megaEmbedFromFile(url){
+      return url.replace('mega.nz/file/', 'mega.nz/embed/')
+    }
+
+    const megaFiles = [
+      "https://mega.nz/file/YEFBgD7J#ly8vrKCdFRW3LNoqUIiVM8NZGJbdW6DiJPWdj5slglM",
+      "https://mega.nz/file/xZ83ERiI#WNWotNF4oq519HQvsQpWTcJTWOmztV_-YwGpV5lEOe8",
+      "https://mega.nz/file/5INR2bLA#aqooEgDtbzvWrJu1ElKn-JhMN0e75KaZ8l9s_kI704o",
+      "https://mega.nz/file/4Y8xzQBD#q63JPKPXJfoNxPViM1iz5EYu66H-ileXthYwiGhe_pQ",
+      "https://mega.nz/file/0ccSTbIB#mJvktbXUbOCJ0GAcp_rEAqt49WJw-o2nhiWVu50rHsg",
+      "https://mega.nz/file/sJEFXRQI#Ht-lKdGuExl0IFtQQGmSUPYbSOUtWE0lqL-ciHrkT8U",
+      "https://mega.nz/file/cV0QUB5D#ExAET2k9A7ei36-5YVBp0ulIdrQiCuIjZ4HkV9NQ2nE",
+      "https://mega.nz/file/8MMAiDKL#hdWPRA5PaPtspVEO4AJR54MU8f8F095TIs4FbH7TBVo",
+      "https://mega.nz/file/IMV0iZbC#4Qhw5_bcWe0sNbLVCO1aGo3NmWi336dtzjNJfFY5X1E",
+      "https://mega.nz/file/xMUwWQLZ#KtyNfKJ6IDmu_XboFGAKyaX-RsIm0Mis1b6Y6Rav-Ls",
+      "https://mega.nz/file/YJ0XAZpa#QrybsmwPurMuMQDYtscaHmO3-6yPce_72SvQa9sRfaE",
+      "https://mega.nz/file/EIdnDK6A#XG62QFYf23jiI5ONYY7yCOCNbHG0mC1emZ7C4j0zw6s",
+      "https://mega.nz/file/ZEF0HY4b#Thrp1F2MuIgfHTMsx4ouuZOooRgsDS1aTmsMRau7Ubw",
+      "https://mega.nz/file/EM8V1A7b#HKNu9yVERt3PbJG3pN5E5EYMOEuQG0-Vy-P1HAjFhrY",
+      "https://mega.nz/file/UF8xkAjS#WFZF1e0tt-_CHT4xNxLNnpTluQ8jw-ML-QlNPuzE4Zc",
+      "https://mega.nz/file/sMlwDJTY#VZZ0B4VnPhTqgBCy1Wa5Lo4aSxakL42wc4kz-tGYRLk",
+      "https://mega.nz/file/sQU1GZQA#1Z6_4Dua2jfwi-pI-M_ZIhM3iot7bYtUTwuK7x1t1Nk",
+      "https://mega.nz/file/gNtS2bIQ#dvR1R5Ime3XpqsVaKFSBiVw4Tg2YUa2DKjArM6hHb4M",
+      "https://mega.nz/file/UIk3ACgC#7Pr-CFIfN7qZgvx3DmS74sZVasha2CoNECT96vxgdEA",
+      "https://mega.nz/file/lVMHkLDB#ySl_M1gS7QIEPQ0-aCFVZLmGm-2Ds18CXVFeMZ1LbGs",
+      "https://mega.nz/file/IZ1UBJYI#VuoEu6bQMjGRNLplQfDJGbHbDKnMTj83lpHjDQuEftA",
+      "https://mega.nz/file/REsWmYCZ#QyFVRr65FUyg9JZNHZIZOPZo19LSa-B96de920XNimY",
+      "https://mega.nz/file/ZRki3IiI#B4vhGGw21EY95texUjs0QEuBwdUnmHlGqvhXAumEVDA",
+      "https://mega.nz/file/VUtChCQS#uDQP7M3K87Nm7B2C6pEn2647sEwgYb5UGc8p-3GqjQk",
+      "https://mega.nz/file/FMdDwIrB#bfMK1ugUYC2FsEaXxTRFQ-N0na-_sURCq-5ayEykpXE",
+      "https://mega.nz/file/QMdRgTJL#OLjSghi-SKh-3sRB9vDyO4IB9b1dTnFtalA_PeZvHxM",
+      "https://mega.nz/file/lZEwEAZL#GuHJQx7vqE0VamNC_6QxyDqG9FTs_1d7g8sUhAebw1I",
+      "https://mega.nz/file/BJEjhYbb#IL3PGlBT8L0KsFEDRIxwYF6AVY1qmvi9eL7V7TmGMNM",
+      "https://mega.nz/file/FckGhJya#mKfBS8bW8cqJKVibhLLtvVeRw8dIVDJxoWK0XR6wlpk",
+      "https://mega.nz/file/oAdGjb4L#8q5EM2SON5zykNBbOY_yHFBN4IMnjMbRJQ9KPeG9D8Q",
+      "https://mega.nz/file/NRsWhALK#6GXb43l9KNL0CnjBf68iQTWURkuHF8_Wweo3rdL1IfA",
+      "https://mega.nz/file/IYUVDDxA#_p2u2jytoUEyJ85jAH4BjxupxbzyV2yBLbHieFbBq4I"
+    ].map((url, idx) => ({ num: idx + 1, file: url }))
+
+    const serverCards = Array.from(document.querySelectorAll('.server-card'))
+    const playerFrame = document.getElementById('player-frame')
+    const currentTitleEl = document.getElementById('current-episode-title')
+    const episodesContainer = document.getElementById('episodes-container')
+    const episodesGrid = document.getElementById('episodes-grid')
+    const prevBtn = document.getElementById('prev-ep')
+    const nextBtn = document.getElementById('next-ep')
+    const toggleBtn = document.getElementById('toggle-episodes')
+
+    let currentEpisode = 1
+    let currentServer = 'MEGA'
+
+    function getEpFromQuery(){
+      const qs = new URLSearchParams(window.location.search)
+      const ep = parseInt(qs.get('ep') || '1', 10)
+      return Number.isFinite(ep) && ep >= 1 ? ep : 1
+    }
+
+    function updateNavState(){
+      prevBtn.disabled = currentEpisode <= 1
+      nextBtn.disabled = currentEpisode >= megaFiles.length
+    }
+
+    function applyEpisodeToServerGrid(ep){
+      const megaCard = serverCards.find(c => (c.getAttribute('data-server') || '').toUpperCase() === 'MEGA')
+      if (megaCard) {
+        megaCard.setAttribute('data-url-sub', megaEmbedFromFile(ep.file))
+      }
+    }
+
+    function setActiveServer(serverName){
+      currentServer = serverName
+      serverCards.forEach(c => {
+        const name = (c.getAttribute('data-server') || '').toUpperCase()
+        const isActive = name === serverName.toUpperCase()
+        c.classList.toggle('active', isActive)
+      })
+      const active = serverCards.find(c => (c.getAttribute('data-server') || '').toUpperCase() === serverName.toUpperCase())
+      const url = active ? active.getAttribute('data-url-sub') : ''
+      if (playerFrame && url) playerFrame.src = url
+    }
+
+    function renderEpisodesGrid(){
+      if (!episodesGrid) return
+      episodesGrid.innerHTML = megaFiles.map(ep => {
+        const active = ep.num === currentEpisode ? 'style="outline:2px solid #6c63ff;"' : ''
+        return `<div class="ep-item" ${active} data-ep="${ep.num}" style="padding:10px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);cursor:pointer;text-align:center;">Episodio ${ep.num}</div>`
+      }).join('')
+      Array.from(episodesGrid.querySelectorAll('.ep-item')).forEach(el => {
+        el.addEventListener('click', () => {
+          const ep = parseInt(el.getAttribute('data-ep') || '1', 10)
+          loadEpisode(ep)
+          episodesContainer.hidden = true
+          toggleBtn.setAttribute('aria-expanded','false')
+        })
+      })
+    }
+
+    function loadEpisode(num){
+      const ep = megaFiles.find(e => e.num === num)
+      if (!ep) return
+      currentEpisode = num
+      if (currentTitleEl) currentTitleEl.textContent = `Episodio ${num}`
+      applyEpisodeToServerGrid(ep)
+      setActiveServer(currentServer)
+      updateNavState()
+      renderEpisodesGrid()
+      const qs = new URLSearchParams(window.location.search)
+      qs.set('ep', String(num))
+      history.replaceState(null, '', `${window.location.pathname}?${qs.toString()}`)
+    }
+
+    serverCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault()
+        const serverName = card.getAttribute('data-server') || 'MEGA'
+        setActiveServer(serverName)
+      })
+    })
+
+    prevBtn.addEventListener('click', () => loadEpisode(Math.max(1, currentEpisode - 1)))
+    nextBtn.addEventListener('click', () => loadEpisode(Math.min(megaFiles.length, currentEpisode + 1)))
+
+    toggleBtn.addEventListener('click', () => {
+      const willOpen = episodesContainer.hidden
+      episodesContainer.hidden = !willOpen
+      toggleBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false')
+      if (willOpen) renderEpisodesGrid()
+    })
+
+    currentEpisode = getEpFromQuery()
+    loadEpisode(currentEpisode)
+  </script>
+  <script src="../../../assets/js/ads.js"></script>
+</body>
+</html>
