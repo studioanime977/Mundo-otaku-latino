@@ -14,9 +14,6 @@
     .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
     .header-space { margin-top: 8px; }
     .back-btn { display:inline-block; margin:12px 0; padding:10px 16px; background:#6c63ff; color:#fff; border-radius:8px; text-decoration:none; }
-    .lang-toggle { display:flex; gap:8px; margin:12px 0 16px; }
-    .lang-toggle button { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; background:#2c2c2c; color:#ddd; }
-    .lang-toggle button.active { background:#6c63ff; color:#fff; }
     .download-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
     .card { background: rgba(255,255,255,0.04); border-radius:10px; padding:12px; }
     .card h4 { margin:0 0 8px 0; }
@@ -24,8 +21,7 @@
     .btn { display:inline-block; padding:8px 12px; border-radius:8px; text-decoration:none; }
     .btn-download { background:#27ae60; color:#fff; }
     .btn-copy { background:#111; color:#fff; }
-    .section { display:none; }
-    .section.active { display:block; }
+    .section { display:block; }
     @media (max-width:768px){ .download-grid { grid-template-columns: 1fr; } }
     /* Footer nuevo */
     .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
@@ -46,20 +42,6 @@
     @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
   </style>
   <script>
-    function setActiveLanguage(lang){
-      document.querySelectorAll('.lang-toggle button').forEach(b=>{
-        b.classList.toggle('active', b.dataset.lang===lang);
-      });
-      document.querySelectorAll('.section').forEach(s=>{
-        s.classList.toggle('active', s.dataset.lang===lang);
-      });
-    }
-    function initFromQuery(){
-      const params = new URLSearchParams(window.location.search);
-      let lang = params.get('lang') || 'lat';
-      if (!['lat','sub'].includes(lang)) { lang = 'lat'; }
-      setActiveLanguage(lang);
-    }
     function copyHref(el){
       const href = el.getAttribute('href');
       navigator.clipboard.writeText(href).then(()=>{
@@ -67,7 +49,6 @@
         setTimeout(()=>{ el.textContent = 'Copiar link'; }, 1500);
       });
     }
-    document.addEventListener('DOMContentLoaded', initFromQuery);
   </script>
   <style>
     .header + main.container { padding-top: 6rem; }
@@ -88,102 +69,86 @@
   </header>
 
   <main class="container">
-    <a class="back-btn" href="./castillo-infinito.html">◄ Volver al episodio</a>
+    <a class="back-btn" href="./temporada-2.html">◄ Volver al episodio</a>
     <h1>Descargas – Boku No Hero Academia Temporada 2</h1>
-    <p>Elige idioma y servidor. Todos los enlaces pasan por el acortador exe.io para protegerlos.</p>
+    <p>Elige servidor. Los enlaces de StreamTape pasan por el acortador exe.io para protegerlos.</p>
 
-    <div class="lang-toggle" role="tablist" aria-label="Idiomas">
-      <button role="tab" class="active" data-lang="lat" onclick="setActiveLanguage('lat')">Latino</button>
-      <button role="tab" data-lang="sub" onclick="setActiveLanguage('sub')">Sub Español</button>
-    </div>
-
-    <!-- Latino -->
-    <section class="section active" data-lang="lat" aria-label="Descargas Latino">
+    <section class="section active" data-lang="lat" aria-label="Descargas Español">
       <div class="download-grid">
-        <div class="card">
-          <h4>Terabox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castilloterasSONY2025">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castilloterasSONY2025" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>MixDrop</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>StreamTape</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>StreamWish</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>EarnVids</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>MediaFire</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Dropbox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-      </div>
-    </section>
+        <div class="card"><h4>Episodio 1 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/yA7pBzwJQvi1Pz8/Boku_no_Hero_Academia_-_Temporada_2_Episodio_01.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/yA7pBzwJQvi1Pz8/Boku_no_Hero_Academia_-_Temporada_2_Episodio_01.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 1 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/T05wSYrL#68UWTewOqoqZxblgnhwsZ-Br2gvyOo5KEK9PzPmIYgE">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/T05wSYrL#68UWTewOqoqZxblgnhwsZ-Br2gvyOo5KEK9PzPmIYgE" onclick="copyHref(this); return false;">Copiar link</a></div></div>
 
+        <div class="card"><h4>Episodio 2 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/gvWpv7WmrYuqlAo/Boku_no_Hero_Academia_-_Temporada_2_Episodio_02.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/gvWpv7WmrYuqlAo/Boku_no_Hero_Academia_-_Temporada_2_Episodio_02.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 2 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/ugYVFTZR#7v3m7BFm01c3rOAE95uC0tWNruQDp-rHzHk6aWiJA7Q">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/ugYVFTZR#7v3m7BFm01c3rOAE95uC0tWNruQDp-rHzHk6aWiJA7Q" onclick="copyHref(this); return false;">Copiar link</a></div></div>
 
-    <!-- Sub Español -->
-    <section class="section" data-lang="sub" aria-label="Descargas Sub Español">
-      <div class="download-grid">
-        <div class="card">
-          <h4>Netu (HQQ)</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Terabox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/CASTISUBTERA">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/CASTISUBTERA" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>MediaFire</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Dropbox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
+        <div class="card"><h4>Episodio 3 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/2kXzMZv8kBfZdQ0/Boku_no_Hero_Academia_-_Temporada_2_Episodio_03.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/2kXzMZv8kBfZdQ0/Boku_no_Hero_Academia_-_Temporada_2_Episodio_03.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 3 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/7thRBBTQ#YDPq7bNwuBmWdKKzdbwvosgotHW7db4F9jGb-gkFf3s">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/7thRBBTQ#YDPq7bNwuBmWdKKzdbwvosgotHW7db4F9jGb-gkFf3s" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 4 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/zXWW3bp4bRFgbG/Boku_no_Hero_Academia_-_Temporada_2_Episodio_04.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/zXWW3bp4bRFgbG/Boku_no_Hero_Academia_-_Temporada_2_Episodio_04.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 4 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/Hs4WiShA#Anz83WcUgpCY5XJT57qNCmvZkSyN8d1CIqpmtYm7i8o">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/Hs4WiShA#Anz83WcUgpCY5XJT57qNCmvZkSyN8d1CIqpmtYm7i8o" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 5 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/WqpggAOeMaTpV0/Boku_no_Hero_Academia_-_Temporada_2_Episodio_05.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/WqpggAOeMaTpV0/Boku_no_Hero_Academia_-_Temporada_2_Episodio_05.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 5 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/fpByVDAZ#bUfdmHyoAIt4aDuH5RlctnIjNgFW4S4ahJ2k6LQdFJg">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/fpByVDAZ#bUfdmHyoAIt4aDuH5RlctnIjNgFW4S4ahJ2k6LQdFJg" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 6 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/eweXY2YpODI9AR/Boku_no_Hero_Academia_-_Temporada_2_Episodio_06.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/eweXY2YpODI9AR/Boku_no_Hero_Academia_-_Temporada_2_Episodio_06.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 6 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/7sI00KKQ#bz4DhPgs7bUqqeYoZncceIadTG6z0Ktevlhjh8N3nKk">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/7sI00KKQ#bz4DhPgs7bUqqeYoZncceIadTG6z0Ktevlhjh8N3nKk" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 7 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/yPjedaxw2rhmra/Boku_no_Hero_Academia_-_Temporada_2_Episodio_07.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/yPjedaxw2rhmra/Boku_no_Hero_Academia_-_Temporada_2_Episodio_07.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 7 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/W4hngD5T#Ac7hDpk7DBPayystG27k_6X8i6GrqTa-EhUTvFyXESo">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/W4hngD5T#Ac7hDpk7DBPayystG27k_6X8i6GrqTa-EhUTvFyXESo" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 8 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/VVbYwK6xb4ik1Q/Boku_no_Hero_Academia_-_Temporada_2_Episodio_08.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/VVbYwK6xb4ik1Q/Boku_no_Hero_Academia_-_Temporada_2_Episodio_08.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 8 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/roog1RZL#j4IVYns30cZ1JLWeh_m9N1atu9n_rcCZlxTf25m-88I">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/roog1RZL#j4IVYns30cZ1JLWeh_m9N1atu9n_rcCZlxTf25m-88I" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 9 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/vlK69gOZMeH49bP/Boku_no_Hero_Academia_-_Temporada_2_Episodio_09.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/vlK69gOZMeH49bP/Boku_no_Hero_Academia_-_Temporada_2_Episodio_09.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 9 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/WsBHgJBY#TdrlN50G-UGf6Uh3_fkqdC8eJd-ADKKN3dYDtpm6phg">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/WsBHgJBY#TdrlN50G-UGf6Uh3_fkqdC8eJd-ADKKN3dYDtpm6phg" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 10 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/ZaJjPkdAl1TqXYg/Boku_no_Hero_Academia_-_Temporada_2_Episodio_10.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/ZaJjPkdAl1TqXYg/Boku_no_Hero_Academia_-_Temporada_2_Episodio_10.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 10 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/bg4mGJaC#G_09fDD-W7Cognhmzh4mz587OQLMbT6Urc9IdWfHXFA">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/bg4mGJaC#G_09fDD-W7Cognhmzh4mz587OQLMbT6Urc9IdWfHXFA" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 11 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/ykaeJz8wWwi1ABd/Boku_no_Hero_Academia_-_Temporada_2_Episodio_11.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/ykaeJz8wWwi1ABd/Boku_no_Hero_Academia_-_Temporada_2_Episodio_11.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 11 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/79Y3VbCK#acnwOEv_1328E6VW-XWSm6NiQD0VN9NU4S6yOgmdZxc">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/79Y3VbCK#acnwOEv_1328E6VW-XWSm6NiQD0VN9NU4S6yOgmdZxc" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 12 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/xklwRgG1lOIk4Vq/Boku_no_Hero_Academia_-_Temporada_2_Episodio_12.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/xklwRgG1lOIk4Vq/Boku_no_Hero_Academia_-_Temporada_2_Episodio_12.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 12 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/it43RbDJ#ufEzEGfaBInFHEyPrfuw0UxPpgbZaAy4MXFI0bb89JM">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/it43RbDJ#ufEzEGfaBInFHEyPrfuw0UxPpgbZaAy4MXFI0bb89JM" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 13 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/12zVmpKoQ0He2bK/Boku_no_Hero_Academia_-_Temporada_2_Episodio_13.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/12zVmpKoQ0He2bK/Boku_no_Hero_Academia_-_Temporada_2_Episodio_13.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 13 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/ClxxAS4b#1xIeORRB0phTwc4jE2uJUleSABxa5uUlhxDgBBB8ISI">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/ClxxAS4b#1xIeORRB0phTwc4jE2uJUleSABxa5uUlhxDgBBB8ISI" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 14 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/r2gQo9DWKmTbmVl/Boku_no_Hero_Academia_-_Temporada_2_Episodio_14.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/r2gQo9DWKmTbmVl/Boku_no_Hero_Academia_-_Temporada_2_Episodio_14.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 14 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/Lk5SlZwQ#nY_LNtyFE0M3asMHlwFpLNRxE22nfiHykUW2PiFfU6k">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/Lk5SlZwQ#nY_LNtyFE0M3asMHlwFpLNRxE22nfiHykUW2PiFfU6k" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 15 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/klpWmzQ46MFOqvL/Boku_no_Hero_Academia_-_Temporada_2_Episodio_15.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/klpWmzQ46MFOqvL/Boku_no_Hero_Academia_-_Temporada_2_Episodio_15.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 15 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/WxQWnZSR#xJ1Ob5do2zRGHXw8AW6lNljSiaRcupQMUDWet0WUwX8">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/WxQWnZSR#xJ1Ob5do2zRGHXw8AW6lNljSiaRcupQMUDWet0WUwX8" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 16 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/2LDr7Rbl8BHRdy/Boku_no_Hero_Academia_-_Temporada_2_Episodio_16.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/2LDr7Rbl8BHRdy/Boku_no_Hero_Academia_-_Temporada_2_Episodio_16.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 16 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/HlZUGCCK#qYw14_ait1I023wg9RHZg2gfQNambgqxmyAx7g3jZZY">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/HlZUGCCK#qYw14_ait1I023wg9RHZg2gfQNambgqxmyAx7g3jZZY" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 17 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/QWr3bO420RS0b1v/Boku_no_Hero_Academia_-_Temporada_2_Episodio_17.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/QWr3bO420RS0b1v/Boku_no_Hero_Academia_-_Temporada_2_Episodio_17.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 17 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/ioBQSYAL#KNNjzbAzhhbQretij3qzzyZdXrLc-gLPd5vK27-XyuY">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/ioBQSYAL#KNNjzbAzhhbQretij3qzzyZdXrLc-gLPd5vK27-XyuY" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 18 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/LePAKLmVqrsRjG1/Boku_no_Hero_Academia_-_Temporada_2_Episodio_18.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/LePAKLmVqrsRjG1/Boku_no_Hero_Academia_-_Temporada_2_Episodio_18.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 18 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/a5QR1TzD#X0UC4-65knU2EwKgCL2O9xmqqiMKd4cKEqXbGtuj8gg">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/a5QR1TzD#X0UC4-65knU2EwKgCL2O9xmqqiMKd4cKEqXbGtuj8gg" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 19 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/9XPGyBBoYvtDPk/Boku_no_Hero_Academia_-_Temporada_2_Episodio_19.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/9XPGyBBoYvtDPk/Boku_no_Hero_Academia_-_Temporada_2_Episodio_19.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 19 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/mko00ZLA#BYIq4B3TQqjikRpoqLOPk7y4Gbfd9ASjUKexSUf0p-A">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/mko00ZLA#BYIq4B3TQqjikRpoqLOPk7y4Gbfd9ASjUKexSUf0p-A" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 20 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/WDWpAQL6DwSeqd/Boku_no_Hero_Academia_-_Temporada_2_Episodio_20.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/WDWpAQL6DwSeqd/Boku_no_Hero_Academia_-_Temporada_2_Episodio_20.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 20 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/L9oBEJID#P0rShG5edBtc0yXJT1HiZk_Ok214_I4NcPs1HuCO-Xg">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/L9oBEJID#P0rShG5edBtc0yXJT1HiZk_Ok214_I4NcPs1HuCO-Xg" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 21 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/ybRdQmXdMvcemJ/Boku_no_Hero_Academia_-_Temporada_2_Episodio_21.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/ybRdQmXdMvcemJ/Boku_no_Hero_Academia_-_Temporada_2_Episodio_21.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 21 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/HwRwzb5b#rMaa8tUmPx-X-5gK9z95ejV-SyR70ZpVRffuLRrnr5I">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/HwRwzb5b#rMaa8tUmPx-X-5gK9z95ejV-SyR70ZpVRffuLRrnr5I" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 22 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Y64jyZYmdkTvAK3/Boku_no_Hero_Academia_-_Temporada_2_Episodio_22.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Y64jyZYmdkTvAK3/Boku_no_Hero_Academia_-_Temporada_2_Episodio_22.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 22 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/qoYShRbR#yhFxEQ5GyntVxB-WyRqzaihHyIqEIhALZ0v75qZO-eE">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/qoYShRbR#yhFxEQ5GyntVxB-WyRqzaihHyIqEIhALZ0v75qZO-eE" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 23 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/3WrZjV90mWFdkBV/Boku_no_Hero_Academia_-_Temporada_2_Episodio_23.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/3WrZjV90mWFdkBV/Boku_no_Hero_Academia_-_Temporada_2_Episodio_23.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 23 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/b1Al0QaD#QPGfnLi8xiSzwohYPz0M1JfagAbx2XxOAsjJKmXpOI0">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/b1Al0QaD#QPGfnLi8xiSzwohYPz0M1JfagAbx2XxOAsjJKmXpOI0" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 24 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/bqp0ZABbvBsPvMp/Boku_no_Hero_Academia_-_Temporada_2_Episodio_24.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/bqp0ZABbvBsPvMp/Boku_no_Hero_Academia_-_Temporada_2_Episodio_24.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 24 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/75ByQBJA#mq8LUtPkCVmR5rdqq-l-iMT3CT7NPrA2_aEeCRqYA5g">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/75ByQBJA#mq8LUtPkCVmR5rdqq-l-iMT3CT7NPrA2_aEeCRqYA5g" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 25 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/g1owBbm9zzC37g/Boku_no_Hero_Academia_-_Temporada_2_Episodio_25.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/g1owBbm9zzC37g/Boku_no_Hero_Academia_-_Temporada_2_Episodio_25.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 25 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/LhIAxTCJ#WCXSbsxFEKoIrKofe3R5CiQPSOWBftaLyQrzWefjHBs">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/LhIAxTCJ#WCXSbsxFEKoIrKofe3R5CiQPSOWBftaLyQrzWefjHBs" onclick="copyHref(this); return false;">Copiar link</a></div></div>
       </div>
     </section>
 

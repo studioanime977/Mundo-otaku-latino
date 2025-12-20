@@ -14,9 +14,6 @@
     .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
     .header-space { margin-top: 8px; }
     .back-btn { display:inline-block; margin:12px 0; padding:10px 16px; background:#6c63ff; color:#fff; border-radius:8px; text-decoration:none; }
-    .lang-toggle { display:flex; gap:8px; margin:12px 0 16px; }
-    .lang-toggle button { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; background:#2c2c2c; color:#ddd; }
-    .lang-toggle button.active { background:#6c63ff; color:#fff; }
     .download-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
     .card { background: rgba(255,255,255,0.04); border-radius:10px; padding:12px; }
     .card h4 { margin:0 0 8px 0; }
@@ -24,18 +21,14 @@
     .btn { display:inline-block; padding:8px 12px; border-radius:8px; text-decoration:none; }
     .btn-download { background:#27ae60; color:#fff; }
     .btn-copy { background:#111; color:#fff; }
-    .section { display:none; }
-    .section.active { display:block; }
+    .section { display:block; }
     @media (max-width:768px){ .download-grid { grid-template-columns: 1fr; } }
+
     /* Footer nuevo */
     .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
     .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .footer .footer-section h3 { margin: 0 0 8px; }
     .footer .footer-section p { margin: 0; opacity: 0.85; }
-    .footer .footer-section ul { list-style: none; padding: 0; margin: 0; }
-    .footer .footer-section ul li { margin: 6px 0; }
-    .footer .footer-section a { color: #fff; text-decoration: none; }
-    .footer .footer-section a:hover { text-decoration: underline; }
     .footer .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
     @media (min-width:768px){ .footer .social-links { grid-template-columns: repeat(4, 1fr); } }
     .footer .social-item { display: flex; align-items: center; gap: 8px; background: #111; border-radius: 10px; padding: 10px; text-decoration: none; color: #fff; }
@@ -46,20 +39,6 @@
     @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
   </style>
   <script>
-    function setActiveLanguage(lang){
-      document.querySelectorAll('.lang-toggle button').forEach(b=>{
-        b.classList.toggle('active', b.dataset.lang===lang);
-      });
-      document.querySelectorAll('.section').forEach(s=>{
-        s.classList.toggle('active', s.dataset.lang===lang);
-      });
-    }
-    function initFromQuery(){
-      const params = new URLSearchParams(window.location.search);
-      let lang = params.get('lang') || 'lat';
-      if (!['lat','sub'].includes(lang)) { lang = 'lat'; }
-      setActiveLanguage(lang);
-    }
     function copyHref(el){
       const href = el.getAttribute('href');
       navigator.clipboard.writeText(href).then(()=>{
@@ -67,8 +46,8 @@
         setTimeout(()=>{ el.textContent = 'Copiar link'; }, 1500);
       });
     }
-    document.addEventListener('DOMContentLoaded', initFromQuery);
   </script>
+
   <style>
     .header + main.container { padding-top: 6rem; }
   </style>
@@ -88,102 +67,47 @@
   </header>
 
   <main class="container">
-    <a class="back-btn" href="./castillo-infinito.html">◄ Volver al episodio</a>
-    <h1>Descargas – Chainsaw Man season1</h1>
-    <p>Elige idioma y servidor. Todos los enlaces pasan por el acortador exe.io para protegerlos.</p>
+    <a class="back-btn" href="./season1.html">◄ Volver al episodio</a>
+    <h1>Descargas – Chainsaw Man Temporada 1</h1>
+    <p>Elige servidor. Los enlaces de StreamTape pasan por el acortador exe.io para protegerlos.</p>
 
-    <div class="lang-toggle" role="tablist" aria-label="Idiomas">
-      <button role="tab" class="active" data-lang="lat" onclick="setActiveLanguage('lat')">Latino</button>
-      <button role="tab" data-lang="sub" onclick="setActiveLanguage('sub')">Sub Español</button>
-    </div>
-
-    <!-- Latino -->
-    <section class="section active" data-lang="lat" aria-label="Descargas Latino">
+    <section class="section" data-lang="lat" aria-label="Descargas Español">
       <div class="download-grid">
-        <div class="card">
-          <h4>Terabox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castilloterasSONY2025">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castilloterasSONY2025" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>MixDrop</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>StreamTape</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>StreamWish</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>EarnVids</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>MediaFire</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Dropbox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-      </div>
-    </section>
+        <div class="card"><h4>Episodio 1 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/8RdAKDYwyWsoPoe/Chainsaw_Man_S1-E01_espa%C3%B1ol.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/8RdAKDYwyWsoPoe/Chainsaw_Man_S1-E01_espa%C3%B1ol.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 1 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/WU0y1ahY#jGAq0pwbb7ZEHY9BgXvg2PjemMBMyiN7vDIyfb1PGsw">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/WU0y1ahY#jGAq0pwbb7ZEHY9BgXvg2PjemMBMyiN7vDIyfb1PGsw" onclick="copyHref(this); return false;">Copiar link</a></div></div>
 
+        <div class="card"><h4>Episodio 2 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/zppQjQzlBauvGW/Chainsaw_Man_S1-E02_espa%C3%B1ol.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/zppQjQzlBauvGW/Chainsaw_Man_S1-E02_espa%C3%B1ol.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 2 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/TYVXHSYL#hZxmIYYtJAiFjW01QACwnGnw5WaMg38BSAY668eVKMM">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/TYVXHSYL#hZxmIYYtJAiFjW01QACwnGnw5WaMg38BSAY668eVKMM" onclick="copyHref(this); return false;">Copiar link</a></div></div>
 
-    <!-- Sub Español -->
-    <section class="section" data-lang="sub" aria-label="Descargas Sub Español">
-      <div class="download-grid">
-        <div class="card">
-          <h4>Netu (HQQ)</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Terabox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/CASTISUBTERA">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/CASTISUBTERA" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>MediaFire</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Dropbox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
+        <div class="card"><h4>Episodio 3 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Vd60laDkmdTKLjY/Chainsaw_Man_S1-E03_espa%C3%B1ol.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Vd60laDkmdTKLjY/Chainsaw_Man_S1-E03_espa%C3%B1ol.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 3 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/XAEVCA4T#D7UF4_w2_1347vhMDFSK6bl2-E2qlqAXLboEmZx09PE">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/XAEVCA4T#D7UF4_w2_1347vhMDFSK6bl2-E2qlqAXLboEmZx09PE" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 4 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Mke0PPdLDjFDq1/Chainsaw_Man_S1-E04_espa%C3%B1ol.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Mke0PPdLDjFDq1/Chainsaw_Man_S1-E04_espa%C3%B1ol.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 4 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/7d1GVbIJ#J-djnWnt_jPOBaiFMP4U7ozJFyJvSyip69a9J7vOBw0">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/7d1GVbIJ#J-djnWnt_jPOBaiFMP4U7ozJFyJvSyip69a9J7vOBw0" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 5 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/VrV7zVpjJ1fKBmY/Chainsaw_Man_S1-E05_espa%C3%B1ol.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/VrV7zVpjJ1fKBmY/Chainsaw_Man_S1-E05_espa%C3%B1ol.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 5 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/TQ00TKQR#BGrxytS9CulRDmXo1jrZEE0YtTcvHmuQcdmjXTUh_Uo">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/TQ00TKQR#BGrxytS9CulRDmXo1jrZEE0YtTcvHmuQcdmjXTUh_Uo" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 6 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/vP8kdal14bi4d4K/Chainsaw_Man_S1-E06_espa%C3%B1ol.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/vP8kdal14bi4d4K/Chainsaw_Man_S1-E06_espa%C3%B1ol.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 6 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/vEMhHbCA#lWj_J4_917NBmIm5jHHAAr0PbAQ1c86hIRR0s5HIQ7A">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/vEMhHbCA#lWj_J4_917NBmIm5jHHAAr0PbAQ1c86hIRR0s5HIQ7A" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 7 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/MezqRd0QGmfmXKW/Chainsaw_Man_S1-E07_espa%C3%B1ol.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/MezqRd0QGmfmXKW/Chainsaw_Man_S1-E07_espa%C3%B1ol.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 7 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/XRdz1RaS#xQsrbFee_Zd-NmJm77s7z10UU_S2vbsB8rStFbBEFzY">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/XRdz1RaS#xQsrbFee_Zd-NmJm77s7z10UU_S2vbsB8rStFbBEFzY" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 8 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/rdRPaq3XVrcGo6/Chainsaw_Man_S1-E08_espa%C3%B1ol.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/rdRPaq3XVrcGo6/Chainsaw_Man_S1-E08_espa%C3%B1ol.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 8 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/KIskmKYL#RZl_-_hFRYlYgUya9LVicILMYnPxxAppPVGi_AdSNic">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/KIskmKYL#RZl_-_hFRYlYgUya9LVicILMYnPxxAppPVGi_AdSNic" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 9 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/0VxqmqjW7ztbJL1/Chainsaw_Man_S1-E09_espa%C3%B1ol.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/0VxqmqjW7ztbJL1/Chainsaw_Man_S1-E09_espa%C3%B1ol.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 9 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/nQF2WabC#y7MEUrhS3589d647R8AGR6mr8xxgO-brpk3xOQQk-No">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/nQF2WabC#y7MEUrhS3589d647R8AGR6mr8xxgO-brpk3xOQQk-No" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 10 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/KqvadPXBxqu0mgl/Chainsaw_Man_S1-E10_espa%C3%B1ol.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/KqvadPXBxqu0mgl/Chainsaw_Man_S1-E10_espa%C3%B1ol.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 10 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/6Q1XCCoR#JPcE-fXCWhGoji7BM2r8whHDAlVF3SDVeU9lDBa_nFM">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/6Q1XCCoR#JPcE-fXCWhGoji7BM2r8whHDAlVF3SDVeU9lDBa_nFM" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 11 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/oGxq7ejvLOC3a8/Chainsaw_Man_S1-E11_espa%C3%B1ol.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/oGxq7ejvLOC3a8/Chainsaw_Man_S1-E11_espa%C3%B1ol.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 11 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/HI0XlIRR#4osfZcvyRm-Zh6dpy7yMS9XJyExGetsVPhAxkcZnARs">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/HI0XlIRR#4osfZcvyRm-Zh6dpy7yMS9XJyExGetsVPhAxkcZnARs" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 12 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/PrOwgXGkBMU00Be/Chainsaw_Man_S1-E12_espa%C3%B1ol.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/PrOwgXGkBMU00Be/Chainsaw_Man_S1-E12_espa%C3%B1ol.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 12 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/OUtxVSQB#6QzW4FUs1c9ZTX21tTmzXZzwVMZXMc-ex6HIRN9Utwo">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/OUtxVSQB#6QzW4FUs1c9ZTX21tTmzXZzwVMZXMc-ex6HIRN9Utwo" onclick="copyHref(this); return false;">Copiar link</a></div></div>
       </div>
     </section>
 
@@ -263,50 +187,6 @@
     </div>
   </footer>
 
-  <script>
-    // Permite abrir esta página con ?lang=lat|es|sub desde el episodio
-  </script>
-  
 <script src="../../../assets/js/ads.js"></script>
-<!-- OLD LINKS PRESERVED:
-https://exe.io/ANIMETV
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/elz81noruz4qkm?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0e8p0lrfzn0ql?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/7kjw3kgkavq9dx?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/xw9e0wx4hno8z9?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/jdk8p414cz4xxj?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0e8pgd1f346vx?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/wlwjdel7t036qev?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/67rml6xeb97pzd?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/4d9kr8lxs6l6lp?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/vkq963eqag66px?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/elz81j10h46px6?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/jdk8pgdqi6w00e?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/8RdAKDYwyWsoPoe/Chainsaw_Man_S1-E01_espa%C3%B1ol.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/zppQjQzlBauvGW/Chainsaw_Man_S1-E02_espa%C3%B1ol.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Vd60laDkmdTKLjY/Chainsaw_Man_S1-E03_espa%C3%B1ol.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Mke0PPdLDjFDq1/Chainsaw_Man_S1-E04_espa%C3%B1ol.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/VrV7zVpjJ1fKBmY/Chainsaw_Man_S1-E05_espa%C3%B1ol.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/vP8kdal14bi4d4K/Chainsaw_Man_S1-E06_espa%C3%B1ol.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/MezqRd0QGmfmXKW/Chainsaw_Man_S1-E07_espa%C3%B1ol.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/rdRPaq3XVrcGo6/Chainsaw_Man_S1-E08_espa%C3%B1ol.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/0VxqmqjW7ztbJL1/Chainsaw_Man_S1-E09_espa%C3%B1ol.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/KqvadPXBxqu0mgl/Chainsaw_Man_S1-E10_espa%C3%B1ol.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/oGxq7ejvLOC3a8/Chainsaw_Man_S1-E11_espa%C3%B1ol.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/PrOwgXGkBMU00Be/Chainsaw_Man_S1-E12_espa%C3%B1ol.mp4
-https://exe.io/ANIMETV
-https://exe.io/ANIMETV
-https://t.me/Mundoootakulatino
-https://t.me/qquiCA9FiB41MDkx
-https://rumble.com/c/c-6184817?e9s=src_v1_clr
-https://www.facebook.com/STUDIOOTAKU01
-https://www.facebook.com/groups/723496132540351
-https://www.facebook.com/groups/1071796301003086
-https://www.tiktok.com/@studiootaku01
-https://www.instagram.com/studiootaku01
-https://github.com/studioanime977
-https://www.youtube.com/@STUDIOOTAKU1
-https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm
--->
 </body>
 </html>

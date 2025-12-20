@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classroom of the Elite - Temporada 1 - StudioOtaku</title>
-  <link rel="stylesheet" href="../../../css/server-selector.css">
   <link rel="stylesheet" href="../../../css/temporadas.css">
   <link rel="stylesheet" href="../../../css/style.css">
   <link rel="stylesheet" href="../../../css/anime.css">
   <link rel="stylesheet" href="../../../css/responsive-style.css">
   <link rel="stylesheet" href="../../../css/responsive-navigation.css">
+
   <link rel="icon" type="image/png" href="../../../ico/logo.png">
   <link rel="apple-touch-icon" href="../../../ico/logo.png">
   <link rel="shortcut icon" href="../../../ico/logo.png">
@@ -18,6 +18,7 @@
     .left-content { flex: 3; }
     .right-content { flex: 1; }
     .back-btn { display: inline-block; margin: 12px 0; padding: 10px 16px; background: #6c63ff; color: #fff; border-radius: 8px; text-decoration: none; }
+
     .right-content .popular-item { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.03); margin-bottom: 10px; cursor: pointer; }
     .right-content .popular-item:hover { background: rgba(255,255,255,0.06); }
     .right-content .popular-item img { width: 120px; height: 72px; object-fit: cover; border-radius: 6px; display: block; }
@@ -25,7 +26,20 @@
     .reproductor-video iframe { width: 100%; height: 480px; border: none; }
     .player-frame-wrap { background: #111; border-radius: 12px; overflow: hidden; }
     .header + main.container { padding-top: 6rem; }
+
+    .episodes-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+    @media (max-width: 900px) { .episodes-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    @media (max-width: 600px) { .episodes-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .episode-btn { padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.06); color: #fff; border: 1px solid rgba(255,255,255,0.10); cursor: pointer; font-weight: 700; }
+    .episode-btn:hover { background: rgba(108,99,255,0.25); border-color: rgba(108,99,255,0.60); }
+    .episode-btn.active { background: #6c63ff; border-color: #6c63ff; }
+
+    .server-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 12px 0; }
+    .server-card { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.04); color: #fff; text-decoration: none; border: 1px solid rgba(255,255,255,0.10); }
+    .server-card img { width: 22px; height: 22px; object-fit: contain; }
+    .server-card.active { background: rgba(108,99,255,0.25); border-color: rgba(108,99,255,0.65); }
   </style>
+
   <style>
     .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
     .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -68,62 +82,19 @@
           <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
         </div>
         <div class="description">
-          <p>Selecciona episodio e idioma, luego un servidor. Disponible: MixDrop y StreamTape (Español).</p>
+          <p>Selecciona episodio y servidor. Disponible: StreamTape y MEGA (Español).</p>
         </div>
 
         <div class="contenedor-video">
           <section class="player-selector" aria-label="Selector de idioma y servidor">
-            <div class="language-toggle" role="tablist" aria-label="Idiomas disponibles">
-              <button class="lang-btn" role="tab" aria-selected="false" data-language="lat">
-                <img src="../../../ico/LAT.png" alt="Latino">
-                <span>Latino</span>
-              </button>
-              <button class="lang-btn" role="tab" aria-selected="false" data-language="sub">
-                <img src="../../../ico/SUB.png" alt="Subtitulado">
-                <span>Subtitulado</span>
-              </button>
-            </div>
-
             <div class="server-grid" aria-label="Servidores disponibles">
-              <a href="#" class="server-card" data-server="Filemoon" data-url-lat="#" data-url-sub="#" aria-label="Filemoon">
-                <img src="../../../ico/FILEMOON.png" alt="Filemoon">
-                <span>Filemoon</span>
-              </a>
-              <a href="#" class="server-card" data-server="StreamWish" data-url-lat="#" data-url-sub="#" aria-label="StreamWish">
-                <img src="../../../ico/STREAMWISH.png" alt="StreamWish">
-                <span>StreamWish</span>
-              </a>
-              <a href="#" class="server-card" data-server="MixDrop" data-url-lat="#" data-url-sub="#" aria-label="MixDrop">
-                <img src="../../../ico/mixdrop.webp" alt="MixDrop">
-                <span>MixDrop</span>
-              </a>
-              <a href="#" class="server-card" data-server="StreamTape" data-url-lat="#" data-url-sub="#" aria-label="StreamTape">
+              <a href="#" class="server-card" data-server="st" aria-label="StreamTape">
                 <img src="../../../ico/streamtape.png" alt="StreamTape">
                 <span>StreamTape</span>
               </a>
-              <a href="#" class="server-card" data-server="Netu" data-url-lat="#" data-url-sub="#" aria-label="Netu">
-                <img src="../../../ico/netu.png" alt="Netu">
-                <span>Netu</span>
-              </a>
-              <a href="#" class="server-card" data-server="Uqload" data-url-lat="#" data-url-sub="#" aria-label="Uqload">
-                <img src="../../../ico/UQLOAD.webp" alt="Uqload">
-                <span>Uqload</span>
-              </a>
-              <a href="#" class="server-card" data-server="HGLINK" data-url-lat="#" data-url-sub="#" aria-label="HGLINK">
-                <img src="../../../ico/HGLINK.png" alt="HGLINK">
-                <span>HGLINK</span>
-              </a>
-              <a href="#" class="server-card" data-server="EarnVids" data-url-lat="#" data-url-sub="#" aria-label="EarnVids">
-                <img src="../../../ico/earnvids.jpg" alt="EarnVids">
-                <span>EarnVids</span>
-              </a>
-              <a href="#" class="server-card" data-server="LULU VDO" data-url-lat="#" data-url-sub="#" aria-label="LULU VDO">
-                <img src="../../../ico/LULUVDO.webp" alt="LULU VDO">
-                <span>LULU VDO</span>
-              </a>
-              <a href="#" class="server-card" data-server="HexUpload" data-url-lat="#" data-url-sub="#" aria-label="HexUpload">
-                <img src="../../../ico/HEXUPLOAD.png" alt="HexUpload">
-                <span>HexUpload</span>
+              <a href="#" class="server-card" data-server="mg" aria-label="MEGA">
+                <img src="../../../ico/mega.webp" alt="MEGA">
+                <span>MEGA</span>
               </a>
             </div>
 
@@ -246,73 +217,62 @@
     </div>
   </footer>
 
-  <script src="../../../assets/js/server-selector.js"></script>
   <script>
-    function normalizeUrl(url) { return url || ''; }
-    function mixdropFallback(url) {
-      if (!url) return '';
-      const m = url.match(/https?:\/\/mxdrop\.to\/e\/([^\/?#]+)/i);
-      return m ? `https://mdy48tn97.com/e/${m[1]}` : '';
-    }
     let currentEpisode = null;
+    let currentServer = 'st';
+
     const episodes = [
-      { num: 1,  title: 'Episodio 1',  op1: 'https://mxdrop.to/e/k0e8prz8aeqxol', st: 'https://streamtape.com/e/QbBp9A7LZ6Uy6o' },
-      { num: 2,  title: 'Episodio 2',  op1: 'https://mxdrop.to/e/wlwjdrzjt9olg7', st: 'https://streamtape.com/e/1JbkbWAj1vF1yo/classroom_of_the_elite_-_Temporada_1_Episodio_02.mp4' },
-      { num: 3,  title: 'Episodio 3',  op1: 'https://mxdrop.to/e/q1d8pznxfdrkw8', st: 'https://streamtape.com/e/4WJwALlV4lC2ay/classroom_of_the_elite_-_Temporada_1_Episodio_03.mp4' },
-      { num: 4,  title: 'Episodio 4',  op1: 'https://mxdrop.to/e/7kjw31zjc7rrnv', st: 'https://streamtape.com/e/3AZjqV6V99IdyAv/classroom_of_the_elite_-_Temporada_1_Episodio_04.mp4' },
-      { num: 5,  title: 'Episodio 5',  op1: 'https://mxdrop.to/e/9wxpv31zhp68gq', st: 'https://streamtape.com/e/abzbPVPe6Ds2ym/classroom_of_the_elite_-_Temporada_1_Episodio_05.mp4' },
-      { num: 6,  title: 'Episodio 6',  op1: 'https://mxdrop.to/e/1no1mlxguke680g', st: 'https://streamtape.com/e/jk6GZObXD6Hzld8/classroom_of_the_elite_-_Temporada_1_Episodio_06.mp4' },
-      { num: 7,  title: 'Episodio 7',  op1: 'https://mxdrop.to/e/l79je101fmq89v', st: 'https://streamtape.com/e/owQ20J06eVsJ1Dx/classroom_of_the_elite_-_Temporada_1_Episodio_07.mp4' },
-      { num: 8,  title: 'Episodio 8 (BD)',  op1: 'https://mxdrop.to/e/36q7pep8u4zemx', st: 'https://streamtape.com/e/d7kW6mQ7KmhgZb/classroom_of_the_elite_-_Temporada_1_Episodio_08.mp4' },
-      { num: 9,  title: 'Episodio 9',  op1: 'https://mxdrop.to/e/wlwjdg7zi60gmj', st: 'https://streamtape.com/e/3J2r7BJyomhdgvM/classroom_of_the_elite_-_Temporada_1_Episodio_09.mp4' },
-      { num: 10, title: 'Episodio 10', op1: 'https://mxdrop.to/e/8ljr3wrkf6jjqde', st: 'https://streamtape.com/e/KXde2eYm3XS09YA/classroom_of_the_elite_-_Temporada_1_Episodio_10.mp4' },
-      { num: 11, title: 'Episodio 11', op1: 'https://mxdrop.to/e/36q7pdz1cd9lpn', st: 'https://streamtape.com/e/doyyPWVZVPi9KY/classroom_of_the_elite_-_Temporada_1_Episodio_11.mp4' },
-      { num: 12, title: 'Episodio 12', op1: 'https://mxdrop.to/e/jdk8px7kt7o9g3j', st: 'https://streamtape.com/e/jjvkqPLBVqIzjVV/classroom_of_the_elite_-_Temporada_1_Episodio_12.mp4' }
+      { num: 1,  title: 'Episodio 1',  st: 'https://streamtape.com/e/QbBp9A7LZ6Uy6o/classroom_of_the_elite_-_Temporada_1_Episodio_01.mp4', mg: 'https://mega.nz/embed/bBdilABK#JXLQ8dNmRirzdGGrxRCouAkAKFkbP0hCYwqtCpn-AXI' },
+      { num: 2,  title: 'Episodio 2',  st: 'https://streamtape.com/e/1JbkbWAj1vF1yo/classroom_of_the_elite_-_Temporada_1_Episodio_02.mp4', mg: 'https://mega.nz/embed/LQkA3ACK#j7w4AjN4MUOMKdqRXj7yOM05Smt3DyLIsUQ4IRu8aQg' },
+      { num: 3,  title: 'Episodio 3',  st: 'https://streamtape.com/e/4WJwALlV4lC2ay/classroom_of_the_elite_-_Temporada_1_Episodio_03.mp4', mg: 'https://mega.nz/embed/jIFj1ZxQ#TK8Mi3zT1neocmLPiqwhNIwVVZ6MAg_FvWu4QUmdX6g' },
+      { num: 4,  title: 'Episodio 4',  st: 'https://streamtape.com/e/3AZjqV6V99IdyAv/classroom_of_the_elite_-_Temporada_1_Episodio_04.mp4', mg: 'https://mega.nz/embed/rc0S2TBb#JsPY6YvQnLB-5jR_yBGdLfiyFavJMHJon7o1uozw1Ng' },
+      { num: 5,  title: 'Episodio 5',  st: 'https://streamtape.com/e/abzbPVPe6Ds2ym/classroom_of_the_elite_-_Temporada_1_Episodio_05.mp4', mg: 'https://mega.nz/embed/XdtS1YKK#odeNvZgz3eHzyBzc8MDQxp3ac5s8Hw7rWGawl3gqAMQ' },
+      { num: 6,  title: 'Episodio 6',  st: 'https://streamtape.com/e/jk6GZObXD6Hzld8/classroom_of_the_elite_-_Temporada_1_Episodio_06.mp4', mg: 'https://mega.nz/embed/nZVm0SwC#TyUi6uvCBW6RQDy7qvXvpMS8F5f2__cdMo--uQ0lWpU' },
+      { num: 7,  title: 'Episodio 7',  st: 'https://streamtape.com/e/owQ20J06eVsJ1Dx/classroom_of_the_elite_-_Temporada_1_Episodio_07.mp4', mg: 'https://mega.nz/embed/KcNzECwZ#Doy3f9zLx5ISNh5R83Q_R2mXpt2x4wF3fLSay4vZ8io' },
+      { num: 8,  title: 'Episodio 8',  st: 'https://streamtape.com/e/d7kW6mQ7KmhgZb/classroom_of_the_elite_-_Temporada_1_Episodio_08.mp4', mg: 'https://mega.nz/embed/mFFBDRZI#yIUcmcvt7E_CDy1CCYD8TGgzx98RaXUss4byQAgat7Q' },
+      { num: 9,  title: 'Episodio 9',  st: 'https://streamtape.com/e/3J2r7BJyomhdgvM/classroom_of_the_elite_-_Temporada_1_Episodio_09.mp4', mg: 'https://mega.nz/embed/2MVhgIbC#eEmuKB7T0ICaZMgF2xdlsozXhcMoIBAyh9lSCa5CiTA' },
+      { num: 10, title: 'Episodio 10', st: 'https://streamtape.com/e/KXde2eYm3XS09YA/classroom_of_the_elite_-_Temporada_1_Episodio_10.mp4', mg: 'https://mega.nz/embed/CRF3SRgY#NjolScqpSwRPDDby00jUH_QvjI9qDsgq0_0wJWFgWo8' },
+      { num: 11, title: 'Episodio 11', st: 'https://streamtape.com/e/doyyPWVZVPi9KY/classroom_of_the_elite_-_Temporada_1_Episodio_11.mp4', mg: 'https://mega.nz/embed/uEFExBiB#KRyUX_9toRAWsdB5UMU26nUrDILczx4UU6t5Nrc0Sl0' },
+      { num: 12, title: 'Episodio 12', st: 'https://streamtape.com/e/jjvkqPLBVqIzjVV/classroom_of_the_elite_-_Temporada_1_Episodio_12.mp4', mg: 'https://mega.nz/embed/uEM3BJoY#OAysrpy-3z7e4GuaPoDpuV6BoH-l3BiMlYM5Q4fzxEA' }
     ];
-    const episodesGrid = document.getElementById('episodes-grid');
-    episodes.forEach(episode => {
-      const episodeBtn = document.createElement('button');
-      episodeBtn.className = 'episode-btn';
-      episodeBtn.textContent = `Ep ${episode.num}`;
-      episodeBtn.onclick = () => loadEpisode(episode);
-      episodesGrid.appendChild(episodeBtn);
-    });
-    function applyEpisodeToServerGrid(ep) {
-      const mixdropCard = document.querySelector('.server-card[data-server="MixDrop"]');
-      const streamTapeCard = document.querySelector('.server-card[data-server="StreamTape"]');
-      const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"]):not([data-server="StreamTape"])');
-      const latUrlMix = normalizeUrl(ep.op1 || '');
-      const latUrlSt = normalizeUrl(ep.st || '');
-      if (mixdropCard) {
-        mixdropCard.setAttribute('data-url-lat', latUrlMix || '#');
-        const fb = mixdropFallback(latUrlMix);
-        if (fb) { mixdropCard.setAttribute('data-fallback-lat', fb); } else { mixdropCard.removeAttribute('data-fallback-lat'); }
-        mixdropCard.setAttribute('data-url-sub', '#');
-      }
-      if (streamTapeCard) {
-        streamTapeCard.setAttribute('data-url-lat', latUrlSt || '#');
-        streamTapeCard.setAttribute('data-url-sub', '#');
-        if (!latUrlSt && latUrlMix) { streamTapeCard.setAttribute('data-fallback-lat', latUrlMix); }
-        else { streamTapeCard.removeAttribute('data-fallback-lat'); }
-      }
-      otherCards.forEach(card => { card.setAttribute('data-url-lat', '#'); card.setAttribute('data-url-sub', '#'); });
+
+    const hasHttp = (u) => u && /^https?:\/\//i.test(u);
+
+    function setActiveServer(server) {
+      currentServer = server;
+      document.querySelectorAll('.server-card').forEach(card => {
+        card.classList.toggle('active', card.dataset.server === server);
+      });
+      playCurrent();
     }
-    function loadEpisode(episode) {
-      document.querySelectorAll('.episode-btn').forEach((btn, index) => { btn.classList.toggle('active', index + 1 === episode.num); });
-      document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
-      currentEpisode = episode;
-      applyEpisodeToServerGrid(episode);
-      const latBtn = document.querySelector('.lang-btn[data-language="lat"]');
-      if (latBtn) { latBtn.click(); }
-      const stCard = document.querySelector('.server-card[data-server="StreamTape"]');
-      const mxCard = document.querySelector('.server-card[data-server="MixDrop"]');
-      const stUrl = stCard ? stCard.getAttribute('data-url-lat') : '';
-      const mxUrl = mxCard ? mxCard.getAttribute('data-url-lat') : '';
-      const hasHttp = (u) => u && /^https?:\/\//i.test(u);
-      if (stCard && hasHttp(stUrl)) { try { stCard.click(); } catch (_) {} }
-      else if (mxCard && hasHttp(mxUrl)) { try { mxCard.click(); } catch (_) {} }
+
+    function playCurrent() {
+      if (!currentEpisode) return;
+      const frame = document.getElementById('player-frame');
+      if (!frame) return;
+
+      let url = currentServer === 'mg' ? currentEpisode.mg : currentEpisode.st;
+      if (!hasHttp(url)) {
+        url = currentServer === 'mg' ? currentEpisode.st : currentEpisode.mg;
+        currentServer = currentServer === 'mg' ? 'st' : 'mg';
+        document.querySelectorAll('.server-card').forEach(card => {
+          card.classList.toggle('active', card.dataset.server === currentServer);
+        });
+      }
+      frame.src = hasHttp(url) ? url : 'about:blank';
+    }
+
+    function loadEpisode(ep) {
+      currentEpisode = ep;
+      document.querySelectorAll('.episode-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', i + 1 === ep.num);
+      });
+      const title = document.getElementById('current-episode-title');
+      if (title) title.textContent = `Episodio ${ep.num}`;
+      playCurrent();
       updateNavState();
     }
+
     function updateNavState() {
       const prev = document.getElementById('prev-ep');
       const next = document.getElementById('next-ep');
@@ -324,21 +284,53 @@
       next.style.background = next.disabled ? '#2c2c2c' : '#6c63ff';
       next.style.color = next.disabled ? '#bbb' : '#fff';
     }
+
+    const episodesGrid = document.getElementById('episodes-grid');
+    if (episodesGrid) {
+      episodes.forEach(ep => {
+        const btn = document.createElement('button');
+        btn.className = 'episode-btn';
+        btn.textContent = `Ep ${ep.num}`;
+        btn.addEventListener('click', () => loadEpisode(ep));
+        episodesGrid.appendChild(btn);
+      });
+    }
+
+    document.querySelectorAll('.server-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        setActiveServer(card.dataset.server);
+      });
+    });
+
     const prevBtn = document.getElementById('prev-ep');
     const nextBtn = document.getElementById('next-ep');
-    if (prevBtn) { prevBtn.addEventListener('click', () => { if (!currentEpisode) return; const idx = currentEpisode.num - 2; if (idx >= 0) loadEpisode(episodes[idx]); }); }
-    if (nextBtn) { nextBtn.addEventListener('click', () => { if (!currentEpisode) return; const idx = currentEpisode.num; if (idx < episodes.length) loadEpisode(episodes[idx]); }); }
+    if (prevBtn) prevBtn.addEventListener('click', () => { if (currentEpisode && currentEpisode.num > 1) loadEpisode(episodes[currentEpisode.num - 2]); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { if (currentEpisode && currentEpisode.num < episodes.length) loadEpisode(episodes[currentEpisode.num]); });
+
     const toggleBtn = document.getElementById('toggle-episodes');
     const episodesBox = document.getElementById('episodes-container');
     if (toggleBtn && episodesBox) {
       toggleBtn.addEventListener('click', () => {
         const isHidden = episodesBox.hasAttribute('hidden');
-        if (isHidden) { episodesBox.removeAttribute('hidden'); toggleBtn.setAttribute('aria-expanded', 'true'); episodesBox.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-        else { episodesBox.setAttribute('hidden', ''); toggleBtn.setAttribute('aria-expanded', 'false'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        if (isHidden) {
+          episodesBox.removeAttribute('hidden');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+          episodesBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          episodesBox.setAttribute('hidden', '');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       });
     }
-    if (episodes.length > 0) { loadEpisode(episodes[0]); }
+
+    if (episodes.length > 0) {
+      setActiveServer('st');
+      loadEpisode(episodes[0]);
+    }
   </script>
+
   <script>
     (function(){
       const p=new URLSearchParams(window.location.search)

@@ -14,9 +14,6 @@
     .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
     .header-space { margin-top: 8px; }
     .back-btn { display:inline-block; margin:12px 0; padding:10px 16px; background:#6c63ff; color:#fff; border-radius:8px; text-decoration:none; }
-    .lang-toggle { display:flex; gap:8px; margin:12px 0 16px; }
-    .lang-toggle button { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; background:#2c2c2c; color:#ddd; }
-    .lang-toggle button.active { background:#6c63ff; color:#fff; }
     .download-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
     .card { background: rgba(255,255,255,0.04); border-radius:10px; padding:12px; }
     .card h4 { margin:0 0 8px 0; }
@@ -24,9 +21,9 @@
     .btn { display:inline-block; padding:8px 12px; border-radius:8px; text-decoration:none; }
     .btn-download { background:#27ae60; color:#fff; }
     .btn-copy { background:#111; color:#fff; }
-    .section { display:none; }
-    .section.active { display:block; }
+    .section { display:block; }
     @media (max-width:768px){ .download-grid { grid-template-columns: 1fr; } }
+
     /* Footer nuevo */
     .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
     .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -46,20 +43,6 @@
     @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
   </style>
   <script>
-    function setActiveLanguage(lang){
-      document.querySelectorAll('.lang-toggle button').forEach(b=>{
-        b.classList.toggle('active', b.dataset.lang===lang);
-      });
-      document.querySelectorAll('.section').forEach(s=>{
-        s.classList.toggle('active', s.dataset.lang===lang);
-      });
-    }
-    function initFromQuery(){
-      const params = new URLSearchParams(window.location.search);
-      let lang = params.get('lang') || 'lat';
-      if (!['lat','sub'].includes(lang)) { lang = 'lat'; }
-      setActiveLanguage(lang);
-    }
     function copyHref(el){
       const href = el.getAttribute('href');
       navigator.clipboard.writeText(href).then(()=>{
@@ -67,8 +50,8 @@
         setTimeout(()=>{ el.textContent = 'Copiar link'; }, 1500);
       });
     }
-    document.addEventListener('DOMContentLoaded', initFromQuery);
   </script>
+
   <style>
     .header + main.container { padding-top: 6rem; }
   </style>
@@ -88,102 +71,50 @@
   </header>
 
   <main class="container">
-    <a class="back-btn" href="./castillo-infinito.html">◄ Volver al episodio</a>
+    <a class="back-btn" href="./temporada-2.html">◄ Volver al episodio</a>
     <h1>Descargas – Bungo Stray Dogs Temporada 2</h1>
-    <p>Elige idioma y servidor. Todos los enlaces pasan por el acortador exe.io para protegerlos.</p>
+    <p>Elige servidor. Los enlaces de StreamTape pasan por el acortador exe.io para protegerlos.</p>
 
-    <div class="lang-toggle" role="tablist" aria-label="Idiomas">
-      <button role="tab" class="active" data-lang="lat" onclick="setActiveLanguage('lat')">Latino</button>
-      <button role="tab" data-lang="sub" onclick="setActiveLanguage('sub')">Sub Español</button>
-    </div>
-
-    <!-- Latino -->
-    <section class="section active" data-lang="lat" aria-label="Descargas Latino">
+    <section class="section" data-lang="lat" aria-label="Descargas Español">
       <div class="download-grid">
-        <div class="card">
-          <h4>Terabox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castilloterasSONY2025">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castilloterasSONY2025" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>MixDrop</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>StreamTape</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>StreamWish</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>EarnVids</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>MediaFire</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Dropbox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-      </div>
-    </section>
+        <div class="card"><h4>Episodio 1 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/wxZLao1ZkpuJ8xW/Bungou_Stray_Dog_-_Temporada_2_Episodio_01.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/wxZLao1ZkpuJ8xW/Bungou_Stray_Dog_-_Temporada_2_Episodio_01.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 1 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/mBNGjbKB#_eFv9i5ohfVnYTdgo-UTCU7n-ppB2PFCKDqgypz8Ync">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/mBNGjbKB#_eFv9i5ohfVnYTdgo-UTCU7n-ppB2PFCKDqgypz8Ync" onclick="copyHref(this); return false;">Copiar link</a></div></div>
 
+        <div class="card"><h4>Episodio 2 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/doGvA447b2ikxWJ/Bungou_Stray_Dog_-_Temporada_2_Episodio_02.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/doGvA447b2ikxWJ/Bungou_Stray_Dog_-_Temporada_2_Episodio_02.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 2 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/qJcmXKQS#kNL3FiH6XYdUuOzmFIiZ9EqG611xw0G9ItkPl6WC46Q">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/qJcmXKQS#kNL3FiH6XYdUuOzmFIiZ9EqG611xw0G9ItkPl6WC46Q" onclick="copyHref(this); return false;">Copiar link</a></div></div>
 
-    <!-- Sub Español -->
-    <section class="section" data-lang="sub" aria-label="Descargas Sub Español">
-      <div class="download-grid">
-        <div class="card">
-          <h4>Netu (HQQ)</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Terabox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/CASTISUBTERA">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/CASTISUBTERA" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>MediaFire</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Dropbox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
+        <div class="card"><h4>Episodio 3 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/zXwGd9rz20uoV4/Bungou_Stray_Dog_-_Temporada_2_Episodio_03.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/zXwGd9rz20uoV4/Bungou_Stray_Dog_-_Temporada_2_Episodio_03.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 3 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/eF8wzQLa#MVAHyU6BsswmFiSsnxW_P9U2soSkQPYh6IzXUi3nfmY">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/eF8wzQLa#MVAHyU6BsswmFiSsnxW_P9U2soSkQPYh6IzXUi3nfmY" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 4 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/a0k6ObM28ahx6Zq/Bungou_Stray_Dog_-_Temporada_2_Episodio_04.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/a0k6ObM28ahx6Zq/Bungou_Stray_Dog_-_Temporada_2_Episodio_04.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 4 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/ndFFRAYa#pk1bGCtGIjpD2O6DtwYjhyeugKeCpudoE68sMZNmdmc">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/ndFFRAYa#pk1bGCtGIjpD2O6DtwYjhyeugKeCpudoE68sMZNmdmc" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 5 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/1L1xDBR9d6fejd0/Bungou_Stray_Dog_-_Temporada_2_Episodio_05.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/1L1xDBR9d6fejd0/Bungou_Stray_Dog_-_Temporada_2_Episodio_05.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 5 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/2FcXCDja#_Db52ntsChBgom_uMAi-TX_eZmoiIdPENP5CfC-xBu4">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/2FcXCDja#_Db52ntsChBgom_uMAi-TX_eZmoiIdPENP5CfC-xBu4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 6 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/oAeGk00OV8FJyXo/Bungou_Stray_Dog_-_Temporada_2_Episodio_06.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/oAeGk00OV8FJyXo/Bungou_Stray_Dog_-_Temporada_2_Episodio_06.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 6 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/7NVzDC4B#bryZN6Y3F9sdYq49q_GrYNajxKIa5DQef4zzhsvMTps">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/7NVzDC4B#bryZN6Y3F9sdYq49q_GrYNajxKIa5DQef4zzhsvMTps" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 7 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/B7M7yoPl0asmOX/Bungou_Stray_Dog_-_Temporada_2_Episodio_07.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/B7M7yoPl0asmOX/Bungou_Stray_Dog_-_Temporada_2_Episodio_07.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 7 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/zc1yyJ4Y#iOwj3-Kwr3Cg2fwl8rNZY-IGjtEp3wzVa-May5QdVE0">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/zc1yyJ4Y#iOwj3-Kwr3Cg2fwl8rNZY-IGjtEp3wzVa-May5QdVE0" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 8 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/8z8Wb0b94Rfo7Xe/Bungou_Stray_Dog_-_Temporada_2_Episodio_08.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/8z8Wb0b94Rfo7Xe/Bungou_Stray_Dog_-_Temporada_2_Episodio_08.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 8 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/qBEElRzA#ruEun969RnOul-QkFZDLUraTczDbsgUxjH2Dj5_9G5Q">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/qBEElRzA#ruEun969RnOul-QkFZDLUraTczDbsgUxjH2Dj5_9G5Q" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 9 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/bry46wlgpZTP0pp/Bungou_Stray_Dog_-_Temporada_2_Episodio_09.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/bry46wlgpZTP0pp/Bungou_Stray_Dog_-_Temporada_2_Episodio_09.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 9 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/eB8TDKyI#56wcuWFRq7Qp-zF_MKXPd2JgnKDtcpDP0eLDJ2ODoY8">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/eB8TDKyI#56wcuWFRq7Qp-zF_MKXPd2JgnKDtcpDP0eLDJ2ODoY8" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 10 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/DXKDolakL1hVoY/Bungou_Stray_Dog_-_Temporada_2_Episodio_10.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/DXKDolakL1hVoY/Bungou_Stray_Dog_-_Temporada_2_Episodio_10.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 10 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/zENlxRLa#4B-J-Oo1slHG6IoHy2n4Nq8LKYVUUCCvHtw4s2n-a_0">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/zENlxRLa#4B-J-Oo1slHG6IoHy2n4Nq8LKYVUUCCvHtw4s2n-a_0" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 11 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/xmwgJKWpgBUlzX/Bungou_Stray_Dog_-_Temporada_2_Episodio_11.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/xmwgJKWpgBUlzX/Bungou_Stray_Dog_-_Temporada_2_Episodio_11.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 11 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/WMMUVKZD#4RkBRL0HYkY6x5E_uXPKl-1_9PkrDkreOja3Ni1pOM4">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/WMMUVKZD#4RkBRL0HYkY6x5E_uXPKl-1_9PkrDkreOja3Ni1pOM4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 12 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/VxeD3ZLWYYU9R3/Bungou_Stray_Dog_-_Temporada_2_Episodio_12.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/VxeD3ZLWYYU9R3/Bungou_Stray_Dog_-_Temporada_2_Episodio_12.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 12 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/LcUn0BgS#tU0fIQmJjDi0cw5MtzrfveF0_StK3rQhHbied6xseWM">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/LcUn0BgS#tU0fIQmJjDi0cw5MtzrfveF0_StK3rQhHbied6xseWM" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>OVA - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Q2aYO3gPk8URv0/Bungou_Stray_Dog_S2_OVA.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/Q2aYO3gPk8URv0/Bungou_Stray_Dog_S2_OVA.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>OVA - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/eEkHCAQB#_Mjpgr0fPtHi_Wxp6OLG0Y1i3LrN_Z1xwpDgDW8dN4Q">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/eEkHCAQB#_Mjpgr0fPtHi_Wxp6OLG0Y1i3LrN_Z1xwpDgDW8dN4Q" onclick="copyHref(this); return false;">Copiar link</a></div></div>
       </div>
     </section>
 

@@ -14,9 +14,6 @@
     .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
     .header-space { margin-top: 8px; }
     .back-btn { display:inline-block; margin:12px 0; padding:10px 16px; background:#6c63ff; color:#fff; border-radius:8px; text-decoration:none; }
-    .lang-toggle { display:flex; gap:8px; margin:12px 0 16px; }
-    .lang-toggle button { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; background:#2c2c2c; color:#ddd; }
-    .lang-toggle button.active { background:#6c63ff; color:#fff; }
     .download-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
     .card { background: rgba(255,255,255,0.04); border-radius:10px; padding:12px; }
     .card h4 { margin:0 0 8px 0; }
@@ -24,9 +21,9 @@
     .btn { display:inline-block; padding:8px 12px; border-radius:8px; text-decoration:none; }
     .btn-download { background:#27ae60; color:#fff; }
     .btn-copy { background:#111; color:#fff; }
-    .section { display:none; }
-    .section.active { display:block; }
+    .section { display:block; }
     @media (max-width:768px){ .download-grid { grid-template-columns: 1fr; } }
+
     /* Footer nuevo */
     .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
     .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -46,20 +43,6 @@
     @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
   </style>
   <script>
-    function setActiveLanguage(lang){
-      document.querySelectorAll('.lang-toggle button').forEach(b=>{
-        b.classList.toggle('active', b.dataset.lang===lang);
-      });
-      document.querySelectorAll('.section').forEach(s=>{
-        s.classList.toggle('active', s.dataset.lang===lang);
-      });
-    }
-    function initFromQuery(){
-      const params = new URLSearchParams(window.location.search);
-      let lang = params.get('lang') || 'lat';
-      if (!['lat','sub'].includes(lang)) { lang = 'lat'; }
-      setActiveLanguage(lang);
-    }
     function copyHref(el){
       const href = el.getAttribute('href');
       navigator.clipboard.writeText(href).then(()=>{
@@ -67,8 +50,8 @@
         setTimeout(()=>{ el.textContent = 'Copiar link'; }, 1500);
       });
     }
-    document.addEventListener('DOMContentLoaded', initFromQuery);
   </script>
+
   <style>
     .header + main.container { padding-top: 6rem; }
   </style>
@@ -88,102 +71,47 @@
   </header>
 
   <main class="container">
-    <a class="back-btn" href="./castillo-infinito.html">◄ Volver al episodio</a>
-    <h1>Descargas – Classroom Of The Elite season1</h1>
-    <p>Elige idioma y servidor. Todos los enlaces pasan por el acortador exe.io para protegerlos.</p>
+    <a class="back-btn" href="./season1.html">◄ Volver al episodio</a>
+    <h1>Descargas – Classroom of the Elite Temporada 1</h1>
+    <p>Elige servidor. Los enlaces de StreamTape pasan por el acortador exe.io para protegerlos.</p>
 
-    <div class="lang-toggle" role="tablist" aria-label="Idiomas">
-      <button role="tab" class="active" data-lang="lat" onclick="setActiveLanguage('lat')">Latino</button>
-      <button role="tab" data-lang="sub" onclick="setActiveLanguage('sub')">Sub Español</button>
-    </div>
-
-    <!-- Latino -->
-    <section class="section active" data-lang="lat" aria-label="Descargas Latino">
+    <section class="section" aria-label="Descargas Español">
       <div class="download-grid">
-        <div class="card">
-          <h4>Terabox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castilloterasSONY2025">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castilloterasSONY2025" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>MixDrop</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mdy48tn97.com/f/xw90zpw7alo9x3r?download" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>StreamTape</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>StreamWish</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hglink.to/e/x6towvxdhc9h" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>EarnVids</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://dintezuvio.com/download/n6e202wkatgx" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>MediaFire</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Dropbox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-      </div>
-    </section>
+        <div class="card"><h4>Episodio 1 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/QbBp9A7LZ6Uy6o/classroom_of_the_elite_-_Temporada_1_Episodio_01.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/QbBp9A7LZ6Uy6o/classroom_of_the_elite_-_Temporada_1_Episodio_01.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 1 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/bBdilABK#JXLQ8dNmRirzdGGrxRCouAkAKFkbP0hCYwqtCpn-AXI">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/bBdilABK#JXLQ8dNmRirzdGGrxRCouAkAKFkbP0hCYwqtCpn-AXI" onclick="copyHref(this); return false;">Copiar link</a></div></div>
 
+        <div class="card"><h4>Episodio 2 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/1JbkbWAj1vF1yo/classroom_of_the_elite_-_Temporada_1_Episodio_02.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/1JbkbWAj1vF1yo/classroom_of_the_elite_-_Temporada_1_Episodio_02.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 2 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/LQkA3ACK#j7w4AjN4MUOMKdqRXj7yOM05Smt3DyLIsUQ4IRu8aQg">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/LQkA3ACK#j7w4AjN4MUOMKdqRXj7yOM05Smt3DyLIsUQ4IRu8aQg" onclick="copyHref(this); return false;">Copiar link</a></div></div>
 
-    <!-- Sub Español -->
-    <section class="section" data-lang="sub" aria-label="Descargas Sub Español">
-      <div class="download-grid">
-        <div class="card">
-          <h4>Netu (HQQ)</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Terabox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/CASTISUBTERA">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/CASTISUBTERA" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>MediaFire</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castimedia2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castimedia2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
-        <div class="card">
-          <h4>Dropbox</h4>
-          <div class="actions">
-            <a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/castidrop2025SONYFULLHD">Descargar</a>
-            <a class="btn btn-copy" href="https://exe.io/castidrop2025SONYFULLHD" onclick="copyHref(this); return false;">Copiar link</a>
-          </div>
-        </div>
+        <div class="card"><h4>Episodio 3 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/4WJwALlV4lC2ay/classroom_of_the_elite_-_Temporada_1_Episodio_03.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/4WJwALlV4lC2ay/classroom_of_the_elite_-_Temporada_1_Episodio_03.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 3 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/jIFj1ZxQ#TK8Mi3zT1neocmLPiqwhNIwVVZ6MAg_FvWu4QUmdX6g">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/jIFj1ZxQ#TK8Mi3zT1neocmLPiqwhNIwVVZ6MAg_FvWu4QUmdX6g" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 4 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/3AZjqV6V99IdyAv/classroom_of_the_elite_-_Temporada_1_Episodio_04.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/3AZjqV6V99IdyAv/classroom_of_the_elite_-_Temporada_1_Episodio_04.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 4 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/rc0S2TBb#JsPY6YvQnLB-5jR_yBGdLfiyFavJMHJon7o1uozw1Ng">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/rc0S2TBb#JsPY6YvQnLB-5jR_yBGdLfiyFavJMHJon7o1uozw1Ng" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 5 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/abzbPVPe6Ds2ym/classroom_of_the_elite_-_Temporada_1_Episodio_05.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/abzbPVPe6Ds2ym/classroom_of_the_elite_-_Temporada_1_Episodio_05.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 5 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/XdtS1YKK#odeNvZgz3eHzyBzc8MDQxp3ac5s8Hw7rWGawl3gqAMQ">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/XdtS1YKK#odeNvZgz3eHzyBzc8MDQxp3ac5s8Hw7rWGawl3gqAMQ" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 6 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/jk6GZObXD6Hzld8/classroom_of_the_elite_-_Temporada_1_Episodio_06.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/jk6GZObXD6Hzld8/classroom_of_the_elite_-_Temporada_1_Episodio_06.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 6 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/nZVm0SwC#TyUi6uvCBW6RQDy7qvXvpMS8F5f2__cdMo--uQ0lWpU">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/nZVm0SwC#TyUi6uvCBW6RQDy7qvXvpMS8F5f2__cdMo--uQ0lWpU" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 7 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/owQ20J06eVsJ1Dx/classroom_of_the_elite_-_Temporada_1_Episodio_07.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/owQ20J06eVsJ1Dx/classroom_of_the_elite_-_Temporada_1_Episodio_07.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 7 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/KcNzECwZ#Doy3f9zLx5ISNh5R83Q_R2mXpt2x4wF3fLSay4vZ8io">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/KcNzECwZ#Doy3f9zLx5ISNh5R83Q_R2mXpt2x4wF3fLSay4vZ8io" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 8 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/d7kW6mQ7KmhgZb/classroom_of_the_elite_-_Temporada_1_Episodio_08.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/d7kW6mQ7KmhgZb/classroom_of_the_elite_-_Temporada_1_Episodio_08.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 8 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/mFFBDRZI#yIUcmcvt7E_CDy1CCYD8TGgzx98RaXUss4byQAgat7Q">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/mFFBDRZI#yIUcmcvt7E_CDy1CCYD8TGgzx98RaXUss4byQAgat7Q" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 9 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/3J2r7BJyomhdgvM/classroom_of_the_elite_-_Temporada_1_Episodio_09.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/3J2r7BJyomhdgvM/classroom_of_the_elite_-_Temporada_1_Episodio_09.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 9 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/2MVhgIbC#eEmuKB7T0ICaZMgF2xdlsozXhcMoIBAyh9lSCa5CiTA">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/2MVhgIbC#eEmuKB7T0ICaZMgF2xdlsozXhcMoIBAyh9lSCa5CiTA" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 10 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/KXde2eYm3XS09YA/classroom_of_the_elite_-_Temporada_1_Episodio_10.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/KXde2eYm3XS09YA/classroom_of_the_elite_-_Temporada_1_Episodio_10.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 10 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/CRF3SRgY#NjolScqpSwRPDDby00jUH_QvjI9qDsgq0_0wJWFgWo8">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/CRF3SRgY#NjolScqpSwRPDDby00jUH_QvjI9qDsgq0_0wJWFgWo8" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 11 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/doyyPWVZVPi9KY/classroom_of_the_elite_-_Temporada_1_Episodio_11.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/doyyPWVZVPi9KY/classroom_of_the_elite_-_Temporada_1_Episodio_11.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 11 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/uEFExBiB#KRyUX_9toRAWsdB5UMU26nUrDILczx4UU6t5Nrc0Sl0">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/uEFExBiB#KRyUX_9toRAWsdB5UMU26nUrDILczx4UU6t5Nrc0Sl0" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+
+        <div class="card"><h4>Episodio 12 - StreamTape</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/jjvkqPLBVqIzjVV/classroom_of_the_elite_-_Temporada_1_Episodio_12.mp4">Descargar</a><a class="btn btn-copy" href="https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/jjvkqPLBVqIzjVV/classroom_of_the_elite_-_Temporada_1_Episodio_12.mp4" onclick="copyHref(this); return false;">Copiar link</a></div></div>
+        <div class="card"><h4>Episodio 12 - MEGA</h4><div class="actions"><a class="btn btn-download" target="_blank" rel="noopener" href="https://mega.nz/file/uEM3BJoY#OAysrpy-3z7e4GuaPoDpuV6BoH-l3BiMlYM5Q4fzxEA">Descargar</a><a class="btn btn-copy" href="https://mega.nz/file/uEM3BJoY#OAysrpy-3z7e4GuaPoDpuV6BoH-l3BiMlYM5Q4fzxEA" onclick="copyHref(this); return false;">Copiar link</a></div></div>
       </div>
     </section>
 
@@ -263,50 +191,6 @@
     </div>
   </footer>
 
-  <script>
-    // Permite abrir esta página con ?lang=lat|es|sub desde el episodio
-  </script>
-  
-<script src="../../../assets/js/ads.js"></script>
-<!-- OLD LINKS PRESERVED:
-https://exe.io/ANIMETV
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/k0e8prz8aeqxol?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/wlwjdrzjt9olg7?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/q1d8pznxfdrkw8?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/7kjw31zjc7rrnv?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/9wxpv31zhp68gq?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/1no1mlxguke680g?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/l79je101fmq89v?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36q7pep8u4zemx?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/wlwjdg7zi60gmj?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/8ljr3wrkf6jjqde?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/36q7pdz1cd9lpn?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://mxdrop.to/f/jdk8px7kt7o9g3j?download
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/QbBp9A7LZ6Uy6o/classroom_of_the_elite_-_Temporada_1_Episodio_01.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/1JbkbWAj1vF1yo/classroom_of_the_elite_-_Temporada_1_Episodio_02.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/4WJwALlV4lC2ay/classroom_of_the_elite_-_Temporada_1_Episodio_03.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/3AZjqV6V99IdyAv/classroom_of_the_elite_-_Temporada_1_Episodio_04.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/abzbPVPe6Ds2ym/classroom_of_the_elite_-_Temporada_1_Episodio_05.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/jk6GZObXD6Hzld8/classroom_of_the_elite_-_Temporada_1_Episodio_06.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/owQ20J06eVsJ1Dx/classroom_of_the_elite_-_Temporada_1_Episodio_07.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/d7kW6mQ7KmhgZb/classroom_of_the_elite_-_Temporada_1_Episodio_08.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/3J2r7BJyomhdgvM/classroom_of_the_elite_-_Temporada_1_Episodio_09.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/KXde2eYm3XS09YA/classroom_of_the_elite_-_Temporada_1_Episodio_10.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/doyyPWVZVPi9KY/classroom_of_the_elite_-_Temporada_1_Episodio_11.mp4
-https://exe.io/st?api=110e7b6cbdf7a5aa354afb395e889c7aba3411c6&url=https://streamtape.com/v/jjvkqPLBVqIzjVV/classroom_of_the_elite_-_Temporada_1_Episodio_12.mp4
-https://exe.io/ANIMETV
-https://exe.io/ANIMETV
-https://t.me/Mundoootakulatino
-https://t.me/qquiCA9FiB41MDkx
-https://rumble.com/c/c-6184817?e9s=src_v1_clr
-https://www.facebook.com/STUDIOOTAKU01
-https://www.facebook.com/groups/723496132540351
-https://www.facebook.com/groups/1071796301003086
-https://www.tiktok.com/@studiootaku01
-https://www.instagram.com/studiootaku01
-https://github.com/studioanime977
-https://www.youtube.com/@STUDIOOTAKU1
-https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm
--->
+  <script src="../../../assets/js/ads.js"></script>
 </body>
 </html>

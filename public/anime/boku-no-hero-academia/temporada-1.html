@@ -506,6 +506,7 @@
       document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
       currentEpisode = episode;
       playCurrent();
+      updateNavState();
     }
 
     function updateNavState() {
@@ -557,6 +558,7 @@
     setActiveLanguage('lat');
     setActiveServer('StreamTape');
     loadEpisode(episodes[0]);
+    updateNavState();
 
   </script>
 

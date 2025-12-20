@@ -116,6 +116,43 @@
   <style>
     .header + main.container { padding-top: 6rem; }
   </style>
+  <style>
+    .episodes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .episode-btn {
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(17, 17, 17, 0.75);
+      color: #fff;
+      cursor: pointer;
+      transition: transform .15s ease, filter .15s ease, border-color .15s ease, background .15s ease;
+      font-weight: 700;
+    }
+
+    .episode-btn:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+      border-color: rgba(108, 99, 255, 0.7);
+    }
+
+    .episode-btn.active {
+      background: linear-gradient(135deg, #6c63ff, #4f46e5);
+      border-color: rgba(255, 255, 255, 0.22);
+      box-shadow: 0 10px 24px rgba(108, 99, 255, 0.25);
+    }
+
+    @media (max-width: 480px) {
+      .episodes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+      }
+    }
+  </style>
 </head>
 <body>
     <header class="header">
@@ -152,108 +189,31 @@
             <a href="../../html/catalogo.html" class="back-btn">Volver al Catálogo</a>
             <h1 class="page-title">Bungou Stray Dogs - Temporada 2</h1>
 
-            
+            <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
 
             <section class="player-selector" aria-label="Selector de idioma y servidor">
-                <div class="language-toggle" role="tablist" aria-label="Idiomas disponibles">
+                <div class="language-toggle" role="tablist" aria-label="Idioma disponible">
                     <button class="lang-btn" role="tab" aria-selected="false" data-language="lat">
-                        <img src="../../../ico/LAT.png" alt="Latino">
-                        <span>Latino</span>
-                    </button>
-                    <button class="lang-btn" role="tab" aria-selected="false" data-language="sub">
-                        <img src="../../../ico/SUB.png" alt="Subtitulado">
-                        <span>Subtitulado</span>
+                        <img src="../../../ico/LAT.png" alt="Español">
+                        <span>Español</span>
                     </button>
                 </div>
 
                 <div class="server-grid" aria-label="Servidores disponibles">
-                    <a href="#" class="server-card"
-                       data-url-lat="https://example.com/latino/filemoon"
-                       data-url-sub="https://example.com/subtitulado/filemoon"
-                       aria-label="Filemoon">
-                        <img src="../../../ico/FILEMOON.png" alt="Filemoon">
-                        <span>Filemoon</span>
-                    </a>
-
-                    <a href="#" class="server-card"
-                       data-url-lat="https://hglink.to/e/x6towvxdhc9h"
-                       data-fallback-lat="https://hglink.to/e/x6towvxdhc9h"
-                       data-url-sub="https://hglink.to/e/wle2cabqs493"
-                       aria-label="StreamWish">
-                        <img src="../../../ico/STREAMWISH.png" alt="StreamWish">
-                        <span>StreamWish</span>
-                    </a>
-
-                    <a href="#" class="server-card"
-                       data-url-lat="https://mxdrop.to/e/xw90zpw7alo9x3r"
-                       data-fallback-lat="https://mdy48tn97.com/e/xw90zpw7alo9x3r"
+                    <a href="#" class="server-card" data-server="StreamTape"
+                       data-url-lat="#"
                        data-url-sub="#"
-                       aria-label="MixDrop">
-                        <img src="../../../ico/mixdrop.webp" alt="MixDrop">
-                        <span>MixDrop</span>
-                    </a>
-
-                    <a href="#" class="server-card"
-                       data-url-lat="https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4"
-                       data-fallback-lat="https://streamtape.com/e/88MRpkp3a9iobp7/castillo_infinito2025_SONY_FULL_HD.mp4"
-                       data-url-sub="https://streamtape.com/e/vrlZ6o9RAGu4G7O/"
-                       data-fallback-sub="https://streamtape.com/e/vrlZ6o9RAGu4G7O/"
                        aria-label="StreamTape">
                         <img src="../../../ico/streamtape.png" alt="StreamTape">
                         <span>StreamTape</span>
                     </a>
 
-
-                    <a href="#" class="server-card"
-                       data-url-lat="https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09"
-                       data-url-sub="https://hqq.ac/e/ZkZJQyt6MWtyNC9qWlR3dTBjdnl4QT09"
-                       data-fallback-sub="https://waaw.ac/f/uOpfkz58kWeh"
-                       aria-label="Netu">
-                        <img src="../../../ico/netu.png" alt="Netu">
-                        <span>Netu</span>
-                    </a>
-
-                    <a href="#" class="server-card"
-                       data-url-lat="https://example.com/latino/uqload"
-                       data-url-sub="https://example.com/subtitulado/uqload"
-                       aria-label="Uqload">
-                        <img src="../../../ico/UQLOAD.webp" alt="Uqload">
-                        <span>Uqload</span>
-                    </a>
-
-                    <a href="#" class="server-card"
-                       data-url-lat="https://hglink.to/e/x6towvxdhc9h"
-                       data-fallback-lat="https://hglink.to/e/x6towvxdhc9h"
-                       data-url-sub="https://hglink.to/e/wle2cabqs493"
-                       aria-label="HGLINK">
-                        <img src="../../../ico/HGLINK.png" alt="HGLINK">
-                        <span>HGLINK</span>
-                    </a>
-
-                    <a href="#" class="server-card"
-                       data-url-lat="https://dintezuvio.com/embed/n6e202wkatgx"
-                       data-fallback-lat="https://dintezuvio.com/embed/n6e202wkatgx"
-                       data-url-sub="https://dintezuvio.com/embed/s3a3qe4uarkm"
-                       data-fallback-sub="https://dintezuvio.com/embed/s3a3qe4uarkm"
-                       aria-label="EarnVids">
-                        <img src="../../../ico/earnvids.jpg" alt="EarnVids">
-                        <span>EarnVids</span>
-                    </a>
-
-                    <a href="#" class="server-card"
-                       data-url-lat="https://example.com/latino/luluvdo"
-                       data-url-sub="https://example.com/subtitulado/luluvdo"
-                       aria-label="LULU VDO">
-                        <img src="../../../ico/LULUVDO.webp" alt="LULU VDO">
-                        <span>LULU VDO</span>
-                    </a>
-
-                    <a href="#" class="server-card"
+                    <a href="#" class="server-card" data-server="MEGA"
                        data-url-lat="#"
                        data-url-sub="#"
-                       aria-label="HexUpload">
-                        <img src="../../../ico/HEXUPLOAD.png" alt="HexUpload">
-                        <span>HexUpload</span>
+                       aria-label="MEGA">
+                        <img src="../../../ico/mega.png" alt="MEGA">
+                        <span>MEGA</span>
                     </a>
                 </div>
 
@@ -261,11 +221,6 @@
                     <iframe id="player-frame" title="Reproductor" src="about:blank" allow="autoplay" allowfullscreen loading="lazy"></iframe>
                 </div>
             </section>
-    <div class="episodes-container" id="episodes-container" hidden>
-      <h3 style="text-align:center; margin-bottom: 1.5rem; font-size: 1.8rem;">Episodios</h3>
-      <div class="episodes-grid" id="episodes-grid"></div>
-    </div>
-    
             
     <section class="navigation-buttons" aria-label="Navegación de episodios" style="display:grid; grid-template-columns: 1fr auto 1fr; align-items:center; column-gap:10px; margin:12px 0;">
       <button id="prev-ep" class="nav-btn" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:start;">◄ episodio anterior</button>
@@ -291,16 +246,7 @@
                   <a class="download-btn" href="./descargar-temporada2.html" style="padding:8px 12px; background:#27ae60; color:#fff; border-radius:8px; text-decoration:none;">Descarga</a>
                 </div>
                 <div><span style="display:inline-block; padding:6px 10px; border-radius:8px; background:#111; color:#fff;">HD MULTIHOST</span></div>
-                <div>Audio Latino</div>
-                <div>—</div>
-                <div>—</div>
-
-
-                <div style="display:flex; align-items:center; gap:8px;">
-                  <a class="download-btn" href="./descargar-temporada2.html" style="padding:8px 12px; background:#27ae60; color:#fff; border-radius:8px; text-decoration:none;">Descarga</a>
-                </div>
-                <div><span style="display:inline-block; padding:6px 10px; border-radius:8px; background:#111; color:#fff;">HD MULTIHOST</span></div>
-                <div>Sub Español</div>
+                <div>Español</div>
                 <div>—</div>
                 <div>—</div>
               </div>
@@ -422,9 +368,6 @@
       </div>
     </footer>
 
-    
-
-    <script src="../../../assets/js/server-selector.js"></script>
     <script src="../../../assets/js/ads.js"></script>
     <script>
       (function() {
@@ -455,61 +398,99 @@
     </script>
 <script>
     function normalizeUrl(url) { return url || ''; }
-    function mixdropFallback(url) {
-      if (!url) return '';
-      const m = url.match(/https?:\/\/mxdrop\.to\/e\/([^\/?#]+)/i);
-      return m ? `https://mdy48tn97.com/e/${m[1]}` : '';
-    }
     let currentEpisode = null;
+    let currentLanguage = 'lat';
+    let currentServer = 'StreamTape';
+
+    const playerFrame = document.getElementById('player-frame');
+    const serverGrid = document.querySelector('.server-grid');
+    const serverCards = Array.from(document.querySelectorAll('.server-card'));
+    const langButtons = Array.from(document.querySelectorAll('.lang-btn'));
+
+    function setActiveLanguage(lang) {
+      currentLanguage = lang;
+      langButtons.forEach(btn => {
+        const isActive = btn.dataset.language === lang;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', String(isActive));
+      });
+      if (serverGrid) serverGrid.classList.add('expanded');
+    }
+
+    function toggleLanguage(lang) {
+      const alreadyActive = currentLanguage === lang;
+      const isExpanded = serverGrid && serverGrid.classList.contains('expanded');
+      if (alreadyActive && isExpanded) {
+        serverGrid.classList.remove('expanded');
+        return;
+      }
+      setActiveLanguage(lang);
+    }
+
+    function setActiveServer(serverName) {
+      currentServer = serverName;
+      serverCards.forEach(c => {
+        const name = (c.getAttribute('data-server') || '').toLowerCase();
+        c.classList.toggle('active', name === serverName.toLowerCase());
+      });
+      if (serverGrid) {
+        setTimeout(() => serverGrid.classList.remove('expanded'), 150);
+      }
+    }
+
+    function playCurrent() {
+      if (!currentEpisode) return;
+      if (currentLanguage !== 'lat') return;
+
+      if (currentServer === 'MEGA') {
+        const url = normalizeUrl(currentEpisode.mega || '');
+        if (!url || url === '#') return;
+        if (playerFrame) playerFrame.src = url;
+        return;
+      }
+
+      const url = normalizeUrl(currentEpisode.st || '');
+      if (!url || url === '#') return;
+      if (playerFrame) playerFrame.src = url;
+    }
+
     const episodes = [
-      { num: 1,  title: "Episodio 1",  op1: "https://mxdrop.to/e/pj60dkqpbg1g604" },
-      { num: 2,  title: "Episodio 2",  op1: "https://mxdrop.to/e/9wx4gn0vh43v1g" },
-      { num: 3,  title: "Episodio 3",  op1: "https://mxdrop.to/e/k0evonqqa3q91m" },
-      { num: 4,  title: "Episodio 4",  op1: "https://mxdrop.to/e/z1j9mp43f71rvd" },
-      { num: 5,  title: "Episodio 5",  op1: "https://mxdrop.to/e/k0evonzjsvrp1w" },
-      { num: 6,  title: "Episodio 6",  op1: "https://mxdrop.to/e/nln8e0d0bvene" },
-      { num: 7,  title: "Episodio 7",  op1: "https://mxdrop.to/e/nln8el6gavnnng" },
-      { num: 8,  title: "Episodio 8",  op1: "https://mxdrop.to/e/k0evonj4iplolj" },
-      { num: 9,  title: "Episodio 9",  op1: "https://mxdrop.to/e/4d9ojdr9uo7no8" },
-      { num: 10, title: "Episodio 10", op1: "https://mxdrop.to/e/xw91xw9osxgqv" },
-      { num: 11, title: "Episodio 11", op1: "https://mxdrop.to/e/k0evo0mzt3mxwex" },
-      { num: 12, title: "Episodio 12", op1: "https://mxdrop.to/e/8lj9ml4zh18909" },
-      { num: 13, title: "OVA", op1: "https://mxdrop.to/e/wlw9qlewbedqkw" }
+      { num: 1,  title: "Episodio 1",  st: "https://streamtape.com/e/wxZLao1ZkpuJ8xW/Bungou_Stray_Dog_-_Temporada_2_Episodio_01.mp4", mega: "https://mega.nz/embed/mBNGjbKB#_eFv9i5ohfVnYTdgo-UTCU7n-ppB2PFCKDqgypz8Ync" },
+      { num: 2,  title: "Episodio 2",  st: "https://streamtape.com/e/doGvA447b2ikxWJ/Bungou_Stray_Dog_-_Temporada_2_Episodio_02.mp4", mega: "https://mega.nz/embed/qJcmXKQS#kNL3FiH6XYdUuOzmFIiZ9EqG611xw0G9ItkPl6WC46Q" },
+      { num: 3,  title: "Episodio 3",  st: "https://streamtape.com/e/zXwGd9rz20uoV4/Bungou_Stray_Dog_-_Temporada_2_Episodio_03.mp4", mega: "https://mega.nz/embed/eF8wzQLa#MVAHyU6BsswmFiSsnxW_P9U2soSkQPYh6IzXUi3nfmY" },
+      { num: 4,  title: "Episodio 4",  st: "https://streamtape.com/e/a0k6ObM28ahx6Zq/Bungou_Stray_Dog_-_Temporada_2_Episodio_04.mp4", mega: "https://mega.nz/embed/ndFFRAYa#pk1bGCtGIjpD2O6DtwYjhyeugKeCpudoE68sMZNmdmc" },
+      { num: 5,  title: "Episodio 5",  st: "https://streamtape.com/e/1L1xDBR9d6fejd0/Bungou_Stray_Dog_-_Temporada_2_Episodio_05.mp4", mega: "https://mega.nz/embed/2FcXCDja#_Db52ntsChBgom_uMAi-TX_eZmoiIdPENP5CfC-xBu4" },
+      { num: 6,  title: "Episodio 6",  st: "https://streamtape.com/e/oAeGk00OV8FJyXo/Bungou_Stray_Dog_-_Temporada_2_Episodio_06.mp4", mega: "https://mega.nz/embed/7NVzDC4B#bryZN6Y3F9sdYq49q_GrYNajxKIa5DQef4zzhsvMTps" },
+      { num: 7,  title: "Episodio 7",  st: "https://streamtape.com/e/B7M7yoPl0asmOX/Bungou_Stray_Dog_-_Temporada_2_Episodio_07.mp4", mega: "https://mega.nz/embed/zc1yyJ4Y#iOwj3-Kwr3Cg2fwl8rNZY-IGjtEp3wzVa-May5QdVE0" },
+      { num: 8,  title: "Episodio 8",  st: "https://streamtape.com/e/8z8Wb0b94Rfo7Xe/Bungou_Stray_Dog_-_Temporada_2_Episodio_08.mp4", mega: "https://mega.nz/embed/qBEElRzA#ruEun969RnOul-QkFZDLUraTczDbsgUxjH2Dj5_9G5Q" },
+      { num: 9,  title: "Episodio 9",  st: "https://streamtape.com/e/bry46wlgpZTP0pp/Bungou_Stray_Dog_-_Temporada_2_Episodio_09.mp4", mega: "https://mega.nz/embed/eB8TDKyI#56wcuWFRq7Qp-zF_MKXPd2JgnKDtcpDP0eLDJ2ODoY8" },
+      { num: 10, title: "Episodio 10", st: "https://streamtape.com/e/DXKDolakL1hVoY/Bungou_Stray_Dog_-_Temporada_2_Episodio_10.mp4", mega: "https://mega.nz/embed/zENlxRLa#4B-J-Oo1slHG6IoHy2n4Nq8LKYVUUCCvHtw4s2n-a_0" },
+      { num: 11, title: "Episodio 11", st: "https://streamtape.com/e/xmwgJKWpgBUlzX/Bungou_Stray_Dog_-_Temporada_2_Episodio_11.mp4", mega: "https://mega.nz/embed/WMMUVKZD#4RkBRL0HYkY6x5E_uXPKl-1_9PkrDkreOja3Ni1pOM4" },
+      { num: 12, title: "Episodio 12", st: "https://streamtape.com/e/VxeD3ZLWYYU9R3/Bungou_Stray_Dog_-_Temporada_2_Episodio_12.mp4", mega: "https://mega.nz/embed/LcUn0BgS#tU0fIQmJjDi0cw5MtzrfveF0_StK3rQhHbied6xseWM" },
+      { num: 13, title: "OVA",       st: "https://streamtape.com/e/Q2aYO3gPk8URv0/Bungou_Stray_Dog_S2_OVA.mp4",               mega: "https://mega.nz/embed/eEkHCAQB#_Mjpgr0fPtHi_Wxp6OLG0Y1i3LrN_Z1xwpDgDW8dN4Q" }
     ];
+
     const episodesGrid = document.getElementById('episodes-grid');
     episodes.forEach(episode => {
       const episodeBtn = document.createElement('button');
       episodeBtn.className = 'episode-btn';
-      episodeBtn.textContent = `Ep ${episode.num}`;
+      episodeBtn.textContent = (episode.title === 'OVA') ? 'OVA' : `Ep ${episode.num}`;
       episodeBtn.onclick = () => loadEpisode(episode);
       episodesGrid.appendChild(episodeBtn);
     });
-    function applyEpisodeToServerGrid(ep) {
-      const mixdropCard = document.querySelector('.server-card[data-server="MixDrop"]');
-      const streamTapeCard = document.querySelector('.server-card[data-server="StreamTape"]');
-      const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"]):not([data-server="StreamTape"])');
-      const latUrl = normalizeUrl(ep.op1 || '');
-      const stUrl = normalizeUrl(ep.st || '');
-      if (mixdropCard) {
-        mixdropCard.setAttribute('data-url-lat', latUrl || '#');
-        const fb = mixdropFallback(latUrl);
-        if (fb) { mixdropCard.setAttribute('data-fallback-lat', fb); } else { mixdropCard.removeAttribute('data-fallback-lat'); }
-        mixdropCard.setAttribute('data-url-sub', '#');
-      }
-      if (streamTapeCard) {
-        streamTapeCard.setAttribute('data-url-lat', stUrl || '#');
-        if (latUrl) { streamTapeCard.setAttribute('data-fallback-lat', latUrl); } else { streamTapeCard.removeAttribute('data-fallback-lat'); }
-        streamTapeCard.setAttribute('data-url-sub', '#');
-      }
-      otherCards.forEach(card => { card.setAttribute('data-url-lat', '#'); card.setAttribute('data-url-sub', '#'); });
-    }
+
     function loadEpisode(episode) {
       document.querySelectorAll('.episode-btn').forEach((btn, index) => { btn.classList.toggle('active', index + 1 === episode.num); });
-      document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
+      if (episode.title === 'OVA') {
+        document.getElementById('current-episode-title').textContent = 'OVA';
+      } else {
+        document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}`;
+      }
       currentEpisode = episode;
-      applyEpisodeToServerGrid(episode);
+      playCurrent();
       updateNavState();
     }
+
     function updateNavState() {
       const prev = document.getElementById('prev-ep');
       const next = document.getElementById('next-ep');
@@ -521,35 +502,51 @@
       next.style.background = next.disabled ? '#2c2c2c' : '#6c63ff';
       next.style.color = next.disabled ? '#bbb' : '#fff';
     }
+
+    serverCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!card.classList.contains('enabled')) card.classList.add('enabled');
+        const serverName = card.getAttribute('data-server') || '';
+        if (!serverName) return;
+        setActiveServer(serverName);
+        playCurrent();
+      });
+    });
+
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.language;
+        toggleLanguage(lang);
+      });
+    });
+
     const prevBtn = document.getElementById('prev-ep');
     const nextBtn = document.getElementById('next-ep');
-    if (prevBtn) { prevBtn.addEventListener('click', () => { if (!currentEpisode) return; const idx = currentEpisode.num - 2; if (idx >= 0) loadEpisode(episodes[idx]); }); }
-    if (nextBtn) { nextBtn.addEventListener('click', () => { if (!currentEpisode) return; const idx = currentEpisode.num; if (idx < episodes.length) loadEpisode(episodes[idx]); }); }
+    if (prevBtn) prevBtn.addEventListener('click', () => { if (!currentEpisode) return; const idx = currentEpisode.num - 2; if (idx >= 0) loadEpisode(episodes[idx]); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { if (!currentEpisode) return; const idx = currentEpisode.num; if (idx < episodes.length) loadEpisode(episodes[idx]); });
+
     const toggleBtn = document.getElementById('toggle-episodes');
     const episodesBox = document.getElementById('episodes-container');
     if (toggleBtn && episodesBox) {
       toggleBtn.addEventListener('click', () => {
         const isHidden = episodesBox.hasAttribute('hidden');
-        if (isHidden) { episodesBox.removeAttribute('hidden'); toggleBtn.setAttribute('aria-expanded', 'true'); episodesBox.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-        else { episodesBox.setAttribute('hidden', ''); toggleBtn.setAttribute('aria-expanded', 'false'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-      });
-    }
-    const langBtns = document.querySelectorAll('.lang-btn');
-    langBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.dataset.language;
-        const hasLinks = (ep) => {
-          if (!ep) return false;
-          if (lang === 'sub') return false;
-          return Boolean(normalizeUrl(ep.op1 || ''));
-        };
-        if (!hasLinks(currentEpisode)) {
-          const target = episodes.find(e => hasLinks(e)) || episodes[0];
-          loadEpisode(target);
-          try { btn.click(); } catch (_) {}
+        if (isHidden) {
+          episodesBox.removeAttribute('hidden');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+          episodesBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        else {
+          episodesBox.setAttribute('hidden', '');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       });
-    });
+    }
+
+    setActiveLanguage('lat');
+    setActiveServer('StreamTape');
+    loadEpisode(episodes[0]);
   </script>
 </body>
 </html>
