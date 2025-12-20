@@ -27,3 +27,21 @@
     box-shadow: 0 0 10px rgba(255, 0, 150, 0.2);
   }
 }
+
+body::after {
+  content: "";
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: min(320px, 26vw);
+  height: min(520px, 70vh);
+  background: url("../ico/personaje-anime%20.webp") right bottom / contain no-repeat;
+  pointer-events: none;
+  z-index: 999;
+}
+
+@media (max-width: 992px) {
+  body::after {
+    display: none;
+  }
+}
