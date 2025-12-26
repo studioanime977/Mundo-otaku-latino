@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-adsense-account" content="ca-pub-8480825005176665">
   <title>Danmachi - Temporada 1 - StudioOtaku</title>
-  <link rel="stylesheet" href="../../../css/server-selector.css">
   <link rel="stylesheet" href="../../../css/temporadas.css">
   <link rel="stylesheet" href="../../../css/style.css">
   <link rel="stylesheet" href="../../../css/anime.css">
@@ -26,7 +25,29 @@
     .reproductor-video iframe { width: 100%; height: 480px; border: none; }
     .player-frame-wrap { background: #111; border-radius: 12px; overflow: hidden; }
     .header + main.container { padding-top: 6rem; }
+
+    #player-frame { width: 100%; height: 480px; border: 0; display: block; }
+    @media (max-width: 768px) { #player-frame { height: 360px; } }
+
+    .episodes-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+    @media (max-width: 900px) { .episodes-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    @media (max-width: 600px) { .episodes-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .episode-btn { padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.06); color: #fff; border: 1px solid rgba(255,255,255,0.10); cursor: pointer; font-weight: 700; }
+    .episode-btn:hover { background: rgba(108,99,255,0.25); border-color: rgba(108,99,255,0.60); }
+    .episode-btn.active { background: #6c63ff; border-color: #6c63ff; }
+
+    .server-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 12px 0; }
+    .server-card { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.04); color: #fff; text-decoration: none; border: 1px solid rgba(255,255,255,0.10); }
+    .server-card img { width: 22px; height: 22px; object-fit: contain; }
+    .server-card.active { background: rgba(108,99,255,0.25); border-color: rgba(108,99,255,0.65); }
+
+    .language-toggle { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 12px 0; }
+    .lang-btn { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.04); color: #fff; border: 1px solid rgba(255,255,255,0.10); cursor: pointer; }
+    .lang-btn img { width: 22px; height: 22px; object-fit: contain; }
+    .lang-btn.active { background: rgba(108,99,255,0.25); border-color: rgba(108,99,255,0.65); }
+    .lang-btn:disabled { opacity: 0.45; cursor: not-allowed; }
   </style>
+
   <style>
     .footer { margin-top: 28px; padding: 16px 0; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08); }
     .footer .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -46,6 +67,7 @@
     @media (max-width:768px){ .footer .footer-content { grid-template-columns: 1fr; } }
   </style>
 </head>
+
 <body>
   <header class="header">
     <nav class="nav-container">
@@ -69,62 +91,30 @@
           <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
         </div>
         <div class="description">
-          <p>Selecciona episodio e idioma, luego un servidor. Disponibles: MixDrop y StreamTape (Español).</p>
+          <p>Selecciona un episodio y un servidor. Disponibles: StreamTape y MEGA (Subtitulado).</p>
         </div>
 
         <div class="contenedor-video">
           <section class="player-selector" aria-label="Selector de idioma y servidor">
             <div class="language-toggle" role="tablist" aria-label="Idiomas disponibles">
-              <button class="lang-btn" role="tab" aria-selected="false" data-language="lat">
+              <button class="lang-btn" role="tab" aria-selected="false" data-language="lat" type="button" disabled>
                 <img src="../../../ico/LAT.png" alt="Latino">
                 <span>Latino</span>
               </button>
-              <button class="lang-btn" role="tab" aria-selected="false" data-language="sub">
+              <button class="lang-btn active" role="tab" aria-selected="true" data-language="sub" type="button">
                 <img src="../../../ico/SUB.png" alt="Subtitulado">
                 <span>Subtitulado</span>
               </button>
             </div>
 
             <div class="server-grid" aria-label="Servidores disponibles">
-              <a href="#" class="server-card" data-server="Filemoon" data-url-lat="#" data-url-sub="#" aria-label="Filemoon">
-                <img src="../../../ico/FILEMOON.png" alt="Filemoon">
-                <span>Filemoon</span>
-              </a>
-              <a href="#" class="server-card" data-server="StreamWish" data-url-lat="#" data-url-sub="#" aria-label="StreamWish">
-                <img src="../../../ico/STREAMWISH.png" alt="StreamWish">
-                <span>StreamWish</span>
-              </a>
-              <a href="#" class="server-card" data-server="MixDrop" data-url-lat="#" data-url-sub="#" aria-label="MixDrop">
-                <img src="../../../ico/mixdrop.webp" alt="MixDrop">
-                <span>MixDrop</span>
-              </a>
-              <a href="#" class="server-card" data-server="StreamTape" data-url-lat="#" data-url-sub="#" aria-label="StreamTape">
+              <a href="#" class="server-card" data-server="st" aria-label="StreamTape">
                 <img src="../../../ico/streamtape.png" alt="StreamTape">
                 <span>StreamTape</span>
               </a>
-              <a href="#" class="server-card" data-server="Netu" data-url-lat="#" data-url-sub="#" aria-label="Netu">
-                <img src="../../../ico/netu.png" alt="Netu">
-                <span>Netu</span>
-              </a>
-              <a href="#" class="server-card" data-server="Uqload" data-url-lat="#" data-url-sub="#" aria-label="Uqload">
-                <img src="../../../ico/UQLOAD.webp" alt="Uqload">
-                <span>Uqload</span>
-              </a>
-              <a href="#" class="server-card" data-server="HGLINK" data-url-lat="#" data-url-sub="#" aria-label="HGLINK">
-                <img src="../../../ico/HGLINK.png" alt="HGLINK">
-                <span>HGLINK</span>
-              </a>
-              <a href="#" class="server-card" data-server="EarnVids" data-url-lat="#" data-url-sub="#" aria-label="EarnVids">
-                <img src="../../../ico/earnvids.jpg" alt="EarnVids">
-                <span>EarnVids</span>
-              </a>
-              <a href="#" class="server-card" data-server="LULU VDO" data-url-lat="#" data-url-sub="#" aria-label="LULU VDO">
-                <img src="../../../ico/LULUVDO.webp" alt="LULU VDO">
-                <span>LULU VDO</span>
-              </a>
-              <a href="#" class="server-card" data-server="HexUpload" data-url-lat="#" data-url-sub="#" aria-label="HexUpload">
-                <img src="../../../ico/HEXUPLOAD.png" alt="HexUpload">
-                <span>HexUpload</span>
+              <a href="#" class="server-card" data-server="mg" aria-label="MEGA">
+                <img src="../../../ico/mega.png" alt="MEGA">
+                <span>MEGA</span>
               </a>
             </div>
 
@@ -243,70 +233,75 @@
     </div>
   </footer>
 
-  <script src="../../../assets/js/server-selector.js"></script>
   <script>
-    function normalizeUrl(url) { return url || ''; }
-    function mixdropFallback(url) {
-      if (!url) return '';
-      const m = url.match(/https?:\/\/mxdrop\.to\/e\/([^\/?#]+)/i);
-      return m ? `https://mdy48tn97.com/e/${m[1]}` : '';
-    }
-    function streamtapeFallback(url) {
-      if (!url) return '';
-      const m = url.match(/https?:\/\/streamtape\.com\/e\/([^\/?#]+)/i);
-      return m ? `https://streamtape.com/e/${m[1]}` : '';
-    }
     let currentEpisode = null;
+    let currentServer = 'st';
+    let currentLanguage = 'sub';
+
     const episodes = [
-      { num: 1,  title: 'Episodio 1',  op1: 'https://mxdrop.to/e/q1d867ppsx73r91', st: 'https://streamtape.com/e/kom7Y4aBLjiOv9L/Danmachi_-_Temporada_1_Episodio_01.mp4' },
-      { num: 2,  title: 'Episodio 2',  op1: 'https://mxdrop.to/e/36q70oqkbmvxm6e', st: 'https://streamtape.com/e/bw2wpjKAQvCKJv/Danmachi_-_Temporada_1_Episodio_02.mp4' },
-      { num: 3,  title: 'Episodio 3',  op1: 'https://mxdrop.to/e/vkq9l1vof1zxdq', st: 'https://streamtape.com/e/rDoz89PgRrsbDld/Danmachi_-_Temporada_1_Episodio_03.mp4' },
-      { num: 4,  title: 'Episodio 4',  op1: 'https://mxdrop.to/e/pj68m03efe0rk8', st: 'https://streamtape.com/e/4W4pmaD2xesKlqV/Danmachi_-_Temporada_1_Episodio_04.mp4' },
-      { num: 5,  title: 'Episodio 5',  op1: 'https://mxdrop.to/e/4d9k7o1nbwr6v3', st: 'https://streamtape.com/e/mqOdlGlJzVib9Mm/Danmachi_-_Temporada_1_Episodio_05.mp4' },
-      { num: 6,  title: 'Episodio 6',  op1: 'https://mxdrop.to/e/jdk83vwgtx6eox', st: 'https://streamtape.com/e/P3P7PG1A3Mt0qDQ/Danmachi_-_Temporada_1_Episodio_06.mp4' },
-      { num: 7,  title: 'Episodio 7',  op1: 'https://mxdrop.to/e/q1d867x3c77o93', st: 'https://streamtape.com/e/kgZD3pxGVaUrBA/Danmachi_-_Temporada_1_Episodio_07.mp4' },
-      { num: 8,  title: 'Episodio 8',  op1: 'https://mxdrop.to/e/vkq9l1grt71d4k', st: 'https://streamtape.com/e/yb6eMKALaOI1pmM/Danmachi_-_Temporada_1_Episodio_08.mp4' },
-      { num: 9,  title: 'Episodio 9',  op1: 'https://mxdrop.to/e/xw9ej1zefv4lk8', st: 'https://streamtape.com/e/z1JapoZ4YRUYqYq/Danmachi_-_Temporada_1_Episodio_09.mp4' },
-      { num: 10, title: 'Episodio 10', op1: 'https://mxdrop.to/e/gjdzozzlak9loe', st: 'https://streamtape.com/e/bq0DPKMW1kSPwvL/Danmachi_-_Temporada_1_Episodio_10.mp4' },
-      { num: 11, title: 'Episodio 11', op1: 'https://mxdrop.to/e/7kjw0wjpcpe9x6', st: 'https://streamtape.com/e/xmmmeZ7jjPiq9Z/Danmachi_-_Temporada_1_Episodio_11.mp4' },
-      { num: 12, title: 'Episodio 12', op1: 'https://mxdrop.to/e/l79jwj7vuqv166m', st: 'https://streamtape.com/e/MqxJZOVJDyUmO4a/Danmachi_-_Temporada_1_Episodio_12.mp4' },
-      { num: 13, title: 'Episodio 13', op1: 'https://mxdrop.to/e/7kjw0w1nipo9wr', st: 'https://streamtape.com/e/ox36x0dL0YIJ22z/Danmachi_-_Temporada_1_Episodio_13.mp4' }
+      { num: 1,  title: 'Episodio 1',  st: 'https://streamtape.com/e/kom7Y4aBLjiOv9L/Danmachi_-_Temporada_1_Episodio_01.mp4', mg: 'https://mega.nz/embed/LYEyGBxa#D8T3QqB_oLgCLCFREjhNh-BODRMnM8ww4LNkdGIrFQ0' },
+      { num: 2,  title: 'Episodio 2',  st: 'https://streamtape.com/e/bw2wpjKAQvCKJv/Danmachi_-_Temporada_1_Episodio_02.mp4', mg: 'https://mega.nz/embed/PUd2zLDL#sv7uYSZWiSoCumqpi2dkJ0ztHT17JF7wv0k9hkH7Juw' },
+      { num: 3,  title: 'Episodio 3',  st: 'https://streamtape.com/e/rDoz89PgRrsbDld/Danmachi_-_Temporada_1_Episodio_03.mp4', mg: 'https://mega.nz/embed/SNEW0JaK#-Q3O1lyCq9-l_oQMdV4P7Z88g1FtEMUI3g263lD6Sns' },
+      { num: 4,  title: 'Episodio 4',  st: 'https://streamtape.com/e/4W4pmaD2xesKlqV/Danmachi_-_Temporada_1_Episodio_04.mp4', mg: 'https://mega.nz/embed/GBlUjYxA#S4IlzjHe0lVzWrPrK98zY4bfjkTqhgMnSXNwxkCMZ68' },
+      { num: 5,  title: 'Episodio 5',  st: 'https://streamtape.com/e/mqOdlGlJzVib9Mm/Danmachi_-_Temporada_1_Episodio_05.mp4', mg: 'https://mega.nz/embed/Sd9C0bqS#0vzYXBZXx4vTypEaamGG5foXvRtZD2UrZmFje3CbKks' },
+      { num: 6,  title: 'Episodio 6',  st: 'https://streamtape.com/e/P3P7PG1A3Mt0qDQ/Danmachi_-_Temporada_1_Episodio_06.mp4', mg: 'https://mega.nz/embed/TIV1yZhI#b92sBldWw04pGfUzH1DhMKqiPl0A24-KOmfs8CAc4qU' },
+      { num: 7,  title: 'Episodio 7',  st: 'https://streamtape.com/e/kgZD3pxGVaUrBA/Danmachi_-_Temporada_1_Episodio_07.mp4', mg: 'https://mega.nz/embed/bRN3Ubza#Hp_bgxCGet1IHyQl_KoXSejpW6TUp3r54KoYDdIsLIU' },
+      { num: 8,  title: 'Episodio 8',  st: 'https://streamtape.com/e/yb6eMKALaOI1pmM/Danmachi_-_Temporada_1_Episodio_08.mp4', mg: 'https://mega.nz/embed/OdEn0RLD#iHYhVUPfh06beIFnh1EvnyXWovNuVzdJQlvNV9H9v-Q' },
+      { num: 9,  title: 'Episodio 9',  st: 'https://streamtape.com/e/z1JapoZ4YRUYqYq/Danmachi_-_Temporada_1_Episodio_09.mp4', mg: 'https://mega.nz/embed/mJN0wIbL#1BDTWRwsJL2OU9_38aYnfE1q4STy2drzH3-S1XNo0_8' },
+      { num: 10, title: 'Episodio 10', st: 'https://streamtape.com/e/bq0DPKMW1kSPwvL/Danmachi_-_Temporada_1_Episodio_10.mp4', mg: 'https://mega.nz/embed/GAlyiQrY#uzR8px1ZDD2c7OWbF1HfZ3dW0kb1CrNW7dQwFJ-tY1c' },
+      { num: 11, title: 'Episodio 11', st: 'https://streamtape.com/e/xmmmeZ7jjPiq9Z/Danmachi_-_Temporada_1_Episodio_11.mp4', mg: 'https://mega.nz/embed/mMUQ0ALI#7HCV3yo3mvnkcDr2zAYs3eBgjocg7_PS0zLfoALCmV8' },
+      { num: 12, title: 'Episodio 12', st: 'https://streamtape.com/e/MqxJZOVJDyUmO4a/Danmachi_-_Temporada_1_Episodio_12.mp4', mg: 'https://mega.nz/embed/zcNGyYDb#wflfx5gSfeyHVV-sRgKRiLeKjA7pAlG8QBF_aa6LwjQ' },
+      { num: 13, title: 'Episodio 13', st: 'https://streamtape.com/e/ox36x0dL0YIJ22z/Danmachi_-_Temporada_1_Episodio_13.mp4', mg: 'https://mega.nz/embed/KFdF3b7S#SJhVFBy3BJ5YquaVIqHP6kMQPXjFOQJ3tf7rhzJgApw' }
     ];
-    const episodesGrid = document.getElementById('episodes-grid');
-    episodes.forEach(ep => { const b = document.createElement('button'); b.className = 'episode-btn'; b.textContent = `Ep ${ep.num}`; b.onclick = () => loadEpisode(ep); episodesGrid.appendChild(b); });
-    function applyEpisodeToServerGrid(ep) {
-      const mixdropCard = document.querySelector('.server-card[data-server="MixDrop"]');
-      const streamTapeCard = document.querySelector('.server-card[data-server="StreamTape"]');
-      const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"]):not([data-server="StreamTape"])');
-      const latUrlMix = normalizeUrl(ep.op1 || '');
-      const latUrlSt = normalizeUrl(ep.st || '');
-      if (mixdropCard) {
-        mixdropCard.setAttribute('data-url-lat', latUrlMix || '#');
-        const fb = mixdropFallback(latUrlMix);
-        if (fb) { mixdropCard.setAttribute('data-fallback-lat', fb); } else { mixdropCard.removeAttribute('data-fallback-lat'); }
-        mixdropCard.setAttribute('data-url-sub', '#');
-      }
-      if (streamTapeCard) {
-        streamTapeCard.setAttribute('data-url-lat', latUrlSt || '#');
-        const stFb = streamtapeFallback(latUrlSt);
-        if (stFb) { streamTapeCard.setAttribute('data-fallback-lat', stFb); }
-        else if (!latUrlSt && latUrlMix) { streamTapeCard.setAttribute('data-fallback-lat', latUrlMix); }
-        else { streamTapeCard.removeAttribute('data-fallback-lat'); }
-        streamTapeCard.setAttribute('data-url-sub', '#');
-      }
-      otherCards.forEach(card => { card.setAttribute('data-url-lat', '#'); card.setAttribute('data-url-sub', '#'); });
+
+    const hasHttp = (u) => u && /^https?:\/\//i.test(u);
+
+    function setActiveLanguage(lang) {
+      currentLanguage = lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        const isActive = btn.dataset.language === lang;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      playCurrent();
     }
-    function loadEpisode(episode) {
-      document.querySelectorAll('.episode-btn').forEach((btn, index) => { btn.classList.toggle('active', index + 1 === episode.num); });
-      document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}${episode.title ? ': ' + episode.title : ''}`;
-      currentEpisode = episode;
-      applyEpisodeToServerGrid(episode);
+
+    function setActiveServer(server) {
+      currentServer = server;
+      document.querySelectorAll('.server-card').forEach(card => {
+        card.classList.toggle('active', card.dataset.server === server);
+      });
+      playCurrent();
+    }
+
+    function playCurrent() {
+      if (!currentEpisode) return;
+      const frame = document.getElementById('player-frame');
+      if (!frame) return;
+
+      let url = currentServer === 'mg' ? currentEpisode.mg : currentEpisode.st;
+
+      if (!hasHttp(url)) {
+        url = currentServer === 'mg' ? currentEpisode.st : currentEpisode.mg;
+        currentServer = currentServer === 'mg' ? 'st' : 'mg';
+        document.querySelectorAll('.server-card').forEach(card => {
+          card.classList.toggle('active', card.dataset.server === currentServer);
+        });
+      }
+      frame.src = hasHttp(url) ? url : 'about:blank';
+    }
+
+    function loadEpisode(ep) {
+      currentEpisode = ep;
+      document.querySelectorAll('.episode-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', i + 1 === ep.num);
+      });
+      const title = document.getElementById('current-episode-title');
+      if (title) title.textContent = `Episodio ${ep.num}`;
+      playCurrent();
       updateNavState();
-      const hasLatLinks = Boolean(normalizeUrl(episode.op1 || '') || normalizeUrl(episode.st || ''));
-      const anyActiveLang = document.querySelector('.lang-btn.active');
-      const latBtn = document.querySelector('.lang-btn[data-language="lat"]');
-      if (!anyActiveLang && hasLatLinks && latBtn) { latBtn.click(); }
     }
+
     function updateNavState() {
       const prev = document.getElementById('prev-ep');
       const next = document.getElementById('next-ep');
@@ -318,61 +313,69 @@
       next.style.background = next.disabled ? '#2c2c2c' : '#6c63ff';
       next.style.color = next.disabled ? '#bbb' : '#fff';
     }
+
+    const episodesGrid = document.getElementById('episodes-grid');
+    if (episodesGrid) {
+      episodes.forEach(ep => {
+        const btn = document.createElement('button');
+        btn.className = 'episode-btn';
+        btn.textContent = `Ep ${ep.num}`;
+        btn.addEventListener('click', () => loadEpisode(ep));
+        episodesGrid.appendChild(btn);
+      });
+    }
+
+    document.querySelectorAll('.server-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        setActiveServer(card.dataset.server);
+      });
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.disabled) return;
+        setActiveLanguage(btn.dataset.language);
+      });
+    });
+
     const prevBtn = document.getElementById('prev-ep');
     const nextBtn = document.getElementById('next-ep');
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        if (!currentEpisode) return;
-        const idx = episodes.findIndex(e => e.num === currentEpisode.num);
-        if (idx > 0) loadEpisode(episodes[idx - 1]);
-      });
-    }
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        if (!currentEpisode) return;
-        const idx = episodes.findIndex(e => e.num === currentEpisode.num);
-        if (idx >= 0 && idx < episodes.length - 1) loadEpisode(episodes[idx + 1]);
-      });
-    }
+    if (prevBtn) prevBtn.addEventListener('click', () => { if (currentEpisode && currentEpisode.num > 1) loadEpisode(episodes[currentEpisode.num - 2]); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { if (currentEpisode && currentEpisode.num < episodes.length) loadEpisode(episodes[currentEpisode.num]); });
+
     const toggleBtn = document.getElementById('toggle-episodes');
     const episodesBox = document.getElementById('episodes-container');
     if (toggleBtn && episodesBox) {
       toggleBtn.addEventListener('click', () => {
         const isHidden = episodesBox.hasAttribute('hidden');
-        if (isHidden) { episodesBox.removeAttribute('hidden'); toggleBtn.setAttribute('aria-expanded', 'true'); episodesBox.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-        else { episodesBox.setAttribute('hidden', ''); toggleBtn.setAttribute('aria-expanded', 'false'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-      });
-    }
-    const langBtns = document.querySelectorAll('.lang-btn');
-    langBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.dataset.language;
-        const hasLinks = (ep) => {
-          if (!ep) return false;
-          if (lang === 'sub') return false;
-          return Boolean(normalizeUrl(ep.op1 || '') || normalizeUrl(ep.st || ''));
-        };
-        if (!hasLinks(currentEpisode)) {
-          const target = episodes.find(e => hasLinks(e)) || episodes[0];
-          loadEpisode(target);
-          try { btn.click(); } catch (_) {}
+        if (isHidden) {
+          episodesBox.removeAttribute('hidden');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+          episodesBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          episodesBox.setAttribute('hidden', '');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       });
-    });
-    loadEpisode(episodes[0]);
-  </script>
-  <script>
+    }
+
     (function(){
-      const p=new URLSearchParams(window.location.search)
-      const ep=parseInt(p.get('ep'))
-      if(Number.isFinite(ep) && ep>=1){
-        const buttons=document.querySelectorAll('.episode-btn')
-        const target=buttons[ep-1]
-        if(target){ target.click() }
+      const p = new URLSearchParams(window.location.search);
+      const ep = parseInt(p.get('ep'));
+      if (Number.isFinite(ep) && ep >= 1 && ep <= episodes.length) {
+        currentServer = 'st';
+        setActiveLanguage('sub');
+        loadEpisode(episodes[ep - 1]);
+        return;
       }
-    })()
+      setActiveServer('st');
+      setActiveLanguage('sub');
+      loadEpisode(episodes[0]);
+    })();
   </script>
-  
-<script src="../../../assets/js/ads.js"></script>
+
+  <script src="../../../assets/js/ads.js"></script>
 </body>
 </html>
