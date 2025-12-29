@@ -10,17 +10,17 @@
   </url>
 
   <url>
-    <loc>https://mundootakulatino.vercel.app/index.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
     <loc>https://mundootakulatino.vercel.app/public/html/catalogo.html</loc>
     <lastmod>2025-10-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://mundootakulatino.vercel.app/public/html/ver-anime-espanol-latino.html</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- DEMON SLAYER - CASTILLO INFINITO (MÁXIMA PRIORIDAD SEO) -->
@@ -222,6 +222,13 @@
   </url>
 
   <url>
+    <loc>https://mundootakulatino.vercel.app/public/anime/boruto/boruto.html</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://mundootakulatino.vercel.app/public/anime/dragon-ball-heroes/dragon-ball-heroes.html</loc>
     <lastmod>2025-10-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -239,6 +246,13 @@
     <loc>https://mundootakulatino.vercel.app/public/anime/horimiya/horimiya.html</loc>
     <lastmod>2025-10-13</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mundootakulatino.vercel.app/public/anime/hotarubi-no-mori-e/movie.html</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 

@@ -4,6 +4,38 @@
   const STORAGE_KEY = 'mol_auth_ok';
   let modalOpen = false;
 
+  function injectMascot() {
+    try {
+      if (/\/public\/anime\//i.test(window.location.pathname)) return;
+      if (document.getElementById('mol-mascot')) return;
+
+      const styleId = 'mol-mascot-style';
+      if (!document.getElementById(styleId)) {
+        const style = document.createElement('style');
+        style.id = styleId;
+        style.textContent = `
+          #mol-mascot{position:fixed;right:8px;top:58%;transform:translateY(-50%);width:min(260px,34vw);max-width:320px;height:auto;opacity:.95;pointer-events:none;z-index:9999;filter:drop-shadow(0 18px 60px rgba(0,0,0,.55))}
+          @media (max-width: 600px){
+            #mol-mascot{right:6px;bottom:6px;top:auto;transform:none;width:min(180px,46vw);max-width:220px;opacity:.92}
+          }
+        `;
+        document.head.appendChild(style);
+      }
+
+      const img = document.createElement('img');
+      img.id = 'mol-mascot';
+      img.alt = 'Personaje anime';
+      img.decoding = 'async';
+      img.loading = 'lazy';
+      const origin = (window.location && window.location.origin) ? window.location.origin : '';
+      img.src = `${origin}/ico/personaje-anime%20.webp`;
+      document.body && document.body.appendChild(img);
+    } catch (_) {}
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', injectMascot);
+  else injectMascot();
+
   function deny() {
     document.documentElement.innerHTML = '';
     try {

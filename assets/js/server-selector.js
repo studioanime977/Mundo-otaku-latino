@@ -92,11 +92,6 @@
     let initial = pref === 'fallback' && isValidUrl(fallback) ? fallback : url;
     if (!isValidUrl(initial) && isValidUrl(fallback)) { initial = fallback; setPref(key, 'fallback'); }
 
-    // MEGA no se puede embeber de forma confiable en iframe. Abrir en pestaña nueva.
-    if (/^https?:\/\/(?:www\.)?mega\.nz\//i.test(initial)) {
-      try { window.open(initial, '_blank', 'noopener'); } catch (_) { window.location.href = initial; }
-      return;
-    }
     hidePlaceholder();
     frame.src = initial;
     serverCards.forEach(c => c.classList.remove('active'));

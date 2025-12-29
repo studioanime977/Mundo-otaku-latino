@@ -4,7 +4,8 @@
   "description": "Mundo Otaku Latino - Anime a la Carta",
   "main": "index.html",
   "scripts": {
-    "build": "echo 'Static site ready for deployment'"
+    "build": "echo 'Static site ready for deployment'",
+    "generate:sitemap": "node ./scripts/generate-sitemap.mjs"
   },
   "keywords": ["anime", "latino", "otaku", "static"],
   "author": "StudioAnime977",
