@@ -24,7 +24,7 @@ const data = [
   { place:'Serie', title:'NAZO', title2:'NO KANOJO X', description:'Temporada 1.', image:'../../img/NAZO NO KANOJO X S1.jpg', href:'../anime/nazo-no-kanojo-x/nazo-no-kanojo-x.html' },
   { place:'Serie', title:'ONE', title2:'PIECE', description:'Serie.', image:'../../img/One Piece East Blue.png', href:'../anime/one-piece/one-piece.html' },
   { place:'Serie', title:'ONE', title2:'PUNCH MAN', description:'Temporada 1.', image:'../../img/One Punch Man S1.jpg', href:'../anime/one-punch-man/one-punch-man.html' },
-  { place:'Serie', title:'OWARI', title2:'NO SERAPH', description:'Temporada 1.', image:'../../img/Owari%20no%20Seraph%20cads%20s1.webp', href:'../anime/owari-no-seraph/owari-no-seraph.html' },
+  { place:'Serie', title:'OWARI', title2:'NO SERAPH', description:'Temporadas 1 y 2.', image:'../../img/Owari%20no%20Seraph%20cads%20s1.webp', href:'../anime/owari-no-seraph/owari-no-seraph.html' },
   { place:'Serie', title:'PAPA NO', title2:'IUKOTO O KIKINASAI', description:'Temporada 1.', image:'../../img/Papa no Iukoto o Kikinasai.png', href:'../anime/papa-no-iukoto-o-kikinasai/papa-no-iukoto-o-kikinasai.html' },
   { place:'Serie', title:'RE', title2:'ZERO', description:'Temporadas 1–3.', image:'../../img/rezeroS1.png', href:'../anime/re-zero/re-zero.html' },
   { place:'Serie', title:'SAKAMOTO', title2:'DAYS', description:'Temporadas.', image:'../../img/sakamoto-days-art.jpg', href:'../anime/sakamoto-days/sakamoto-days.html' },
