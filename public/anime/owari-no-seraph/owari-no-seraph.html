@@ -155,7 +155,7 @@
   </section>
 
   <main class="page-container">
-    <div class="season-switch"><label for="season">Selecciona</label><select id="season" class="season-select"><option value="1">T1</option></select><a id="download-link" class="download-btn" href="descargar-season1.html" target="_blank" rel="noopener">Descargar Temporada 1</a></div>
+    <div class="season-switch"><label for="season">Selecciona</label><select id="season" class="season-select"><option value="1">T1</option><option value="2">T2</option></select><a id="download-link" class="download-btn" href="descargar-season1.html" target="_blank" rel="noopener">Descargar Temporada 1</a></div>
     <section id="episodios" aria-label="Lista de episodios">
       <div class="episodes-grid" id="episodes-grid"></div>
     </section>
@@ -252,14 +252,14 @@
       lastScroll = currentScroll;
     });
 
-    const seasons = { '1': { count: 12, url: 'season1.html', thumb: '../../../img/Owari%20no%20Seraph%20cads%20s1.webp', dl: 'descargar-season1.html' } }
+    const seasons = { '1': { count: 12, url: 'season1.html', thumb: '../../../img/Owari%20no%20Seraph%20cads%20s1.webp', dl: 'descargar-season1.html', meta: '23m · Latino' }, '2': { count: 16, url: 'season2.html', thumb: '../../../img/Owari%20no%20Seraph%20cads%20s1.webp', dl: 'descargar-season2.html', meta: '23m · Sub Español' } }
     const grid = document.getElementById('episodes-grid'), select = document.getElementById('season');
     function renderSeason(key) {
       const s = seasons[key];
       if (!s || !grid) return;
       grid.innerHTML = Array.from({ length: s.count }, (_, i) => {
         const ep = i + 1;
-        return `<div class="ep-card"><div class="ep-thumb"><img src="${s.thumb}" alt="S${key}E${ep}"></div><div class="ep-info"><div class="ep-title">S${key}E${ep}</div><div class="ep-meta">23m · Latino</div></div><a class="ep-link" href="${s.url}?ep=${ep}"></a></div>`
+        return `<div class="ep-card"><div class="ep-thumb"><img src="${s.thumb}" alt="S${key}E${ep}"></div><div class="ep-info"><div class="ep-title">S${key}E${ep}</div><div class="ep-meta">${s.meta || ''}</div></div><a class="ep-link" href="${s.url}?ep=${ep}"></a></div>`
       }).join('');
       const dl = document.getElementById('download-link');
       if (dl && s.dl) { dl.href = s.dl; dl.textContent = `Descargar Temporada ${key}` }

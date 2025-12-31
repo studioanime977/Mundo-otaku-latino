@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-adsense-account" content="ca-pub-8480825005176665">
-  <title>Owari No Seraph - Temporada 1 - Mundo Otaku Latino</title>
+  <title>Owari No Seraph - Temporada 2 - Mundo Otaku Latino</title>
 
   <link rel="stylesheet" href="../../../css/server-selector.css">
   <link rel="stylesheet" href="../../../css/temporadas.css">
@@ -30,7 +30,7 @@
     .player-frame-wrap { background: #111; border-radius: 12px; overflow: hidden; }
     .header + main.container { padding-top: 6rem; }
   </style>
- </head>
+</head>
 <body>
   <header class="header">
     <nav class="nav-container">
@@ -50,12 +50,12 @@
       <a href="owari-no-seraph.html" class="back-btn">Volver</a>
       <div class="left-content">
         <div class="title-container">
-          <h1 class="season-title">Owari No Seraph - Temporada 1</h1>
+          <h1 class="season-title">Owari No Seraph - Temporada 2</h1>
           <h2 class="episode-title" id="current-episode-title">Episodio 1</h2>
         </div>
 
         <div style="margin:10px 0 14px 0; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.08);">
-          <img src="../../../img/Owari%20no%20Seraph%20portada%20s1.jpg" alt="Owari No Seraph Temporada 1" style="width:100%; height:auto; display:block;">
+          <img src="../../../img/Owari%20no%20Seraph%20portada%20s1.jpg" alt="Owari No Seraph Temporada 2" style="width:100%; height:auto; display:block;">
         </div>
 
         <div class="description">
@@ -65,10 +65,6 @@
         <div class="contenedor-video">
           <section class="player-selector" aria-label="Selector de idioma y servidor">
             <div class="language-toggle" role="tablist" aria-label="Idiomas disponibles">
-              <button class="lang-btn" role="tab" aria-selected="true" data-language="lat">
-                <img src="../../../ico/LAT.png" alt="Español">
-                <span>Español</span>
-              </button>
               <button class="lang-btn" role="tab" aria-selected="false" data-language="sub">
                 <img src="../../../ico/SUB.png" alt="Sub Español">
                 <span>Sub Español</span>
@@ -105,7 +101,7 @@
 
         <section aria-label="Enlaces de descarga" style="margin-top:18px;">
           <div style="font-weight:700; margin-bottom:8px;">Descargas</div>
-          <a href="./descargar-season1.html" style="background:#27ae60; color:#fff; padding:10px 14px; border-radius:8px; display:inline-block;" target="_blank" rel="noopener">Descargar Temporada 1</a>
+          <a href="./descargar-season2.html" style="background:#27ae60; color:#fff; padding:10px 14px; border-radius:8px; display:inline-block;" target="_blank" rel="noopener">Descargar Temporada 2</a>
         </section>
       </div>
 
@@ -128,61 +124,62 @@
 
   <script>
     let currentEpisode = null;
-    const latStreamtape = [
-      "https://streamtape.com/e/WXmWXl212oTbDdG/Owari_no_Seraph_S1_-_01_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
-      "https://streamtape.com/e/VX2J4D2mo3SKWRr/Owari_no_Seraph_S1_-_02_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
-      "https://streamtape.com/e/3B6rAPAp9GidQZv/Owari_no_Seraph_S1_-_03_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
-      "https://streamtape.com/e/jr3rPjaZwZSzBlQ/Owari_no_Seraph_S1_-_04_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
-      "https://streamtape.com/e/4oXOmLapwjUZry/Owari_no_Seraph_S1_-_05_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
-      "https://streamtape.com/e/BeRDawPeMQsy1QW/Owari_no_Seraph_S1_-_06_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
-      "https://streamtape.com/e/4zkLXDqY7mhKDAk/Owari_no_Seraph_S1_-_07_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
-      "https://streamtape.com/e/r4RMGZbAggIbW6y/Owari_no_Seraph_S1_-_08_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
-      "https://streamtape.com/e/jAgvXqJz1BFz8gV/Owari_no_Seraph_S1_-_09_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
-      "https://streamtape.com/e/zGQG1z6vjGsYwGw/Owari_no_Seraph_S1_-_10_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
-      "https://streamtape.com/e/mkoJLYd73Xibgkp/Owari_no_Seraph_S1_-_11_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
-      "https://streamtape.com/e/waOrG4RAkdFJMer/Owari_no_Seraph_S1_-_12_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4"
-    ];
+
     const subStreamtape = [
-      "https://streamtape.com/e/l0a12elKMlImal/Owari_no_Seraph_sub_S1E1.mp4",
-      "https://streamtape.com/e/lwe6JWY3zOU7rek/Owari_no_Seraph_sub_S1E2.mp4",
-      "https://streamtape.com/e/WG0QJQVbGlTblld/Owari_no_Seraph_sub_S1E3.mp4",
-      "https://streamtape.com/e/LMxpXyglDYHRqMj/Owari_no_Seraph_sub_S1E4.mp4",
-      "https://streamtape.com/e/8dkwjvOGQrcox96/Owari_no_Seraph_sub_S1E5.mp4",
-      "https://streamtape.com/e/Vyz6Z61YrYCK2jK/Owari_no_Seraph_sub_S1E6.mp4",
-      "https://streamtape.com/e/KLw6MV396GH06lz/Owari_no_Seraph_sub_S1E7.mp4",
-      "https://streamtape.com/e/RQ84K8XpJgSdVlK/Owari_no_Seraph_sub_S1E8.mp4",
-      "https://streamtape.com/e/9qLxApwwrrhakQO/Owari_no_Seraph_sub_S1E9.mp4",
-      "https://streamtape.com/e/9o0L4WJovbSaKD3/Owari_no_Seraph_sub_S1E10.mp4",
-      "https://streamtape.com/e/BOO9Rab3rGtyxv0/Owari_no_Seraph_sub_S1E11.mp4",
-      "https://streamtape.com/e/Z2jgg7bRd6CqxDZ/Owari_no_Seraph_sub_S1E12.mp4"
+      "https://streamtape.com/e/GMMABLdKBPf1eK2/Owari_no_Seraph_S2_sub_E1.mp4",
+      "https://streamtape.com/e/lqjW23za1ws7rw6/Owari_no_Seraph_S2_sub_E2.mp4",
+      "https://streamtape.com/e/jvo2lGpRYJs2xp/Owari_no_Seraph_S2_sub_E3.mp4",
+      "https://streamtape.com/e/YOAM7WgV79fv7mb/Owari_no_Seraph_S2_sub_E4.mp4",
+      "https://streamtape.com/e/G2KxGG032lsoy0/Owari_no_Seraph_S2_sub_E5.mp4",
+      "https://streamtape.com/e/WpPGOd4QVpi0zv/Owari_no_Seraph_S2_sub_E6.mp4",
+      "https://streamtape.com/e/xZZB4b2kOPUl2K/Owari_no_Seraph_S2_sub_E7.mp4",
+      "https://streamtape.com/e/zMKJqWD3zaSppk/Owari_no_Seraph_S2_sub_E8.mp4",
+      "https://streamtape.com/e/PD4pkZaj0BF0Xx8/Owari_no_Seraph_S2_sub_E9.mp4",
+      "https://streamtape.com/e/YPZ7ZkzQDQhvb8x/Owari_no_Seraph_S2_sub_E10.mp4",
+      "https://streamtape.com/e/QP13op6ZkGUJLg/Owari_no_Seraph_S2_sub_E11.mp4",
+      "https://streamtape.com/e/wagWwDZ22vIJ8zo/Owari_no_Seraph_S2_sub_E12.mp4",
+      "https://streamtape.com/e/MzRZYJwwROHmkZ9/Owari_no_Seraph_S2_sub_Especial_1.mp4",
+      "https://streamtape.com/e/reJ0Q8dP9bhbjB0/Owari_no_Seraph_S2_sub_Especial_2.mp4",
+      "https://streamtape.com/e/Wbp9dbvVXBhbOzb/Owari_no_Seraph_S2_sub_Especial_3.mp4",
+      "https://streamtape.com/e/Kkbvxd90d7f0XK9/Owari_no_Seraph_S2_sub_Especial_4.mp4"
     ];
+
     const subMega = [
-      "https://mega.nz/embed/n1w1wb7T#_iLX35M07t6hHfST8eaUmlUNabBNbCEKfLXXv1Bkwz8",
-      "https://mega.nz/embed/6kRlGTbB#dVFGGz9BOe9PJ8SYJOq2nqCojTqzswnCrRfJrUAzF-Q",
-      "https://mega.nz/embed/3ph00LQC#np6OoPVAoroKo3j4wdfTPti2q4_vjNuSuSnpahHCVpc",
-      "https://mega.nz/embed/7opCxYrb#2p6P77GjcV47P6uzInPyATFez_ImV6o7lx74YuFK-Vg",
-      "https://mega.nz/embed/3hBgXYwa#S3uxGgvYi44aLIyuLBiL1in0jKqA5vTS6hEsC62HEu8",
-      "https://mega.nz/embed/P8wV1aBA#sXPhjxMl8jWD5a4LtzWws9STCSOZIkUQeUwPm5za5eE",
-      "https://mega.nz/embed/6gpBybAL#8-Zmmafg-tLlfmqM-1swRNyXcE7qtTgqG6S858r64-w",
-      "https://mega.nz/embed/yww0XRZJ#cxR0Cx7GsMuvGhnhS9ipS3zZafY2lzZ4-iz449jv9kE",
-      "https://mega.nz/embed/iohSlTpS#o6HLyHHds146nLVzJ3C6381100ijJfVfZ4AnhiYEQ6Q",
-      "https://mega.nz/embed/60JDmITJ#0bACa7HJ7Miq1Ue3liJzw9C7bUrODA06gbs0q6Uwidg",
-      "https://mega.nz/embed/a5RWnCya#vzGA3ept2JjB3JJRjMCxInomPmkcv8QsL7OTyhr7H6k",
-      "https://mega.nz/embed/upRRlJDB#6SIXHkPjEZpJbwcfrPR4cE9NkhtYgyPKTTaHmEucQM4"
+      "https://mega.nz/embed/OphlmZDa#8tOOlbMh_eZsWrbTQJIGNgGSobv12gvFsEpATtjOXCw",
+      "https://mega.nz/embed/v8pSSD4B#QlXJYLYsafYLZFCJjX8XmmwtH0DA5AjkyZZdlvTcr6M",
+      "https://mega.nz/embed/fgYx0L7R#bG1la-CFd4z6CG6pnQVCqoV7_VZPhwE_LVy-ao4PTzw",
+      "https://mega.nz/embed/SsIgRaJS#I1OP9exIS_XbVb7GklIHXm2O_RpiENbqv-hEMNiDj00",
+      "https://mega.nz/embed/OsQikLab#w0gq1jPEapre9_DC6NgADWyaLYaAOz9QWXGrHPEAzbs",
+      "https://mega.nz/embed/64o10DDI#sS10uk67_Yl4Fxzj8_yBikJJp3lnXhYAvbNAE8kaKC0",
+      "https://mega.nz/embed/e04G3CBa#iZr69ezd3n7fHZ6V14CVtGFMlJQiUlpVAAxnvu3KSt4",
+      "https://mega.nz/embed/j4pizaQK#-QGr9jbtzYKcpQb1gMs9pUymk7RRNa9o0yII24YPdo0",
+      "https://mega.nz/embed/ahghBarI#R85scrGWBxq7DVZO0zQW6S8SCnPCI0Sm5nQRRcKYySE",
+      "https://mega.nz/embed/L8AFzRKI#USR1pNDdjNgl2Z4bEMW7ac6MT9bRPg4KC0hOiIYhA3Q",
+      "https://mega.nz/embed/q8oHhYYY#LQWaKLxBgv0jrTIGACZasSkE3MDdXdCU23DXtvGhyMQ",
+      "https://mega.nz/embed/etxVDYwA#Im_FxTGUr9J6CIbyBIH_x8rJJq8AE_Wfzq4gsc75uvM",
+      "https://mega.nz/embed/f1BFnICb#aL5EQysPrwPfvZbOXQMpkVTmezvJ5cDAlPgXDjUy-RI",
+      "https://mega.nz/embed/P1ZmwCZC#DpbbX_QACxua7TB9iuI1rD_lHnqnvZBcXzPD_Mbi2AA",
+      "https://mega.nz/embed/GtA23CAT#Ka0N8PfHsPxwjUHXo7Sf_yNdNsI3Z2xUFemGCDgthUE",
+      "https://mega.nz/embed/awhCWR4K#YIt3y3ZB2HkJTMjl9vdwpScIeqByXkb8hR68gR20Gdw"
     ];
-    const episodes = Array.from({ length: 12 }, (_, i) => ({
-      num: i + 1,
-      title: `Episodio ${i + 1}`,
-      latStreamtape: latStreamtape[i],
-      subStreamtape: subStreamtape[i],
-      subMega: subMega[i]
-    }));
+
+    const episodes = Array.from({ length: 16 }, (_, i) => {
+      const n = i + 1;
+      const isSpecial = n > 12;
+      const title = isSpecial ? `Especial ${n - 12}` : `Episodio ${n}`;
+      return {
+        num: n,
+        title,
+        subStreamtape: subStreamtape[i],
+        subMega: subMega[i]
+      };
+    });
 
     const episodesGrid = document.getElementById('episodes-grid');
     episodes.forEach(episode => {
       const episodeBtn = document.createElement('button');
       episodeBtn.className = 'episode-btn';
-      episodeBtn.textContent = `Ep ${episode.num}`;
+      episodeBtn.textContent = episode.num <= 12 ? `Ep ${episode.num}` : `OVA ${episode.num - 12}`;
       episodeBtn.onclick = () => loadEpisode(episode);
       episodesGrid.appendChild(episodeBtn);
     });
@@ -190,7 +187,7 @@
     function applyEpisodeToServerGrid(ep) {
       const streamtapeCard = document.querySelector('.server-card[data-server="StreamTape"]');
       if (streamtapeCard) {
-        streamtapeCard.setAttribute('data-url-lat', ep.latStreamtape || '#');
+        streamtapeCard.setAttribute('data-url-lat', '#');
         streamtapeCard.setAttribute('data-url-sub', ep.subStreamtape || '#');
       }
 
@@ -205,7 +202,7 @@
       document.querySelectorAll('.episode-btn').forEach((btn, index) => {
         btn.classList.toggle('active', index + 1 === episode.num);
       });
-      document.getElementById('current-episode-title').textContent = `Episodio ${episode.num}`;
+      document.getElementById('current-episode-title').textContent = episode.title;
       currentEpisode = episode;
       applyEpisodeToServerGrid(episode);
       updateNavState();
@@ -261,6 +258,7 @@
       loadEpisode(episodes[0]);
     }
   </script>
+
   <script>
     (function(){
       const p = new URLSearchParams(window.location.search);

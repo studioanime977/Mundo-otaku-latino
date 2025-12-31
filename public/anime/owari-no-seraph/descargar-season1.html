@@ -73,6 +73,7 @@
 
         <div class="language-toggle">
             <button class="lang-btn active" data-language="lat">Latino</button>
+            <button class="lang-btn" data-language="sub">Sub Español</button>
         </div>
 
         <div id="downloads-container" class="downloads-grid"></div>
@@ -130,57 +131,166 @@
             });
         }
 
+        const container = document.getElementById('downloads-container');
+        const apiKey = '110e7b6cbdf7a5aa354afb395e889c7aba3411c6';
+        const toExe = (url) => {
+            const safeUrl = String(url || '').replace(/#/g, '%23');
+            return `https://exe.io/st?api=${apiKey}&url=${safeUrl}`;
+        };
+
+        const latStreamtape = [
+            "https://streamtape.com/v/WXmWXl212oTbDdG/Owari_no_Seraph_S1_-_01_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
+            "https://streamtape.com/v/VX2J4D2mo3SKWRr/Owari_no_Seraph_S1_-_02_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
+            "https://streamtape.com/v/3B6rAPAp9GidQZv/Owari_no_Seraph_S1_-_03_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
+            "https://streamtape.com/v/jr3rPjaZwZSzBlQ/Owari_no_Seraph_S1_-_04_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
+            "https://streamtape.com/v/4oXOmLapwjUZry/Owari_no_Seraph_S1_-_05_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
+            "https://streamtape.com/v/BeRDawPeMQsy1QW/Owari_no_Seraph_S1_-_06_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
+            "https://streamtape.com/v/4zkLXDqY7mhKDAk/Owari_no_Seraph_S1_-_07_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
+            "https://streamtape.com/v/r4RMGZbAggIbW6y/Owari_no_Seraph_S1_-_08_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
+            "https://streamtape.com/v/jAgvXqJz1BFz8gV/Owari_no_Seraph_S1_-_09_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
+            "https://streamtape.com/v/zGQG1z6vjGsYwGw/Owari_no_Seraph_S1_-_10_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
+            "https://streamtape.com/v/mkoJLYd73Xibgkp/Owari_no_Seraph_S1_-_11_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4",
+            "https://streamtape.com/v/waOrG4RAkdFJMer/Owari_no_Seraph_S1_-_12_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4"
+        ];
+
+        const subMega = [
+            "https://mega.nz/file/n1w1wb7T#_iLX35M07t6hHfST8eaUmlUNabBNbCEKfLXXv1Bkwz8",
+            "https://mega.nz/file/6kRlGTbB#dVFGGz9BOe9PJ8SYJOq2nqCojTqzswnCrRfJrUAzF-Q",
+            "https://mega.nz/file/3ph00LQC#np6OoPVAoroKo3j4wdfTPti2q4_vjNuSuSnpahHCVpc",
+            "https://mega.nz/file/7opCxYrb#2p6P77GjcV47P6uzInPyATFez_ImV6o7lx74YuFK-Vg",
+            "https://mega.nz/file/3hBgXYwa#S3uxGgvYi44aLIyuLBiL1in0jKqA5vTS6hEsC62HEu8",
+            "https://mega.nz/file/P8wV1aBA#sXPhjxMl8jWD5a4LtzWws9STCSOZIkUQeUwPm5za5eE",
+            "https://mega.nz/file/6gpBybAL#8-Zmmafg-tLlfmqM-1swRNyXcE7qtTgqG6S858r64-w",
+            "https://mega.nz/file/yww0XRZJ#cxR0Cx7GsMuvGhnhS9ipS3zZafY2lzZ4-iz449jv9kE",
+            "https://mega.nz/file/iohSlTpS#o6HLyHHds146nLVzJ3C6381100ijJfVfZ4AnhiYEQ6Q",
+            "https://mega.nz/file/60JDmITJ#0bACa7HJ7Miq1Ue3liJzw9C7bUrODA06gbs0q6Uwidg",
+            "https://mega.nz/file/a5RWnCya#vzGA3ept2JjB3JJRjMCxInomPmkcv8QsL7OTyhr7H6k",
+            "https://mega.nz/file/upRRlJDB#6SIXHkPjEZpJbwcfrPR4cE9NkhtYgyPKTTaHmEucQM4"
+        ];
+
+        const subStreamtape = [
+            "https://streamtape.com/v/l0a12elKMlImal/Owari_no_Seraph_sub_S1E1.mp4",
+            "https://streamtape.com/v/lwe6JWY3zOU7rek/Owari_no_Seraph_sub_S1E2.mp4",
+            "https://streamtape.com/v/WG0QJQVbGlTblld/Owari_no_Seraph_sub_S1E3.mp4",
+            "https://streamtape.com/v/LMxpXyglDYHRqMj/Owari_no_Seraph_sub_S1E4.mp4",
+            "https://streamtape.com/v/8dkwjvOGQrcox96/Owari_no_Seraph_sub_S1E5.mp4",
+            "https://streamtape.com/v/Vyz6Z61YrYCK2jK/Owari_no_Seraph_sub_S1E6.mp4",
+            "https://streamtape.com/v/KLw6MV396GH06lz/Owari_no_Seraph_sub_S1E7.mp4",
+            "https://streamtape.com/v/RQ84K8XpJgSdVlK/Owari_no_Seraph_sub_S1E8.mp4",
+            "https://streamtape.com/v/9qLxApwwrrhakQO/Owari_no_Seraph_sub_S1E9.mp4",
+            "https://streamtape.com/v/9o0L4WJovbSaKD3/Owari_no_Seraph_sub_S1E10.mp4",
+            "https://streamtape.com/v/BOO9Rab3rGtyxv0/Owari_no_Seraph_sub_S1E11.mp4",
+            "https://streamtape.com/v/Z2jgg7bRd6CqxDZ/Owari_no_Seraph_sub_S1E12.mp4"
+        ];
+
+        const subMediafire = [
+            "https://www.mediafire.com/file/6gpfo4uetwxuygl/Owari+no+Seraph+sub+S1E1.mp4/file",
+            "https://www.mediafire.com/file/gxx3cynj66hkola/Owari+no+Seraph+sub+S1E2.mp4/file",
+            "https://www.mediafire.com/file/8hmf5ofw7q81xrv/Owari+no+Seraph+sub+S1E3.mp4/file",
+            "https://www.mediafire.com/file/oyhbvprllg67oxm/Owari+no+Seraph+sub+S1E4.mp4/file",
+            "https://www.mediafire.com/file/true2ifea1fe7p1/Owari+no+Seraph+sub+S1E5.mp4/file",
+            "https://www.mediafire.com/file/jltlvkr9dxulg1e/Owari+no+Seraph+sub+S1E6.mp4/file",
+            "https://www.mediafire.com/file/ir2rdeggm1wep2l/Owari+no+Seraph+sub+S1E7.mp4/file",
+            "https://www.mediafire.com/file/503xf34bbhxmhn5/Owari+no+Seraph+sub+S1E8.mp4/file",
+            "https://www.mediafire.com/file/tltd465tefk8usa/Owari+no+Seraph+sub+S1E9.mp4/file",
+            "https://www.mediafire.com/file/5pxoejpaaoi43s8/Owari+no+Seraph+sub+S1E10.mp4/file",
+            "https://www.mediafire.com/file/9qp6w2tqw1rka9v/Owari+no+Seraph+sub+S1E11.mp4/file",
+            "https://www.mediafire.com/file/tkmir4eoukvndir/Owari+no+Seraph+sub+S1E12.mp4/file"
+        ];
+
+        const episodes = Array.from({ length: 12 }, (_, i) => ({
+            num: i + 1,
+            latStreamtape: latStreamtape[i],
+            subMega: subMega[i],
+            subStreamtape: subStreamtape[i],
+            subMediafire: subMediafire[i]
+        }));
+
+        function renderDownloads(lang) {
+            if (!container) return;
+            container.innerHTML = '';
+
+            episodes.forEach(ep => {
+                const card = document.createElement('div');
+                card.className = 'download-card';
+
+                let linksHTML = `<h3>Episodio ${ep.num}</h3><div class="download-links">`;
+
+                if (lang === 'lat') {
+                    const url = ep.latStreamtape;
+                    if (url) {
+                        const exe = toExe(url);
+                        linksHTML += `
+                            <div class="server-label">
+                                <img src="../../../ico/streamtape.png" alt="StreamTape">
+                                <span>StreamTape</span>
+                            </div>
+                            <div class="download-link-item">
+                                <a href="${exe}" target="_blank" rel="noopener">Descargar</a>
+                                <button class="copy-btn" onclick="copyLink('${exe}')">Copiar link</button>
+                            </div>`;
+                    } else {
+                        linksHTML += `<div style="opacity:0.8;">No disponible</div>`;
+                    }
+                } else {
+                    if (ep.subMega) {
+                        const exe = toExe(ep.subMega);
+                        linksHTML += `
+                            <div class="server-label">
+                                <img src="../../../ico/mega.png" alt="MEGA">
+                                <span>MEGA</span>
+                            </div>
+                            <div class="download-link-item">
+                                <a href="${exe}" target="_blank" rel="noopener">Descargar</a>
+                                <button class="copy-btn" onclick="copyLink('${exe}')">Copiar link</button>
+                            </div>`;
+                    }
+
+                    if (ep.subStreamtape) {
+                        const exe = toExe(ep.subStreamtape);
+                        linksHTML += `
+                            <div class="server-label">
+                                <img src="../../../ico/streamtape.png" alt="StreamTape">
+                                <span>StreamTape</span>
+                            </div>
+                            <div class="download-link-item">
+                                <a href="${exe}" target="_blank" rel="noopener">Descargar</a>
+                                <button class="copy-btn" onclick="copyLink('${exe}')">Copiar link</button>
+                            </div>`;
+                    }
+
+                    if (ep.subMediafire) {
+                        const exe = toExe(ep.subMediafire);
+                        linksHTML += `
+                            <div class="server-label">
+                                <img src="../../../ico/mediafire.jpg" alt="MediaFire">
+                                <span>MediaFire</span>
+                            </div>
+                            <div class="download-link-item">
+                                <a href="${exe}" target="_blank" rel="noopener">Descargar</a>
+                                <button class="copy-btn" onclick="copyLink('${exe}')">Copiar link</button>
+                            </div>`;
+                    }
+                }
+
+                linksHTML += `</div>`;
+                card.innerHTML = linksHTML;
+                container.appendChild(card);
+            });
+        }
+
         const langBtns = document.querySelectorAll('.lang-btn');
+        let currentLang = 'lat';
         langBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 langBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
+                currentLang = btn.getAttribute('data-language') || 'lat';
+                renderDownloads(currentLang);
             });
         });
 
-        const episodes = [
-            { num: 1, streamtape: "https://streamtape.com/v/WXmWXl212oTbDdG/Owari_no_Seraph_S1_-_01_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4" },
-            { num: 2, streamtape: "https://streamtape.com/v/VX2J4D2mo3SKWRr/Owari_no_Seraph_S1_-_02_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4" },
-            { num: 3, streamtape: "https://streamtape.com/v/3B6rAPAp9GidQZv/Owari_no_Seraph_S1_-_03_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4" },
-            { num: 4, streamtape: "https://streamtape.com/v/jr3rPjaZwZSzBlQ/Owari_no_Seraph_S1_-_04_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4" },
-            { num: 5, streamtape: "https://streamtape.com/v/4oXOmLapwjUZry/Owari_no_Seraph_S1_-_05_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4" },
-            { num: 6, streamtape: "https://streamtape.com/v/BeRDawPeMQsy1QW/Owari_no_Seraph_S1_-_06_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4" },
-            { num: 7, streamtape: "https://streamtape.com/v/4zkLXDqY7mhKDAk/Owari_no_Seraph_S1_-_07_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4" },
-            { num: 8, streamtape: "https://streamtape.com/v/r4RMGZbAggIbW6y/Owari_no_Seraph_S1_-_08_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4" },
-            { num: 9, streamtape: "https://streamtape.com/v/jAgvXqJz1BFz8gV/Owari_no_Seraph_S1_-_09_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4" },
-            { num: 10, streamtape: "https://streamtape.com/v/zGQG1z6vjGsYwGw/Owari_no_Seraph_S1_-_10_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4" },
-            { num: 11, streamtape: "https://streamtape.com/v/mkoJLYd73Xibgkp/Owari_no_Seraph_S1_-_11_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4" },
-            { num: 12, streamtape: "https://streamtape.com/v/waOrG4RAkdFJMer/Owari_no_Seraph_S1_-_12_%5BBD-1080p%5D%5BLat%2BCast%2BJap%2BSubs%5D.mkv.mp4" }
-        ];
-
-        const container = document.getElementById('downloads-container');
-        const apiKey = '110e7b6cbdf7a5aa354afb395e889c7aba3411c6';
-
-        episodes.forEach(ep => {
-            const card = document.createElement('div');
-            card.className = 'download-card';
-
-            let linksHTML = `<h3>Episodio ${ep.num}</h3><div class="download-links">`;
-
-            if (ep.streamtape) {
-                const streamtapeUrl = `https://exe.io/st?api=${apiKey}&url=${ep.streamtape}`;
-                linksHTML += `
-                    <div class="server-label">
-                        <img src="../../../ico/streamtape.png" alt="StreamTape">
-                        <span>StreamTape</span>
-                    </div>
-                    <div class="download-link-item">
-                        <a href="${streamtapeUrl}" target="_blank" rel="noopener">Descargar</a>
-                        <button class="copy-btn" onclick="copyLink('${streamtapeUrl}')">Copiar link</button>
-                    </div>`;
-            } else {
-                linksHTML += `<div style="opacity:0.8;">No disponible</div>`;
-            }
-
-            linksHTML += `</div>`;
-            card.innerHTML = linksHTML;
-            container.appendChild(card);
-        });
+        renderDownloads(currentLang);
     </script>
 </body>
 </html>
