@@ -453,8 +453,8 @@
     }
     let currentEpisode = null;
     const episodes = [
-      { num: 1, title: "Episodio 1", megaSubEmbed: "https://mega.nz/embed/XhowkSCA#IFbOESH74gkWoKFH3YGqJKyUHJ8Ku4ZivZXiUA5TYA0", megaSubFile: "https://mega.nz/file/XhowkSCA#IFbOESH74gkWoKFH3YGqJKyUHJ8Ku4ZivZXiUA5TYA0" },
-      { num: 2, title: "Episodio 2", megaSubEmbed: "https://mega.nz/embed/TsZ0CLrK#BI1QEoqrLUGiVddU3MssFn7UUhQ07E7DUTgNJVZ3miM", megaSubFile: "https://mega.nz/file/TsZ0CLrK#BI1QEoqrLUGiVddU3MssFn7UUhQ07E7DUTgNJVZ3miM" }
+      { num: 1, title: "Episodio 1", stSub: "https://streamtape.com/e/OqdV1V0Ao7ikRM/01_T3_%E2%9E%A3Jujutsu_Kaisen%3B_Shimetsu_Kaiyuu_-_Zenpen_%28Jujutsu_Kaisen%3B_The_Culling_Game_Parte_1%29_%EA%9C%B1%E1%B4%80%EA%9C%B0%CA%9F%E1%B4%A0_Sub_Espa%C3%B1ol_%5B%5B%E1%B4%80%E4%BA%94%EA%9C%B1%5D%5D.mp4", megaSubEmbed: "https://mega.nz/embed/XhowkSCA#IFbOESH74gkWoKFH3YGqJKyUHJ8Ku4ZivZXiUA5TYA0", megaSubFile: "https://mega.nz/file/XhowkSCA#IFbOESH74gkWoKFH3YGqJKyUHJ8Ku4ZivZXiUA5TYA0" },
+      { num: 2, title: "Episodio 2", stSub: "https://streamtape.com/e/GWOO3OqoZwU1Jaj/02_T3_%E2%9E%A3Jujutsu_Kaisen%3B_Shimetsu_Kaiyuu_-_Zenpen_%28Jujutsu_Kaisen%3B_The_Culling_Game_Parte_1%29_%EA%9C%B1%E1%B4%80%EA%9C%B0%CA%9F%E1%B4%A0_Sub_Espa%C3%B1ol_%5B%5B%E1%B4%80%E4%BA%94%EA%9C%B1%5D%5D.mp4", megaSubEmbed: "https://mega.nz/embed/TsZ0CLrK#BI1QEoqrLUGiVddU3MssFn7UUhQ07E7DUTgNJVZ3miM", megaSubFile: "https://mega.nz/file/TsZ0CLrK#BI1QEoqrLUGiVddU3MssFn7UUhQ07E7DUTgNJVZ3miM" }
     ];
     const episodesGrid = document.getElementById('episodes-grid');
     episodes.forEach(episode => {
@@ -471,6 +471,7 @@
       const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"]):not([data-server="StreamTape"]):not([data-server="MEGA"])');
       const latUrlMix = normalizeUrl(ep.op1 || '');
       const latUrlSt = normalizeUrl(ep.st || '');
+      const subUrlSt = normalizeUrl(ep.stSub || '');
       const latUrlMega = megaEmbedFromFile(normalizeUrl(ep.megaFile || ''));
       const subUrlMega = normalizeUrl(ep.megaSubEmbed || '') || megaEmbedFromFile(normalizeUrl(ep.megaSubFile || ''));
       if (mixdropCard) {
@@ -481,7 +482,7 @@
       }
       if (streamTapeCard) {
         streamTapeCard.setAttribute('data-url-lat', latUrlSt || '#');
-        streamTapeCard.setAttribute('data-url-sub', '#');
+        streamTapeCard.setAttribute('data-url-sub', subUrlSt || '#');
         streamTapeCard.removeAttribute('data-fallback-lat');
       }
       if (megaCard) {
