@@ -68,26 +68,10 @@ function renderGrid(filteredData = data) {
     if (noResults) noResults.style.display = 'none';
   }
 
-  // Template del anuncio Banner
-  const AD_TEMPLATE = `
-    <div class="ad-card" style="grid-column: 1 / -1; display: flex; justify-content: center; margin: 20px 0; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px;">
-      <div id="ad-banner-${Date.now()}-${Math.random().toString(36).substr(2, 9)}">
-        <script type="text/javascript">
-          atOptions = {
-            'key' : '5db2e541f4eeb65e0b1a7f8737d508e2',
-            'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
-            'params' : {}
-          };
-        </script>
-        <script type="text/javascript" src="https://www.highperformanceformat.com/5db2e541f4eeb65e0b1a7f8737d508e2/invoke.js"></script>
-      </div>
-    </div>
-  `;
-
   // Construir HTML con anuncios cada 8 items
   let gridHTML = '';
+  // Array para guardar los IDs de los contenedores de anuncios
+  const adContainers = [];
 
   filteredData.forEach((item, index) => {
     // Insertar el item actual
@@ -107,13 +91,52 @@ function renderGrid(filteredData = data) {
       </div>
     `;
 
-    // Insertar anuncio después de cada 8 items (si no es el último)
+    // Insertar placeholder para anuncio después de cada 8 items
     if ((index + 1) % 8 === 0 && index !== filteredData.length - 1) {
-      gridHTML += AD_TEMPLATE;
+      const adId = `ad-banner-cat-${index}`;
+      gridHTML += `<div id="${adId}" class="ad-card" style="grid-column: 1 / -1; display: flex; justify-content: center; margin: 20px 0; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; min-height: 250px;"></div>`;
+      adContainers.push(adId);
     }
   });
 
   grid.innerHTML = gridHTML;
+
+  // Inyectar los scripts de anuncios en los placeholders creados
+  adContainers.forEach(id => {
+    const container = document.getElementById(id);
+    if (!container) return;
+
+    // Crear un iframe para aislar el contexto del anuncio (atOptions es global)
+    const iframe = document.createElement('iframe');
+    iframe.style.width = '300px';
+    iframe.style.height = '250px';
+    iframe.style.border = 'none';
+    iframe.style.overflow = 'hidden';
+    iframe.scrolling = 'no';
+
+    container.appendChild(iframe);
+
+    // Escribir el script del anuncio dentro del iframe
+    const doc = iframe.contentWindow || iframe.contentDocument.document || iframe.contentDocument;
+    doc.document.open();
+    doc.document.write(`
+      <html>
+        <body style="margin:0;padding:0;display:flex;justify-content:center;align-items:center;">
+          <script type="text/javascript">
+            atOptions = {
+              'key' : '5db2e541f4eeb65e0b1a7f8737d508e2',
+              'format' : 'iframe',
+              'height' : 250,
+              'width' : 300,
+              'params' : {}
+            };
+          </script>
+          <script type="text/javascript" src="https://www.highperformanceformat.com/5db2e541f4eeb65e0b1a7f8737d508e2/invoke.js"></script>
+        </body>
+      </html>
+    `);
+    doc.document.close();
+  });
 }
 
 // Función de filtrado
