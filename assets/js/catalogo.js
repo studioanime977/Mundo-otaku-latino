@@ -330,105 +330,15 @@ if (document.readyState === 'loading') {
   new AnimeCarousel();
 }
 
-// ========== MODAL DE BRAVE ==========
-class BraveModal {
-  constructor() {
-    this.modal = document.getElementById('braveModal');
-    this.continueBtn = document.getElementById('continueBtn');
-    this.timerElement = document.getElementById('timerCount');
-    this.storageKey = 'mol_brave_seen';
-    this.timeLeft = this.getInitialSeconds();
-    this.timerInterval = null;
-
-    // El modal siempre se mostrará, sin importar si ya se vio antes
-    if (this.modal) {
-      this.init();
-    }
+// Inicializar el modal de Brave (vacío para evitar errores)
+const braveModal = {
+  init: () => {
+    // No hacer nada - el modal está desactivado
   }
+};
 
-  getInitialSeconds() {
-    try {
-      const seen = localStorage.getItem(this.storageKey) === '1';
-      return seen ? 3 : 10;
-    } catch (_) {
-      return 10;
-    }
-  }
-
-  init() {
-    // Mostrar el modal
-    this.modal.classList.remove('hidden');
-
-    // Pintar valor inicial del contador
-    if (this.timerElement) {
-      this.timerElement.textContent = this.timeLeft;
-    }
-
-    // Iniciar el temporizador
-    this.startTimer();
-
-    // Event listener para el botón continuar
-    this.continueBtn?.addEventListener('click', () => {
-      this.closeModal();
-    });
-  }
-
-  startTimer() {
-    this.timerInterval = setInterval(() => {
-      this.timeLeft--;
-
-      if (this.timerElement) {
-        this.timerElement.textContent = this.timeLeft;
-      }
-
-      if (this.timeLeft <= 0) {
-        this.enableContinueButton();
-        clearInterval(this.timerInterval);
-      }
-    }, 1000);
-  }
-
-  enableContinueButton() {
-    if (this.continueBtn) {
-      this.continueBtn.disabled = false;
-      this.continueBtn.style.animation = 'pulse 1s ease-in-out infinite';
-
-      // Cambiar el texto del temporizador
-      const timerDiv = document.querySelector('.brave-timer p');
-      if (timerDiv) {
-        timerDiv.innerHTML = '✅ <strong>¡Ahora puedes continuar!</strong>';
-      }
-    }
-  }
-
-  closeModal() {
-    try {
-      localStorage.setItem(this.storageKey, '1');
-    } catch (_) {}
-
-    // Animación de salida
-    if (this.modal) {
-      this.modal.style.animation = 'fadeOut 0.3s ease';
-      setTimeout(() => {
-        this.modal.classList.add('hidden');
-      }, 300);
-    }
-
-    // Limpiar el intervalo si aún está corriendo
-    if (this.timerInterval) {
-      clearInterval(this.timerInterval);
-    }
-  }
-}
-
-// Inicializar el modal de Brave
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    new BraveModal();
-  });
-} else {
-  new BraveModal();
-}
+// Exponer método global para compatibilidad
+window.BraveModal = braveModal;
 
 // Agregar animación fadeOut al CSS dinámicamente
 const style = document.createElement('style');

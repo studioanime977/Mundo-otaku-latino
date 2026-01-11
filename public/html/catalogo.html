@@ -1,1081 +1,997 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Anime - Mundo Otaku Latino</title>
-    <meta name="description" content="Catálogo de anime en español latino: series y películas en HD. Busca por nombre y encuentra tu anime favorito en Mundo Otaku Latino.">
-    <meta name="robots" content="index,follow">
-    <link rel="canonical" href="https://mundootakulatino.vercel.app/public/html/catalogo.html">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Mundo Otaku Latino">
-    <meta property="og:locale" content="es_MX">
-    <meta property="og:title" content="Catálogo de Anime - Mundo Otaku Latino">
-    <meta property="og:description" content="Catálogo de anime en español latino: series y películas en HD. Busca por nombre y encuentra tu anime favorito.">
-    <meta property="og:url" content="https://mundootakulatino.vercel.app/public/html/catalogo.html">
-    <meta property="og:image" content="https://mundootakulatino.vercel.app/ico/logo.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Catálogo de Anime - Mundo Otaku Latino">
-    <meta name="twitter:description" content="Catálogo de anime en español latino: series y películas en HD. Busca por nombre y encuentra tu anime favorito.">
-    <meta name="twitter:image" content="https://mundootakulatino.vercel.app/ico/logo.png">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Catálogo de Anime","url":"https://mundootakulatino.vercel.app/public/html/catalogo.html","inLanguage":"es","isPartOf":{"@type":"WebSite","name":"Mundo Otaku Latino","url":"https://mundootakulatino.vercel.app/"}}</script>
-    <link rel="stylesheet" href="../../assets/css/catalogo.css?v=3">
-    <style>
-      body {
-        background: linear-gradient(-45deg, #0d0221, #1a0b2e, #2d1b69, #3a0f5c, #1e0836);
-        background-size: 400% 400%;
-        animation: gradientShift 15s ease infinite;
-        position: relative;
-        overflow-x: hidden;
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Anime - Mundo Otaku Latino</title>
+  <meta name="description"
+    content="Catálogo de anime en español latino: series y películas en HD. Busca por nombre y encuentra tu anime favorito en Mundo Otaku Latino.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://mundootakulatino.vercel.app/public/html/catalogo.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mundo Otaku Latino">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="Catálogo de Anime - Mundo Otaku Latino">
+  <meta property="og:description"
+    content="Catálogo de anime en español latino: series y películas en HD. Busca por nombre y encuentra tu anime favorito.">
+  <meta property="og:url" content="https://mundootakulatino.vercel.app/public/html/catalogo.html">
+  <meta property="og:image" content="https://mundootakulatino.vercel.app/ico/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Catálogo de Anime - Mundo Otaku Latino">
+  <meta name="twitter:description"
+    content="Catálogo de anime en español latino: series y películas en HD. Busca por nombre y encuentra tu anime favorito.">
+  <meta name="twitter:image" content="https://mundootakulatino.vercel.app/ico/logo.png">
+  <script
+    type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Catálogo de Anime","url":"https://mundootakulatino.vercel.app/public/html/catalogo.html","inLanguage":"es","isPartOf":{"@type":"WebSite","name":"Mundo Otaku Latino","url":"https://mundootakulatino.vercel.app/"}}</script>
+  <link rel="stylesheet" href="../../assets/css/catalogo.css?v=3">
+  <style>
+    body {
+      background: linear-gradient(-45deg, #0d0221, #1a0b2e, #2d1b69, #3a0f5c, #1e0836);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
       }
 
-      @keyframes gradientShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+      50% {
+        background-position: 100% 50%;
       }
 
-      .bubbles { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; overflow: hidden; pointer-events: none; }
-      .bubble { position: absolute; bottom: -100px; border-radius: 50%; opacity: 0.6; animation: rise linear infinite; backdrop-filter: blur(3px); border: 2px solid rgba(255, 255, 255, 0.2); }
-      .bubble:nth-child(1) { width: 80px; height: 80px; left: 10%; animation-duration: 8s; animation-delay: 0s; background: radial-gradient(circle at 30% 30%, rgba(255, 0, 110, 0.4), rgba(255, 0, 110, 0.1)); box-shadow: 0 0 40px rgba(255, 0, 110, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
-      .bubble:nth-child(2) { width: 60px; height: 60px; left: 25%; animation-duration: 10s; animation-delay: 2s; background: radial-gradient(circle at 30% 30%, rgba(131, 56, 236, 0.4), rgba(131, 56, 236, 0.1)); box-shadow: 0 0 40px rgba(131, 56, 236, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
-      .bubble:nth-child(3) { width: 100px; height: 100px; left: 40%; animation-duration: 12s; animation-delay: 1s; background: radial-gradient(circle at 30% 30%, rgba(58, 134, 255, 0.4), rgba(58, 134, 255, 0.1)); box-shadow: 0 0 40px rgba(58, 134, 255, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
-      .bubble:nth-child(4) { width: 70px; height: 70px; left: 55%; animation-duration: 9s; animation-delay: 3s; background: radial-gradient(circle at 30% 30%, rgba(6, 255, 165, 0.4), rgba(6, 255, 165, 0.1)); box-shadow: 0 0 40px rgba(6, 255, 165, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
-      .bubble:nth-child(5) { width: 90px; height: 90px; left: 70%; animation-duration: 11s; animation-delay: 0.5s; background: radial-gradient(circle at 30% 30%, rgba(255, 190, 11, 0.4), rgba(255, 190, 11, 0.1)); box-shadow: 0 0 40px rgba(255, 190, 11, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
-      .bubble:nth-child(6) { width: 50px; height: 50px; left: 85%; animation-duration: 7s; animation-delay: 2.5s; background: radial-gradient(circle at 30% 30%, rgba(255, 0, 110, 0.4), rgba(255, 0, 110, 0.1)); box-shadow: 0 0 40px rgba(255, 0, 110, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
-      .bubble:nth-child(7) { width: 75px; height: 75px; left: 15%; animation-duration: 13s; animation-delay: 1.5s; background: radial-gradient(circle at 30% 30%, rgba(131, 56, 236, 0.4), rgba(131, 56, 236, 0.1)); box-shadow: 0 0 40px rgba(131, 56, 236, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
-      .bubble:nth-child(8) { width: 65px; height: 65px; left: 50%; animation-duration: 10s; animation-delay: 4s; background: radial-gradient(circle at 30% 30%, rgba(58, 134, 255, 0.4), rgba(58, 134, 255, 0.1)); box-shadow: 0 0 40px rgba(58, 134, 255, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25); }
-      @keyframes rise { 0% { bottom: -100px; transform: translateX(0) rotate(0deg); opacity: 0; } 10% { opacity: 0.6; } 90% { opacity: 0.6; } 100% { bottom: 110vh; transform: translateX(100px) rotate(360deg); opacity: 0; } }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-      nav { position: fixed !important; z-index: 100 !important; }
-      .catalog-main { position: relative; z-index: 2; margin-top: 0; }
+    .bubbles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
 
-      /* Estilos del Modal Brave */
-      .brave-modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.85);
-        backdrop-filter: blur(10px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10000;
-        animation: fadeIn 0.3s ease;
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: rise linear infinite;
+      backdrop-filter: blur(3px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .bubble:nth-child(1) {
+      width: 80px;
+      height: 80px;
+      left: 10%;
+      animation-duration: 8s;
+      animation-delay: 0s;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 0, 110, 0.4), rgba(255, 0, 110, 0.1));
+      box-shadow: 0 0 40px rgba(255, 0, 110, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25);
+    }
+
+    .bubble:nth-child(2) {
+      width: 60px;
+      height: 60px;
+      left: 25%;
+      animation-duration: 10s;
+      animation-delay: 2s;
+      background: radial-gradient(circle at 30% 30%, rgba(131, 56, 236, 0.4), rgba(131, 56, 236, 0.1));
+      box-shadow: 0 0 40px rgba(131, 56, 236, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25);
+    }
+
+    .bubble:nth-child(3) {
+      width: 100px;
+      height: 100px;
+      left: 40%;
+      animation-duration: 12s;
+      animation-delay: 1s;
+      background: radial-gradient(circle at 30% 30%, rgba(58, 134, 255, 0.4), rgba(58, 134, 255, 0.1));
+      box-shadow: 0 0 40px rgba(58, 134, 255, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25);
+    }
+
+    .bubble:nth-child(4) {
+      width: 70px;
+      height: 70px;
+      left: 55%;
+      animation-duration: 9s;
+      animation-delay: 3s;
+      background: radial-gradient(circle at 30% 30%, rgba(6, 255, 165, 0.4), rgba(6, 255, 165, 0.1));
+      box-shadow: 0 0 40px rgba(6, 255, 165, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25);
+    }
+
+    .bubble:nth-child(5) {
+      width: 90px;
+      height: 90px;
+      left: 70%;
+      animation-duration: 11s;
+      animation-delay: 0.5s;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 190, 11, 0.4), rgba(255, 190, 11, 0.1));
+      box-shadow: 0 0 40px rgba(255, 190, 11, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25);
+    }
+
+    .bubble:nth-child(6) {
+      width: 50px;
+      height: 50px;
+      left: 85%;
+      animation-duration: 7s;
+      animation-delay: 2.5s;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 0, 110, 0.4), rgba(255, 0, 110, 0.1));
+      box-shadow: 0 0 40px rgba(255, 0, 110, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25);
+    }
+
+    .bubble:nth-child(7) {
+      width: 75px;
+      height: 75px;
+      left: 15%;
+      animation-duration: 13s;
+      animation-delay: 1.5s;
+      background: radial-gradient(circle at 30% 30%, rgba(131, 56, 236, 0.4), rgba(131, 56, 236, 0.1));
+      box-shadow: 0 0 40px rgba(131, 56, 236, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25);
+    }
+
+    .bubble:nth-child(8) {
+      width: 65px;
+      height: 65px;
+      left: 50%;
+      animation-duration: 10s;
+      animation-delay: 4s;
+      background: radial-gradient(circle at 30% 30%, rgba(58, 134, 255, 0.4), rgba(58, 134, 255, 0.1));
+      box-shadow: 0 0 40px rgba(58, 134, 255, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.25);
+    }
+
+    @keyframes rise {
+      0% {
+        bottom: -100px;
+        transform: translateX(0) rotate(0deg);
+        opacity: 0;
       }
 
-      .brave-modal-overlay.hidden {
-        display: none;
-      }
-
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-      }
-
-      @keyframes slideUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .brave-modal {
-        background: linear-gradient(135deg, #1a0b2e 0%, #2d1b69 50%, #1e0836 100%);
-        border: 2px solid rgba(251, 84, 43, 0.3);
-        border-radius: 24px;
-        max-width: 600px;
-        width: 90%;
-        max-height: 90vh;
-        overflow-y: auto;
-        box-shadow: 0 20px 60px rgba(251, 84, 43, 0.4), 0 0 100px rgba(139, 92, 246, 0.2);
-        animation: slideUp 0.4s ease;
-      }
-
-      .brave-modal-header {
-        text-align: center;
-        padding: 30px 30px 20px;
-        border-bottom: 2px solid rgba(251, 84, 43, 0.2);
-      }
-
-      .brave-icon {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 20px;
-        background: linear-gradient(135deg, #FB542B, #ff7a59);
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 10px 30px rgba(251, 84, 43, 0.5);
-        animation: pulse 2s ease-in-out infinite;
-      }
-
-      @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-      }
-
-      .brave-icon svg {
-        width: 50px;
-        height: 50px;
-      }
-
-      .brave-modal-header h2 {
-        color: #fff;
-        font-size: 2rem;
-        margin: 0;
-        font-weight: 700;
-        background: linear-gradient(135deg, #fff, #FB542B);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .brave-modal-content {
-        padding: 30px;
-        color: #fff;
-      }
-
-      .brave-intro {
-        font-size: 1.2rem;
-        text-align: center;
-        margin-bottom: 20px;
-        color: #FB542B;
-      }
-
-      .brave-description {
-        font-size: 1rem;
-        line-height: 1.8;
-        margin-bottom: 20px;
-        text-align: justify;
-        color: rgba(255, 255, 255, 0.9);
-      }
-
-      .brave-recommendation {
-        font-size: 1.1rem;
-        margin-bottom: 25px;
-        text-align: center;
-        color: #fff;
-      }
-
-      .brave-links {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        margin-bottom: 25px;
-      }
-
-      .brave-link {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        padding: 20px;
-        background: rgba(251, 84, 43, 0.1);
-        border: 2px solid rgba(251, 84, 43, 0.3);
-        border-radius: 16px;
-        text-decoration: none;
-        color: #fff;
-        transition: all 0.3s ease;
-        font-weight: 600;
-      }
-
-      .brave-link:hover {
-        background: rgba(251, 84, 43, 0.2);
-        border-color: #FB542B;
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(251, 84, 43, 0.4);
-      }
-
-      .brave-link svg {
-        width: 40px;
-        height: 40px;
-        color: #FB542B;
-      }
-
-      .brave-timer {
-        text-align: center;
-        padding: 15px;
-        background: rgba(139, 92, 246, 0.1);
-        border: 2px solid rgba(139, 92, 246, 0.3);
-        border-radius: 12px;
-        margin-bottom: 10px;
-      }
-
-      .brave-timer p {
-        margin: 0;
-        font-size: 1rem;
-        color: rgba(255, 255, 255, 0.8);
-      }
-
-      .brave-timer span {
-        font-weight: 700;
-        font-size: 1.3rem;
-        color: #8b5cf6;
-      }
-
-      .brave-modal-footer {
-        padding: 20px 30px 30px;
-        text-align: center;
-      }
-
-      .brave-continue-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 15px 40px;
-        background: linear-gradient(135deg, #8b5cf6, #6366f1);
-        color: white;
-        border: none;
-        border-radius: 50px;
-        font-weight: 700;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
-      }
-
-      .brave-continue-btn:disabled {
-        background: linear-gradient(135deg, #4a5568, #2d3748);
-        cursor: not-allowed;
+      10% {
         opacity: 0.6;
-        box-shadow: none;
       }
 
-      .brave-continue-btn:not(:disabled):hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
-        background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      90% {
+        opacity: 0.6;
       }
 
-      .brave-continue-btn svg {
-        width: 20px;
-        height: 20px;
+      100% {
+        bottom: 110vh;
+        transform: translateX(100px) rotate(360deg);
+        opacity: 0;
       }
+    }
 
-      /* Responsive */
-      @media (max-width: 768px) {
-        .brave-modal {
-          width: 95%;
-          max-width: none;
-        }
+    nav {
+      position: fixed !important;
+      z-index: 100 !important;
+    }
 
-        .brave-modal-header h2 {
-          font-size: 1.5rem;
-        }
+    .catalog-main {
+      position: relative;
+      z-index: 2;
+      margin-top: 0;
+    }
 
-        .brave-links {
-          grid-template-columns: 1fr;
-        }
+    /* Estilos de Búsqueda y Filtros */
+    .search-filter-container {
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-        .brave-modal-content {
-          padding: 20px;
-        }
+    .search-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(139, 92, 246, 0.3);
+      border-radius: 50px;
+      padding: 12px 24px;
+      transition: all 0.3s ease;
+    }
 
-        .brave-description {
-          text-align: left;
-        }
-      }
+    .search-box:focus-within {
+      border-color: #8b5cf6;
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+      background: rgba(255, 255, 255, 0.08);
+    }
 
-      /* Estilos de Búsqueda y Filtros */
+    .search-icon {
+      width: 24px;
+      height: 24px;
+      color: #8b5cf6;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .search-box input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 1rem;
+      padding: 4px 0;
+    }
+
+    .search-box input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .clear-btn {
+      background: rgba(255, 92, 173, 0.2);
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-left: 12px;
+    }
+
+    .clear-btn:hover {
+      background: rgba(255, 92, 173, 0.4);
+      transform: scale(1.1);
+    }
+
+    .clear-btn svg {
+      width: 16px;
+      height: 16px;
+      color: white;
+    }
+
+    .filter-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 12px 28px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(139, 92, 246, 0.3);
+      border-radius: 50px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      background: rgba(139, 92, 246, 0.1);
+      border-color: #8b5cf6;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      border-color: #8b5cf6;
+      color: white;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+    }
+
+    .results-info {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .results-info p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.95rem;
+    }
+
+    .results-info span {
+      color: #8b5cf6;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .no-results svg {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      color: rgba(139, 92, 246, 0.5);
+    }
+
+    .no-results h3 {
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .no-results p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 768px) {
       .search-filter-container {
-        margin-bottom: 30px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+        gap: 15px;
       }
 
       .search-box {
-        position: relative;
-        display: flex;
-        align-items: center;
-        background: rgba(255, 255, 255, 0.05);
-        border: 2px solid rgba(139, 92, 246, 0.3);
-        border-radius: 50px;
-        padding: 12px 24px;
-        transition: all 0.3s ease;
-      }
-
-      .search-box:focus-within {
-        border-color: #8b5cf6;
-        box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
-        background: rgba(255, 255, 255, 0.08);
-      }
-
-      .search-icon {
-        width: 24px;
-        height: 24px;
-        color: #8b5cf6;
-        margin-right: 12px;
-        flex-shrink: 0;
+        padding: 10px 20px;
       }
 
       .search-box input {
-        flex: 1;
-        background: transparent;
-        border: none;
-        outline: none;
-        color: white;
-        font-size: 1rem;
-        padding: 4px 0;
-      }
-
-      .search-box input::placeholder {
-        color: rgba(255, 255, 255, 0.5);
-      }
-
-      .clear-btn {
-        background: rgba(255, 92, 173, 0.2);
-        border: none;
-        border-radius: 50%;
-        width: 32px;
-        height: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-left: 12px;
-      }
-
-      .clear-btn:hover {
-        background: rgba(255, 92, 173, 0.4);
-        transform: scale(1.1);
-      }
-
-      .clear-btn svg {
-        width: 16px;
-        height: 16px;
-        color: white;
+        font-size: 0.9rem;
       }
 
       .filter-buttons {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
+        gap: 8px;
       }
 
       .filter-btn {
-        padding: 12px 28px;
-        background: rgba(255, 255, 255, 0.05);
-        border: 2px solid rgba(139, 92, 246, 0.3);
-        border-radius: 50px;
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 0.95rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
+        padding: 10px 20px;
+        font-size: 0.85rem;
       }
+    }
 
-      .filter-btn:hover {
-        background: rgba(139, 92, 246, 0.1);
-        border-color: #8b5cf6;
-        color: white;
-        transform: translateY(-2px);
-      }
+    /* Estilos del Carrusel */
+    .hero-carousel {
+      position: relative;
+      z-index: 2;
+      margin-top: 64px;
+      width: 100%;
+      overflow: hidden;
+    }
 
-      .filter-btn.active {
-        background: linear-gradient(135deg, #8b5cf6, #6366f1);
-        border-color: #8b5cf6;
-        color: white;
-        box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
-      }
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
 
-      .results-info {
-        text-align: center;
-        margin-bottom: 20px;
-      }
+    .carousel-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
 
-      .results-info p {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 0.95rem;
-      }
+    .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
 
-      .results-info span {
-        color: #8b5cf6;
-        font-weight: 700;
-        font-size: 1.1rem;
-      }
+    .carousel-slide.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+    }
 
-      .no-results {
-        text-align: center;
-        padding: 60px 20px;
-        color: rgba(255, 255, 255, 0.6);
-      }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      /* Mejoras para imágenes nítidas */
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      filter: brightness(1.1) contrast(1.05) saturate(1.1);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+    }
 
-      .no-results svg {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 20px;
-        color: rgba(139, 92, 246, 0.5);
-      }
-
-      .no-results h3 {
-        font-size: 1.5rem;
-        color: white;
-        margin-bottom: 10px;
-      }
-
-      .no-results p {
-        font-size: 1rem;
-        color: rgba(255, 255, 255, 0.5);
-      }
-
-      @media (max-width: 768px) {
-        .search-filter-container {
-          gap: 15px;
-        }
-
-        .search-box {
-          padding: 10px 20px;
-        }
-
-        .search-box input {
-          font-size: 0.9rem;
-        }
-
-        .filter-buttons {
-          gap: 8px;
-        }
-
-        .filter-btn {
-          padding: 10px 20px;
-          font-size: 0.85rem;
-        }
-      }
-
-      /* Estilos del Carrusel */
-      .hero-carousel {
-        position: relative;
-        z-index: 2;
-        margin-top: 64px;
-        width: 100%;
-        overflow: hidden;
-      }
-
-      .carousel-container {
-        position: relative;
-        width: 100%;
-        height: 600px;
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-
-      .carousel-track {
-        position: relative;
-        width: 100%;
-        height: 100%;
-      }
-
-      .carousel-slide {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-      }
-
-      .carousel-slide.active {
-        opacity: 1;
-        visibility: visible;
-        z-index: 1;
-      }
-
-      .carousel-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        /* Mejoras para imágenes nítidas */
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-        filter: brightness(1.1) contrast(1.05) saturate(1.1);
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
-      }
-
-      .carousel-slide::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          to right,
+    .carousel-slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right,
           rgba(0, 0, 0, 0.8) 0%,
           rgba(0, 0, 0, 0.4) 50%,
-          rgba(0, 0, 0, 0.1) 100%
-        );
-        z-index: 1;
+          rgba(0, 0, 0, 0.1) 100%);
+      z-index: 1;
+    }
+
+    .carousel-content {
+      position: absolute;
+      bottom: 80px;
+      left: 60px;
+      z-index: 2;
+      max-width: 600px;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .carousel-content h2 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin: 0 0 20px 0;
+      background: linear-gradient(135deg, #fff, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: none;
+      filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.8));
+    }
+
+    .carousel-content p {
+      font-size: 1.3rem;
+      margin: 0 0 30px 0;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    .carousel-btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+      text-shadow: none;
+    }
+
+    .carousel-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
+      background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    }
+
+    .carousel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 3;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-control:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .carousel-control.prev {
+      left: 30px;
+    }
+
+    .carousel-control.next {
+      right: 30px;
+    }
+
+    .carousel-control svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .carousel-indicators {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      z-index: 3;
+    }
+
+    .indicator-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+    }
+
+    .indicator-dot:hover {
+      background: rgba(255, 255, 255, 0.7);
+      transform: scale(1.2);
+    }
+
+    .indicator-dot.active {
+      background: white;
+      width: 40px;
+      border-radius: 6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .carousel-container {
+        height: 450px;
       }
 
       .carousel-content {
-        position: absolute;
-        bottom: 80px;
-        left: 60px;
-        z-index: 2;
-        max-width: 600px;
-        color: white;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        bottom: 50px;
+        left: 30px;
+        max-width: 80%;
       }
 
       .carousel-content h2 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        margin: 0 0 20px 0;
-        background: linear-gradient(135deg, #fff, #a78bfa);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-shadow: none;
-        filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.8));
+        font-size: 2rem;
       }
 
       .carousel-content p {
-        font-size: 1.3rem;
-        margin: 0 0 30px 0;
-        line-height: 1.6;
-        opacity: 0.95;
+        font-size: 1rem;
+        margin-bottom: 20px;
       }
 
       .carousel-btn {
-        display: inline-block;
-        padding: 15px 40px;
-        background: linear-gradient(135deg, #8b5cf6, #6366f1);
-        color: white;
-        text-decoration: none;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
-        text-shadow: none;
-      }
-
-      .carousel-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
-        background: linear-gradient(135deg, #7c3aed, #4f46e5);
+        padding: 12px 30px;
+        font-size: 1rem;
       }
 
       .carousel-control {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(10px);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        color: white;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 3;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .carousel-control:hover {
-        background: rgba(255, 255, 255, 0.3);
-        transform: translateY(-50%) scale(1.1);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        width: 45px;
+        height: 45px;
       }
 
       .carousel-control.prev {
-        left: 30px;
+        left: 15px;
       }
 
       .carousel-control.next {
-        right: 30px;
+        right: 15px;
       }
 
       .carousel-control svg {
-        width: 28px;
-        height: 28px;
+        width: 22px;
+        height: 22px;
       }
 
       .carousel-indicators {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 12px;
-        z-index: 3;
+        bottom: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .carousel-container {
+        height: 350px;
       }
 
-      .indicator-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.4);
-        border: 2px solid rgba(255, 255, 255, 0.6);
-        cursor: pointer;
-        transition: all 0.3s ease;
-        padding: 0;
+      .carousel-content h2 {
+        font-size: 1.5rem;
       }
 
-      .indicator-dot:hover {
-        background: rgba(255, 255, 255, 0.7);
-        transform: scale(1.2);
+      .carousel-content p {
+        font-size: 0.9rem;
       }
 
-      .indicator-dot.active {
-        background: white;
-        width: 40px;
-        border-radius: 6px;
+      .carousel-btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Personaje Anime Decoración */
+    .anime-character {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: clamp(180px, 25vw, 320px);
+      height: auto;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.7;
+      animation: slideInRight 1s ease-out, floatChar 4s ease-in-out 1s infinite;
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
       }
 
-      /* Responsive */
-      @media (max-width: 768px) {
-        .carousel-container {
-          height: 450px;
-        }
+      to {
+        transform: translateX(0);
+        opacity: 0.5;
+      }
+    }
 
-        .carousel-content {
-          bottom: 50px;
-          left: 30px;
-          max-width: 80%;
-        }
+    @keyframes floatChar {
 
-        .carousel-content h2 {
-          font-size: 2rem;
-        }
-
-        .carousel-content p {
-          font-size: 1rem;
-          margin-bottom: 20px;
-        }
-
-        .carousel-btn {
-          padding: 12px 30px;
-          font-size: 1rem;
-        }
-
-        .carousel-control {
-          width: 45px;
-          height: 45px;
-        }
-
-        .carousel-control.prev {
-          left: 15px;
-        }
-
-        .carousel-control.next {
-          right: 15px;
-        }
-
-        .carousel-control svg {
-          width: 22px;
-          height: 22px;
-        }
-
-        .carousel-indicators {
-          bottom: 20px;
-        }
+      0%,
+      100% {
+        transform: translateY(0);
       }
 
-      @media (max-width: 480px) {
-        .carousel-container {
-          height: 350px;
-        }
-
-        .carousel-content h2 {
-          font-size: 1.5rem;
-        }
-
-        .carousel-content p {
-          font-size: 0.9rem;
-        }
-
-        .carousel-btn {
-          padding: 10px 25px;
-          font-size: 0.9rem;
-        }
+      50% {
+        transform: translateY(-10px);
       }
-    </style>
-  </head>
-  <body class="no-js">
-    <div class="bubbles">
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
+    }
+
+    @media (max-width: 768px) {
+      .anime-character {
+        width: clamp(140px, 30vw, 200px);
+        right: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .anime-character {
+        width: 120px;
+        opacity: 0.4;
+      }
+    }
+  </style>
+</head>
+
+<body class="no-js">
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+  <div class="indicator"></div>
+
+  <nav>
+    <div>
+      <img src="../../ico/logo.png" alt="Mundo Otaku Latino" style="height:20px; margin-right:8px;">
+      <div>Mundo Otaku Latino</div>
     </div>
-    <div class="indicator"></div>
-    
-    <!-- Modal de Recomendación Brave -->
-    <div class="brave-modal-overlay" id="braveModal">
-      <div class="brave-modal">
-        <div class="brave-modal-header">
-          <div class="brave-icon">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#FB542B"/>
-              <path d="M2 17L12 22L22 17V7L12 12L2 7V17Z" fill="#FB542B"/>
-            </svg>
-          </div>
-          <h2>🌟 Recomendación Especial</h2>
-        </div>
-        <div class="brave-modal-content">
-          <p class="brave-intro">
-            <strong>¡Tenemos una alianza con Brave Browser!</strong>
-          </p>
-          <p class="brave-description">
-            Brave bloquea los anuncios molestos que salen en otras webs. Gracias a nuestro patrocinio con Brave, 
-            <strong>Mundo Otaku Latino</strong> te ofrece una mejor experiencia de navegación sin anuncios intrusivos.
-          </p>
-          <p class="brave-recommendation">
-            📱 <strong>Te recomendamos instalar Brave</strong> tanto para PC, celulares y tablets:
-          </p>
-          <div class="brave-links">
-            <a href="https://brave.com/download/" target="_blank" rel="noopener" class="brave-link brave-pc">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-              <span>Brave para PC</span>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.brave.browser" target="_blank" rel="noopener" class="brave-link brave-mobile">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                <line x1="12" y1="18" x2="12.01" y2="18"></line>
-              </svg>
-              <span>Brave para Móvil/Tablet</span>
-            </a>
-          </div>
-          <div class="brave-timer">
-            <p>Puedes continuar en <span id="timerCount">10</span> segundos...</p>
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <div class="nav-links">
+      <a class="nav-link active" href="../../index.html">Inicio</a>
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+      </div>
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd"
+            d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carrusel de Anime Destacados -->
+  <section class="hero-carousel">
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <div class="carousel-slide active">
+          <img src="../../img/JujutsuKaisens3portada.jpg" alt="Jujutsu Kaisen Temporada 3">
+          <div class="carousel-content">
+            <h2>Jujutsu Kaisen Temporada 3</h2>
+            <p>¡Nueva temporada disponible! - Hechicería y acción épica</p>
+            <a href="../anime/jujutsu-kaisen/jujutsu-kaisen.html" class="carousel-btn">Ver Ahora</a>
           </div>
         </div>
-        <div class="brave-modal-footer">
-          <button class="brave-continue-btn" id="continueBtn" disabled>
-            <span class="btn-text">Continuar al Sitio</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
+        <div class="carousel-slide">
+          <img src="../../img/castillo infinito.png" alt="Demon Slayer Castillo Infinito">
+          <div class="carousel-content">
+            <h2>Demon Slayer: Castillo Infinito</h2>
+            <p>La batalla final en el Castillo Infinito - ¡Disponible ya !</p>
+            <a href="../anime/demon-slayer/castillo-infinito.html" class="carousel-btn">Ver Ahora</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="../../img/Owari%20no%20Seraph%20portada%20s1.jpg" alt="Owari no Seraph">
+          <div class="carousel-content">
+            <h2>Owari no Seraph</h2>
+            <p>Temporadas 1 y 2 - Latino y Sub Español</p>
+            <a href="../anime/owari-no-seraph/owari-no-seraph.html" class="carousel-btn">Ver Ahora</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="../../img/Las guerras K-Pop Demon Hunters.jpg" alt="K-Pop Demon Hunter">
+          <div class="carousel-content">
+            <h2>K-Pop Demon Hunter</h2>
+            <p>Película 1 - Acción y música en una batalla épica</p>
+            <a href="../anime/k-pop-demon-hunter/k-pop-demon-hunter.html" class="carousel-btn">Ver Ahora</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="../../img/Attack on Titan S4.jpg" alt="Attack on Titan">
+          <div class="carousel-content">
+            <h2>Attack on Titan</h2>
+            <p>Explora todas las temporadas y especiales</p>
+            <a href="../anime/attack-on-titan/attack-on-titan.html" class="carousel-btn">Ver Ahora</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="../../img/Kimetsu No Yaiba temporada 1.png" alt="Demon Slayer">
+          <div class="carousel-content">
+            <h2>Demon Slayer</h2>
+            <p>Serie y películas - La épica batalla contra los demonios</p>
+            <a href="../anime/demon-slayer/demon-slayer.html" class="carousel-btn">Ver Ahora</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="../../img/Solo Leveling season 1.jpg" alt="Solo Leveling">
+          <div class="carousel-content">
+            <h2>Solo Leveling</h2>
+            <p>De cazador débil a leyenda invencible</p>
+            <a href="../anime/solo-leveling/solo-leveling.html" class="carousel-btn">Ver Ahora</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="../../img/BokunoHeroAcademia S7.jpg" alt="Boku no Hero Academia">
+          <div class="carousel-content">
+            <h2>Boku no Hero Academia</h2>
+            <p>Temporadas completas disponibles - El camino del héroe</p>
+            <a href="../anime/boku-no-hero-academia/boku-no-hero-academia.html" class="carousel-btn">Ver Ahora</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="../../img/Chainsaw Man S1.jpg" alt="Chainsaw Man">
+          <div class="carousel-content">
+            <h2>Chainsaw Man</h2>
+            <p>Acción demoníaca y caos desenfrenado</p>
+            <a href="../anime/chainsaw-man/chainsaw-man.html" class="carousel-btn">Ver Ahora</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="../../img/One Piece Wano.jpg" alt="One Piece">
+          <div class="carousel-content">
+            <h2>One Piece</h2>
+            <p>La aventura pirata más grande de todos los tiempos</p>
+            <a href="../anime/one-piece/one-piece.html" class="carousel-btn">Ver Ahora</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="../../img/Naruto Shippuden.jpg" alt="Naruto">
+          <div class="carousel-content">
+            <h2>Naruto</h2>
+            <p>Clásico y más - El camino del ninja</p>
+            <a href="../anime/naruto/naruto.html" class="carousel-btn">Ver Ahora</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="../../img/Tokyo Ghoul S1.jpg" alt="Tokyo Ghoul">
+          <div class="carousel-content">
+            <h2>Tokyo Ghoul</h2>
+            <p>Serie completa - Entre humanos y ghouls</p>
+            <a href="../anime/tokyo-ghoul/tokyo-ghoul.html" class="carousel-btn">Ver Ahora</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="../../img/Mushoku Tensei tem 1.png" alt="Mushoku Tensei">
+          <div class="carousel-content">
+            <h2>Mushoku Tensei</h2>
+            <p>Temporadas 1 y 2 - Reencarnación y aventura</p>
+            <a href="../anime/mushoku-tensei/mushoku-tensei.html" class="carousel-btn">Ver Ahora</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="../../img/rezeroS1.png" alt="Re:Zero">
+          <div class="carousel-content">
+            <h2>Re:Zero</h2>
+            <p>Temporadas 1-3 - Volver a morir para vivir</p>
+            <a href="../anime/re-zero/re-zero.html" class="carousel-btn">Ver Ahora</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="../../img/Dragon Ball Z.jpg" alt="Dragon Ball">
+          <div class="carousel-content">
+            <h2>Dragon Ball Z</h2>
+            <p>La serie legendaria que definió una generación</p>
+            <a href="../anime/dragon-ball/dragon-ball.html" class="carousel-btn">Ver Ahora</a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control prev" aria-label="Anterior">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </button>
+      <button class="carousel-control next" aria-label="Siguiente">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </button>
+      <div class="carousel-indicators">
+        <button class="indicator-dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="indicator-dot" data-slide="1" aria-label="Slide 2"></button>
+        <button class="indicator-dot" data-slide="2" aria-label="Slide 3"></button>
+        <button class="indicator-dot" data-slide="3" aria-label="Slide 4"></button>
+        <button class="indicator-dot" data-slide="4" aria-label="Slide 5"></button>
+        <button class="indicator-dot" data-slide="5" aria-label="Slide 6"></button>
+        <button class="indicator-dot" data-slide="6" aria-label="Slide 7"></button>
+        <button class="indicator-dot" data-slide="7" aria-label="Slide 8"></button>
+        <button class="indicator-dot" data-slide="8" aria-label="Slide 9"></button>
+        <button class="indicator-dot" data-slide="9" aria-label="Slide 10"></button>
+        <button class="indicator-dot" data-slide="10" aria-label="Slide 11"></button>
+        <button class="indicator-dot" data-slide="11" aria-label="Slide 12"></button>
+        <button class="indicator-dot" data-slide="12" aria-label="Slide 13"></button>
+        <button class="indicator-dot" data-slide="13" aria-label="Slide 14"></button>
+        <button class="indicator-dot" data-slide="14" aria-label="Slide 15"></button>
+        <button class="indicator-dot" data-slide="15" aria-label="Slide 16"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog-main">
+    <div class="main-content">
+      <h2 class="section-title">Catálogo de Anime</h2>
+      <div class="search-filter-container">
+        <div class="search-box">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+            class="search-icon">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+          </svg>
+          <input type="text" id="searchInput" placeholder="Buscar anime por nombre..." />
+          <button id="clearSearch" class="clear-btn" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
             </svg>
           </button>
         </div>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="Serie">Series</button>
+          <button class="filter-btn" data-filter="Película">Películas</button>
+        </div>
+      </div>
+      <div class="results-info">
+        <p id="resultsCount">Mostrando <span>0</span> animes</p>
+      </div>
+      <div class="anime-grid" id="catalog-grid"></div>
+      <div class="no-results" id="noResults" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+        </svg>
+        <h3>No se encontraron resultados</h3>
+        <p>Intenta con otro término de búsqueda</p>
       </div>
     </div>
-    
-    <nav>
-      <div>
-        <img src="../../ico/logo.png" alt="Mundo Otaku Latino" style="height:20px; margin-right:8px;">
-        <div>Mundo Otaku Latino</div>
-      </div>
-      <button class="menu-toggle" aria-label="Abrir menú">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <div class="nav-links">
-        <a class="nav-link active" href="../../index.html">Inicio</a>
-        <div class="svg-container">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-          </svg>
-        </div>
-        <div class="svg-container">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
-          </svg>
-        </div>
-      </div>
-    </nav>
-    
-    <!-- Carrusel de Anime Destacados -->
-    <section class="hero-carousel">
-      <div class="carousel-container">
-        <div class="carousel-track">
-          <div class="carousel-slide active">
-            <img src="../../img/castillo infinito.png" alt="Demon Slayer Castillo Infinito">
-            <div class="carousel-content">
-              <h2>Demon Slayer: Castillo Infinito</h2>
-              <p>La batalla final en el Castillo Infinito - ¡Disponible ya !</p>
-              <a href="../anime/demon-slayer/castillo-infinito.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <img src="../../img/Owari%20no%20Seraph%20portada%20s1.jpg" alt="Owari no Seraph">
-            <div class="carousel-content">
-              <h2>Owari no Seraph</h2>
-              <p>Temporadas 1 y 2 - Latino y Sub Español</p>
-              <a href="../anime/owari-no-seraph/owari-no-seraph.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <img src="../../img/Las guerras K-Pop Demon Hunters.jpg" alt="K-Pop Demon Hunter">
-            <div class="carousel-content">
-              <h2>K-Pop Demon Hunter</h2>
-              <p>Película 1 - Acción y música en una batalla épica</p>
-              <a href="../anime/k-pop-demon-hunter/k-pop-demon-hunter.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <img src="../../img/Attack on Titan S4.jpg" alt="Attack on Titan">
-            <div class="carousel-content">
-              <h2>Attack on Titan</h2>
-              <p>Explora todas las temporadas y especiales</p>
-              <a href="../anime/attack-on-titan/attack-on-titan.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <img src="../../img/Kimetsu No Yaiba temporada 1.png" alt="Demon Slayer">
-            <div class="carousel-content">
-              <h2>Demon Slayer</h2>
-              <p>Serie y películas - La épica batalla contra los demonios</p>
-              <a href="../anime/demon-slayer/demon-slayer.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <img src="../../img/Jujutsu Kaisen S2.jpg" alt="Jujutsu Kaisen">
-            <div class="carousel-content">
-              <h2>Jujutsu Kaisen</h2>
-              <p>Temporadas y película 0 - Hechicería y acción</p>
-              <a href="../anime/jujutsu-kaisen/jujutsu-kaisen.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <img src="../../img/Solo Leveling season 1.jpg" alt="Solo Leveling">
-            <div class="carousel-content">
-              <h2>Solo Leveling</h2>
-              <p>De cazador débil a leyenda invencible</p>
-              <a href="../anime/solo-leveling/solo-leveling.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <img src="../../img/BokunoHeroAcademia S7.jpg" alt="Boku no Hero Academia">
-            <div class="carousel-content">
-              <h2>Boku no Hero Academia</h2>
-              <p>Temporadas completas disponibles - El camino del héroe</p>
-              <a href="../anime/boku-no-hero-academia/boku-no-hero-academia.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <img src="../../img/Chainsaw Man S1.jpg" alt="Chainsaw Man">
-            <div class="carousel-content">
-              <h2>Chainsaw Man</h2>
-              <p>Acción demoníaca y caos desenfrenado</p>
-              <a href="../anime/chainsaw-man/chainsaw-man.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <img src="../../img/One Piece Wano.jpg" alt="One Piece">
-            <div class="carousel-content">
-              <h2>One Piece</h2>
-              <p>La aventura pirata más grande de todos los tiempos</p>
-              <a href="../anime/one-piece/one-piece.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <img src="../../img/Naruto Shippuden.jpg" alt="Naruto">
-            <div class="carousel-content">
-              <h2>Naruto</h2>
-              <p>Clásico y más - El camino del ninja</p>
-              <a href="../anime/naruto/naruto.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <img src="../../img/Tokyo Ghoul S1.jpg" alt="Tokyo Ghoul">
-            <div class="carousel-content">
-              <h2>Tokyo Ghoul</h2>
-              <p>Serie completa - Entre humanos y ghouls</p>
-              <a href="../anime/tokyo-ghoul/tokyo-ghoul.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <img src="../../img/Mushoku Tensei tem 1.png" alt="Mushoku Tensei">
-            <div class="carousel-content">
-              <h2>Mushoku Tensei</h2>
-              <p>Temporadas 1 y 2 - Reencarnación y aventura</p>
-              <a href="../anime/mushoku-tensei/mushoku-tensei.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <img src="../../img/rezeroS1.png" alt="Re:Zero">
-            <div class="carousel-content">
-              <h2>Re:Zero</h2>
-              <p>Temporadas 1-3 - Volver a morir para vivir</p>
-              <a href="../anime/re-zero/re-zero.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <img src="../../img/Dragon Ball Z.jpg" alt="Dragon Ball">
-            <div class="carousel-content">
-              <h2>Dragon Ball Z</h2>
-              <p>La serie legendaria que definió una generación</p>
-              <a href="../anime/dragon-ball/dragon-ball.html" class="carousel-btn">Ver Ahora</a>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control prev" aria-label="Anterior">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-          </svg>
-        </button>
-        <button class="carousel-control next" aria-label="Siguiente">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-          </svg>
-        </button>
-        <div class="carousel-indicators">
-          <button class="indicator-dot active" data-slide="0" aria-label="Slide 1"></button>
-          <button class="indicator-dot" data-slide="1" aria-label="Slide 2"></button>
-          <button class="indicator-dot" data-slide="2" aria-label="Slide 3"></button>
-          <button class="indicator-dot" data-slide="3" aria-label="Slide 4"></button>
-          <button class="indicator-dot" data-slide="4" aria-label="Slide 5"></button>
-          <button class="indicator-dot" data-slide="5" aria-label="Slide 6"></button>
-          <button class="indicator-dot" data-slide="6" aria-label="Slide 7"></button>
-          <button class="indicator-dot" data-slide="7" aria-label="Slide 8"></button>
-          <button class="indicator-dot" data-slide="8" aria-label="Slide 9"></button>
-          <button class="indicator-dot" data-slide="9" aria-label="Slide 10"></button>
-          <button class="indicator-dot" data-slide="10" aria-label="Slide 11"></button>
-          <button class="indicator-dot" data-slide="11" aria-label="Slide 12"></button>
-          <button class="indicator-dot" data-slide="12" aria-label="Slide 13"></button>
-          <button class="indicator-dot" data-slide="13" aria-label="Slide 14"></button>
-          <button class="indicator-dot" data-slide="14" aria-label="Slide 15"></button>
-        </div>
-      </div>
-    </section>
-    
-    <section class="catalog-main">
-      <div class="main-content">
-        <h2 class="section-title">Catálogo de Anime</h2>
-        <div class="search-filter-container">
-          <div class="search-box">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="search-icon">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-            </svg>
-            <input type="text" id="searchInput" placeholder="Buscar anime por nombre..." />
-            <button id="clearSearch" class="clear-btn" style="display: none;">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div>
-          <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">Todos</button>
-            <button class="filter-btn" data-filter="Serie">Series</button>
-            <button class="filter-btn" data-filter="Película">Películas</button>
-          </div>
-        </div>
-        <div class="results-info">
-          <p id="resultsCount">Mostrando <span>0</span> animes</p>
-        </div>
-        <div class="anime-grid" id="catalog-grid"></div>
-        <div class="no-results" id="noResults" style="display: none;">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
-          </svg>
-          <h3>No se encontraron resultados</h3>
-          <p>Intenta con otro término de búsqueda</p>
-        </div>
-      </div>
-    </section>
+  </section>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>Mundo Otaku Latino</h3>
-            <p>Tu plataforma favorita para ver anime en español latino</p>
-          </div>
-          <div class="footer-section">
-            <h3>Enlaces</h3>
-            <ul>
-              <li><a href="../../index.html#inicio">Inicio</a></li>
-              <li><a href="./catalogo.html">🗂️ Catálogo</a></li>
-              <li><a href="./ver-anime-espanol-latino.html">Ver anime en español latino</a></li>
-              <li><a href="#generos">Géneros</a></li>
-              <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3>Síguenos</h3>
-            <div class="social-links" aria-label="Redes sociales y canales oficiales">
-              <a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener" aria-label="APP Anime TV">
-                <img src="../../ico/logo.png" alt="APP Anime TV" />
-                <span>APP Anime TV</span>
-              </a>
-              <a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener" aria-label="Canal de Telegram">
-                <img src="../../ico/telegram.webp" alt="Telegram" />
-                <span>Canal Telegram</span>
-              </a>
-              <a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener" aria-label="Grupo de Telegram">
-                <img src="../../ico/telegram.webp" alt="Telegram Grupo" />
-                <span>Grupo Telegram</span>
-              </a>
-              <a class="social-item" href="https://rumble.com/c/c-6184817?e9s=src_v1_clr" target="_blank" rel="noopener" aria-label="Página de Rumble">
-                <img src="../../ico/RUMBLE.webp" alt="Rumble" />
-                <span>Página en Rumble</span>
-              </a>
-              <a class="social-item" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener" aria-label="Facebook Studio">
-                <img src="../../ico/facebook.png" alt="Facebook" />
-                <span>Facebook</span>
-              </a>
-              <a class="social-item" href="https://www.facebook.com/groups/723496132540351" target="_blank" rel="noopener" aria-label="Grupo Anime en Facebook">
-                <img src="../../ico/facebook.png" alt="Facebook Grupo Anime" />
-                <span>Grupo Anime</span>
-              </a>
-              <a class="social-item" href="https://www.facebook.com/groups/1071796301003086" target="_blank" rel="noopener" aria-label="Grupo Free Fire en Facebook">
-                <img src="../../ico/facebook.png" alt="Facebook Grupo Free Fire" />
-                <span>Grupo Free Fire</span>
-              </a>
-              <a class="social-item" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener" aria-label="TikTok">
-                <img src="../../ico/TIKTOK.webp" alt="TikTok" />
-                <span>TikTok</span>
-              </a>
-              <a class="social-item" href="https://www.instagram.com/studiootaku01" target="_blank" rel="noopener" aria-label="Instagram">
-                <img src="../../ico/INSTAGRAM.webp" alt="Instagram" />
-                <span>Instagram</span>
-              </a>
-              <a class="social-item" href="https://github.com/studioanime977" target="_blank" rel="noopener" aria-label="GitHub">
-                <img src="../../ico/GUITHUP.webp" alt="GitHub" />
-                <span>GitHub</span>
-              </a>
-              <a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener" aria-label="YouTube">
-                <img src="../../ico/youtube.png" alt="YouTube" />
-                <span>YouTube</span>
-              </a>
-              <a class="social-item" href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank" rel="noopener" aria-label="WhatsApp">
-                <img src="../../ico/whatsapp.webp" alt="WhatsApp" />
-                <span>WhatsApp</span>
-              </a>
-            </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Mundo Otaku Latino</h3>
+          <p>Tu plataforma favorita para ver anime en español latino</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="../../index.html#inicio">Inicio</a></li>
+            <li><a href="./catalogo.html">🗂️ Catálogo</a></li>
+            <li><a href="./ver-anime-espanol-latino.html">Ver anime en español latino</a></li>
+            <li><a href="#generos">Géneros</a></li>
+            <li><a href="https://exe.io/ANIMETV" target="_blank">Aplicación APK</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-links" aria-label="Redes sociales y canales oficiales">
+            <a class="social-item" href="https://exe.io/ANIMETV" target="_blank" rel="noopener"
+              aria-label="APP Anime TV">
+              <img src="../../ico/logo.png" alt="APP Anime TV" />
+              <span>APP Anime TV</span>
+            </a>
+            <a class="social-item" href="https://t.me/Mundoootakulatino" target="_blank" rel="noopener"
+              aria-label="Canal de Telegram">
+              <img src="../../ico/telegram.webp" alt="Telegram" />
+              <span>Canal Telegram</span>
+            </a>
+            <a class="social-item" href="https://t.me/qquiCA9FiB41MDkx" target="_blank" rel="noopener"
+              aria-label="Grupo de Telegram">
+              <img src="../../ico/telegram.webp" alt="Telegram Grupo" />
+              <span>Grupo Telegram</span>
+            </a>
+            <a class="social-item" href="https://rumble.com/c/c-6184817?e9s=src_v1_clr" target="_blank" rel="noopener"
+              aria-label="Página de Rumble">
+              <img src="../../ico/RUMBLE.webp" alt="Rumble" />
+              <span>Página en Rumble</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/STUDIOOTAKU01" target="_blank" rel="noopener"
+              aria-label="Facebook Studio">
+              <img src="../../ico/facebook.png" alt="Facebook" />
+              <span>Facebook</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/723496132540351" target="_blank" rel="noopener"
+              aria-label="Grupo Anime en Facebook">
+              <img src="../../ico/facebook.png" alt="Facebook Grupo Anime" />
+              <span>Grupo Anime</span>
+            </a>
+            <a class="social-item" href="https://www.facebook.com/groups/1071796301003086" target="_blank"
+              rel="noopener" aria-label="Grupo Free Fire en Facebook">
+              <img src="../../ico/facebook.png" alt="Facebook Grupo Free Fire" />
+              <span>Grupo Free Fire</span>
+            </a>
+            <a class="social-item" href="https://www.tiktok.com/@studiootaku01" target="_blank" rel="noopener"
+              aria-label="TikTok">
+              <img src="../../ico/TIKTOK.webp" alt="TikTok" />
+              <span>TikTok</span>
+            </a>
+            <a class="social-item" href="https://www.instagram.com/studiootaku01" target="_blank" rel="noopener"
+              aria-label="Instagram">
+              <img src="../../ico/INSTAGRAM.webp" alt="Instagram" />
+              <span>Instagram</span>
+            </a>
+            <a class="social-item" href="https://github.com/studioanime977" target="_blank" rel="noopener"
+              aria-label="GitHub">
+              <img src="../../ico/GUITHUP.webp" alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+            <a class="social-item" href="https://www.youtube.com/@STUDIOOTAKU1" target="_blank" rel="noopener"
+              aria-label="YouTube">
+              <img src="../../ico/youtube.png" alt="YouTube" />
+              <span>YouTube</span>
+            </a>
+            <a class="social-item" href="https://chat.whatsapp.com/LgQP3YXx2eS2XRav5ashRm" target="_blank"
+              rel="noopener" aria-label="WhatsApp">
+              <img src="../../ico/whatsapp.webp" alt="WhatsApp" />
+              <span>WhatsApp</span>
+            </a>
           </div>
         </div>
-        <p class="footer-text">&copy; 2025 Mundo Otaku Latino. Todos los derechos reservados.</p>
       </div>
-    </footer>
+      <p class="footer-text">&copy; 2025 Mundo Otaku Latino. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="../../assets/js/catalogo.js?v=2"></script>
-    <script src="../../assets/js/ads.js"></script>
-  </body>
+  <img src="../../ico/personaje-anime .webp" alt="Personaje Anime" class="anime-character" loading="lazy">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="../../assets/js/catalogo.js"></script>
+  <script src="../../assets/js/ads.js"></script>
+</body>
+
 </html>
-
