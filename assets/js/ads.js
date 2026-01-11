@@ -1,247 +1,89 @@
 (() => {
-  const ENABLE_THIRD_PARTY = false;
-  const SHOULD_PROTECT = false;
-  const PASSWORD = 'Cs3437532922';
-  const STORAGE_KEY = 'mol_auth_ok';
-  let modalOpen = false;
+  // --- CONFIGURACIÓN ---
+  const ENABLE_ADS = true;
+  const MAX_BANNER_PER_PAGE = 1;
+  const MAX_NATIVE_PER_PAGE = 1;
+  const BANNER_KEY = '5db2e541f4eeb65e0b1a7f8737d508e2';
+  const NATIVE_SCRIPT = 'https://pl28456274.effectivegatecpm.com/8c45de82310a6956f5339c6a9b3f7c81/invoke.js';
+  const NATIVE_CONTAINER_ID = 'contenedor-8c45de82310a6956f5339c6a9b3f7c81';
 
-  function injectMascot() {
-    try {
-      if (/\/public\/anime\//i.test(window.location.pathname)) return;
-      if (document.getElementById('mol-mascot')) return;
-
-      const styleId = 'mol-mascot-style';
-      if (!document.getElementById(styleId)) {
-        const style = document.createElement('style');
-        style.id = styleId;
-        style.textContent = `
-          #mol-mascot{position:fixed;right:8px;top:58%;transform:translateY(-50%);width:min(260px,34vw);max-width:320px;height:auto;opacity:.95;pointer-events:none;z-index:9999;filter:drop-shadow(0 18px 60px rgba(0,0,0,.55))}
-          @media (max-width: 600px){
-            #mol-mascot{right:6px;bottom:6px;top:auto;transform:none;width:min(180px,46vw);max-width:220px;opacity:.92}
-          }
-        `;
-        document.head.appendChild(style);
-      }
-
-      const img = document.createElement('img');
-      img.id = 'mol-mascot';
-      img.alt = 'Personaje anime';
-      img.decoding = 'async';
-      img.loading = 'lazy';
-      const origin = (window.location && window.location.origin) ? window.location.origin : '';
-      img.src = `${origin}/ico/personaje-anime%20.webp`;
-      document.body && document.body.appendChild(img);
-    } catch (_) {}
+  // --- SEGURIDAD: OCULTAR ANUNCIOS A BOTS (Googlebot, etc.) ---
+  function cargarAdsSeguro() {
+    const ua = navigator.userAgent.toLowerCase();
+    const bots = /googlebot|bingbot|yandex|duckduckbot|slurp/i;
+    return !bots.test(ua);
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', injectMascot);
-  else injectMascot();
+  // --- CONTROL DE INYECCIÓN (NO REPETIR ANUNCIOS) ---
+  let bannerInserted = false;
+  let nativeInserted = false;
 
-  if (!ENABLE_THIRD_PARTY) return;
-
-  function deny() {
-    document.documentElement.innerHTML = '';
-    try {
-      window.location.replace('about:blank');
-    } catch (_) {
-      window.location.href = 'about:blank';
-    }
+  function insertBanner() {
+    if (!ENABLE_ADS || !cargarAdsSeguro() || bannerInserted) return;
+    bannerInserted = true;
+    const div = document.createElement('div');
+    div.className = 'ad-banner-300';
+    div.style.cssText = 'margin:20px auto;text-align:center;';
+    div.innerHTML = `
+      <script>
+        atOptions = {
+          'key' : '${BANNER_KEY}',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+        document.write('<scr' + 'ipt src="https://www.highperformanceformat.com/${BANNER_KEY}/invoke.js"></scr' + 'ipt>');
+      </script>`;
+    document.body.appendChild(div);
   }
 
-  function isAuthed() {
-    try {
-      return sessionStorage.getItem(STORAGE_KEY) === '1';
-    } catch (_) {
-      return false;
-    }
+  function insertNative() {
+    if (!ENABLE_ADS || !cargarAdsSeguro() || nativeInserted) return;
+    nativeInserted = true;
+    const div = document.createElement('div');
+    div.className = 'ad-native';
+    div.style.cssText = 'margin:25px 0;';
+    div.innerHTML = `
+      <script>
+        (function() {
+          var s = document.createElement("script");
+          s.async = true;
+          s.setAttribute("data-cfasync", "false");
+          s.src = "${NATIVE_SCRIPT}";
+          document.currentScript.parentNode.appendChild(s);
+        })();
+      </script>
+      <div id="${NATIVE_CONTAINER_ID}"></div>`;
+    document.body.appendChild(div);
   }
 
-  function setAuthed() {
-    try {
-      sessionStorage.setItem(STORAGE_KEY, '1');
-    } catch (_) {}
+  // --- DÓNDE INSERTAR (NO HOME, NO LEGALES) ---
+  function shouldRunAds() {
+    const path = window.location.pathname.toLowerCase();
+    const noAds = [
+      '/',
+      '/index.html',
+      '/politica-de-privacidad',
+      '/aviso-legal',
+      '/contacto',
+      '/sitemap.xml',
+      '/robots.txt'
+    ];
+    return !noAds.some(p => path.endsWith(p) || path.includes(p));
   }
 
-  function ensureLoginModal() {
-    if (document.getElementById('mol-login-overlay')) return;
-
-    const style = document.createElement('style');
-    style.id = 'mol-login-style';
-    style.textContent = `
-      #mol-login-overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:#000;z-index:2147483647}
-      #mol-login-modal{width:min(420px,92vw);border-radius:18px;background:#121218;border:1px solid rgba(255,255,255,.14);box-shadow:0 18px 60px rgba(0,0,0,.55);color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-      #mol-login-head{display:flex;align-items:center;justify-content:center;padding:18px 18px 8px;position:relative}
-      #mol-login-title{font-size:34px;font-weight:800;letter-spacing:.3px;line-height:1;margin:0}
-      #mol-login-close{position:absolute;right:14px;top:10px;border:0;background:transparent;color:#fff;font-size:22px;cursor:pointer;line-height:1;padding:8px;opacity:.9}
-      #mol-login-body{padding:10px 18px 18px}
-      .mol-field{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);margin-top:12px}
-      .mol-input{width:100%;background:transparent;border:0;outline:0;color:#fff;font-size:14px}
-      .mol-input::placeholder{color:rgba(255,255,255,.75)}
-      #mol-login-actions{margin-top:16px}
-      #mol-login-btn{width:100%;border:0;border-radius:999px;background:#fff;color:#111;font-weight:800;padding:12px 16px;cursor:pointer;font-size:15px}
-      #mol-login-error{margin-top:10px;color:#ffb3b3;font-size:13px;min-height:18px;text-align:center}
-    `;
-    document.head.appendChild(style);
-
-    const overlay = document.createElement('div');
-    overlay.id = 'mol-login-overlay';
-    overlay.innerHTML = `
-      <div id="mol-login-modal" role="dialog" aria-modal="true" aria-label="Login">
-        <div id="mol-login-head">
-          <button id="mol-login-close" type="button" aria-label="Cerrar">×</button>
-          <h2 id="mol-login-title">Login</h2>
-        </div>
-        <div id="mol-login-body">
-          <div class="mol-field">
-            <input id="mol-login-pass" class="mol-input" type="password" autocomplete="current-password" placeholder="Password">
-          </div>
-          <div id="mol-login-actions">
-            <button id="mol-login-btn" type="button">Login</button>
-            <div id="mol-login-error"></div>
-          </div>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(overlay);
-
-    const passEl = document.getElementById('mol-login-pass');
-    const btnEl = document.getElementById('mol-login-btn');
-    const closeEl = document.getElementById('mol-login-close');
-    const errEl = document.getElementById('mol-login-error');
-
-    function hide() {
-      modalOpen = false;
-      overlay.style.display = 'none';
-      if (passEl) passEl.value = '';
-      if (errEl) errEl.textContent = '';
-    }
-
-    function submit() {
-      const pass = (passEl && passEl.value) ? passEl.value : '';
-      if (pass !== PASSWORD) {
-        if (errEl) errEl.textContent = 'Contraseña incorrecta';
-        return;
-      }
-      setAuthed();
-      hide();
-    }
-
-    btnEl && btnEl.addEventListener('click', submit);
-    passEl && passEl.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') submit();
-      if (e.key === 'Escape') deny();
-    });
-    closeEl && closeEl.addEventListener('click', deny);
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) deny();
-    });
+  // --- INSERCIÓN AUTOMÁTICA (AL FINAL DEL BODY) ---
+  function initAds() {
+    if (!shouldRunAds()) return;
+    // Insertar solo una vez cada tipo
+    insertBanner();
+    insertNative();
   }
 
-  function pedirPasswordYValidar() {
-    if (isAuthed()) return true;
-    if (modalOpen) return false;
-    modalOpen = true;
-    ensureLoginModal();
-    const overlay = document.getElementById('mol-login-overlay');
-    const passEl = document.getElementById('mol-login-pass');
-    if (overlay) overlay.style.display = 'flex';
-    setTimeout(() => { passEl && passEl.focus(); }, 0);
-    return false;
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAds);
+  } else {
+    initAds();
   }
-
-  if (SHOULD_PROTECT) {
-    document.addEventListener('contextmenu', function (e) {
-      e.preventDefault();
-      if (!isAuthed()) pedirPasswordYValidar();
-    });
-
-    document.addEventListener('keydown', function (e) {
-      const key = (e.key || '').toLowerCase();
-
-      if (e.key === 'F12') {
-        e.preventDefault();
-        if (!isAuthed()) pedirPasswordYValidar();
-        return;
-      }
-
-      if (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(key)) {
-        e.preventDefault();
-        if (!isAuthed()) pedirPasswordYValidar();
-        return;
-      }
-
-      if (e.ctrlKey && ['u', 's', 'p'].includes(key)) {
-        e.preventDefault();
-        if (!isAuthed()) pedirPasswordYValidar();
-      }
-    });
-  }
-
-  if (document.body && document.body.dataset && document.body.dataset.adsInit) return;
-  if (document.body) document.body.dataset.adsInit = '1';
-  function injectScript(src) {
-    if (document.querySelector(`script[src="${src}"]`)) return;
-    const s = document.createElement('script');
-    s.src = src;
-    s.async = true;
-    document.head.appendChild(s);
-  }
-  function createSlot() {
-    const slot = document.createElement('div');
-    slot.style.width = '100%';
-    slot.style.display = 'block';
-    slot.style.margin = '12px 0';
-    slot.className = 'ad-slot';
-    return slot;
-  }
-  function injectIframeInto(container, src, where) {
-    if (!container) return;
-    const slot = createSlot();
-    const f = document.createElement('iframe');
-    f.src = src;
-    f.width = '100%';
-    f.height = '100';
-    f.style.border = 'none';
-    f.style.overflow = 'hidden';
-    f.allow = 'autoplay';
-    if (where === 'before') container.parentNode.insertBefore(slot, container);
-    else if (where === 'after') container.parentNode.insertBefore(slot, container.nextSibling);
-    else container.appendChild(slot);
-    slot.appendChild(f);
-  }
-  function injectGlobal(position) {
-    const slot = createSlot();
-    const f = document.createElement('iframe');
-    f.src = 'https://www.effectivegatecpm.com/g71km9rd?key=3dd0d64887dc4e4a06a9e86fa43bf371';
-    f.width = '100%';
-    f.height = '100';
-    f.style.border = 'none';
-    f.style.overflow = 'hidden';
-    f.allow = 'autoplay';
-    if (position === 'top' && document.body.firstChild) document.body.insertBefore(slot, document.body.firstChild);
-    else document.body.appendChild(slot);
-    slot.appendChild(f);
-  }
-  function placeInlineAds() {
-    const hero = document.querySelector('.series-hero');
-    injectIframeInto(hero, 'https://www.effectivegatecpm.com/g71km9rd?key=3dd0d64887dc4e4a06a9e86fa43bf371', 'after');
-    const grid = document.getElementById('episodes-grid');
-    if (grid && grid.children && grid.children.length) {
-      const a = grid.children[3];
-      const b = grid.children[7];
-      injectIframeInto(a || grid.firstElementChild, 'https://www.effectivegatecpm.com/g71km9rd?key=3dd0d64887dc4e4a06a9e86fa43bf371', 'after');
-      if (b) injectIframeInto(b, 'https://www.effectivegatecpm.com/g71km9rd?key=3dd0d64887dc4e4a06a9e86fa43bf371', 'after');
-    }
-    const dl = document.getElementById('download-link');
-    injectIframeInto(dl, 'https://www.effectivegatecpm.com/g71km9rd?key=3dd0d64887dc4e4a06a9e86fa43bf371', 'before');
-  }
-  function init() {
-    injectScript('//pl28083598.effectivegatecpm.com/fa/fd/c7/fafdc79dfba42fa99c475ec93b44cfbc.js');
-    injectScript('//pl28083609.effectivegatecpm.com/ab/ec/46/abec46d039b00848567c45e1c5552b98.js');
-    placeInlineAds();
-    injectGlobal('top');
-    injectGlobal('bottom');
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
 })();
