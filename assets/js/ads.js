@@ -79,17 +79,31 @@
   // --- DÓNDE INSERTAR (NO HOME, NO LEGALES) ---
   function shouldRunAds() {
     const path = window.location.pathname.toLowerCase();
+
+    // Lista de rutas exactas o parciales donde NO queremos anuncios AUTOMÁTICOS al pie
+    // Nota: El catálogo maneja sus anuncios internamente
     const noAds = [
-      '/',
-      '/index.html',
-      '/politica-de-privacidad',
-      '/aviso-legal',
-      '/contacto',
-      '/sitemap.xml',
-      '/robots.txt'
+      'index.html',
+      'catalogo.html', // Agregado para evitar duplicidad al pie
+      'politica-de-privacidad',
+      'aviso-legal',
+      'contacto',
+      'sitemap.xml',
+      'robots.txt'
     ];
 
-    const shouldRun = !noAds.some(p => path.endsWith(p) || path.includes(p));
+    // Verificar si es la raíz exacta (home)
+    if (path === '/' || path.endsWith('/')) {
+      // Intenta detectar si estamos en el root del dominio o carpeta
+      // Si el path termina en / y no tiene más de 1 caracter (ej: /), es home
+      if (path.length <= 1) return false;
+    }
+
+    // Verificar si el path termina en o incluye alguna de las palabras prohibidas
+    // Usamos 'ending' para index.html para evitar bloquear cosas como 'index-of-anime'
+    const isRestricted = noAds.some(p => path.endsWith(p) || path.includes('/' + p));
+
+    const shouldRun = !isRestricted;
     console.log('📍 Path:', path, '| Should run ads:', shouldRun);
     return shouldRun;
   }

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Anuncios - Mundo Otaku Latino</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a0b2e;
+            color: #fff;
+        }
+
+        .test-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 2px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .success {
+            background: rgba(39, 174, 96, 0.2);
+            border: 1px solid #27ae60;
+        }
+
+        .error {
+            background: rgba(231, 76, 60, 0.2);
+            border: 1px solid #e74c3c;
+        }
+
+        .info {
+            background: rgba(52, 152, 219, 0.2);
+            border: 1px solid #3498db;
+        }
+
+        h1 {
+            color: #8b5cf6;
+        }
+
+        h2 {
+            color: #ff5cad;
+            margin-top: 30px;
+        }
+
+        pre {
+            background: #000;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #0f0;
+        }
+
+        .ad-placeholder {
+            min-height: 280px;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🧪 Página de Prueba de Anuncios</h1>
+
+    <div class="test-section">
+        <h2>📊 Estado del Script</h2>
+        <div id="scriptStatus"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>📍 Información de la Página</h2>
+        <div id="pageInfo"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🎯 Zona de Anuncios Banner (300x250)</h2>
+        <div class="ad-placeholder">
+            <p>⬇️ El anuncio banner debería aparecer abajo ⬇️</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🎯 Zona de Anuncios Nativos</h2>
+        <div class="ad-placeholder">
+            <p>⬇️ El anuncio nativo debería aparecer abajo ⬇️</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>📝 Console Logs</h2>
+        <div id="consoleLogs"></div>
+        <p style="color: #999;">Abre la consola del navegador (F12) para ver logs detallados</p>
+    </div>
+
+    <script>
+        // Capturar console.log
+        const logs = [];
+        const originalLog = console.log;
+        console.log = function (...args) {
+            logs.push(args.join(' '));
+            updateConsoleLogs();
+            originalLog.apply(console, args);
+        };
+
+        function updateConsoleLogs() {
+            const logsDiv = document.getElementById('consoleLogs');
+            if (logs.length > 0) {
+                logsDiv.innerHTML = '<pre>' + logs.join('\n') + '</pre>';
+            } else {
+                logsDiv.innerHTML = '<div class="info">No hay logs todavía...</div>';
+            }
+        }
+
+        // Mostrar información de la página
+        document.getElementById('pageInfo').innerHTML = `
+      <div class="info">
+        <strong>URL:</strong> ${window.location.href}<br>
+        <strong>Pathname:</strong> ${window.location.pathname}<br>
+        <strong>User Agent:</strong> ${navigator.userAgent.substring(0, 100)}...
+      </div>
+    `;
+
+        // Verificar si ads.js se cargó
+        setTimeout(() => {
+            const scriptStatus = document.getElementById('scriptStatus');
+            const adsElements = document.querySelectorAll('.ad-banner-300, .ad-native');
+
+            if (adsElements.length > 0) {
+                scriptStatus.innerHTML = `
+          <div class="success">
+            ✅ Script ads.js se ejecutó correctamente<br>
+            📦 Elementos encontrados: ${adsElements.length}
+          </div>
+        `;
+            } else {
+                scriptStatus.innerHTML = `
+          <div class="error">
+            ❌ No se detectaron elementos de anuncios<br>
+            🔍 Revisa la consola para más detalles
+          </div>
+        `;
+            }
+
+            // Mostrar elementos del body
+            console.log('📦 Elementos en el body:', document.body.children.length);
+            Array.from(document.body.children).forEach((el, i) => {
+                console.log(`  [${i}] ${el.tagName}.${el.className || '(sin clase)'}`);
+            });
+        }, 2000);
+
+        updateConsoleLogs();
+    </script>
+
+    <!-- CARGAR EL SCRIPT DE ANUNCIOS -->
+    <script src="../../assets/js/ads.js"></script>
+
+</body>
+
+</html>
