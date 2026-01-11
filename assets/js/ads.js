@@ -1,5 +1,6 @@
 (() => {
-  const SHOULD_PROTECT = typeof window !== 'undefined' && typeof window.location !== 'undefined' && (/\/public\/anime\//i.test(window.location.pathname) || /\/public\/html\/catalogo\.html$/i.test(window.location.pathname));
+  const ENABLE_THIRD_PARTY = false;
+  const SHOULD_PROTECT = false;
   const PASSWORD = 'Cs3437532922';
   const STORAGE_KEY = 'mol_auth_ok';
   let modalOpen = false;
@@ -35,6 +36,8 @@
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', injectMascot);
   else injectMascot();
+
+  if (!ENABLE_THIRD_PARTY) return;
 
   function deny() {
     document.documentElement.innerHTML = '';
