@@ -274,6 +274,63 @@
       insertNative();
       insertMonetag();
     }
+
+    // --- CORRECCIÓN: MENÚ MÓVIL SI FALTA ---
+    fixMobileMenu();
+  }
+
+  // --- HELPER: Inyectar botón de menú móvil si no existe ---
+  function fixMobileMenu() {
+    // Solo aplicar si existe la estructura de .header .nav-container pero NO el botón
+    const header = document.querySelector('.header');
+    const navContainer = document.querySelector('.nav-container');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (!header || !navContainer || !navMenu) return;
+    if (document.querySelector('.mobile-menu-toggle')) return; // Ya existe
+
+    console.log('🔧 Injecting Mobile Menu Toggle...');
+
+    const btn = document.createElement('button');
+    btn.className = 'mobile-menu-toggle';
+    btn.innerHTML = '☰'; // Icono hamburguesa
+    btn.setAttribute('aria-label', 'Abrir menú');
+
+    // Estilos inline de emergencia por si el CSS no lo carga bien
+    btn.style.background = 'transparent';
+    btn.style.border = 'none';
+    btn.style.color = '#fff';
+    btn.style.fontSize = '24px';
+    btn.style.cursor = 'pointer';
+    btn.style.display = 'none'; // Por defecto oculto en PC
+
+    // Media query para mostrarlo en movil (inyectamos style tag para esto)
+    const style = document.createElement('style');
+    style.textContent = `
+      @media (max-width: 768px) {
+        .mobile-menu-toggle { display: block !important; position: absolute; top: 15px; right: 15px; z-index: 1100; }
+        .nav-container { position: relative; } 
+        .nav-menu.active { display: flex !important; flex-direction: column; width: 100%; position: absolute; top: 60px; left: 0; background: rgba(0,0,0,0.95); padding: 20px; z-index: 1000; border-bottom: 2px solid #6a5af9; }
+      }
+    `;
+    document.head.appendChild(style);
+
+    navContainer.appendChild(btn);
+
+    // Evento Click
+    btn.onclick = (e) => {
+      e.stopPropagation();
+      navMenu.classList.toggle('active');
+      btn.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+    };
+
+    // Cerrar al hacer click fuera
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') && !navContainer.contains(e.target)) {
+        navMenu.classList.remove('active');
+        btn.innerHTML = '☰';
+      }
+    });
   }
 
   if (document.readyState === 'loading') {
