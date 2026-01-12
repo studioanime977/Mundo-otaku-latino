@@ -6,6 +6,7 @@ const ROOT_DIR = process.cwd();
 
 const CATALOGO_JS_PATH = path.join(ROOT_DIR, 'assets', 'js', 'catalogo.js');
 const SITEMAP_PATH = path.join(ROOT_DIR, 'sitemap.xml');
+const INDEX_HTML_PATH = path.join(ROOT_DIR, 'index.html');
 
 function isoDate() {
   return new Date().toISOString().slice(0, 10);
@@ -33,6 +34,31 @@ function extractLocsFromSitemap(xml) {
   return locs;
 }
 
+// Function to extract full anime data for Schema
+function extractAnimeData(jsText) {
+  const animes = [];
+  // Regex to capture title, title2, and href
+  // Matches: { place: '...', title: 'TITLE', title2: 'SUBTITLE', ... href: '...' }
+  const re = /{\s*place:\s*'[^']*',\s*title:\s*'([^']*)',\s*title2:\s*'([^']*)'.*?href:\s*'([^']*)'/gs;
+
+  let m;
+  while ((m = re.exec(jsText)) !== null) {
+    const title1 = m[1]?.trim() || '';
+    const title2 = m[2]?.trim() || '';
+    const href = m[3]?.trim();
+
+    if (title1 && href) {
+      // Construct full title
+      const fullTitle = title2 ? `${title1} ${title2}` : title1;
+      animes.push({
+        name: fullTitle,
+        url: normalizeToAbsoluteUrl(href)
+      });
+    }
+  }
+  return animes;
+}
+
 function extractCatalogHrefs(jsText) {
   const hrefs = [];
   const re = /href\s*:\s*'([^']+)'/g;
@@ -55,14 +81,74 @@ function makeUrlEntry(loc, { changefreq = 'weekly', priority = '0.7', lastmod = 
   ].join('\n');
 }
 
+async function updateIndexHtmlSchema(animes) {
+  try {
+    let html = await readFile(INDEX_HTML_PATH, 'utf8');
+
+    // Define the new Schema object
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Mundo Otaku Latino",
+          "url": SITE_URL,
+          "inLanguage": "es",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": `${SITE_URL}/public/html/catalogo.html?q={search_term_string}`,
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "itemListElement": animes.map((anime, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "url": anime.url,
+            "name": anime.name
+          }))
+        }
+      ]
+    };
+
+    const scriptTag = `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+
+    // Regex to find existing LD+JSON script
+    const scriptRegex = /<script\s+type="application\/ld\+json">.*?<\/script>/s;
+
+    if (scriptRegex.test(html)) {
+      html = html.replace(scriptRegex, scriptTag);
+      console.log('Schema injected into index.html');
+    } else {
+      // If not found, insert before </head>
+      html = html.replace('</head>', `${scriptTag}\n</head>`);
+      console.log('Schema appended to head in index.html');
+    }
+
+    await writeFile(INDEX_HTML_PATH, html, 'utf8');
+  } catch (err) {
+    console.error('Error updating index.html schema:', err);
+  }
+}
+
 async function main() {
   const [catalogJs, existingSitemapXml] = await Promise.all([
     readFile(CATALOGO_JS_PATH, 'utf8'),
     readFile(SITEMAP_PATH, 'utf8').catch(() => ''),
   ]);
 
+  // Extract Data for Sitemap
   const existingLocs = extractLocsFromSitemap(existingSitemapXml);
   const catalogHrefs = extractCatalogHrefs(catalogJs);
+
+  // Extract Data for Schema
+  const animeData = extractAnimeData(catalogJs);
+  console.log(`Found ${animeData.length} animes for Schema.`);
+
+  if (animeData.length > 0) {
+    await updateIndexHtmlSchema(animeData);
+  }
 
   const basePages = [
     normalizeToAbsoluteUrl('/'),
