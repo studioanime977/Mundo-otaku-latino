@@ -132,24 +132,122 @@ async function updateIndexHtmlSchema(animes) {
   }
 }
 
+// Function to update individual anime HTML files
+async function updateAnimePages(animeData) {
+  for (const anime of animeData) {
+    if (!anime.href) continue;
+
+    // Resolve relative path from catalogo.js location to the actual file
+    // catalogo.js is in assets/js/, so href '../anime/...' resolves correctly relative to it
+    // But we are running from root, so we need to construct the absolute path carefully.
+    // anime.href is like '../anime/demon-slayer/demon-slayer.html'
+
+    // We need to resolve this relative to 'assets/js'
+    const absolutePath = path.resolve(ROOT_DIR, 'assets', 'js', anime.href);
+
+    try {
+      let html = await readFile(absolutePath, 'utf8').catch(() => null);
+      if (!html) {
+        // Try resolving relative to public/html if standard path fails, or just warn
+        console.warn(`Could not read file for ${anime.name}: ${absolutePath}`);
+        continue;
+      }
+
+      const isMovie = anime.place.toLowerCase().includes('película');
+      const keywords = `ver ${anime.name}, descargar ${anime.name}, ${anime.name} latino, ${anime.name} sub español, ${anime.name} hd, ver anime online`;
+
+      const newTitle = `Ver ${anime.name} Online y Descargar (HD Latino) | Mundo Otaku Latino`;
+      const newDescription = `Ver ${anime.name} online en español latino y subtitulado. Descargar temporadas completas en HD 1080p gratis. ${anime.description}`;
+
+      // Update basic meta tags using regex
+      html = html.replace(/<title>.*?<\/title>/, `<title>${newTitle}</title>`);
+      html = html.replace(/<meta name="description" content=".*?">/, `<meta name="description" content="${newDescription}">`);
+
+      // Update/Add Keywords if missing
+      if (!/<meta name="keywords"/.test(html)) {
+        html = html.replace('<head>', `<head>\n  <meta name="keywords" content="${keywords}">`);
+      } else {
+        html = html.replace(/<meta name="keywords" content=".*?">/, `<meta name="keywords" content="${keywords}">`);
+      }
+
+      // Update OG Tags
+      const ogReplacements = {
+        'og:title': newTitle,
+        'og:description': newDescription,
+        'og:image': normalizeToAbsoluteUrl(anime.image), // Ensure image is absolute
+        'og:url': anime.url
+      };
+
+      for (const [property, content] of Object.entries(ogReplacements)) {
+        const regex = new RegExp(`<meta property="${property}" content=".*?">`);
+        if (regex.test(html)) {
+          html = html.replace(regex, `<meta property="${property}" content="${content}">`);
+        } else {
+          // Inject if missing (basic injection before </head>)
+          html = html.replace('</head>', `  <meta property="${property}" content="${content}">\n</head>`);
+        }
+      }
+
+      // Update JSON-LD Schema
+      const schemaType = isMovie ? 'Movie' : 'TVSeries';
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": schemaType,
+        "name": anime.name,
+        "description": newDescription,
+        "image": normalizeToAbsoluteUrl(anime.image),
+        "url": anime.url,
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Mundo Otaku Latino",
+          "url": SITE_URL
+        },
+        "potentialAction": {
+          "@type": "WatchAction",
+          "target": anime.url
+        }
+      };
+
+      const scriptTag = `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+      const scriptRegex = /<script\s+type="application\/ld\+json">.*?<\/script>/s;
+
+      if (scriptRegex.test(html)) {
+        html = html.replace(scriptRegex, scriptTag);
+      } else {
+        html = html.replace('</head>', `${scriptTag}\n</head>`);
+      }
+
+      await writeFile(absolutePath, html, 'utf8');
+      console.log(`Optimized SEO for: ${anime.name}`);
+
+    } catch (err) {
+      console.error(`Error processing ${anime.name}:`, err);
+    }
+  }
+}
+
 async function main() {
   const [catalogJs, existingSitemapXml] = await Promise.all([
     readFile(CATALOGO_JS_PATH, 'utf8'),
     readFile(SITEMAP_PATH, 'utf8').catch(() => ''),
   ]);
 
-  // Extract Data for Sitemap
-  const existingLocs = extractLocsFromSitemap(existingSitemapXml);
-  const catalogHrefs = extractCatalogHrefs(catalogJs);
+  // Extract Data for Schema and Optimization
+  // Note: We need href and image too, so let's update extractAnimeData to capture properly
+  const animeData = extractAnimeDataFull(catalogJs); // New helper function
 
-  // Extract Data for Schema
-  const animeData = extractAnimeData(catalogJs);
-  console.log(`Found ${animeData.length} animes for Schema.`);
+  console.log(`Found ${animeData.length} animes for Schema and Optimization.`);
 
   if (animeData.length > 0) {
     await updateIndexHtmlSchema(animeData);
+    await updateAnimePages(animeData);
   }
 
+  // Extract Data for Sitemap (Legacy/Basic URL list)
+  const existingLocs = extractLocsFromSitemap(existingSitemapXml);
+  const catalogHrefs = extractCatalogHrefs(catalogJs);
+  // ... rest of sitemap logic ...
   const basePages = [
     normalizeToAbsoluteUrl('/'),
     normalizeToAbsoluteUrl('/public/html/catalogo.html'),
@@ -201,6 +299,26 @@ async function main() {
 
   await writeFile(SITEMAP_PATH, xml, 'utf8');
   process.stdout.write(`Sitemap generado: ${SITEMAP_PATH}\nURLs: ${orderedLocs.length}\n`);
+}
+
+// Improved Data Extractor
+function extractAnimeDataFull(jsText) {
+  const animes = [];
+  // Revised regex to capture all needed fields
+  const re = /{\s*place:\s*'([^']*)',\s*title:\s*'([^']*)',\s*title2:\s*'([^']*)',\s*description:\s*'([^']*)',\s*image:\s*'([^']*)',\s*href:\s*'([^']*)'/gs;
+
+  let m;
+  while ((m = re.exec(jsText)) !== null) {
+    animes.push({
+      place: m[1]?.trim(),
+      name: m[3] ? `${m[2].trim()} ${m[3].trim()}` : m[2].trim(),
+      description: m[4]?.trim(),
+      image: m[5]?.trim(),
+      href: m[6]?.trim(),
+      url: normalizeToAbsoluteUrl(m[6]?.trim())
+    });
+  }
+  return animes;
 }
 
 main().catch((err) => {
