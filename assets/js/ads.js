@@ -222,6 +222,10 @@
           const adContainer = create4AdBlock(); // Usamos el helper
           adContainer.classList.add('ad-generated');
 
+          // FIX: Forzar que el contenedor de anuncios ocupe todo el ancho del grid (todas las columnas)
+          adContainer.style.gridColumn = '1 / -1';
+          adContainer.style.width = '100%';
+
           grid.appendChild(adContainer);
         }
       });
