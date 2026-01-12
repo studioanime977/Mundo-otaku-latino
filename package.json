@@ -4,7 +4,7 @@
   "description": "Mundo Otaku Latino - Anime a la Carta",
   "main": "index.html",
   "scripts": {
-    "build": "node ./scripts/generate-sitemap.mjs",
+    "build": "node ./scripts/generate-sitemap.mjs && node ./scripts/inject-ads.mjs",
     "generate:sitemap": "node ./scripts/generate-sitemap.mjs"
   },
   "keywords": [
