@@ -349,18 +349,18 @@
         }
         let currentEpisode = null;
         const episodes = [
-            { num: 1, title: 'Episodio 1', op1: '#', st: 'https://mxdrop.to/e/7kjw0qv7i83lnk', stSub: 'https://streamtape.com/e/KLLZyGyMwYi0kBp/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_01.mp4' },
-            { num: 2, title: 'Episodio 2', op1: '#', st: 'https://mxdrop.to/e/pj68mz03fg79ggz', stSub: 'https://streamtape.com/e/Lpj1PVoqlwCRqKX/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_02.mp4' },
-            { num: 3, title: 'Episodio 3', op1: '#', st: 'https://mxdrop.to/e/1no16mq4i77p17', stSub: 'https://streamtape.com/e/bPvddX1bM3sPwpl/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_03.mp4' },
-            { num: 4, title: 'Episodio 4', op1: '#', st: 'https://mxdrop.to/e/z1jxdk7qakrrj6', stSub: 'https://streamtape.com/e/GjVP3O7bKJIlyr/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_04.mp4' },
-            { num: 5, title: 'Episodio 5', op1: '#', st: 'https://mxdrop.to/e/pj68mzlgtvdq94', stSub: 'https://streamtape.com/e/ydBkexpK2Zf14PG/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_05.mp4' },
-            { num: 6, title: 'Episodio 6', op1: '#', st: 'https://mxdrop.to/e/1no166o4t1qmpv', stSub: 'https://streamtape.com/e/bqpVdG1XYkcPMyJ/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_06.mp4' },
-            { num: 7, title: 'Episodio 7', op1: '#', st: 'https://mxdrop.to/e/9wxpox4kaj7nvz', stSub: 'https://streamtape.com/e/1jzMe8wdw4i6LR/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_07.mp4' },
-            { num: 8, title: 'Episodio 8', op1: '#', st: 'https://mxdrop.to/e/k0e811q3ulz964', stSub: 'https://streamtape.com/e/LqzW89O1QLfRQDB/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_08.mp4' },
-            { num: 9, title: 'Episodio 9', op1: '#', st: 'https://mxdrop.to/e/pj68m686ak43r4', stSub: 'https://streamtape.com/e/OXX9QyaWa1fZjL7/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_09.mp4' },
-            { num: 10, title: 'Episodio 10', op1: '#', st: 'https://mxdrop.to/e/mkzvqzeqbxvqxog', stSub: 'https://streamtape.com/e/8ZpxW3MKgJSozee/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_10.mp4' },
-            { num: 11, title: 'Episodio 11', op1: '#', st: 'https://mxdrop.to/e/8ljr7q7nao9zqk', stSub: 'https://streamtape.com/e/o6q8j4e8X7txrG/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_11.mp4' },
-            { num: 12, title: 'Episodio 12', op1: '#', st: 'https://mxdrop.to/e/z1jxdplrc986ro', stSub: 'https://streamtape.com/e/LavKd21oLPu72X/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_12.mp4' }
+            { num: 1, title: 'Episodio 1', op1: '#', st: 'https://mxdrop.to/e/7kjw0qv7i83lnk', stSub: 'https://streamtape.com/e/KLLZyGyMwYi0kBp/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_01.mp4', megaSub: 'https://mega.nz/embed/mBlzBIjB#zazD_41VyITpLoWaR23-qKdkqyXpiZ0mv0BKH5_4j1o' },
+            { num: 2, title: 'Episodio 2', op1: '#', st: 'https://mxdrop.to/e/pj68mz03fg79ggz', stSub: 'https://streamtape.com/e/Lpj1PVoqlwCRqKX/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_02.mp4', megaSub: 'https://mega.nz/embed/2RMigTwC#DSYL9gpAsp68NHfdz7EAaSGLlJmA7_zCowzxeqx5DiA' },
+            { num: 3, title: 'Episodio 3', op1: '#', st: 'https://mxdrop.to/e/1no16mq4i77p17', stSub: 'https://streamtape.com/e/bPvddX1bM3sPwpl/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_03.mp4', megaSub: 'https://mega.nz/embed/jIsRECrI#DSx66E4YtJ9VlO5m5trjKKvLHkzgdgMqwS0bSFU2hH4' },
+            { num: 4, title: 'Episodio 4', op1: '#', st: 'https://mxdrop.to/e/z1jxdk7qakrrj6', stSub: 'https://streamtape.com/e/GjVP3O7bKJIlyr/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_04.mp4', megaSub: 'https://mega.nz/embed/PFs2zKjL#F2fYrrQmzyNdSvJMYnq-fr2FGvNAAfPIroHH3nz0E9o' },
+            { num: 5, title: 'Episodio 5', op1: '#', st: 'https://mxdrop.to/e/pj68mzlgtvdq94', stSub: 'https://streamtape.com/e/ydBkexpK2Zf14PG/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_05.mp4', megaSub: 'https://mega.nz/embed/PQ0xxD5J#Vo8SRXvX9LU21OUs19skloObZXjyMANPyVj8FRp-9dY' },
+            { num: 6, title: 'Episodio 6', op1: '#', st: 'https://mxdrop.to/e/1no166o4t1qmpv', stSub: 'https://streamtape.com/e/bqpVdG1XYkcPMyJ/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_06.mp4', megaSub: 'https://mega.nz/embed/XEdSABpS#Je509r0iv040Y-rukRJR36azwgDCHqLjZFNhYm_oMlE' },
+            { num: 7, title: 'Episodio 7', op1: '#', st: 'https://mxdrop.to/e/9wxpox4kaj7nvz', stSub: 'https://streamtape.com/e/1jzMe8wdw4i6LR/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_07.mp4', megaSub: 'https://mega.nz/embed/Xdkn1aiA#S47RWH0Ely7RYm48rx-kkPHA8tOkOkAzs0S2fB3HYtw' },
+            { num: 8, title: 'Episodio 8', op1: '#', st: 'https://mxdrop.to/e/k0e811q3ulz964', stSub: 'https://streamtape.com/e/LqzW89O1QLfRQDB/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_08.mp4', megaSub: 'https://mega.nz/embed/ictlkJCI#s9x_tnEHWlIefMDHipElKcUQF8JNcF2F7z4x6F8L_o8' },
+            { num: 9, title: 'Episodio 9', op1: '#', st: 'https://mxdrop.to/e/pj68m686ak43r4', stSub: 'https://streamtape.com/e/OXX9QyaWa1fZjL7/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_09.mp4', megaSub: 'https://mega.nz/embed/LVsDxZ7J#mLJCarsvnsSMLGN3JsQznL20jTGsu-gI5lYRWTmJ3-8' },
+            { num: 10, title: 'Episodio 10', op1: '#', st: 'https://mxdrop.to/e/mkzvqzeqbxvqxog', stSub: 'https://streamtape.com/e/8ZpxW3MKgJSozee/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_10.mp4', megaSub: 'https://mega.nz/embed/SVsyAAgA#2wejWgkpBCgMe3PCaCdGucgsXcwLgT_YmTgir_jd8KA' },
+            { num: 11, title: 'Episodio 11', op1: '#', st: 'https://mxdrop.to/e/8ljr7q7nao9zqk', stSub: 'https://streamtape.com/e/o6q8j4e8X7txrG/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_11.mp4', megaSub: 'https://mega.nz/embed/iJVSXS7T#FuSVPr9BKE_SUNQPwqIMuvLhc6jnG3XrA-_iFkrD3a0' },
+            { num: 12, title: 'Episodio 12', op1: '#', st: 'https://mxdrop.to/e/z1jxdplrc986ro', stSub: 'https://streamtape.com/e/LavKd21oLPu72X/Even_Given_the_Worthless_Appraiser_Class_-_Temporada_1_Episodio_12.mp4', megaSub: 'https://mega.nz/embed/CANjTBRZ#SzxPiehpqGgEPPIcpVVI1XjtklfdyGqzrUQW8zmEwP' }
         ];
         const episodesGrid = document.getElementById('episodes-grid');
         episodes.forEach(episode => {
@@ -373,10 +373,12 @@
         function applyEpisodeToServerGrid(ep) {
             const mixdropCard = document.querySelector('.server-card[data-server="MixDrop"]');
             const streamTapeCard = document.querySelector('.server-card[data-server="StreamTape"]');
-            const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"]):not([data-server="StreamTape"])');
+            const megaCard = document.querySelector('.server-card[data-server="MEGA"]');
+            const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"]):not([data-server="StreamTape"]):not([data-server="MEGA"])');
             const latUrlMix = normalizeUrl(ep.op1 || '');
             const subUrlMix = normalizeUrl(ep.st || ''); // MixDrop subtitulado
             const subUrlSt = normalizeUrl(ep.stSub || ''); // StreamTape subtitulado
+            const subUrlMega = normalizeUrl(ep.megaSub || ''); // MEGA subtitulado
 
             if (mixdropCard) {
                 mixdropCard.setAttribute('data-url-lat', latUrlMix || '#');
@@ -389,6 +391,10 @@
             if (streamTapeCard) {
                 streamTapeCard.setAttribute('data-url-lat', '#');
                 streamTapeCard.setAttribute('data-url-sub', subUrlSt || '#');
+            }
+            if (megaCard) {
+                megaCard.setAttribute('data-url-lat', '#');
+                megaCard.setAttribute('data-url-sub', subUrlMega || '#');
             }
             otherCards.forEach(card => { card.setAttribute('data-url-lat', '#'); card.setAttribute('data-url-sub', '#'); });
         }
