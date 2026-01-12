@@ -91,8 +91,8 @@ function renderGrid(filteredData = data) {
       </div>
     `;
 
-    // Insertar placeholder para anuncio después de cada 8 items
-    if ((index + 1) % 8 === 0 && index !== filteredData.length - 1) {
+    // Insertar placeholder para anuncio después de cada 4 items
+    if ((index + 1) % 4 === 0 && index !== filteredData.length - 1) {
       const adId = `ad-banner-cat-${index}`;
       gridHTML += `<div id="${adId}" class="ad-card" style="grid-column: 1 / -1; display: flex; justify-content: center; margin: 20px 0; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; min-height: 250px;"></div>`;
       adContainers.push(adId);
@@ -106,36 +106,50 @@ function renderGrid(filteredData = data) {
     const container = document.getElementById(id);
     if (!container) return;
 
-    // Crear un iframe para aislar el contexto del anuncio (atOptions es global)
-    const iframe = document.createElement('iframe');
-    iframe.style.width = '300px';
-    iframe.style.height = '250px';
-    iframe.style.border = 'none';
-    iframe.style.overflow = 'hidden';
-    iframe.scrolling = 'no';
+    // Lógica: 4 anuncios siempre
+    const adsCount = 4; // 4 Anuncios siempre en PC y Móvil
 
-    container.appendChild(iframe);
+    // Ajustar estilo del contenedor para fila horizontal
+    container.style.display = 'flex';
+    container.style.flexWrap = 'wrap';
+    container.style.justifyContent = 'center';
+    container.style.gap = '20px';
+    container.style.alignItems = 'center';
+    // Asegurar que ocupe todo el ancho
+    container.style.width = '100%';
 
-    // Escribir el script del anuncio dentro del iframe
-    const doc = iframe.contentWindow || iframe.contentDocument.document || iframe.contentDocument;
-    doc.document.open();
-    doc.document.write(`
-      <html>
-        <body style="margin:0;padding:0;display:flex;justify-content:center;align-items:center;">
-          <script type="text/javascript">
-            atOptions = {
-              'key' : '5db2e541f4eeb65e0b1a7f8737d508e2',
-              'format' : 'iframe',
-              'height' : 250,
-              'width' : 300,
-              'params' : {}
-            };
-          </script>
-          <script type="text/javascript" src="https://www.highperformanceformat.com/5db2e541f4eeb65e0b1a7f8737d508e2/invoke.js"></script>
-        </body>
-      </html>
-    `);
-    doc.document.close();
+    for (let i = 0; i < adsCount; i++) {
+      // Crear un iframe para aislar el contexto del anuncio (atOptions es global)
+      const iframe = document.createElement('iframe');
+      iframe.style.width = '300px';
+      iframe.style.height = '250px';
+      iframe.style.border = 'none';
+      iframe.style.overflow = 'hidden';
+      iframe.scrolling = 'no';
+
+      container.appendChild(iframe);
+
+      // Escribir el script del anuncio dentro del iframe
+      const doc = iframe.contentWindow || iframe.contentDocument.document || iframe.contentDocument;
+      doc.document.open();
+      doc.document.write(`
+        <html>
+            <body style="margin:0;padding:0;display:flex;justify-content:center;align-items:center;background:transparent;">
+            <script type="text/javascript">
+                atOptions = {
+                'key' : '5db2e541f4eeb65e0b1a7f8737d508e2',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="https://www.highperformanceformat.com/5db2e541f4eeb65e0b1a7f8737d508e2/invoke.js"></script>
+            </body>
+        </html>
+        `);
+      doc.document.close();
+    }
   });
 }
 
