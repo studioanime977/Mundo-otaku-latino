@@ -98,6 +98,10 @@
               <img src="../../../ico/streamtape.png" alt="StreamTape">
               <span>StreamTape</span>
             </a>
+            <a href="#" class="server-card" data-server="MEGA" data-url-lat="#" data-url-sub="#" aria-label="MEGA">
+              <img src="../../../ico/MEGA.png" alt="MEGA">
+              <span>MEGA</span>
+            </a>
             <a href="#" class="server-card" data-server="Netu" data-url-lat="#" data-url-sub="#" aria-label="Netu">
               <img src="../../../ico/netu.png" alt="Netu">
               <span>Netu</span>
@@ -236,41 +240,43 @@
     }
     let currentEpisode = null;
     const episodes = [
-      { num: 1,  title: 'Episodio 1',  op1: 'https://mxdrop.to/e/vkqpqnlzbqgeezp', st: 'https://streamtape.com/e/y2VGjyL9AwUoGm/01.mp4' },
-      { num: 2,  title: 'Episodio 2',  op1: 'https://mxdrop.to/e/67rorq9dh4jzgr', st: 'https://streamtape.com/e/wlpQla6VqPiJwKZ/02.mp4' },
-      { num: 3,  title: 'Episodio 3',  op1: 'https://mxdrop.to/e/z1jgjpj1ujj6e4', st: 'https://streamtape.com/e/drxOkQoWWOHQja/03.mp4' },
-      { num: 4,  title: 'Episodio 4',  op1: 'https://mxdrop.to/e/4d9p9nmxu48j1z', st: 'https://streamtape.com/e/Pjq9LVxAKDugKB/04.mp4' },
-      { num: 5,  title: 'Episodio 5',  op1: 'https://mxdrop.to/e/1nopov4jhwrrxn', st: 'https://streamtape.com/e/M9vD8ej27gImkmL/05.mp4' },
-      { num: 6,  title: 'Episodio 6',  op1: 'https://mxdrop.to/e/l79896njb33g8w', st: 'https://streamtape.com/e/PjBLvAkV1zh0zgX/06.mp4' },
-      { num: 7,  title: 'Episodio 7',  op1: 'https://mxdrop.to/e/03zmzv3vb0v4w', st: 'https://streamtape.com/e/jgxVJrVlX4FzXw8/07.mp4' },
-      { num: 8,  title: 'Episodio 8',  op1: 'https://mxdrop.to/e/1nopov9qtvwwo8', st: 'https://streamtape.com/e/Qd84j8vgvbIrQQ/08.mp4' },
-      { num: 9,  title: 'Episodio 9',  op1: 'https://mxdrop.to/e/9wxkxnw7bopwvl', st: 'https://streamtape.com/e/BGwW4DJVm9IyqbG/09.mp4' },
-      { num: 10, title: 'Episodio 10', op1: 'https://mxdrop.to/e/r60k0wgvh44ld0', st: 'https://streamtape.com/e/kgY8jLD9mzHO4RX/10.mp4' },
-      { num: 11, title: 'Episodio 11', op1: 'https://mxdrop.to/e/gjdgdn14ce0q7q', st: 'https://streamtape.com/e/QkYYWyYp8bT079L/11.mp4' },
-      { num: 12, title: 'Episodio 12', op1: 'https://mxdrop.to/e/wlwpwn84fpmejo', st: 'https://streamtape.com/e/2L3elr21z2FZ0wO/12.mp4' },
-      { num: 13, title: 'Episodio 13', op1: 'https://mxdrop.to/e/elzxznq0ieg98e', st: 'https://streamtape.com/e/xbDVRMPp9BfvJb/13.mp4' },
-      { num: 14, title: 'Episodio 14', op1: 'https://mxdrop.to/e/vkqpqn04f6dr1l', st: 'https://streamtape.com/e/692bgwOz63tZkj/14.mp4' },
-      { num: 15, title: 'Episodio 15', op1: 'https://mxdrop.to/e/nlnvn0z8h4q87o', st: 'https://streamtape.com/e/16rxbJW02jteeex/15.mp4' },
-      { num: 16, title: 'Episodio 16', op1: 'https://mxdrop.to/e/67rorq88u40ogn', st: 'https://streamtape.com/e/8XZLJRKadXS2ql/16.mp4' },
-      { num: 17, title: 'Episodio 17', op1: 'https://mxdrop.to/e/mkz9zdp8i99omv', st: 'https://streamtape.com/e/PyrxaQg7BliGB4/17.mp4' },
-      { num: 18, title: 'Episodio 18', op1: 'https://mxdrop.to/e/r60k0weeb7x86x', st: 'https://streamtape.com/e/OYv09vzkYBfZrbK/18.mp4' },
-      { num: 19, title: 'Episodio 19', op1: 'https://mxdrop.to/e/67ror7w1h89pzw', st: 'https://streamtape.com/e/7my6QA8YwRTAZXJ/19.mp4' },
-      { num: 20, title: 'Episodio 20', op1: 'https://mxdrop.to/e/36q4q673uno441', st: 'https://streamtape.com/e/k30ZjbqXRktDmO/20.mp4' },
-      { num: 21, title: 'Episodio 21', op1: 'https://mxdrop.to/e/l79897e7te68vz', st: 'https://streamtape.com/e/A2lz2Lxk8rcXYrZ/21.mp4' },
-      { num: 22, title: 'Episodio 22', op1: 'https://mxdrop.to/e/9wxkxwokhqp1xr', st: 'https://streamtape.com/e/q7zbPDRej4Sz0Zp/22.mp4' },
-      { num: 23, title: 'Episodio 23', op1: 'https://mxdrop.to/e/67ror79vbr69w9', st: 'https://streamtape.com/e/vkjYBY2Dzgh4vJ2/23.mp4' },
-      { num: 24, title: 'Episodio 24', op1: 'https://mxdrop.to/e/9wxkxw1pu3v4q86', st: 'https://streamtape.com/e/bw70Qr9DqkFP884/24.mp4' },
-      { num: 25, title: 'Episodio 25', op1: 'https://mxdrop.to/e/elzxzl4xbzvpq9', st: 'https://streamtape.com/e/r2lVXDwk7mIbDBz/25.mp4' },
-      { num: 26, title: 'Episodio 26', op1: 'https://mxdrop.to/e/elzxzl70i48wln', st: 'https://streamtape.com/e/MwKVmbbMyZCDBR/26.mp4' }
+      { num: 1,  title: 'Episodio 1',  op1: 'https://mxdrop.to/e/vkqpqnlzbqgeezp', st: 'https://streamtape.com/e/y2VGjyL9AwUoGm/01.mp4', mega: 'https://mega.nz/embed/nAM0BaJY#0Qg0Uch0aOkzwG3xHwNpkY1BBhI70q8YF8s50obHGjw' },
+      { num: 2,  title: 'Episodio 2',  op1: 'https://mxdrop.to/e/67rorq9dh4jzgr', st: 'https://streamtape.com/e/wlpQla6VqPiJwKZ/02.mp4', mega: 'https://mega.nz/embed/HUcGmJKT#s_hE2d55wynUhWHhZA7mnPlMHP2XiNkt9vkEFN_tVPE' },
+      { num: 3,  title: 'Episodio 3',  op1: 'https://mxdrop.to/e/z1jgjpj1ujj6e4', st: 'https://streamtape.com/e/drxOkQoWWOHQja/03.mp4', mega: 'https://mega.nz/embed/bQFXCZQZ#HjoY3lIkh9mVdaq1zYPA9CRVEqBs-6KUDuayD84xZEo' },
+      { num: 4,  title: 'Episodio 4',  op1: 'https://mxdrop.to/e/4d9p9nmxu48j1z', st: 'https://streamtape.com/e/Pjq9LVxAKDugKB/04.mp4', mega: 'https://mega.nz/embed/7YtkQKIa#mtySGpEx8FtX0STbKxmSCJHSIg813WNSgcLPSsAlmS4' },
+      { num: 5,  title: 'Episodio 5',  op1: 'https://mxdrop.to/e/1nopov4jhwrrxn', st: 'https://streamtape.com/e/M9vD8ej27gImkmL/05.mp4', mega: 'https://mega.nz/embed/yM0whaSZ#VBcnNDBFgX63av8BPP-qnC6qjuNFB6mpJLfDmBquOdo' },
+      { num: 6,  title: 'Episodio 6',  op1: 'https://mxdrop.to/e/l79896njb33g8w', st: 'https://streamtape.com/e/PjBLvAkV1zh0zgX/06.mp4', mega: 'https://mega.nz/embed/3Z9XAboI#DJ7pGMcN1RNSJqlL8E7Oxrch0sLA_tVxMMrb2hUYNb8' },
+      { num: 7,  title: 'Episodio 7',  op1: 'https://mxdrop.to/e/03zmzv3vb0v4w', st: 'https://streamtape.com/e/jgxVJrVlX4FzXw8/07.mp4', mega: 'https://mega.nz/embed/nQVBVDSL#VYO8AgpSncoA9F1KCK0fYAHRqxNIcCwPwKgsxpL63pE' },
+      { num: 8,  title: 'Episodio 8',  op1: 'https://mxdrop.to/e/1nopov9qtvwwo8', st: 'https://streamtape.com/e/Qd84j8vgvbIrQQ/08.mp4', mega: 'https://mega.nz/embed/nBkhga4S#DwKXXjTg7xQu5rMp9apIF0hp4FI-NfzSds_FnS57JKo' },
+      { num: 9,  title: 'Episodio 9',  op1: 'https://mxdrop.to/e/9wxkxnw7bopwvl', st: 'https://streamtape.com/e/BGwW4DJVm9IyqbG/09.mp4', mega: 'https://mega.nz/embed/vJsQlIzK#-SmURz7oSPN68J6sfJvCIuWTOLbLP_aoEkXpSgCU-Y4' },
+      { num: 10, title: 'Episodio 10', op1: 'https://mxdrop.to/e/r60k0wgvh44ld0', st: 'https://streamtape.com/e/kgY8jLD9mzHO4RX/10.mp4', mega: 'https://mega.nz/embed/XVViyIYK#7BCh4_UAbppVZ0AfR92J4NvEzGvJSH_nbllSWIiVzwM' },
+      { num: 11, title: 'Episodio 11', op1: 'https://mxdrop.to/e/gjdgdn14ce0q7q', st: 'https://streamtape.com/e/QkYYWyYp8bT079L/11.mp4', mega: 'https://mega.nz/embed/WE9kmQ4R#_3c062nFrOE-7gdSk0DTY4NTtAjIyhIX_kVqbvuLT1g' },
+      { num: 12, title: 'Episodio 12', op1: 'https://mxdrop.to/e/wlwpwn84fpmejo', st: 'https://streamtape.com/e/2L3elr21z2FZ0wO/12.mp4', mega: 'https://mega.nz/embed/uZVHECrR#MieHnrNC7e_sUF8cqQxQS9WyFdgK4gUXyVKxixOuYj0' },
+      { num: 13, title: 'Episodio 13', op1: 'https://mxdrop.to/e/elzxznq0ieg98e', st: 'https://streamtape.com/e/xbDVRMPp9BfvJb/13.mp4', mega: 'https://mega.nz/embed/XJ9AAILB#c_HGNmhv4Lgv8qgwqu1BMkdm_VL8uEuIjI8QNC0TOm0' },
+      { num: 14, title: 'Episodio 14', op1: 'https://mxdrop.to/e/vkqpqn04f6dr1l', st: 'https://streamtape.com/e/692bgwOz63tZkj/14.mp4', mega: 'https://mega.nz/embed/uVEHyYqR#Obor41a11NQUEFfZht5nUNm2u7BANAPFq0B6Xr42fgY' },
+      { num: 15, title: 'Episodio 15', op1: 'https://mxdrop.to/e/nlnvn0z8h4q87o', st: 'https://streamtape.com/e/16rxbJW02jteeex/15.mp4', mega: 'https://mega.nz/embed/idFRwCTI#pbt-VF7a0ttZKwbrXoZLiT1EjMkHzJpmdmgnYg_57pw' },
+      { num: 16, title: 'Episodio 16', op1: 'https://mxdrop.to/e/67rorq88u40ogn', st: 'https://streamtape.com/e/8XZLJRKadXS2ql/16.mp4', mega: 'https://mega.nz/embed/nI00gKJD#yKtfRBZ5hHced0np5O2SUQ2fI0Unoh1bbhV4lZ2DtVU' },
+      { num: 17, title: 'Episodio 17', op1: 'https://mxdrop.to/e/mkz9zdp8i99omv', st: 'https://streamtape.com/e/PyrxaQg7BliGB4/17.mp4', mega: 'https://mega.nz/embed/LBthwKRT#ZQOb-vZaMS2zRZ6WIgMmu4GrcxUolSoonleBaW2dcR8' },
+      { num: 18, title: 'Episodio 18', op1: 'https://mxdrop.to/e/r60k0weeb7x86x', st: 'https://streamtape.com/e/OYv09vzkYBfZrbK/18.mp4', mega: 'https://mega.nz/embed/GIl0waZK#pt6zN3ilcNyQWCDvZERYjnYtZZd1C4EC9UWnQciF3KQ' },
+      { num: 19, title: 'Episodio 19', op1: 'https://mxdrop.to/e/67ror7w1h89pzw', st: 'https://streamtape.com/e/7my6QA8YwRTAZXJ/19.mp4', mega: 'https://mega.nz/embed/uJUgyYYI#2hIQ2F5_GYZrZnv_52sCwzgT4mbuhOx3J6eADtXY5L4' },
+      { num: 20, title: 'Episodio 20', op1: 'https://mxdrop.to/e/36q4q673uno441', st: 'https://streamtape.com/e/k30ZjbqXRktDmO/20.mp4', mega: 'https://mega.nz/embed/SdsgEIaB#XeFcZl_eII8RVgCTCY8wiFLCxSCqBlKUeGPbUvVviqs' },
+      { num: 21, title: 'Episodio 21', op1: 'https://mxdrop.to/e/l79897e7te68vz', st: 'https://streamtape.com/e/A2lz2Lxk8rcXYrZ/21.mp4', mega: 'https://mega.nz/embed/iI1iASTC#rWpN8-iRjilaXSao-Z3e-BSh99qr0cRA-S5qvczbPUM' },
+      { num: 22, title: 'Episodio 22', op1: 'https://mxdrop.to/e/9wxkxwokhqp1xr', st: 'https://streamtape.com/e/q7zbPDRej4Sz0Zp/22.mp4', mega: 'https://mega.nz/embed/KBEjUB5K#97OVSR0XqX8TPn4WZMX52BcafXx6CjF9RUpAxWyRsgE' },
+      { num: 23, title: 'Episodio 23', op1: 'https://mxdrop.to/e/67ror79vbr69w9', st: 'https://streamtape.com/e/vkjYBY2Dzgh4vJ2/23.mp4', mega: 'https://mega.nz/embed/WEMQzKzS#FKQvr_zIl4l9HenIky2tUNDCoHstzZzyLtKEfTygcu0' },
+      { num: 24, title: 'Episodio 24', op1: 'https://mxdrop.to/e/9wxkxw1pu3v4q86', st: 'https://streamtape.com/e/bw70Qr9DqkFP884/24.mp4', mega: 'https://mega.nz/embed/SEVVlRJI#b17GRuEO-o2BrDhnYZulWaT46SYf50iH7GDZKSNc060' },
+      { num: 25, title: 'Episodio 25', op1: 'https://mxdrop.to/e/elzxzl4xbzvpq9', st: 'https://streamtape.com/e/r2lVXDwk7mIbDBz/25.mp4', mega: 'https://mega.nz/embed/jUNnDBSL#7Ts--NbkU4NCKh7wiGf9QRDtW-R4yeNbErOUZERWPU0' },
+      { num: 26, title: 'Episodio 26', op1: 'https://mxdrop.to/e/elzxzl70i48wln', st: 'https://streamtape.com/e/MwKVmbbMyZCDBR/26.mp4', mega: 'https://mega.nz/embed/6MlQ1YgK#rFcJ_2bY33UqylK-S-A0Y38IqD8a6U17Ne5J-uJPMyE' }
     ];
     const episodesGrid = document.getElementById('episodes-grid');
     episodes.forEach(ep => { const b = document.createElement('button'); b.className = 'episode-btn'; b.textContent = `Ep ${ep.num}`; b.onclick = () => loadEpisode(ep); episodesGrid.appendChild(b); });
     function applyEpisodeToServerGrid(ep) {
       const mixdropCard = document.querySelector('.server-card[data-server="MixDrop"]');
       const streamTapeCard = document.querySelector('.server-card[data-server="StreamTape"]');
-      const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"]):not([data-server="StreamTape"])');
+      const megaCard = document.querySelector('.server-card[data-server="MEGA"]');
+      const otherCards = document.querySelectorAll('.server-card:not([data-server="MixDrop"]):not([data-server="StreamTape"]):not([data-server="MEGA"])');
       const latUrlMix = normalizeUrl(ep.op1 || '');
       const latUrlSt = normalizeUrl(ep.st || '');
+      const megaUrl = normalizeUrl(ep.mega || '');
       if (mixdropCard) {
         mixdropCard.setAttribute('data-url-lat', latUrlMix || '#');
         const fb = mixdropFallback(latUrlMix);
@@ -284,6 +290,11 @@
         if (fbSt) { streamTapeCard.setAttribute('data-fallback-lat', fbSt); }
         else { streamTapeCard.removeAttribute('data-fallback-lat'); }
       }
+      if (megaCard) {
+        megaCard.setAttribute('data-url-lat', megaUrl || '#');
+        megaCard.setAttribute('data-url-sub', '#');
+        megaCard.removeAttribute('data-fallback-lat');
+      }
       otherCards.forEach(card => { card.setAttribute('data-url-lat', '#'); card.setAttribute('data-url-sub', '#'); card.removeAttribute('data-fallback-lat'); });
     }
     function loadEpisode(episode) {
@@ -292,7 +303,7 @@
       currentEpisode = episode;
       applyEpisodeToServerGrid(episode);
       updateNavState();
-      const hasLatLinks = Boolean(normalizeUrl(episode.op1 || '') || normalizeUrl(episode.st || ''));
+      const hasLatLinks = Boolean(normalizeUrl(episode.op1 || '') || normalizeUrl(episode.st || '') || normalizeUrl(episode.mega || ''));
       const anyActiveLang = document.querySelector('.lang-btn.active');
       const latBtn = document.querySelector('.lang-btn[data-language="lat"]');
       if (!anyActiveLang && hasLatLinks && latBtn) { latBtn.click(); }
@@ -340,7 +351,7 @@
         const hasLinks = (ep) => {
           if (!ep) return false;
           if (lang === 'sub') return false;
-          return Boolean(normalizeUrl(ep.op1 || '') || normalizeUrl(ep.st || ''));
+          return Boolean(normalizeUrl(ep.op1 || '') || normalizeUrl(ep.st || '') || normalizeUrl(ep.mega || ''));
         };
         if (!hasLinks(currentEpisode)) {
           const target = episodes.find(e => hasLinks(e)) || episodes[0];
