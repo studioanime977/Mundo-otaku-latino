@@ -176,6 +176,39 @@
                         allowfullscreen loading="lazy"></iframe>
                 </div>
             </section>
+            <section class="navigation-buttons" aria-label="Navegación de episodios" style="display:grid; grid-template-columns: 1fr auto 1fr; align-items:center; column-gap:10px; margin:12px 0;">
+              <button class="nav-btn" id="prev-episode" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:start;">◄ episodio anterior</button>
+              <a class="nav-btn" href="./even-given-the-worthless.html" style="padding:10px 16px; border-radius:8px; background:#6c63ff; color:#fff; text-decoration:none; justify-self:center;">lista de episodios</a>
+              <button class="nav-btn" id="next-episode" disabled style="padding:10px 16px; border-radius:8px; background:#2c2c2c; color:#bbb; border:none; justify-self:end;">siguiente episodio ►</button>
+            </section>
+
+            <section class="episode-info" aria-label="Información del episodio" style="margin-top:16px;">
+              <h2 style="margin-bottom:8px;">Even Given the Worthless Appraiser Class - Temporada 1</h2>
+              <p style="opacity:0.9;">La historia sigue a Tina, una joven que es despreciada por su clase de tasador inútil, pero descubre que tiene una habilidad especial para ver el valor real de las cosas, incluyendo los corazones de las personas. Con esta habilidad única, Tina se embarca en un viaje para demostrar su valor y encontrar su lugar en el mundo.</p>
+            </section>
+
+            <section class="downloads" aria-label="Enlaces de descarga" style="margin-top:8px;">
+              <h3 style="margin:0 0 10px 0;">Enlaces</h3>
+              <div class="downloads-table" style="display:grid; grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr; gap:8px; align-items:center;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <a class="download-btn" href="./descargar-season1.html?lang=sub" style="padding:8px 12px; background:#27ae60; color:#fff; border-radius:8px; text-decoration:none;">Descargar Temporada 1</a>
+                </div>
+                <div><span style="display:inline-block; padding:6px 10px; border-radius:8px; background:#111; color:#fff;">HD MULTIHOST</span></div>
+                <div>Sub Español</div>
+                <div>12 Episodios</div>
+                <div>MEGA</div>
+              </div>
+            </section>
+
+            <!-- Anuncios -->
+            <div style="margin: 20px 0;">
+              <div style="background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 12px; text-align: center;">
+                <p style="color: #888; font-size: 12px; margin: 0 0 8px;">Publicidad</p>
+                <div style="min-height: 250px; background: #0a0a0a; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                  <span style="color: #555;">Espacio publicitario</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="right-content">
@@ -316,7 +349,7 @@
     </script>
     <script>
         function normalizeUrl(url) { return url || ''; }
-        let currentEpisode = null;
+        let currentEpisode = 0; // Índice del episodio actual
         const episodes = [
             { num: 1, title: 'Episodio 1', megaSub: 'https://mega.nz/embed/mBlzBIjB#zazD_41VyITpLoWaR23-qKdkqyXpiZ0mv0BKH5_4j1o' },
             { num: 2, title: 'Episodio 2', megaSub: 'https://mega.nz/embed/2RMigTwC#DSYL9gpAsp68NHfdz7EAaSGLlJmA7_zCowzxeqx5DiA' },
@@ -331,6 +364,7 @@
             { num: 11, title: 'Episodio 11', megaSub: 'https://mega.nz/embed/iJVSXS7T#FuSVPr9BKE_SUNQPwqIMuvLhc6jnG3XrA-_iFkrD3a0' },
             { num: 12, title: 'Episodio 12', megaSub: 'https://mega.nz/embed/CANjTBRZ#SzxPiehpqGgEPPIcpVVI1XjtklfdyGqzrUQW8zmEwP' }
         ];
+        
         function applyEpisodeToServerGrid(ep) {
             const megaCard = document.querySelector('.server-card[data-url-sub]');
             const subUrlMega = normalizeUrl(ep.megaSub || '');
@@ -339,17 +373,83 @@
                 megaCard.setAttribute('data-url-sub', subUrlMega || '#');
             }
         }
-        function loadEpisode(episode) {
-            currentEpisode = episode;
+        
+        function updateNavigationButtons() {
+            const prevBtn = document.getElementById('prev-episode');
+            const nextBtn = document.getElementById('next-episode');
+            
+            // Actualizar botón anterior
+            if (prevBtn) {
+                prevBtn.disabled = currentEpisode <= 0;
+                if (currentEpisode > 0) {
+                    prevBtn.style.background = '#6c63ff';
+                    prevBtn.style.color = '#fff';
+                } else {
+                    prevBtn.style.background = '#2c2c2c';
+                    prevBtn.style.color = '#bbb';
+                }
+            }
+            
+            // Actualizar botón siguiente
+            if (nextBtn) {
+                nextBtn.disabled = currentEpisode >= episodes.length - 1;
+                if (currentEpisode < episodes.length - 1) {
+                    nextBtn.style.background = '#6c63ff';
+                    nextBtn.style.color = '#fff';
+                } else {
+                    nextBtn.style.background = '#2c2c2c';
+                    nextBtn.style.color = '#bbb';
+                }
+            }
+        }
+        
+        function loadEpisode(index) {
+            if (index < 0 || index >= episodes.length) return;
+            
+            currentEpisode = index;
+            const episode = episodes[currentEpisode];
             applyEpisodeToServerGrid(episode);
+            updateNavigationButtons();
+            
             // Auto seleccionar Subtitulado y MEGA
             const subBtn = document.querySelector('.lang-btn[data-language="sub"]');
             if (subBtn) {
                 subBtn.click();
             }
+            
+            // Actualizar título de la página
+            const pageTitle = document.querySelector('.page-title');
+            if (pageTitle) {
+                pageTitle.textContent = `Even Given the Worthless Appraiser Class - Temporada 1 - ${episode.title}`;
+            }
         }
-        // Cargar primer episodio automáticamente
-        if (episodes.length > 0) { loadEpisode(episodes[0]); }
+        
+        // Event listeners para navegación
+        document.addEventListener('DOMContentLoaded', function() {
+            const prevBtn = document.getElementById('prev-episode');
+            const nextBtn = document.getElementById('next-episode');
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    if (currentEpisode > 0) {
+                        loadEpisode(currentEpisode - 1);
+                    }
+                });
+            }
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    if (currentEpisode < episodes.length - 1) {
+                        loadEpisode(currentEpisode + 1);
+                    }
+                });
+            }
+            
+            // Cargar primer episodio automáticamente
+            if (episodes.length > 0) { 
+                loadEpisode(0); 
+            }
+        });
     </script>
 </body>
 </html>
