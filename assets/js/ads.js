@@ -4,6 +4,7 @@
   const BANNER_KEY = '5db2e541f4eeb65e0b1a7f8737d508e2';
   const NATIVE_SCRIPT = 'https://pl28456274.effectivegatecpm.com/8c45de82310a6956f5339c6a9b3f7c81/invoke.js';
   const NATIVE_CONTAINER_ID = 'container-8c45de82310a6956f5339c6a9b3f7c81';
+  const PLAYER_AD_SCRIPT = 'https://www.effectivegatecpm.com/v27wbcqe?key=7d1586d18ef6eda218f888b9468a6a80';
 
   // --- SEGURIDAD: OCULTAR ANUNCIOS A BOTS (Googlebot, etc.) ---
   function cargarAdsSeguro() {
@@ -130,6 +131,37 @@
       (function (s) { s.dataset.zone = '10450196'; s.src = 'https://nap5k.com/tag.min.js' })(document.body.appendChild(document.createElement('script')));
       console.log('✅ Monetag Multi-Tag inserted');
     } catch (e) { console.error('Monetag Multi-Tag error:', e); }
+  }
+
+  // --- NUEVA FUNCIÓN: Anuncio para páginas con reproductores ---
+  function insertPlayerAd() {
+    if (!ENABLE_ADS || !cargarAdsSeguro()) return;
+
+    console.log('🎬 Inserting Player Ad...');
+
+    // Buscar el reproductor (iframe con id 'player' o similar)
+    const player = document.querySelector('#player') || document.querySelector('iframe[src*="streamtape"]') || document.querySelector('iframe[src*="mixdrop"]') || document.querySelector('iframe[src*="mega"]');
+    
+    if (!player) {
+      console.warn('⚠️ No player found for player ad');
+      return;
+    }
+
+    // Crear contenedor para el anuncio
+    const adContainer = document.createElement('div');
+    adContainer.style.cssText = 'margin: 15px auto; text-align: center; max-width: 100%;';
+
+    // Crear script del anuncio
+    const script = document.createElement('script');
+    script.src = PLAYER_AD_SCRIPT;
+    script.async = true;
+
+    adContainer.appendChild(script);
+
+    // Insertar el anuncio después del reproductor
+    player.parentNode.insertBefore(adContainer, player.nextSibling);
+
+    console.log('✅ Player ad inserted');
   }
 
   // --- DÓNDE INSERTAR (NO HOME, NO LEGALES) ---
@@ -272,15 +304,14 @@
       // Paginas de Ver Temporada, Ver Pelicula, o Descargar
       insertWatchDownloadAds();
       insertMonetag();
+      // Agregar anuncio del reproductor
+      setTimeout(() => insertPlayerAd(), 2000); // Esperar a que cargue el reproductor
     } else {
       // Otras paginas genericas (Home y paginas raices si habilitadas)
       insertBanner();
       insertNative();
       insertMonetag();
     }
-
-    // --- CORRECCIÓN: MENÚ MÓVIL SI FALTA ---
-    fixMobileMenu();
   }
 
   // --- HELPER: Inyectar botón de menú móvil si no existe ---
