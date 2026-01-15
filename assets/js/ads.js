@@ -139,17 +139,28 @@
 
     console.log('🎬 Inserting Player Ad...');
 
-    // Buscar el reproductor (iframe con id 'player' o similar)
-    const player = document.querySelector('#player') || document.querySelector('iframe[src*="streamtape"]') || document.querySelector('iframe[src*="mixdrop"]') || document.querySelector('iframe[src*="mega"]');
-    
-    if (!player) {
-      console.warn('⚠️ No player found for player ad');
+    // Evitar duplicidades
+    if (document.querySelector('.player-ad-container')) return;
+
+    // Buscar el reproductor (iframe con id 'player', 'player-frame' o similar)
+    const player = document.querySelector('#player') ||
+      document.querySelector('#player-frame') ||
+      document.querySelector('iframe[src*="streamtape"]') ||
+      document.querySelector('iframe[src*="mixdrop"]') ||
+      document.querySelector('iframe[src*="mega"]');
+
+    // Contenedor fallback si no hay iframe (ej. grid de servidores)
+    const fallbackContainer = document.querySelector('.server-grid') || document.querySelector('.player-frame-wrap');
+
+    if (!player && !fallbackContainer) {
+      console.warn('⚠️ No player or server grid found for player ad');
       return;
     }
 
     // Crear contenedor para el anuncio
     const adContainer = document.createElement('div');
-    adContainer.style.cssText = 'margin: 15px auto; text-align: center; max-width: 100%;';
+    adContainer.className = 'player-ad-container';
+    adContainer.style.cssText = 'margin: 15px auto; text-align: center; max-width: 100%; min-height: 10px;';
 
     // Crear script del anuncio
     const script = document.createElement('script');
@@ -158,10 +169,14 @@
 
     adContainer.appendChild(script);
 
-    // Insertar el anuncio después del reproductor
-    player.parentNode.insertBefore(adContainer, player.nextSibling);
-
-    console.log('✅ Player ad inserted');
+    // Insertar el anuncio: después del reproductor si existe, o en el fallback
+    if (player) {
+      player.parentNode.insertBefore(adContainer, player.nextSibling);
+      console.log('✅ Player ad inserted after iframe');
+    } else {
+      fallbackContainer.parentNode.insertBefore(adContainer, fallbackContainer.nextSibling);
+      console.log('✅ Player ad inserted after fallback container (.server-grid)');
+    }
   }
 
   // --- DÓNDE INSERTAR (NO HOME, NO LEGALES) ---
@@ -296,7 +311,7 @@
     const isWatchOrDownloadPage = /(season|temporada|movie|descargar)/i.test(path) || path.includes('/anime/');
 
     if (isAnimeSeriesPage) {
-      // Pagina Principal de Serie (con Hero)
+      // Pagina Principal de Serie (con Hero) -> NO PLAYER AD SCRIPT por petición
       insertAnimeAds();
       monitorEpisodesGrid();
       insertMonetag();
@@ -304,8 +319,15 @@
       // Paginas de Ver Temporada, Ver Pelicula, o Descargar
       insertWatchDownloadAds();
       insertMonetag();
-      // Agregar anuncio del reproductor
-      setTimeout(() => insertPlayerAd(), 2000); // Esperar a que cargue el reproductor
+
+      // EXCLUSIÓN: No inyectar PLAYER_AD_SCRIPT en páginas de descarga ni si es hero page
+      const isDownloadPage = path.includes('descargar');
+
+      if (!isDownloadPage && !isAnimeSeriesPage) {
+        // Solo para paginas con reproductores/servidores
+        console.log('🚀 Triggering player ad script injection...');
+        setTimeout(() => insertPlayerAd(), 1500);
+      }
     } else {
       // Otras paginas genericas (Home y paginas raices si habilitadas)
       insertBanner();
